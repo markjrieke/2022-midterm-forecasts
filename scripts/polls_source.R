@@ -21,6 +21,10 @@ all_polls_2008 <- read_csv("https://github.com/TheEconomist/us-potus-model/raw/m
 all_polls_2012 <- read_csv("https://github.com/TheEconomist/us-potus-model/raw/master/data/all_polls_2012.csv")
 all_polls_2016 <- read_csv("https://github.com/TheEconomist/us-potus-model/raw/master/data/all_polls.csv")
 
+# upshot
+polls_2012 <- read_csv("https://github.com/TheUpshot/2004-2012-presidential-election-model/raw/master/data/2012/polls.csv")
+polls_2004 <- read_csv("https://github.com/TheUpshot/2004-2012-presidential-election-model/raw/master/data/2004/polls.csv")
+
 # write data ----
 
 # fte
@@ -42,6 +46,11 @@ path <- "data/polls/src/econ/"
 write_csv(all_polls_2008, paste0(path, "all_polls_2008.csv"))
 write_csv(all_polls_2012, paste0(path, "all_polls_2012.csv"))
 write_csv(all_polls_2016, paste0(path, "all_polls_2016.csv"))
+
+# upshot
+path <- "data/polls/src/upshot/"
+write_csv(polls_2012, paste0(path, "polls_2012.csv"))
+write_csv(polls_2004, paste0(path, "polls_2004.csv"))
 
 # clean up environment ----
 rm(list = ls())
