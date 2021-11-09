@@ -24,6 +24,7 @@ all_polls_2016 <- read_csv("https://github.com/TheEconomist/us-potus-model/raw/m
 # upshot
 polls_2012 <- read_csv("https://github.com/TheUpshot/2004-2012-presidential-election-model/raw/master/data/2012/polls.csv")
 polls_2004 <- read_csv("https://github.com/TheUpshot/2004-2012-presidential-election-model/raw/master/data/2004/polls.csv")
+senate_polls_historical <- read_csv("https://github.com/TheUpshot/leo-senate-model/raw/master/model/data/polls/historic-polls/senate_polls.csv")
 
 # write data ----
 
@@ -51,6 +52,7 @@ write_csv(all_polls_2016, paste0(path, "all_polls_2016.csv"))
 path <- "data/polls/src/upshot/"
 write_csv(polls_2012, paste0(path, "polls_2012.csv"))
 write_csv(polls_2004, paste0(path, "polls_2004.csv"))
+write_csv(senate_polls_historical, paste0(path, "senate_polls_historical.csv"))
 
 # clean up environment ----
 rm(list = ls())
