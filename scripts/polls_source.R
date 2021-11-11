@@ -14,6 +14,7 @@ senate_polls_2018_2020 <- read_csv("https://projects.fivethirtyeight.com/polls-p
 house_polls_2018_2020 <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls_historical.csv")
 governor_polls_2018_2020 <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/governor_polls_historical.csv")
 pres_approval_poll_2016_2020 <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/president_approval_polls_historical.csv")
+pres_approval_trends <- read_csv("https://projects.fivethirtyeight.com/trump-approval-data/approval_topline.csv")
 generic_polls_2018_2020 <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/generic_ballot_polls_historical.csv")
 
 # econ
@@ -40,6 +41,7 @@ write_csv(senate_polls_2018_2020, paste0(path, "senate_polls_2018_2020.csv"))
 write_csv(house_polls_2018_2020, paste0(path, "house_polls_2018_2020.csv"))
 write_csv(governor_polls_2018_2020, paste0(path, "governor_polls_2018_2020.csv"))
 write_csv(pres_approval_poll_2016_2020, paste0(path, "pres_approval_poll_2016_2020.csv"))
+write_csv(pres_approval_trends, paste0(path, "pres_approval_trends.csv"))
 write_csv(generic_polls_2018_2020, paste0(path, "generic_polls_2018_2020.csv"))
 
 # econ
@@ -56,3 +58,4 @@ write_csv(senate_polls_historical, paste0(path, "senate_polls_historical.csv"))
 
 # clean up environment ----
 rm(list = ls())
+
