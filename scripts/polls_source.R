@@ -43,6 +43,18 @@ read_csv("https://projects.fivethirtyeight.com/trump-approval-data/approval_topl
 read_csv("https://projects.fivethirtyeight.com/polls-page/data/generic_ballot_polls_historical.csv") %>%
   write_csv(paste0(path, "generic_ballot_polls_historical.csv"))
 
+read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv") %>%
+  write_csv(paste0(path, "generic_polllist.csv"))
+
+read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
+  write_csv(paste0(path, "generic_ballot.csv"))
+
+read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv") %>%
+  write_csv(paste0(path, "generic_polllist_2018.csv"))
+
+read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
+  write_csv(paste0(path, "generic_ballot_2018.csv"))
+
 # econ ----
 path <- "data/polls/src/econ/"
 
