@@ -248,6 +248,108 @@ sequence_weights <- function(lower_bound, upper_bound) {
   
 }
 
+# summarise results & recommend new bounds
+summarise_weights <- function(.data, metric) {
+  
+  # create tibble of rmse for each weight evaluated
+  weight_metrics <- 
+    .data %>%
+    select(-starts_with("ci")) %>%
+    
+    # join fte trendline
+    left_join(generic_trend, by = "date") %>%
+    drop_na() %>%
+    rename(est = dem2pv.x,
+           act = dem2pv.y) %>%
+    select(-date) %>%
+    
+    # calculate each weight's rmse
+    group_by(weight) %>%
+    nest() %>%
+    mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
+    unnest(rmse) %>%
+    ungroup() %>%
+    rowid_to_column() %>%
+    select(rowid, weight, .estimate) %>%
+    rename(rmse = .estimate)
+  
+  # find weight that gives smallest rmse
+  best_weight <- 
+    weight_metrics %>%
+    filter(rmse == min(rmse)) %>%
+    pull(weight)
+  
+  # pull the smallest rmse for tracking
+  best_rmse <- 
+    weight_metrics %>%
+    filter(rmse == min(rmse)) %>%
+    pull(rmse)
+  
+  # pull the row index that gave the best rmse
+  best_index <- 
+    weight_metrics %>%
+    filter(weight == best_weight) %>%
+    pull(rowid)
+  
+  # get the step between each weight 
+  delta <-
+    weight_metrics %>%
+    mutate(delta = weight - lag(weight)) %>%
+    drop_na() %>%
+    distinct(delta) %>%
+    pull(delta)
+  
+  # assign next_upper & next_lower
+  if (best_index == 1) {
+    
+    next_lower <- weight_metrics %>% filter(rowid == 1) %>% pull(weight) - delta
+    next_upper <- weight_metrics %>% filter(rowid == 2) %>% pull(weight)
+    
+  } else if (best_index == 5) {
+    
+    next_lower <- weight_metrics %>% filter(rowid == 4) %>% pull(weight)
+    next_upper <- weight_metrics %>% filter(rowid == 5) %>% pull(weight) + delta
+    
+  } else {
+    
+    next_lower <- weight_metrics %>% filter(rowid == best_index - 1) %>% pull(weight)
+    next_upper <- weight_metrics %>% filter(rowid == best_index + 1) %>% pull(weight)
+    
+  }
+  
+  # check for % difference between best and worst rmse
+  worst_rmse <-
+    weight_metrics %>%
+    filter(rmse == max(rmse)) %>%
+    pull(rmse)
+  
+  pct_diff <- abs(worst_rmse - best_rmse)/mean(c(best_rmse, worst_rmse))
+  
+  # note whether or not to continue to search for better weights, based off difference threshold
+  if (pct_diff < 0.01) {
+    
+    search_suggestion <- "final"
+    
+  } else {
+    
+    search_suggestion <- "not final"
+    
+  }
+  
+  # summarise in 1-row tibble
+  weight_summary <- 
+    tibble(metric = metric,
+           weight = best_weight,
+           rmse = best_rmse,
+           next_lower = next_lower,
+           next_upper = next_upper,
+           pct_diff = pct_diff,
+           search_suggestion = search_suggestion)
+  
+  return(weight_summary)
+
+}
+
 # function to update the weight for exponentional decay by date function
 update_date_weight <- function() {
   
@@ -283,7 +385,12 @@ update_date_weight <- function() {
                                             ..1)) %>%
     bind_cols(weight = weights)
   
-  return(weight_map)
+  # summarise results based on best rmse
+  weight_summary <- 
+    weight_map %>%
+    summarise_weights("date_weight")
+  
+  return(weight_summary)
   
 }
 
@@ -322,7 +429,12 @@ update_sample_weight <- function() {
                                             pull_date_weight())) %>%
     bind_cols(weight = weights)
   
-  return(weight_map)
+  # summarise results based on best rmse
+  weight_summary <- 
+    weight_map %>%
+    summarise_weights("sample_size")
+  
+  return(weight_summary)
   
 }
 
@@ -330,10 +442,6 @@ update_sample_weight <- function() {
 
 plan(multisession, workers = 8)
 plan(sequential)
-
-tictoc::tic()
-test <- update_sample_weight()
-tictoc::toc()
 
 tictoc::tic()
 test <- update_date_weight()
