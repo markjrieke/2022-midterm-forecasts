@@ -1,6 +1,7 @@
 # libraries ----
 library(tidyverse)
 library(lubridate)
+library(furrr)
 library(riekelib)
 
 # setup parallel processing (Windows) ----
@@ -275,13 +276,13 @@ update_date_weight <- function() {
   # map inputs to generic_ballot_average
   weight_map <-
     try_list %>%
-    pmap_dfr(~generic_ballot_average(..2, 
-                                     ..3, 
-                                     pull_pollster_weights(),
-                                     pull_sample_weight(),
-                                     pull_population_weights(),
-                                     pull_methodology_weights(),
-                                     ..1)) %>%
+    future_pmap_dfr(~generic_ballot_average(..2,
+                                            ..3,
+                                            pull_pollster_weights(),
+                                            pull_sample_weight(),
+                                            pull_population_weights(),
+                                            pull_methodology_weights(),
+                                            ..1)) %>%
     bind_cols(weight = weights)
   
   return(weight_map)
@@ -313,17 +314,25 @@ update_sample_weight <- function() {
   # map inputs to generic_ballot_average
   weight_map <-
     try_list %>%
-    pmap_dfr(~generic_ballot_average(..2,
-                                     ..3,
-                                     pull_pollster_weights(),
-                                     ..1,
-                                     pull_population_weights(),
-                                     pull_methodology_weights(),
-                                     pull_date_weight())) %>%
+    future_pmap_dfr(~generic_ballot_average(..2,
+                                            ..3,
+                                            pull_pollster_weights(),
+                                            ..1,
+                                            pull_population_weights(),
+                                            pull_methodology_weights(),
+                                            pull_date_weight())) %>%
     bind_cols(weight = weights)
 }
 
-test <- update_sample_weight()
+##################### EVERYTHING BELOW HERE IS BUNK #######################
+
+plan(multisession, workers = 8)
+plan(sequential)
+
+tictoc::tic()
+test <- update_date_weight()
+tictoc::toc()
+
 
 test %>%
   select(-starts_with("ci")) %>%
@@ -334,7 +343,7 @@ test %>%
              color = as.character(weight))) +
   geom_point()
 
-##################### EVERYTHING BELOW HERE IS BUNK #######################
+
 
 # map a set of 5 weights to the weight_date_mapper function
 weight_date <- function(lower_bound, upper_bound) {
