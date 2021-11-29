@@ -129,13 +129,16 @@ rm(begin_2018, begin_2020, final_2018, final_2020, path)
 #' @param population_weight tibble of weights by survey population
 #' @param method_weight tibble of weights by survey methodology
 #' @param date_weight weight for exponential decay function
-generic_average <- function(begin_date,
-                            final_date,
-                            pollster_weight,
-                            sample_weight,
-                            population_weight,
-                            method_weight,
-                            date_weight) {
+generic_ballot_average <- function(begin_date,
+                                   final_date,
+                                   pollster_weight,
+                                   sample_weight,
+                                   population_weight,
+                                   method_weight,
+                                   date_weight) {
+  
+  # update console                         
+  message(paste("Creating poll average for", final_date))
   
   generic_polls %>%
   
@@ -233,16 +236,19 @@ pull_sample_weight <- function() {
     pull(weight)
   
 }
-  
-begin_date <- ymd("2016-11-04")
-final_date <- ymd("2018-11-06")
 
-test <- generic_mapper(begin_date, final_date,
-                       pull_pollster_weights(),
-                       pull_sample_weight(),
-                       pull_population_weights(),
-                       pull_methodology_weights(),
-                       pull_date_weight())
+# create sequence of new weights to try
+sequence_weights <- function(lower_bound, upper_bound) {
+  
+  try_weight <- seq(lower_bound, upper_bound, length.out = 5)
+  try_weight_2018 <- try_weight %>% rep(571) %>% as_tibble() %>% arrange(value) %>% pull(value)
+  try_weight_2020 <- try_weight %>% rep(582) %>% as_tibble() %>% arrange(value) %>% pull(value)
+  
+  weights <- c(try_weight_2018, try_weight_2020)
+  
+  return(weights)
+  
+}
 
 update_date_weight <- function() {
   
@@ -258,34 +264,81 @@ update_date_weight <- function() {
     pull(next_upper)
   
   # create sequence of new weights to try
-  try_weight <- seq(lower_bound, upper_bound, length.out = 5)
-  try_weight_2018 <- try_weight %>% rep(571) %>% as_tibble() %>% arrange(value) %>% pull(value)
-  try_weight_2020 <- try_weight %>% rep(582) %>% as_tibble() %>% arrange(value) %>% pull(value)
+  weights <- sequence_weights(lower_bound, upper_bound)
   
   # create a list of vectors to map against
+  try_list <-
+    list(weights = weights,
+         begin = begin,
+         final = final)
+  
+  # map inputs to generic_ballot_average
+  weight_map <-
+    try_list %>%
+    pmap_dfr(~generic_ballot_average(..2, 
+                                     ..3, 
+                                     pull_pollster_weights(),
+                                     pull_sample_weight(),
+                                     pull_population_weights(),
+                                     pull_methodology_weights(),
+                                     ..1)) %>%
+    bind_cols(weight = weights)
+  
+  return(weight_map)
   
 }
 
+update_sample_weight <- function() {
+  
+  # generate lower & upper bounds
+  lower_bound <- 
+    variable_weights %>%
+    filter(variable == "sample_size") %>%
+    pull(next_lower)
+  
+  upper_bound <-
+    variable_weights %>%
+    filter(variable == "sample_size") %>%
+    pull(next_upper)
+  
+  # create sequence of new weights to try
+  weights <- sequence_weights(lower_bound, upper_bound)
+  
+  # create a list of vectors to map against
+  try_list <-
+    list(weights = weights,
+         begin = begin,
+         final = final) 
+  
+  # map inputs to generic_ballot_average
+  weight_map <-
+    try_list %>%
+    pmap_dfr(~generic_ballot_average(..2,
+                                     ..3,
+                                     pull_pollster_weights(),
+                                     ..1,
+                                     pull_population_weights(),
+                                     pull_methodology_weights(),
+                                     pull_date_weight())) %>%
+    bind_cols(weight = weights)
+}
 
+test <- update_sample_weight()
 
+test %>%
+  select(-starts_with("ci")) %>%
+  filter(weight != 0,
+         date == "2018-11-06") %>%
+  ggplot(aes(x = date,
+             y = dem2pv,
+             color = as.character(weight))) +
+  geom_point()
+
+##################### EVERYTHING BELOW HERE IS BUNK #######################
 
 # map a set of 5 weights to the weight_date_mapper function
 weight_date <- function(lower_bound, upper_bound) {
   
-  # create sequence of bounds to try
-  try_weight <- seq(lower_bound, upper_bound, length.out = 5)
-  
-  # create vectors for 2018 cycle
-  begin_2018 <- rep(ymd("2016-11-04"), 571)
-  final_2018 <- seq(ymd("2017-04-15"), ymd("2018-11-06"), "days")
-  
-  # create vectors for 2020 cycle
-  begin_2020 <- rep(ymd("2018-11-07"), 582)
-  final_2020 <- seq(ymd("2019-04-01"), ymd("2020-11-02"), "days")
-  
-  # convert try_weight to 2018 & 2020 variants
-  try_weight_2018 <- try_weight %>% rep(571) %>% as_tibble() %>% arrange(value) %>% pull(value)
-  try_weight_2020 <- try_weight %>% rep(582) %>% as_tibble() %>% arrange(value) %>% pull(value)
   
   # create list of vectors to map against
   try_list <-
