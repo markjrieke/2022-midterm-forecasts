@@ -269,6 +269,26 @@ pull_try_weight <- function(variable_name, new_weight, type) {
   
 }
 
+# function to pull the next lower or next upper bound
+pull_bound <- function(variable_name, type) {
+  
+  if (type == "lower") {
+    
+    variable_weights %>%
+      filter(variable == variable_name) %>%
+      pull(next_lower)
+    
+  } else {
+    
+    variable_weights %>%
+      filter(variable == variable_name) %>%
+      pull(next_upper)
+    
+  }
+    
+  
+}
+
 # create sequence of new weights to try
 sequence_weights <- function(lower_bound, upper_bound) {
   
@@ -389,14 +409,12 @@ update_date_weight <- function() {
   
   # generate lower & upper bounds
   lower_bound <- 
-    variable_weights %>%
-    filter(variable == "date_weight") %>%
-    pull(next_lower)
+    "date_weight" %>%
+    pull_bound("lower")
   
-  upper_bound <-
-    variable_weights %>%
-    filter(variable == "date_weight") %>%
-    pull(next_upper)
+  upper_boud <-
+    "date_weight" %>%
+    pull_bound("upper")
   
   # create sequence of new weights to try
   weights <- sequence_weights(lower_bound, upper_bound)
@@ -433,15 +451,13 @@ update_date_weight <- function() {
 update_sample_weight <- function() {
   
   # generate lower & upper bounds
-  lower_bound <- 
-    variable_weights %>%
-    filter(variable == "sample_size") %>%
-    pull(next_lower)
+  lower_bound <-
+    "sample_size" %>%
+    pull_bound("lower")
   
   upper_bound <-
-    variable_weights %>%
-    filter(variable == "sample_size") %>%
-    pull(next_upper)
+    "sample_size" %>%
+    pull_bound("upper")
   
   # create sequence of new weights to try
   weights <- sequence_weights(lower_bound, upper_bound)
@@ -478,15 +494,13 @@ update_sample_weight <- function() {
 update_pollster_weight <- function(pollster) {
   
   # generate lower & upper bounds
-  lower_bound <- 
-    variable_weights %>%
-    filter(variable == pollster) %>%
-    pull(next_lower)
+  lower_bound <-
+    pollster %>%
+    pull_bound("lower")
   
   upper_bound <-
-    variable_weights %>%
-    filter(variable == pollster) %>%
-    pull(next_upper)
+    pollster %>%
+    pull_bound("upper")
   
   # create sequence of new weights to try
   weights <- sequence_weights(lower_bound, upper_bound)
@@ -510,14 +524,58 @@ update_pollster_weight <- function(pollster) {
     bind_cols(weight = weights)
   
   # summarise results based on best rmse
-  #weight_summary <-
-  #  weight_map %>%
-  #  summarise_weights(pollster)
+  weight_summary <-
+    weight_map %>%
+    summarise_weights(pollster)
   
   # update rmse tracker
-  #weight_summary %>% update_rmse_tracker
+  weight_summary %>% update_rmse_tracker()
   
-  return(weight_map)
+}
+
+# function to update a pollster's offset
+update_pollster_offset <- function(pollster) {
+  
+  # generate variable name
+  offset <- paste(pollster, "Offset")
+  
+  # generate lower & upper bounds
+  lower_bound <-
+    offset %>%
+    pull_bound("lower")
+  
+  upper_bound <- 
+    offset %>%
+    pull_bound("upper")
+  
+  # create sequence of new weights to try
+  weights <- sequence_weights(lower_bound, upper_bound)
+  
+  # create a list of vetors to map against
+  try_list <-
+    list(weights = weights,
+         begin = begin,
+         final = final)
+  
+  # map inputs to generic_ballot_average
+  weight_map <-
+    try_list %>%
+    future_pmap_dfr(~generic_ballot_average(..2,
+                                            ..3,
+                                            pull_try_weight(offset, ..1, "pollster"),
+                                            pull_sample_weight(),
+                                            pull_population_weights(variable_weights),
+                                            pull_methodology_weights(variable_weights),
+                                            pull_date_weight())) %>%
+    bind_cols(weight = weights) 
+  
+  # summarise results based on best rmse
+  weight_summary <- 
+    weight_map %>%
+    summarise_weights(offset)
+  
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker()
   
 }
 
