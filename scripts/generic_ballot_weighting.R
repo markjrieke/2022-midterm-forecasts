@@ -138,9 +138,6 @@ generic_ballot_average <- function(begin_date,
                                    method_weight,
                                    date_weight) {
   
-  # update console                         
-  message(paste("Creating poll average for", final_date))
-  
   generic_polls %>%
   
     # filter to just the relevant dates  
