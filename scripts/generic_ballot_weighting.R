@@ -457,107 +457,58 @@ test %>%
              color = as.character(weight))) +
   geom_point()
 
+# add to rmse_tracker df
+iteration <- 
+  rmse_tracker %>%
+  filter(iteration == max(iteration)) %>%
+  pull(iteration)
+
+rmse_tracker <-
+  bind_rows(rmse_tracker,
+            tibble(iteration = iteration + 1,
+                   metric = "date_weight",
+                   weight = best_weight,
+                   rmse = best_rmse,
+                   next_lower = next_lower,
+                   next_upper = next_upper))
 
 
-# map a set of 5 weights to the weight_date_mapper function
-weight_date <- function(lower_bound, upper_bound) {
-  
-  
-  # create list of vectors to map against
-  try_list <-
-    list(weights = c(try_weight_2018, try_weight_2020),
-         begin = c(rep(begin_2018, 5), rep(begin_2020, 5)),
-         final = c(rep(final_2018, 5), rep(final_2020, 5)))
-  
-  # map inputs to weight_date_mapper, return tibble with date, weight, & estimated dem2pv
-  weight_map <- 
-    try_list %>%
-    pmap_dfr(~weight_date_mapper(..2, ..3, ..1))
-  
-  # create tibble of rmse for each weight evaluated
-  weight_metrics <-
-    weight_map %>%  
-    
-    # join fte trendline
-    left_join(generic_trend, by = "date") %>%
-    drop_na() %>%
-    rename(est = dem2pv.x,
-           act = dem2pv.y) %>%
-    select(-date) %>%
-    
-    # calculated each weights rmse
-    group_by(weight) %>%
-    nest() %>%
-    mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
-    unnest(rmse) %>%
-    ungroup() %>%
-    rowid_to_column() %>%
-    select(rowid, weight, .estimate) %>%
-    rename(rmse = .estimate)
-  
-  # find weight that gives smallest rmse
-  best_weight <- 
-    weight_metrics %>%
-    filter(rmse == min(rmse)) %>%
-    pull(weight)
-  
-  # pull the smallest rmse for tracking
-  best_rmse <- 
-    weight_metrics %>%
-    filter(rmse == min(rmse)) %>%
-    pull(rmse)
-  
-  # pull the row index that gave the best rmse
-  best_index <- 
-    weight_metrics %>%
-    filter(weight == best_weight) %>%
-    pull(rowid)
-  
-  # get the step between each weight 
-  delta <-
-    weight_metrics %>%
-    mutate(delta = weight - lag(weight)) %>%
-    drop_na() %>%
-    distinct(delta) %>%
-    pull(delta)
-  
-  # assign new lower & upper bounds
-  if (best_index == 1) {
-  
-    next_lower <- weight_metrics %>% filter(rowid == 1) %>% pull(weight) - delta
-    next_upper <- weight_metrics %>% filter(rowid == 2) %>% pull(weight)
-    
-  } else if (best_index == 5) {
-    
-    next_lower <- weight_metrics %>% filter(rowid == 4) %>% pull(weight)
-    next_upper <- weight_metrics %>% filter(rowid == 5) %>% pull(weight) + delta
-    
-  } else {
-    
-    next_lower <- weight_metrics %>% filter(rowid == best_index - 1) %>% pull(weight)
-    next_upper <- weight_metrics %>% filter(rowid == best_index + 1) %>% pull(weight)
-    
-  }
 
-  # add to rmse_tracker df
-  iteration <- 
-    rmse_tracker %>%
-    filter(iteration == max(iteration)) %>%
-    pull(iteration)
-  
-  rmse_tracker <-
-    bind_rows(rmse_tracker,
-              tibble(iteration = iteration + 1,
-                     metric = "date_weight",
-                     weight = best_weight,
-                     rmse = best_rmse,
-                     next_lower = next_lower,
-                     next_upper = next_upper))
-  
-}
 
-test
+# initialize rmse tracker - get baseline predictions
+baseline <- 
+  list(begin = begin,
+     final = final) %>%
+  pmap_dfr(~generic_ballot_average(..1,
+                                   ..2,
+                                   pull_pollster_weights(),
+                                   pull_sample_weight(),
+                                   pull_population_weights(),
+                                   pull_methodology_weights(),
+                                   pull_date_weight()))
 
+# initialize rmse tracker - build baseline tibble
+baseline %>%
+  select(-starts_with("ci")) %>%
+  left_join(generic_trend, by = "date") %>%
+  rename(est = dem2pv.x,
+         act = dem2pv.y) %>%
+  select(-date) %>%
+  nest(data = everything()) %>%
+  mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
+  unnest(rmse) %>%
+  select(.estimate) %>%
+  rename(rmse = .estimate) %>%
+  mutate(metric = "baseline",
+         weight = 0,
+         next_lower = 0,
+         next_upper = 0,
+         pct_diff = 0,
+         search_suggestion = "baseline") %>%
+  relocate(rmse, .after = weight)
+
+test %>% 
+  summarise_weights("date_weight")
 
 
 
