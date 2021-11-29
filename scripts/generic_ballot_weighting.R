@@ -102,7 +102,10 @@ variable_weights <-
            weight = 1,
            next_lower = 0,
            next_upper = 1)
-  )
+  ) %>%
+  
+  # initialize with not final as the search suggestion for each variable
+  bind_cols(search_suggestion = "not final")
 
 # create vectors for 2018 cycle
 begin_2018 <- rep(ymd("2016-11-04"), 571)
@@ -180,14 +183,14 @@ generic_ballot_average <- function(begin_date,
 }
 
 # construct a tibble for pollster weights and offsets
-pull_pollster_weights <- function() {
+pull_pollster_weights <- function(.data) {
   
-  variable_weights %>%
+  .data %>%
     filter(str_detect(variable, " Offset")) %>%
     select(variable, weight) %>%
     rename(offset = weight) %>%
     mutate(variable = str_remove(variable, " Offset")) %>%
-    left_join(variable_weights, by = "variable") %>%
+    left_join(.data, by = "variable") %>%
     select(-starts_with("next")) %>%
     rename(pollster = variable,
            pollster_offset = offset,
@@ -196,9 +199,9 @@ pull_pollster_weights <- function() {
 } 
   
 # construct a tibble for weights by survey population
-pull_population_weights <- function() {
+pull_population_weights <- function(.data) {
   
-  variable_weights %>%
+  .data %>%
     filter(variable %in% c("rv", "lv", "a", "v")) %>%
     select(variable, weight) %>%
     rename(population_full = variable,
@@ -207,9 +210,9 @@ pull_population_weights <- function() {
 } 
   
 # construct a tibble for weights by survey methodology
-pull_methodology_weights <- function() {
+pull_methodology_weights <- function(.data) {
   
-  variable_weights %>%
+  .data %>%
     filter(variable %in% c(methods, "Other Method")) %>%
     select(variable, weight) %>%
     rename(methodology = variable,
@@ -232,6 +235,37 @@ pull_sample_weight <- function() {
   variable_weights %>%
     filter(variable == "sample_size") %>%
     pull(weight)
+  
+}
+
+# util function to create a temporary tibble replacing a current weight with a "try" weight
+pull_try_weight <- function(variable_name, new_weight, type) {
+  
+  # create a new weight table to pass to one of the pull functions
+  new_weight_tibble <- 
+    variable_weights %>%
+    filter(variable != variable_name) %>%
+    bind_rows(tibble(variable = variable_name,
+                     weight = new_weight,
+                     next_lower = 0,
+                     next_upper = 0)) 
+  
+  # pass new weight table to one of the pull functions based on param type
+  if (type == "pollster") {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_pollster_weights() 
+    
+  } else if (type == "population") {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_population_weights()
+    
+  } else {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_methodology_weights()
+    
+  }
+  
+  return(pulled_tibble)
   
 }
 
@@ -350,7 +384,7 @@ summarise_weights <- function(.data, metric) {
 
 }
 
-# function to update the weight for exponentional decay by date function
+# function to update the weight for exponential decay by date function
 update_date_weight <- function() {
   
   # generate lower & upper bounds
@@ -378,10 +412,10 @@ update_date_weight <- function() {
     try_list %>%
     future_pmap_dfr(~generic_ballot_average(..2,
                                             ..3,
-                                            pull_pollster_weights(),
+                                            pull_pollster_weights(variable_weights),
                                             pull_sample_weight(),
-                                            pull_population_weights(),
-                                            pull_methodology_weights(),
+                                            pull_population_weights(variable_weights),
+                                            pull_methodology_weights(variable_weights),
                                             ..1)) %>%
     bind_cols(weight = weights)
   
@@ -390,7 +424,8 @@ update_date_weight <- function() {
     weight_map %>%
     summarise_weights("date_weight")
   
-  return(weight_summary)
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker()
   
 }
 
@@ -422,10 +457,10 @@ update_sample_weight <- function() {
     try_list %>%
     future_pmap_dfr(~generic_ballot_average(..2,
                                             ..3,
-                                            pull_pollster_weights(),
+                                            pull_pollster_weights(variable_weights),
                                             ..1,
-                                            pull_population_weights(),
-                                            pull_methodology_weights(),
+                                            pull_population_weights(variable_weights),
+                                            pull_methodology_weights(variable_weights),
                                             pull_date_weight())) %>%
     bind_cols(weight = weights)
   
@@ -434,61 +469,106 @@ update_sample_weight <- function() {
     weight_map %>%
     summarise_weights("sample_size")
   
-  return(weight_summary)
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker()
   
 }
 
-##################### EVERYTHING BELOW HERE IS BUNK #######################
+# function to update the weight based on an individual pollster
+update_pollster_weight <- function(pollster) {
+  
+  # generate lower & upper bounds
+  lower_bound <- 
+    variable_weights %>%
+    filter(variable == pollster) %>%
+    pull(next_lower)
+  
+  upper_bound <-
+    variable_weights %>%
+    filter(variable == pollster) %>%
+    pull(next_upper)
+  
+  # create sequence of new weights to try
+  weights <- sequence_weights(lower_bound, upper_bound)
+  
+  # create a list of vectors to map against
+  try_list <-
+    list(weights = weights,
+         begin = begin,
+         final = final) 
+  
+  # map inputs to generic_ballot_average
+  weight_map <-
+    try_list %>%
+    future_pmap_dfr(~generic_ballot_average(..2,
+                                            ..3,
+                                            pull_try_weight(pollster, ..1, "pollster"),
+                                            pull_sample_weight(),
+                                            pull_population_weights(variable_weights),
+                                            pull_methodology_weights(variable_weights),
+                                            pull_date_weight())) %>%
+    bind_cols(weight = weights)
+  
+  # summarise results based on best rmse
+  #weight_summary <-
+  #  weight_map %>%
+  #  summarise_weights(pollster)
+  
+  # update rmse tracker
+  #weight_summary %>% update_rmse_tracker
+  
+  return(weight_map)
+  
+}
+
+
+##################### TESTING ZONE DAWG #######################
+
+
+variable_weights %>%
+  filter(variable != "Ipsos") %>%
+  bind_rows(tibble(variable = "Ipsos",
+                   weight = 0.75,
+                   next_lower = 0,
+                   next_upper = 0)) %>%
+  pull_pollster_weights()
+
+pull_try_weight("Live Phone", 0.75, "methodology")
+
 
 plan(multisession, workers = 8)
-plan(sequential)
 
 tictoc::tic()
-test <- update_date_weight()
+ipsos_test <- update_pollster_weight("Ipsos")
 tictoc::toc()
 
-
-test %>%
+ipsos_test %>%
+  left_join(generic_trend, by = "date") %>%
   select(-starts_with("ci")) %>%
-  filter(weight != 0,
-         date == "2018-11-06") %>%
-  ggplot(aes(x = date,
-             y = dem2pv,
-             color = as.character(weight))) +
-  geom_point()
-
-# add to rmse_tracker df
-iteration <- 
-  rmse_tracker %>%
-  filter(iteration == max(iteration)) %>%
-  pull(iteration)
-
-rmse_tracker <-
-  bind_rows(rmse_tracker,
-            tibble(iteration = iteration + 1,
-                   metric = "date_weight",
-                   weight = best_weight,
-                   rmse = best_rmse,
-                   next_lower = next_lower,
-                   next_upper = next_upper))
-
-
+  rename(est = dem2pv.x,
+         act = dem2pv.y) %>%
+  ggplot(aes(x = date)) +
+  geom_line(aes(y = est,
+                color = as.character(weight))) +
+  geom_line(aes(y = act),
+            size = 1.1)
 
 
 # initialize rmse tracker - get baseline predictions
 baseline <- 
   list(begin = begin,
-     final = final) %>%
+       final = final) %>%
   pmap_dfr(~generic_ballot_average(..1,
                                    ..2,
-                                   pull_pollster_weights(),
+                                   pull_pollster_weights(variable_weights),
                                    pull_sample_weight(),
-                                   pull_population_weights(),
-                                   pull_methodology_weights(),
+                                   pull_population_weights(variable_weights),
+                                   pull_methodology_weights(variable_weights),
                                    pull_date_weight()))
 
 # initialize rmse tracker - build baseline tibble
-baseline %>%
+rmse_tracker <- 
+  baseline %>%
   select(-starts_with("ci")) %>%
   left_join(generic_trend, by = "date") %>%
   rename(est = dem2pv.x,
@@ -499,7 +579,8 @@ baseline %>%
   unnest(rmse) %>%
   select(.estimate) %>%
   rename(rmse = .estimate) %>%
-  mutate(metric = "baseline",
+  mutate(index = 0, 
+         metric = "baseline",
          weight = 0,
          next_lower = 0,
          next_upper = 0,
@@ -507,15 +588,53 @@ baseline %>%
          search_suggestion = "baseline") %>%
   relocate(rmse, .after = weight)
 
-test %>% 
+
+
+test <- 
+  test %>% 
   summarise_weights("date_weight")
 
+# add metrics to running list of rmse
+update_rmse_tracker <- function(.data) {
+  
+  # <<- interacts with the global object 
+  rmse_tracker <<- 
+    rmse_tracker %>%
+    
+    # pull current index
+    filter(index == max(index)) %>%
+    select(index) %>%
+    
+    # increase index
+    mutate(index = index + 1) %>%
 
+    # add index to data
+    bind_cols(.data) %>%
+    
+    # bind back to rmse_tracker
+    bind_rows(rmse_tracker) %>%
+    arrange(index)
+  
+}
 
+test %>% update_rmse_tracker()
 
+rmse_tracker
 
+test_2020 <- 
+  list(begin = begin_2020,
+       final = final_2020) %>%
+  pmap_dfr(~generic_ballot_average(..1,
+                                   ..2,
+                                   pull_pollster_weights(variable_weights),
+                                   pull_sample_weight(),
+                                   pull_population_weights(variable_weights),
+                                   pull_methodology_weights(variable_weights),
+                                   pull_date_weight()))
 
-
+test_2020 %>%
+  ggplot(aes(x = date, y = dem2pv)) +
+  geom_line()
   
 
 
