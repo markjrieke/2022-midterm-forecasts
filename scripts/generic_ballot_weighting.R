@@ -248,6 +248,7 @@ sequence_weights <- function(lower_bound, upper_bound) {
   
 }
 
+# function to update the weight for exponentional decay by date function
 update_date_weight <- function() {
   
   # generate lower & upper bounds
@@ -286,6 +287,7 @@ update_date_weight <- function() {
   
 }
 
+# function to update the weight based on sample size
 update_sample_weight <- function() {
   
   # generate lower & upper bounds
@@ -319,12 +321,19 @@ update_sample_weight <- function() {
                                             pull_methodology_weights(),
                                             pull_date_weight())) %>%
     bind_cols(weight = weights)
+  
+  return(weight_map)
+  
 }
 
 ##################### EVERYTHING BELOW HERE IS BUNK #######################
 
 plan(multisession, workers = 8)
 plan(sequential)
+
+tictoc::tic()
+test <- update_sample_weight()
+tictoc::toc()
 
 tictoc::tic()
 test <- update_date_weight()
