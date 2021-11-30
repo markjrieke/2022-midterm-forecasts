@@ -613,6 +613,37 @@ update_population_weight <- function(population) {
   
 }
 
+# function to update weight based on methodology
+update_methodology_weight <- function(methodology) {
+  
+  # create a vector of weights to bind to results
+  weights <- vectorize_weights(methodology)
+  
+  # create a list of vectors to map against
+  try_list <- weights %>% create_try_list()
+  
+  # map inputs to generic_ballot_average
+  weight_map <-
+    try_list %>%
+    future_pmap_dfr(~generic_ballot_average(..2,
+                                            ..3,
+                                            pull_pollster_weights(variable_weights),
+                                            pull_sample_weight(),
+                                            pull_population_weights(variable_weights),
+                                            pull_try_weight(methodology, ..1, "methodology"),
+                                            pull_date_weight())) %>%
+    bind_cols(weight = weights)
+  
+  # summarise results based on best rmse
+  weight_summary <-
+    weight_map %>%
+    summarise_weights(methodology)
+  
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker()
+  
+}
+
 
 ##################### TESTING ZONE DAWG #######################
 
