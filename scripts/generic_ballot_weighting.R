@@ -302,6 +302,37 @@ sequence_weights <- function(lower_bound, upper_bound) {
   
 }
 
+# create vector of weights to be passed to try_list
+vectorize_weights <- function(variable_name) {
+  
+  # generate lower & upper bounds
+  lower_bound <- 
+    variable_name %>%
+    pull_bound("lower")
+  
+  upper_bound <-
+    variable_name %>%
+    pull_bound("upper")
+  
+  # create a sequence of new weights to try
+  weights <- sequence_weights(lower_bound, upper_bound)
+  
+  return(weights)
+  
+}
+
+# create list of inputs to map to generic_ballot_average
+create_try_list <- function(weights) {
+  
+  try_list <- 
+    list(weights = weights,
+         begin = begin,
+         final = final)
+  
+  return(try_list)
+  
+}
+
 # summarise results & recommend new bounds
 summarise_weights <- function(.data, metric) {
   
@@ -430,23 +461,11 @@ update_rmse_tracker <- function(.data) {
 # function to update the weight for exponential decay by date function
 update_date_weight <- function() {
   
-  # generate lower & upper bounds
-  lower_bound <- 
-    "date_weight" %>%
-    pull_bound("lower")
-  
-  upper_boud <-
-    "date_weight" %>%
-    pull_bound("upper")
-  
-  # create sequence of new weights to try
-  weights <- sequence_weights(lower_bound, upper_bound)
+  # create a vector of weights to bind to results
+  weights <- vectorize_weights("date_weight")
   
   # create a list of vectors to map against
-  try_list <-
-    list(weights = weights,
-         begin = begin,
-         final = final)
+  try_list <- weights %>% create_try_list()
   
   # map inputs to generic_ballot_average
   weight_map <-
@@ -473,23 +492,11 @@ update_date_weight <- function() {
 # function to update the weight based on sample size
 update_sample_weight <- function() {
   
-  # generate lower & upper bounds
-  lower_bound <-
-    "sample_size" %>%
-    pull_bound("lower")
-  
-  upper_bound <-
-    "sample_size" %>%
-    pull_bound("upper")
-  
-  # create sequence of new weights to try
-  weights <- sequence_weights(lower_bound, upper_bound)
+  # create a vector of weights to bind to results
+  weights <- vectorize_weights("sample_size")
   
   # create a list of vectors to map against
-  try_list <-
-    list(weights = weights,
-         begin = begin,
-         final = final) 
+  try_list <- weights %>% create_try_list()
   
   # map inputs to generic_ballot_average
   weight_map <-
@@ -516,23 +523,11 @@ update_sample_weight <- function() {
 # function to update the weight based on an individual pollster
 update_pollster_weight <- function(pollster) {
   
-  # generate lower & upper bounds
-  lower_bound <-
-    pollster %>%
-    pull_bound("lower")
-  
-  upper_bound <-
-    pollster %>%
-    pull_bound("upper")
-  
-  # create sequence of new weights to try
-  weights <- sequence_weights(lower_bound, upper_bound)
+  # create a vector of weights to bind to results
+  weights <- vectorize_weights(pollster)
   
   # create a list of vectors to map against
-  try_list <-
-    list(weights = weights,
-         begin = begin,
-         final = final) 
+  try_list <- weights %>% create_try_list()
   
   # map inputs to generic_ballot_average
   weight_map <-
@@ -559,26 +554,11 @@ update_pollster_weight <- function(pollster) {
 # function to update a pollster's offset
 update_pollster_offset <- function(pollster) {
   
-  # generate variable name
-  offset <- paste(pollster, "Offset")
-  
-  # generate lower & upper bounds
-  lower_bound <-
-    offset %>%
-    pull_bound("lower")
-  
-  upper_bound <- 
-    offset %>%
-    pull_bound("upper")
-  
-  # create sequence of new weights to try
-  weights <- sequence_weights(lower_bound, upper_bound)
+  # create a vector of weights to bind to results
+  weights <- vectorize_weights(offset)
   
   # create a list of vetors to map against
-  try_list <-
-    list(weights = weights,
-         begin = begin,
-         final = final)
+  try_list <- weights %>% create_try_list()
   
   # map inputs to generic_ballot_average
   weight_map <-
@@ -605,23 +585,11 @@ update_pollster_offset <- function(pollster) {
 # function to update weight based on population type
 update_population_weight <- function(population) {
   
-  # generate lower & upper bounds
-  lower_bound <-
-    population %>%
-    pull_bound("lower")
-  
-  upper_bound <-
-    population %>%
-    pull_bound("upper")
-  
-  # create sequence of new weights to try
-  weights <- sequence_weights(lower_bound, upper_bound)
+  # create a vector of weights to bind to results
+  weights <- vectorize_weights(population)
   
   # create a list of vectors to map against
-  try_list <-
-    list(weights = weights,
-         begin = begin,
-         final = final)
+  try_list <- weights %>% create_try_list()
   
   # map inputs to generic_ballot_average
   weight_map <-
