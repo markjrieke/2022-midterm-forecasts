@@ -186,6 +186,15 @@ generic_ballot_average <- function(begin_date,
 
 #################### UTIL FUNCTIONS #################### 
 
+# check if variable_weight search suggestion is final or ought to continue
+check_suggestion <- function(variable_name) {
+  
+  variable_weights %>%
+    filter(variable == variable_name) %>%
+    pull(search_suggestion)
+  
+}
+
 # construct a tibble for pollster weights and offsets
 pull_pollster_weights <- function(.data) {
   
@@ -496,78 +505,105 @@ update_tables <- function(.data, variable_name) {
 # function to update the weight for exponential decay by date function
 update_date_weight <- function() {
   
-  # create a vector of weights to bind to results
-  weights <- vectorize_weights("date_weight")
-  
-  # create a list of vectors to map against
-  try_list <- weights %>% create_try_list()
-  
-  # map inputs to generic_ballot_average
-  weight_map <-
-    try_list %>%
-    future_pmap_dfr(~generic_ballot_average(..2,
-                                            ..3,
-                                            pull_pollster_weights(variable_weights),
-                                            pull_sample_weight(),
-                                            pull_population_weights(variable_weights),
-                                            pull_methodology_weights(variable_weights),
-                                            ..1)) %>%
-    bind_cols(weight = weights)
-  
-  # update rmse & variable weight tables
-  weight_map %>% update_tables("date_weight")
+  # do not evaluate if weight is final
+  if (check_suggestion("date_weight") == "final") {
+    
+    message("date_weight marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- vectorize_weights("date_weight")
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic_ballot_average
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~generic_ballot_average(..2,
+                                              ..3,
+                                              pull_pollster_weights(variable_weights),
+                                              pull_sample_weight(),
+                                              pull_population_weights(variable_weights),
+                                              pull_methodology_weights(variable_weights),
+                                              ..1)) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables("date_weight")
+    
+  }
   
 }
 
 # function to update the weight based on sample size
 update_sample_weight <- function() {
   
-  # create a vector of weights to bind to results
-  weights <- vectorize_weights("sample_size")
-  
-  # create a list of vectors to map against
-  try_list <- weights %>% create_try_list()
-  
-  # map inputs to generic_ballot_average
-  weight_map <-
-    try_list %>%
-    future_pmap_dfr(~generic_ballot_average(..2,
-                                            ..3,
-                                            pull_pollster_weights(variable_weights),
-                                            ..1,
-                                            pull_population_weights(variable_weights),
-                                            pull_methodology_weights(variable_weights),
-                                            pull_date_weight())) %>%
-    bind_cols(weight = weights)
-  
-  # update rmse & variable weight tables
-  weight_map %>% update_tables("sample_size")
+  # do not evaluate if weight is final
+  if (check_suggestion("sample_size") == "final") {
+    
+    message("sample_size marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- vectorize_weights("sample_size")
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic_ballot_average
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~generic_ballot_average(..2,
+                                              ..3,
+                                              pull_pollster_weights(variable_weights),
+                                              ..1,
+                                              pull_population_weights(variable_weights),
+                                              pull_methodology_weights(variable_weights),
+                                              pull_date_weight())) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables("sample_size")
+    
+  }
   
 }
 
 # function to update the weight based on an individual pollster
 update_pollster_weight <- function(pollster) {
   
-  # create a vector of weights to bind to results
-  weights <- vectorize_weights(pollster)
-  
-  # create a list of vectors to map against
-  try_list <- weights %>% create_try_list()
-  
-  # map inputs to generic_ballot_average
-  weight_map <-
-    try_list %>%
-    future_pmap_dfr(~generic_ballot_average(..2,
-                                            ..3,
-                                            pull_try_weight(pollster, ..1, "pollster"),
-                                            pull_sample_weight(),
-                                            pull_population_weights(variable_weights),
-                                            pull_methodology_weights(variable_weights),
-                                            pull_date_weight())) %>%
-    bind_cols(weight = weights)
-  
-  # update rmse & variable weight tables
-  weight_map %>% update_tables(pollster)
+  # do not evaluate if weight is final
+  if (check_suggestion(pollster) == "final") {
+    
+    message(paste(pollster, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- vectorize_weights(pollster)
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic_ballot_average
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~generic_ballot_average(..2,
+                                              ..3,
+                                              pull_try_weight(pollster, ..1, "pollster"),
+                                              pull_sample_weight(),
+                                              pull_population_weights(variable_weights),
+                                              pull_methodology_weights(variable_weights),
+                                              pull_date_weight())) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables(pollster)
+    
+  }
   
 }
 
@@ -577,84 +613,223 @@ update_pollster_offset <- function(pollster) {
   # create offset variable
   offset <- paste(pollster, "Offset")
   
-  # create a vector of weights to bind to results
-  weights <- vectorize_weights(offset)
-  
-  # create a list of vetors to map against
-  try_list <- weights %>% create_try_list()
-  
-  # map inputs to generic_ballot_average
-  weight_map <-
-    try_list %>%
-    future_pmap_dfr(~generic_ballot_average(..2,
-                                            ..3,
-                                            pull_try_weight(offset, ..1, "pollster"),
-                                            pull_sample_weight(),
-                                            pull_population_weights(variable_weights),
-                                            pull_methodology_weights(variable_weights),
-                                            pull_date_weight())) %>%
-    bind_cols(weight = weights) 
-  
-  # update rmse & variable weight tables
-  weight_map %>% update_tables(offset)
+  # do not evaluate if weight is final
+  if (check_suggestion(offset) == "final") {
+    
+    message(paste(offset, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- vectorize_weights(offset)
+    
+    # create a list of vetors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic_ballot_average
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~generic_ballot_average(..2,
+                                              ..3,
+                                              pull_try_weight(offset, ..1, "pollster"),
+                                              pull_sample_weight(),
+                                              pull_population_weights(variable_weights),
+                                              pull_methodology_weights(variable_weights),
+                                              pull_date_weight())) %>%
+      bind_cols(weight = weights) 
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables(offset)
+    
+  }
   
 }
 
 # function to update weight based on population type
 update_population_weight <- function(population) {
   
-  # create a vector of weights to bind to results
-  weights <- vectorize_weights(population)
-  
-  # create a list of vectors to map against
-  try_list <- weights %>% create_try_list()
-  
-  # map inputs to generic_ballot_average
-  weight_map <-
-    try_list %>%
-    future_pmap_dfr(~generic_ballot_average(..2,
-                                            ..3,
-                                            pull_pollster_weights(variable_weights),
-                                            pull_sample_weight(),
-                                            pull_try_weight(population, ..1, "population"),
-                                            pull_methodology_weights(variable_weights),
-                                            pull_date_weight())) %>%
-    bind_cols(weight = weights)
-  
-  # update rmse & variable weight tables
-  weight_map %>% update_tables(population)
+  # do not evaluate if weight is final
+  if (check_suggestion(population) == "final") {
+    
+    message(paste(population, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- vectorize_weights(population)
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic_ballot_average
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~generic_ballot_average(..2,
+                                              ..3,
+                                              pull_pollster_weights(variable_weights),
+                                              pull_sample_weight(),
+                                              pull_try_weight(population, ..1, "population"),
+                                              pull_methodology_weights(variable_weights),
+                                              pull_date_weight())) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables(population)
+    
+  }
   
 }
 
 # function to update weight based on methodology
 update_methodology_weight <- function(methodology) {
   
-  # create a vector of weights to bind to results
-  weights <- vectorize_weights(methodology)
+  # do not evaluate if weight is final
+  if (check_suggestion(methodology) == "final") {
+    
+    message(paste(methodology, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- vectorize_weights(methodology)
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic_ballot_average
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~generic_ballot_average(..2,
+                                              ..3,
+                                              pull_pollster_weights(variable_weights),
+                                              pull_sample_weight(),
+                                              pull_population_weights(variable_weights),
+                                              pull_try_weight(methodology, ..1, "methodology"),
+                                              pull_date_weight())) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables(methodology)
+    
+  }
   
-  # create a list of vectors to map against
-  try_list <- weights %>% create_try_list()
+}
+
+#################### UPDATE ALL FUNCTION ####################
+
+# util function for messaging user & calling update
+call_update_date <- function() {
   
-  # map inputs to generic_ballot_average
-  weight_map <-
-    try_list %>%
-    future_pmap_dfr(~generic_ballot_average(..2,
-                                            ..3,
-                                            pull_pollster_weights(variable_weights),
-                                            pull_sample_weight(),
-                                            pull_population_weights(variable_weights),
-                                            pull_try_weight(methodology, ..1, "methodology"),
-                                            pull_date_weight())) %>%
-    bind_cols(weight = weights)
+  message("Updating `date_weight`.")
+  tictoc::tic()
+  update_date_weight()
+  tictoc::toc()
+  message("`date_weight` updated.")
+  message()
   
-  # update rmse & variable weight tables
-  weight_map %>% update_tables(methodology)
+}
+
+# util function for messaging user & calling update
+call_update_sample <- function() {
+  
+  message("Updating `sample_weight`.")
+  tictoc::tic()
+  update_sample_weight()
+  tictoc::toc()
+  message("`sample_weight` updated.")
+  message()
+  
+}
+
+# util function for messaging user & calling update
+call_update_pollster <- function(pollster) {
+  
+  message(paste("Updating", pollster, "weight."))
+  tictoc::tic()
+  update_pollster_weight(pollster)
+  tictoc::toc()
+  message(paste(pollster, "updated."))
+  message()
+  
+}
+
+
+update_all <- function() {
+  
+  # determine if you want to start from scratch or read in progress
+  
+  
+  # determine number of updates to be made
+  num_updates <- 
+    variable_weights %>%
+    count(search_suggestion) %>%
+    filter(search_suggestion == "not final") %>%
+    pull(n)
+  
+  # determine the approximate runtime (~75s per variable)
+  runtime <- round(num_updates * 75/60)
+  
+  # ask to proceed
+  message(paste("Updating all variable weights will take approximately", runtime, "minutes."))
+  message("Do you want to continue? (y/n)")
+  response <- readline()
+  
+  message()
+  
+  # abort if N/n
+  if (str_to_lower(response) == "n") {
+    
+    message("Update aborted.")
+    message()
+    
+  } else {
+    
+    # setup futures
+    message("Setting up multisession workers")
+    plan(multisession, workers = 8)
+    
+    # update all variables
+    call_update_date()
+    call_update_sample()
+    c(pollsters, "Other Pollster") %>% map(call_update_pollster)
+    
+   
+    
+    
+    
+  }
   
 }
 
 
 ##################### TESTING ZONE DAWG #######################
 
+
+test_check_wrap <- function(x) {
+  
+  test_check(x)
+  print("everyone should see this")
+  
+}
+
+test_check <- function(x) {
+  
+  if (x == "exit") {
+    
+    stop("specified to exit test check")
+    
+  } else {
+    
+    print("hello!")
+    
+  }
+  
+  print("Only things that pass through will see this")
+  
+}
+
+test_check_wrap("continues")
+test_check_wrap("exit")
 
 variable_weights %>%
   filter(variable != "Ipsos") %>%
@@ -716,6 +891,7 @@ ipsos_test %>%
 # initialize rmse tracker - get baseline predictions
 baseline_begin <- c(begin_2018, begin_2020)
 baseline_final <- c(final_2018, final_2020)
+
 
 baseline <- 
   list(begin = baseline_begin,
