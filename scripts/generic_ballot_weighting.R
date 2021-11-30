@@ -4,6 +4,8 @@ library(lubridate)
 library(furrr)
 library(riekelib)
 
+#################### SETUP ####################
+
 # setup parallel processing (Windows) ----
 num_cores <- parallel::detectCores()
 clusters <- parallel::makePSOCKcluster(num_cores)
@@ -122,7 +124,7 @@ final <- c(rep(final_2018, 5), rep(final_2020, 5))
 # clean up environment
 rm(begin_2018, begin_2020, final_2018, final_2020, path)
 
-# function writing! ----
+#################### GENERIC BALLOT AVERAGE FUNCTION ####################
 
 #' Return the weighted polling average of polls conducted from `begin_date` to `end_date`
 #' 
@@ -181,6 +183,8 @@ generic_ballot_average <- function(begin_date,
     beta_interval(alpha, beta) %>%
     select(date, dem2pv, ci_lower, ci_upper)
 }
+
+#################### UTIL FUNCTIONS #################### 
 
 # construct a tibble for pollster weights and offsets
 pull_pollster_weights <- function(.data) {
@@ -457,6 +461,8 @@ update_rmse_tracker <- function(.data) {
     arrange(index)
   
 }
+
+#################### WEIGHT UPDATE FUNCTIONS ####################
 
 # function to update the weight for exponential decay by date function
 update_date_weight <- function() {
@@ -767,7 +773,8 @@ test_2020 %>%
   geom_line()
   
 
-
+read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv") %>%
+  distinct(url)
 
 
 
