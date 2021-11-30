@@ -579,6 +579,13 @@ update_pollster_offset <- function(pollster) {
   
 }
 
+# function to update weight based on population type
+update_population_weight <- function(population) {
+  
+  
+  
+}
+
 
 ##################### TESTING ZONE DAWG #######################
 
@@ -599,6 +606,34 @@ plan(multisession, workers = 8)
 tictoc::tic()
 ipsos_test <- update_pollster_weight("Ipsos")
 tictoc::toc()
+
+tictoc::tic()
+date_test <- 
+  list(begin = begin,
+     final = final) %>%
+  future_pmap_dfr(~generic_ballot_average(..1,
+                                          ..2,
+                                          pull_pollster_weights(variable_weights),
+                                          pull_sample_weight(),
+                                          pull_population_weights(variable_weights),
+                                          pull_methodology_weights(variable_weights),
+                                          0.75))
+tictoc::toc()
+
+date_test %>%
+  ggplot(aes(x = date)) +
+  geom_ribbon(aes(ymin = ci_lower,
+                  ymax = ci_upper),
+              alpha = 0.2) +
+  geom_line(aes(y = dem2pv),
+            size = 1.2) +
+  geom_point(data = generic_polls,
+             mapping = aes(x = end_date,
+                           y = dem2pv),
+             alpha = 0.25,
+             size = 2)
+
+
 
 ipsos_test %>%
   left_join(generic_trend, by = "date") %>%
