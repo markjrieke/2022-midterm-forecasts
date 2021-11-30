@@ -605,7 +605,43 @@ update_pollster_offset <- function(pollster) {
 # function to update weight based on population type
 update_population_weight <- function(population) {
   
+  # generate lower & upper bounds
+  lower_bound <-
+    population %>%
+    pull_bound("lower")
   
+  upper_bound <-
+    population %>%
+    pull_bound("upper")
+  
+  # create sequence of new weights to try
+  weights <- sequence_weights(lower_bound, upper_bound)
+  
+  # create a list of vectors to map against
+  try_list <-
+    list(weights = weights,
+         begin = begin,
+         final = final)
+  
+  # map inputs to generic_ballot_average
+  weight_map <-
+    try_list %>%
+    future_pmap_dfr(~generic_ballot_average(..2,
+                                            ..3,
+                                            pull_pollster_weights(variable_weights),
+                                            pull_sample_weight(),
+                                            pull_try_weight(population, ..1, "population"),
+                                            pull_methodology_weights(variable_weights),
+                                            pull_date_weight())) %>%
+    bind_cols(weight = weights)
+  
+  # summarise results based on best rmse
+  weight_summary <- 
+    weight_map %>%
+    summarise_weights(population)
+  
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker()
   
 }
 
