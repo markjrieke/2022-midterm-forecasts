@@ -462,6 +462,19 @@ update_rmse_tracker <- function(.data) {
   
 }
 
+# function to update the variable weight table
+update_weight_table <- function(.data, variable_name) {
+  
+  # <<- interact with global environment
+  variable_weights <<- 
+    variable_weights %>%
+    filter(variable != variable_name) %>%
+    
+    # reformat & bind .data with new weights/suggestions
+    bind_rows(.data %>% select(-rmse, -pct_diff) %>% rename(variable = metric))
+  
+}
+
 #################### WEIGHT UPDATE FUNCTIONS ####################
 
 # function to update the weight for exponential decay by date function
@@ -712,9 +725,12 @@ ipsos_test %>%
 
 
 # initialize rmse tracker - get baseline predictions
+baseline_begin <- c(begin_2018, begin_2020)
+baseline_final <- c(final_2018, final_2020)
+
 baseline <- 
-  list(begin = begin,
-       final = final) %>%
+  list(begin = baseline_begin,
+       final = baseline_final) %>%
   pmap_dfr(~generic_ballot_average(..1,
                                    ..2,
                                    pull_pollster_weights(variable_weights),
@@ -773,12 +789,28 @@ test_2020 %>%
   geom_line()
   
 
-read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_polllist.csv") %>%
-  distinct(url)
+read_csv("https://projects.fivethirtyeight.com/polls-page/data/generic_ballot_polls.csv") %>%
+  filter(pollster %in% pollsters)
 
 
+test %>%
+  summarise_weights("yee") %>%
+  update_rmse_tracker()
 
+rmse_tracker
 
+test_metrics <- 
+  test %>%
+  summarise_weights("date_weight")
 
+test_metrics
 
+variable_weights %>%
+  filter(variable != "date_weight") %>%
+  bind_rows(test_metrics %>% select(-rmse, -pct_diff) %>% rename(variable = metric)) %>%
+  filter(variable == "date_weight")
+
+variable_weights %>% filter(variable == "date_weight")
+
+test_metrics %>% update_weight_table("date_weight")
 
