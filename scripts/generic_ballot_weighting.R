@@ -65,50 +65,6 @@ generic_polls <-
          methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
   drop_na()
 
-# initialize variable weights & offsets
-variable_weights <- 
-  bind_rows(
-  
-    # pollster weights
-    tibble(variable = c(pollsters, "Other Pollster"), 
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # pollster offsets
-    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
-           weight = 0,
-           next_lower = -0.1,
-           next_upper = 0.1),
-    
-    # date weights
-    tibble(variable = "date_weight",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # sample size weights
-    tibble(variable = "sample_size",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # population weights
-    tibble(variable = generic_polls %>% distinct(population_full) %>% pull(population_full),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # methodology weights
-    tibble(variable = c(methods, "Other Method"),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1)
-  ) %>%
-  
-  # initialize with not final as the search suggestion for each variable
-  bind_cols(search_suggestion = "not final")
-
 # create vectors for 2018 cycle
 begin_2018 <- rep(ymd("2016-11-04"), 571)
 final_2018 <- seq(ymd("2017-04-15"), ymd("2018-11-06"), "days")
@@ -120,9 +76,6 @@ final_2020 <- seq(ymd("2019-04-01"), ymd("2020-11-02"), "days")
 # create combined beginning & final vectors
 begin <- c(rep(begin_2018, 5), rep(begin_2020, 5))
 final <- c(rep(final_2018, 5), rep(final_2020, 5))
-
-# clean up environment
-rm(begin_2018, begin_2020, final_2018, final_2020, path)
 
 #################### GENERIC BALLOT AVERAGE FUNCTION ####################
 
@@ -753,11 +706,169 @@ call_update_pollster <- function(pollster) {
   
 }
 
+# util function for messaging user & calling update
+call_update_offset <- function(pollster) {
+  
+  message(paste("Updating", pollster, "Offset."))
+  tictoc::tic()
+  update_pollster_offset(pollster)
+  tictoc::toc()
+  message(paste(pollster, "Offset updated."))
+  message()
+  
+}
+
+# util function for messaging user & calling update
+call_update_population <- function(population) {
+  
+  message(paste("Updating", population, "weight."))
+  tictoc::tic()
+  update_population_weight(population)
+  tictoc::toc()
+  message(paste(population, "updated."))
+  message()
+  
+}
+
+# util function for messaging user & calling update
+call_update_methodology <- function(methodology) {
+  
+  message(paste("Updating", methodology, "weight."))
+  tictoc::tic()
+  update_methodology_weight(methodology)
+  tictoc::toc()
+  message(paste(methodology, "updated."))
+  message()
+  
+}
+
 
 update_all <- function() {
   
   # determine if you want to start from scratch or read in progress
+  message("Do you want to initialize a new baseline or read-in current progress?")
+  message("[1] Initialize a new baseline")
+  message("[2] Read in current progress")
+  response <- readline()
+  message()
   
+  # ask if sure! (don't want to reset progress accidentally!!!)
+  if (response == 1) {
+    
+    message("Are you sure you want to initialize a new baseline? This will lose any progress made.")
+    message("If you are sure, please type `Initialize new baseline`")
+    response <- readline()
+    message()
+    
+    # init new baseline if sure; return to console if not
+    if(response == "Initialize new baseline") {
+      
+      message("Initializing new baseline for `variable_weights` and `rmse_tracker`.")
+      message("This will take approximately one minute.")
+      message()
+      
+      # initialize variable weights & offsets
+      variable_weights <<- 
+        bind_rows(
+          
+          # pollster weights
+          tibble(variable = c(pollsters, "Other Pollster"), 
+                 weight = 1,
+                 next_lower = 0,
+                 next_upper = 1),
+          
+          # pollster offsets
+          tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
+                 weight = 0,
+                 next_lower = -0.1,
+                 next_upper = 0.1),
+          
+          # date weights
+          tibble(variable = "date_weight",
+                 weight = 1,
+                 next_lower = 0,
+                 next_upper = 1),
+          
+          # sample size weights
+          tibble(variable = "sample_size",
+                 weight = 1,
+                 next_lower = 0,
+                 next_upper = 1),
+          
+          # population weights
+          tibble(variable = generic_polls %>% distinct(population_full) %>% pull(population_full),
+                 weight = 1,
+                 next_lower = 0,
+                 next_upper = 1),
+          
+          # methodology weights
+          tibble(variable = c(methods, "Other Method"),
+                 weight = 1,
+                 next_lower = 0,
+                 next_upper = 1)
+        ) %>%
+        
+        # initialize with not final as the search suggestion for each variable
+        bind_cols(search_suggestion = "not final")
+      
+      # add multisession plan
+      message("Setting up multisession workers.")
+      plan(multisession, workers = 8)
+      message()
+      
+      message("Creating baseline")
+      # create baseline results with initialized weights and offsets (1/0)
+      baseline <- 
+        list(begin = c(begin_2018, begin_2020),
+             final = c(final_2018, final_2020)) %>%
+        pmap_dfr(~generic_ballot_average(..1,
+                                         ..2,
+                                         pull_pollster_weights(variable_weights),
+                                         pull_sample_weight(),
+                                         pull_population_weights(variable_weights),
+                                         pull_methodology_weights(variable_weights),
+                                         pull_date_weight()))
+      
+      # initialize rmse tracker - build baseline tibble
+      rmse_tracker <<- 
+        baseline %>%
+        select(-starts_with("ci")) %>%
+        left_join(generic_trend, by = "date") %>%
+        rename(est = dem2pv.x,
+               act = dem2pv.y) %>%
+        select(-date) %>%
+        nest(data = everything()) %>%
+        mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
+        unnest(rmse) %>%
+        select(.estimate) %>%
+        rename(rmse = .estimate) %>%
+        mutate(index = 0, 
+               metric = "baseline",
+               weight = 0,
+               next_lower = 0,
+               next_upper = 0,
+               pct_diff = 0,
+               search_suggestion = "baseline") %>%
+        relocate(rmse, .after = weight)
+      
+    } else {
+      
+      
+      message("Update aborted.")
+      return()
+      
+    }
+    
+  } else {
+    
+    message("Reading in weights and rmse tracker...")
+    message()
+    
+    # read in data (add to environment)
+    variable_weights <<- read_csv("data/models/generic_ballot/variable_weights.csv")
+    rmse_tracker <<- read_csv("data/models/generic_ballot/rmse_tracker.csv")
+    
+  }
   
   # determine number of updates to be made
   num_updates <- 
@@ -791,11 +902,14 @@ update_all <- function() {
     # update all variables
     call_update_date()
     call_update_sample()
-    c(pollsters, "Other Pollster") %>% map(call_update_pollster)
+    c(pollsters, "Other Pollster") %>% walk(call_update_pollster)
+    c(pollsters, "Other Pollster") %>% walk(call_update_offset)
+    c("rv", "lv", "a", "v") %>% walk(call_update_population)
+    c(methods, "Other Method") %>% walk(call_update_methodology)
     
-   
-    
-    
+    # write updates to data/models/generic_ballot
+    variable_weights %>% write_csv("data/models/generic_ballot/variable_weights.csv")
+    rmse_tracker %>% write_csv("data/models/generic_ballot/rmse_tracker.csv")
     
   }
   
@@ -803,179 +917,4 @@ update_all <- function() {
 
 
 ##################### TESTING ZONE DAWG #######################
-
-
-test_check_wrap <- function(x) {
-  
-  test_check(x)
-  print("everyone should see this")
-  
-}
-
-test_check <- function(x) {
-  
-  if (x == "exit") {
-    
-    stop("specified to exit test check")
-    
-  } else {
-    
-    print("hello!")
-    
-  }
-  
-  print("Only things that pass through will see this")
-  
-}
-
-test_check_wrap("continues")
-test_check_wrap("exit")
-
-variable_weights %>%
-  filter(variable != "Ipsos") %>%
-  bind_rows(tibble(variable = "Ipsos",
-                   weight = 0.75,
-                   next_lower = 0,
-                   next_upper = 0)) %>%
-  pull_pollster_weights()
-
-pull_try_weight("Live Phone", 0.75, "methodology")
-
-
-plan(multisession, workers = 8)
-
-tictoc::tic()
-ipsos_test <- update_pollster_weight("Ipsos")
-tictoc::toc()
-
-tictoc::tic()
-date_test <- 
-  list(begin = begin,
-     final = final) %>%
-  future_pmap_dfr(~generic_ballot_average(..1,
-                                          ..2,
-                                          pull_pollster_weights(variable_weights),
-                                          pull_sample_weight(),
-                                          pull_population_weights(variable_weights),
-                                          pull_methodology_weights(variable_weights),
-                                          0.75))
-tictoc::toc()
-
-date_test %>%
-  ggplot(aes(x = date)) +
-  geom_ribbon(aes(ymin = ci_lower,
-                  ymax = ci_upper),
-              alpha = 0.2) +
-  geom_line(aes(y = dem2pv),
-            size = 1.2) +
-  geom_point(data = generic_polls,
-             mapping = aes(x = end_date,
-                           y = dem2pv),
-             alpha = 0.25,
-             size = 2)
-
-
-
-ipsos_test %>%
-  left_join(generic_trend, by = "date") %>%
-  select(-starts_with("ci")) %>%
-  rename(est = dem2pv.x,
-         act = dem2pv.y) %>%
-  ggplot(aes(x = date)) +
-  geom_line(aes(y = est,
-                color = as.character(weight))) +
-  geom_line(aes(y = act),
-            size = 1.1)
-
-
-# initialize rmse tracker - get baseline predictions
-baseline_begin <- c(begin_2018, begin_2020)
-baseline_final <- c(final_2018, final_2020)
-
-
-baseline <- 
-  list(begin = baseline_begin,
-       final = baseline_final) %>%
-  pmap_dfr(~generic_ballot_average(..1,
-                                   ..2,
-                                   pull_pollster_weights(variable_weights),
-                                   pull_sample_weight(),
-                                   pull_population_weights(variable_weights),
-                                   pull_methodology_weights(variable_weights),
-                                   pull_date_weight()))
-
-# initialize rmse tracker - build baseline tibble
-rmse_tracker <- 
-  baseline %>%
-  select(-starts_with("ci")) %>%
-  left_join(generic_trend, by = "date") %>%
-  rename(est = dem2pv.x,
-         act = dem2pv.y) %>%
-  select(-date) %>%
-  nest(data = everything()) %>%
-  mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
-  unnest(rmse) %>%
-  select(.estimate) %>%
-  rename(rmse = .estimate) %>%
-  mutate(index = 0, 
-         metric = "baseline",
-         weight = 0,
-         next_lower = 0,
-         next_upper = 0,
-         pct_diff = 0,
-         search_suggestion = "baseline") %>%
-  relocate(rmse, .after = weight)
-
-
-
-test <- 
-  test %>% 
-  summarise_weights("date_weight")
-
-
-
-test %>% update_rmse_tracker()
-
-rmse_tracker
-
-test_2020 <- 
-  list(begin = begin_2020,
-       final = final_2020) %>%
-  pmap_dfr(~generic_ballot_average(..1,
-                                   ..2,
-                                   pull_pollster_weights(variable_weights),
-                                   pull_sample_weight(),
-                                   pull_population_weights(variable_weights),
-                                   pull_methodology_weights(variable_weights),
-                                   pull_date_weight()))
-
-test_2020 %>%
-  ggplot(aes(x = date, y = dem2pv)) +
-  geom_line()
-  
-
-read_csv("https://projects.fivethirtyeight.com/polls-page/data/generic_ballot_polls.csv") %>%
-  filter(pollster %in% pollsters)
-
-
-test %>%
-  summarise_weights("yee") %>%
-  update_rmse_tracker()
-
-rmse_tracker
-
-test_metrics <- 
-  test %>%
-  summarise_weights("date_weight")
-
-test_metrics
-
-variable_weights %>%
-  filter(variable != "date_weight") %>%
-  bind_rows(test_metrics %>% select(-rmse, -pct_diff) %>% rename(variable = metric)) %>%
-  filter(variable == "date_weight")
-
-variable_weights %>% filter(variable == "date_weight")
-
-test_metrics %>% update_weight_table("date_weight")
 

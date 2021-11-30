@@ -1,0 +1,70 @@
+variable,weight,next_lower,next_upper,search_suggestion
+Ipsos,1,0,1,not final
+HarrisX,1,0,1,not final
+Morning Consult,1,0,1,not final
+YouGov,1,0,1,not final
+USC Dornsife,1,0,1,not final
+The Winston Group,1,0,1,not final
+McLaughlin & Associates,1,0,1,not final
+Firehouse Strategies/Øptimus,1,0,1,not final
+Rasmussen Reports/Pulse Opinion Research,1,0,1,not final
+Quinnipiac University,1,0,1,not final
+CNN/SSRS,1,0,1,not final
+NBC News/The Wall Street Journal,1,0,1,not final
+Marist College,1,0,1,not final
+Public Policy Polling,1,0,1,not final
+GQR Research,1,0,1,not final
+ABC News/The Washington Post,1,0,1,not final
+Øptimus,1,0,1,not final
+Monmouth University,1,0,1,not final
+Fox News,1,0,1,not final
+Pew Research Center,1,0,1,not final
+Public Religion Research Institute,1,0,1,not final
+Harris Poll,1,0,1,not final
+Emerson College,1,0,1,not final
+Suffolk University,1,0,1,not final
+SurveyMonkey,1,0,1,not final
+USC Dornsife/Los Angeles Times,1,0,1,not final
+IBD/TIPP,1,0,1,not final
+Opinium,1,0,1,not final
+Other Pollster,1,0,1,not final
+Ipsos Offset,0,-0.1,0.1,not final
+HarrisX Offset,0,-0.1,0.1,not final
+Morning Consult Offset,0,-0.1,0.1,not final
+YouGov Offset,0,-0.1,0.1,not final
+USC Dornsife Offset,0,-0.1,0.1,not final
+The Winston Group Offset,0,-0.1,0.1,not final
+McLaughlin & Associates Offset,0,-0.1,0.1,not final
+Firehouse Strategies/Øptimus Offset,0,-0.1,0.1,not final
+Rasmussen Reports/Pulse Opinion Research Offset,0,-0.1,0.1,not final
+Quinnipiac University Offset,0,-0.1,0.1,not final
+CNN/SSRS Offset,0,-0.1,0.1,not final
+NBC News/The Wall Street Journal Offset,0,-0.1,0.1,not final
+Marist College Offset,0,-0.1,0.1,not final
+Public Policy Polling Offset,0,-0.1,0.1,not final
+GQR Research Offset,0,-0.1,0.1,not final
+ABC News/The Washington Post Offset,0,-0.1,0.1,not final
+Øptimus Offset,0,-0.1,0.1,not final
+Monmouth University Offset,0,-0.1,0.1,not final
+Fox News Offset,0,-0.1,0.1,not final
+Pew Research Center Offset,0,-0.1,0.1,not final
+Public Religion Research Institute Offset,0,-0.1,0.1,not final
+Harris Poll Offset,0,-0.1,0.1,not final
+Emerson College Offset,0,-0.1,0.1,not final
+Suffolk University Offset,0,-0.1,0.1,not final
+SurveyMonkey Offset,0,-0.1,0.1,not final
+USC Dornsife/Los Angeles Times Offset,0,-0.1,0.1,not final
+IBD/TIPP Offset,0,-0.1,0.1,not final
+Opinium Offset,0,-0.1,0.1,not final
+Other Pollster Offset,0,-0.1,0.1,not final
+rv,1,0,1,not final
+lv,1,0,1,not final
+a,1,0,1,not final
+v,1,0,1,not final
+Online,1,0,1,not final
+Live Phone,1,0,1,not final
+Unknown,1,0,1,not final
+IVR/Online,1,0,1,not final
+Other Method,1,0,1,not final
+date_weight,0.75,0.5,1,not final
+sample_size,0.25,0,0.5,not final

@@ -1,0 +1,4 @@
+index,metric,weight,rmse,next_lower,next_upper,pct_diff,search_suggestion
+0,baseline,0,0.005997144262227,0,0,0,baseline
+1,date_weight,0.75,0.005913669436985689,0.5,1,1.507212449946941,not final
+2,sample_size,0.25,0.005912747813547378,0,0.5,1.5072797889395035,not final
