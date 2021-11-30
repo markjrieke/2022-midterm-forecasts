@@ -404,6 +404,29 @@ summarise_weights <- function(.data, metric) {
 
 }
 
+# add metrics to running list of rmse
+update_rmse_tracker <- function(.data) {
+  
+  # <<- interacts with the global object 
+  rmse_tracker <<- 
+    rmse_tracker %>%
+    
+    # pull current index
+    filter(index == max(index)) %>%
+    select(index) %>%
+    
+    # increase index
+    mutate(index = index + 1) %>%
+    
+    # add index to data
+    bind_cols(.data) %>%
+    
+    # bind back to rmse_tracker
+    bind_rows(rmse_tracker) %>%
+    arrange(index)
+  
+}
+
 # function to update the weight for exponential decay by date function
 update_date_weight <- function() {
   
@@ -687,28 +710,7 @@ test <-
   test %>% 
   summarise_weights("date_weight")
 
-# add metrics to running list of rmse
-update_rmse_tracker <- function(.data) {
-  
-  # <<- interacts with the global object 
-  rmse_tracker <<- 
-    rmse_tracker %>%
-    
-    # pull current index
-    filter(index == max(index)) %>%
-    select(index) %>%
-    
-    # increase index
-    mutate(index = index + 1) %>%
 
-    # add index to data
-    bind_cols(.data) %>%
-    
-    # bind back to rmse_tracker
-    bind_rows(rmse_tracker) %>%
-    arrange(index)
-  
-}
 
 test %>% update_rmse_tracker()
 
