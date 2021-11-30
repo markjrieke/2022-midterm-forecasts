@@ -475,6 +475,22 @@ update_weight_table <- function(.data, variable_name) {
   
 }
 
+# function to update all running tables
+update_tables <- function(.data, variable_name) {
+  
+  # summarise results based on best rmse
+  weight_summary <-
+    .data %>%
+    summarise_weights(variable_name)
+  
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker()
+  
+  # update weight table
+  weight_summary %>% update_weight_table(variable_name)
+  
+}
+
 #################### WEIGHT UPDATE FUNCTIONS ####################
 
 # function to update the weight for exponential decay by date function
@@ -498,13 +514,8 @@ update_date_weight <- function() {
                                             ..1)) %>%
     bind_cols(weight = weights)
   
-  # summarise results based on best rmse
-  weight_summary <- 
-    weight_map %>%
-    summarise_weights("date_weight")
-  
-  # update rmse tracker
-  weight_summary %>% update_rmse_tracker()
+  # update rmse & variable weight tables
+  weight_map %>% update_tables("date_weight")
   
 }
 
@@ -529,13 +540,8 @@ update_sample_weight <- function() {
                                             pull_date_weight())) %>%
     bind_cols(weight = weights)
   
-  # summarise results based on best rmse
-  weight_summary <- 
-    weight_map %>%
-    summarise_weights("sample_size")
-  
-  # update rmse tracker
-  weight_summary %>% update_rmse_tracker()
+  # update rmse & variable weight tables
+  weight_map %>% update_tables("sample_size")
   
 }
 
@@ -560,18 +566,16 @@ update_pollster_weight <- function(pollster) {
                                             pull_date_weight())) %>%
     bind_cols(weight = weights)
   
-  # summarise results based on best rmse
-  weight_summary <-
-    weight_map %>%
-    summarise_weights(pollster)
-  
-  # update rmse tracker
-  weight_summary %>% update_rmse_tracker()
+  # update rmse & variable weight tables
+  weight_map %>% update_tables(pollster)
   
 }
 
 # function to update a pollster's offset
 update_pollster_offset <- function(pollster) {
+  
+  # create offset variable
+  offset <- paste(pollster, "Offset")
   
   # create a vector of weights to bind to results
   weights <- vectorize_weights(offset)
@@ -591,13 +595,8 @@ update_pollster_offset <- function(pollster) {
                                             pull_date_weight())) %>%
     bind_cols(weight = weights) 
   
-  # summarise results based on best rmse
-  weight_summary <- 
-    weight_map %>%
-    summarise_weights(offset)
-  
-  # update rmse tracker
-  weight_summary %>% update_rmse_tracker()
+  # update rmse & variable weight tables
+  weight_map %>% update_tables(offset)
   
 }
 
@@ -622,13 +621,8 @@ update_population_weight <- function(population) {
                                             pull_date_weight())) %>%
     bind_cols(weight = weights)
   
-  # summarise results based on best rmse
-  weight_summary <- 
-    weight_map %>%
-    summarise_weights(population)
-  
-  # update rmse tracker
-  weight_summary %>% update_rmse_tracker()
+  # update rmse & variable weight tables
+  weight_map %>% update_tables(population)
   
 }
 
@@ -653,13 +647,8 @@ update_methodology_weight <- function(methodology) {
                                             pull_date_weight())) %>%
     bind_cols(weight = weights)
   
-  # summarise results based on best rmse
-  weight_summary <-
-    weight_map %>%
-    summarise_weights(methodology)
-  
-  # update rmse tracker
-  weight_summary %>% update_rmse_tracker()
+  # update rmse & variable weight tables
+  weight_map %>% update_tables(methodology)
   
 }
 
