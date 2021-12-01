@@ -3,6 +3,7 @@ library(tidyverse)
 library(lubridate)
 library(furrr)
 library(riekelib)
+library(patchwork)
 
 #################### SETUP ####################
 
@@ -999,51 +1000,46 @@ visualize_rmse <- function(.data, variable_name = "all") {
   
 }
 
+# call viz functions
+call_visualizations <- function() {
+  
+  interim_fit <<- get_current_fit(variable_weights)
+  interim_fit %>% visualize_fit() / rmse_tracker %>% visualize_rmse()
+  
+}
+
 ##################### MODELTIME #######################
 
 theme_set(theme_minimal())
 
 # round 1
 update_all()
-
-interim_fit <- get_current_fit(variable_weights)
-interim_fit %>% visualize_fit()
-rmse_tracker %>% visualize_rmse()
+call_visualizations()
 
 # round 2
 update_all()
-
-interim_fit <- get_current_fit(variable_weights)
-interim_fit %>% visualize_fit()
-rmse_tracker %>% visualize_rmse()
+call_visualizations()
 
 # round 3
 update_all()
-
-interim_fit <- get_current_fit(variable_weights)
-interim_fit %>% visualize_fit()
-rmse_tracker %>% visualize_rmse()
+call_visualizations()
 
 # round 4
 update_all()
-
-interim_fit <- get_current_fit(variable_weights)
-interim_fit %>% visualize_fit()
-rmse_tracker %>% visualize_rmse()
+call_visualizations()
 
 # round 5
 update_all()
-
-interim_fit <- get_current_fit(variable_weights)
-interim_fit %>% visualize_fit()
-rmse_tracker %>% visualize_rmse()
+call_visualizations()
 
 # round 6
 update_all()
+call_visualizations()
 
-interim_fit <- get_current_fit(variable_weights)
-interim_fit %>% visualize_fit()
-rmse_tracker %>% visualize_rmse()
+# round 7
+update_all()
+call_visualizations()
+
 
 ##################### TESTING AREA #######################
 
