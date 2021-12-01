@@ -1052,15 +1052,141 @@ call_visualizations()
 update_all()
 call_visualizations()
 
+##################### VIZ & CHECK AGAINST NEW DATA #######################
+
+# final viz of act/est
+interim_fit %>% visualize_fit()
+
+ggsave("data/models/generic_ballot/final_fit.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+rmse_tracker %>% visualize_rmse()
+
+ggsave("data/models/generic_ballot/rmse_tracker.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+interim_fit %>% visualize_fit() / rmse_tracker %>% visualize_rmse()
+
+ggsave("data/models/generic_ballot/fit_rmse_patchwork.png",
+       width = 9,
+       height = 12,
+       units = "in",
+       dpi = 500)
+
+# view pollster weights
+variable_weights %>%
+  filter(variable %in% c(pollsters, "Other Pollster")) %>%
+  mutate(variable = fct_reorder(variable, weight)) %>%
+  ggplot(aes(x = variable,
+             y = weight)) +
+  geom_col(fill = "midnightblue",
+           alpha = 0.65) +
+  coord_flip()
+
+ggsave("data/models/generic_ballot/pollster_weights.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+# view pollster offsets
+variable_weights %>%
+  filter(str_detect(variable, "Offset")) %>%
+  mutate(variable = fct_reorder(variable, weight)) %>%
+  ggplot(aes(x = variable,
+             y = weight)) +
+  geom_col(fill = "midnightblue",
+           alpha = 0.65) + 
+  coord_flip()
+
+ggsave("data/models/generic_ballot/pollster_offsets.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+# view pollster weight/offset in combination
+variable_weights %>%
+  filter(str_detect(variable, "Offset")) %>%
+  mutate(variable = str_remove(variable, " Offset")) %>%
+  rename(offset = weight) %>%
+  select(variable, offset) %>%
+  left_join(variable_weights, by = "variable") %>%
+  left_join(generic_polls %>% count(pollster), by = c("variable" = "pollster")) %>%
+  mutate(label = if_else(n > 50, variable, NA_character_)) %>%
+  ggplot(aes(x = offset,
+             y = weight,
+             label = label)) +
+  geom_point(aes(size = n),
+             color = "midnightblue",
+             alpha = 0.65) +
+  ggrepel::geom_label_repel()
+
+ggsave("data/models/generic_ballot/pollster_weights_summary_size.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+# view population weights
+variable_weights %>%
+  filter(variable %in% c("rv", "lv", "v", "a")) %>%
+  mutate(variable = fct_reorder(variable, weight)) %>%
+  ggplot(aes(x = variable,
+             y = weight)) +
+  geom_col(fill = "midnightblue",
+           alpha = 0.65) +
+  coord_flip()
+
+ggsave("data/models/generic_ballot/population_weights.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+# view methodology weights
+variable_weights %>%
+  filter(variable %in% c(methods, "Other Method")) %>%
+  mutate(variable = fct_reorder(variable, weight)) %>%
+  ggplot(aes(x = variable,
+             y = weight)) +
+  geom_col(fill = "midnightblue",
+           alpha = 0.65) +
+  coord_flip()
+
+ggsave("data/models/generic_ballot/methodology_weights.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+# view all variable weights
+variable_weights %>%
+  filter(!str_detect(variable, "Offset")) %>%
+  mutate(variable = fct_reorder(variable, weight)) %>%
+  ggplot(aes(x = variable,
+             y = weight)) +
+  geom_col(fill = "midnightblue",
+           alpha = 0.65) +
+  coord_flip()
+
+ggsave("data/models/generic_ballot/all_weights.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+# try against 2021 data
+
 ##################### TESTING AREA #######################
 
-interim_metrics %>%
-  select(-weight) %>%
-  mutate(weight = seq(0, 1, length.out = 5)) 
 
-interim %>%
-  mutate(weight = sequence_weights(0, 1)) %>%
-  summarise_weights("yee")
 
 
 
