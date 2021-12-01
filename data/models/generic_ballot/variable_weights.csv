@@ -21,12 +21,7 @@ Other Pollster,1,0.75,1.25,final
 Øptimus Offset,0.025,6.94e-18,0.05,final
 Public Religion Research Institute Offset,6.94e-18,-0.025,0.025,final
 Suffolk University Offset,-0.15,-0.2,-0.1,final
-date_weight,0.8125,0.75,0.875,not final
 sample_size,0.25,0,0.5,final
-Ipsos,0.5,0.4375,0.5625,not final
-HarrisX,0.25,0,0.5,not final
-Morning Consult,0.03125,0,0.03125,not final
-YouGov,1.5,1.25,1.75,not final
 The Winston Group,1,0.5,1.5,final
 McLaughlin & Associates,1.25,1,1.5,final
 Firehouse Strategies/Øptimus,0.03125,0,0.03125,final
@@ -36,35 +31,40 @@ Harris Poll,0.25,0.125,0.375,final
 SurveyMonkey,0.375,0.25,0.5,final
 USC Dornsife/Los Angeles Times,0.25,0.125,0.375,final
 Opinium,0.25,0.125,0.375,final
-Ipsos Offset,0,-0.0125,0.012500000000000004,not final
-HarrisX Offset,0,-0.0125,0.012500000000000004,not final
-Morning Consult Offset,0,-0.1,0.09999999999999998,not final
-YouGov Offset,0,-0.0125,0.012500000000000004,not final
-USC Dornsife Offset,0,-0.0125,0.012500000000000004,not final
-The Winston Group Offset,6.94e-18,-0.024999999999999998,0.025000000000000015,not final
-McLaughlin & Associates Offset,0.012500000000000004,0,0.025,not final
 Firehouse Strategies/Øptimus Offset,0,-0.1,0.09999999999999998,final
 Rasmussen Reports/Pulse Opinion Research Offset,6.94e-18,-0.049999999999999996,0.05000000000000001,final
-Quinnipiac University Offset,-0.024999999999999994,-0.05,0,not final
-CNN/SSRS Offset,-0.1,-0.19999999999999998,0,not final
 NBC News/The Wall Street Journal Offset,-0.0625,-0.07500000000000001,-0.05,final
-Marist College Offset,-0.0375,-0.05,-0.024999999999999998,not final
 Public Policy Polling Offset,0.15000000000000002,0.125,0.17500000000000002,final
-GQR Research Offset,-0.05,-0.07500000000000001,-0.02500000000000001,not final
-ABC News/The Washington Post Offset,-0.25,-0.3,-0.2,not final
-Monmouth University Offset,0.15,0.1,0.19999999999999998,not final
 Fox News Offset,0.0625,0.05,0.07500000000000001,final
-Pew Research Center Offset,0,-0.05,0.05000000000000002,not final
 Harris Poll Offset,-0.05,-0.1,0,final
 Emerson College Offset,-0.25,-0.3,-0.2,final
-SurveyMonkey Offset,0.05,0.0375,0.0625,not final
-USC Dornsife/Los Angeles Times Offset,0,-0.05,0.05000000000000002,not final
 Opinium Offset,0.1,0,0.19999999999999998,final
-Other Pollster Offset,0.012500000000000004,0,0.025,not final
-rv,1.25,1,1.5,not final
 lv,0.75,0.625,0.875,final
 a,0.625,0.5625,0.6875,final
-Online,0.875,0.75,1,not final
-Live Phone,1.125,1,1.25,not final
-Unknown,0.75,0.5,1,not final
-IVR/Online,1,0.75,1.25,not final
+date_weight,0.875,0.8125,0.9375,not final
+Ipsos,0.53125,0.5,0.5625,not final
+HarrisX,0.125,0,0.25,not final
+Morning Consult,0.03125,0.015625,0.046875,not final
+YouGov,1.75,1.5,2,not final
+Ipsos Offset,1.734723475976807e-18,-0.0062499999999999995,0.006250000000000002,not final
+HarrisX Offset,1.734723475976807e-18,-0.0062499999999999995,0.006250000000000002,not final
+Morning Consult Offset,-1.3877787807814457e-17,-0.05000000000000001,0.04999999999999999,not final
+YouGov Offset,1.734723475976807e-18,-0.0062499999999999995,0.006250000000000002,not final
+USC Dornsife Offset,1.734723475976807e-18,-0.0062499999999999995,0.006250000000000002,not final
+The Winston Group Offset,-0.012499999999999994,-0.024999999999999998,1.0408340855860843e-17,not final
+McLaughlin & Associates Offset,0.0125,0.00625,0.018750000000000003,final
+Quinnipiac University Offset,-0.012499999999999997,-0.025,0,not final
+CNN/SSRS Offset,0,-0.09999999999999999,0.09999999999999998,final
+Marist College Offset,-0.043750000000000004,-0.05,-0.0375,not final
+GQR Research Offset,-0.02500000000000001,-0.05000000000000001,-1.3877787807814457e-17,not final
+ABC News/The Washington Post Offset,-0.275,-0.3,-0.25,final
+Monmouth University Offset,0.19999999999999998,0.15,0.24999999999999997,not final
+Pew Research Center Offset,-0.024999999999999998,-0.05,6.938893903907228e-18,not final
+SurveyMonkey Offset,0.0625,0.05,0.075,not final
+USC Dornsife/Los Angeles Times Offset,6.938893903907228e-18,-0.024999999999999998,0.02500000000000001,final
+Other Pollster Offset,0.00625,0,0.0125,not final
+rv,1.5,1.25,1.75,not final
+Online,0.875,0.8125,0.9375,not final
+Live Phone,1.0625,1,1.125,final
+Unknown,0.5,0.25,0.75,not final
+IVR/Online,1.25,1,1.5,not final

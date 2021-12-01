@@ -997,7 +997,6 @@ visualize_rmse <- function(.data, variable_name = "all") {
     
   }
   
-  
 }
 
 ##################### MODELTIME #######################
@@ -1012,6 +1011,20 @@ interim_fit %>% visualize_fit()
 rmse_tracker %>% visualize_rmse()
 
 # round 2
+update_all()
+
+interim_fit <- get_current_fit(variable_weights)
+interim_fit %>% visualize_fit()
+rmse_tracker %>% visualize_rmse()
+
+# round 3
+update_all()
+
+interim_fit <- get_current_fit(variable_weights)
+interim_fit %>% visualize_fit()
+rmse_tracker %>% visualize_rmse()
+
+# round 4
 update_all()
 
 interim_fit <- get_current_fit(variable_weights)
