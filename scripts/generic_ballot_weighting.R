@@ -383,6 +383,7 @@ summarise_weights <- function(.data, metric) {
   worst_rmse <-
     weight_metrics %>%
     filter(rmse == max(rmse)) %>%
+    filter(rowid == max(rowid)) %>%
     pull(rmse)
   
   pct_diff <- abs(worst_rmse - best_rmse)/mean(c(best_rmse, worst_rmse))
