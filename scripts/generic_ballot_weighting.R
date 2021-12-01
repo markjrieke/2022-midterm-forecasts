@@ -363,7 +363,7 @@ summarise_weights <- function(.data, metric) {
     if (best_weight == 0 & str_detect(metric, "Offset") == FALSE) {
       
       next_lower <- 0
-      next_upper <- weight_metrics %>% filter(rowid == 1) %>% pull(weight)
+      next_upper <- weight_metrics %>% filter(rowid == 2) %>% pull(weight)
       
     } else {
       
@@ -1014,6 +1014,19 @@ rmse_tracker %>% visualize_rmse()
 # round 2
 update_all()
 
+interim_fit <- get_current_fit(variable_weights)
+interim_fit %>% visualize_fit()
+rmse_tracker %>% visualize_rmse()
+
 ##################### TESTING AREA #######################
+
+interim_metrics %>%
+  select(-weight) %>%
+  mutate(weight = seq(0, 1, length.out = 5)) 
+
+interim %>%
+  mutate(weight = sequence_weights(0, 1)) %>%
+  summarise_weights("yee")
+
 
 
