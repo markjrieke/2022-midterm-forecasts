@@ -764,7 +764,7 @@ update_all <- function() {
     if(response == "Initialize new baseline") {
       
       message("Initializing new baseline for `variable_weights` and `rmse_tracker`.")
-      message("This will take approximately one minute.")
+      message("This may take a few minutes.")
       message()
       
       # initialize variable weights & offsets
@@ -818,6 +818,7 @@ update_all <- function() {
       
       message("Creating baseline")
       # create baseline results with initialized weights and offsets (1/0)
+      tictoc::tic()
       baseline <- 
         list(begin = c(begin_2018, begin_2020),
              final = c(final_2018, final_2020)) %>%
@@ -828,6 +829,7 @@ update_all <- function() {
                                          pull_population_weights(variable_weights),
                                          pull_methodology_weights(variable_weights),
                                          pull_date_weight()))
+      tictoc::toc()
       
       # initialize rmse tracker - build baseline tibble
       rmse_tracker <<- 
@@ -878,7 +880,7 @@ update_all <- function() {
     pull(n)
   
   # determine the approximate runtime (~75s per variable)
-  runtime <- round(num_updates * 75/60)
+  runtime <- round(num_updates * 90/60)
   
   # ask to proceed
   message(paste("Updating all variable weights will take approximately", runtime, "minutes."))
@@ -916,5 +918,6 @@ update_all <- function() {
 }
 
 
-##################### TESTING ZONE DAWG #######################
+##################### MODELTIME #######################
 
+update_all()
