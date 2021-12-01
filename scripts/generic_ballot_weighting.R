@@ -891,7 +891,7 @@ update_all <- function() {
     pull(n)
   
   # determine the approximate runtime (~75s per variable)
-  runtime <- round(num_updates * 90/60)
+  runtime <- round(num_updates * 80/60)
   
   # ask to proceed
   message(paste("Updating all variable weights will take approximately", runtime, "minutes."))
@@ -933,58 +933,6 @@ update_all <- function() {
 
 update_all()
 
-interim_metrics
+##################### TESTING AREA #######################
 
-# find weight that gives smallest rmse
-interim_weight <- 
-  interim_metrics %>%
-  filter(rmse == min(rmse)) %>%
-  filter(rowid == min(rowid)) %>%
-  pull(weight)
 
-# pull the smallest rmse for tracking
-interim_rmse <- 
-  interim_metrics %>%
-  filter(rmse == min(rmse)) %>%
-  filter(rowid == min(rowid)) %>%
-  pull(rmse)
-
-# pull the row index that gave the best rmse
-interim_index <- 
-  interim_metrics %>%
-  filter(weight == interim_weight) %>%
-  pull(rowid)
-
-# get the step between each weight 
-interim_delta <-
-  interim_metrics %>%
-  mutate(delta = weight - lag(weight)) %>%
-  drop_na() %>%
-  filter(rowid == 5) %>%
-  pull(delta)
-
-if (interim_index == 5) {
-  
-  next_lower <- interim_metrics %>% filter(rowid == 3) %>% pull(weight)
-  next_upper <- interim_metrics %>% filter(rowid == 5) %>% pull(weight) + (2 * interim_delta)
-  
-} else if (interim_index == 1) {
-  
-  if (interim_weight == 0 & str_detect("Morning Consult", "Offset") == FALSE) {
-    
-    next_lower <- 0
-    next_upper <- interim_metrics %>% filter(rowid == 1) %>% pull(weight)
-    
-  } else {
-    
-    next_lower <- interim_metrics %>% filter(rowid == 1) %>% pull(weight) - (2 * interim_delta)
-    next_upper <- interim_metrics %>% filter(rowid == 3) %>% pull(weight)
-    
-  }
-  
-} else {
-  
-  next_lower <- interim_metrics %>% filter(rowid == interim_index - 1) %>% pull(weight)
-  next_upper <- interim_metrics %>% filter(rowid == interim_index + 1) %>% pull(weight)
-  
-}
