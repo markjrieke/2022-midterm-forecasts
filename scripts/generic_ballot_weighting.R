@@ -1044,6 +1044,9 @@ call_visualizations()
 update_all()
 call_visualizations()
 
+# round 9
+update_all()
+call_visualizations()
 
 ##################### TESTING AREA #######################
 
