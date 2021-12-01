@@ -1040,6 +1040,10 @@ call_visualizations()
 update_all()
 call_visualizations()
 
+# round 8
+update_all()
+call_visualizations()
+
 
 ##################### TESTING AREA #######################
 
