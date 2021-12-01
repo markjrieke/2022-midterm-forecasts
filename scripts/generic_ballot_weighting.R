@@ -928,10 +928,80 @@ update_all <- function() {
   
 }
 
+# function to visualize trend against fte trend
+get_current_fit <- function(.data) {
+  
+  list(begin = c(begin_2018, begin_2020),
+       final = c(final_2018, final_2020)) %>%
+    pmap_dfr(~generic_ballot_average(..1,
+                                     ..2,
+                                     pull_pollster_weights(.data),
+                                     pull_sample_weight(),
+                                     pull_population_weights(.data),
+                                     pull_methodology_weights(.data),
+                                     pull_date_weight()))
+  
+}
+
+visualize_fit <- function(.data) {
+  
+  .data %>%
+    left_join(generic_trend, by = "date") %>%
+    rename(estimate = dem2pv.x,
+           actual = dem2pv.y) %>%
+    ggplot(aes(x = date)) +
+    geom_line(aes(y = actual),
+              size = 1.1,
+              color = "red") +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_line(aes(y = estimate),
+              color = "midnightblue",
+              size = 1)
+  
+}
+
+visualize_rmse <- function(.data, variable_name = "all") {
+  
+  if (variable_name == "all") {
+    
+    .data %>%
+      ggplot(aes(x = index,
+                 y = rmse)) +
+      geom_line(size = 1,
+                color = "midnightblue")
+    
+  } else {
+    
+    .data %>%
+      filter(metric %in% variable_name) %>%
+      select(-index) %>%
+      rowid_to_column() %>%
+      ggplot(aes(x = rowid,
+                 y = rmse)) +
+      geom_line(size = 1,
+                color = "midnightblue")
+    
+  }
+  
+  
+}
 
 ##################### MODELTIME #######################
 
+theme_set(theme_minimal())
+
+# round 1
 update_all()
+
+interim_fit <- get_current_fit(variable_weights)
+interim_fit %>% visualize_fit()
+rmse_tracker %>% visualize_rmse()
+
+
+
 
 ##################### TESTING AREA #######################
 
