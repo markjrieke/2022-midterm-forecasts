@@ -1031,6 +1031,20 @@ interim_fit <- get_current_fit(variable_weights)
 interim_fit %>% visualize_fit()
 rmse_tracker %>% visualize_rmse()
 
+# round 5
+update_all()
+
+interim_fit <- get_current_fit(variable_weights)
+interim_fit %>% visualize_fit()
+rmse_tracker %>% visualize_rmse()
+
+# round 6
+update_all()
+
+interim_fit <- get_current_fit(variable_weights)
+interim_fit %>% visualize_fit()
+rmse_tracker %>% visualize_rmse()
+
 ##################### TESTING AREA #######################
 
 interim_metrics %>%
