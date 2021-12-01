@@ -328,12 +328,14 @@ summarise_weights <- function(.data, metric) {
   best_weight <- 
     weight_metrics %>%
     filter(rmse == min(rmse)) %>%
+    filter(rowid == min(rowid)) %>%
     pull(weight)
   
   # pull the smallest rmse for tracking
   best_rmse <- 
     weight_metrics %>%
     filter(rmse == min(rmse)) %>%
+    filter(rowid == min(rowid)) %>%
     pull(rmse)
   
   # pull the row index that gave the best rmse
@@ -347,19 +349,28 @@ summarise_weights <- function(.data, metric) {
     weight_metrics %>%
     mutate(delta = weight - lag(weight)) %>%
     drop_na() %>%
-    distinct(delta) %>%
+    filter(rowid == 5) %>%
     pull(delta)
   
   # assign next_upper & next_lower
-  if (best_index == 1) {
+  if (best_index == 5) {
     
-    next_lower <- weight_metrics %>% filter(rowid == 1) %>% pull(weight) - delta
-    next_upper <- weight_metrics %>% filter(rowid == 2) %>% pull(weight)
+    next_lower <- weight_metrics %>% filter(rowid == 3) %>% pull(weight)
+    next_upper <- weight_metrics %>% filter(rowid == 5) %>% pull(weight) + (2 * delta)
     
-  } else if (best_index == 5) {
+  } else if (best_index == 1) {
     
-    next_lower <- weight_metrics %>% filter(rowid == 4) %>% pull(weight)
-    next_upper <- weight_metrics %>% filter(rowid == 5) %>% pull(weight) + delta
+    if (best_weight == 0 & str_detect(metric, "Offset") == FALSE) {
+      
+      next_lower <- 0
+      next_upper <- weight_metrics %>% filter(rowid == 1) %>% pull(weight)
+      
+    } else {
+      
+      next_lower <- weight_metrics %>% filter(rowid == 1) %>% pull(weight) - (2 * delta)
+      next_upper <- weight_metrics %>% filter(rowid == 3) %>% pull(weight)
+      
+    }
     
   } else {
     
@@ -855,7 +866,6 @@ update_all <- function() {
       
     } else {
       
-      
       message("Update aborted.")
       return()
       
@@ -921,3 +931,59 @@ update_all <- function() {
 ##################### MODELTIME #######################
 
 update_all()
+
+interim_metrics
+
+# find weight that gives smallest rmse
+interim_weight <- 
+  interim_metrics %>%
+  filter(rmse == min(rmse)) %>%
+  filter(rowid == min(rowid)) %>%
+  pull(weight)
+
+# pull the smallest rmse for tracking
+interim_rmse <- 
+  interim_metrics %>%
+  filter(rmse == min(rmse)) %>%
+  filter(rowid == min(rowid)) %>%
+  pull(rmse)
+
+# pull the row index that gave the best rmse
+interim_index <- 
+  interim_metrics %>%
+  filter(weight == interim_weight) %>%
+  pull(rowid)
+
+# get the step between each weight 
+interim_delta <-
+  interim_metrics %>%
+  mutate(delta = weight - lag(weight)) %>%
+  drop_na() %>%
+  filter(rowid == 5) %>%
+  pull(delta)
+
+if (interim_index == 5) {
+  
+  next_lower <- interim_metrics %>% filter(rowid == 3) %>% pull(weight)
+  next_upper <- interim_metrics %>% filter(rowid == 5) %>% pull(weight) + (2 * interim_delta)
+  
+} else if (interim_index == 1) {
+  
+  if (interim_weight == 0 & str_detect("Morning Consult", "Offset") == FALSE) {
+    
+    next_lower <- 0
+    next_upper <- interim_metrics %>% filter(rowid == 1) %>% pull(weight)
+    
+  } else {
+    
+    next_lower <- interim_metrics %>% filter(rowid == 1) %>% pull(weight) - (2 * interim_delta)
+    next_upper <- interim_metrics %>% filter(rowid == 3) %>% pull(weight)
+    
+  }
+  
+} else {
+  
+  next_lower <- interim_metrics %>% filter(rowid == interim_index - 1) %>% pull(weight)
+  next_upper <- interim_metrics %>% filter(rowid == interim_index + 1) %>% pull(weight)
+  
+}
