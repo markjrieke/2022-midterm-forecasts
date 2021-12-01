@@ -388,6 +388,17 @@ summarise_weights <- function(.data, metric) {
   
   pct_diff <- abs(worst_rmse - best_rmse)/mean(c(best_rmse, worst_rmse))
   
+  # for pollster weights, update weight table to rowid == 2 if best_rmse = 0
+  # this will ensure that the pollster's offset actually gets evaluated!
+  if (best_weight == 0 & metric %in% c(pollsters, "Other Pollster")) {
+    
+    best_weight <- 
+      weight_metrics %>%
+      filter(rowid == 2) %>%
+      pull(weight)
+    
+  } 
+  
   # note whether or not to continue to search for better weights, based off difference threshold
   if (pct_diff < 0.01) {
     
@@ -1000,8 +1011,8 @@ interim_fit <- get_current_fit(variable_weights)
 interim_fit %>% visualize_fit()
 rmse_tracker %>% visualize_rmse()
 
-
-
+# round 2
+update_all()
 
 ##################### TESTING AREA #######################
 
