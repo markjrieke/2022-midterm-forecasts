@@ -1048,6 +1048,10 @@ call_visualizations()
 update_all()
 call_visualizations()
 
+# round 10
+update_all()
+call_visualizations()
+
 ##################### TESTING AREA #######################
 
 interim_metrics %>%
