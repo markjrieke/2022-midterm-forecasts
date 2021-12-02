@@ -1379,14 +1379,17 @@ if (viz_complete == FALSE) {
     #plot.title = element_text(size = 18),
     #plot.subtitle = element_text(size = 14)) +
     labs(title = "Do Voters Want Democrats or Republicans in Congress?",
-         subtitle = "Estimated two-party voteshare of the generic congressional ballot",
+         subtitle = paste("Estimated two-party voteshare of the generic congressional ballot as of",
+                          format(Sys.Date(), "%b %d")),
          x = NULL,
          y = NULL,
          caption = paste0("Model by @markjrieke\n",
                           "Data courtesy of @FiveThirtyEight\n",
                           "https://projects.fivethirtyeight.com/congress-generic-ballot-polls/"))
   
-  ggsave("data/models/generic_ballot/generic_ballot_2021-12-01.png",
+  ggsave(paste0("data/models/generic_ballot/generic_ballot_",
+                Sys.Date(),
+                ".png"),
          width = 9,
          height = 6,
          units = "in",
@@ -1396,7 +1399,20 @@ if (viz_complete == FALSE) {
 
 ##################### TESTING AREA #######################
 
-
+# see what error bars they're using
+read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
+  mutate(dem_hi_off = dem_hi - dem_estimate,
+         dem_lo_off = dem_lo - dem_estimate,
+         rep_hi_off = rep_hi - rep_estimate,
+         rep_lo_off = rep_lo - rep_estimate) %>%
+  select(date, ends_with("off")) %>%
+  pivot_longer(ends_with("off"),
+               names_to = "variable",
+               values_to = "offset") %>%
+  ggplot(aes(x = date,
+             y = offset,
+             color = variable)) +
+  geom_line()
 
 
 
