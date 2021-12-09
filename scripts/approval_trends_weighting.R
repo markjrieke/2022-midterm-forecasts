@@ -80,6 +80,89 @@ final <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
 
 
 
+#################### TESTING ZONE DAWG ####################
+
+begin_date <- ymd("2017-01-22")
+final_date <- ymd("2021-01-20")
+
+approval_average <- function(.data,
+                             begin_date,
+                             final_date, 
+                             pollster_weight,
+                             sample_weight,
+                             population_weight,
+                             method_weight,
+                             date_weight) {
+  
+  approval_polls %>%
+    
+    # filter to just the relevant dates
+    filter(end_date <= final_date,
+           end_date >= begin_date) %>%
+    
+    
+}
+
+#################### GENERIC BALLOT AVERAGE FUNCTION ####################
+
+#' Return the weighted polling average of polls conducted from `begin_date` to `end_date`
+#' 
+#' @param begin_date earliest date to include polls, by polling period end_date.
+#' @param final_date last date to include polls, by polling period end_date.
+#' @param pollster_weight tibble of pollster weights and offsets
+#' @param sample_weight sample size weight (relative to a sample size of 1000)
+#' @param population_weight tibble of weights by survey population
+#' @param method_weight tibble of weights by survey methodology
+#' @param date_weight weight for exponential decay function
+generic_ballot_average <- function(.data,
+                                   begin_date,
+                                   final_date,
+                                   pollster_weight,
+                                   sample_weight,
+                                   population_weight,
+                                   method_weight,
+                                   date_weight) {
+  
+  .data %>%
+    
+    # filter to just the relevant dates  
+    filter(end_date <= final_date,
+           end_date >= begin_date) %>%
+    
+    # apply pollster weights and offsets 
+    left_join(pollster_weight, by = "pollster") %>%
+    mutate(dem2pv = dem2pv + pollster_offset,
+           dem_votes = round(dem2pv * sample_size),
+           rep_votes = round((1-dem2pv) * sample_size)) %>%
+    select(-pollster_offset) %>%
+    
+    # apply sample size weight
+    mutate(sample_weight = sample_size/1000 * sample_weight) %>%
+    
+    # apply population weight
+    left_join(population_weight, by = "population_full") %>%
+    
+    # apply methodology weight
+    left_join(method_weight, by = "methodology") %>%
+    
+    # apply date weight
+    mutate(days_diff = as.numeric(final_date - end_date) + 1,
+           weeks_diff = days_diff/7,
+           date_weight = date_weight ^ weeks_diff) %>%
+    select(-days_diff, -weeks_diff) %>%
+    
+    # created individual poll weights
+    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
+           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
+    
+    # summarise with a weak uniform prior
+    summarise(alpha = sum(alpha) + 1,
+              beta = sum(beta) + 1) %>%
+    mutate(dem2pv = alpha/(alpha + beta),
+           date = final_date) %>%
+    beta_interval(alpha, beta) %>%
+    select(date, dem2pv, ci_lower, ci_upper)
+}
 
 
 
