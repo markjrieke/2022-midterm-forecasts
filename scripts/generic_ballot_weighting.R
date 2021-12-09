@@ -1399,20 +1399,6 @@ if (viz_complete == FALSE) {
 
 ##################### TESTING AREA #######################
 
-# see what error bars they're using
-read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
-  mutate(dem_hi_off = dem_hi - dem_estimate,
-         dem_lo_off = dem_lo - dem_estimate,
-         rep_hi_off = rep_hi - rep_estimate,
-         rep_lo_off = rep_lo - rep_estimate) %>%
-  select(date, ends_with("off")) %>%
-  pivot_longer(ends_with("off"),
-               names_to = "variable",
-               values_to = "offset") %>%
-  ggplot(aes(x = date,
-             y = offset,
-             color = variable)) +
-  geom_line()
 
 
 
