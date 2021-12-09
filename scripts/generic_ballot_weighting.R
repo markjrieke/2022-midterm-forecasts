@@ -1375,10 +1375,9 @@ if (viz_complete == FALSE) {
     scale_x_date(labels = scales::date_format("%b"),
                  breaks = "month") +
     theme(panel.grid.minor.x = element_blank(),
-          plot.title.position = "plot") + #,
-    #plot.title = element_text(size = 18),
-    #plot.subtitle = element_text(size = 14)) +
-    labs(title = "Do Voters Want Democrats or Republicans in Congress?",
+          plot.title.position = "plot",
+          plot.title = element_markdown(family = "Roboto Slab")) + 
+    labs(title = "Do Voters Want <span style=color:'#5565D7'>**Democrats**</span> or <span style=color:'#D75565'>**Republicans**</span> in Congress?",
          subtitle = paste("Estimated two-party voteshare of the generic congressional ballot as of",
                           format(Sys.Date(), "%b %d")),
          x = NULL,
