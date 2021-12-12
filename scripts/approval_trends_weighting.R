@@ -129,6 +129,15 @@ pull_methodology_weights <- function(.data) {
   
 } 
 
+# pull date_weight
+pull_date_weight <- function(.data) {
+  
+  .data %>%
+    filter(variable == "date_weight") %>%
+    pull(weight)
+  
+} 
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
@@ -218,6 +227,8 @@ final_date <- ymd("2021-01-20")
 approval_pollster_weights <- pull_pollster_weights(approval_weights)
 approval_sample_weight <- pull_sample_weight(approval_weights)
 approval_population_weight <- pull_population_weights(approval_weights)
+approval_date_weight <- pull_date_weight(approval_weights)
+approval_method_weight <- pull_methodology_weights(approval_weights)
 
 approval_average <- function(.data,
                              begin_date,
@@ -229,7 +240,7 @@ approval_average <- function(.data,
                              date_weight) {
   
   # BRO YOU GOTTA CHANGE THIS TO METRIC AGNOSTIC
-  approval_polls %>%
+  .data %>%
     
     # filter to just the relevant dates
     filter(end_date <= final_date,
@@ -252,22 +263,27 @@ approval_average <- function(.data,
     left_join(method_weight, by = "methodology") %>%
     
     # apply date weight
-  
-}
-
-#################### GENERIC BALLOT AVERAGE FUNCTION ####################
-
-
-    # apply date weight
     mutate(days_diff = as.numeric(final_date - end_date) + 1,
            weeks_diff = days_diff/7,
            date_weight = date_weight ^ weeks_diff) %>%
     select(-days_diff, -weeks_diff) %>%
     
-    # created individual poll weights
-    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
-           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
+    # create individual poll weights
+    mutate(alpha = yes_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
+           beta = not_yes_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
     
+    # summarise with a weak uniform prior
+    summarise(alpha = sum(alpha) + 1,
+              beta = sum(beta) + 1) %>%
+    mutate(approval = alpha/(alpha + beta),
+           date = final_date) %>%
+    beta_interval(alpha, beta) %>%
+    select(date, approval, ci_lower, ci_upper)
+  
+}
+
+#################### GENERIC BALLOT AVERAGE FUNCTION ####################
+
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
               beta = sum(beta) + 1) %>%
