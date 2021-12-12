@@ -82,6 +82,50 @@ final <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
 
 #################### FUNCTIONS HOMIE ####################
 
+# initialize weights and offsets
+initialize_weights <- function() {
+  
+  bind_rows(
+    
+    # pollster weights
+    tibble(variable = c(pollsters, "Other Pollster"), 
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # pollster offsets
+    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
+           weight = 0,
+           next_lower = -0.1,
+           next_upper = 0.1),
+    
+    # date weights
+    tibble(variable = "date_weight",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # sample size weights
+    tibble(variable = "sample_size",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # population weights
+    tibble(variable = approval_polls %>% distinct(population_full) %>% pull(population_full),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # methodology weights
+    tibble(variable = c(methods, "Other Method"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1)
+  )
+  
+}
+
 # construct a tibble for pollster weights and offsets
 pull_pollster_weights <- function(.data) {
   
@@ -138,98 +182,20 @@ pull_date_weight <- function(.data) {
   
 } 
 
-#################### TESTING ZONE DAWG ####################
 
-# initialize variable weights & offsets
-approval_weights <<- 
-  bind_rows(
-    
-    # pollster weights
-    tibble(variable = c(pollsters, "Other Pollster"), 
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # pollster offsets
-    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
-           weight = 0,
-           next_lower = -0.1,
-           next_upper = 0.1),
-    
-    # date weights
-    tibble(variable = "date_weight",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # sample size weights
-    tibble(variable = "sample_size",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # population weights
-    tibble(variable = approval_polls %>% distinct(population_full) %>% pull(population_full),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # methodology weights
-    tibble(variable = c(methods, "Other Method"),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1)
-  )
+#################### GENERIC APPROVAL AVERAGE FUNCTION ####################
 
-# initialize variable weights & offsets
-disapproval_weights <<- 
-  bind_rows(
-    
-    # pollster weights
-    tibble(variable = c(pollsters, "Other Pollster"), 
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # pollster offsets
-    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
-           weight = 0,
-           next_lower = -0.1,
-           next_upper = 0.1),
-    
-    # date weights
-    tibble(variable = "date_weight",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # sample size weights
-    tibble(variable = "sample_size",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # population weights
-    tibble(variable = approval_polls %>% distinct(population_full) %>% pull(population_full),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # methodology weights
-    tibble(variable = c(methods, "Other Method"),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1)
-  )
-
-begin_date <- ymd("2017-01-22")
-final_date <- ymd("2021-01-20")
-approval_pollster_weights <- pull_pollster_weights(approval_weights)
-approval_sample_weight <- pull_sample_weight(approval_weights)
-approval_population_weight <- pull_population_weights(approval_weights)
-approval_date_weight <- pull_date_weight(approval_weights)
-approval_method_weight <- pull_methodology_weights(approval_weights)
-
+#' Return the weighted polling average of polls conducted from `begin_date` to `end_date`
+#' 
+#' @param .data dataframe or tibble of approval polls
+#' @param begin_date earliest date to include polls, by polling period end_date.
+#' @param final_date last date to include polls, by polling period end_date.
+#' @param pollster_weight tibble of pollster weights and offsets
+#' @param sample_weight sample size weight (relative to a sample size of 1000)
+#' @param population_weight tibble of weights by survey population
+#' @param method_weight tibble of weights by survey methodology
+#' @param date_weight weight for exponential decay function
+#' @param answer choose whether to calculate approval (yes) or disapproval (no)
 approval_average <- function(.data,
                              begin_date,
                              final_date, 
@@ -282,15 +248,34 @@ approval_average <- function(.data,
   
 }
 
+#################### TESTING ZONE DAWG ####################
+
+# initialize variable weights & offsets
+approval_weights <- initialize_weights()
+
+# initialize variable weights & offsets
+disapproval_weights <- initialize_weights()
+
+begin_date <- ymd("2017-01-22")
+final_date <- ymd("2021-01-20")
+approval_pollster_weights <- pull_pollster_weights(approval_weights)
+approval_sample_weight <- pull_sample_weight(approval_weights)
+approval_population_weight <- pull_population_weights(approval_weights)
+approval_date_weight <- pull_date_weight(approval_weights)
+approval_method_weight <- pull_methodology_weights(approval_weights)
+
+
+
 approval_average(approval_polls, 
                  begin_date, 
                  final_date, 
-                 approval_pollster_weights, 
-                 approval_sample_weight, 
-                 approval_population_weight, 
-                 approval_method_weight, 
-                 approval_date_weight, 
+                 pull_pollster_weights(approval_weights),
+                 pull_sample_weight(approval_weights),
+                 pull_population_weights(approval_weights),
+                 pull_methodology_weights(approval_weights),
+                 pull_date_weight(approval_weights),
                  no)
+                 
  
 
 
