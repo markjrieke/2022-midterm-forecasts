@@ -98,10 +98,59 @@ pull_pollster_weights <- function(.data) {
   
 } 
 
+pull_sample_weight <- function(.data) {
+  
+  .data %>%
+    filter(variable == "sample_size") %>%
+    pull(weight)
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
-variable_weights <<- 
+approval_weights <<- 
+  bind_rows(
+    
+    # pollster weights
+    tibble(variable = c(pollsters, "Other Pollster"), 
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # pollster offsets
+    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
+           weight = 0,
+           next_lower = -0.1,
+           next_upper = 0.1),
+    
+    # date weights
+    tibble(variable = "date_weight",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # sample size weights
+    tibble(variable = "sample_size",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # population weights
+    tibble(variable = approval_polls %>% distinct(population_full) %>% pull(population_full),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # methodology weights
+    tibble(variable = c(methods, "Other Method"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1)
+  )
+
+# initialize variable weights & offsets
+disapproval_weights <<- 
   bind_rows(
     
     # pollster weights
@@ -143,7 +192,8 @@ variable_weights <<-
 
 begin_date <- ymd("2017-01-22")
 final_date <- ymd("2021-01-20")
-pollster_weight <- pull_pollster_weights(variable_weights)
+approval_pollster_weights <- pull_pollster_weights(approval_weights)
+approval_sample_weight <- pull_sample_weight(approval_weights)
 
 approval_average <- function(.data,
                              begin_date,
@@ -154,6 +204,7 @@ approval_average <- function(.data,
                              method_weight,
                              date_weight) {
   
+  # BRO YOU GOTTA CHANGE THIS TO METRIC AGNOSTIC
   approval_polls %>%
     
     # filter to just the relevant dates
@@ -165,20 +216,16 @@ approval_average <- function(.data,
     mutate(yes = yes + pollster_offset,
            yes_votes = round(yes * sample_size),
            not_yes_votes = round((1-yes) * sample_size)) %>%
-    select(-pollster_offset)
+    select(-pollster_offset) %>%
+    
+    # apply sample size weight
+    mutate(sample_weight = sample_size/1000 * sample_weight)
     
 }
 
 #################### GENERIC BALLOT AVERAGE FUNCTION ####################
 
 
-    # apply pollster weights and offsets 
-    left_join(pollster_weight, by = "pollster") %>%
-    mutate(dem2pv = dem2pv + pollster_offset,
-           dem_votes = round(dem2pv * sample_size),
-           rep_votes = round((1-dem2pv) * sample_size)) %>%
-    select(-pollster_offset) %>%
-    
     # apply sample size weight
     mutate(sample_weight = sample_size/1000 * sample_weight) %>%
     
