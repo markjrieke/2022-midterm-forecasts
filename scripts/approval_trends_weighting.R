@@ -106,6 +106,16 @@ pull_sample_weight <- function(.data) {
   
 }
 
+pull_population_weights <- function(.data) {
+  
+  .data %>%
+    filter(variable %in% c("rv", "lv", "a", "v")) %>%
+    select(variable, weight) %>%
+    rename(population_full = variable,
+           population_weight = weight)
+  
+} 
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
@@ -194,6 +204,7 @@ begin_date <- ymd("2017-01-22")
 final_date <- ymd("2021-01-20")
 approval_pollster_weights <- pull_pollster_weights(approval_weights)
 approval_sample_weight <- pull_sample_weight(approval_weights)
+approval_population_weight <- pull_population_weights(approval_weights)
 
 approval_average <- function(.data,
                              begin_date,
@@ -219,19 +230,18 @@ approval_average <- function(.data,
     select(-pollster_offset) %>%
     
     # apply sample size weight
-    mutate(sample_weight = sample_size/1000 * sample_weight)
+    mutate(sample_weight = sample_size/1000 * sample_weight) %>%
+    
+    # apply population weight
+    left_join(population_weight, by = "population_full") %>%
+    
+    # apply methodology weight
     
 }
 
 #################### GENERIC BALLOT AVERAGE FUNCTION ####################
 
 
-    # apply sample size weight
-    mutate(sample_weight = sample_size/1000 * sample_weight) %>%
-    
-    # apply population weight
-    left_join(population_weight, by = "population_full") %>%
-    
     # apply methodology weight
     left_join(method_weight, by = "methodology") %>%
     
