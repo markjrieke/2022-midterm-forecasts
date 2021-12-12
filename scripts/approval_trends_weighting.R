@@ -237,9 +237,9 @@ approval_average <- function(.data,
                              sample_weight,
                              population_weight,
                              method_weight,
-                             date_weight) {
+                             date_weight,
+                             answer) {
   
-  # BRO YOU GOTTA CHANGE THIS TO METRIC AGNOSTIC
   .data %>%
     
     # filter to just the relevant dates
@@ -248,9 +248,9 @@ approval_average <- function(.data,
     
     # apply pollster weights and offsets
     left_join(pollster_weight, by = "pollster") %>%
-    mutate(yes = yes + pollster_offset,
-           yes_votes = round(yes * sample_size),
-           not_yes_votes = round((1-yes) * sample_size)) %>%
+    mutate(answer = {{answer}} + pollster_offset,
+           answer_votes = round({{answer}} * sample_size),
+           not_answer_votes = round((1-{{answer}}) * sample_size)) %>%
     select(-pollster_offset) %>%
     
     # apply sample size weight
@@ -269,29 +269,29 @@ approval_average <- function(.data,
     select(-days_diff, -weeks_diff) %>%
     
     # create individual poll weights
-    mutate(alpha = yes_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
-           beta = not_yes_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
+    mutate(alpha = answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
+           beta = not_answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
     
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
               beta = sum(beta) + 1) %>%
-    mutate(approval = alpha/(alpha + beta),
+    mutate(answer = alpha/(alpha + beta),
            date = final_date) %>%
     beta_interval(alpha, beta) %>%
-    select(date, approval, ci_lower, ci_upper)
+    select(date, answer, ci_lower, ci_upper)
   
 }
 
-#################### GENERIC BALLOT AVERAGE FUNCTION ####################
-
-    # summarise with a weak uniform prior
-    summarise(alpha = sum(alpha) + 1,
-              beta = sum(beta) + 1) %>%
-    mutate(dem2pv = alpha/(alpha + beta),
-           date = final_date) %>%
-    beta_interval(alpha, beta) %>%
-    select(date, dem2pv, ci_lower, ci_upper)
-}
+approval_average(approval_polls, 
+                 begin_date, 
+                 final_date, 
+                 approval_pollster_weights, 
+                 approval_sample_weight, 
+                 approval_population_weight, 
+                 approval_method_weight, 
+                 approval_date_weight, 
+                 no)
+ 
 
 
 
