@@ -29,7 +29,9 @@ approval_polls <-
   select(display_name, sample_size, population_full,
          methodology, end_date, yes, no) %>%
   mutate(end_date = mdy(end_date),
-         methodology = replace_na(methodology, "Unknown")) %>%
+         methodology = replace_na(methodology, "Unknown"),
+         yes = yes/100,
+         no = no/100) %>%
   drop_na() %>%
   rename(pollster = display_name)
 
@@ -78,12 +80,70 @@ approval_polls <-
 begin <- rep(ymd("2017-01-22"), 1459)
 final <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
 
+#################### FUNCTIONS HOMIE ####################
 
+# construct a tibble for pollster weights and offsets
+pull_pollster_weights <- function(.data) {
+  
+  .data %>%
+    filter(str_detect(variable, " Offset")) %>%
+    select(variable, weight) %>%
+    rename(offset = weight) %>%
+    mutate(variable = str_remove(variable, " Offset")) %>%
+    left_join(.data, by = "variable") %>%
+    select(-starts_with("next")) %>%
+    rename(pollster = variable,
+           pollster_offset = offset,
+           pollster_weight = weight)
+  
+} 
 
 #################### TESTING ZONE DAWG ####################
 
+# initialize variable weights & offsets
+variable_weights <<- 
+  bind_rows(
+    
+    # pollster weights
+    tibble(variable = c(pollsters, "Other Pollster"), 
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # pollster offsets
+    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
+           weight = 0,
+           next_lower = -0.1,
+           next_upper = 0.1),
+    
+    # date weights
+    tibble(variable = "date_weight",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # sample size weights
+    tibble(variable = "sample_size",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # population weights
+    tibble(variable = approval_polls %>% distinct(population_full) %>% pull(population_full),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # methodology weights
+    tibble(variable = c(methods, "Other Method"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1)
+  )
+
 begin_date <- ymd("2017-01-22")
 final_date <- ymd("2021-01-20")
+pollster_weight <- pull_pollster_weights(variable_weights)
 
 approval_average <- function(.data,
                              begin_date,
@@ -100,35 +160,18 @@ approval_average <- function(.data,
     filter(end_date <= final_date,
            end_date >= begin_date) %>%
     
+    # apply pollster weights and offsets
+    left_join(pollster_weight, by = "pollster") %>%
+    mutate(yes = yes + pollster_offset,
+           yes_votes = round(yes * sample_size),
+           not_yes_votes = round((1-yes) * sample_size)) %>%
+    select(-pollster_offset)
     
 }
 
 #################### GENERIC BALLOT AVERAGE FUNCTION ####################
 
-#' Return the weighted polling average of polls conducted from `begin_date` to `end_date`
-#' 
-#' @param begin_date earliest date to include polls, by polling period end_date.
-#' @param final_date last date to include polls, by polling period end_date.
-#' @param pollster_weight tibble of pollster weights and offsets
-#' @param sample_weight sample size weight (relative to a sample size of 1000)
-#' @param population_weight tibble of weights by survey population
-#' @param method_weight tibble of weights by survey methodology
-#' @param date_weight weight for exponential decay function
-generic_ballot_average <- function(.data,
-                                   begin_date,
-                                   final_date,
-                                   pollster_weight,
-                                   sample_weight,
-                                   population_weight,
-                                   method_weight,
-                                   date_weight) {
-  
-  .data %>%
-    
-    # filter to just the relevant dates  
-    filter(end_date <= final_date,
-           end_date >= begin_date) %>%
-    
+
     # apply pollster weights and offsets 
     left_join(pollster_weight, by = "pollster") %>%
     mutate(dem2pv = dem2pv + pollster_offset,
