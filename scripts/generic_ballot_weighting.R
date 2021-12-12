@@ -1396,8 +1396,134 @@ if (viz_complete == FALSE) {
   
 }
 
+##################### PLOT NEW DATA #######################
+
+# pull in variable weights
+variable_weights <- 
+  read_csv("data/models/generic_ballot/variable_weights.csv")
+
+# pull in & wrangle current polls
+generic_2022 <- 
+  read_csv("https://projects.fivethirtyeight.com/polls-page/data/generic_ballot_polls.csv") %>%
+  select(cycle, display_name, sample_size, population_full, 
+         methodology, end_date, dem, rep, ind) %>%
+  mutate(end_date = mdy(end_date),
+         ind = replace_na(ind, 0),
+         methodology = replace_na(methodology, "Unknown"),
+         sample_size = round((dem + rep)/100 * sample_size),
+         dem2pv = dem/(dem + rep),
+         dem_votes = round(dem2pv * sample_size),
+         rep_votes = round((1-dem2pv) * sample_size)) %>%
+  select(-dem, -rep, -ind, dem2pv) %>%
+  drop_na() %>%
+  rename(pollster = display_name) %>%
+  mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
+         methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
+  drop_na()
+
+# create sequence of dates up to 2022 election day
+final_2022 <- seq(ymd("2021-04-01"), ymd("2022-11-08"), "days")
+begin_2022 <- rep(ymd("2020-11-23"), length(final_2022))
+
+# fit to election day
+fit_2022_ed <- 
+  list(begin = begin_2022,
+       final = final_2022) %>%
+  pmap_dfr(~generic_ballot_average(generic_2022,
+                                   ..1,
+                                   ..2,
+                                   pull_pollster_weights(variable_weights),
+                                   pull_sample_weight(),
+                                   pull_population_weights(variable_weights),
+                                   pull_methodology_weights(variable_weights),
+                                   pull_date_weight()))
+
+# get current dem/rep pct for plotting 
+current_dem_pct <-
+  fit_2022_ed %>%
+  filter(date == Sys.Date()) %>%
+  pull(dem2pv)
+
+current_rep_pct <- 1 - current_dem_pct
+
+# plot
+fit_2022_ed %>%
+  mutate(across(dem2pv:ci_upper, ~if_else(date > Sys.Date(), as.double(NA), .x)),
+         rep2pv = 1 - dem2pv,
+         rep_ci_upper = 1 - ci_lower,
+         rep_ci_lower = 1 - ci_upper) %>%
+  ggplot(aes(x = date)) +
+  geom_ribbon(aes(ymin = rep_ci_lower,
+                  ymax = rep_ci_upper),
+              fill = dd_red,
+              alpha = 0.25) +
+  geom_ribbon(aes(ymin = ci_lower,
+                  ymax = ci_upper),
+              fill = dd_blue,
+              alpha = 0.25) +
+  geom_line(aes(y = rep2pv),
+            color = "white",
+            size = 3) +
+  geom_line(aes(y = rep2pv),
+            color = dd_red,
+            size = 1.25) +
+  geom_line(aes(y = dem2pv),
+            color = "white",
+            size = 3) +
+  geom_line(aes(y = dem2pv),
+            color = dd_blue,
+            size = 1.25) +
+  geom_vline(xintercept = Sys.Date(),
+             size = 1,
+             linetype = "dotted",
+             color = "gray") +
+  geom_text(x = Sys.Date() + 40,
+            y = current_rep_pct,
+            label = paste0(round(current_rep_pct, 3) * 100, "%"),
+            size = 8,
+            fontface = "bold",
+            color = "white",
+            family = "Roboto Slab") +
+  geom_text(x = Sys.Date() + 40,
+            y = current_rep_pct,
+            label = paste0(round(current_rep_pct, 3) * 100, "%"),
+            size = 8,
+            color = dd_red,
+            family = "Roboto Slab") +
+  geom_text(x = Sys.Date() + 40,
+            y = current_dem_pct,
+            label = paste0(round(current_dem_pct, 3) * 100, "%"),
+            size = 8,
+            fontface = "bold",
+            color = "white",
+            family = "Roboto Slab") +
+  geom_text(x = Sys.Date() + 40,
+            y = current_dem_pct,
+            label = paste0(round(current_dem_pct, 3) * 100, "%"),
+            size = 8,
+            color = dd_blue,
+            family = "Roboto Slab") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_x_date(labels = scales::date_format("%b"),
+               breaks = "month") +
+  theme(panel.grid.minor.x = element_blank(),
+        plot.title.position = "plot",
+        plot.title = element_markdown(family = "Roboto Slab")) + 
+  labs(title = "Do Voters Want <span style=color:'#5565D7'>**Democrats**</span> or <span style=color:'#D75565'>**Republicans**</span> in Congress?",
+       subtitle = paste("Estimated two-party voteshare of the generic congressional ballot as of",
+                        format(Sys.Date(), "%b %d")),
+       x = NULL,
+       y = NULL,
+       caption = paste0("Model by @markjrieke\n",
+                        "Data courtesy of @FiveThirtyEight\n",
+                        "https://projects.fivethirtyeight.com/congress-generic-ballot-polls/"))
+
+# save over current photo
+ggsave("data/models/generic_ballot/generic_ballot_current.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
 ##################### TESTING AREA #######################
-
-
-
 
