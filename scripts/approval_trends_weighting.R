@@ -98,6 +98,7 @@ pull_pollster_weights <- function(.data) {
   
 } 
 
+# pull sample_size weight
 pull_sample_weight <- function(.data) {
   
   .data %>%
@@ -106,6 +107,7 @@ pull_sample_weight <- function(.data) {
   
 }
 
+# construct a tibble for weights by survey population
 pull_population_weights <- function(.data) {
   
   .data %>%
@@ -113,6 +115,17 @@ pull_population_weights <- function(.data) {
     select(variable, weight) %>%
     rename(population_full = variable,
            population_weight = weight)
+  
+} 
+
+# construct a tibble for weights by survey methodology
+pull_methodology_weights <- function(.data) {
+  
+  .data %>%
+    filter(variable %in% c(methods, "Other Method")) %>%
+    select(variable, weight) %>%
+    rename(methodology = variable,
+           method_weight = weight)
   
 } 
 
@@ -236,15 +249,15 @@ approval_average <- function(.data,
     left_join(population_weight, by = "population_full") %>%
     
     # apply methodology weight
+    left_join(method_weight, by = "methodology") %>%
     
+    # apply date weight
+  
 }
 
 #################### GENERIC BALLOT AVERAGE FUNCTION ####################
 
 
-    # apply methodology weight
-    left_join(method_weight, by = "methodology") %>%
-    
     # apply date weight
     mutate(days_diff = as.numeric(final_date - end_date) + 1,
            weeks_diff = days_diff/7,
