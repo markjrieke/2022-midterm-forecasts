@@ -1388,6 +1388,143 @@ if (viz_complete == FALSE) {
 
 ##################### FIT ERROR BARS #####################
 
+# reload generic_trend
+generic_trend <- read_csv(paste0(path, "generic_ballot.csv"))
+
+# reformat generic_trend
+generic_trend <- 
+  generic_trend %>%
+  mutate(dem2pv = dem_estimate/(dem_estimate + rep_estimate),
+         dem2pv_hi = dem_hi/(dem_hi + rep_lo),
+         dem2pv_lo = dem_lo/(dem_lo + rep_hi),
+         delta_hi = dem2pv_hi - dem2pv,
+         delta_lo = dem2pv_lo - dem2pv) %>%
+  filter(date < ymd("2021-01-01")) %>%
+  rename(dem_truth = dem2pv) %>%
+  select(date, dem_truth, starts_with("delta"))
+
+# short function for getting the generic downweight for errorbars
+update_downweight <- function(lower_bound, upper_bound) {
+  
+  # setup futures
+  message("Setting up multisession workers")
+  plan(multisession, workers = 8)
+  
+  # fit weights to data
+  weight_map <- 
+    sequence_weights(lower_bound, upper_bound) %>%
+    create_try_list() %>%
+    future_pmap_dfr(~generic_ballot_average(generic_polls,
+                                            ..2,
+                                            ..3,
+                                            pull_pollster_weights(variable_weights),
+                                            pull_sample_weight(),
+                                            pull_population_weights(variable_weights),
+                                            pull_methodology_weights(variable_weights),
+                                            pull_date_weight(),
+                                            ..1))
+  
+  # return summary tibble w/rmse & pct diff
+  weight_map %>%
+    
+    # cacluate hi/lo confidence interval
+    mutate(est_hi = ci_upper - dem2pv,
+           est_lo = ci_lower - dem2pv) %>%
+    
+    # merging data, light reformatting
+    left_join(generic_trend, by = "date") %>%
+    bind_cols(weight = sequence_weights(lower_bound, upper_bound)) %>%
+    select(weight, 
+           starts_with("est"), 
+           starts_with("delta")) %>%
+    
+    # get individual rmse for hi/lo confidence interval
+    group_by(weight) %>%
+    nest() %>%
+    mutate(rmse_hi = map(data, yardstick::rmse, truth = delta_hi, estimate = est_hi)) %>%
+    unnest(rmse_hi) %>%
+    select(-.metric, -.estimator) %>%
+    rename(rmse_hi = .estimate) %>%
+    mutate(rmse_lo = map(data, yardstick::rmse, truth = delta_lo, estimate = est_lo)) %>%
+    unnest(rmse_lo) %>%
+    select(-.metric, -.estimator) %>%
+    rename(rmse_lo = .estimate) %>%
+    select(-data) %>%
+    ungroup() %>%
+    
+    # summarise & return
+    mutate(rmse = rmse_hi + rmse_lo,
+           pct_diff = (max(rmse) - min(rmse)) /mean(max(rmse), min(rmse)))
+  
+}
+
+# quick function for pulling the downweight
+pull_downweight <- function() {
+  
+  variable_weights %>%
+    filter(variable == "downweight") %>%
+    pull(weight)
+  
+}
+
+# run through downweights (there's a better way to do this but I'm lazy right now)
+downweight <- update_downweight(0, 1) # best: 0.25
+downweight <- update_downweight(0, 0.5) # best: 0.125
+downweight <- update_downweight(0, 0.25) # best: 0.0625
+downweight <- update_downweight(0, 0.125) # best: 0.03125
+downweight <- update_downweight(0, 0.0625) # best: 0.015625
+downweight <- update_downweight(0, 0.03125) # best: 0.0078125
+downweight <- update_downweight(0, 0.015625) # best: 0.0078125
+downweight <- update_downweight(0.00390625, 0.01171875) # best: 0.0078125
+downweight <- update_downweight(0.005859375, 0.009765625) # best: 0.0078125
+downweight <- update_downweight(0.006835938, 0.008789063) # best: 0.007324219
+downweight <- update_downweight(0.006835938, 0.007812500) # selected: 0.006835938
+
+# add selected downweight to variable_weights & save to csv
+variable_weights <- 
+  variable_weights %>%
+  bind_rows(tibble(variable = "downweight",
+                   weight = 0.006835938,
+                   next_lower = 0,
+                   next_upper = 0,
+                   search_suggestion = "final"))
+
+variable_weights %>%
+  write_csv("data/models/generic_ballot/variable_weights.csv")
+
+# quick viz check
+fit_ci <- 
+  list(begin = c(begin_2018, begin_2020),
+       final = c(final_2018, final_2020)) %>%
+  pmap_dfr(~generic_ballot_average(generic_polls,
+                                   ..1,
+                                   ..2,
+                                   pull_pollster_weights(variable_weights),
+                                   pull_sample_weight(),
+                                   pull_population_weights(variable_weights),
+                                   pull_methodology_weights(variable_weights),
+                                   pull_date_weight(),
+                                   pull_downweight()))
+  
+fit_ci %>%
+  left_join(generic_trend, by = "date") %>%
+  ggplot(aes(x = date)) +
+  geom_ribbon(aes(ymin = ci_lower,
+                  ymax = ci_upper),
+              fill = "midnightblue",
+              alpha = 0.25) +
+  geom_ribbon(aes(ymin = dem_truth + delta_lo,
+                  ymax = dem_truth + delta_hi),
+              fill = "red",
+              alpha = 0.25) +
+  geom_line(aes(y = dem_truth),
+            color = "red",
+            size = 1.1) +
+  geom_line(aes(y = dem2pv),
+            color = "midnightblue",
+            size = 1) 
+
+
 
 
 ##################### PLOT NEW DATA #######################
@@ -1430,7 +1567,8 @@ fit_2022_ed <-
                                    pull_sample_weight(),
                                    pull_population_weights(variable_weights),
                                    pull_methodology_weights(variable_weights),
-                                   pull_date_weight()))
+                                   pull_date_weight(),
+                                   pull_downweight()))
 
 # get current dem/rep pct for plotting 
 current_dem_pct <-
