@@ -1492,7 +1492,7 @@ variable_weights <-
 variable_weights %>%
   write_csv("data/models/generic_ballot/variable_weights.csv")
 
-# quick viz check
+# quick viz check against historical confidence band
 fit_ci <- 
   list(begin = c(begin_2018, begin_2020),
        final = c(final_2018, final_2020)) %>%
@@ -1524,8 +1524,62 @@ fit_ci %>%
             color = "midnightblue",
             size = 1) 
 
+ggsave("data/models/generic_ballot/ci_fit_historical.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
 
+# quick viz check against current confidence band (must have generic_2022 already loaded...)
+fit_ci <-
+  list(begin = begin_2022,
+       final = final_2022) %>%
+  pmap_dfr(~generic_ballot_average(generic_2022,
+                                   ..1,
+                                   ..2,
+                                   pull_pollster_weights(variable_weights),
+                                   pull_sample_weight(),
+                                   pull_population_weights(variable_weights),
+                                   pull_methodology_weights(variable_weights),
+                                   pull_date_weight(),
+                                   pull_downweight()))
 
+# pull in current for comparison
+generic_trend_2022 <- 
+  read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
+  filter(date >= ymd("2021-01-01")) %>%
+  mutate(dem2pv = dem_estimate/(dem_estimate + rep_estimate),
+         dem2pv_hi = dem_hi/(dem_hi + rep_lo),
+         dem2pv_lo = dem_lo/(dem_lo + rep_hi),
+         delta_hi = dem2pv_hi - dem2pv,
+         delta_lo = dem2pv_lo - dem2pv) %>%
+  rename(dem_truth = dem2pv) %>%
+  select(date, dem_truth, starts_with("delta"))
+
+fit_ci %>%
+  left_join(generic_trend_2022, by = "date") %>%
+  filter(date <= Sys.Date()) %>%
+  ggplot(aes(x = date)) +
+  geom_ribbon(aes(ymin = ci_lower,
+                  ymax = ci_upper),
+              fill = "midnightblue",
+              alpha = 0.25) +
+  geom_ribbon(aes(ymin = dem_truth + delta_lo,
+                  ymax = dem_truth + delta_hi),
+              fill = "red",
+              alpha = 0.25) +
+  geom_line(aes(y = dem_truth),
+            color = "red",
+            size = 1.1) +
+  geom_line(aes(y = dem2pv),
+            color = "midnightblue",
+            size = 1) 
+
+ggsave("data/models/generic_ballot/ci_fit_current.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
 
 ##################### PLOT NEW DATA #######################
 
