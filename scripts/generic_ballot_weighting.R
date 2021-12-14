@@ -97,7 +97,8 @@ generic_ballot_average <- function(.data,
                                    sample_weight,
                                    population_weight,
                                    method_weight,
-                                   date_weight) {
+                                   date_weight,
+                                   downweight = 1) {
   
   .data %>%
   
@@ -128,8 +129,8 @@ generic_ballot_average <- function(.data,
     select(-days_diff, -weeks_diff) %>%
     
     # created individual poll weights
-    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
-           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
+    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight * downweight,
+           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight * downweight) %>%
     
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
@@ -1385,6 +1386,10 @@ if (viz_complete == FALSE) {
   
 }
 
+##################### FIT ERROR BARS #####################
+
+
+
 ##################### PLOT NEW DATA #######################
 
 # pull in variable weights
@@ -1504,3 +1509,72 @@ ggsave("data/models/generic_ballot/generic_ballot_current.png",
 
 ##################### TESTING AREA #######################
 
+read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
+  filter(date >= ymd("2021-01-01")) %>%
+  mutate(dem2pv_est = dem_estimate/(dem_estimate + rep_estimate),
+         dem_hi_est = dem_hi/(dem_hi + rep_lo),
+         dem_lo_est = dem_lo/(dem_lo + rep_hi)) %>%
+  select(date, dem2pv_est, dem_hi_est, dem_lo_est) %>%
+  mutate(upper = dem_hi_est - dem2pv_est,
+         lower = dem_lo_est - dem2pv_est) %>%
+  select(date, upper, lower) %>%
+  pivot_longer(upper:lower) %>%
+  ggplot(aes(x = date,
+             y = abs(value),
+             color = name)) +
+  geom_line()
+  
+  ggplot(aes(x = date,
+             y = dem2pv_est,
+             ymin = dem_lo_est,
+             ymax = dem_hi_est)) +
+  geom_ribbon(fill = dd_blue,
+              alpha = 0.25) +
+  geom_line(color = "white",
+            size = 3) +
+  geom_line(color = dd_blue,
+            size = 1.1)
+
+offset <- 0.05  
+
+fit_2022_ed %>%
+  mutate(dem_lower = dem2pv - offset,
+         dem_upper = dem2pv + offset,
+         rep2pv = 1 - dem2pv,
+         rep_lower = rep2pv - offset,
+         rep_upper = rep2pv + offset) %>%
+  ggplot(aes(x = date)) +
+  geom_ribbon(aes(ymin = rep_lower,
+                  ymax = rep_upper),
+              fill = dd_red,
+              alpha = 0.25) +
+  geom_ribbon(aes(ymin = dem_lower,
+                  ymax = dem_upper),
+              fill = dd_blue,
+              alpha = 0.25) +
+  geom_line(aes(y = rep2pv),
+            color = "white",
+            size = 3.3) +
+  geom_line(aes(y = rep2pv),
+            color = dd_red,
+            size = 1.1) +
+  geom_line(aes(y = dem2pv),
+            color = "white",
+            size = 3.3) +
+  geom_line(aes(y = dem2pv),
+            color = dd_blue,
+            size = 1.1) +
+  geom_shadowtext(x = Sys.Date() + 40,
+                  y = current_rep_pct,
+                  label = paste0(round(current_rep_pct, 3) * 100, "%"),
+                  size = 8,
+                  family = "Roboto Slab",
+                  color = dd_red,
+                  bg.color = "white") +
+  geom_shadowtext(x = Sys.Date() + 40,
+                  y = current_dem_pct,
+                  label = paste0(round(current_dem_pct, 3) * 100, "%"),
+                  size = 8,
+                  family = "Roboto Slab",
+                  color = dd_blue,
+                  bg.color = "white")
