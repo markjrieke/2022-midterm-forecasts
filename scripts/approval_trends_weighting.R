@@ -4,6 +4,7 @@ library(lubridate)
 library(furrr)
 library(riekelib)
 library(patchwork)
+library(shadowtext)
 
 # themes ----
 source("https://raw.githubusercontent.com/markjrieke/thedatadiary/main/dd_theme_elements/dd_theme_elements.R")
@@ -51,22 +52,20 @@ approval_trends <-
   approval_trends %>%
   select(date, approve_estimate)
 
-# create a list of pollsters who have conducted at least 5 approval polls
+# create a list of pollsters who make up at least 1% of the approval polls
 pollsters <- 
   approval_polls %>%
-  count(pollster) %>%
-  arrange(desc(n)) %>%
-  filter(n >= 5) %>%
+  percent(pollster) %>%
+  arrange(desc(pct)) %>%
+  filter(pct >= 0.01) %>%
   pull(pollster)
 
-# create a list of methodologies that have been used at least 5 times
-# this ends up being *all* of them, but we'll need this list for ensuring that
-# new methodologies are in this list
+# create a list of methodologies that have been used in at least 1% of approval polls
 methods <- 
   approval_polls %>%
-  count(methodology) %>%
-  filter(n >= 5) %>%
-  arrange(desc(n)) %>%
+  percent(methodology) %>%
+  filter(pct >= 0.01) %>%
+  arrange(desc(pct)) %>%
   pull(methodology)
 
 # replace pollsters/methodologies that don't occur often with "Other"
@@ -80,7 +79,72 @@ approval_polls <-
 begin <- rep(ymd("2017-01-22"), 1459)
 final <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
 
-#################### FUNCTIONS HOMIE ####################
+#################### GENERIC APPROVAL AVERAGE FUNCTION ####################
+
+#' Return the weighted polling average of polls conducted from `begin_date` to `end_date`
+#' 
+#' @param .data dataframe or tibble of approval polls
+#' @param begin_date earliest date to include polls, by polling period end_date.
+#' @param final_date last date to include polls, by polling period end_date.
+#' @param pollster_weight tibble of pollster weights and offsets
+#' @param sample_weight sample size weight (relative to a sample size of 1000)
+#' @param population_weight tibble of weights by survey population
+#' @param method_weight tibble of weights by survey methodology
+#' @param date_weight weight for exponential decay function
+#' @param answer choose whether to calculate approval (yes) or disapproval (no)
+approval_average <- function(.data,
+                             begin_date,
+                             final_date, 
+                             pollster_weight,
+                             sample_weight,
+                             population_weight,
+                             method_weight,
+                             date_weight,
+                             answer) {
+  
+  .data %>%
+    
+    # filter to just the relevant dates
+    filter(end_date <= final_date,
+           end_date >= begin_date) %>%
+    
+    # apply pollster weights and offsets
+    left_join(pollster_weight, by = "pollster") %>%
+    mutate(answer = {{answer}} + pollster_offset,
+           answer_votes = round({{answer}} * sample_size),
+           not_answer_votes = round((1-{{answer}}) * sample_size)) %>%
+    select(-pollster_offset) %>%
+    
+    # apply sample size weight
+    mutate(sample_weight = log10(sample_size) * sample_weight) %>%
+    
+    # apply population weight
+    left_join(population_weight, by = "population_full") %>%
+    
+    # apply methodology weight
+    left_join(method_weight, by = "methodology") %>%
+    
+    # apply date weight
+    mutate(days_diff = as.numeric(final_date - end_date) + 1,
+           weeks_diff = days_diff/7,
+           date_weight = date_weight ^ weeks_diff) %>%
+    select(-days_diff, -weeks_diff) %>%
+    
+    # create individual poll weights
+    mutate(alpha = answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
+           beta = not_answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
+    
+    # summarise with a weak uniform prior
+    summarise(alpha = sum(alpha) + 1,
+              beta = sum(beta) + 1) %>%
+    mutate(answer = alpha/(alpha + beta),
+           date = final_date) %>%
+    beta_interval(alpha, beta) %>%
+    select(date, answer, ci_lower, ci_upper)
+  
+}
+
+#################### UTIL FUNCTIONS ####################
 
 # initialize weights and offsets
 initialize_weights <- function() {
@@ -183,70 +247,7 @@ pull_date_weight <- function(.data) {
 } 
 
 
-#################### GENERIC APPROVAL AVERAGE FUNCTION ####################
 
-#' Return the weighted polling average of polls conducted from `begin_date` to `end_date`
-#' 
-#' @param .data dataframe or tibble of approval polls
-#' @param begin_date earliest date to include polls, by polling period end_date.
-#' @param final_date last date to include polls, by polling period end_date.
-#' @param pollster_weight tibble of pollster weights and offsets
-#' @param sample_weight sample size weight (relative to a sample size of 1000)
-#' @param population_weight tibble of weights by survey population
-#' @param method_weight tibble of weights by survey methodology
-#' @param date_weight weight for exponential decay function
-#' @param answer choose whether to calculate approval (yes) or disapproval (no)
-approval_average <- function(.data,
-                             begin_date,
-                             final_date, 
-                             pollster_weight,
-                             sample_weight,
-                             population_weight,
-                             method_weight,
-                             date_weight,
-                             answer) {
-  
-  .data %>%
-    
-    # filter to just the relevant dates
-    filter(end_date <= final_date,
-           end_date >= begin_date) %>%
-    
-    # apply pollster weights and offsets
-    left_join(pollster_weight, by = "pollster") %>%
-    mutate(answer = {{answer}} + pollster_offset,
-           answer_votes = round({{answer}} * sample_size),
-           not_answer_votes = round((1-{{answer}}) * sample_size)) %>%
-    select(-pollster_offset) %>%
-    
-    # apply sample size weight
-    mutate(sample_weight = sample_size/1000 * sample_weight) %>%
-    
-    # apply population weight
-    left_join(population_weight, by = "population_full") %>%
-    
-    # apply methodology weight
-    left_join(method_weight, by = "methodology") %>%
-    
-    # apply date weight
-    mutate(days_diff = as.numeric(final_date - end_date) + 1,
-           weeks_diff = days_diff/7,
-           date_weight = date_weight ^ weeks_diff) %>%
-    select(-days_diff, -weeks_diff) %>%
-    
-    # create individual poll weights
-    mutate(alpha = answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
-           beta = not_answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
-    
-    # summarise with a weak uniform prior
-    summarise(alpha = sum(alpha) + 1,
-              beta = sum(beta) + 1) %>%
-    mutate(answer = alpha/(alpha + beta),
-           date = final_date) %>%
-    beta_interval(alpha, beta) %>%
-    select(date, answer, ci_lower, ci_upper)
-  
-}
 
 #################### TESTING ZONE DAWG ####################
 
