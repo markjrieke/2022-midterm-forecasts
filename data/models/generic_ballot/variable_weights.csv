@@ -1,70 +1,34 @@
 variable,weight,next_lower,next_upper,search_suggestion
-Quinnipiac University,0.75,0.5,1,final
-CNN/SSRS,0.125,0,0.25,final
-NBC News/The Wall Street Journal,1,0.5,1.5,final
-Public Policy Polling,0.25,0,0.5,final
-GQR Research,1,0.5,1.5,final
-ABC News/The Washington Post,1,0.5,1.5,final
-Øptimus,0.5,0.25,0.75,final
-Monmouth University,0.75,0.5,1,final
-Fox News,1,0.5,1.5,final
-Emerson College,1,0.5,1.5,final
-Suffolk University,1,0.5,1.5,final
-IBD/TIPP,1,0.5,1.5,final
-IBD/TIPP Offset,-0.05,-0.1,0,final
-v,1,0.5,1.5,final
-Other Method,0.5,0.25,0.75,final
-USC Dornsife,1.5,1,2,final
-Marist College,1.5,1,2,final
-Public Religion Research Institute,0.5,0,1,final
-Other Pollster,1,0.75,1.25,final
-Øptimus Offset,0.025,6.94e-18,0.05,final
-Public Religion Research Institute Offset,6.94e-18,-0.025,0.025,final
-Suffolk University Offset,-0.15,-0.2,-0.1,final
-sample_size,0.25,0,0.5,final
-The Winston Group,1,0.5,1.5,final
-McLaughlin & Associates,1.25,1,1.5,final
-Firehouse Strategies/Øptimus,0.03125,0,0.03125,final
-Rasmussen Reports/Pulse Opinion Research,0.03125,0,0.03125,final
-Pew Research Center,0.25,0.125,0.375,final
-Harris Poll,0.25,0.125,0.375,final
-SurveyMonkey,0.375,0.25,0.5,final
-USC Dornsife/Los Angeles Times,0.25,0.125,0.375,final
-Opinium,0.25,0.125,0.375,final
-Firehouse Strategies/Øptimus Offset,0,-0.1,0.09999999999999998,final
-Rasmussen Reports/Pulse Opinion Research Offset,6.94e-18,-0.049999999999999996,0.05000000000000001,final
-NBC News/The Wall Street Journal Offset,-0.0625,-0.07500000000000001,-0.05,final
-Public Policy Polling Offset,0.15000000000000002,0.125,0.17500000000000002,final
-Fox News Offset,0.0625,0.05,0.07500000000000001,final
-Harris Poll Offset,-0.05,-0.1,0,final
-Emerson College Offset,-0.25,-0.3,-0.2,final
-Opinium Offset,0.1,0,0.19999999999999998,final
-lv,0.75,0.625,0.875,final
-a,0.625,0.5625,0.6875,final
-McLaughlin & Associates Offset,0.0125,0.00625,0.018750000000000003,final
-CNN/SSRS Offset,0,-0.09999999999999999,0.09999999999999998,final
-ABC News/The Washington Post Offset,-0.275,-0.3,-0.25,final
-USC Dornsife/Los Angeles Times Offset,6.938893903907228e-18,-0.024999999999999998,0.02500000000000001,final
-Live Phone,1.0625,1,1.125,final
-Ipsos,0.53125,0.515625,0.546875,final
-Marist College Offset,-0.046875,-0.05,-0.04375,final
-Monmouth University Offset,0.24999999999999997,0.19999999999999998,0.29999999999999993,final
-Pew Research Center Offset,-0.024999999999999998,-0.0375,-0.012499999999999997,final
-Unknown,0.5,0.375,0.625,final
-Quinnipiac University Offset,-0.009375000000000001,-0.0125,-0.00625,final
-SurveyMonkey Offset,0.075,0.06875,0.08125,final
-rv,1.75,1.625,1.875,final
-Online,0.9375,0.90625,0.96875,final
-YouGov,2,1.875,2.125,final
-The Winston Group Offset,-0.018749999999999996,-0.021875,-0.015624999999999995,final
-IVR/Online,1.125,1,1.25,final
-date_weight,0.87109375,0.8671875,0.875,final
-USC Dornsife Offset,-7.81249999999999e-4,-0.0011718749999999989,-3.9062499999999883e-4,final
-GQR Research Offset,-0.009375000000000012,-0.012500000000000011,-0.0062500000000000125,final
-Other Pollster Offset,0,-7.812499999999998e-4,7.8125e-4,final
-Morning Consult,0.009765625,0.0087890625,0.0107421875,final
-Ipsos Offset,-5.859374999999988e-4,-7.812499999999989e-4,-3.9062499999999883e-4,final
-Morning Consult Offset,-4.7704895589362195e-18,-0.0015625000000000049,0.0015624999999999957,final
-YouGov Offset,0.0019531250000000017,0.0017578125000000016,0.0021484375000000015,final
-HarrisX,0.078125,0.0703125,0.0859375,final
-HarrisX Offset,-0.002929687499999999,-0.003124999999999999,-0.002734374999999999,final
+USC Dornsife,1,0.5,1.5,final
+Rasmussen Reports/Pulse Opinion Research,0.5,0.25,0.75,final
+v,0,0,0.25,final
+Other Method,1,0.5,1.5,final
+McLaughlin & Associates,1,0.75,1.25,final
+Firehouse Strategies/Øptimus,1,0.75,1.25,final
+Unknown,0.5,0.25,0.75,final
+sample_size,0.75,0.5,1,final
+rv,1.25,1.125,1.375,final
+a,0.75,0.6875,0.8125,final
+IVR/Online,1,0.75,1.25,final
+Ipsos,0.875,0.8125,0.9375,final
+Morning Consult,0.0625,0.046875,0.078125,final
+The Winston Group,0.875,0.8125,0.9375,final
+Quinnipiac University,1.125,1,1.25,final
+Other Pollster,1.5,1.375,1.625,final
+Rasmussen Reports/Pulse Opinion Research Offset,0.050000000000000024,0.043750000000000025,0.05625000000000002,final
+Online,0.25,0.234375,0.265625,final
+Morning Consult Offset,4.7704895589362195e-18,-0.0015624999999999955,0.0015625000000000049,final
+The Winston Group Offset,-0.08125000000000002,-0.084375,-0.07812500000000001,final
+Firehouse Strategies/Øptimus Offset,-0.012499999999999997,-0.018749999999999996,-0.006249999999999997,final
+Quinnipiac University Offset,-0.040625,-0.04375,-0.0375,final
+lv,0.46875,0.4375,0.5,final
+Live Phone,1.25,1.1875,1.3125,final
+date_weight,0.859375,0.85546875,0.86328125,final
+YouGov,2.25,2.125,2.375,final
+USC Dornsife Offset,-0.0078124999999999965,-0.009374999999999998,-0.006249999999999996,final
+Ipsos Offset,-7.812499999999955e-4,-0.0011718749999999954,-3.9062499999999536e-4,final
+HarrisX Offset,-0.0015624999999999955,-0.0019531249999999957,-0.0011718749999999954,final
+YouGov Offset,0.0050781250000000045,0.004687500000000005,0.005468750000000005,final
+McLaughlin & Associates Offset,-0.1,-0.11250000000000002,-0.08750000000000001,final
+HarrisX,0.28125,0.25,0.3125,final
+Other Pollster Offset,-1.953124999999954e-4,-3.906249999999954e-4,4.662069341687669e-18,final

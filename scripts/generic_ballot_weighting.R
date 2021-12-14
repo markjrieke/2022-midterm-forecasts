@@ -4,6 +4,7 @@ library(lubridate)
 library(furrr)
 library(riekelib)
 library(patchwork)
+library(shadowtext)
 
 #################### SETUP ####################
 
@@ -43,20 +44,20 @@ generic_trend <-
   mutate(dem2pv = dem_estimate/(dem_estimate + rep_estimate)) %>%
   select(date, dem2pv)
 
-# create list of pollsters who have conducted at least 5 generic ballot polls
+# create list of pollsters who have conducted at least 1% of the generic ballot polls
 pollsters <- 
   generic_polls %>%
-  count(pollster) %>%
-  arrange(desc(n)) %>%
-  filter(n >= 5) %>%
+  percent(pollster) %>%
+  arrange(desc(pct)) %>%
+  filter(pct >= 0.01) %>%
   pull(pollster)
 
-# create list of methodologies that have been utilized at least 5 times
+# create list of methodologies that have been utilized in at least 1% of polls
 methods <-
   generic_polls %>%
-  count(methodology) %>%
-  arrange(desc(n)) %>%
-  filter(n >= 5) %>%
+  percent(methodology) %>%
+  arrange(desc(pct)) %>%
+  filter(pct >= 0.01) %>%
   pull(methodology)
 
 # replace pollsters/methodologies that don't occur often with "Other"
@@ -112,7 +113,7 @@ generic_ballot_average <- function(.data,
     select(-pollster_offset) %>%
     
     # apply sample size weight
-    mutate(sample_weight = sample_size/1000 * sample_weight) %>%
+    mutate(sample_weight = log10(sample_size) * sample_weight) %>%
     
     # apply population weight
     left_join(population_weight, by = "population_full") %>%
@@ -911,7 +912,7 @@ update_all <- function() {
     pull(n)
   
   # determine the approximate runtime (~75s per variable)
-  runtime <- round(num_updates * 80/60)
+  runtime <- round(num_updates * 90/60)
   
   # ask to proceed
   message(paste("Updating all variable weights will take approximately", runtime, "minutes."))
@@ -1345,32 +1346,20 @@ if (viz_complete == FALSE) {
                size = 1,
                linetype = "dotted",
                color = "gray") +
-    geom_text(x = Sys.Date() + 40,
-              y = current_rep_pct,
-              label = paste0(round(current_rep_pct, 3) * 100, "%"),
-              size = 8,
-              fontface = "bold",
-              color = "white",
-              family = "Roboto Slab") +
-    geom_text(x = Sys.Date() + 40,
-              y = current_rep_pct,
-              label = paste0(round(current_rep_pct, 3) * 100, "%"),
-              size = 8,
-              color = dd_red,
-              family = "Roboto Slab") +
-    geom_text(x = Sys.Date() + 40,
-              y = current_dem_pct,
-              label = paste0(round(current_dem_pct, 3) * 100, "%"),
-              size = 8,
-              fontface = "bold",
-              color = "white",
-              family = "Roboto Slab") +
-    geom_text(x = Sys.Date() + 40,
-              y = current_dem_pct,
-              label = paste0(round(current_dem_pct, 3) * 100, "%"),
-              size = 8,
-              color = dd_blue,
-              family = "Roboto Slab") +
+    geom_shadowtext(x = Sys.Date() + 40,
+                    y = current_rep_pct,
+                    label = paste0(round(current_rep_pct, 3) * 100, "%"),
+                    size = 8,
+                    family = "Roboto Slab",
+                    color = dd_red,
+                    bg.color = "white") +
+    geom_shadowtext(x = Sys.Date() + 40,
+                    y = current_dem_pct,
+                    label = paste0(round(current_dem_pct, 3) * 100, "%"),
+                    size = 8,
+                    family = "Roboto Slab",
+                    color = dd_blue,
+                    bg.color = "white") +
     scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
     scale_x_date(labels = scales::date_format("%b"),
                  breaks = "month") +
@@ -1477,32 +1466,20 @@ fit_2022_ed %>%
              size = 1,
              linetype = "dotted",
              color = "gray") +
-  geom_text(x = Sys.Date() + 40,
-            y = current_rep_pct,
-            label = paste0(round(current_rep_pct, 3) * 100, "%"),
-            size = 8,
-            fontface = "bold",
-            color = "white",
-            family = "Roboto Slab") +
-  geom_text(x = Sys.Date() + 40,
-            y = current_rep_pct,
-            label = paste0(round(current_rep_pct, 3) * 100, "%"),
-            size = 8,
-            color = dd_red,
-            family = "Roboto Slab") +
-  geom_text(x = Sys.Date() + 40,
-            y = current_dem_pct,
-            label = paste0(round(current_dem_pct, 3) * 100, "%"),
-            size = 8,
-            fontface = "bold",
-            color = "white",
-            family = "Roboto Slab") +
-  geom_text(x = Sys.Date() + 40,
-            y = current_dem_pct,
-            label = paste0(round(current_dem_pct, 3) * 100, "%"),
-            size = 8,
-            color = dd_blue,
-            family = "Roboto Slab") +
+  geom_shadowtext(x = Sys.Date() + 40,
+                  y = current_rep_pct,
+                  label = paste0(round(current_rep_pct, 3) * 100, "%"),
+                  size = 8,
+                  family = "Roboto Slab",
+                  color = dd_red,
+                  bg.color = "white") +
+  geom_shadowtext(x = Sys.Date() + 40,
+                  y = current_dem_pct,
+                  label = paste0(round(current_dem_pct, 3) * 100, "%"),
+                  size = 8,
+                  family = "Roboto Slab",
+                  color = dd_blue,
+                  bg.color = "white") +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_x_date(labels = scales::date_format("%b"),
                breaks = "month") +
