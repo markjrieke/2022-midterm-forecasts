@@ -1024,6 +1024,8 @@ call_visualizations <- function() {
 # setup themes
 source("https://raw.githubusercontent.com/markjrieke/thedatadiary/main/dd_theme_elements/dd_theme_elements.R")
 theme_set(theme_minimal(base_family = "Roboto Slab"))
+theme_update(plot.background = element_rect(fill = "white",
+                                            color = "white"))
 
 # Set to FALSE to rerun rounds
 completed <- TRUE
