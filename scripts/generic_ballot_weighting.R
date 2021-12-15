@@ -1646,6 +1646,20 @@ plot_dates <-
   distinct(end_date) %>%
   pull(end_date)
 
+# reformat generic_2022 for plotting
+generic_2022 <-
+  generic_2022 %>%
+  select(end_date, pollster, dem2pv) %>%
+  mutate(pollster = paste(pollster, "Offset")) %>%
+  left_join(variable_weights, by = c("pollster" = "variable")) %>%
+  select(-starts_with("next"), -search_suggestion) %>%
+  mutate(dem2pv = dem2pv + weight) %>%
+  select(-weight, -pollster) %>%
+  mutate(rep2pv = 1 - dem2pv) %>%
+  rename(date = end_date,
+         dem_polls = dem2pv,
+         rep_polls = rep2pv)
+
 # plot
 fit_2022_ed %>%
   mutate(across(dem2pv:ci_upper, ~if_else(date > Sys.Date(), as.double(NA), .x)),
@@ -1653,6 +1667,7 @@ fit_2022_ed %>%
          rep2pv = 1 - dem2pv,
          rep_ci_upper = 1 - ci_lower,
          rep_ci_lower = 1 - ci_upper) %>%
+  left_join(generic_2022, by = "date") %>%
   ggplot(aes(x = date)) +
   geom_ribbon(aes(ymin = rep_ci_lower,
                   ymax = rep_ci_upper),
@@ -1664,6 +1679,16 @@ fit_2022_ed %>%
               fill = dd_blue,
               alpha = 0.25,
               na.rm = TRUE) +
+  geom_point(aes(y = dem_polls),
+             color = dd_blue,
+             size = 2,
+             alpha = 0.25,
+             na.rm = TRUE) +
+  geom_point(aes(y = rep_polls),
+             color = dd_red,
+             size = 2,
+             alpha = 0.25,
+             na.rm = TRUE) +
   geom_line(aes(y = rep2pv),
             color = "white",
             size = 3) +
@@ -1719,8 +1744,6 @@ ggsave("data/models/generic_ballot/generic_ballot_current.png",
        dpi = 500)
 
 ##################### TESTING AREA #######################
-
-
 
 
 
