@@ -8,19 +8,19 @@ library(shadowtext)
 
 #################### SETUP ####################
 
-# setup parallel processing (Windows) ----
+# setup parallel processing (Windows) 
 num_cores <- parallel::detectCores()
 clusters <- parallel::makePSOCKcluster(num_cores)
 doParallel::registerDoParallel(clusters)
 
-# set path ----
+# set path 
 path <- "data/polls/src/fte/"
 
-# load data ----
+# load data 
 generic_polls <- read_csv(paste0(path, "generic_ballot_polls_historical.csv"))
 generic_trend <- read_csv(paste0(path, "generic_ballot.csv"))
 
-# pre function wrangle ----
+# pre function wrangle 
 
 # parse down frames to only useful cols; light reformatting
 generic_polls <- 
@@ -1467,119 +1467,127 @@ pull_downweight <- function() {
   
 }
 
-# run through downweights (there's a better way to do this but I'm lazy right now)
-downweight <- update_downweight(0, 1) # best: 0.25
-downweight <- update_downweight(0, 0.5) # best: 0.125
-downweight <- update_downweight(0, 0.25) # best: 0.0625
-downweight <- update_downweight(0, 0.125) # best: 0.03125
-downweight <- update_downweight(0, 0.0625) # best: 0.015625
-downweight <- update_downweight(0, 0.03125) # best: 0.0078125
-downweight <- update_downweight(0, 0.015625) # best: 0.0078125
-downweight <- update_downweight(0.00390625, 0.01171875) # best: 0.0078125
-downweight <- update_downweight(0.005859375, 0.009765625) # best: 0.0078125
-downweight <- update_downweight(0.006835938, 0.008789063) # best: 0.007324219
-downweight <- update_downweight(0.006835938, 0.007812500) # selected: 0.006835938
+# dontrun
 
-# add selected downweight to variable_weights & save to csv
-variable_weights <- 
-  variable_weights %>%
-  bind_rows(tibble(variable = "downweight",
-                   weight = 0.006835938,
-                   next_lower = 0,
-                   next_upper = 0,
-                   search_suggestion = "final"))
+downweight_complete <- TRUE
 
-variable_weights %>%
-  write_csv("data/models/generic_ballot/variable_weights.csv")
-
-# quick viz check against historical confidence band
-fit_ci <- 
-  list(begin = c(begin_2018, begin_2020),
-       final = c(final_2018, final_2020)) %>%
-  pmap_dfr(~generic_ballot_average(generic_polls,
-                                   ..1,
-                                   ..2,
-                                   pull_pollster_weights(variable_weights),
-                                   pull_sample_weight(),
-                                   pull_population_weights(variable_weights),
-                                   pull_methodology_weights(variable_weights),
-                                   pull_date_weight(),
-                                   pull_downweight()))
+if (downweight_complete == FALSE) {
   
-fit_ci %>%
-  left_join(generic_trend, by = "date") %>%
-  ggplot(aes(x = date)) +
-  geom_ribbon(aes(ymin = ci_lower,
-                  ymax = ci_upper),
-              fill = "midnightblue",
-              alpha = 0.25) +
-  geom_ribbon(aes(ymin = dem_truth + delta_lo,
-                  ymax = dem_truth + delta_hi),
-              fill = "red",
-              alpha = 0.25) +
-  geom_line(aes(y = dem_truth),
-            color = "red",
-            size = 1.1) +
-  geom_line(aes(y = dem2pv),
-            color = "midnightblue",
-            size = 1) 
-
-ggsave("data/models/generic_ballot/ci_fit_historical.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
-
-# quick viz check against current confidence band (must have generic_2022 already loaded...)
-fit_ci <-
-  list(begin = begin_2022,
-       final = final_2022) %>%
-  pmap_dfr(~generic_ballot_average(generic_2022,
-                                   ..1,
-                                   ..2,
-                                   pull_pollster_weights(variable_weights),
-                                   pull_sample_weight(),
-                                   pull_population_weights(variable_weights),
-                                   pull_methodology_weights(variable_weights),
-                                   pull_date_weight(),
-                                   pull_downweight()))
-
-# pull in current for comparison
-generic_trend_2022 <- 
-  read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
-  filter(date >= ymd("2021-01-01")) %>%
-  mutate(dem2pv = dem_estimate/(dem_estimate + rep_estimate),
-         dem2pv_hi = dem_hi/(dem_hi + rep_lo),
-         dem2pv_lo = dem_lo/(dem_lo + rep_hi),
-         delta_hi = dem2pv_hi - dem2pv,
-         delta_lo = dem2pv_lo - dem2pv) %>%
-  rename(dem_truth = dem2pv) %>%
-  select(date, dem_truth, starts_with("delta"))
-
-fit_ci %>%
-  left_join(generic_trend_2022, by = "date") %>%
-  filter(date <= Sys.Date()) %>%
-  ggplot(aes(x = date)) +
-  geom_ribbon(aes(ymin = ci_lower,
-                  ymax = ci_upper),
-              fill = "midnightblue",
-              alpha = 0.25) +
-  geom_ribbon(aes(ymin = dem_truth + delta_lo,
-                  ymax = dem_truth + delta_hi),
-              fill = "red",
-              alpha = 0.25) +
-  geom_line(aes(y = dem_truth),
-            color = "red",
-            size = 1.1) +
-  geom_line(aes(y = dem2pv),
-            color = "midnightblue",
-            size = 1) 
-
-ggsave("data/models/generic_ballot/ci_fit_current.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+  # run through downweights (there's a better way to do this but I'm lazy right now)
+  downweight <- update_downweight(0, 1) # best: 0.25
+  downweight <- update_downweight(0, 0.5) # best: 0.125
+  downweight <- update_downweight(0, 0.25) # best: 0.0625
+  downweight <- update_downweight(0, 0.125) # best: 0.03125
+  downweight <- update_downweight(0, 0.0625) # best: 0.015625
+  downweight <- update_downweight(0, 0.03125) # best: 0.0078125
+  downweight <- update_downweight(0, 0.015625) # best: 0.0078125
+  downweight <- update_downweight(0.00390625, 0.01171875) # best: 0.0078125
+  downweight <- update_downweight(0.005859375, 0.009765625) # best: 0.0078125
+  downweight <- update_downweight(0.006835938, 0.008789063) # best: 0.007324219
+  downweight <- update_downweight(0.006835938, 0.007812500) # selected: 0.006835938
+  
+  # add selected downweight to variable_weights & save to csv
+  variable_weights <- 
+    variable_weights %>%
+    bind_rows(tibble(variable = "downweight",
+                     weight = 0.006835938,
+                     next_lower = 0,
+                     next_upper = 0,
+                     search_suggestion = "final"))
+  
+  variable_weights %>%
+    write_csv("data/models/generic_ballot/variable_weights.csv")
+  
+  # quick viz check against historical confidence band
+  fit_ci <- 
+    list(begin = c(begin_2018, begin_2020),
+         final = c(final_2018, final_2020)) %>%
+    pmap_dfr(~generic_ballot_average(generic_polls,
+                                     ..1,
+                                     ..2,
+                                     pull_pollster_weights(variable_weights),
+                                     pull_sample_weight(),
+                                     pull_population_weights(variable_weights),
+                                     pull_methodology_weights(variable_weights),
+                                     pull_date_weight(),
+                                     pull_downweight()))
+  
+  fit_ci %>%
+    left_join(generic_trend, by = "date") %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = dem_truth + delta_lo,
+                    ymax = dem_truth + delta_hi),
+                fill = "red",
+                alpha = 0.25) +
+    geom_line(aes(y = dem_truth),
+              color = "red",
+              size = 1.1) +
+    geom_line(aes(y = dem2pv),
+              color = "midnightblue",
+              size = 1) 
+  
+  ggsave("data/models/generic_ballot/ci_fit_historical.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # quick viz check against current confidence band (must have generic_2022 already loaded...)
+  fit_ci <-
+    list(begin = begin_2022,
+         final = final_2022) %>%
+    pmap_dfr(~generic_ballot_average(generic_2022,
+                                     ..1,
+                                     ..2,
+                                     pull_pollster_weights(variable_weights),
+                                     pull_sample_weight(),
+                                     pull_population_weights(variable_weights),
+                                     pull_methodology_weights(variable_weights),
+                                     pull_date_weight(),
+                                     pull_downweight()))
+  
+  # pull in current for comparison
+  generic_trend_2022 <- 
+    read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
+    filter(date >= ymd("2021-01-01")) %>%
+    mutate(dem2pv = dem_estimate/(dem_estimate + rep_estimate),
+           dem2pv_hi = dem_hi/(dem_hi + rep_lo),
+           dem2pv_lo = dem_lo/(dem_lo + rep_hi),
+           delta_hi = dem2pv_hi - dem2pv,
+           delta_lo = dem2pv_lo - dem2pv) %>%
+    rename(dem_truth = dem2pv) %>%
+    select(date, dem_truth, starts_with("delta"))
+  
+  fit_ci %>%
+    left_join(generic_trend_2022, by = "date") %>%
+    filter(date <= Sys.Date()) %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = dem_truth + delta_lo,
+                    ymax = dem_truth + delta_hi),
+                fill = "red",
+                alpha = 0.25) +
+    geom_line(aes(y = dem_truth),
+              color = "red",
+              size = 1.1) +
+    geom_line(aes(y = dem2pv),
+              color = "midnightblue",
+              size = 1) 
+  
+  ggsave("data/models/generic_ballot/ci_fit_current.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+}
 
 ##################### PLOT NEW DATA #######################
 
@@ -1632,9 +1640,16 @@ current_dem_pct <-
 
 current_rep_pct <- 1 - current_dem_pct
 
+# generate list of dates for which we have polls
+plot_dates <- 
+  generic_2022 %>%
+  distinct(end_date) %>%
+  pull(end_date)
+
 # plot
 fit_2022_ed %>%
   mutate(across(dem2pv:ci_upper, ~if_else(date > Sys.Date(), as.double(NA), .x)),
+         across(starts_with("ci"), ~if_else(date %in% plot_dates | date >= Sys.Date() | date == min(date), .x, as.double(NA))),
          rep2pv = 1 - dem2pv,
          rep_ci_upper = 1 - ci_lower,
          rep_ci_lower = 1 - ci_upper) %>%
@@ -1642,11 +1657,13 @@ fit_2022_ed %>%
   geom_ribbon(aes(ymin = rep_ci_lower,
                   ymax = rep_ci_upper),
               fill = dd_red,
-              alpha = 0.25) +
+              alpha = 0.25,
+              na.rm = TRUE) +
   geom_ribbon(aes(ymin = ci_lower,
                   ymax = ci_upper),
               fill = dd_blue,
-              alpha = 0.25) +
+              alpha = 0.25,
+              na.rm = TRUE) +
   geom_line(aes(y = rep2pv),
             color = "white",
             size = 3) +
@@ -1701,72 +1718,7 @@ ggsave("data/models/generic_ballot/generic_ballot_current.png",
 
 ##################### TESTING AREA #######################
 
-read_csv("https://projects.fivethirtyeight.com/generic-ballot-data/generic_ballot.csv") %>%
-  filter(date >= ymd("2021-01-01")) %>%
-  mutate(dem2pv_est = dem_estimate/(dem_estimate + rep_estimate),
-         dem_hi_est = dem_hi/(dem_hi + rep_lo),
-         dem_lo_est = dem_lo/(dem_lo + rep_hi)) %>%
-  select(date, dem2pv_est, dem_hi_est, dem_lo_est) %>%
-  mutate(upper = dem_hi_est - dem2pv_est,
-         lower = dem_lo_est - dem2pv_est) %>%
-  select(date, upper, lower) %>%
-  pivot_longer(upper:lower) %>%
-  ggplot(aes(x = date,
-             y = abs(value),
-             color = name)) +
-  geom_line()
-  
-  ggplot(aes(x = date,
-             y = dem2pv_est,
-             ymin = dem_lo_est,
-             ymax = dem_hi_est)) +
-  geom_ribbon(fill = dd_blue,
-              alpha = 0.25) +
-  geom_line(color = "white",
-            size = 3) +
-  geom_line(color = dd_blue,
-            size = 1.1)
 
-offset <- 0.05  
 
-fit_2022_ed %>%
-  mutate(dem_lower = dem2pv - offset,
-         dem_upper = dem2pv + offset,
-         rep2pv = 1 - dem2pv,
-         rep_lower = rep2pv - offset,
-         rep_upper = rep2pv + offset) %>%
-  ggplot(aes(x = date)) +
-  geom_ribbon(aes(ymin = rep_lower,
-                  ymax = rep_upper),
-              fill = dd_red,
-              alpha = 0.25) +
-  geom_ribbon(aes(ymin = dem_lower,
-                  ymax = dem_upper),
-              fill = dd_blue,
-              alpha = 0.25) +
-  geom_line(aes(y = rep2pv),
-            color = "white",
-            size = 3.3) +
-  geom_line(aes(y = rep2pv),
-            color = dd_red,
-            size = 1.1) +
-  geom_line(aes(y = dem2pv),
-            color = "white",
-            size = 3.3) +
-  geom_line(aes(y = dem2pv),
-            color = dd_blue,
-            size = 1.1) +
-  geom_shadowtext(x = Sys.Date() + 40,
-                  y = current_rep_pct,
-                  label = paste0(round(current_rep_pct, 3) * 100, "%"),
-                  size = 8,
-                  family = "Roboto Slab",
-                  color = dd_red,
-                  bg.color = "white") +
-  geom_shadowtext(x = Sys.Date() + 40,
-                  y = current_dem_pct,
-                  label = paste0(round(current_dem_pct, 3) * 100, "%"),
-                  size = 8,
-                  family = "Roboto Slab",
-                  color = dd_blue,
-                  bg.color = "white")
+
+
