@@ -1699,7 +1699,9 @@ fit_2022_ed %>%
                breaks = "month") +
   theme(panel.grid.minor.x = element_blank(),
         plot.title.position = "plot",
-        plot.title = element_markdown(family = "Roboto Slab")) + 
+        plot.title = element_markdown(family = "Roboto Slab"),
+        plot.background = element_rect(fill = "white",
+                                       color = "white")) + 
   labs(title = "Do Voters Want <span style=color:'#5565D7'>**Democrats**</span> or <span style=color:'#D75565'>**Republicans**</span> in Congress?",
        subtitle = paste("Estimated two-party voteshare of the generic congressional ballot as of",
                         format(Sys.Date(), "%b %d")),
