@@ -1085,7 +1085,7 @@ if (viz_complete == FALSE) {
   # final viz of act/est
   interim_fit %>% visualize_fit()
   
-  ggsave("data/models/generic_ballot/final_fit.png",
+  ggsave("plots/generic_ballot/training/final_fit.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1093,7 +1093,7 @@ if (viz_complete == FALSE) {
   
   rmse_tracker %>% visualize_rmse()
   
-  ggsave("data/models/generic_ballot/rmse_tracker.png",
+  ggsave("plots/generic_ballot/training/rmse_tracker.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1101,7 +1101,7 @@ if (viz_complete == FALSE) {
   
   interim_fit %>% visualize_fit() / rmse_tracker %>% visualize_rmse()
   
-  ggsave("data/models/generic_ballot/fit_rmse_patchwork.png",
+  ggsave("plots/generic_ballot/training/fit_rmse_patchwork.png",
          width = 9,
          height = 12,
          units = "in",
@@ -1117,7 +1117,7 @@ if (viz_complete == FALSE) {
              alpha = 0.65) +
     coord_flip()
   
-  ggsave("data/models/generic_ballot/pollster_weights.png",
+  ggsave("plots/generic_ballot/training/pollster_weights.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1133,7 +1133,7 @@ if (viz_complete == FALSE) {
              alpha = 0.65) + 
     coord_flip()
   
-  ggsave("data/models/generic_ballot/pollster_offsets.png",
+  ggsave("plots/generic_ballot/training/pollster_offsets.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1156,7 +1156,7 @@ if (viz_complete == FALSE) {
                alpha = 0.65) +
     ggrepel::geom_label_repel()
   
-  ggsave("data/models/generic_ballot/pollster_weights_summary_size.png",
+  ggsave("plots/generic_ballot/training/pollster_weights_summary_size.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1172,7 +1172,7 @@ if (viz_complete == FALSE) {
              alpha = 0.65) +
     coord_flip()
   
-  ggsave("data/models/generic_ballot/population_weights.png",
+  ggsave("plots/generic_ballot/training/population_weights.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1188,7 +1188,7 @@ if (viz_complete == FALSE) {
              alpha = 0.65) +
     coord_flip()
   
-  ggsave("data/models/generic_ballot/methodology_weights.png",
+  ggsave("plots/generic_ballot/training/methodology_weights.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1204,7 +1204,7 @@ if (viz_complete == FALSE) {
              alpha = 0.65) +
     coord_flip()
   
-  ggsave("data/models/generic_ballot/all_weights.png",
+  ggsave("plots/generic_ballot/training/all_weights.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1272,7 +1272,7 @@ if (viz_complete == FALSE) {
               color = "midnightblue",
               size = 1)
   
-  ggsave("data/models/generic_ballot/fit_2022_comparison.png",
+  ggsave("plots/generic_ballot/training/fit_2022_comparison.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1306,7 +1306,7 @@ if (viz_complete == FALSE) {
     geom_line(color = "midnightblue",
               size = 1)
   
-  ggsave("data/models/generic_ballot/fit_2022_ed.png",
+  ggsave("plots/generic_ballot/training/fit_2022_ed.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1378,7 +1378,7 @@ if (viz_complete == FALSE) {
                           "Data courtesy of @FiveThirtyEight\n",
                           "https://projects.fivethirtyeight.com/congress-generic-ballot-polls/"))
   
-  ggsave(paste0("data/models/generic_ballot/generic_ballot_",
+  ggsave(paste0("plots/generic_ballot/training/generic_ballot_",
                 Sys.Date(),
                 ".png"),
          width = 9,
@@ -1532,7 +1532,7 @@ if (downweight_complete == FALSE) {
               color = "midnightblue",
               size = 1) 
   
-  ggsave("data/models/generic_ballot/ci_fit_historical.png",
+  ggsave("plots/generic_ballot/training/ci_fit_historical.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1583,7 +1583,7 @@ if (downweight_complete == FALSE) {
               color = "midnightblue",
               size = 1) 
   
-  ggsave("data/models/generic_ballot/ci_fit_current.png",
+  ggsave("plots/generic_ballot/training/ci_fit_current.png",
          width = 9,
          height = 6,
          units = "in",
@@ -1739,7 +1739,7 @@ fit_2022_ed %>%
                         "https://projects.fivethirtyeight.com/congress-generic-ballot-polls/"))
 
 # save over current photo
-ggsave("data/models/generic_ballot/generic_ballot_current.png",
+ggsave("plots/generic_ballot/generic_ballot_current.png",
        width = 9,
        height = 6,
        units = "in",
