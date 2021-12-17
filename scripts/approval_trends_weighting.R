@@ -40,17 +40,17 @@ approval_polls <-
 approval_trends <- 
   approval_trends %>%
   filter(subgroup == "All polls") %>%
-  select(modeldate, approve_estimate, disapprove_estimate) %>%
+  select(modeldate:disapprove_lo) %>%
   mutate(modeldate = mdy(modeldate)) %>%
   rename(date = modeldate)
 
 disapproval_trends <-
   approval_trends %>%
-  select(date, disapprove_estimate)
+  select(date, disapprove_estimate:disapprove_lo)
 
 approval_trends <-
   approval_trends %>%
-  select(date, approve_estimate)
+  select(date, approve_estimate:approve_lo)
 
 # create a list of pollsters who make up at least 1% of the approval polls
 pollsters <- 
@@ -76,8 +76,8 @@ approval_polls <-
   drop_na()
 
 # create vectors for the approval timeframe
-begin <- rep(ymd("2017-01-22"), 1459)
-final <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
+begin <- rep(rep(ymd("2017-01-22"), 1459), 5)
+final <- rep(seq(ymd("2017-01-23"), ymd("2021-01-20"), "days"), 5)
 
 #################### GENERIC APPROVAL AVERAGE FUNCTION ####################
 
@@ -100,7 +100,8 @@ approval_average <- function(.data,
                              population_weight,
                              method_weight,
                              date_weight,
-                             answer) {
+                             answer,
+                             downweight = 1) {
   
   .data %>%
     
@@ -131,8 +132,8 @@ approval_average <- function(.data,
     select(-days_diff, -weeks_diff) %>%
     
     # create individual poll weights
-    mutate(alpha = answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight,
-           beta = not_answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight) %>%
+    mutate(alpha = answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight * downweight,
+           beta = not_answer_votes * pollster_weight * sample_weight * population_weight * method_weight * date_weight * downweight) %>%
     
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
@@ -186,7 +187,10 @@ initialize_weights <- function() {
            weight = 1,
            next_lower = 0,
            next_upper = 1)
-  )
+  ) %>%
+    
+    # initialize with not final as the search suggestion for each variable
+    bind_cols(search_suggestion = "not final")
   
 }
 
@@ -246,8 +250,136 @@ pull_date_weight <- function(.data) {
   
 } 
 
+# check if the search suggestion is final or ought to continue
+check_suggestion <- function(.data, variable_name) {
+  
+  .data %>%
+    filter(variable == variable_name) %>%
+    pull(search_suggestion)
+  
+}
 
+# util function to create a temporary tibble replacing the current weight with a "try" weight
+pull_try_weight <- function(.data, variable_name, new_weight, type) {
+  
+  # create a new weight table to pass to one of the pull functions
+  new_weight_tibble <- 
+    .data %>%
+    filter(variable != variable_name) %>%
+    bind_rows(tibble(variable = variable_name,
+                     weight = new_weight,
+                     next_lower = 0,
+                     next_upper = 0))
+  
+  # pass new weight table to one of the pull functions based on param type 
+  if (type == "pollster") {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_pollster_weights()
+    
+  } else if (type == "population") {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_population_weights()
+    
+  } else {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_methodology_weights()
+    
+  }
+  
+  return(pulled_tibble)
+  
+}
 
+# function to pull the next lower or the next upper bound
+pull_bound <- function(.data, variable_name, type) {
+  
+  if (type == "lower") {
+    
+    .data %>%
+      filter(variable == variable_name) %>%
+      pull(next_lower)
+    
+  } else {
+    
+    .data %>%
+      filter(variable == variable_name) %>%
+      pull(next_upper)
+    
+  }
+  
+}
+
+# create a sequence of new weights to try
+sequence_weights <- function(lower_bound, upper_bound) {
+  
+  try_weight <- seq(lower_bound, upper_bound, length.out = 5)
+  weights <- try_weight %>% rep(1459) %>% arrange_vector()
+  
+  return(weights)
+  
+}
+
+# create a vector of weights to be passed to try_list
+vectorize_weights <- function(.data, variable_name) {
+  
+  # generate lower & upper bounds
+  lower_bound <-
+    .data %>%
+    pull_bound(variable_name, "lower")
+  
+  upper_bound <- 
+    .data %>%
+    pull_bound(variable_name, "upper")
+  
+  # create a sequence of new weights to try
+  weights <- sequence_weights(lower_bound, upper_bound)
+  
+  return(weights)
+  
+}
+
+# create a list of inputs to map to the approval/disapproval tracker
+create_try_list <- function(weights) {
+  
+  list(weights = weights,
+       begin = begin,
+       final = final)
+  
+}
+
+# summarise results & recommend new bounds 
+summarise_weights <- function(.data, metric, type) {
+  
+  # create tibble of rmse for each weight evaluated
+  weight_metrics <-
+    .data %>%
+    select(-starts_with("ci"))
+  
+  # join fte trendline
+  if (type == "approval") {
+    
+    weight_metrics <-
+      weight_metrics %>%
+      left_join(approval_trends, by = "date")
+
+  } else {
+    
+    weight_metrics <-
+      weight_metrics %>%
+      left_join(disapproval_trends, by = "date")
+    
+  }
+  
+  # calculate each weight's rmse
+  weight_metrics <-
+    weight_metrics %>%
+    group_by(weight) %>%
+    nest() %>%
+    mutate(rmse = map(data, yardstick::rmse, ))
+  
+}
+
+### ON THE SUMMARIZE WEIGHTS FN ###
 
 #################### TESTING ZONE DAWG ####################
 
