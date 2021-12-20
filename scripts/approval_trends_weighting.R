@@ -41,7 +41,8 @@ approval_trends <-
   approval_trends %>%
   filter(subgroup == "All polls") %>%
   select(modeldate:disapprove_lo) %>%
-  mutate(modeldate = mdy(modeldate)) %>%
+  mutate(modeldate = mdy(modeldate),
+         across(approve_estimate:disapprove_lo, ~.x/100)) %>%
   rename(date = modeldate)
 
 disapproval_trends <-
@@ -533,7 +534,7 @@ update_rmse_tracker <- function(.data, type) {
 update_weight_table <- function(.data, variable_name, type) {
   
   # <<- interact with global environment
-  if(type == "approval") {
+  if (type == "approval") {
     
     approval_weights <<-
       approval_weights %>%
@@ -570,7 +571,55 @@ update_tables <- function(.data, variable_name, type) {
   
 }
 
-### ON THE SUMMARIZE WEIGHTS FN ###
+#################### WEIGHT UPDATE FUNCTIONS ####################
+
+# function to update the weight for exponential decay by date 
+update_date_weight <- function(type) {
+  
+  # set fn-level weight tibble from type
+  if (type == "approval") {
+    
+    variable_weights <- approval_weights
+    
+  } else {
+    
+    variable_weights <- disapproval_weights
+    
+  }
+  
+  # do not evaluate if weight is final
+  if (variable_weights %>% check_suggestion("date_weight") == "final") {
+    
+    message("date_weight marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- variable_weights %>% vectorize_weights("date_weight")
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic approval fn
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~approval_average(approval_polls,
+                                        ..2,
+                                        ..3,
+                                        pull_pollster_weights(variable_weights),
+                                        pull_sample_weight(variable_weights),
+                                        pull_population_weights(variable_weights),
+                                        pull_methodology_weights(variable_weights),
+                                        ..1,
+                                        type)) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables("date_weight", type)
+    
+  }
+  
+}
 
 #################### TESTING ZONE DAWG ####################
 
