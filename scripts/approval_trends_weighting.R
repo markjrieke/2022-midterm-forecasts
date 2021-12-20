@@ -751,6 +751,46 @@ update_pollster_offset <- function(pollster, type) {
   
 }
 
+# function to update weight based on population type
+update_population_weight <- function(population, type) {
+  
+  # set fn-level weight tibble from type
+  variable_weights <- weight_assignment(type)
+  
+  # do not evaluate if weight is final
+  if (variable_weights %>% check_suggestion(population) == "final") {
+    
+    message(paste(population, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- variable_weights %>% vectorize_weights(population)
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic approval fn
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~approval_average(approval_polls,
+                                        ..2,
+                                        ..3,
+                                        pull_pollster_weights(variable_weights),
+                                        pull_sample_weight(variable_weights),
+                                        pull_try_weight(variable_weights, population, ..1, "population"),
+                                        pull_methodology_weights(variable_weights),
+                                        pull_date_weight(variable_weights),
+                                        if (type == "approval") yes else no)) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables(population, type)
+    
+  }
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
