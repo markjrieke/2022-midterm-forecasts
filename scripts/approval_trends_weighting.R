@@ -373,9 +373,113 @@ summarise_weights <- function(.data, metric, type) {
   # calculate each weight's rmse
   weight_metrics <-
     weight_metrics %>%
+    rename(truth = ends_with("estimate")) %>%
     group_by(weight) %>%
     nest() %>%
-    mutate(rmse = map(data, yardstick::rmse, ))
+    mutate(rmse = map(data, yardstick::rmse, truth = truth, estimate = answer)) %>%
+    unnest(rmse) %>%
+    ungroup() %>%
+    rowid_to_column() %>%
+    select(rowid, weight, .estimate) %>%
+    rename(rmse = .estimate)
+  
+  # find weight that gives the smallest rmse
+  best_weight <- 
+    weight_metrics %>%
+    filter(rmse == min(rmse)) %>%
+    filter(rowid == min(rowid)) %>%
+    pull(weight)
+  
+  # pull the smallest rmse for tracking
+  best_rmse <- 
+    weight_metrics %>%
+    filter(rmse == min(rmse)) %>%
+    filter(rowid == min(rowid)) %>%
+    pull(rmse)
+  
+  # pull the row index that gives the best rmse
+  best_index <-
+    weight_metrics %>%
+    filter(weight == best_weight) %>%
+    pull(rowid)
+  
+  # get the step between each weight
+  delta <-
+    weight_metrics %>%
+    mutate(delta = weight - lag(weight)) %>%
+    drop_na() %>%
+    filter(rowid == 5) %>%
+    pull(delta)
+  
+  # assign next_upper & next_lower
+  if (best_index == 5) {
+    
+    next_lower <- weight_metrics %>% filter(rowid == 3) %>% pull(weight)
+    next_upper <- weight_metrics %>% filter(rowid == 5) %>% pull(weight) + (2 * delta)
+    
+  } else if (best_index == 1) {
+    
+    if (best_weight == 0 & str_detect(metric, "Offset") == FALSE) {
+      
+      next_lower <- 0
+      next_upper <- weight_metrics %>% filter(rowid == 2) %>% pull(weight)
+      
+    } else {
+      
+      next_lower <- weight_metrics %>% filter(rowid == 1) %>% pull(weight) - (2 * delta)
+      next_upper <- weight_metrics %>% filter(rowid == 3) %>% pull(weight)
+      
+    }
+    
+  } else {
+    
+    next_lower <- weight_metrics %>% filter(rowid == best_index - 1) %>% pull(weight)
+    next_upper <- weight_metrics %>% filter(rowid == best_index + 1) %>% pull(weight)
+    
+  }
+  
+  # check for % difference between best and worst rmse
+  worst_rmse <- 
+    weight_metrics %>%
+    filter(rmse == max(rmse)) %>%
+    filter(rowid == max(rowid)) %>%
+    pull(rmse)
+  
+  pct_diff <- abs(worst_rmse - best_rmse)/mean(c(best_rmse, worst_rmse))
+  
+  # for pollster weights, update weight table to rowid == 2 if best rmse = 0
+  # this will ensure that the pollster's offset actually gets evaluated!
+  if (best_weight == 0 & metric %in% c(pollsters, "Other Pollster")) {
+    
+    best_weight <-
+      weight_metrics %>%
+      filter(rowid == 2) %>%
+      pull(weight)
+    
+  }
+  
+  # note whether or not to continue to search for better weights, based of difference threshold
+  if (pct_diff < 0.01) {
+    
+    search_suggestion <- "final"
+    
+  } else {
+    
+    search_suggestion <- "not final"
+    
+  }
+  
+  # summarise in 1-row tibble
+  weight_summary <-
+    tibble(metric = metric,
+           weight = best_weight,
+           rmse = best_rmse,
+           next_lower = next_lower,
+           next_upper = next_upper,
+           pct_diff = pct_diff,
+           search_suggestion = search_suggestion)
+  
+  return(weight_summary)
   
 }
 
