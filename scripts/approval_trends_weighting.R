@@ -831,6 +831,82 @@ update_methodology_weight <- function(methodology, type) {
   
 }
 
+#################### UPDATE ALL FUNCTION ####################
+
+# util function for messaging user and calling update
+call_update_date <- function(type) {
+  
+  message("Updating `date_weight`.")
+  tictoc::tic()
+  update_date_weight(type)
+  tictoc::toc()
+  message("`date_weight` updated.")
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_sample <- function(type) {
+  
+  message("Updating `sample_weight`.")
+  tictoc::tic()
+  update_sample_weight(type)
+  tictoc::toc()
+  message("`sample_weight` updated.")
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_pollster <- function(pollster, type) {
+  
+  message(paste("Updating", pollster, "weight."))
+  tictoc::tic()
+  update_pollster_weight(pollster, type)
+  tictoc::toc()
+  message(paste(pollster, "updated."))
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_offset <- function(pollster, type) {
+  
+  message(paste("Updating", pollster, "Offset."))
+  tictoc::tic()
+  update_pollster_offset(pollster, type)
+  tictoc::toc()
+  message(paste(pollster, "Offset updated."))
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_population <- function(population, type) {
+  
+  message(paste("Updating", population, "weight."))
+  tictoc::tic()
+  update_population_weight(population, type)
+  tictoc::toc()
+  message(paste(population, "updated."))
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_methodology <- function(methodology, type) {
+  
+  message(paste("Updating", methodology, "weight."))
+  tictoc::tic()
+  update_methodology_weight(methodology, type)
+  tictoc::toc()
+  message(paste(methodology, "updated."))
+  message()
+  
+}
+
+
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
