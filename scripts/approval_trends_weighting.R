@@ -529,7 +529,46 @@ update_rmse_tracker <- function(.data, type) {
   
 }
 
+# function to update the variable weight table
+update_weight_table <- function(.data, variable_name, type) {
+  
+  # <<- interact with global environment
+  if(type == "approval") {
+    
+    approval_weights <<-
+      approval_weights %>%
+      filter(variable != variable_name) %>%
+      
+      # reformat & bind .data with new weights/suggestions
+      bind_rows(.data %>% select(-rmse, -pct_diff) %>% rename(variable = metric))
+    
+  } else {
+    
+    disapproval_weights <<-
+      disapproval_weights %>%
+      filter(variable != variable_name) %>%
+      
+      # reformat & bind .data with new weights/suggestion
+      bind_rows(.data %>% select(-rmse, -pct_diff) %>% rename(variable = metric)) 
+    
+  }
+  
+}
 
+update_tables <- function(.data, variable_name, type) {
+  
+  # summarise results based on best rmse
+  weight_summary <-
+    .data %>%
+    summarise_weights(variable_name, type)
+  
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker(type)
+  
+  # update weight table
+  weight_summary %>% update_weight_table(variable_name, type)
+  
+}
 
 ### ON THE SUMMARIZE WEIGHTS FN ###
 
