@@ -693,7 +693,7 @@ update_pollster_weight <- function(pollster, type) {
       future_pmap_dfr(~approval_average(approval_polls,
                                         ..2,
                                         ..3,
-                                        pull_try_weight(variable_weights, pollster, ..1, type),
+                                        pull_try_weight(variable_weights, pollster, ..1, "pollster"),
                                         pull_sample_weight(variable_weights),
                                         pull_population_weights(variable_weights),
                                         pull_methodology_weights(variable_weights),
@@ -703,6 +703,49 @@ update_pollster_weight <- function(pollster, type) {
     
     # update rmse & variable weight tables
     weight_map %>% update_tables(pollster, type)
+    
+  }
+  
+}
+
+# function to update a pollster's offset 
+update_pollster_offset <- function(pollster, type) {
+  
+  # create offset variable
+  offset <- paste(pollster, "Offset")
+  
+  # set fn-level weight tibble from type
+  variable_weights <- weight_assignment(type)
+  
+  # do not evaluate if weight is final
+  if (variable_weights %>% check_suggestion(offset) == "final") {
+    
+    message(paste(offset, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- variable_weights %>% vectorize_weights(offset)
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic approval fn
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~approval_average(approval_polls,
+                                        ..2,
+                                        ..3,
+                                        pull_try_weight(variable_weights, offset, ..1, "pollster"),
+                                        pull_sample_weight(variable_weights),
+                                        pull_population_weights(variable_weights),
+                                        pull_methodology_weights(variable_weights),
+                                        pull_date_weight(variable_weights),
+                                        if (type == "approval") yes else no)) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables(offset, type)
     
   }
   
