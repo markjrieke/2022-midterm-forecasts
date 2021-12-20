@@ -571,21 +571,28 @@ update_tables <- function(.data, variable_name, type) {
   
 }
 
+# assign weight source based on type
+weight_assignment <- function(type) {
+  
+  if (type == "approval") {
+    
+    approval_weights
+    
+  } else {
+    
+    disapproval_weights
+    
+  }
+  
+}
+
 #################### WEIGHT UPDATE FUNCTIONS ####################
 
 # function to update the weight for exponential decay by date 
 update_date_weight <- function(type) {
   
   # set fn-level weight tibble from type
-  if (type == "approval") {
-    
-    variable_weights <- approval_weights
-    
-  } else {
-    
-    variable_weights <- disapproval_weights
-    
-  }
+  variable_weights <- weight_assignment(type)
   
   # do not evaluate if weight is final
   if (variable_weights %>% check_suggestion("date_weight") == "final") {
@@ -611,11 +618,51 @@ update_date_weight <- function(type) {
                                         pull_population_weights(variable_weights),
                                         pull_methodology_weights(variable_weights),
                                         ..1,
-                                        type)) %>%
+                                        if (type == "approval") yes else no)) %>%
       bind_cols(weight = weights)
     
     # update rmse & variable weight tables
     weight_map %>% update_tables("date_weight", type)
+    
+  }
+  
+}
+
+# function to update the weight based on sample size 
+update_sample_weight <- function(type) {
+  
+  # set fn-level weight tibble from type
+  variable_weights <- weight_assignment(type)
+  
+  # do not evaluate if weight is final
+  if (variable_weights %>% check_suggestion("sample_size") == "final") {
+    
+    message("sample_size marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a vector of weights to bind to results
+    weights <- variable_weights %>% vectorize_weights("sample_size")
+    
+    # create a list of vectors to map against
+    try_list <- weights %>% create_try_list()
+    
+    # map inputs to generic approval fn
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~approval_average(approval_polls,
+                                        ..2,
+                                        ..3,
+                                        pull_pollster_weights(variable_weights),
+                                        ..1,
+                                        pull_population_weights(variable_weights),
+                                        pull_methodology_weights(variable_weights),
+                                        pull_date_weight(variable_weights),
+                                        if (type == "approval") yes else no)) %>%
+      bind_cols(weight = weights)
+    
+    # update rmse & variable weight tables
+    weight_map %>% update_tables("sample_size", type)
     
   }
   
@@ -638,6 +685,9 @@ approval_date_weight <- pull_date_weight(approval_weights)
 approval_method_weight <- pull_methodology_weights(approval_weights)
 
 
+test_type <- "disapproval"
+
+
 
 approval_average(approval_polls, 
                  begin_date, 
@@ -647,7 +697,7 @@ approval_average(approval_polls,
                  pull_population_weights(approval_weights),
                  pull_methodology_weights(approval_weights),
                  pull_date_weight(approval_weights),
-                 no)
+                 if (test_type == "approval") yes else no)
                  
  
 
