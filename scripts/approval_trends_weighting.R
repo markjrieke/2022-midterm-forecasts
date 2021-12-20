@@ -483,6 +483,54 @@ summarise_weights <- function(.data, metric, type) {
   
 }
 
+# add metrics to running list of rmse
+update_rmse_tracker <- function(.data, type) {
+  
+  # <<- interacts with the global object
+  if (type == "approval") {
+    
+    approval_rmse_tracker <<-
+      approval_rmse_tracker %>%
+      
+      # pull current index
+      filter(index == max(index)) %>%
+      select(index) %>%
+      
+      # increase index
+      mutate(index = index + 1) %>%
+      
+      # add index to data
+      bind_cols(.data) %>%
+      
+      # bind back to rmse_tracker
+      bind_rows(approval_rmse_tracker) %>%
+      arrange(index)
+    
+  } else {
+    
+    disapproval_rmse_tracker <<-
+      disapproval_rmse_tracker %>%
+      
+      # pull current index
+      filter(index == max(index)) %>%
+      select(index) %>%
+      
+      # increase index
+      mutate(index = index + 1) %>%
+      
+      # add index to data
+      bind_cols(.data) %>%
+      
+      # bind back to rmse_tracker
+      bind_rows(disapproval_rmse_tracker) %>%
+      arrange(index)
+    
+  }
+  
+}
+
+
+
 ### ON THE SUMMARIZE WEIGHTS FN ###
 
 #################### TESTING ZONE DAWG ####################
