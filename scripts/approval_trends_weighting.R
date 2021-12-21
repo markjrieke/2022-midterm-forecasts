@@ -470,6 +470,24 @@ summarise_weights <- function(.data, metric, type) {
     
   }
   
+  # set offset to 0 if < 1% difference 
+  # this'll avoid having a pollster offset of -10% when it's not any different from an offset of 0%
+  if (pct_diff < 0.01 & str_detect(metric, "Offset") == TRUE) {
+    
+    zero_len <- 
+      weight_metrics %>%
+      filter(weight == 0) %>%
+      pull(weight) %>%
+      length()
+    
+    if (zero_len > 0) {
+      
+      best_weight <- 0
+      
+    }
+      
+  }
+  
   # summarise in 1-row tibble
   weight_summary <-
     tibble(metric = metric,
@@ -983,7 +1001,7 @@ update_all <- function(type) {
         select(.estimate) %>%
         rename(rmse = .estimate) %>%
         mutate(index = 0, 
-               metric = "bseline",
+               metric = "baseline",
                weight = 0,
                next_lower = 0,
                next_upper = 0,
@@ -1039,8 +1057,8 @@ update_all <- function(type) {
     filter(search_suggestion == "not final") %>%
     pull(n)
   
-  # determine the approximate runtime (~120s per variable)
-  runtime <- num_updates * 2
+  # determine the approximate runtime (~180s per variable on the nonfuture calls)
+  runtime <- num_updates * 3
   
   # ask to proceed
   message(paste("Updating all variable weights will take approximately", runtime, "minutes."))
@@ -1063,12 +1081,13 @@ update_all <- function(type) {
     message()
     
     # update all variables
+    # for whatever reason I couldn't get the future_walk calls to work 
     call_update_date(type)
     call_update_sample(type)
-    c(pollsters, "Other Pollster") %>% future_walk(~call_update_pollster(.x, type))
-    c(pollsters, "Other Pollster") %>% future_walk(~call_update_offset(.x, type))
-    c("rv", "lv", "a", "v") %>% future_walk(~call_update_population(.x, type))
-    c(methods, "Other Method") %>% future_walk(~call_update_methodology(.x, type))
+    c(pollsters, "Other Pollster") %>% walk(~call_update_pollster(.x, type))
+    c(pollsters, "Other Pollster") %>% walk(~call_update_offset(.x, type))
+    c("rv", "lv", "a", "v") %>% walk(~call_update_population(.x, type))
+    c(methods, "Other Method") %>% walk(~call_update_methodology(.x, type))
     
     # write updates to data/models/approval
     if (type == "approval") {
@@ -1121,7 +1140,7 @@ visualize_fit <- function(.data, type) {
       .data %>%
       left_join(approval_trends, by = "date") %>%
       rename(estimate = answer,
-             actual = approval_estimate)
+             actual = approve_estimate)
     
   } else {
     
@@ -1129,7 +1148,7 @@ visualize_fit <- function(.data, type) {
       .data %>%
       left_join(disapproval_trends, by = "date") %>%
       rename(estimate = answer,
-             actual = disapproval_estimate)
+             actual = disapprove_estimate)
     
   }
   
@@ -1197,6 +1216,24 @@ call_visualizations <- function(type) {
   
 }
 
+#################### MODELTIME - APPROVAL ####################
+
+# set to FALSE to rerun rounds
+
+completed <- TRUE
+
+if (completed == FALSE) {
+  
+  # round 1
+  update_all("approval")
+  call_visualizations("approval")
+  
+  # round 2
+  update_all("approval")
+  call_visualizations("approval")
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
@@ -1257,7 +1294,7 @@ approval_rmse_tracker <-
   select(.estimate) %>%
   rename(rmse = .estimate) %>%
   mutate(index = 0, 
-         metric = "bseline",
+         metric = "baseline",
          weight = 0,
          next_lower = 0,
          next_upper = 0,
@@ -1271,10 +1308,15 @@ disapproval_rmse_tracker <- approval_rmse_tracker
 
 call_update_sample("disapproval")
 
+test_type <- "approval"
+
+plan(multisession, workers = 8)
+plan(sequential)
+c("rv", "lv", "a", "v") %>% future_walk(~call_update_population(..1, test_type))
+
+plan(multisession, workers = 8)
+c("rv", "lv", "a", "v") %>% walk(~call_update_population(.x, test_type))
 
 
-
-
-
-
+call_update_offset("YouGov", "approval")
 
