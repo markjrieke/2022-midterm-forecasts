@@ -1111,6 +1111,77 @@ get_current_fit <- function(.data, type) {
   
 }
 
+# visualize the current fit
+visualize_fit <- function(.data, type) {
+  
+  # left_join by type
+  if (type == "approval") {
+    
+    fit <- 
+      .data %>%
+      left_join(approval_trends, by = "date") %>%
+      rename(estimate = answer,
+             actual = approval_estimate)
+    
+  } else {
+    
+    fit <-
+      .data %>%
+      left_join(disapproval_trends, by = "date") %>%
+      rename(estimate = answer,
+             actual = disapproval_estimate)
+    
+  }
+  
+  fit %>%
+    ggplot(aes(x = date)) +
+    geom_line(aes(y = actual),
+              size = 1.1,
+              color = "red") +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_line(aes(y = estimate),
+              color = "midnightblue",
+              size = 1)
+  
+}
+
+# running plot of rmse drop
+visualize_rmse <- function(.data, variable_name = "all") {
+  
+  # plot all
+  if (variable_name == "all") {
+    
+    .data %>%
+      ggplot(aes(x = index,
+                 y = rmse)) +
+      geom_line(size = 1,
+                color = "midnightblue")
+    
+  } else { # plot a specific variable or variables
+    
+    .data %>%
+      filter(metric %in% variable_name) %>%
+      select(-index) %>%
+      rowid_to_column() %>%
+      ggplot(aes(x = rowid,
+                 y = rmse)) + 
+      geom_line(size = 1,
+                color = "midnightblue")
+    
+  }
+  
+}
+
+# create patchwork plot
+call_visualizations <- function() {
+  
+  interim_fit <<- get_current_fit()
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
