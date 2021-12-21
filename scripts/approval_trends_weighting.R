@@ -1232,6 +1232,10 @@ if (completed == FALSE) {
   update_all("approval")
   call_visualizations("approval")
   
+  # round 3
+  update_all("approval")
+  call_visualizations("approval")
+  
 }
 
 #################### TESTING ZONE DAWG ####################
