@@ -1176,9 +1176,24 @@ visualize_rmse <- function(.data, variable_name = "all") {
 }
 
 # create patchwork plot
-call_visualizations <- function() {
+call_visualizations <- function(type) {
   
-  interim_fit <<- get_current_fit()
+  # set variable_weights and rmse_tracker based on type
+  if (type == "approval") {
+    
+    variable_weights <- approval_weights
+    rmse_tracker <- approval_rmse_tracker
+    
+  } else {
+    
+    variable_weights <- disapproval_weights
+    rmse_tracker <- disapproval_rmse_tracker
+    
+  }
+  
+  # fit & plot
+  interim_fit <<- get_current_fit(variable_weights, type)
+  interim_fit %>% visualize_fit(type) / rmse_tracker %>% visualize_rmse()
   
 }
 
