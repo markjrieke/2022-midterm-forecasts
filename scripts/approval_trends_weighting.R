@@ -1087,7 +1087,29 @@ update_all <- function(type) {
   
 }
 
+#################### VIZ FUNCTIONS ####################
 
+# function to visualize trend against fte trend
+get_current_fit <- function(.data, type) {
+  
+  # setup begin/end dates to feed to baseline calc
+  begin_current <- rep(ymd("2017-01-22"), 1459)
+  final_current <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
+  
+  # fit data
+  list(begin = begin_current,
+       final = final_current) %>%
+    future_pmap_dfr(~approval_average(approval_polls,
+                                      ..1,
+                                      ..2,
+                                      pull_pollster_weights(.data),
+                                      pull_sample_weight(.data),
+                                      pull_population_weights(.data),
+                                      pull_methodology_weights(.data),
+                                      pull_date_weight(.data),
+                                      if (type == "approval") yes else no))
+  
+}
 
 #################### TESTING ZONE DAWG ####################
 
