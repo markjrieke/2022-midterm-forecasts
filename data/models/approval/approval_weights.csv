@@ -1,0 +1,28 @@
+variable,weight,next_lower,next_upper,search_suggestion
+YouGov,1,0,1,not final
+Ipsos,1,0,1,not final
+Morning Consult,1,0,1,not final
+Rasmussen Reports/Pulse Opinion Research,1,0,1,not final
+HarrisX,1,0,1,not final
+Gallup,1,0,1,not final
+SurveyMonkey,1,0,1,not final
+Other Pollster,1,0,1,not final
+YouGov Offset,0,-0.1,0.1,not final
+Ipsos Offset,0,-0.1,0.1,not final
+Morning Consult Offset,0,-0.1,0.1,not final
+Rasmussen Reports/Pulse Opinion Research Offset,0,-0.1,0.1,not final
+HarrisX Offset,0,-0.1,0.1,not final
+Gallup Offset,0,-0.1,0.1,not final
+SurveyMonkey Offset,0,-0.1,0.1,not final
+Other Pollster Offset,0,-0.1,0.1,not final
+sample_size,1,0,1,not final
+a,1,0,1,not final
+rv,1,0,1,not final
+lv,1,0,1,not final
+v,1,0,1,not final
+Online,1,0,1,not final
+Live Phone,1,0,1,not final
+IVR/Online,1,0,1,not final
+Unknown,1,0,1,not final
+Other Method,1,0,1,not final
+date_weight,0.5,0.25,0.75,not final

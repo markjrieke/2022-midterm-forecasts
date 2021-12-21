@@ -905,6 +905,188 @@ call_update_methodology <- function(methodology, type) {
   
 }
 
+#################### UPDATE ALL FUNCTION #################### 
+
+update_all <- function(type) {
+  
+  # determine if you want to start from scratch or read in progress
+  message("Do you want to initialize a new baseline or read-in current progress?")
+  message("[1] Initialize a new baseline")
+  message("[2] Read in current progress")
+  response <- readline()
+  message()
+  
+  # ask if sure! (don't want to reset progress accidentally!!!)
+  if (response == 1) {
+    
+    message("Are you sure you want to initialize a new baseline? This will lose any progress made.")
+    message("If you are sure, please type `Initialize new baseline`")
+    response <- readline()
+    message()
+    
+    # init new baseline if sure; return to console if not
+    if (response == "Initialize new baseline") {
+      
+      message("Initializing new baseline for `variable_weights` and `rmse_tracker`.")
+      message("This may take a few minutes.")
+      message()
+      
+      # initialize weights & offsets
+      variable_weights <- initialize_weights()
+      
+      # assign based on type 
+      if (type == "approval") {
+        
+        approval_weights <<- variable_weights
+        
+      } else {
+        
+        disapproval_weights <<- variable_weights
+        
+      }
+      
+      # add multisession plan
+      message("Setting up multisession workers.")
+      plan(multisession, workers = 8)
+      message()
+      
+      # setup begin/end dates to feed to baseline calc
+      begin_baseline <- rep(ymd("2017-01-22"), 1459)
+      final_baseline <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
+      
+      # create baseline results with initialized weights and offsets (1/0)
+      message("Creating baseline")
+      tictoc::tic()
+      baseline <- 
+        list(begin = begin_baseline,
+             final = final_baseline) %>%
+        future_pmap_dfr(~approval_average(approval_polls,
+                                          ..1,
+                                          ..2,
+                                          pull_pollster_weights(variable_weights),
+                                          pull_sample_weight(variable_weights),
+                                          pull_population_weights(variable_weights),
+                                          pull_methodology_weights(variable_weights),
+                                          pull_date_weight(variable_weights),
+                                          if (type == "approval") yes else no))
+      tictoc::toc()
+      
+      # initialize rmse tracker - build baseline tibble
+      rmse_tracker <-
+        baseline %>%
+        select(-starts_with("ci")) %>%
+        left_join(approval_trends, by = "date") %>%
+        select(answer, approve_estimate) %>%
+        nest(data = everything()) %>%
+        mutate(rmse = map(data, yardstick::rmse, truth = approve_estimate, estimate = answer)) %>%
+        unnest(rmse) %>%
+        select(.estimate) %>%
+        rename(rmse = .estimate) %>%
+        mutate(index = 0, 
+               metric = "bseline",
+               weight = 0,
+               next_lower = 0,
+               next_upper = 0,
+               pct_diff = 0, 
+               search_suggestion = "baseline") %>%
+        relocate(rmse, .after = weight)
+      
+      # assign based on type
+      if (type == "approval") {
+        
+        approval_rmse_tracker <<- rmse_tracker
+        
+      } else {
+        
+        disapproval_rmse_tracker <<- rmse_tracker
+        
+      }
+      
+    } else {
+      
+      message("Update aborted.")
+      return()
+      
+    }
+    
+  } else {
+    
+    message("Reading in weights and rmse tracker...")
+    message()
+    
+    # read in data (add to environment) based on type
+    # also, assign to function-level variables
+    if (type == "approval") {
+      
+      approval_weights <<- read_csv("data/models/approval/approval_weights.csv")
+      approval_rmse_tracker <<- read_csv("data/models/approval/approval_rmse_tracker.csv")
+      variable_weights <- approval_weights
+      
+    } else {
+      
+      disapproval_weights <<- read_csv("data/models/approval/disapproval_weights.csv")
+      disapproval_rmse_tracker <<- read_csv("data/models/approval/disapproval_rmse_tracker.csv")
+      variable_weights <- disapproval_weights
+      
+    }
+    
+  }
+  
+  # determine number of updates to be made
+  num_updates <-
+    variable_weights %>%
+    count(search_suggestion) %>%
+    filter(search_suggestion == "not final") %>%
+    pull(n)
+  
+  # determine the approximate runtime (~120s per variable)
+  runtime <- num_updates * 2
+  
+  # ask to proceed
+  message(paste("Updating all variable weights will take approximately", runtime, "minutes."))
+  message("Do you want to continue? (y/n)")
+  response <- readline()
+  
+  message()
+  
+  # abort if N/n
+  if (str_to_lower(response) == "n") {
+    
+    message("Update aborted.")
+    message()
+    
+  } else {
+    
+    # setup futures
+    message("Setting up multisession workers")
+    plan(multisession, workers = 8)
+    message()
+    
+    # update all variables
+    call_update_date(type)
+    call_update_sample(type)
+    c(pollsters, "Other Pollster") %>% future_walk(~call_update_pollster(.x, type))
+    c(pollsters, "Other Pollster") %>% future_walk(~call_update_offset(.x, type))
+    c("rv", "lv", "a", "v") %>% future_walk(~call_update_population(.x, type))
+    c(methods, "Other Method") %>% future_walk(~call_update_methodology(.x, type))
+    
+    # write updates to data/models/approval
+    if (type == "approval") {
+      
+      approval_weights %>% write_csv("data/models/approval/approval_weights.csv")
+      approval_rmse_tracker %>% write_csv("data/models/approval/approval_rmse_tracker.csv")
+      
+    } else {
+      
+      disapproval_weights %>% write_csv("data/models/approval/disapproval_weights.csv")
+      disapproval_rmse_tracker %>% write_csv("data/models/approval/disapproval_rmse_tracker.csv")
+      
+    }
+    
+  }
+  
+}
+
 
 
 #################### TESTING ZONE DAWG ####################
@@ -937,9 +1119,49 @@ approval_average(approval_polls,
                  pull_methodology_weights(approval_weights),
                  pull_date_weight(approval_weights),
                  if (test_type == "approval") yes else no)
-                 
- 
 
+begin_test <- rep(ymd("2017-01-22"), 1459)
+final_test <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
+                
+plan(multisession, workers = 8)
+
+baseline <- 
+  list(begin = begin_test,
+       final = final_test) %>%
+  future_pmap_dfr(~approval_average(approval_polls,
+                                    ..1,
+                                    ..2,
+                                    pull_pollster_weights(approval_weights),
+                                    pull_sample_weight(approval_weights),
+                                    pull_population_weights(approval_weights),
+                                    pull_methodology_weights(approval_weights),
+                                    pull_date_weight(approval_weights),
+                                    yes))
+
+approval_rmse_tracker <- 
+  baseline %>%
+  select(-starts_with("ci")) %>%
+  left_join(approval_trends, by = "date") %>%
+  select(answer, approve_estimate) %>%
+  nest(data = everything()) %>%
+  mutate(rmse = map(data, yardstick::rmse, truth = approve_estimate, estimate = answer)) %>%
+  unnest(rmse) %>%
+  select(.estimate) %>%
+  rename(rmse = .estimate) %>%
+  mutate(index = 0, 
+         metric = "bseline",
+         weight = 0,
+         next_lower = 0,
+         next_upper = 0,
+         pct_diff = 0, 
+         search_suggestion = "baseline") %>%
+  relocate(rmse, .after = weight)
+
+update_date_weight("approval")
+
+disapproval_rmse_tracker <- approval_rmse_tracker
+
+call_update_sample("disapproval")
 
 
 
