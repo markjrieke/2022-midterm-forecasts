@@ -1252,6 +1252,18 @@ if (completed == FALSE) {
 
 #################### MODELTIME - DISAPPROVAL ####################
 
+# set to FALSE to rerun rounds
+
+completed <- TRUE
+
+if (completed == FALSE) {
+  
+  # round 1
+  update_all("disapproval")
+  call_visualizations("disapproval")
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
