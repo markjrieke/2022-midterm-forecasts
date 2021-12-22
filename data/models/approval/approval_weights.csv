@@ -15,6 +15,7 @@ Unknown,0.625,0.5,0.75,final
 rv,0.03125,0.015625,0.046875,final
 Live Phone,1.3125,1.25,1.375,final
 date_weight,0.546875,0.53125,0.5625,final
+IVR/Online,1.3125,1.25,1.375,final
 YouGov,2,1.5,2.5,not final
 Ipsos,2,1.5,2.5,not final
 Morning Consult,1,0.5,1.5,not final
@@ -22,7 +23,6 @@ Rasmussen Reports/Pulse Opinion Research,1,0.5,1.5,not final
 Gallup,1,0.5,1.5,not final
 SurveyMonkey,1,0.5,1.5,not final
 Other Pollster,2,1.5,2.5,not final
-lv,0.15625,0.125,0.1875,not final
-a,0.9375,0.875,1,not final
-Online,0.09375,0.078125,0.109375,not final
-IVR/Online,1.3125,1.25,1.375,final
+lv,0.15625,0.140625,0.171875,not final
+a,0.96875,0.9375,1,final
+Online,0.1015625,0.09375,0.109375,final
