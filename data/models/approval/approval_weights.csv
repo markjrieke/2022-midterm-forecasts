@@ -13,16 +13,16 @@ sample_size,0.5,0,1,final
 HarrisX,0.25,0.125,0.375,final
 Gallup,1,0.875,1.125,final
 Unknown,2,1.5,2.5,final
-date_weight,0.46875,0.4375,0.5,not final
 YouGov,2.25,2,2.5,final
-Ipsos,1.75,1.5,2,not final
-Morning Consult,0.0625,0.03125,0.09375,not final
-Rasmussen Reports/Pulse Opinion Research,0.28125,0.25,0.3125,not final
-SurveyMonkey,0.09375,0.0625,0.125,not final
 Other Pollster,0.875,0.8125,0.9375,final
-rv,0.21875,0.1875,0.25,not final
 lv,0.4375,0.40625,0.46875,final
-a,0.875,0.8125,0.9375,not final
-Online,0.25,0.21875,0.28125,not final
 Live Phone,1.4375,1.375,1.5,final
 IVR/Online,1.125,1.0625,1.1875,final
+date_weight,0.453125,0.4375,0.46875,final
+Ipsos,1.875,1.75,2,final
+Morning Consult,0.0625,0.046875,0.078125,not final
+Rasmussen Reports/Pulse Opinion Research,0.296875,0.28125,0.3125,final
+SurveyMonkey,0.078125,0.0625,0.09375,final
+rv,0.21875,0.203125,0.234375,final
+a,0.875,0.84375,0.90625,final
+Online,0.234375,0.21875,0.25,final
