@@ -700,7 +700,7 @@ update_pollster_weight <- function(pollster, type) {
   } else {
     
     # create a vector of weights to bind to results
-    weights <- variable_weights %>% vectorize_weights("sample_size")
+    weights <- variable_weights %>% vectorize_weights(pollster)
     
     # create a list of vectors to map against
     try_list <- weights %>% create_try_list()
@@ -1245,6 +1245,10 @@ if (completed == FALSE) {
   call_visualizations("approval")
   
   # round 6
+  update_all("approval")
+  call_visualizations("approval")
+  
+  # round 7 
   update_all("approval")
   call_visualizations("approval")
   
