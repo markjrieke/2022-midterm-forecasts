@@ -1244,7 +1244,13 @@ if (completed == FALSE) {
   update_all("approval")
   call_visualizations("approval")
   
+  # round 6
+  update_all("approval")
+  call_visualizations("approval")
+  
 }
+
+#################### MODELTIME - DISAPPROVAL ####################
 
 #################### TESTING ZONE DAWG ####################
 
