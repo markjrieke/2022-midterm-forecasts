@@ -1938,46 +1938,196 @@ if (completed == FALSE) {
   
 }
 
-#################### TESTING ZONE DAWG ####################
+#################### CHECK AGAINST CURRENT DATA ####################
 
-# initialize variable weights & offsets
-approval_weights <- initialize_weights()
+completed <- TRUE 
 
-# initialize variable weights & offsets
-disapproval_weights <- initialize_weights()
+if (completed == FALSE) {
+  
+  # pull in & wrangle current polls
+  approval_polls_current <- 
+    read_csv("https://projects.fivethirtyeight.com/polls-page/data/president_approval_polls.csv") %>%
+    select(display_name, sample_size, population_full,
+           methodology, end_date, yes, no) %>%
+    mutate(end_date = mdy(end_date),
+           methodology = replace_na(methodology, "Unknown"),
+           yes = yes/100,
+           no = no/100) %>%
+    rename(pollster = display_name) %>%
+    mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
+           methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
+    drop_na()
+  
+  # pull in & light wrangle of current fte trends
+  approval_trends_current <- 
+    read_csv("https://projects.fivethirtyeight.com/biden-approval-data/approval_topline.csv") %>%
+    filter(subgroup == "All polls") %>%
+    select(modeldate:disapprove_lo) %>%
+    mutate(modeldate = mdy(modeldate),
+           across(approve_estimate:disapprove_lo, ~.x/100)) %>%
+    rename(date = modeldate)
+  
+  # create sequence of days to fit against
+  final_2022 <- seq(ymd("2021-01-23"), ymd("2022-11-08"), "days")
+  begin_2022 <- rep(ymd("2021-01-21"), length(final_2022))
+  
+  # setup multisession workers
+  plan(multisession, workers = 8)
+  
+  # fit current approval to election day
+  fit_2022_approval <-
+    list(begin = begin_2022,
+         final = final_2022) %>%
+    future_pmap_dfr(~approval_average(approval_polls_current,
+                                      ..1,
+                                      ..2,
+                                      pull_pollster_weights(approval_weights),
+                                      pull_sample_weight(approval_weights),
+                                      pull_population_weights(approval_weights),
+                                      pull_methodology_weights(approval_weights),
+                                      pull_date_weight(approval_weights),
+                                      yes,
+                                      pull_downweight("approval")))
+  
+  # fit current disapproval to election day
+  fit_2022_disapproval <-
+    list(begin = begin_2022,
+         final = final_2022) %>%
+    future_pmap_dfr(~approval_average(approval_polls_current,
+                                      ..1,
+                                      ..2,
+                                      pull_pollster_weights(disapproval_weights),
+                                      pull_sample_weight(disapproval_weights),
+                                      pull_population_weights(disapproval_weights),
+                                      pull_methodology_weights(disapproval_weights),
+                                      pull_date_weight(disapproval_weights),
+                                      no,
+                                      pull_downweight("disapproval")))
+  
+  # check current approval fit
+  fit_2022_approval %>%
+    filter(date <= Sys.Date()) %>%
+    left_join(approval_trends_current, by = "date") %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = approve_lo,
+                    ymax = approve_hi),
+                fill = "red",
+                alpha = 0.25) +
+    geom_line(aes(y = approve_estimate),
+              color = "red",
+              size = 1.1) + 
+    geom_line(aes(y = answer),
+              color = "midnightblue",
+              size = 1) +
+    labs(title = "Biden's approval comparison - current")
+  
+  ggsave("plots/approval/training/approval_current_comparison.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # check current disapproval fit
+  fit_2022_disapproval %>%
+    filter(date <= Sys.Date()) %>%
+    left_join(approval_trends_current, by = "date") %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = disapprove_lo,
+                    ymax = disapprove_hi),
+                fill = "red",
+                alpha = 0.25) +
+    geom_line(aes(y = disapprove_estimate),
+              color = "red",
+              size = 1.1) +
+    geom_line(aes(y = answer),
+              color = "midnightblue",
+              size = 1) +
+    labs(title = "Biden's disapproval comparison - current")
+  
+  ggsave("plots/approval/training/disapproval_current_comparison.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # check current net approval fit
+  fit_2022_approval %>%
+    filter(date <= Sys.Date()) %>%
+    left_join(fit_2022_disapproval, by = "date") %>%
+    mutate(net = answer.x - answer.y,
+           net_ci_lower = ci_lower.x - ci_upper.y,
+           net_ci_upper = ci_upper.x - ci_lower.y) %>%
+    select(date, starts_with("net")) %>%
+    left_join(approval_trends_current, by = "date") %>%
+    mutate(fte_net = approve_estimate - disapprove_estimate,
+           fte_net_ci_lower = approve_lo - disapprove_hi,
+           fte_net_ci_upper = approve_hi - disapprove_lo) %>%
+    select(date, starts_with("net"), starts_with("fte")) %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = net_ci_lower,
+                    ymax = net_ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = fte_net_ci_lower,
+                    ymax = fte_net_ci_upper),
+                fill = "red",
+                alpha = 0.25) +
+    geom_line(aes(y = fte_net),
+              color = "red",
+              size = 1.1) +
+    geom_line(aes(y = net),
+              color = "midnightblue",
+              size = 1) +
+    labs(title = "Biden's net approval comparison - current")
+  
+  ggsave("plots/approval/training/net_approval_current_comparison.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)  
+  
+}
 
-begin_date <- ymd("2017-01-22")
-final_date <- ymd("2021-01-20")
-approval_pollster_weights <- pull_pollster_weights(approval_weights)
-approval_sample_weight <- pull_sample_weight(approval_weights)
-approval_population_weight <- pull_population_weights(approval_weights)
-approval_date_weight <- pull_date_weight(approval_weights)
-approval_method_weight <- pull_methodology_weights(approval_weights)
+#################### PLOT AGAINST NEW DATA ####################
 
+# pull in variable weights
+approval_weights <- read_csv("data/models/approval/approval_weights.csv")
+disapproval_weights <- read_csv("data/models/approval/disapproval_weights.csv")
 
-test_type <- "disapproval"
+# pull in & wrangle current polls
+approval_polls_current <- 
+  read_csv("https://projects.fivethirtyeight.com/polls-page/data/president_approval_polls.csv") %>%
+  select(display_name, sample_size, population_full,
+         methodology, end_date, yes, no) %>%
+  mutate(end_date = mdy(end_date),
+         methodology = replace_na(methodology, "Unknown"),
+         yes = yes/100,
+         no = no/100) %>%
+  rename(pollster = display_name) %>%
+  mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
+         methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
+  drop_na()
 
+# create sequence of days to fit against
+final_2022 <- seq(ymd("2021-01-23"), ymd("2022-11-08"), "days")
+begin_2022 <- rep(ymd("2021-01-21"), length(final_2022))
 
-
-approval_average(approval_polls, 
-                 begin_date, 
-                 final_date, 
-                 pull_pollster_weights(approval_weights),
-                 pull_sample_weight(approval_weights),
-                 pull_population_weights(approval_weights),
-                 pull_methodology_weights(approval_weights),
-                 pull_date_weight(approval_weights),
-                 if (test_type == "approval") yes else no)
-
-begin_test <- rep(ymd("2017-01-22"), 1459)
-final_test <- seq(ymd("2017-01-23"), ymd("2021-01-20"), "days")
-                
+# setup multisession
 plan(multisession, workers = 8)
 
-baseline <- 
-  list(begin = begin_test,
-       final = final_test) %>%
-  future_pmap_dfr(~approval_average(approval_polls,
+# fit current approval to election day
+fit_2022_approval <-
+  list(begin = begin_2022,
+       final = final_2022) %>%
+  future_pmap_dfr(~approval_average(approval_polls_current,
                                     ..1,
                                     ..2,
                                     pull_pollster_weights(approval_weights),
@@ -1985,42 +2135,209 @@ baseline <-
                                     pull_population_weights(approval_weights),
                                     pull_methodology_weights(approval_weights),
                                     pull_date_weight(approval_weights),
-                                    yes))
+                                    yes,
+                                    pull_downweight("approval")))
 
-approval_rmse_tracker <- 
-  baseline %>%
-  select(-starts_with("ci")) %>%
-  left_join(approval_trends, by = "date") %>%
-  select(answer, approve_estimate) %>%
-  nest(data = everything()) %>%
-  mutate(rmse = map(data, yardstick::rmse, truth = approve_estimate, estimate = answer)) %>%
-  unnest(rmse) %>%
-  select(.estimate) %>%
-  rename(rmse = .estimate) %>%
-  mutate(index = 0, 
-         metric = "baseline",
-         weight = 0,
-         next_lower = 0,
-         next_upper = 0,
-         pct_diff = 0, 
-         search_suggestion = "baseline") %>%
-  relocate(rmse, .after = weight)
+# fit current disapproval to election day
+fit_2022_disapproval <-
+  list(begin = begin_2022,
+       final = final_2022) %>%
+  future_pmap_dfr(~approval_average(approval_polls_current,
+                                    ..1,
+                                    ..2,
+                                    pull_pollster_weights(disapproval_weights),
+                                    pull_sample_weight(disapproval_weights),
+                                    pull_population_weights(disapproval_weights),
+                                    pull_methodology_weights(disapproval_weights),
+                                    pull_date_weight(disapproval_weights),
+                                    no,
+                                    pull_downweight("disapproval")))
 
-update_date_weight("approval")
+# merge frames
+fit_2022 <-
+  fit_2022_approval %>%
+  left_join(fit_2022_disapproval, by = "date") %>%
+  rename(approval = answer.x,
+         approval_lo = ci_lower.x,
+         approval_hi = ci_upper.x,
+         disapproval = answer.y,
+         disapproval_lo = ci_lower.y,
+         disapproval_hi = ci_upper.y)
 
-disapproval_rmse_tracker <- approval_rmse_tracker
+# get current approval/disapproval estimates
+current_approval <- 
+  fit_2022 %>%
+  filter(date == Sys.Date()) %>%
+  pull(approval)
 
-call_update_sample("disapproval")
+current_disapproval <-
+  fit_2022 %>%
+  filter(date == Sys.Date()) %>%
+  pull(disapproval)
 
-test_type <- "approval"
+current_net <- current_approval - current_disapproval
 
-plan(multisession, workers = 8)
-plan(sequential)
-c("rv", "lv", "a", "v") %>% future_walk(~call_update_population(..1, test_type))
+# generate list of dates for which we have polls
+plot_dates <- 
+  approval_polls_current %>%
+  distinct(end_date) %>%
+  pull(end_date)
 
-plan(multisession, workers = 8)
-c("rv", "lv", "a", "v") %>% walk(~call_update_population(.x, test_type))
+# reformat approval_polls_current for plotting
+approval_polls_current <- 
+  approval_polls_current %>%
+  select(end_date, pollster, yes, no) %>%
+  mutate(pollster = paste(pollster, "Offset")) %>%
+  left_join(approval_weights, by = c("pollster" = "variable")) %>%
+  mutate(yes = yes + weight) %>%
+  select(end_date:no) %>%
+  left_join(disapproval_weights, by = c("pollster" = "variable")) %>%
+  mutate(no = no + weight) %>%
+  select(end_date:no)
 
+# plot approval/disapproval
+fit_2022 %>%
+  mutate(across(approval:disapproval_hi, ~if_else(date > Sys.Date(), as.double(NA), .x)),
+         across(ends_with("lo"), ~if_else(date %in% plot_dates | date >= Sys.Date() | date == min(date), .x, as.double(NA))),
+         across(ends_with("hi"), ~if_else(date %in% plot_dates | date >= Sys.Date() | date == min(date), .x, as.double(NA)))) %>%
+  left_join(approval_polls_current, by = c("date" = "end_date")) %>% 
+  ggplot(aes(x = date)) +
+  geom_ribbon(aes(ymin = disapproval_lo,
+                  ymax = disapproval_hi),
+              fill = dd_orange,
+              alpha = 0.25,
+              na.rm = TRUE) + 
+  geom_ribbon(aes(ymin = approval_lo,
+                  ymax = approval_hi),
+              fill = dd_green,
+              alpha = 0.25, 
+              na.rm = TRUE) +
+  geom_point(aes(y = yes),
+             color = dd_green,
+             size = 2,
+             alpha = 0.25,
+             na.rm = TRUE) +
+  geom_point(aes(y = no),
+             color = dd_orange,
+             size = 2,
+             alpha = 0.25,
+             na.rm = TRUE) +
+  geom_line(aes(y = disapproval),
+            color = "white",
+            size = 3) +
+  geom_line(aes(y = disapproval),
+            color = dd_orange,
+            size = 1.25) +
+  geom_line(aes(y = approval),
+            color = "white",
+            size = 3) +
+  geom_line(aes(y = approval),
+            color = dd_green,
+            size = 1.25) +
+  geom_vline(xintercept = Sys.Date(),
+             size = 1,
+             linetype = "dotted",
+             color = "gray") +
+  geom_shadowtext(x = Sys.Date() + 45,
+                  y = current_disapproval,
+                  label = paste0(round(current_disapproval, 3) * 100, "%"),
+                  size = 8,
+                  family = "Roboto Slab",
+                  color = dd_orange,
+                  bg.color = "white") +
+  geom_shadowtext(x = Sys.Date() + 45,
+                  y = current_approval,
+                  label = paste0(round(current_approval, 3) * 100, "%"),
+                  size = 8,
+                  family = "Roboto Slab",
+                  color = dd_green,
+                  bg.color = "white") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_x_date(labels = scales::date_format("%b"),
+               breaks = "2 months") +
+  theme(panel.grid.minor.x = element_blank(),
+        plot.title.position = "plot",
+        plot.title = element_markdown(family = "Roboto Slab"),
+        plot.background = element_rect(fill = "white",
+                                       color = "white")) +
+  labs(title = "Do Voters <span style=color:'#65D755'>**Approve**</span> or <span style=color:'#F48847'>**Disapprove**</span> of Joe Biden's Performance?",
+       subtitle = paste("Estimated presidential approval and disapproval as of",
+                        format(Sys.Date(), "%b %d")),
+       x = NULL,
+       y = NULL,
+       caption = paste0("Model by @markjrieke\n",
+                        "Data courtesy of @FiveThirtyEight\n",
+                        "https://projects.fivethirtyeight.com/biden-approval-rating/"))
 
-call_update_offset("YouGov", "approval")
+# save over current photo
+ggsave("plots/approval/approval_disapproval_current.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+# plot net approval
+fit_2022 %>%
+  mutate(across(approval:disapproval_hi, ~if_else(date > Sys.Date(), as.double(NA), .x)),
+         across(ends_with("lo"), ~if_else(date %in% plot_dates | date >= Sys.Date() | date == min(date), .x, as.double(NA))),
+         across(ends_with("hi"), ~if_else(date %in% plot_dates | date >= Sys.Date() | date == min(date), .x, as.double(NA)))) %>%
+  left_join(approval_polls_current, by = c("date" = "end_date")) %>%
+  mutate(net = approval - disapproval,
+         net_lo = approval_lo - disapproval_hi,
+         net_hi = approval_hi - disapproval_lo,
+         net_poll = yes - no) %>%
+  select(date, starts_with("net")) %>%
+  ggplot(aes(x = date)) +
+  geom_ribbon(aes(ymin = net_lo,
+                  ymax = net_hi),
+              fill = dd_purple,
+              alpha = 0.25) +
+  geom_point(aes(y = net_poll),
+             color = dd_purple,
+             size = 2,
+             alpha = 0.25,
+             na.rm = TRUE) +
+  geom_line(aes(y = net),
+            color = "white",
+            size = 3) + 
+  geom_line(aes(y = net),
+            color = dd_purple,
+            size = 1.25) +
+  geom_vline(xintercept = Sys.Date(),
+             size = 1,
+             linetype = "dotted",
+             color = "gray") +
+  geom_shadowtext(x = Sys.Date() + 45,
+                  y = current_net,
+                  label = paste0(round(current_net, 3) * 100, "%"),
+                  size = 8,
+                  family = "Roboto Slab",
+                  color = dd_purple,
+                  bg.color = "white") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_x_date(labels = scales::date_format("%b"),
+               breaks = "2 months") +
+  theme(panel.grid.minor.x = element_blank(),
+        plot.title.position = "plot",
+        plot.title = element_markdown(family = "Roboto Slab"),
+        plot.background = element_rect(fill = "white",
+                                       color = "white")) +
+  labs(title = "How <span style=color:'#D755A6'>**Popular**</span> is Joe Biden?",
+       subtitle = paste("Estimated presidential net approval as of",
+                        format(Sys.Date(), "%b %d")),
+       x = NULL,
+       y = NULL,
+       caption = paste0("Model by @markjrieke\n",
+                        "Data courtesy of @FiveThirtyEight\n",
+                        "https://projects.fivethirtyeight.com/biden-approval-rating/"))
+
+# save over current photo
+ggsave("plots/approval/net_approval_current.png",
+       width = 9,
+       height = 6,
+       units = "in",
+       dpi = 500)
+
+#################### TESTING ZONE DAWG ####################
+
 
