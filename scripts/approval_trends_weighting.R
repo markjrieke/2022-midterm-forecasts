@@ -1772,6 +1772,101 @@ if (completed == FALSE) {
   
 }
 
+#################### EXPLORE COMBINED RESULTS ####################
+
+completed <- TRUE
+
+if (completed == FALSE) {
+  
+  # get final fit for plots
+  approval_fit <- 
+    approval_weights %>%
+    get_current_fit("approval",
+                    downweight = pull_downweight("approval"))
+  
+  disapproval_fit <-
+    disapproval_weights %>%
+    get_current_fit("disapproval",
+                    downweight = pull_downweight("disapproval"))
+  
+  # merged plot
+  approval_fit %>%
+    left_join(disapproval_fit, by = "date") %>%
+    rename(approval = answer.x,
+           approval_ci_lower = ci_lower.x,
+           approval_ci_upper = ci_upper.x,
+           disapproval = answer.y,
+           disapproval_ci_lower = ci_lower.y,
+           disapproval_ci_upper = ci_upper.y) %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = disapproval_ci_lower,
+                    ymax = disapproval_ci_upper),
+                fill = dd_orange,
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = approval_ci_lower,
+                    ymax = approval_ci_upper),
+                fill = dd_green,
+                alpha = 0.25) +
+    geom_line(aes(y = disapproval),
+              color = dd_orange,
+              size = 1.1) +
+    geom_line(aes(y = approval),
+              color = dd_green,
+              size = 1.1) +
+    labs(x = NULL,
+         y = NULL)
+  
+  ggsave("plots/approval/training/approval_disapproval_historical.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # compare weights against each other
+  approval_weights %>%
+    left_join(disapproval_weights, by = "variable") %>%
+    select(variable, starts_with("weight")) %>%
+    rename(approval_weight = weight.x,
+           disapproval_weight = weight.y) %>%
+    ggplot(aes(x = approval_weight,
+               y = disapproval_weight)) +
+    geom_point(size = 3.5,
+               alpha = 0.65,
+               color = "midnightblue") +
+    geom_abline(linetype = "dashed",
+                size = 1.1,
+                color = dd_gray)
+  
+  ggsave("plots/approval/training/approval_disapproval_weights_comparison.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # historical net approval
+  approval_fit %>%
+    left_join(disapproval_fit, by = "date") %>%
+    mutate(net = answer.x - answer.y,
+           net_ci_lower = ci_lower.x - ci_upper.y,
+           net_ci_upper = ci_upper.x - ci_lower.y) %>%
+    select(date, starts_with("net")) %>%
+    ggplot(aes(x = date,
+               y = net,
+               ymin = net_ci_lower,
+               ymax = net_ci_upper)) +
+    geom_ribbon(fill = "midnightblue",
+                alpha = 0.25) +
+    geom_line(color = "midnightblue",
+              size = 1.1)
+  
+  ggsave("plots/approval/training/historical_net_approval.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
