@@ -1419,6 +1419,40 @@ if (complete == FALSE) {
 
   }
 
+#################### FIT ERROR BARS - DISAPPROVAL ####################
+
+completed <- TRUE 
+
+if (completed == FALSE) {
+  
+  # run through disapproval downweights
+  downweight <- update_downweight(0, 1, "disapproval") # best: 0.25
+  downweight <- update_downweight(0, 0.5, "disapproval") # best: 0.125
+  downweight <- update_downweight(0, 0.25, "disapproval") # best: 0.0625
+  downweight <- update_downweight(0, 0.125, "disapproval") # best: 0.03125
+  downweight <- update_downweight(0, 0.0625, "disapproval") # best: 0.015625
+  downweight <- update_downweight(0, 0.03125, "disapproval") # best: 0.0234375
+  downweight <- update_downweight(0.015625, 0.03125, "disapproval") # best: 0.01953125
+  downweight <- update_downweight(0.015625, 0.0234375, "disapproval") # best: 0.01953125
+  downweight <- update_downweight(0.017578125, 0.021484375, "disapproval") # best: 0.01953125
+  downweight <- update_downweight(0.018554688, 0.020507813, "disapproval") # best: 0.01953125 (final)
+  
+  downweight <- 0.01953125
+  
+  # add selected downweight to disapproval_weights & save to csv
+  disapproval_weights <- 
+    disapproval_weights %>%
+    bind_rows(tibble(variable = "downweight",
+                     weight = downweight,
+                     next_lower = 0,
+                     next_upper = 0,
+                     search_suggestion = "final"))
+  
+  disapproval_weights %>%
+    write_csv("data/models/approval/disapproval_weights.csv")
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
