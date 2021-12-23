@@ -1358,8 +1358,31 @@ update_downweight <- function(lower_bound, upper_bound, type) {
     mutate(rmse = rmse_hi + rmse_lo,
            pct_diff = (max(rmse) - min(rmse))/mean(max(rmse), min(rmse)))
   
+}
+
+# quick function for pulling the downweight
+pull_downweight <- function(type) {
+  
+  # select weight table based on type
+  if (type == "approval") {
+    
+    variable_weights <- approval_weights
+    
+  } else {
+    
+    variable_weights <- disapproval_weights
+    
+  }
+  
+  weight <- 
+    variable_weights %>%
+    filter(variable == "downweight") %>%
+    pull(weight)
+  
+  return(weight)
   
 }
+
 
 #################### FIT ERROR BARS - APPROVAL ####################
 
