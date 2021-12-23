@@ -2343,4 +2343,128 @@ ggsave("plots/approval/net_approval_current.png",
 
 #################### TESTING ZONE DAWG ####################
 
+completed <- TRUE
+
+if (completed == FALSE) {
+  
+  # example of projecting out into the future
+  fit_2022 %>%
+    filter(date <= Sys.Date() + 60) %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = disapproval_lo,
+                    ymax = disapproval_hi),
+                fill = dd_orange,
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = approval_lo,
+                    ymax = approval_hi),
+                fill = dd_green,
+                alpha = 0.25) +
+    geom_line(aes(y = disapproval),
+              color = dd_orange,
+              size = 1.1) +
+    geom_line(aes(y = approval),
+              color = dd_green,
+              size = 1.1) +
+    labs(x = NULL,
+         y = NULL) +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
+  
+  ggsave("plots/approval/training/projection.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # check what polls make up the most weight
+  approval_polls_current %>%
+    
+    # apply approval pollster offsets
+    mutate(pollster = paste(pollster, "Offset")) %>%
+    left_join(approval_weights, by = c("pollster" = "variable")) %>%
+    mutate(yes = yes + weight,
+           yes_votes = round(yes * sample_size),
+           not_yes_votes = round((1-yes) * sample_size)) %>%
+    select(-weight, -next_lower, -next_upper, -search_suggestion) %>%
+    mutate(pollster = str_remove_all(pollster, " Offset")) %>%
+    
+    # apply approval pollster weight
+    left_join(approval_weights, by = c("pollster" = "variable")) %>%
+    select(-next_lower, -next_upper, -search_suggestion) %>%
+    rename(pollster_weight = weight) %>%
+    
+    # apply approval sample size weight
+    mutate(sample_weight = log10(sample_size) * pull_sample_weight(approval_weights)) %>%
+    
+    # apply approval population weight
+    left_join(approval_weights, by = c("population_full" = "variable")) %>%
+    select(-next_lower, -next_upper, -search_suggestion) %>%
+    rename(population_weight = weight) %>%
+    
+    # apply approval methodology weight
+    left_join(approval_weights, by = c("methodology" = "variable")) %>%
+    select(-next_lower, -next_upper, -search_suggestion) %>%
+    rename(methodology_weight = weight) %>%
+    
+    # apply approval date weight
+    mutate(days_diff = as.numeric(Sys.Date() - end_date) + 1,
+           weeks_diff = days_diff/7,
+           date_weight = pull_date_weight(approval_weights) ^ weeks_diff) %>%
+    select(-days_diff, -weeks_diff) %>%
+    
+    # summarise approval total weight
+    mutate(approval_alpha = yes_votes * pollster_weight * sample_weight * methodology_weight * date_weight,
+           approval_beta = not_yes_votes * pollster_weight * sample_weight * population_weight * methodology_weight * date_weight) %>%
+    select(pollster:no, starts_with("approval")) %>%
+    
+    # apply disapproval pollster offsets
+    mutate(pollster = paste(pollster, "Offset")) %>%
+    left_join(disapproval_weights, by = c("pollster" = "variable")) %>%
+    mutate(no = no + weight,
+           no_votes = round(no * sample_size),
+           not_no_votes = round((1-no) * sample_size)) %>%
+    select(-weight, -next_lower, -next_upper, -search_suggestion) %>%
+    mutate(pollster = str_remove_all(pollster, " Offset")) %>%
+    
+    # apply disapproval pollster weight
+    left_join(disapproval_weights, by = c("pollster" = "variable")) %>%
+    select(-next_lower, -next_upper, -search_suggestion) %>%
+    rename(pollster_weight = weight) %>%
+    
+    # apply disapproval sample size weight
+    mutate(sample_weight = log10(sample_size) * pull_sample_weight(disapproval_weights)) %>%
+    
+    # apply disapproval population weight
+    left_join(disapproval_weights, by = c("population_full" = "variable")) %>%
+    select(-next_lower, -next_upper, -search_suggestion) %>%
+    rename(population_weight = weight) %>%
+    
+    # apply disapproval methodology weight
+    left_join(disapproval_weights, by = c("methodology" = "variable")) %>%
+    select(-next_lower, -next_upper, -search_suggestion) %>%
+    rename(methodology_weight = weight) %>%
+    
+    # apply disapproval date weight
+    mutate(days_diff = as.numeric(Sys.Date() - end_date) + 1,
+           weeks_diff = days_diff/7,
+           date_weight = pull_date_weight(disapproval_weights) ^ weeks_diff) %>%
+    select(-days_diff, -weeks_diff) %>%
+    
+    # summarise approval total weight
+    mutate(disapproval_alpha = no_votes * pollster_weight * sample_weight * methodology_weight * date_weight,
+           disapproval_beta = not_no_votes * pollster_weight * sample_weight * population_weight * methodology_weight * date_weight) %>%
+    select(pollster:no, starts_with("approval"), starts_with("disapproval")) %>%
+    
+    # summarise total weight
+    mutate(total_weight = approval_alpha + approval_beta + disapproval_alpha + disapproval_beta) %>%
+    select(pollster:no, starts_with("total")) %>%
+    filter(end_date <= ymd("2021-12-18")) %>%
+    mutate(relative_weight = total_weight/sum(total_weight)) %>%
+    arrange(desc(relative_weight)) %>%
+    select(-total_weight)
+    
+    
+    
+  
+}
 
