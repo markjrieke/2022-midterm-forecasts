@@ -1109,7 +1109,7 @@ update_all <- function(type) {
 #################### VIZ FUNCTIONS ####################
 
 # function to visualize trend against fte trend
-get_current_fit <- function(.data, type) {
+get_current_fit <- function(.data, type, downweight = 1) {
   
   # setup begin/end dates to feed to baseline calc
   begin_current <- rep(ymd("2017-01-22"), 1459)
@@ -1126,7 +1126,8 @@ get_current_fit <- function(.data, type) {
                                       pull_population_weights(.data),
                                       pull_methodology_weights(.data),
                                       pull_date_weight(.data),
-                                      if (type == "approval") yes else no))
+                                      if (type == "approval") yes else no,
+                                      downweight))
   
 }
 
@@ -1450,6 +1451,159 @@ if (completed == FALSE) {
   
   disapproval_weights %>%
     write_csv("data/models/approval/disapproval_weights.csv")
+  
+}
+
+#################### EXPLORE RESULTS - APPROVAL ####################
+
+complete <- TRUE
+
+if (complete == FALSE) {
+  
+  # get final fit for plots
+  approval_fit <- 
+    approval_weights %>%
+    get_current_fit("approval",
+                    downweight = pull_downweight("approval"))
+  
+  # visualize final fit
+  approval_fit %>%
+    visualize_fit("approval") +
+    labs(title = "Final fit - approval")
+  
+  ggsave("plots/approval/training/approval_final_fit.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # visualize rmse drop
+  approval_rmse_tracker %>%
+    visualize_rmse() +
+    labs(title = "rmse - approval")
+  
+  ggsave("plots/approval/training/approval_rmse_tracker.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # patchwork of approval fit/rmse
+  (approval_fit %>% visualize_fit("approval") + labs(title = "Final fit - approval")) / (approval_rmse_tracker %>% visualize_rmse() + labs(title = "rmse - approval"))
+  
+  ggsave("plots/approval/training/approval_fit_rmse_patchwork.png",
+         width = 9,
+         height = 12,
+         units = "in",
+         dpi = 500)
+  
+  # view pollster weights
+  approval_weights %>%
+    filter(variable %in% c(pollsters, "Other Pollster")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable,
+               y = weight)) +
+    geom_col(fill = "midnightblue",
+             alpha = 0.65) +
+    coord_flip() +
+    labs(title = "Pollster weights - approval")
+  
+  ggsave("plots/approval/training/approval_pollster_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # view pollster offsets
+  approval_weights %>%
+    filter(str_detect(variable, "Offset")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable,
+               y = weight)) +
+    geom_col(fill = "midnightblue",
+             alpha = 0.65) +
+    coord_flip() +
+    labs(title = "Pollster offset - approval")
+  
+  ggsave("plots/approval/training/approval_pollster_offsets.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # view pollster weight/offset in combination
+  approval_weights %>%
+    filter(str_detect(variable, "Offset")) %>%
+    mutate(variable = str_remove(variable, " Offset")) %>%
+    rename(offset = weight) %>%
+    select(variable, offset) %>%
+    left_join(approval_weights, by = "variable") %>%
+    left_join(approval_polls %>% count(pollster), by = c("variable" = "pollster")) %>% 
+    ggplot(aes(x = offset,
+               y = weight,
+               label = variable)) + 
+    geom_point(aes(size = n),
+               color = "midnightblue",
+               alpha = 0.65) +
+    ggrepel::geom_label_repel() +
+    labs(title = "Pollster Summary - approval")
+  
+  ggsave("plots/approval/training/approval_pollster_weights_summary_size.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # view population weights
+  approval_weights %>%
+    filter(variable %in% c("rv", "lv", "v", "a")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable,
+               y = weight)) +
+    geom_col(fill = "midnightblue",
+             alpha = 0.65) +
+    coord_flip() +
+    labs(title = "Population - approval")
+  
+  ggsave("plots/approval/training/approval_population_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # view methodology weights
+  approval_weights %>%
+    filter(variable %in% c(methods, "Other Method")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable,
+               y = weight)) +
+    geom_col(fill = "midnightblue",
+             alpha = 0.65) +
+    coord_flip() +
+    labs(title = "Methodology - approval")
+  
+  ggsave("plots/approval/training/approval_methodology_weights.png",
+         width = 9,
+         height = 6, 
+         units = "in",
+         dpi = 500)
+  
+  # view all variable weights
+  approval_weights %>%
+    filter(!str_detect(variable, "Offset")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable,
+               y = weight)) +
+    geom_col(fill = "midnightblue",
+             alpha = 0.65) +
+    coord_flip() +
+    labs(title = "All weights - approval")
+  
+  ggsave("plots/approval/training/approval_all_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
   
 }
 
