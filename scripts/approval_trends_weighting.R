@@ -6,6 +6,9 @@ library(riekelib)
 library(patchwork)
 library(shadowtext)
 
+# cleanup ----
+rm(list = ls())
+
 # themes ----
 source("https://raw.githubusercontent.com/markjrieke/thedatadiary/main/dd_theme_elements/dd_theme_elements.R")
 theme_set(theme_minimal(base_family = "Roboto Slab"))

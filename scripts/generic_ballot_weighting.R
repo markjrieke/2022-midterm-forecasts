@@ -6,6 +6,9 @@ library(riekelib)
 library(patchwork)
 library(shadowtext)
 
+# cleanup ----
+rm(list = ls())
+
 #################### SETUP ####################
 
 # setup parallel processing (Windows) 
