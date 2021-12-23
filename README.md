@@ -17,7 +17,15 @@ Average](plots/generic_ballot/generic_ballot_current.png)
 
 ### Presidential Approval Average
 
-*Coming soon!*
+To generate the plots below, you can run the script
+[`approval_trends_weighting.R`](https://github.com/markjrieke/2022-midterm-forecasts/blob/main/scripts/approval_trends_weighting.R).
+You can read about how this model was built and explore some of the
+results from training \[HERE\] &lt;- (fill in when post is written).
+
+![Presidential Approval and
+Disapproval](plots/approval/approval_disapproval_current.png)
+
+![Presidential Net Approval](plots/approval/net_approval_current.png)
 
 ### Senate Poll Weighting
 
