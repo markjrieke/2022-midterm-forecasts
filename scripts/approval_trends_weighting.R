@@ -1280,6 +1280,122 @@ if (completed == FALSE) {
   
 }
 
+#################### DOWNWEIGHT FUNCTIONS ####################
+
+# function for getting the generic downweight for errorbars
+update_downweight <- function(lower_bound, upper_bound, type) {
+  
+  # set variable weights based on type
+  if (type == "approval") {
+    
+    variable_weights <- approval_weights
+    confidence_trend <- approval_trends
+    
+  } else {
+    
+    variable_weights <- disapproval_weights
+    confidence_trend <- disapproval_trends
+    
+  }
+  
+  # rename confidence trend cols for merging later on
+  confidence_trend <- 
+    confidence_trend %>%
+    rename(truth = ends_with("estimate"),
+           truth_hi = ends_with("hi"),
+           truth_lo = ends_with("lo"))
+  
+  # setup futures
+  message("Setting up multisession workers")
+  plan(multisession, workers = 8)
+  
+  # fit weights to data
+  weight_map <-
+    sequence_weights(lower_bound, upper_bound) %>%
+    create_try_list() %>%
+    future_pmap_dfr(~approval_average(approval_polls,
+                                      ..2,
+                                      ..3,
+                                      pull_pollster_weights(variable_weights),
+                                      pull_sample_weight(variable_weights),
+                                      pull_population_weights(variable_weights),
+                                      pull_methodology_weights(variable_weights),
+                                      pull_date_weight(variable_weights),
+                                      if (type == "approval") yes else no,
+                                      ..1))
+  
+  # return summary tibble w/rmse & pct diff
+  weight_map %>%
+    
+    # calculate hi/lo confidence interval
+    mutate(est_hi = ci_upper - answer,
+           est_lo = ci_lower - answer) %>%
+    
+    # merging data, light reformatting
+    left_join(confidence_trend, by = "date") %>%
+    mutate(delta_hi = truth_hi - truth,
+           delta_lo = truth_lo - truth) %>%
+    bind_cols(weight = sequence_weights(lower_bound, upper_bound)) %>%
+    select(weight, 
+           starts_with("est"),
+           starts_with("delta")) %>%
+    
+    # get individual rmse for hi/lo confidence interval
+    group_by(weight) %>%
+    nest() %>%
+    mutate(rmse_hi = map(data, yardstick::rmse, truth = delta_hi, estimate = est_hi)) %>%
+    unnest(rmse_hi) %>%
+    select(-.metric, -.estimator) %>%
+    rename(rmse_hi = .estimate) %>%
+    mutate(rmse_lo = map(data, yardstick::rmse, truth = delta_lo, estimate = est_lo)) %>%
+    unnest(rmse_lo) %>%
+    select(-.metric, -.estimator) %>%
+    rename(rmse_lo = .estimate) %>%
+    select(-data) %>%
+    ungroup() %>%
+    
+    # summarise & return
+    mutate(rmse = rmse_hi + rmse_lo,
+           pct_diff = (max(rmse) - min(rmse))/mean(max(rmse), min(rmse)))
+  
+  
+}
+
+#################### FIT ERROR BARS - APPROVAL ####################
+
+complete <- TRUE
+
+if (complete == FALSE) {
+  
+  # run through downweights (there's a better way to do this but I'm lazy)
+  downweight <- update_downweight(0, 1, "approval") # best: 0.25
+  downweight <- update_downweight(0, 0.5, "approval") # best: 0.125
+  downweight <- update_downweight(0, 0.25, "approval") # best: 0.0625
+  downweight <- update_downweight(0, 0.125, "approval") # best: 0.03125
+  downweight <- update_downweight(0, 0.0625, "approval") # best: 0.015625
+  downweight <- update_downweight(0, 0.03125, "approval") # best: 0.015625
+  downweight <- update_downweight(0.0078125, 0.0234375, "approval") # best: 0.015625
+  downweight <- update_downweight(0.01171875, 0.01953125, "approval") # best: 0.015625
+  downweight <- update_downweight(0.013671875, 0.01758125, "approval") # best: 0.016601563
+  downweight <- update_downweight(0.015625, 0.017578125, "approval") # best: 0.016113281
+  downweight <- update_downweight(0.015625, 0.016601563, "approval") # best: 0.016113281 (final)
+  
+  downweight <- 0.016113281
+  
+  # add selected downweight to variable_weights & save to csv
+  approval_weights <- 
+    approval_weights %>%
+    bind_rows(tibble(variable = "downweight",
+                     weight = downweight,
+                     next_lower = 0,
+                     next_upper = 0,
+                     search_suggestion = "final"))
+  
+  approval_weights %>%
+    write_csv("data/models/approval/approval_weights.csv")
+
+  }
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
