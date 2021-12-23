@@ -1867,6 +1867,77 @@ if (completed == FALSE) {
   
 }
 
+#################### EXPLORE ERROR BAR FITS ####################
+
+completed <- TRUE
+
+if (completed == FALSE) {
+  
+  # get final fit for plots
+  approval_fit <- 
+    approval_weights %>%
+    get_current_fit("approval",
+                    downweight = pull_downweight("approval"))
+  
+  disapproval_fit <-
+    disapproval_weights %>%
+    get_current_fit("disapproval",
+                    downweight = pull_downweight("disapproval"))
+  
+  # check approval error against trend
+  approval_fit %>%
+    left_join(approval_trends, by = "date") %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) +
+    geom_ribbon(aes(ymin = approve_lo,
+                    ymax = approve_hi),
+                fill = "red",
+                alpha = 0.25) +
+    geom_line(aes(y = approve_estimate),
+              color = "red",
+              size = 1.1) +
+    geom_line(aes(y = answer),
+              color = "midnightblue",
+              size = 1) +
+    labs(title = "error bar check - approval")
+  
+  ggsave("plots/approval/training/approval_ci_fit_historical.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # check disapproval ci fit
+  disapproval_fit %>%
+    left_join(disapproval_trends, by = "date") %>%
+    ggplot(aes(x = date)) +
+    geom_ribbon(aes(ymin = ci_lower,
+                    ymax = ci_upper),
+                fill = "midnightblue",
+                alpha = 0.25) + 
+    geom_ribbon(aes(ymin = disapprove_lo,
+                    ymax = disapprove_hi),
+                fill = "red",
+                alpha = 0.25) +
+    geom_line(aes(y = disapprove_estimate),
+              color = "red",
+              size = 1.1) +
+    geom_line(aes(y = answer),
+              color = "midnightblue",
+              size = 1) +
+    labs(title = "error bar check - disapproval")
+  
+  ggsave("plots/approval/training/disapproval_ci_fit_historical.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+}
+
 #################### TESTING ZONE DAWG ####################
 
 # initialize variable weights & offsets
