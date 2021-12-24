@@ -2462,9 +2462,49 @@ if (completed == FALSE) {
     mutate(relative_weight = total_weight/sum(total_weight)) %>%
     arrange(desc(relative_weight)) %>%
     select(-total_weight)
-    
-    
-    
+  
+  # net approval method comparison
+  approval_polls_current %>%
+    mutate(net = yes - no) %>%
+    group_by(end_date) %>%
+    summarise(daily_mean = mean(net),
+              daily_median = median(net)) %>%
+    ungroup() %>%
+    mutate(rollavg_mean = zoo::rollmean(daily_mean, 7, na.pad = TRUE, align = "right"),
+           rollavg_median = zoo::rollmean(daily_median, 7, na.pad = TRUE, align = "right")) %>%
+    select(end_date, starts_with("roll")) %>%
+    left_join(approval_polls_current, by = "end_date") %>%
+    mutate(net = yes - no) %>%
+    select(-(pollster:no)) %>%
+    left_join(fit_2022, by = c("end_date" = "date")) %>%
+    mutate(net_est = approval - disapproval) %>%
+    select(-(approval:disapproval_hi)) %>%
+    pivot_longer(starts_with("roll"),
+                 names_to = "method",
+                 values_to = "poll_avg") %>%
+    ggplot(aes(x = end_date)) +
+    geom_point(aes(y = net),
+               color = dd_purple,
+               size = 2,
+               alpha = 0.25) +
+    geom_smooth(aes(y = net),
+                method = "loess",
+                formula = y ~ x) +
+    geom_line(aes(y = poll_avg,
+                  color = method),
+              size = 1.1,
+              alpha = 0.6) +
+    geom_line(aes(y = net_est),
+              color = dd_purple,
+              size = 1.1) +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
+  
+  ggsave("plots/approval/training/methods_compare.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
   
 }
 
