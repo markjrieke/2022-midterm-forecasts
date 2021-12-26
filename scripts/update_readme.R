@@ -1,6 +1,6 @@
 # update generic ballot
 message("Updating Generic Ballot")
-messate("...")
+message("...")
 tictoc::tic()
 source("scripts/generic_ballot_weighting.R")
 tictoc::toc()
