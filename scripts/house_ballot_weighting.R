@@ -3,6 +3,7 @@ library(tidyverse)
 library(lubridate)
 library(tidycensus)
 library(riekelib)
+library(furrr)
 
 # clean up environment ----
 rm(list = ls())
@@ -166,41 +167,67 @@ demographics <-
          other = 1 - white - black - hispanic - aapi) %>%
   select(-total, -asian, -pac_islander) %>%
   mutate(region = str_remove_all(region, " \\(116th Congress\\)")) %>%
-  arrange(region)
-  
+  arrange(region) %>%
+  filter(!str_detect(region, "not defined"),
+         !str_detect(region, "District of Columbia"),
+         !str_detect(region, "Puerto Rico"))
 
+# determine similarity scores ---
+
+# function for calculating similarity scores given one congressional district
+similarity <- function(.data, district) {
+  
+  .data %>%
+    mutate(comparison = district) %>%
+    left_join(.data, by = c("comparison" = "region")) %>%
+    select(-year.y) %>%
+    rename(year = year.x) %>%
+    mutate(across(ends_with(".x"), expit),
+           across(ends_with(".y"), expit),
+           white_similar = exp(-((white.y - white.x)^2)/sd(white.x)),
+           black_similar = exp(-((black.y - black.x)^2)/sd(black.x)),
+           hispanic_similar = exp(-((hispanic.y - hispanic.x)^2)/sd(hispanic.x)),
+           aapi_similar = exp(-((aapi.y - aapi.x)^2)/sd(aapi.x)),
+           other_similar = exp(-((other.y - other.x)^2)/sd(other.x)),
+           similarity = white_similar * black_similar * hispanic_similar * aapi_similar * other_similar) %>%
+    select(year, region, comparison, similarity) 
+  
+}
+
+# function for calculating similarity scores for all congressional districts in a given year
+similarities <- function(end_year) {
+  
+  # temporary df of selected year
+  df <- 
+    demographics %>%
+    filter(year == end_year)
+  
+  # congressional districts in that year
+  districts <- 
+    df %>%
+    distinct(region) %>%
+    pull(region)
+  
+  message(paste("Mapping data for", end_year))
+  
+  # map similarity function to congressional district
+  districts %>%
+    future_map_dfr(~similarity(df, .x))
+  
+}
+
+# setup multisession workers
+plan(multisession, workers = 8)
+
+# create a similariteis tibble
+district_similarities <- 
+  bind_rows(
+    similarities(2018),
+    similarities(2019),
+    similarities(2020)
+  )
 
 #################### TESTING ZONG MY GUY ####################
 
 
-  left_join(demographics, by = c("variable" = "code")) %>%
-  select(region = NAME,
-         race, 
-         value) %>%
-  pivot_wider(names_from = race,
-              values_from = value) %>%
-  mutate(across(white:pac_islander, ~ .x/total),
-         aapi = asian + pac_islander,
-         other = 1 - white - black - hispanic - asian - pac_islander) %>%
-  select(-total, -asian, -pac_islander)
-
-get_decennial(geography = "congressional district",
-              variables = demo_pl,
-              year = 2020) %>%
-  left_join(demographics, by = c("variable" = "code")) %>%
-  select(region = NAME,
-         race, 
-         value) %>%
-  pivot_wider(names_from = race,
-              values_from = value) %>%
-  mutate(across(white:pac_islander, ~ .x/total),
-         aapi = asian + pac_islander,
-         other = 1 - white - black - hispanic - asian - pac_islander) %>%
-  select(-total, -asian, -pac_islander) %>%
-  arrange(region)
   
-
-# check vars
-vars_2018 <- load_variables(2018, "acs1")
-vars_2019 <- load_variables(2019, "acs1")
-vars_2020 <- load_variables(2020, "pl")
