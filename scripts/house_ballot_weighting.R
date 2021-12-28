@@ -16,7 +16,7 @@ num_cores <- parallel::detectCores()
 clusters <- parallel::makePSOCKcluster(num_cores)
 doParallel::registerDoParallel(clusters)
 
-# setup ----
+# wrangle house_polls ----
 
 # read in data
 house_polls <-
@@ -86,7 +86,7 @@ candidates <-
   distinct(candidate_name) %>%
   pull(candidate_name)
 
-# wrangle polls to better format
+# wrangle polls to wide format
 house_polls <-
   house_polls %>%
   filter(candidate_name %in% candidates) %>%
@@ -110,15 +110,97 @@ house_polls <-
   mutate(dem2pv = pct_DEM/(pct_DEM + pct_REP)) %>%
   select(-internal, -partisan, - starts_with("pct"))
 
+# wrangle district demographic data ----
 
+# create lists of demographic vars
+census_codes <- 
+  tribble(
+    ~survey, ~code, ~race,
+    "pl", "P2_001N", "total",
+    "pl", "P2_005N", "white",
+    "pl", "P2_006N", "black",
+    "pl", "P2_002N", "hispanic",
+    "pl", "P2_008N", "asian",
+    "pl", "P2_009N", "pac_islander",
+    "acs", "B03001_001", "total",
+    "acs", "B03002_003", "white",
+    "acs", "B03002_004", "black",
+    "acs", "B03001_003", "hispanic",
+    "acs", "B03002_006", "asian",
+    "acs", "B03002_007", "pac_islander"
+  )
+  
+demo_pl <-
+  census_codes %>%
+  filter(survey == "pl") %>%
+  pull(code)
+
+demo_acs <- 
+  census_codes %>%
+  filter(survey == "acs") %>%
+  pull(code)
+
+# pull demographic data from census api
+demographics <- 
+  bind_rows(
+    get_decennial("us", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
+    get_decennial("congressional district", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
+    get_acs("us", demo_acs, year = 2019) %>% mutate(year = 2019),
+    get_acs("congressional district", demo_acs, year = 2019) %>% mutate(year = 2019),
+    get_acs("us", demo_acs, year = 2018) %>% mutate(year = 2018),
+    get_acs("congressional district", demo_acs, year = 2018) %>% mutate(year = 2018)
+  )
+
+# summarise demographic data
+demographics <- 
+  demographics %>%
+  left_join(census_codes, by = c("variable" = "code")) %>%
+  select(year,
+         region = NAME,
+         race,
+         estimate) %>%
+  pivot_wider(names_from = race,
+              values_from = estimate) %>%
+  mutate(across(white:pac_islander, ~ .x/total),
+         aapi = asian + pac_islander,
+         other = 1 - white - black - hispanic - aapi) %>%
+  select(-total, -asian, -pac_islander) %>%
+  mutate(region = str_remove_all(region, " \\(116th Congress\\)")) %>%
+  arrange(region)
   
 
-# pollster
-# pollster offset
-# sample size
-# population
-# methodology
-# internal
-# partisan
+
+#################### TESTING ZONG MY GUY ####################
 
 
+  left_join(demographics, by = c("variable" = "code")) %>%
+  select(region = NAME,
+         race, 
+         value) %>%
+  pivot_wider(names_from = race,
+              values_from = value) %>%
+  mutate(across(white:pac_islander, ~ .x/total),
+         aapi = asian + pac_islander,
+         other = 1 - white - black - hispanic - asian - pac_islander) %>%
+  select(-total, -asian, -pac_islander)
+
+get_decennial(geography = "congressional district",
+              variables = demo_pl,
+              year = 2020) %>%
+  left_join(demographics, by = c("variable" = "code")) %>%
+  select(region = NAME,
+         race, 
+         value) %>%
+  pivot_wider(names_from = race,
+              values_from = value) %>%
+  mutate(across(white:pac_islander, ~ .x/total),
+         aapi = asian + pac_islander,
+         other = 1 - white - black - hispanic - asian - pac_islander) %>%
+  select(-total, -asian, -pac_islander) %>%
+  arrange(region)
+  
+
+# check vars
+vars_2018 <- load_variables(2018, "acs1")
+vars_2019 <- load_variables(2019, "acs1")
+vars_2020 <- load_variables(2020, "pl")
