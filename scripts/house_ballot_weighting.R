@@ -96,8 +96,22 @@ house_polls <-
               values_from = c(pct, candidate_name)) %>%
   mutate(across(starts_with("candidate"), ~replace_na(.x, "Unopposed")),
          across(starts_with("pct"), ~replace_na(.x, 0))) %>%
-  select(-question_id, -cycle) %>%
+  select(-question_id) %>%
   relocate(starts_with("candidate"), .after = state) 
+
+# coalesce partisan status, mutate to dem2pv
+house_polls <- 
+  house_polls %>%
+  mutate(poll_type = case_when(partisan == "NON" ~ "non-partisan",
+                               internal == FALSE & partisan == "DEM" ~ "external-DEM",
+                               internal == FALSE & partisan == "REP" ~ "external-REP",
+                               internal == TRUE & partisan == "DEM" ~ "internal-DEM",
+                               internal == TRUE & partisan == "REP" ~ "internal-REP")) %>%
+  mutate(dem2pv = pct_DEM/(pct_DEM + pct_REP)) %>%
+  select(-internal, -partisan, - starts_with("pct"))
+
+
+  
 
 # pollster
 # pollster offset
