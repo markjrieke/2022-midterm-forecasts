@@ -175,6 +175,7 @@ demographics <-
 # determine similarity scores ---
 
 # function for calculating similarity scores given one congressional district
+# note that this assumes a gaussian kernel for the similarity
 similarity <- function(.data, district) {
   
   .data %>%
