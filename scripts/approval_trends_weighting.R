@@ -2294,7 +2294,8 @@ fit_2022 %>%
   geom_ribbon(aes(ymin = net_lo,
                   ymax = net_hi),
               fill = dd_purple,
-              alpha = 0.25) +
+              alpha = 0.25,
+              na.rm = TRUE) +
   geom_point(aes(y = net_poll),
              color = dd_purple,
              size = 2,
