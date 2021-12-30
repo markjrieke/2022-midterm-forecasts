@@ -35,38 +35,20 @@ house_polls <-
          population_full,
          methodology, 
          seat_name, 
-         internal, 
-         partisan, 
+         #internal, 
+         #partisan, 
          candidate_name, 
          candidate_party, 
          pct) %>%
   rename(pollster = display_name,
          population = population_full,
          seat = seat_name) %>%
-  mutate(partisan = replace_na(partisan, "NON"),
+  mutate(#partisan = replace_na(partisan, "NON"),
          methodology = replace_na(methodology, "Unknown"),
          pct = pct/100,
          end_date = mdy(end_date)) %>%
   filter(!is.na(sample_size),
          state != "Puerto Rico")
-
-# get list of pollsters who have conducted at least 1% of polls
-pollsters <- 
-  house_polls %>%
-  distinct(question_id, .keep_all = TRUE) %>%
-  percent(pollster) %>%
-  arrange(desc(pct)) %>%
-  filter(pct > 0.01) %>%
-  pull(pollster)
-
-# get list of methodologies that makeup at least 1% of polls
-methods <- 
-  house_polls %>%
-  distinct(question_id, .keep_all = TRUE) %>%
-  percent(methodology) %>%
-  arrange(desc(pct)) %>%
-  filter(pct > 0.01) %>%
-  pull(methodology)
 
 # get list of top candidates from each party
 # this will let us use the two-party voteshare for major candidates
@@ -91,25 +73,89 @@ candidates <-
 house_polls <-
   house_polls %>%
   filter(candidate_name %in% candidates) %>%
-  mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
-         methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
+  #mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
+  #       methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
   pivot_wider(names_from = candidate_party,
               values_from = c(pct, candidate_name)) %>%
   mutate(across(starts_with("candidate"), ~replace_na(.x, "Unopposed")),
          across(starts_with("pct"), ~replace_na(.x, 0))) %>%
   select(-question_id) %>%
   relocate(starts_with("candidate"), .after = state) 
+  
+# pull in national polls
+national_polls <-
+  read_csv("data/polls/src/fte/generic_ballot_polls_historical.csv")
 
-# coalesce partisan status, mutate to dem2pv
+# wrangle national polls
+national_polls <- 
+  national_polls %>%
+  select(cycle, 
+         end_date,
+         pollster = display_name,
+         sample_size,
+         population = population_full,
+         methodology,
+         pct_DEM = dem,
+         pct_REP = rep) %>%
+  mutate(state = "United States",
+         candidate_name_DEM = "Generic DEM",
+         candidate_name_REP = "Generic REP",
+         end_date = mdy(end_date),
+         seat = "United States",
+         pct_DEM = pct_DEM/100,
+         pct_REP = pct_REP/100) %>%
+  select(cycle,
+         state,
+         candidate_name_DEM,
+         candidate_name_REP,
+         end_date,
+         pollster,
+         sample_size,
+         population,
+         methodology,
+         seat,
+         pct_DEM,
+         pct_REP)
+
+# merge all house polls together
+house_polls <- 
+  bind_rows(
+    house_polls,
+    national_polls
+  )
+
+# clean up environment
+rm(national_polls)
+
+# mend nas
 house_polls <- 
   house_polls %>%
-  mutate(poll_type = case_when(partisan == "NON" ~ "non-partisan",
-                               internal == FALSE & partisan == "DEM" ~ "external-DEM",
-                               internal == FALSE & partisan == "REP" ~ "external-REP",
-                               internal == TRUE & partisan == "DEM" ~ "internal-DEM",
-                               internal == TRUE & partisan == "REP" ~ "internal-REP")) %>%
+  mutate(methodology = replace_na(methodology, "Unknown")) %>%
+  drop_na()
+
+# get list of pollsters who have conducted at least 1% of polls
+pollsters <- 
+  house_polls %>%
+  percent(pollster) %>%
+  arrange(desc(pct)) %>%
+  filter(pct > 0.01) %>%
+  pull(pollster)
+
+# get list of methodologies that makeup at least 1% of polls
+methods <- 
+  house_polls %>%
+  percent(methodology) %>%
+  arrange(desc(pct)) %>%
+  filter(pct > 0.01) %>%
+  pull(methodology)
+
+# replace pollsters/methodologies that aren't used regularly with "Other", mutate to dem2pv
+house_polls <- 
+  house_polls %>%
+  mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
+         methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
   mutate(dem2pv = pct_DEM/(pct_DEM + pct_REP)) %>%
-  select(-internal, -partisan, - starts_with("pct"))
+  select(-starts_with("pct"))
 
 # wrangle district demographic data ----
 
@@ -230,5 +276,9 @@ district_similarities <-
 
 #################### TESTING ZONG MY GUY ####################
 
+district_similarities
+
 
   
+
+
