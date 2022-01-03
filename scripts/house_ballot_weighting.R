@@ -45,7 +45,8 @@ house_polls <-
          pct = pct/100,
          end_date = mdy(end_date)) %>%
   filter(!is.na(sample_size),
-         state != "Puerto Rico")
+         state != "Puerto Rico") %>%
+  mutate(seat = paste(state, seat)) 
 
 # get list of top candidates from each party
 # this will let us use the two-party voteshare for major candidates
