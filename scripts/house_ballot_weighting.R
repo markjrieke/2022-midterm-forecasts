@@ -35,16 +35,13 @@ house_polls <-
          population_full,
          methodology, 
          seat_name, 
-         #internal, 
-         #partisan, 
          candidate_name, 
          candidate_party, 
          pct) %>%
   rename(pollster = display_name,
          population = population_full,
          seat = seat_name) %>%
-  mutate(#partisan = replace_na(partisan, "NON"),
-         methodology = replace_na(methodology, "Unknown"),
+  mutate(methodology = replace_na(methodology, "Unknown"),
          pct = pct/100,
          end_date = mdy(end_date)) %>%
   filter(!is.na(sample_size),
@@ -218,6 +215,15 @@ demographics <-
          !str_detect(region, "District of Columbia"),
          !str_detect(region, "Puerto Rico"))
 
+# recode region names
+district_recodes <- read_csv("data/models/house_ballot/district_recodes.csv")
+
+demographics <- 
+  demographics %>%
+  left_join(district_recodes, by = "region") %>%
+  mutate(region = recode) %>%
+  select(-recode)
+
 # determine similarity scores ---
 
 # function for calculating similarity scores given one congressional district
@@ -276,9 +282,29 @@ district_similarities <-
 
 #################### TESTING ZONG MY GUY ####################
 
+district_similarities %>%
+  distinct(region) %>% 
+  write_csv("temp.csv")
+
 district_similarities
+  
 
+house_polls %>%
+  filter(state == "Montana")
 
+district_similarities %>%
+  filter(region == "United States",
+         year == 2018) %>%
+  
+  mutate(comparison = fct_reorder(comparison, similarity)) %>%
+  ggplot(aes(x = comparison,
+             y = similarity)) + 
+  geom_col() +
+  coord_flip()
+
+house_polls %>%
+  percent(cycle, state, seat, .keep_n = TRUE) %>%
+  arrange(desc(pct))
   
 
 

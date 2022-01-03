@@ -1,0 +1,437 @@
+region,recode
+"Congressional District (at Large), Alaska",Alaska District 1
+"Congressional District (at Large), Delaware",Delaware District 1
+"Congressional District (at Large), Montana",Montana District 1
+"Congressional District (at Large), North Dakota",North Dakota District 1
+"Congressional District (at Large), South Dakota",South Dakota District 1
+"Congressional District (at Large), Vermont",Vermont District 1
+"Congressional District (at Large), Wyoming",Wyoming District 1
+"Congressional District 1, Alabama",Alabama District 1
+"Congressional District 1, Arizona",Arizona District 1
+"Congressional District 1, Arkansas",Arkansas District 1
+"Congressional District 1, California",California District 1
+"Congressional District 1, Colorado",Colorado District 1
+"Congressional District 1, Connecticut",Connecticut District 1
+"Congressional District 1, Florida",Florida District 1
+"Congressional District 1, Georgia",Georgia District 1
+"Congressional District 1, Hawaii",Hawaii District 1
+"Congressional District 1, Idaho",Idaho District 1
+"Congressional District 1, Illinois",Illinois District 1
+"Congressional District 1, Indiana",Indiana District 1
+"Congressional District 1, Iowa",Iowa District 1
+"Congressional District 1, Kansas",Kansas District 1
+"Congressional District 1, Kentucky",Kentucky District 1
+"Congressional District 1, Louisiana",Louisiana District 1
+"Congressional District 1, Maine",Maine District 1
+"Congressional District 1, Maryland",Maryland District 1
+"Congressional District 1, Massachusetts",Massachusetts District 1
+"Congressional District 1, Michigan",Michigan District 1
+"Congressional District 1, Minnesota",Minnesota District 1
+"Congressional District 1, Mississippi",Mississippi District 1
+"Congressional District 1, Missouri",Missouri District 1
+"Congressional District 1, Nebraska",Nebraska District 1
+"Congressional District 1, Nevada",Nevada District 1
+"Congressional District 1, New Hampshire",New Hampshire District 1
+"Congressional District 1, New Jersey",New Jersey District 1
+"Congressional District 1, New Mexico",New Mexico District 1
+"Congressional District 1, New York",New York District 1
+"Congressional District 1, North Carolina",North Carolina District 1
+"Congressional District 1, Ohio",Ohio District 1
+"Congressional District 1, Oklahoma",Oklahoma District 1
+"Congressional District 1, Oregon",Oregon District 1
+"Congressional District 1, Pennsylvania",Pennsylvania District 1
+"Congressional District 1, Rhode Island",Rhode Island District 1
+"Congressional District 1, South Carolina",South Carolina District 1
+"Congressional District 1, Tennessee",Tennessee District 1
+"Congressional District 1, Texas",Texas District 1
+"Congressional District 1, Utah",Utah District 1
+"Congressional District 1, Virginia",Virginia District 1
+"Congressional District 1, Washington",Washington District 1
+"Congressional District 1, West Virginia",West Virginia District 1
+"Congressional District 1, Wisconsin",Wisconsin District 1
+"Congressional District 10, California",California District 10
+"Congressional District 10, Florida",Florida District 10
+"Congressional District 10, Georgia",Georgia District 10
+"Congressional District 10, Illinois",Illinois District 10
+"Congressional District 10, Michigan",Michigan District 10
+"Congressional District 10, New Jersey",New Jersey District 10
+"Congressional District 10, New York",New York District 10
+"Congressional District 10, North Carolina",North Carolina District 10
+"Congressional District 10, Ohio",Ohio District 10
+"Congressional District 10, Pennsylvania",Pennsylvania District 10
+"Congressional District 10, Texas",Texas District 10
+"Congressional District 10, Virginia",Virginia District 10
+"Congressional District 10, Washington",Washington District 10
+"Congressional District 11, California",California District 11
+"Congressional District 11, Florida",Florida District 11
+"Congressional District 11, Georgia",Georgia District 11
+"Congressional District 11, Illinois",Illinois District 11
+"Congressional District 11, Michigan",Michigan District 11
+"Congressional District 11, New Jersey",New Jersey District 11
+"Congressional District 11, New York",New York District 11
+"Congressional District 11, North Carolina",North Carolina District 11
+"Congressional District 11, Ohio",Ohio District 11
+"Congressional District 11, Pennsylvania",Pennsylvania District 11
+"Congressional District 11, Texas",Texas District 11
+"Congressional District 11, Virginia",Virginia District 11
+"Congressional District 12, California",California District 12
+"Congressional District 12, Florida",Florida District 12
+"Congressional District 12, Georgia",Georgia District 12
+"Congressional District 12, Illinois",Illinois District 12
+"Congressional District 12, Michigan",Michigan District 12
+"Congressional District 12, New Jersey",New Jersey District 12
+"Congressional District 12, New York",New York District 12
+"Congressional District 12, North Carolina",North Carolina District 12
+"Congressional District 12, Ohio",Ohio District 12
+"Congressional District 12, Pennsylvania",Pennsylvania District 12
+"Congressional District 12, Texas",Texas District 12
+"Congressional District 13, California",California District 13
+"Congressional District 13, Florida",Florida District 13
+"Congressional District 13, Georgia",Georgia District 13
+"Congressional District 13, Illinois",Illinois District 13
+"Congressional District 13, Michigan",Michigan District 13
+"Congressional District 13, New York",New York District 13
+"Congressional District 13, North Carolina",North Carolina District 13
+"Congressional District 13, Ohio",Ohio District 13
+"Congressional District 13, Pennsylvania",Pennsylvania District 13
+"Congressional District 13, Texas",Texas District 13
+"Congressional District 14, California",California District 14
+"Congressional District 14, Florida",Florida District 14
+"Congressional District 14, Georgia",Georgia District 14
+"Congressional District 14, Illinois",Illinois District 14
+"Congressional District 14, Michigan",Michigan District 14
+"Congressional District 14, New York",New York District 14
+"Congressional District 14, Ohio",Ohio District 14
+"Congressional District 14, Pennsylvania",Pennsylvania District 14
+"Congressional District 14, Texas",Texas District 14
+"Congressional District 15, California",California District 15
+"Congressional District 15, Florida",Florida District 15
+"Congressional District 15, Illinois",Illinois District 15
+"Congressional District 15, New York",New York District 15
+"Congressional District 15, Ohio",Ohio District 15
+"Congressional District 15, Pennsylvania",Pennsylvania District 15
+"Congressional District 15, Texas",Texas District 15
+"Congressional District 16, California",California District 16
+"Congressional District 16, Florida",Florida District 16
+"Congressional District 16, Illinois",Illinois District 16
+"Congressional District 16, New York",New York District 16
+"Congressional District 16, Ohio",Ohio District 16
+"Congressional District 16, Pennsylvania",Pennsylvania District 16
+"Congressional District 16, Texas",Texas District 16
+"Congressional District 17, California",California District 17
+"Congressional District 17, Florida",Florida District 17
+"Congressional District 17, Illinois",Illinois District 17
+"Congressional District 17, New York",New York District 17
+"Congressional District 17, Pennsylvania",Pennsylvania District 17
+"Congressional District 17, Texas",Texas District 17
+"Congressional District 18, California",California District 18
+"Congressional District 18, Florida",Florida District 18
+"Congressional District 18, Illinois",Illinois District 18
+"Congressional District 18, New York",New York District 18
+"Congressional District 18, Pennsylvania",Pennsylvania District 18
+"Congressional District 18, Texas",Texas District 18
+"Congressional District 19, California",California District 19
+"Congressional District 19, Florida",Florida District 19
+"Congressional District 19, New York",New York District 19
+"Congressional District 19, Texas",Texas District 19
+"Congressional District 2, Alabama",Alabama District 2
+"Congressional District 2, Arizona",Arizona District 2
+"Congressional District 2, Arkansas",Arkansas District 2
+"Congressional District 2, California",California District 2
+"Congressional District 2, Colorado",Colorado District 2
+"Congressional District 2, Connecticut",Connecticut District 2
+"Congressional District 2, Florida",Florida District 2
+"Congressional District 2, Georgia",Georgia District 2
+"Congressional District 2, Hawaii",Hawaii District 2
+"Congressional District 2, Idaho",Idaho District 2
+"Congressional District 2, Illinois",Illinois District 2
+"Congressional District 2, Indiana",Indiana District 2
+"Congressional District 2, Iowa",Iowa District 2
+"Congressional District 2, Kansas",Kansas District 2
+"Congressional District 2, Kentucky",Kentucky District 2
+"Congressional District 2, Louisiana",Louisiana District 2
+"Congressional District 2, Maine",Maine District 2
+"Congressional District 2, Maryland",Maryland District 2
+"Congressional District 2, Massachusetts",Massachusetts District 2
+"Congressional District 2, Michigan",Michigan District 2
+"Congressional District 2, Minnesota",Minnesota District 2
+"Congressional District 2, Mississippi",Mississippi District 2
+"Congressional District 2, Missouri",Missouri District 2
+"Congressional District 2, Nebraska",Nebraska District 2
+"Congressional District 2, Nevada",Nevada District 2
+"Congressional District 2, New Hampshire",New Hampshire District 2
+"Congressional District 2, New Jersey",New Jersey District 2
+"Congressional District 2, New Mexico",New Mexico District 2
+"Congressional District 2, New York",New York District 2
+"Congressional District 2, North Carolina",North Carolina district 2
+"Congressional District 2, Ohio",Ohio District 2
+"Congressional District 2, Oklahoma",Oklahoma District 2
+"Congressional District 2, Oregon",Oregon District 2
+"Congressional District 2, Pennsylvania",Pennsylvania District 2
+"Congressional District 2, Rhode Island",Rhode Island Rhode 2
+"Congressional District 2, South Carolina",South Carolina District 2
+"Congressional District 2, Tennessee",Tennessee District 2
+"Congressional District 2, Texas",Texas District 2
+"Congressional District 2, Utah",Utah District 2
+"Congressional District 2, Virginia",Virginia District 2
+"Congressional District 2, Washington",Washington District 2
+"Congressional District 2, West Virginia",West Virginia District 2
+"Congressional District 2, Wisconsin",Wisconsin District 2
+"Congressional District 20, California",California District 20
+"Congressional District 20, Florida",Florida District 20
+"Congressional District 20, New York",New York District 20
+"Congressional District 20, Texas",Texas District 20
+"Congressional District 21, California",California District 21
+"Congressional District 21, Florida",Florida District 21
+"Congressional District 21, New York",New York District 21
+"Congressional District 21, Texas",Texas District 21
+"Congressional District 22, California",California District 22
+"Congressional District 22, Florida",Florida District 22
+"Congressional District 22, New York",New York District 22
+"Congressional District 22, Texas",Texas District 22
+"Congressional District 23, California",California District 23
+"Congressional District 23, Florida",Florida District 23
+"Congressional District 23, New York",New York District 23
+"Congressional District 23, Texas",Texas District 23
+"Congressional District 24, California",California District 24
+"Congressional District 24, Florida",Florida District 24
+"Congressional District 24, New York",New York District 24
+"Congressional District 24, Texas",Texas District 24
+"Congressional District 25, California",California District 25
+"Congressional District 25, Florida",Florida District 25
+"Congressional District 25, New York",New York District 25
+"Congressional District 25, Texas",Texas District 25
+"Congressional District 26, California",California District 26
+"Congressional District 26, Florida",Florida District 26
+"Congressional District 26, New York",New York District 26
+"Congressional District 26, Texas",Texas District 26
+"Congressional District 27, California",California District 27
+"Congressional District 27, Florida",Florida District 27
+"Congressional District 27, New York",New York District 27
+"Congressional District 27, Texas",Texas District 27
+"Congressional District 28, California",California District 28
+"Congressional District 28, Texas",Texas District 28
+"Congressional District 29, California",California District 29
+"Congressional District 29, Texas",Texas District 29
+"Congressional District 3, Alabama",Alabama District 3
+"Congressional District 3, Arizona",Arizona District 3
+"Congressional District 3, Arkansas",Arkansas District 3
+"Congressional District 3, California",California District 3
+"Congressional District 3, Colorado",Colorado District 3
+"Congressional District 3, Connecticut",Connecticut District 3
+"Congressional District 3, Florida",Florida District 3
+"Congressional District 3, Georgia",Georgia District 3
+"Congressional District 3, Illinois",Illinois District 3
+"Congressional District 3, Indiana",Indiana District 3
+"Congressional District 3, Iowa",Iowa District 3
+"Congressional District 3, Kansas",Kansas District 3
+"Congressional District 3, Kentucky",Kentucky District 3
+"Congressional District 3, Louisiana",Louisiana District 3
+"Congressional District 3, Maryland",Maryland District 3
+"Congressional District 3, Massachusetts",Massachusetts District 3
+"Congressional District 3, Michigan",Michigan District 3
+"Congressional District 3, Minnesota",Minnesota District 3
+"Congressional District 3, Mississippi",Mississippi District 3
+"Congressional District 3, Missouri",Missouri District 3
+"Congressional District 3, Nebraska",Nebraska District 3
+"Congressional District 3, Nevada",Nevada District 3
+"Congressional District 3, New Jersey",New Jersey District 3
+"Congressional District 3, New Mexico",New Mexico District 3
+"Congressional District 3, New York",New York District 3
+"Congressional District 3, North Carolina",North Carolina District 3
+"Congressional District 3, Ohio",Ohio District 3
+"Congressional District 3, Oklahoma",Oklahoma District 3
+"Congressional District 3, Oregon",Oregon District 3
+"Congressional District 3, Pennsylvania",Pennsylvania District 3
+"Congressional District 3, South Carolina",South Carolina District 3
+"Congressional District 3, Tennessee",Tennessee District 3
+"Congressional District 3, Texas",Texas District 3
+"Congressional District 3, Utah",Utah District 3
+"Congressional District 3, Virginia",Virginia District 3
+"Congressional District 3, Washington",Washington District 3
+"Congressional District 3, West Virginia",West Virginia District 3
+"Congressional District 3, Wisconsin",Wisconsin District 3
+"Congressional District 30, California",California District 30
+"Congressional District 30, Texas",Texas District 30
+"Congressional District 31, California",California District 31
+"Congressional District 31, Texas",Texas District 31
+"Congressional District 32, California",California District 32
+"Congressional District 32, Texas",Texas District 32
+"Congressional District 33, California",California District 33
+"Congressional District 33, Texas",Texas District 33
+"Congressional District 34, California",California District 34
+"Congressional District 34, Texas",Texas District 34
+"Congressional District 35, California",California District 35
+"Congressional District 35, Texas",Texas District 35
+"Congressional District 36, California",California District 36
+"Congressional District 36, Texas",Texas District 36
+"Congressional District 37, California",California District 37
+"Congressional District 38, California",California District 38
+"Congressional District 39, California",California District 39
+"Congressional District 4, Alabama",Alabama District 4
+"Congressional District 4, Arizona",Arizona District 4
+"Congressional District 4, Arkansas",Arkansas District 4
+"Congressional District 4, California",California District 4
+"Congressional District 4, Colorado",Colorado District 4
+"Congressional District 4, Connecticut",Connecticut District 4
+"Congressional District 4, Florida",Florida District 4
+"Congressional District 4, Georgia",Georgia District 4
+"Congressional District 4, Illinois",Illinois District 4
+"Congressional District 4, Indiana",Indiana District 4
+"Congressional District 4, Iowa",Iowa District 4
+"Congressional District 4, Kansas",Kansas District 4
+"Congressional District 4, Kentucky",Kentucky District 4
+"Congressional District 4, Louisiana",Louisiana District 4
+"Congressional District 4, Maryland",Maryland District 4
+"Congressional District 4, Massachusetts",Massachusetts District 4
+"Congressional District 4, Michigan",Michigan District 4
+"Congressional District 4, Minnesota",Minnesota District 4
+"Congressional District 4, Mississippi",Mississippi District 4
+"Congressional District 4, Missouri",Missouri District 4
+"Congressional District 4, Nevada",Nevada District 4
+"Congressional District 4, New Jersey",New Jersey District 4
+"Congressional District 4, New York",New York District 4
+"Congressional District 4, North Carolina",North Carolina District 4
+"Congressional District 4, Ohio",Ohio District 4
+"Congressional District 4, Oklahoma",Oklahoma District 4
+"Congressional District 4, Oregon",Oregon District 4
+"Congressional District 4, Pennsylvania",Pennsylvania District 4
+"Congressional District 4, South Carolina",South Carolina District 4
+"Congressional District 4, Tennessee",Tennessee District 4
+"Congressional District 4, Texas",Texas District 4
+"Congressional District 4, Utah",Utah District 4
+"Congressional District 4, Virginia",Virginia District 4
+"Congressional District 4, Washington",Washington District 4
+"Congressional District 4, Wisconsin",Wisconsin District 4
+"Congressional District 40, California",California District 40
+"Congressional District 41, California",California District 41
+"Congressional District 42, California",California District 42
+"Congressional District 43, California",California District 43
+"Congressional District 44, California",California District 44
+"Congressional District 45, California",California District 45
+"Congressional District 46, California",California District 46
+"Congressional District 47, California",California District 47
+"Congressional District 48, California",California District 48
+"Congressional District 49, California",California District 49
+"Congressional District 5, Alabama",Alabama District 5
+"Congressional District 5, Arizona",Arizona District 5
+"Congressional District 5, California",California District 5
+"Congressional District 5, Colorado",Colorado District 5
+"Congressional District 5, Connecticut",Connecticut District 5
+"Congressional District 5, Florida",Florida District 5
+"Congressional District 5, Georgia",Georgia District 5
+"Congressional District 5, Illinois",Illinois District 5
+"Congressional District 5, Indiana",Indiana District 5
+"Congressional District 5, Kentucky",Kentucky District 5
+"Congressional District 5, Louisiana",Louisiana District 5
+"Congressional District 5, Maryland",Maryland District 5
+"Congressional District 5, Massachusetts",Massachusetts District 5
+"Congressional District 5, Michigan",Michigan District 5
+"Congressional District 5, Minnesota",Minnesota District 5
+"Congressional District 5, Missouri",Missouri District 5
+"Congressional District 5, New Jersey",New Jersey District 5
+"Congressional District 5, New York",New York District 5
+"Congressional District 5, North Carolina",North Carolina District 5
+"Congressional District 5, Ohio",Ohio District 5
+"Congressional District 5, Oklahoma",Oklahoma District 5
+"Congressional District 5, Oregon",Oregon District 5
+"Congressional District 5, Pennsylvania",Pennsylvania District 5
+"Congressional District 5, South Carolina",South Carolina District 5
+"Congressional District 5, Tennessee",Tennessee District 5
+"Congressional District 5, Texas",Texas District 5
+"Congressional District 5, Virginia",Virginia District 5
+"Congressional District 5, Washington",Washington District 5
+"Congressional District 5, Wisconsin",Wisconsin District 5
+"Congressional District 50, California",California District 50
+"Congressional District 51, California",California District 51
+"Congressional District 52, California",California District 52
+"Congressional District 53, California",California District 53
+"Congressional District 6, Alabama",Alabama District 6
+"Congressional District 6, Arizona",Arizona District 6
+"Congressional District 6, California",California District 6
+"Congressional District 6, Colorado",Colorado District 6
+"Congressional District 6, Florida",Florida District 6
+"Congressional District 6, Georgia",Georgia District 6
+"Congressional District 6, Illinois",Illinois District 6
+"Congressional District 6, Indiana",Indiana District 6
+"Congressional District 6, Kentucky",Kentucky District 6
+"Congressional District 6, Louisiana",Louisiana District 6
+"Congressional District 6, Maryland",Maryland District 6
+"Congressional District 6, Massachusetts",Massachusetts District 6
+"Congressional District 6, Michigan",Michigan District 6
+"Congressional District 6, Minnesota",Minnesota District 6
+"Congressional District 6, Missouri",Missouri District 6
+"Congressional District 6, New Jersey",New Jersey District 6
+"Congressional District 6, New York",New York District 6
+"Congressional District 6, North Carolina",North Carolina District 6
+"Congressional District 6, Ohio",Ohio District 6
+"Congressional District 6, Pennsylvania",Pennsylvania District 6
+"Congressional District 6, South Carolina",South Carolina District 6
+"Congressional District 6, Tennessee",Tennessee District 6
+"Congressional District 6, Texas",Texas District 6
+"Congressional District 6, Virginia",Virginia District 6
+"Congressional District 6, Washington",Washington District 6
+"Congressional District 6, Wisconsin",Wisconsin District 6
+"Congressional District 7, Alabama",Alabama District 7
+"Congressional District 7, Arizona",Arizona District 7
+"Congressional District 7, California",California District 7
+"Congressional District 7, Colorado",Colorado District 7
+"Congressional District 7, Florida",Florida District 7
+"Congressional District 7, Georgia",Georgia District 7
+"Congressional District 7, Illinois",Illinois District 7
+"Congressional District 7, Indiana",Indiana District 7
+"Congressional District 7, Maryland",Maryland District 7
+"Congressional District 7, Massachusetts",Massachusetts District 7
+"Congressional District 7, Michigan",Michigan District 7
+"Congressional District 7, Minnesota",Minnesota District 7
+"Congressional District 7, Missouri",Missouri District 7
+"Congressional District 7, New Jersey",New Jersey District 7
+"Congressional District 7, New York",New York District 7
+"Congressional District 7, North Carolina",North Carolina District 7
+"Congressional District 7, Ohio",Ohio District 7
+"Congressional District 7, Pennsylvania",Pennsylvania District 7
+"Congressional District 7, South Carolina",South Carolina District 7
+"Congressional District 7, Tennessee",Tennessee District 7
+"Congressional District 7, Texas",Texas District 7
+"Congressional District 7, Virginia",Virginia District 7
+"Congressional District 7, Washington",Washington District 7
+"Congressional District 7, Wisconsin",Wisconsin District 7
+"Congressional District 8, Arizona",Arizona District 8
+"Congressional District 8, California",California District 8
+"Congressional District 8, Florida",Florida District 8
+"Congressional District 8, Georgia",Georgia District 8
+"Congressional District 8, Illinois",Illinois District 8
+"Congressional District 8, Indiana",Indiana District 8
+"Congressional District 8, Maryland",Maryland District 8
+"Congressional District 8, Massachusetts",Massachusetts District 8
+"Congressional District 8, Michigan",Michigan District 8
+"Congressional District 8, Minnesota",Minnesota District 8
+"Congressional District 8, Missouri",Missouri District 8
+"Congressional District 8, New Jersey",New Jersey District 8
+"Congressional District 8, New York",New York District 8
+"Congressional District 8, North Carolina",North Carolina District 8
+"Congressional District 8, Ohio",Ohio District 8
+"Congressional District 8, Pennsylvania",Pennsylvania District 8
+"Congressional District 8, Tennessee",Tennessee District 8
+"Congressional District 8, Texas",Texas District 8
+"Congressional District 8, Virginia",Virginia District 8
+"Congressional District 8, Washington",Washington District 8
+"Congressional District 8, Wisconsin",Wisconsin District 8
+"Congressional District 9, Arizona",Arizona District 9
+"Congressional District 9, California",California District 9
+"Congressional District 9, Florida",Florida District 9
+"Congressional District 9, Georgia",Georgia District 9
+"Congressional District 9, Illinois",Illinois District 9
+"Congressional District 9, Indiana",Indiana District 9
+"Congressional District 9, Massachusetts",Massachusetts District 9
+"Congressional District 9, Michigan",Michigan District 9
+"Congressional District 9, New Jersey",New Jersey District 9
+"Congressional District 9, New York",New York District 9
+"Congressional District 9, North Carolina",North Carolina District 9
+"Congressional District 9, Ohio",Ohio District 9
+"Congressional District 9, Pennsylvania",Pennsylvania District 9
+"Congressional District 9, Tennessee",Tennessee District 9
+"Congressional District 9, Texas",Texas District 9
+"Congressional District 9, Virginia",Virginia District 9
+"Congressional District 9, Washington",Washington District 9
+United States,United States
