@@ -281,31 +281,43 @@ district_similarities <-
     similarities(2020)
   )
 
+#################### FUNCTION DEFINITIONS ####################
+
+target_district <- function(target, cycle) {
+  
+  # get to just that cycle's polls
+  target_polls <-
+    house_polls %>%
+    filter(cycle == cycle)
+  
+  # get to just that target/cycle's comparison list
+  target_similarities <-
+    district_similarities %>%
+    filter(region == target,
+           year == cycle)
+  
+  # return the polls for that cycle augmented w/the target region's similarity score
+  house_polls %>%
+    left_join(target_similarities, by = c("seat" = "comparison")) %>%
+    select(-year, -region)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
-district_similarities %>%
-  distinct(region) %>% 
-  write_csv("temp.csv")
+target <- "Alaska District 1"
 
-district_similarities
+cycle <- 2018
+
+target_district("Texas District 19", 2020)
+
+#################### notes ####################
   
+# uncertain:    p < 0.65
+# likely:       p < 0.85
+# very likely:  p < 0.99
+# safe:         p >= 0.99
 
-house_polls %>%
-  filter(state == "Montana")
-
-district_similarities %>%
-  filter(region == "United States",
-         year == 2018) %>%
-  
-  mutate(comparison = fct_reorder(comparison, similarity)) %>%
-  ggplot(aes(x = comparison,
-             y = similarity)) + 
-  geom_col() +
-  coord_flip()
-
-house_polls %>%
-  percent(cycle, state, seat, .keep_n = TRUE) %>%
-  arrange(desc(pct))
-  
+# maybe think about removing the 2019 cycle...
 
 
