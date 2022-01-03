@@ -2,6 +2,9 @@
 ## 2022 Midterm Forecast
 
 Landing page for the 2022 midterm forecast, updated intermittently.
+Running the script
+[`update_readme.R`](https://github.com/markjrieke/2022-midterm-forecasts/blob/main/scripts/update_readme.R)
+will update all the plots below to the current day.
 
 ### Generic Ballot Average
 
