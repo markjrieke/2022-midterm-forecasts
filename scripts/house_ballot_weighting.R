@@ -283,31 +283,32 @@ district_similarities <-
 
 #################### FUNCTION DEFINITIONS ####################
 
-target_district <- function(target, cycle) {
+target_district <- function(target, target_cycle) {
   
   # get to just that cycle's polls
   target_polls <-
     house_polls %>%
-    filter(cycle == cycle)
+    filter(cycle == target_cycle)
   
   # get to just that target/cycle's comparison list
   target_similarities <-
     district_similarities %>%
     filter(region == target,
-           year == cycle)
+           year == target_cycle)
   
   # return the polls for that cycle augmented w/the target region's similarity score
-  house_polls %>%
+  target_polls <- 
+    target_polls %>%
     left_join(target_similarities, by = c("seat" = "comparison")) %>%
     select(-year, -region)
   
+  return(target_polls)
+  
 }
 
+
+
 #################### TESTING ZONG MY GUY ####################
-
-target <- "Alaska District 1"
-
-cycle <- 2018
 
 target_district("Texas District 19", 2020)
 
