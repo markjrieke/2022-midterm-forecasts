@@ -386,6 +386,17 @@ pull_sample_weight <- function() {
   
 }
 
+# construct a tibble for weights by survey population
+pull_population_weights <- function() {
+  
+  variable_weights %>%
+    filter(variable %in% c("rv", "lv", "a", "v")) %>%
+    select(variable, weight) %>%
+    rename(population_full = variable,
+           population_weight = weight)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 target_district("Texas District 19", 2020)
