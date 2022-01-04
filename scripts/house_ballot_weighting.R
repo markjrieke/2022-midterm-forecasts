@@ -361,11 +361,27 @@ initialize_weights <- function() {
   
 }
 
-
+# construct a tibble for pollster weights and offsets
+pull_pollster_weights <- function() {
+  
+  variable_weights %>%
+    filter(str_detect(variable, " Offset")) %>%
+    select(variable, weight) %>%
+    rename(offset = weight) %>%
+    mutate(variable = str_remove(variable, " Offset")) %>%
+    left_join(variable_weights, by = "variable") %>%
+    select(-starts_with("next"), -search_suggestion) %>%
+    rename(pollster = variable,
+           pollster_offset = offset,
+           pollster_weight = weight)
+  
+}
 
 #################### TESTING ZONG MY GUY ####################
 
 target_district("Texas District 19", 2020)
+
+pull_pollster_weights()
 
 house_average <- function(.data,
                           final_date,
@@ -381,7 +397,7 @@ house_average <- function(.data,
     
 }
 
-initialize_weights()
+variable_weights <- initialize_weights()
 
 #################### notes ####################
   
