@@ -236,8 +236,8 @@ similarity <- function(.data, district) {
     left_join(.data, by = c("comparison" = "region")) %>%
     select(-year.y) %>%
     rename(year = year.x) %>%
-    mutate(across(ends_with(".x"), expit),
-           across(ends_with(".y"), expit),
+    mutate(across(ends_with(".x"), logit),
+           across(ends_with(".y"), logit),
            white_similar = exp(-((white.y - white.x)^2)/sd(white.x)),
            black_similar = exp(-((black.y - black.x)^2)/sd(black.x)),
            hispanic_similar = exp(-((hispanic.y - hispanic.x)^2)/sd(hispanic.x)),
@@ -428,7 +428,24 @@ pull_similarity_weight <- function() {
 
 #################### TESTING ZONG MY GUY ####################
 
-target_district("Texas District 19", 2020)
+target_district("Texas District 18", 2020)
+
+dist <- "Texas District 19"
+
+district_similarities %>%
+  #filter(region == dist,
+  #       comparison != dist,
+  #       year == 2020) %>%
+  ggplot(aes(x = similarity)) +
+  geom_histogram()
+  
+  slice_max(n = 10, order_by = similarity)
+  
+  mutate(comparison = fct_reorder(comparison, similarity)) %>%
+  ggplot(aes(x = comparison,
+             y = similarity)) +
+  geom_col() +
+  coord_flip()
 
 pull_similarity_weight()
 
