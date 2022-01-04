@@ -377,11 +377,20 @@ pull_pollster_weights <- function() {
   
 }
 
+# pull sample_size weight
+pull_sample_weight <- function() {
+  
+  variable_weights %>%
+    filter(variable == "sample_size") %>%
+    pull(weight)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 target_district("Texas District 19", 2020)
 
-pull_pollster_weights()
+pull_sample_weight()
 
 house_average <- function(.data,
                           final_date,
