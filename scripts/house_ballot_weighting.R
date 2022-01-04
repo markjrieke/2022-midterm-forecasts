@@ -519,7 +519,24 @@ pull_try_weight <- function(variable_name, new_weight, type) {
   
 }
 
-
+# function to pull the next lower or the next upper bound
+pull_bound <- function(variable_name, type) {
+  
+  if (type == "lower") {
+    
+    variable_weights %>%
+      filter(variable == variable_name) %>%
+      pull(next_lower)
+    
+  } else {
+    
+    variable_weights %>%
+      filter(variable == variable_name) %>%
+      pull(next_upper)
+    
+  }
+  
+}
 
 
 #################### TESTING ZONG MY GUY ####################
