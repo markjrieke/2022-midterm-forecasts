@@ -283,6 +283,7 @@ district_similarities <-
 
 #################### FUNCTION DEFINITIONS ####################
 
+# return a tibble with a target district's similarity score to each poll
 target_district <- function(target, target_cycle) {
   
   # get to just that cycle's polls
@@ -306,11 +307,81 @@ target_district <- function(target, target_cycle) {
   
 }
 
+# initialize weights and offsets
+initialize_weights <- function() {
+  
+  bind_rows(
+    
+    # pollster weights
+    tibble(variable = c(pollsters, "Other Pollster"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # pollster offsets
+    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
+           weight = 0,
+           next_lower = -0.1,
+           next_upper = 0.1),
+    
+    # date weights
+    tibble(variable = "date_weight",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # sample size weights
+    tibble(variable = "sample_size",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # population weights
+    tibble(variable = c("rv", "lv", "a", "v"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # methodology weights
+    tibble(variable = c(methods, "Other Method"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # similarity weight
+    tibble(variable = "similarity_weight",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1)
+    
+  ) %>%
+    
+    # initialize with "not final" as the search suggestion for each variable
+    bind_cols(search_suggestion = "not final")
+  
+}
+
 
 
 #################### TESTING ZONG MY GUY ####################
 
 target_district("Texas District 19", 2020)
+
+house_average <- function(.data,
+                          final_date,
+                          pollster_weight,
+                          sample_weight,
+                          population_weight,
+                          method_weight,
+                          similarity_weight,
+                          downweight = 1) {
+  
+  .data %>%
+    
+    
+}
+
+initialize_weights()
 
 #################### notes ####################
   
