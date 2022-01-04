@@ -415,14 +415,14 @@ initialize_weights <- function() {
 }
 
 # construct a tibble for pollster weights and offsets
-pull_pollster_weights <- function() {
+pull_pollster_weights <- function(.data) {
   
-  variable_weights %>%
+  .data %>%
     filter(str_detect(variable, " Offset")) %>%
     select(variable, weight) %>%
     rename(offset = weight) %>%
     mutate(variable = str_remove(variable, " Offset")) %>%
-    left_join(variable_weights, by = "variable") %>%
+    left_join(.data, by = "variable") %>%
     select(-starts_with("next"), -search_suggestion) %>%
     rename(pollster = variable,
            pollster_offset = offset,
@@ -440,9 +440,9 @@ pull_sample_weight <- function() {
 }
 
 # construct a tibble for weights by survey population
-pull_population_weights <- function() {
+pull_population_weights <- function(.data) {
   
-  variable_weights %>%
+  .data %>%
     filter(variable %in% c("rv", "lv", "a", "v")) %>%
     select(variable, weight) %>%
     rename(population = variable,
@@ -451,9 +451,9 @@ pull_population_weights <- function() {
 }
 
 # construct a tibble for weights by survey methodology
-pull_methodology_weights <- function() {
+pull_methodology_weights <- function(.data) {
   
-  variable_weights %>%
+  .data %>%
     filter(variable %in% c(methods, "Other Method")) %>%
     select(variable, weight) %>%
     rename(methodology = variable,
@@ -488,6 +488,38 @@ check_suggestion <- function(variable_name) {
   
 }
 
+# util function to create a temporary tibble replacing the current weight with a "try" weight
+pull_try_weight <- function(variable_name, new_weight, type) {
+  
+  # create a new weight table to pass to one of the pull functions
+  new_weight_tibble <-
+    variable_weights %>%
+    filter(variable != variable_name) %>%
+    bind_rows(tibble(variable = variable_name,
+                     weight = new_weight,
+                     next_lower = 0,
+                     next_upper = 0))
+  
+  # pass new weight table to one of the pull functions based on param type
+  if (type == "pollster") {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_pollster_weights()
+    
+  } else if (type == "population") {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_population_weights()
+    
+  } else {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_methodology_weights()
+    
+  }
+  
+  return(pulled_tibble)
+  
+}
+
+
 
 
 #################### TESTING ZONG MY GUY ####################
@@ -504,6 +536,8 @@ target_district("California District 50", 2018) %>%
                 pull_date_weight())
 
 target_district("North Carolina District 2", 2018)
+
+pull_try_weight("Ipsos", 0.75, "pollster")
 
 district_recodes %>%
   filter(str_detect(recode, "North Carolina"))
