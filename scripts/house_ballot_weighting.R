@@ -408,11 +408,20 @@ pull_methodology_weights <- function() {
   
 }
 
+# pull date_weight
+pull_date_weight <- function() {
+  
+  variable_weights %>%
+    filter(variable == "date_weight") %>%
+    pull(weight)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 target_district("Texas District 19", 2020)
 
-pull_population_weights()
+pull_date_weight()
 
 variable_weights <- initialize_weights()
 
