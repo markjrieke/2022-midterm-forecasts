@@ -479,11 +479,22 @@ pull_similarity_weight <- function() {
   
 }
 
+# check if the search suggestion is final or ought to continue
+check_suggestion <- function(variable_name) {
+  
+  variable_weights %>%
+    filter(variable == variable_name) %>%
+    pull(search_suggestion)
+  
+}
+
 
 
 #################### TESTING ZONG MY GUY ####################
 
-target_district("California District 1", 2018) %>%
+variable_weights <- initialize_weights()
+
+target_district("California District 50", 2018) %>%
   house_average(ymd("2020-11-03"),
                 pull_pollster_weights(),
                 pull_sample_weight(),
