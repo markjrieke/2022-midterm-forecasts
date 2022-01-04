@@ -281,6 +281,59 @@ district_similarities <-
     similarities(2020)
   )
 
+#################### HOUSE POLL AGGREGATOR FUNCTION ####################
+
+house_average <- function(.data,
+                          final_date,
+                          pollster_weight,
+                          sample_weight,
+                          population_weight,
+                          method_weight,
+                          similarity_weight,
+                          date_weight,
+                          downweight = 1) {
+  
+  .data %>%
+    
+    # apply pollster weights and offsets
+    left_join(pollster_weight, by = "pollster") %>%
+    mutate(dem2pv = dem2pv + pollster_offset,
+           dem_votes = round(dem2pv * sample_size),
+           rep_votes = round((1-dem2pv) * sample_size)) %>%
+    select(-pollster_offset) %>%
+    
+    # apply sample size weight
+    mutate(sample_weight = log10(sample_size) * sample_weight) %>%
+    
+    # apply population weight
+    left_join(population_weight, by = "population") %>%
+    
+    # apply methodology weight
+    left_join(method_weight, by = "methodology") %>%
+    
+    # apply similarity weight
+    mutate(similarity = similarity ^ similarity_weight) %>%
+    
+    # apply date weight
+    mutate(days_diff = as.numeric(final_date - end_date) + 1,
+           weeks_diff = days_diff/7,
+           date_weight = date_weight ^ weeks_diff) %>%
+    select(-days_diff, -weeks_diff) %>%
+    
+    # create individual poll weights
+    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * date_weight * downweight,
+           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * date_weight * downweight) %>%
+    
+    # summarise with a weak uniform prior
+    summarise(alpha = sum(alpha) + 1,
+              beta = sum(beta) + 1) %>%
+    mutate(dem2pv = alpha/(alpha + beta),
+           date = final_date) %>%
+    beta_interval(alpha, beta) %>%
+    select(date, dem2pv, ci_lower, ci_upper)
+    
+}
+
 #################### FUNCTION DEFINITIONS ####################
 
 # return a tibble with a target district's similarity score to each poll
@@ -392,7 +445,7 @@ pull_population_weights <- function() {
   variable_weights %>%
     filter(variable %in% c("rv", "lv", "a", "v")) %>%
     select(variable, weight) %>%
-    rename(population_full = variable,
+    rename(population = variable,
            population_weight = weight)
   
 }
@@ -426,18 +479,35 @@ pull_similarity_weight <- function() {
   
 }
 
+
+
 #################### TESTING ZONG MY GUY ####################
 
-target_district("Texas District 18", 2020)
+target_district("California District 1", 2018) %>%
+  house_average(ymd("2020-11-03"),
+                pull_pollster_weights(),
+                pull_sample_weight(),
+                pull_population_weights(),
+                pull_methodology_weights(),
+                pull_similarity_weight(),
+                pull_date_weight())
+
+target_district("North Carolina District 2", 2018)
+
+district_recodes %>%
+  filter(str_detect(recode, "North Carolina"))
+
 
 dist <- "Texas District 19"
 
 district_similarities %>%
+  filter(comparison != region) %>%
   #filter(region == dist,
   #       comparison != dist,
   #       year == 2020) %>%
-  ggplot(aes(x = similarity)) +
-  geom_histogram()
+  #ggplot(aes(x = similarity)) +
+  #geom_histogram() +
+  #scale_y_log10()
   
   slice_max(n = 10, order_by = similarity)
   
@@ -451,19 +521,7 @@ pull_similarity_weight()
 
 variable_weights <- initialize_weights()
 
-house_average <- function(.data,
-                          final_date,
-                          pollster_weight,
-                          sample_weight,
-                          population_weight,
-                          method_weight,
-                          similarity_weight,
-                          downweight = 1) {
-  
-  .data %>%
-    
-    
-}
+
 
 variable_weights <- initialize_weights()
 
