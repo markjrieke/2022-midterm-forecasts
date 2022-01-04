@@ -417,11 +417,20 @@ pull_date_weight <- function() {
   
 }
 
+# pull similarity weight
+pull_similarity_weight <- function() {
+  
+  variable_weights %>%
+    filter(variable == "similarity_weight") %>%
+    pull(weight)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 target_district("Texas District 19", 2020)
 
-pull_date_weight()
+pull_similarity_weight()
 
 variable_weights <- initialize_weights()
 
