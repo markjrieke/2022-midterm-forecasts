@@ -397,11 +397,24 @@ pull_population_weights <- function() {
   
 }
 
+# construct a tibble for weights by survey methodology
+pull_methodology_weights <- function() {
+  
+  variable_weights %>%
+    filter(variable %in% c(methods, "Other Method")) %>%
+    select(variable, weight) %>%
+    rename(methodology = variable,
+           method_weight = weight)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 target_district("Texas District 19", 2020)
 
-pull_sample_weight()
+pull_population_weights()
+
+variable_weights <- initialize_weights()
 
 house_average <- function(.data,
                           final_date,
