@@ -71,8 +71,6 @@ candidates <-
 house_polls <-
   house_polls %>%
   filter(candidate_name %in% candidates) %>%
-  #mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
-  #       methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
   pivot_wider(names_from = candidate_party,
               values_from = c(pct, candidate_name)) %>%
   mutate(across(starts_with("candidate"), ~replace_na(.x, "Unopposed")),
@@ -538,6 +536,13 @@ pull_bound <- function(variable_name, type) {
   
 }
 
+# create a sequence of new weights to try
+# (unlike other scripts, only need one sequence - not mapping against days)
+sequence_weights <- function(lower_bound, upper_bound) {
+  
+  seq(lower_bound, upper_bound, length.out = 5)
+  
+}
 
 #################### TESTING ZONG MY GUY ####################
 
