@@ -544,6 +544,25 @@ sequence_weights <- function(lower_bound, upper_bound) {
   
 }
 
+# create a vector of weights to be passed to try_list
+vectorize_weights <- function(variable_name) {
+  
+  # generate lower & upper bounds
+  lower_bound <-
+    variable_weights %>%
+    pull_bound(variable_name, "lower")
+  
+  upper_bound <-
+    variable_weights %>%
+    pull_bound(variable_name, "upper")
+  
+  # create sequence of new weights to try
+  weights <- sequence_weights(lower_bound, upper_bound)
+  
+  return(weights)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 variable_weights <- initialize_weights()
