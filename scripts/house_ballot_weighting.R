@@ -633,6 +633,20 @@ pass_date_weight <- function(cycle, district, end_date, date_weight) {
   
 }
 
+# pass try_list for sample_weight
+pass_sample_weight <- function(cycle, district, end_date, sample_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  sample_weight,
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 plan(multisession, workers = 8)
