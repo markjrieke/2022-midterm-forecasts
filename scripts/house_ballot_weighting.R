@@ -279,6 +279,20 @@ district_similarities <-
     similarities(2020)
   )
 
+# pull in historical results to build ballot average
+historical_results <- 
+  read_csv("data/models/house_ballot/historical_results.csv") %>%
+  
+  # remove uncontested races/2019
+  filter(candidate_name_DEM != "-",
+         candidate_name_REP != "-",
+         cycle != 2019) %>%
+  
+  # reformat frame w/dem2pv
+  mutate(region = paste(state, district),
+         dem2pv = dem_votes/(dem_votes + rep_votes)) %>%
+  select(cycle, region, dem2pv)
+
 #################### HOUSE POLL AGGREGATOR FUNCTION ####################
 
 house_average <- function(.data,
@@ -549,11 +563,9 @@ vectorize_weights <- function(variable_name) {
   
   # generate lower & upper bounds
   lower_bound <-
-    variable_weights %>%
     pull_bound(variable_name, "lower")
   
   upper_bound <-
-    variable_weights %>%
     pull_bound(variable_name, "upper")
   
   # create sequence of new weights to try
@@ -563,20 +575,100 @@ vectorize_weights <- function(variable_name) {
   
 }
 
+# assign end_date based on cycle
+assign_end_date <- function(cycle) {
+  
+  if (cycle == 2018) {
+    
+    end_date <- ymd("2018-11-06")
+    
+  } else {
+    
+    end_date <- ymd("2020-11-03")
+    
+  }
+  
+  return(end_date)
+  
+}
+
+# create list of variables to pass to update functions
+create_try_list <- function(variable_name) {
+  
+  # create vector of cycles
+  cycles <- 
+    historical_results %>%
+    pull(cycle) %>%
+    rep(5)
+  
+  # create vector of districts
+  districts <- 
+    historical_results %>%
+    pull(region) %>%
+    rep(5)
+  
+  # create vector of weights
+  weights <- 
+    vectorize_weights(variable_name) %>%
+    rep(nrow(historical_results)) %>%
+    arrange_vector()
+  
+  # create try list
+  try_list <-
+    list(cycles,
+         districts,
+         weights)
+  
+  return(try_list)
+  
+}
+
+
+
 #################### TESTING ZONG MY GUY ####################
+
+# update date_weight
+update_date_weight <- function(district, cycle) {
+  
+  # get the end date based on cycle
+  end_date <- assign_end_date(cycle)
+  
+  # do not evaluate if weight is final
+  if (check_suggestion("date_weight") == "final") {
+    
+    message("date_weight marked as final and will not be updated.")
+    
+  } else {
+    
+    # generate poll average
+    target_district(district, cycle) %>%
+      house_average(end_date,
+                    pull_pollster_weights(variable_weights),
+                    pull_sample_weight(),
+                    pull_population_weights(variable_weights),
+                    pull_methodology_weights(variable_weights),
+                    pull_similarity_weight(),
+                    pull_date_weight())
+    
+  }
+    
+}
 
 variable_weights <- initialize_weights()
 
-target_district("California District 50", 2018) %>%
+
+
+
+target_district("Ohio District 4", 2020) %>%
   house_average(ymd("2020-11-03"),
-                pull_pollster_weights(),
+                pull_pollster_weights(variable_weights),
                 pull_sample_weight(),
-                pull_population_weights(),
-                pull_methodology_weights(),
+                pull_population_weights(variable_weights),
+                pull_methodology_weights(variable_weights),
                 pull_similarity_weight(),
                 pull_date_weight())
 
-target_district("North Carolina District 2", 2018)
+target_district("Ohio District 4", 2020)
 
 pull_try_weight("Ipsos", 0.75, "pollster")
 
