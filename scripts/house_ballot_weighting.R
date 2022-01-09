@@ -307,6 +307,9 @@ house_average <- function(.data,
   
   .data %>%
     
+    # filter to just needed polls
+    filter(end_date <= final_date) %>%
+    
     # apply pollster weights and offsets
     left_join(pollster_weight, by = "pollster") %>%
     mutate(dem2pv = dem2pv + pollster_offset,
@@ -575,23 +578,6 @@ vectorize_weights <- function(variable_name) {
   
 }
 
-# assign end_date based on cycle
-assign_end_date <- function(cycle) {
-  
-  if (cycle == 2018) {
-    
-    end_date <- ymd("2018-11-06")
-    
-  } else {
-    
-    end_date <- ymd("2020-11-03")
-    
-  }
-  
-  return(end_date)
-  
-}
-
 # create list of variables to pass to update functions
 create_try_list <- function(variable_name) {
   
@@ -607,6 +593,13 @@ create_try_list <- function(variable_name) {
     pull(region) %>%
     rep(5)
   
+  # create a vector of end_dates
+  end_dates <- 
+    historical_results %>%
+    mutate(end_date = if_else(cycle == 2018, ymd("2018-11-06"), ymd("2020-11-03"))) %>%
+    pull(end_date) %>%
+    rep(5)
+  
   # create vector of weights
   weights <- 
     vectorize_weights(variable_name) %>%
@@ -615,17 +608,51 @@ create_try_list <- function(variable_name) {
   
   # create try list
   try_list <-
-    list(cycles,
-         districts,
-         weights)
+    list(cycle = cycles,
+         district = districts,
+         end_date = end_dates,
+         weight = weights)
   
   return(try_list)
   
 }
 
+#################### PASSER FUNCTIONS ####################
 
+# pass try_list for date_weight
+pass_date_weight <- function(cycle, district, end_date, date_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  date_weight)
+  
+}
 
 #################### TESTING ZONG MY GUY ####################
+
+plan(multisession, workers = 8)
+
+test <- 
+  create_try_list("date_weight") %>%
+  future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
+
+test_try <- create_try_list("date_weight")
+  
+
+test %>%
+  bind_cols(tibble(cycle = test_try$cycle,
+                   district = test_try$district,
+                   weight = test_try$weight)) %>%
+  left_join(historical_results, 
+            by = c("cycle" = "cycle", "district" = "region"))
+  
+create_try_list("date_weight")
+
 
 # update date_weight
 update_date_weight <- function(district, cycle) {
@@ -659,14 +686,14 @@ variable_weights <- initialize_weights()
 
 
 
-target_district("Ohio District 4", 2020) %>%
-  house_average(ymd("2020-11-03"),
+target_district("Ohio District 4", 2018) %>%
+  house_average(ymd("2018-11-06"),
                 pull_pollster_weights(variable_weights),
                 pull_sample_weight(),
                 pull_population_weights(variable_weights),
                 pull_methodology_weights(variable_weights),
                 pull_similarity_weight(),
-                pull_date_weight())
+                0)
 
 target_district("Ohio District 4", 2020)
 
