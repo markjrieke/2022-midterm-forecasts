@@ -675,6 +675,23 @@ pass_pollster_weight <- function(pollster, cycle, district, end_date, pollster_w
   
 }
 
+# pass try_list for pollster weight
+pass_pollster_offset <- function(pollster, cycle, district, end_date, pollster_offset) {
+  
+  # create pollster offset var
+  offset <- paste(pollster, "Offset")
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_try_weight(offset, pollster_offset, "pollster"),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 plan(multisession, workers = 8)
