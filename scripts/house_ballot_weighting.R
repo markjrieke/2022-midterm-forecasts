@@ -706,6 +706,20 @@ pass_population_weight <- function(population, cycle, district, end_date, popula
   
 }
 
+# pass try_list for methodology weight
+pass_methodology_weight <- function(methodology, cycle, district, end_date, methodology_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_try_weight(methodology, methodology_weight, "methodology"),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 plan(multisession, workers = 8)
