@@ -617,6 +617,26 @@ create_try_list <- function(variable_name) {
   
 }
 
+# bind actual results against estimates returned by passer functions
+bind_results <- function(.data, input_list) {
+  
+  # filter down to just returned estimate
+  .data %>%
+    select(dem2pv) %>%
+    
+    # bind list to new cols
+    bind_cols(cycle = input_list$cycle,
+              district = input_list$district,
+              weight = input_list$weight) %>%
+    
+    # append with historical results
+    left_join(historical_results, by = c("cycle" = "cycle", "district" = "region")) %>%
+    select(weight,
+           est = dem2pv.x,
+           act = dem2pv.y)
+  
+}
+
 #################### PASSER FUNCTIONS ####################
 
 # pass try_list for date_weight
@@ -722,24 +742,6 @@ pass_methodology_weight <- function(methodology, cycle, district, end_date, meth
 
 #################### TESTING ZONG MY GUY ####################
 
-plan(multisession, workers = 8)
-
-test <- 
-  create_try_list("date_weight") %>%
-  future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
-
-test_try <- create_try_list("date_weight")
-  
-
-test %>%
-  bind_cols(tibble(cycle = test_try$cycle,
-                   district = test_try$district,
-                   weight = test_try$weight)) %>%
-  left_join(historical_results, 
-            by = c("cycle" = "cycle", "district" = "region"))
-  
-create_try_list("date_weight")
-
 
 # update date_weight
 update_date_weight <- function(district, cycle) {
@@ -754,68 +756,42 @@ update_date_weight <- function(district, cycle) {
     
   } else {
     
-    # generate poll average
-    target_district(district, cycle) %>%
-      house_average(end_date,
-                    pull_pollster_weights(variable_weights),
-                    pull_sample_weight(),
-                    pull_population_weights(variable_weights),
-                    pull_methodology_weights(variable_weights),
-                    pull_similarity_weight(),
-                    pull_date_weight())
-    
+    # create a try list to pass to passer function
+    try_list <- create_try_list("date_weight")
+      
+    # map inputs to passer function
+    try_list %>%
+      future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4)) %>%
+      
+      # update rmse & variable weight tables
+      
+      
   }
     
 }
 
-variable_weights <- initialize_weights()
-
-
-
-
-target_district("Ohio District 4", 2018) %>%
-  house_average(ymd("2018-11-06"),
-                pull_pollster_weights(variable_weights),
-                pull_sample_weight(),
-                pull_population_weights(variable_weights),
-                pull_methodology_weights(variable_weights),
-                pull_similarity_weight(),
-                0)
-
-target_district("Ohio District 4", 2020)
-
-pull_try_weight("Ipsos", 0.75, "pollster")
-
-district_recodes %>%
-  filter(str_detect(recode, "North Carolina"))
-
-
-dist <- "Texas District 19"
-
-district_similarities %>%
-  filter(comparison != region) %>%
-  #filter(region == dist,
-  #       comparison != dist,
-  #       year == 2020) %>%
-  #ggplot(aes(x = similarity)) +
-  #geom_histogram() +
-  #scale_y_log10()
-  
-  slice_max(n = 10, order_by = similarity)
-  
-  mutate(comparison = fct_reorder(comparison, similarity)) %>%
-  ggplot(aes(x = comparison,
-             y = similarity)) +
-  geom_col() +
-  coord_flip()
-
-pull_similarity_weight()
-
-variable_weights <- initialize_weights()
-
 
 
 variable_weights <- initialize_weights()
+
+test_try <- create_try_list("date_weight")
+
+test_weight_map <- 
+  test_try %>%
+  future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
+
+test_weight_map %>%
+  bind_results(test_try)
+
+test_weight_map %>%
+  select(dem2pv) %>%
+  bind_cols(cycle = test_try$cycle,
+            district = test_try$district,
+            weight = test_try$weight) %>%
+  left_join(historical_results, by = c("cycle" = "cycle", "district" = "region")) %>%
+  select(weight,
+         est = dem2pv.x,
+         act = dem2pv.y)
 
 #################### notes ####################
   
