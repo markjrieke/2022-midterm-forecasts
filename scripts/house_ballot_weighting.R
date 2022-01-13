@@ -967,6 +967,23 @@ update_weight_table <- function(.data, variable_name) {
   
 }
 
+# util function for updating both tables
+update_tables <- function(.data, variable_name, input_list) {
+  
+  # summarise results based on best rmse
+  weight_summary <-
+    .data %>%
+    bind_results(input_list) %>%
+    summarise_weights(variable_name)
+  
+  # update rmse tracker
+  weight_summary %>% update_rmse_tracker()
+  
+  # update weight table
+  weight_summary %>% update_weight_table(variable_name)
+    
+}
+
 
 
 #################### TESTING ZONG MY GUY ####################
