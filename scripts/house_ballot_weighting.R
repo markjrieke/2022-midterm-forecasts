@@ -954,6 +954,19 @@ update_rmse_tracker <- function(.data) {
   
 }
 
+# function for updating the variable weight table
+update_weight_table <- function(.data, variable_name) {
+  
+  # <<- interacts with the global object
+  variable_weights <<-
+    variable_weights %>%
+    filter(variable != variable_name) %>%
+    
+    # reformat & bind .data with new weights/suggestions
+    bind_rows(.data %>% select(-rmse, -pct_diff) %>% rename(variable = metric))
+  
+}
+
 
 
 #################### TESTING ZONG MY GUY ####################
