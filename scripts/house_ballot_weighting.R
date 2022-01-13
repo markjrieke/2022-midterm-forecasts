@@ -931,6 +931,29 @@ initialize_tables <- function() {
   
 }
 
+# function for adding metrics to running list of rmse
+update_rmse_tracker <- function(.data) {
+  
+  # <<- interacts with the global object
+  rmse_tracker <<-
+    rmse_tracker %>%
+    
+    # pull current index
+    filter(index == max(index)) %>%
+    select(index) %>%
+    
+    # increase index
+    mutate(index = index + 1) %>%
+    
+    # add index to data
+    bind_cols(.data) %>%
+    
+    # bind back to rmse_tracker
+    bind_rows(rmse_tracker) %>%
+    arrange(index)
+  
+}
+
 
 
 #################### TESTING ZONG MY GUY ####################
