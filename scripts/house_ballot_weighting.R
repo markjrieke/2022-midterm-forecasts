@@ -349,8 +349,6 @@ house_average <- function(.data,
     
 }
 
-#################### FUNCTION DEFINITIONS ####################
-
 # return a tibble with a target district's similarity score to each poll
 target_district <- function(target, target_cycle) {
   
@@ -375,59 +373,7 @@ target_district <- function(target, target_cycle) {
   
 }
 
-# initialize weights and offsets
-initialize_weights <- function() {
-  
-  bind_rows(
-    
-    # pollster weights
-    tibble(variable = c(pollsters, "Other Pollster"),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # pollster offsets
-    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
-           weight = 0,
-           next_lower = -0.1,
-           next_upper = 0.1),
-    
-    # date weights
-    tibble(variable = "date_weight",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # sample size weights
-    tibble(variable = "sample_size",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # population weights
-    tibble(variable = c("rv", "lv", "a", "v"),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # methodology weights
-    tibble(variable = c(methods, "Other Method"),
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1),
-    
-    # similarity weight
-    tibble(variable = "similarity_weight",
-           weight = 1,
-           next_lower = 0,
-           next_upper = 1)
-    
-  ) %>%
-    
-    # initialize with "not final" as the search suggestion for each variable
-    bind_cols(search_suggestion = "not final")
-  
-}
+#################### PULL FUNCTIONS ####################
 
 # construct a tibble for pollster weights and offsets
 pull_pollster_weights <- function(.data) {
@@ -494,15 +440,6 @@ pull_similarity_weight <- function() {
   
 }
 
-# check if the search suggestion is final or ought to continue
-check_suggestion <- function(variable_name) {
-  
-  variable_weights %>%
-    filter(variable == variable_name) %>%
-    pull(search_suggestion)
-  
-}
-
 # util function to create a temporary tibble replacing the current weight with a "try" weight
 pull_try_weight <- function(variable_name, new_weight, type) {
   
@@ -550,6 +487,174 @@ pull_bound <- function(variable_name, type) {
       pull(next_upper)
     
   }
+  
+}
+
+#################### PASSER FUNCTIONS ####################
+
+# pass try_list for date_weight
+pass_date_weight <- function(cycle, district, end_date, date_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  date_weight)
+  
+}
+
+# pass try_list for sample_weight
+pass_sample_weight <- function(cycle, district, end_date, sample_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  sample_weight,
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
+# pass try_list for similarity_weight
+pass_similarity_weight <- function(cycle, district, end_date, similarity_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  similarity_weight,
+                  pull_date_weight())
+  
+}
+
+# pass try_list for pollster weight
+pass_pollster_weight <- function(pollster, cycle, district, end_date, pollster_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_try_weight(pollster, pollster_weight, "pollster"),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
+# pass try_list for pollster offset
+pass_pollster_offset <- function(pollster, cycle, district, end_date, pollster_offset) {
+  
+  # create pollster offset var
+  offset <- paste(pollster, "Offset")
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_try_weight(offset, pollster_offset, "pollster"),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
+# pass try_list for population weight
+pass_population_weight <- function(population, cycle, district, end_date, population_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  pull_sample_weight(),
+                  pull_try_weight(population, population_weight, "population"),
+                  pull_methodology_weights(variable_weights),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
+# pass try_list for methodology weight
+pass_methodology_weight <- function(methodology, cycle, district, end_date, methodology_weight) {
+  
+  target_district(district, cycle) %>%
+    house_average(end_date,
+                  pull_pollster_weights(variable_weights),
+                  pull_sample_weight(),
+                  pull_population_weights(variable_weights),
+                  pull_try_weight(methodology, methodology_weight, "methodology"),
+                  pull_similarity_weight(),
+                  pull_date_weight())
+  
+}
+
+#################### UTIL FUNCTIONS ####################
+
+# initialize weights and offsets
+initialize_weights <- function() {
+  
+  bind_rows(
+    
+    # pollster weights
+    tibble(variable = c(pollsters, "Other Pollster"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # pollster offsets
+    tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
+           weight = 0,
+           next_lower = -0.1,
+           next_upper = 0.1),
+    
+    # date weights
+    tibble(variable = "date_weight",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # sample size weights
+    tibble(variable = "sample_size",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # population weights
+    tibble(variable = c("rv", "lv", "a", "v"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # methodology weights
+    tibble(variable = c(methods, "Other Method"),
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1),
+    
+    # similarity weight
+    tibble(variable = "similarity_weight",
+           weight = 1,
+           next_lower = 0,
+           next_upper = 1)
+    
+  ) %>%
+    
+    # initialize with "not final" as the search suggestion for each variable
+    bind_cols(search_suggestion = "not final")
+  
+}
+
+# check if the search suggestion is final or ought to continue
+check_suggestion <- function(variable_name) {
+  
+  variable_weights %>%
+    filter(variable == variable_name) %>%
+    pull(search_suggestion)
   
 }
 
@@ -770,108 +875,54 @@ summarise_weights <- function(.data, metric) {
   
 }
 
-#################### PASSER FUNCTIONS ####################
-
-# pass try_list for date_weight
-pass_date_weight <- function(cycle, district, end_date, date_weight) {
+# function for initializing rmse_tracker tibble
+initialize_rmse <- function() {
   
-  target_district(district, cycle) %>%
-    house_average(end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  date_weight)
+  # append historical results with end_date
+  results <-
+    historical_results %>%
+    mutate(end_date = if_else(cycle == 2018, ymd("2018-11-06"), ymd("2020-11-03")))
   
-}
-
-# pass try_list for sample_weight
-pass_sample_weight <- function(cycle, district, end_date, sample_weight) {
+  # create try list to pass to passer function
+  try_list <-
+    list(cycle = results$cycle,
+         district = results$region,
+         end_date = results$end_date,
+         weight = rep(1, results %>% nrow()))
   
-  target_district(district, cycle) %>%
-    house_average(end_date,
-                  pull_pollster_weights(variable_weights),
-                  sample_weight,
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
+  # pass try list to passer function
+  message("Creating baseline")
+  tictoc::tic()
   
-}
-
-# pass try_list for similarity_weight
-pass_similarity_weight <- function(cycle, district, end_date, similarity_weight) {
+  baseline <-
+    try_list %>%
+    future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
   
-  target_district(district, cycle) %>%
-    house_average(end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  similarity_weight,
-                  pull_date_weight())
+  tictoc::toc()
   
-}
-
-# pass try_list for pollster weight
-pass_pollster_weight <- function(pollster, cycle, district, end_date, pollster_weight) {
+  # build baseline tibble
+  baseline <- 
+    baseline %>%
+    bind_results(try_list) %>%
+    select(-weight) %>%
+    nest(data = everything()) %>%
+    mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
+    unnest(rmse) %>%
+    select(rmse = .estimate) %>%
+    mutate(index = 0,
+           metric = "baseline",
+           weight = 0,
+           next_lower = 0,
+           next_upper = 0,
+           pct_diff = 0,
+           search_suggestion = "baseline") %>%
+    relocate(rmse, .after = weight)
   
-  target_district(district, cycle) %>%
-    house_average(end_date,
-                  pull_try_weight(pollster, pollster_weight, "pollster"),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
+  return(baseline)
   
 }
 
-# pass try_list for pollster offset
-pass_pollster_offset <- function(pollster, cycle, district, end_date, pollster_offset) {
-  
-  # create pollster offset var
-  offset <- paste(pollster, "Offset")
-  
-  target_district(district, cycle) %>%
-    house_average(end_date,
-                  pull_try_weight(offset, pollster_offset, "pollster"),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
-  
-}
 
-# pass try_list for population weight
-pass_population_weight <- function(population, cycle, district, end_date, population_weight) {
-  
-  target_district(district, cycle) %>%
-    house_average(end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_try_weight(population, population_weight, "population"),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
-  
-}
-
-# pass try_list for methodology weight
-pass_methodology_weight <- function(methodology, cycle, district, end_date, methodology_weight) {
-  
-  target_district(district, cycle) %>%
-    house_average(end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_try_weight(methodology, methodology_weight, "methodology"),
-                  pull_similarity_weight(),
-                  pull_date_weight())
-  
-}
 
 #################### TESTING ZONG MY GUY ####################
 
@@ -894,7 +945,7 @@ update_date_weight <- function(district, cycle) {
       
     # map inputs to passer function
     try_list %>%
-      future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4)) %>%
+      future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
       
       # update rmse & variable weight tables
       
@@ -906,6 +957,7 @@ update_date_weight <- function(district, cycle) {
 
 
 variable_weights <- initialize_weights()
+rmse_tracker <- initialize_rmse()
 
 test_try <- create_try_list("date_weight")
 
