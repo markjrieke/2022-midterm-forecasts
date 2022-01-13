@@ -922,6 +922,15 @@ initialize_rmse <- function() {
   
 }
 
+# function for initializing both variable weights and rmse tracker (ensures called in proper order)
+initialize_tables <- function() {
+  
+  # <<- interacts with global environment
+  variable_weights <<- initialize_weights()
+  rmse_tracker <<- initialize_rmse()
+  
+}
+
 
 
 #################### TESTING ZONG MY GUY ####################
