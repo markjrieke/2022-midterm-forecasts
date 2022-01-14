@@ -1051,7 +1051,12 @@ test_weight_map %>%
 #   add in senate/gubernatorial polls
 #     add race results to historical_results.csv
 #     add read/wrangle sections for both, merge into master historical polls
-#     add in similarities based on 
+#     add in similarities based on race data
+# 
+#   save similarities to csv
+#     (you don't need to call the tidycensus API each time...)
+#     remove library(tidycensus) & replace API calls with tidycensus::_function_here_()
+
 
 # ratings ranges:
 #   uncertain:    p < 0.65
@@ -1078,6 +1083,8 @@ test_weight_map %>%
 #   maybe I can create blended & non-blended forecasts & see which performs better
 #     Feature-limited for blended forecast, but data-rich
 #     Data-limited for non-blended forecast, but feature-rich
+#   in either regard, I think I ought to start with a blended poll aggregator
+#   my hunch is that the blended forecast will perform better (if nothing else than for the extra data points...)
 
 # maybe think about removing the 2019 cycle...
 
