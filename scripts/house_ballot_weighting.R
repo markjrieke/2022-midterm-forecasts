@@ -1042,6 +1042,17 @@ test_weight_map %>%
 
 #################### notes ####################
 
+# to-do:
+#   add in begin_date to aggregator
+#     main poll aggregator
+#     create_try_list()
+#     others?
+#
+#   add in senate/gubernatorial polls
+#     add race results to historical_results.csv
+#     add read/wrangle sections for both, merge into master historical polls
+#     add in similarities based on 
+
 # ratings ranges:
 #   uncertain:    p < 0.65
 #   likely:       p < 0.85
@@ -1060,6 +1071,13 @@ test_weight_map %>%
 #
 #   should I also do the same with governors ? 
 #   would this be double-dipping on similarities (states for senate)
+#
+# another thought: there are features I'm not sure I can use for a blended model?
+#   basically any non-racial information is unavailable for the districts
+#   maybe check in on DRA? Not sure what information is contained there (it's just race)
+#   maybe I can create blended & non-blended forecasts & see which performs better
+#     Feature-limited for blended forecast, but data-rich
+#     Data-limited for non-blended forecast, but feature-rich
 
 # maybe think about removing the 2019 cycle...
 
