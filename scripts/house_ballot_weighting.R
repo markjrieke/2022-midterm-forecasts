@@ -1057,6 +1057,24 @@ test_weight_map %>%
 #     (you don't need to call the tidycensus API each time...)
 #     remove library(tidycensus) & replace API calls with tidycensus::_function_here_()
 #
+#   add new feature infer_to_from
+#     i.e., if you're predicting a senate seat and adding a house poll, add senate_house
+#     infer_to_from options
+#       senate_house
+#       senate_governor
+#       senate_senate
+#       house_senate
+#       house_governor
+#       house_house
+#       governor_house
+#       governor_senate
+#       governor_governor
+#     update fns() w/this 
+#       poll aggregator fn
+#       pull fn?
+#       add passer
+#       create_try_list()? (or imputed elsewhere?)
+#
 #   train mean
 #     add update_x_weight() functions
 #     add call_x() functions
