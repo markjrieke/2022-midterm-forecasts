@@ -1041,11 +1041,25 @@ test_weight_map %>%
          act = dem2pv.y)
 
 #################### notes ####################
-  
-# uncertain:    p < 0.65
-# likely:       p < 0.85
-# very likely:  p < 0.99
-# safe:         p >= 0.99
+
+# ratings ranges:
+#   uncertain:    p < 0.65
+#   likely:       p < 0.85
+#   very likely:  p < 0.99
+#   safe:         p >= 0.99
+
+# possibly add in the senate?
+#   one model for house & senate
+#   senate polls informed by house polls & vice-versa
+#     pull in state demographic info for senate similarities...
+#   in xgboost model, stratify initial split by chamber to ensure equal coverage
+#   only 66 senate races to pull data from ...
+#
+#   build out house polls first, then check to see if adding senate polls is any value
+#   if senate polls are way off, don't use
+#
+#   should I also do the same with governors ? 
+#   would this be double-dipping on similarities (states for senate)
 
 # maybe think about removing the 2019 cycle...
 
