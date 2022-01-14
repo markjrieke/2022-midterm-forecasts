@@ -1056,7 +1056,17 @@ test_weight_map %>%
 #   save similarities to csv
 #     (you don't need to call the tidycensus API each time...)
 #     remove library(tidycensus) & replace API calls with tidycensus::_function_here_()
-
+#
+#   train mean
+#     add update_x_weight() functions
+#     add call_x() functions
+#     add update_all() function
+#
+#   train error
+#     add update_downweight() function
+#   
+#   explore results
+#     verify that no seat type is significantly off 
 
 # ratings ranges:
 #   uncertain:    p < 0.65
