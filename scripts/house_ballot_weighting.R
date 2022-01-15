@@ -296,6 +296,7 @@ historical_results <-
 #################### HOUSE POLL AGGREGATOR FUNCTION ####################
 
 house_average <- function(.data,
+                          begin_date,
                           final_date,
                           pollster_weight,
                           sample_weight,
@@ -308,7 +309,8 @@ house_average <- function(.data,
   .data %>%
     
     # filter to just needed polls
-    filter(end_date <= final_date) %>%
+    filter(end_date <= final_date,
+           end_date >= begin_date) %>%
     
     # apply pollster weights and offsets
     left_join(pollster_weight, by = "pollster") %>%
@@ -493,10 +495,11 @@ pull_bound <- function(variable_name, type) {
 #################### PASSER FUNCTIONS ####################
 
 # pass try_list for date_weight
-pass_date_weight <- function(cycle, district, end_date, date_weight) {
+pass_date_weight <- function(cycle, district, begin_date, end_date, date_weight) {
   
   target_district(district, cycle) %>%
-    house_average(end_date,
+    house_average(begin_date,
+                  end_date,
                   pull_pollster_weights(variable_weights),
                   pull_sample_weight(),
                   pull_population_weights(variable_weights),
@@ -507,10 +510,11 @@ pass_date_weight <- function(cycle, district, end_date, date_weight) {
 }
 
 # pass try_list for sample_weight
-pass_sample_weight <- function(cycle, district, end_date, sample_weight) {
+pass_sample_weight <- function(cycle, district, begin_date, end_date, sample_weight) {
   
   target_district(district, cycle) %>%
-    house_average(end_date,
+    house_average(begin_date,
+                  end_date,
                   pull_pollster_weights(variable_weights),
                   sample_weight,
                   pull_population_weights(variable_weights),
@@ -521,10 +525,11 @@ pass_sample_weight <- function(cycle, district, end_date, sample_weight) {
 }
 
 # pass try_list for similarity_weight
-pass_similarity_weight <- function(cycle, district, end_date, similarity_weight) {
+pass_similarity_weight <- function(cycle, district, begin_date, end_date, similarity_weight) {
   
   target_district(district, cycle) %>%
-    house_average(end_date,
+    house_average(begin_date, 
+                  end_date,
                   pull_pollster_weights(variable_weights),
                   pull_sample_weight(),
                   pull_population_weights(variable_weights),
@@ -535,10 +540,11 @@ pass_similarity_weight <- function(cycle, district, end_date, similarity_weight)
 }
 
 # pass try_list for pollster weight
-pass_pollster_weight <- function(pollster, cycle, district, end_date, pollster_weight) {
+pass_pollster_weight <- function(pollster, cycle, district, begin_date, end_date, pollster_weight) {
   
   target_district(district, cycle) %>%
-    house_average(end_date,
+    house_average(begin_date, 
+                  end_date,
                   pull_try_weight(pollster, pollster_weight, "pollster"),
                   pull_sample_weight(),
                   pull_population_weights(variable_weights),
@@ -549,13 +555,14 @@ pass_pollster_weight <- function(pollster, cycle, district, end_date, pollster_w
 }
 
 # pass try_list for pollster offset
-pass_pollster_offset <- function(pollster, cycle, district, end_date, pollster_offset) {
+pass_pollster_offset <- function(pollster, cycle, district, begin_date, end_date, pollster_offset) {
   
   # create pollster offset var
   offset <- paste(pollster, "Offset")
   
   target_district(district, cycle) %>%
-    house_average(end_date,
+    house_average(begin_date, 
+                  end_date,
                   pull_try_weight(offset, pollster_offset, "pollster"),
                   pull_sample_weight(),
                   pull_population_weights(variable_weights),
@@ -566,10 +573,11 @@ pass_pollster_offset <- function(pollster, cycle, district, end_date, pollster_o
 }
 
 # pass try_list for population weight
-pass_population_weight <- function(population, cycle, district, end_date, population_weight) {
+pass_population_weight <- function(population, cycle, district, begin_date, end_date, population_weight) {
   
   target_district(district, cycle) %>%
-    house_average(end_date,
+    house_average(begin_date, 
+                  end_date,
                   pull_pollster_weights(variable_weights),
                   pull_sample_weight(),
                   pull_try_weight(population, population_weight, "population"),
@@ -580,10 +588,11 @@ pass_population_weight <- function(population, cycle, district, end_date, popula
 }
 
 # pass try_list for methodology weight
-pass_methodology_weight <- function(methodology, cycle, district, end_date, methodology_weight) {
+pass_methodology_weight <- function(methodology, cycle, district, begin_date, end_date, methodology_weight) {
   
   target_district(district, cycle) %>%
-    house_average(end_date,
+    house_average(begin_date, 
+                  end_date,
                   pull_pollster_weights(variable_weights),
                   pull_sample_weight(),
                   pull_population_weights(variable_weights),
@@ -698,6 +707,13 @@ create_try_list <- function(variable_name) {
     pull(region) %>%
     rep(5)
   
+  # create a vector of begin_dates
+  begin_dates <-
+    historical_results %>%
+    mutate(begin_date = if_else(cycle == 2018, ymd("2016-11-04"), ymd("2018-11-04"))) %>%
+    pull(begin_date) %>%
+    rep(5)
+  
   # create a vector of end_dates
   end_dates <- 
     historical_results %>%
@@ -715,6 +731,7 @@ create_try_list <- function(variable_name) {
   try_list <-
     list(cycle = cycles,
          district = districts,
+         begin_date = begin_dates,
          end_date = end_dates,
          weight = weights)
   
@@ -881,12 +898,14 @@ initialize_rmse <- function() {
   # append historical results with end_date
   results <-
     historical_results %>%
-    mutate(end_date = if_else(cycle == 2018, ymd("2018-11-06"), ymd("2020-11-03")))
+    mutate(begin_date = if_else(cycle == 2018, ymd("2016-11-04"), ymd("2018-11-04")),
+           end_date = if_else(cycle == 2018, ymd("2018-11-06"), ymd("2020-11-03")))
   
   # create try list to pass to passer function
   try_list <-
     list(cycle = results$cycle,
          district = results$region,
+         begin_date = results$begin_date,
          end_date = results$end_date,
          weight = rep(1, results %>% nrow()))
   
@@ -896,7 +915,7 @@ initialize_rmse <- function() {
   
   baseline <-
     try_list %>%
-    future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
+    future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4, ..5))
   
   tictoc::toc()
   
@@ -1016,10 +1035,21 @@ update_date_weight <- function(district, cycle) {
     
 }
 
+target_district("Ohio District 4", 2020) %>%
+  house_average(ymd("2018-11-07"),
+                ymd("2020-11-04"),
+                pull_pollster_weights(variable_weights),
+                pull_sample_weight(),
+                pull_population_weights(variable_weights),
+                pull_methodology_weights(variable_weights),
+                pull_similarity_weight(),
+                pull_date_weight())
 
+pass_date_weight(2020, "Ohio District 4", ymd("2018-11-07"), ymd("2020-11-04"), 1)
 
 variable_weights <- initialize_weights()
 rmse_tracker <- initialize_rmse()
+
 
 test_try <- create_try_list("date_weight")
 
@@ -1043,11 +1073,6 @@ test_weight_map %>%
 #################### notes ####################
 
 # to-do:
-#   add in begin_date to aggregator
-#     main poll aggregator
-#     create_try_list()
-#     others?
-#
 #   add in senate/gubernatorial polls
 #     add race results to historical_results.csv
 #     add read/wrangle sections for both, merge into master historical polls
