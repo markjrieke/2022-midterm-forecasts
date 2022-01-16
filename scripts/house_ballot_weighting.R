@@ -17,7 +17,7 @@ num_cores <- parallel::detectCores()
 clusters <- parallel::makePSOCKcluster(num_cores)
 doParallel::registerDoParallel(clusters)
 
-# wrangle house_polls ----
+# wrangle polls ----
 
 # read in data
 polls <- 
@@ -205,10 +205,13 @@ demo_acs <-
 demographics <- 
   bind_rows(
     get_decennial("us", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
+    get_decennial("state", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
     get_decennial("congressional district", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
     get_acs("us", demo_acs, year = 2019) %>% mutate(year = 2019),
+    get_acs("state", demo_acs, year = 2019) %>% mutate(year = 2019),
     get_acs("congressional district", demo_acs, year = 2019) %>% mutate(year = 2019),
     get_acs("us", demo_acs, year = 2018) %>% mutate(year = 2018),
+    get_acs("state", demo_acs, year = 2018) %>% mutate(year = 2018),
     get_acs("congressional district", demo_acs, year = 2018) %>% mutate(year = 2018)
   )
 
@@ -233,7 +236,7 @@ demographics <-
          !str_detect(region, "Puerto Rico"))
 
 # recode region names
-district_recodes <- read_csv("data/models/house_ballot/district_recodes.csv")
+district_recodes <- read_csv("data/models/midterm_model/district_recodes.csv")
 
 demographics <- 
   demographics %>%
@@ -245,10 +248,10 @@ demographics <-
 
 # function for calculating similarity scores given one congressional district
 # note that this assumes a gaussian kernel for the similarity
-similarity <- function(.data, district) {
+similarity <- function(.data, input_region) {
   
   .data %>%
-    mutate(comparison = district) %>%
+    mutate(comparison = input_region) %>%
     left_join(.data, by = c("comparison" = "region")) %>%
     select(-year.y) %>%
     rename(year = year.x) %>%
@@ -272,8 +275,8 @@ similarities <- function(end_year) {
     demographics %>%
     filter(year == end_year)
   
-  # congressional districts in that year
-  districts <- 
+  # regions in that year
+  regions <- 
     df %>%
     distinct(region) %>%
     pull(region)
@@ -281,7 +284,7 @@ similarities <- function(end_year) {
   message(paste("Mapping data for", end_year))
   
   # map similarity function to congressional district
-  districts %>%
+  regions %>%
     future_map_dfr(~similarity(df, .x))
   
 }
@@ -289,17 +292,21 @@ similarities <- function(end_year) {
 # setup multisession workers
 plan(multisession, workers = 8)
 
-# create a similariteis tibble
-district_similarities <- 
+# create a similarities tibble
+region_similarities <- 
   bind_rows(
     similarities(2018),
     similarities(2019),
     similarities(2020)
   )
 
+# save similarities tibble
+region_similarities %>%
+  write_csv("data/models/midterm_model/region_similarities.csv")
+
 # pull in historical results to build ballot average
 historical_results <- 
-  read_csv("data/models/house_ballot/historical_results.csv") %>%
+  read_csv("data/models/midterm_model/historical_results.csv") %>%
   
   # remove uncontested races/2019
   filter(candidate_name_DEM != "-",
@@ -307,7 +314,7 @@ historical_results <-
          cycle != 2019) %>%
   
   # reformat frame w/dem2pv
-  mutate(region = paste(state, district),
+  mutate(region = paste(state, seat),
          dem2pv = dem_votes/(dem_votes + rep_votes)) %>%
   select(cycle, region, dem2pv)
 
@@ -1092,8 +1099,6 @@ test_weight_map %>%
 
 # to-do:
 #   add in senate/gubernatorial polls
-#     add race results to historical_results.csv
-#     add read/wrangle sections for both, merge into master historical polls
 #     add in similarities based on race data
 # 
 #   save similarities to csv
@@ -1115,6 +1120,7 @@ test_weight_map %>%
 #     update fns() w/this 
 #       poll aggregator fn
 #       pull fn?
+#       initialize weights
 #       add passer
 #       create_try_list()? (or imputed elsewhere?)
 #
@@ -1128,12 +1134,52 @@ test_weight_map %>%
 #   
 #   explore results
 #     verify that no seat type is significantly off 
+#
+#   consider adding in off-season elections?
+#     2019 NC
+#     2021 VA Gov?
 
 # ratings ranges:
 #   uncertain:    p < 0.65
 #   likely:       p < 0.85
 #   very likely:  p < 0.99
 #   safe:         p >= 0.99
+
+# some potential concerns to make public:
+#   racial makeup (ignore hisp. black, asian diversity, etc.)
+#   data leakage w/polls (poll training includes all historical results)
+#   similarity scores based only on race
+#   only looking at top D/R (e.g., Feinstein & Collins aren't in the model)
+#   only looking at general election, not runoff
+#   doesn't include common features that definitely have signal (e.g., prez approval)
+#     due to lack of historical polling data (only 2 cycle's worth)
+
+# potential features:
+#   data currently available in repo:
+#     polls
+#     polls CI spread
+#     polls CI lower
+#     polls CI upper
+#     number of polls for the race
+#     number of polls in the last x wks
+#     racial makeup
+#     incumbency
+#     prev-party
+#   data available online:
+#     years in seat
+#     years in gov't
+#     endorsements
+#     total fundraising
+#     spending ratio (dem/rep & rep/dem)
+#     partisan lean (maybe...)
+#     experts' ratings (maybe...)
+#     candidate demographics (age, race, gender, age... maybe...)
+#     candidate idealogy (dw nominate - not sure if this is available for non-incumbents)
+#   data maybe available in the future
+#     median or mean age
+#     population density
+#     religious affiliation
+#     educational attainment
 
 # possibly add in the senate?
 #   one model for house & senate
