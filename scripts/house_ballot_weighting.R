@@ -328,7 +328,7 @@ if (completed == FALSE) {
 } else {
   
   # if similarities data already created, just read in the csv
-  demographics <-
+  region_similarities <-
     read_csv("data/models/midterm_model/region_similarities.csv")
   
 }
