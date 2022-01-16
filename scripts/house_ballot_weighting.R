@@ -1,7 +1,6 @@
 # libraries ----
 library(tidyverse)
 library(lubridate)
-library(tidycensus)
 library(riekelib)
 library(furrr)
 
@@ -209,15 +208,15 @@ if (completed == FALSE) {
   # pull demographic data from census api
   demographics <- 
     bind_rows(
-      get_decennial("us", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
-      get_decennial("state", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
-      get_decennial("congressional district", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
-      get_acs("us", demo_acs, year = 2019) %>% mutate(year = 2019),
-      get_acs("state", demo_acs, year = 2019) %>% mutate(year = 2019),
-      get_acs("congressional district", demo_acs, year = 2019) %>% mutate(year = 2019),
-      get_acs("us", demo_acs, year = 2018) %>% mutate(year = 2018),
-      get_acs("state", demo_acs, year = 2018) %>% mutate(year = 2018),
-      get_acs("congressional district", demo_acs, year = 2018) %>% mutate(year = 2018)
+      tidycensus::get_decennial("us", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
+      tidycensus::get_decennial("state", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
+      tidycensus::get_decennial("congressional district", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
+      tidycensus::get_acs("us", demo_acs, year = 2019) %>% mutate(year = 2019),
+      tidycensus::get_acs("state", demo_acs, year = 2019) %>% mutate(year = 2019),
+      tidycensus::get_acs("congressional district", demo_acs, year = 2019) %>% mutate(year = 2019),
+      tidycensus::get_acs("us", demo_acs, year = 2018) %>% mutate(year = 2018),
+      tidycensus::get_acs("state", demo_acs, year = 2018) %>% mutate(year = 2018),
+      tidycensus::get_acs("congressional district", demo_acs, year = 2018) %>% mutate(year = 2018)
     )
   
   # summarise demographic data
@@ -1132,7 +1131,6 @@ test_weight_map %>%
 #     add in similarities based on race data
 # 
 #   save similarities to csv
-#     (you don't need to call the tidycensus API each time...)
 #     remove library(tidycensus) & replace API calls with tidycensus::_function_here_()
 #
 #   add new feature infer_to_from
