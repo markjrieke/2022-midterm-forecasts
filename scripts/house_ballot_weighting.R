@@ -20,63 +20,83 @@ doParallel::registerDoParallel(clusters)
 # wrangle house_polls ----
 
 # read in data
-house_polls <-
-  read_csv("data/polls/src/fte/house_polls_historical.csv")
+polls <- 
+  bind_rows(read_csv("data/polls/src/fte/house_polls_historical.csv") %>% mutate(race = "House"),
+            read_csv("data/polls/src/fte/senate_polls_historical.csv") %>% mutate(race = "Senate"), 
+            read_csv("data/polls/src/fte/governor_polls_historical.csv") %>% mutate(race = "Governor"))
 
-# initial col selection & light wrangle
-house_polls <- 
-  house_polls %>%
-  select(question_id, 
-         cycle, 
-         state, 
-         end_date, 
-         display_name, 
-         sample_size, 
-         population_full,
-         methodology, 
-         seat_name, 
-         candidate_name, 
-         candidate_party, 
-         pct) %>%
-  rename(pollster = display_name,
+# initial col selection & renaming
+polls <- 
+  polls %>%
+  select(question_id,
+         cycle,
+         race,
+         state,
+         end_date,
+         pollster = display_name,
+         sample_size,
          population = population_full,
-         seat = seat_name) %>%
+         methodology,
+         seat = seat_name,
+         candidate_name,
+         candidate_party,
+         pct) %>%
+  
+  # impute median sample size for NA
+  mutate(sample_size = if_else(is.na(sample_size), median(.$sample_size, na.rm = TRUE), sample_size)) %>%
+  
+  # replace nas
   mutate(methodology = replace_na(methodology, "Unknown"),
-         pct = pct/100,
+         population = replace_na(population, "Unknown")) %>%
+  
+  # remedy seats, remove puerto rico
+  mutate(seat = if_else(race == "Governor", "Governor", seat),
+         seat = paste(state, seat)) %>%
+  filter(state != "Puerto Rico") %>%
+  
+  # col type fix
+  mutate(pct = pct/100,
          end_date = mdy(end_date)) %>%
-  filter(!is.na(sample_size),
-         state != "Puerto Rico") %>%
-  mutate(seat = paste(state, seat)) 
-
-# get list of top candidates from each party
-# this will let us use the two-party voteshare for major candidates
-#
-# should note that if two candidates have the same name, or if a candidate loses
-# one year then runs another year in a different election, this might cause some 
-# issues, but a quick check shows that it doesn't for this training set. 
-candidates <- 
-  house_polls %>%
-  group_by(question_id) %>%
-  slice_max(pct, n = 2) %>%
-  ungroup() %>%
-  filter(candidate_party != "REF") %>%
-  bind_cols(counter = 1) %>%
+  
+  # fix specific candidate parties
+  mutate(candidate_party = if_else(candidate_name %in% c("Angus S. King Jr.", "Ricky Dale Harrington", "Bernard Sanders"),
+                                   "DEM",
+                                   candidate_party)) %>%
+  
+  # fix split ticket issue w/GA Special election
+  filter(!candidate_name %in% c("Matt Lieberman", "Doug Collins")) %>%
+  
+  # select only top DEM & REP candidates from each poll
+  filter(candidate_party %in% c("DEM", "REP")) %>%
   group_by(question_id, candidate_party) %>%
   slice_max(pct, n = 1) %>%
   ungroup() %>%
-  distinct(candidate_name) %>%
-  pull(candidate_name)
-
-# wrangle polls to wide format
-house_polls <-
-  house_polls %>%
-  filter(candidate_name %in% candidates) %>%
+    
+  # if poll was between two D's/two R's, toss
+  group_by(question_id) %>%
+  mutate(n = 1,
+         n_parties = sum(n)) %>%
+  ungroup() %>%
+  filter(n_parties != 1) %>%
+  select(-n, -n_parties) %>%
+    
+  # reformat frame to wide
   pivot_wider(names_from = candidate_party,
               values_from = c(pct, candidate_name)) %>%
-  mutate(across(starts_with("candidate"), ~replace_na(.x, "Unopposed")),
-         across(starts_with("pct"), ~replace_na(.x, 0))) %>%
   select(-question_id) %>%
-  relocate(starts_with("candidate"), .after = state) 
+  select(cycle,
+         race,
+         state,
+         candidate_name_DEM,
+         candidate_name_REP,
+         end_date,
+         pollster,
+         sample_size,
+         population,
+         methodology,
+         seat,
+         pct_DEM,
+         pct_REP)
   
 # pull in national polls
 national_polls <-
@@ -93,14 +113,18 @@ national_polls <-
          methodology,
          pct_DEM = dem,
          pct_REP = rep) %>%
-  mutate(state = "United States",
+  mutate(race = "House",
+         state = "United States",
          candidate_name_DEM = "Generic DEM",
          candidate_name_REP = "Generic REP",
          end_date = mdy(end_date),
          seat = "United States",
          pct_DEM = pct_DEM/100,
-         pct_REP = pct_REP/100) %>%
+         pct_REP = pct_REP/100,
+         methodology = replace_na(methodology, "Unknown"),
+         sample_size = if_else(is.na(sample_size), median(.$sample_size, na.rm = TRUE), sample_size)) %>%
   select(cycle,
+         race,
          state,
          candidate_name_DEM,
          candidate_name_REP,
@@ -114,24 +138,18 @@ national_polls <-
          pct_REP)
 
 # merge all house polls together
-house_polls <- 
+polls <- 
   bind_rows(
-    house_polls,
+    polls,
     national_polls
   )
 
 # clean up environment
 rm(national_polls)
 
-# mend nas
-house_polls <- 
-  house_polls %>%
-  mutate(methodology = replace_na(methodology, "Unknown")) %>%
-  drop_na()
-
 # get list of pollsters who have conducted at least 1% of polls
 pollsters <- 
-  house_polls %>%
+  polls %>%
   percent(pollster) %>%
   arrange(desc(pct)) %>%
   filter(pct > 0.01) %>%
@@ -139,15 +157,15 @@ pollsters <-
 
 # get list of methodologies that makeup at least 1% of polls
 methods <- 
-  house_polls %>%
+  polls %>%
   percent(methodology) %>%
   arrange(desc(pct)) %>%
   filter(pct > 0.01) %>%
   pull(methodology)
 
 # replace pollsters/methodologies that aren't used regularly with "Other", mutate to dem2pv
-house_polls <- 
-  house_polls %>%
+polls <- 
+  polls %>%
   mutate(pollster = if_else(pollster %in% pollsters, pollster, "Other Pollster"),
          methodology = if_else(methodology %in% methods, methodology, "Other Method")) %>%
   mutate(dem2pv = pct_DEM/(pct_DEM + pct_REP)) %>%
