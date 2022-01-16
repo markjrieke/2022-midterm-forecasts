@@ -244,6 +244,10 @@ demographics <-
   mutate(region = recode) %>%
   select(-recode)
 
+# save demographics tibble
+demographics %>%
+  write_csv("data/models/midterm_model/demographics.csv")
+
 # determine similarity scores ---
 
 # function for calculating similarity scores given one congressional district
