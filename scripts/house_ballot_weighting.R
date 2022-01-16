@@ -406,23 +406,26 @@ house_average <- function(.data,
 }
 
 # return a tibble with a target district's similarity score to each poll
-target_district <- function(target, target_cycle) {
+target_region <- function(target_race, target, target_cycle) {
   
   # get to just that cycle's polls
   target_polls <-
-    house_polls %>%
+    polls %>%
     filter(cycle == target_cycle)
   
   # get to just that target/cycle's comparison list
   target_similarities <-
-    district_similarities %>%
+    region_similarities %>%
     filter(region == target,
            year == target_cycle)
   
-  # return the polls for that cycle augmented w/the target region's similarity score
+  # return the polls for that cycle augmented w/the target region's similarity score, 
+  # as well as the to_from col
   target_polls <- 
     target_polls %>%
-    left_join(target_similarities, by = c("seat" = "comparison")) %>%
+    mutate(infer_to_from = paste(target_race, race, sep = "-"),
+           comparison = if_else(race == "House", seat, state)) %>%
+    left_join(target_similarities, by = "comparison") %>%
     select(-year, -region)
   
   return(target_polls)
@@ -551,7 +554,7 @@ pull_bound <- function(variable_name, type) {
 # pass try_list for date_weight
 pass_date_weight <- function(cycle, district, begin_date, end_date, date_weight) {
   
-  target_district(district, cycle) %>%
+  target_region(district, cycle) %>%
     house_average(begin_date,
                   end_date,
                   pull_pollster_weights(variable_weights),
@@ -566,7 +569,7 @@ pass_date_weight <- function(cycle, district, begin_date, end_date, date_weight)
 # pass try_list for sample_weight
 pass_sample_weight <- function(cycle, district, begin_date, end_date, sample_weight) {
   
-  target_district(district, cycle) %>%
+  target_region(district, cycle) %>%
     house_average(begin_date,
                   end_date,
                   pull_pollster_weights(variable_weights),
@@ -581,7 +584,7 @@ pass_sample_weight <- function(cycle, district, begin_date, end_date, sample_wei
 # pass try_list for similarity_weight
 pass_similarity_weight <- function(cycle, district, begin_date, end_date, similarity_weight) {
   
-  target_district(district, cycle) %>%
+  target_region(district, cycle) %>%
     house_average(begin_date, 
                   end_date,
                   pull_pollster_weights(variable_weights),
@@ -596,7 +599,7 @@ pass_similarity_weight <- function(cycle, district, begin_date, end_date, simila
 # pass try_list for pollster weight
 pass_pollster_weight <- function(pollster, cycle, district, begin_date, end_date, pollster_weight) {
   
-  target_district(district, cycle) %>%
+  target_region(district, cycle) %>%
     house_average(begin_date, 
                   end_date,
                   pull_try_weight(pollster, pollster_weight, "pollster"),
@@ -614,7 +617,7 @@ pass_pollster_offset <- function(pollster, cycle, district, begin_date, end_date
   # create pollster offset var
   offset <- paste(pollster, "Offset")
   
-  target_district(district, cycle) %>%
+  target_region(district, cycle) %>%
     house_average(begin_date, 
                   end_date,
                   pull_try_weight(offset, pollster_offset, "pollster"),
@@ -629,7 +632,7 @@ pass_pollster_offset <- function(pollster, cycle, district, begin_date, end_date
 # pass try_list for population weight
 pass_population_weight <- function(population, cycle, district, begin_date, end_date, population_weight) {
   
-  target_district(district, cycle) %>%
+  target_region(district, cycle) %>%
     house_average(begin_date, 
                   end_date,
                   pull_pollster_weights(variable_weights),
@@ -644,7 +647,7 @@ pass_population_weight <- function(population, cycle, district, begin_date, end_
 # pass try_list for methodology weight
 pass_methodology_weight <- function(methodology, cycle, district, begin_date, end_date, methodology_weight) {
   
-  target_district(district, cycle) %>%
+  target_region(district, cycle) %>%
     house_average(begin_date, 
                   end_date,
                   pull_pollster_weights(variable_weights),
@@ -1089,7 +1092,7 @@ update_date_weight <- function(district, cycle) {
     
 }
 
-target_district("Ohio District 4", 2020) %>%
+target_region("Ohio District 4", 2020) %>%
   house_average(ymd("2018-11-07"),
                 ymd("2020-11-04"),
                 pull_pollster_weights(variable_weights),
@@ -1130,8 +1133,7 @@ test_weight_map %>%
 #   add in senate/gubernatorial polls
 #     add in similarities based on race data
 # 
-#   save similarities to csv
-#     remove library(tidycensus) & replace API calls with tidycensus::_function_here_()
+#   remove dependencies on begin_date (taken care of by target_region)
 #
 #   add new feature infer_to_from
 #     i.e., if you're predicting a senate seat and adding a house poll, add senate_house
