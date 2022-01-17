@@ -345,7 +345,7 @@ historical_results <-
   # reformat frame w/dem2pv
   mutate(region = paste(state, seat),
          dem2pv = dem_votes/(dem_votes + rep_votes)) %>%
-  select(cycle, region, dem2pv)
+  select(cycle, race, region, dem2pv)
 
 #################### HOUSE POLL AGGREGATOR FUNCTION ####################
 
@@ -809,14 +809,20 @@ vectorize_weights <- function(variable_name) {
 # create list of variables to pass to update functions
 create_try_list <- function(variable_name) {
   
+  # create vector of races
+  races <-
+    historical_results %>%
+    pull(race) %>%
+    rep(5)
+  
   # create vector of cycles
   cycles <- 
     historical_results %>%
     pull(cycle) %>%
     rep(5)
   
-  # create vector of districts
-  districts <- 
+  # create vector of regions
+  regions <- 
     historical_results %>%
     pull(region) %>%
     rep(5)
