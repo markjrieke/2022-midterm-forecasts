@@ -468,7 +468,7 @@ pull_sample_weight <- function() {
 pull_population_weights <- function(.data) {
   
   .data %>%
-    filter(variable %in% c("rv", "lv", "a", "v")) %>%
+    filter(variable %in% c("rv", "lv", "a", "v", "Unknown")) %>%
     select(variable, weight) %>%
     rename(population = variable,
            population_weight = weight)
@@ -734,7 +734,7 @@ initialize_weights <- function() {
            next_upper = 1),
     
     # population weights
-    tibble(variable = c("rv", "lv", "a", "v"),
+    tibble(variable = c("rv", "lv", "a", "v", "Unknown"),
            weight = 1,
            next_lower = 0,
            next_upper = 1),
@@ -1183,6 +1183,48 @@ test_weight_map %>%
   select(weight,
          est = dem2pv.x,
          act = dem2pv.y)
+
+test_polls <- 
+  target_region("House", "Ohio District 4", 2018) 
+
+test_polls %>%
+  filter(end_date <= ymd("2018-11-06"),
+         end_date >= ymd("2016-11-04")) %>%
+  left_join(pull_pollster_weights(variable_weights), by = "pollster") %>%
+  mutate(dem2pv = dem2pv + pollster_offset,
+         dem_votes = round(dem2pv * sample_size),
+         rep_votes = round((1-dem2pv) * sample_size)) %>%
+  select(-pollster_offset) %>% 
+  mutate(sample_weight = log10(sample_size) * 0.75) %>%
+  left_join(pull_population_weights(variable_weights), by = "population") %>% 
+  left_join(pull_methodology_weights(variable_weights), by = "methodology") %>%
+  mutate(similarity = similarity ^ 0.2) %>%
+  left_join(pull_infer_weights(variable_weights), by = "infer_to_from") %>%
+  select(-infer_to_from) %>%
+  mutate(days_diff = as.numeric(ymd("2016-11-04") - end_date) + 1,
+         weeks_diff = days_diff/7,
+         date_weight = 0.75 ^ weeks_diff) %>%
+  select(-days_diff, -weeks_diff) %>%
+  mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * 1,
+         beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * 1) %>%
+  filter(is.na(alpha)) %>% view()
+  
+  summarise(alpha = sum(alpha) + 1,
+            beta = sum(beta) + 1)
+  view()
+
+test_polls %>%
+  poll_average(ymd("2016-11-04"),
+               ymd("2018-11-06"),
+               pull_pollster_weights(variable_weights),
+               pull_sample_weight(),
+               pull_population_weights(variable_weights),
+               pull_methodology_weights(variable_weights),
+               pull_similarity_weight(),
+               pull_infer_weights(variable_weights),
+               pull_date_weight())
+
+pass_date_weight("Senate", 2018, "Texas", ymd("2016-11-04"), ymd("2018-11-06"), 0.6)
 
 #################### notes ####################
 
