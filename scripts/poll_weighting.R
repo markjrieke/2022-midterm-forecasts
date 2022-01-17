@@ -1169,14 +1169,14 @@ update_date_weight <- function() {
 update_sample_weight <- function() {
   
   # do not evaluate if weight is final
-  if (check_suggestion("sample_weight") == "final") {
+  if (check_suggestion("sample_size") == "final") {
     
-    message("sample_weight marked as final and will not be updated.")
+    message("sample_size marked as final and will not be updated.")
     
   } else {
     
     # create a try list to pass to passer function
-    try_list <- create_try_list("sample_weight")
+    try_list <- create_try_list("sample_size")
     
     # map inputs to passer function
     weight_map <-
@@ -1185,7 +1185,33 @@ update_sample_weight <- function() {
     
     # update tables
     weight_map %>%
-      update_tables("sample_weight", try_list)
+      update_tables("sample_size", try_list)
+    
+  }
+  
+}
+
+# update similarity_weight
+update_similarity_weight <- function() {
+  
+  # do not evaluate if weight is final
+  if (check_suggestion("similarity_weight") == "final") {
+    
+    message("similarity_weight marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list("similarity_weight")
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_map_dfr(~pass_similarity_weight(..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables("similarity_weight", try_list)
     
   }
   
