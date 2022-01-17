@@ -349,17 +349,17 @@ historical_results <-
 
 #################### HOUSE POLL AGGREGATOR FUNCTION ####################
 
-house_average <- function(.data,
-                          begin_date,
-                          final_date,
-                          pollster_weight,
-                          sample_weight,
-                          population_weight,
-                          method_weight,
-                          similarity_weight,
-                          infer_weight,
-                          date_weight,
-                          downweight = 1) {
+poll_average <- function(.data,
+                         begin_date,
+                         final_date,
+                         pollster_weight,
+                         sample_weight,
+                         population_weight,
+                         method_weight,
+                         similarity_weight,
+                         infer_weight,
+                         date_weight,
+                         downweight = 1) {
   
   .data %>%
     
@@ -572,110 +572,133 @@ pull_bound <- function(variable_name, type) {
 #################### PASSER FUNCTIONS ####################
 
 # pass try_list for date_weight
-pass_date_weight <- function(cycle, district, begin_date, end_date, date_weight) {
+pass_date_weight <- function(race, cycle, region, begin_date, end_date, date_weight) {
   
-  target_region(district, cycle) %>%
-    house_average(begin_date,
-                  end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  date_weight)
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date,
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 date_weight)
   
 }
 
 # pass try_list for sample_weight
-pass_sample_weight <- function(cycle, district, begin_date, end_date, sample_weight) {
+pass_sample_weight <- function(race, cycle, region, begin_date, end_date, sample_weight) {
   
-  target_region(district, cycle) %>%
-    house_average(begin_date,
-                  end_date,
-                  pull_pollster_weights(variable_weights),
-                  sample_weight,
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date,
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 sample_weight,
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight())
   
 }
 
 # pass try_list for similarity_weight
-pass_similarity_weight <- function(cycle, district, begin_date, end_date, similarity_weight) {
+pass_similarity_weight <- function(race, cycle, region, begin_date, end_date, similarity_weight) {
   
-  target_region(district, cycle) %>%
-    house_average(begin_date, 
-                  end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  similarity_weight,
-                  pull_date_weight())
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date, 
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 similarity_weight,
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight())
   
 }
 
 # pass try_list for pollster weight
-pass_pollster_weight <- function(pollster, cycle, district, begin_date, end_date, pollster_weight) {
+pass_pollster_weight <- function(pollster, race, cycle, region, begin_date, end_date, pollster_weight) {
   
-  target_region(district, cycle) %>%
-    house_average(begin_date, 
-                  end_date,
-                  pull_try_weight(pollster, pollster_weight, "pollster"),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date, 
+                 end_date,
+                 pull_try_weight(pollster, pollster_weight, "pollster"),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight())
   
 }
 
 # pass try_list for pollster offset
-pass_pollster_offset <- function(pollster, cycle, district, begin_date, end_date, pollster_offset) {
+pass_pollster_offset <- function(pollster, race, cycle, region, begin_date, end_date, pollster_offset) {
   
   # create pollster offset var
   offset <- paste(pollster, "Offset")
   
-  target_region(district, cycle) %>%
-    house_average(begin_date, 
-                  end_date,
-                  pull_try_weight(offset, pollster_offset, "pollster"),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date, 
+                 end_date,
+                 pull_try_weight(offset, pollster_offset, "pollster"),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight())
   
 }
 
 # pass try_list for population weight
-pass_population_weight <- function(population, cycle, district, begin_date, end_date, population_weight) {
+pass_population_weight <- function(population, race, cycle, region, begin_date, end_date, population_weight) {
   
-  target_region(district, cycle) %>%
-    house_average(begin_date, 
-                  end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_try_weight(population, population_weight, "population"),
-                  pull_methodology_weights(variable_weights),
-                  pull_similarity_weight(),
-                  pull_date_weight())
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date, 
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_try_weight(population, population_weight, "population"),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight())
   
 }
 
 # pass try_list for methodology weight
-pass_methodology_weight <- function(methodology, cycle, district, begin_date, end_date, methodology_weight) {
+pass_methodology_weight <- function(methodology, race, cycle, region, begin_date, end_date, methodology_weight) {
   
-  target_region(district, cycle) %>%
-    house_average(begin_date, 
-                  end_date,
-                  pull_pollster_weights(variable_weights),
-                  pull_sample_weight(),
-                  pull_population_weights(variable_weights),
-                  pull_try_weight(methodology, methodology_weight, "methodology"),
-                  pull_similarity_weight(),
-                  pull_date_weight())
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date, 
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_try_weight(methodology, methodology_weight, "methodology"),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights), 
+                 pull_date_weight())
+  
+}
+
+# pass try_list for infer_to_from weight
+pass_infer_weight <- function(infer_to_from, race, cycle, region, begin_date, end_date, infer_to_from_weight) {
+  
+  target_region(race, region, cycle) %>%
+    poll_average(begin_date,
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_try_weight(infer_to_from, infer_to_from_weight, "infer_to_from"),
+                 pull_date_weight())
   
 }
 
