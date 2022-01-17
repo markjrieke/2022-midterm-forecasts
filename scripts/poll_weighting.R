@@ -1036,8 +1036,9 @@ initialize_rmse <- function() {
   
   # create try list to pass to passer function
   try_list <-
-    list(cycle = results$cycle,
-         district = results$region,
+    list(race = results$race,
+         cycle = results$cycle,
+         region = results$region,
          begin_date = results$begin_date,
          end_date = results$end_date,
          weight = rep(1, results %>% nrow()))
@@ -1048,7 +1049,7 @@ initialize_rmse <- function() {
   
   baseline <-
     try_list %>%
-    future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4, ..5))
+    future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4, ..5, ..6))
   
   tictoc::toc()
   
@@ -1193,10 +1194,20 @@ test_map %>%
             race = test_try$race, 
             region = test_try$region,
             weight = test_try$weight) %>%
-  filter(is.na(dem2pv)) %>%
+  filter(is.na(dem2pv)) #%>%
   distinct(cycle, race, region) %>% 
   view()
 
+test_map %>%
+  bind_results(test_try) %>%
+  group_by(weight) %>%
+  nest() %>%
+  mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
+  unnest(rmse) %>%
+  ungroup() %>%
+  rowid_to_column() %>%
+  select(rowid, weight, .estimate) %>%
+  rename(rmse = .estimate) %>% view()
 
 
 demographics %>% 
@@ -1236,6 +1247,7 @@ test_polls %>%
                pull_date_weight())
 
 pass_date_weight("Senate", 2018, "Texas", ymd("2016-11-04"), ymd("2018-11-06"), 0.6)
+
 
 #################### notes ####################
 
