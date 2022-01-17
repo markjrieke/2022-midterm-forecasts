@@ -1297,6 +1297,31 @@ update_population_weight <- function(population) {
   
 }
 
+# update a methodology's weight
+update_methodology_weight <- function(methodology) {
+  
+  if (check_suggestion(methodology) == "final") {
+    
+    message(paste(methodology, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list(methodology)
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_methodology_weight(methodology, ..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables(methodology, try_list)
+    
+  }
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 
