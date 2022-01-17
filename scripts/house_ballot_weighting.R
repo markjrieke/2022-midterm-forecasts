@@ -499,6 +499,17 @@ pull_similarity_weight <- function() {
   
 }
 
+# pull infer_to_from weight
+pull_infer_weight <- function(.data) {
+  
+  .data %>%
+    filter(str_detect(variable, "-")) %>%
+    select(variable, weight) %>%
+    rename(infer_to_from = variable,
+           infer_to_from_weight = weight)
+  
+}
+
 # util function to create a temporary tibble replacing the current weight with a "try" weight
 pull_try_weight <- function(variable_name, new_weight, type) {
   
