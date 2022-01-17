@@ -1207,7 +1207,7 @@ update_similarity_weight <- function() {
     # map inputs to passer function
     weight_map <-
       try_list %>%
-      future_map_dfr(~pass_similarity_weight(..1, ..2, ..3, ..4, ..5, ..6))
+      future_pmap_dfr(~pass_similarity_weight(..1, ..2, ..3, ..4, ..5, ..6))
     
     # update tables
     weight_map %>%
@@ -1217,8 +1217,46 @@ update_similarity_weight <- function() {
   
 }
 
+# update an individual pollster's weight
+update_pollster_weight <- function(pollster) {
+  
+  # do not evaluate if weight is final
+  if (check_suggestion(pollster) == "final") {
+    
+    message(paste(pollster, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list(pollster)
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_pollster_weight(pollster, ..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables(pollster, try_list)
+    
+  }
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
+
+polls %>%
+  filter(cycle == 2019)
+
+test_list <- create_try_list("date_weight")
+
+test_list %>%
+  target_region(..1, ..3, ..2)
+
+test_list$cycle %>%
+  as_tibble() %>%
+  count(value)
 
 
 
