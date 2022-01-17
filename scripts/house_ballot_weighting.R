@@ -706,6 +706,20 @@ initialize_weights <- function() {
     tibble(variable = "similarity_weight",
            weight = 1,
            next_lower = 0,
+           next_upper = 1),
+    
+    # add infer_to_from weight
+    tibble(variable = c("House-House",
+                        "House-Senate",
+                        "House-Governor",
+                        "Senate-Senate",
+                        "Senate-House",
+                        "Senate-Governor",
+                        "Governor-Governor",
+                        "Governor-House",
+                        "Governor-Senate"),
+           weight = 1,
+           next_lower = 0,
            next_upper = 1)
     
   ) %>%
