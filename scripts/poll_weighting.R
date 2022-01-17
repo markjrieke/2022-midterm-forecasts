@@ -1272,6 +1272,31 @@ update_pollster_offset <- function(pollster) {
   
 }
 
+# update a population's weight
+update_population_weight <- function(population) {
+  
+  if(check_suggestion(population) == "final") {
+    
+    message(paste(population, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list(population)
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_population_weight(population, ..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables(population, try_list)
+    
+  }
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 
