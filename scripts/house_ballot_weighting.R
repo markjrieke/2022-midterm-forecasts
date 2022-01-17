@@ -500,7 +500,7 @@ pull_similarity_weight <- function() {
 }
 
 # pull infer_to_from weight
-pull_infer_weight <- function(.data) {
+pull_infer_weights <- function(.data) {
   
   .data %>%
     filter(str_detect(variable, "-")) %>%
@@ -531,9 +531,13 @@ pull_try_weight <- function(variable_name, new_weight, type) {
     
     pulled_tibble <- new_weight_tibble %>% pull_population_weights()
     
-  } else {
+  } else if (type == "methodology") {
     
     pulled_tibble <- new_weight_tibble %>% pull_methodology_weights()
+    
+  } else {
+    
+    pulled_tibble <- new_weight_tibble %>% pull_infer_weights()
     
   }
   
