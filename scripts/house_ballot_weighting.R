@@ -850,7 +850,7 @@ create_try_list <- function(variable_name) {
   # create try list
   try_list <-
     list(cycle = cycles,
-         district = districts,
+         region = regions,
          begin_date = begin_dates,
          end_date = end_dates,
          weight = weights)
