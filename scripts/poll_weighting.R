@@ -1137,39 +1137,9 @@ update_tables <- function(.data, variable_name, input_list) {
     
 }
 
-# util function for determining end_date based on cycle
-assign_end_date <- function(cycle) {
-  
-  if (cycle == 2018) {
-    
-    end_date <- ymd("2018-11-06")
-    
-  } else {
-    
-    end_date <- ymd("2018-11-03")
-    
-  }
-  
-  return(end_date)
-  
-}
-
 #################### UPDATE FUNCTIONS ####################
 
 update_date_weight <- function(region, cycle) {
-  
-  
-  
-}
-
-#################### TESTING ZONG MY GUY ####################
-
-
-# update date_weight
-update_date_weight <- function(district, cycle) {
-  
-  # get the end date based on cycle
-  end_date <- assign_end_date(cycle)
   
   # do not evaluate if weight is final
   if (check_suggestion("date_weight") == "final") {
@@ -1180,21 +1150,26 @@ update_date_weight <- function(district, cycle) {
     
     # create a try list to pass to passer function
     try_list <- create_try_list("date_weight")
-      
-    # map inputs to passer function
-    try_list %>%
-      future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
-      
-      # update rmse & variable weight tables
-      
-      
-  }
     
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables("date_weight", try_list)
+    
+  }
+  
 }
 
+#################### TESTING ZONG MY GUY ####################
 
 
-variable_weights <- initialize_weights()
+
+
+initialize_tables()
 
 test_try <- create_try_list("Senate-Governor")
 
@@ -1206,8 +1181,12 @@ test_map <-
 tictoc::toc()
 
 test_map %>%
-  bind_results(test_try) 
+  update_tables("Senate-Governor", test_try) 
 
+rmse_tracker
+
+variable_weights %>%
+  filter(variable == "Senate-Governor")
 
 
 pass_infer_weight("Senate-Governor", "House", 2018, "Rhode Island District 1", ymd("2016-11-04"), ymd("2018-11-06"), 0.75)
