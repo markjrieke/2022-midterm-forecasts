@@ -1139,7 +1139,8 @@ update_tables <- function(.data, variable_name, input_list) {
 
 #################### UPDATE FUNCTIONS ####################
 
-update_date_weight <- function(region, cycle) {
+# update date weight
+update_date_weight <- function() {
   
   # do not evaluate if weight is final
   if (check_suggestion("date_weight") == "final") {
@@ -1159,6 +1160,32 @@ update_date_weight <- function(region, cycle) {
     # update tables
     weight_map %>%
       update_tables("date_weight", try_list)
+    
+  }
+  
+}
+
+# update sample_weight
+update_sample_weight <- function() {
+  
+  # do not evaluate if weight is final
+  if (check_suggestion("sample_weight") == "final") {
+    
+    message("sample_weight marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list("sample_weight")
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_sample_weight(..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables("sample_weight", try_list)
     
   }
   
