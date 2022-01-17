@@ -240,11 +240,11 @@ if (completed == FALSE) {
            !str_detect(region, "Puerto Rico"))
   
   # recode region names
-  district_recodes <- read_csv("data/models/midterm_model/district_recodes.csv")
+  region_recodes <- read_csv("data/models/midterm_model/region_recodes.csv")
   
   demographics <- 
     demographics %>%
-    left_join(district_recodes, by = "region") %>%
+    left_join(region_recodes, by = "region") %>%
     mutate(region = recode) %>%
     select(-recode)
   
@@ -571,10 +571,21 @@ pull_bound <- function(variable_name, type) {
 
 #################### PASSER FUNCTIONS ####################
 
+# filter out strings in region to pass to passer fns
+pass_region <- function(region) {
+  
+  region %>%
+    str_remove(" Governor") %>%
+    str_remove(" Class III") %>%
+    str_remove(" Class II") %>%
+    str_remove(" Class I") 
+  
+}
+
 # pass try_list for date_weight
 pass_date_weight <- function(race, cycle, region, begin_date, end_date, date_weight) {
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date,
                  end_date,
                  pull_pollster_weights(variable_weights),
@@ -590,7 +601,7 @@ pass_date_weight <- function(race, cycle, region, begin_date, end_date, date_wei
 # pass try_list for sample_weight
 pass_sample_weight <- function(race, cycle, region, begin_date, end_date, sample_weight) {
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date,
                  end_date,
                  pull_pollster_weights(variable_weights),
@@ -606,7 +617,7 @@ pass_sample_weight <- function(race, cycle, region, begin_date, end_date, sample
 # pass try_list for similarity_weight
 pass_similarity_weight <- function(race, cycle, region, begin_date, end_date, similarity_weight) {
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
                  pull_pollster_weights(variable_weights),
@@ -622,7 +633,7 @@ pass_similarity_weight <- function(race, cycle, region, begin_date, end_date, si
 # pass try_list for pollster weight
 pass_pollster_weight <- function(pollster, race, cycle, region, begin_date, end_date, pollster_weight) {
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
                  pull_try_weight(pollster, pollster_weight, "pollster"),
@@ -641,7 +652,7 @@ pass_pollster_offset <- function(pollster, race, cycle, region, begin_date, end_
   # create pollster offset var
   offset <- paste(pollster, "Offset")
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
                  pull_try_weight(offset, pollster_offset, "pollster"),
@@ -657,7 +668,7 @@ pass_pollster_offset <- function(pollster, race, cycle, region, begin_date, end_
 # pass try_list for population weight
 pass_population_weight <- function(population, race, cycle, region, begin_date, end_date, population_weight) {
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
                  pull_pollster_weights(variable_weights),
@@ -673,7 +684,7 @@ pass_population_weight <- function(population, race, cycle, region, begin_date, 
 # pass try_list for methodology weight
 pass_methodology_weight <- function(methodology, race, cycle, region, begin_date, end_date, methodology_weight) {
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
                  pull_pollster_weights(variable_weights),
@@ -689,7 +700,7 @@ pass_methodology_weight <- function(methodology, race, cycle, region, begin_date
 # pass try_list for infer_to_from weight
 pass_infer_weight <- function(infer_to_from, race, cycle, region, begin_date, end_date, infer_to_from_weight) {
   
-  target_region(race, region, cycle) %>%
+  target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date,
                  end_date,
                  pull_pollster_weights(variable_weights),
@@ -1158,17 +1169,10 @@ update_date_weight <- function(district, cycle) {
 }
 
 
+
 variable_weights <- initialize_weights()
 
 test_try <- create_try_list("Senate-Governor")
-
-test_map %>%
-  select(dem2pv) %>%
-  bind_cols(cycle = test_try$cycle,
-            race = test_try$race,
-            region = test_try$region,
-            weight = test_try$weight) %>%
-  left_join(historical_results, by = c("cycle", "region"))
 
 plan(multisession, workers = 8)
 tictoc::tic()
@@ -1178,11 +1182,47 @@ test_map <-
 tictoc::toc()
 
 test_map %>%
-  bind_results(test_try)
+  bind_results(test_try) 
 
 
 
-(pass_infer_weight("Senate-Governor", "House", 2018, "Ohio District 4", ymd("2016-11-04"), ymd("2018-11-06"), 0.1))
+pass_infer_weight("Senate-Governor", "House", 2018, "Rhode Island District 1", ymd("2016-11-04"), ymd("2018-11-06"), 0.75)
+
+test_map %>%
+  bind_cols(cycle = test_try$cycle,
+            race = test_try$race, 
+            region = test_try$region,
+            weight = test_try$weight) %>%
+  filter(is.na(dem2pv)) %>%
+  distinct(cycle, race, region) %>% 
+  view()
+
+
+
+demographics %>% 
+  filter(str_detect(region, "Pennsylvania")) %>% view()
+
+  filter(cycle == 2018, 
+         race == "Senate",
+         region == "Arizona Class I")
+  
+
+
+
+test_map %>%
+  filter(is.na(dem2pv))
+   
+
+
+
+  
+  select(-date) %>%
+  pivot_wider(names_from = weight,
+              values_from = dem2pv,
+              values_fn = length) %>%
+  view()
+
+
 
 test_polls %>%
   poll_average(ymd("2016-11-04"),
