@@ -1137,8 +1137,6 @@ update_tables <- function(.data, variable_name, input_list) {
     
 }
 
-
-
 #################### TESTING ZONG MY GUY ####################
 
 
@@ -1305,6 +1303,9 @@ pass_date_weight("Senate", 2018, "Texas", ymd("2016-11-04"), ymd("2018-11-06"), 
 #   only looking at general election, not runoff
 #   doesn't include common features that definitely have signal (e.g., prez approval)
 #     due to lack of historical polling data (only 2 cycle's worth)
+#   only 2 cycles worth of data
+#     if there was over/under performance during these cycles, may throw model off
+#     e.g., 2018 was a "blue wave" & represents a good chunk of the training data
 
 # potential features:
 #   data currently available in repo:
