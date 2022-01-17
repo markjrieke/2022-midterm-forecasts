@@ -1243,6 +1243,35 @@ update_pollster_weight <- function(pollster) {
   
 }
 
+# update an individual pollster's offset
+update_pollster_offset <- function(pollster) {
+  
+  # create offset variable
+  offset <- paste(pollster, "Offset")
+  
+  # do not evaluate if offset is final
+  if (check_suggestion(offset) == "final") {
+    
+    message(paste(pollster, "Offset marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list(offset)
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_pollster_offset(pollster, ..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables(offset, try_list)
+    
+  }
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 
