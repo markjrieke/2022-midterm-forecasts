@@ -357,6 +357,7 @@ house_average <- function(.data,
                           population_weight,
                           method_weight,
                           similarity_weight,
+                          infer_weight,
                           date_weight,
                           downweight = 1) {
   
@@ -385,6 +386,10 @@ house_average <- function(.data,
     # apply similarity weight
     mutate(similarity = similarity ^ similarity_weight) %>%
     
+    # apply infer weight 
+    left_join(infer_weight, by = "infer_to_from") %>%
+    select(-infer_to_from) %>%
+    
     # apply date weight
     mutate(days_diff = as.numeric(final_date - end_date) + 1,
            weeks_diff = days_diff/7,
@@ -392,8 +397,8 @@ house_average <- function(.data,
     select(-days_diff, -weeks_diff) %>%
     
     # create individual poll weights
-    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * date_weight * downweight,
-           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * date_weight * downweight) %>%
+    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * downweight,
+           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * downweight) %>%
     
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
