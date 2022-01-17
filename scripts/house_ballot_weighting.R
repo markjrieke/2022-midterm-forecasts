@@ -868,11 +868,12 @@ bind_results <- function(.data, input_list) {
     
     # bind list to new cols
     bind_cols(cycle = input_list$cycle,
-              district = input_list$district,
+              race = input_list$race,
+              region = input_list$region,
               weight = input_list$weight) %>%
     
     # append with historical results
-    left_join(historical_results, by = c("cycle" = "cycle", "district" = "region")) %>%
+    left_join(historical_results, by = c("cycle", "region")) %>%
     select(weight,
            est = dem2pv.x,
            act = dem2pv.y)
@@ -1155,69 +1156,9 @@ update_date_weight <- function(district, cycle) {
     
 }
 
-target_region("Ohio District 4", 2020) %>%
-  house_average(ymd("2018-11-07"),
-                ymd("2020-11-04"),
-                pull_pollster_weights(variable_weights),
-                pull_sample_weight(),
-                pull_population_weights(variable_weights),
-                pull_methodology_weights(variable_weights),
-                pull_similarity_weight(),
-                pull_date_weight())
 
-pass_date_weight(2020, "Ohio District 4", ymd("2018-11-07"), ymd("2020-11-04"), 1)
+create_try_list("Senate-Governor")
 
-variable_weights <- initialize_weights()
-rmse_tracker <- initialize_rmse()
-
-
-test_try <- create_try_list("date_weight")
-
-test_weight_map <- 
-  test_try %>%
-  future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4))
-
-test_weight_map %>%
-  bind_results(test_try)
-
-test_weight_map %>%
-  select(dem2pv) %>%
-  bind_cols(cycle = test_try$cycle,
-            district = test_try$district,
-            weight = test_try$weight) %>%
-  left_join(historical_results, by = c("cycle" = "cycle", "district" = "region")) %>%
-  select(weight,
-         est = dem2pv.x,
-         act = dem2pv.y)
-
-test_polls <- 
-  target_region("House", "Ohio District 4", 2018) 
-
-test_polls %>%
-  filter(end_date <= ymd("2018-11-06"),
-         end_date >= ymd("2016-11-04")) %>%
-  left_join(pull_pollster_weights(variable_weights), by = "pollster") %>%
-  mutate(dem2pv = dem2pv + pollster_offset,
-         dem_votes = round(dem2pv * sample_size),
-         rep_votes = round((1-dem2pv) * sample_size)) %>%
-  select(-pollster_offset) %>% 
-  mutate(sample_weight = log10(sample_size) * 0.75) %>%
-  left_join(pull_population_weights(variable_weights), by = "population") %>% 
-  left_join(pull_methodology_weights(variable_weights), by = "methodology") %>%
-  mutate(similarity = similarity ^ 0.2) %>%
-  left_join(pull_infer_weights(variable_weights), by = "infer_to_from") %>%
-  select(-infer_to_from) %>%
-  mutate(days_diff = as.numeric(ymd("2016-11-04") - end_date) + 1,
-         weeks_diff = days_diff/7,
-         date_weight = 0.75 ^ weeks_diff) %>%
-  select(-days_diff, -weeks_diff) %>%
-  mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * 1,
-         beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * 1) %>%
-  filter(is.na(alpha)) %>% view()
-  
-  summarise(alpha = sum(alpha) + 1,
-            beta = sum(beta) + 1)
-  view()
 
 test_polls %>%
   poll_average(ymd("2016-11-04"),
