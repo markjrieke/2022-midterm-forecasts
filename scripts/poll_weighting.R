@@ -1347,6 +1347,104 @@ update_infer_weight <- function(infer_to_from) {
   
 }
 
+#################### CALLER FUNCTIONS ####################
+
+# util function for messaging user and calling update
+call_update_date <- function() {
+  
+  message("Updating `date_weight`.")
+  tictoc::tic()
+  update_date_weight()
+  tictoc::toc()
+  message("`date_weight` updated.")
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_sample <- function() {
+  
+  message("Updating `sample_size`.")
+  tictoc::tic()
+  update_sample_weight()
+  tictoc::toc()
+  message("`sample_size` updated.")
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_similarity <- function() {
+  
+  message("Updating `similarity_weight`.")
+  tictoc::tic()
+  update_similarity_weight()
+  tictoc::toc()
+  message("`similarity_weight` updated.")
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_pollster <- function(pollster) {
+  
+  message(paste("Updating", pollster, "weight."))
+  tictoc::tic()
+  update_pollster_weight(pollster)
+  tictoc::toc()
+  message(paste(pollster, "weight updated."))
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_offset <- function(pollster) {
+  
+  message(paste("Updating", pollster, "Offset."))
+  tictoc::tic()
+  update_pollster_offset(pollster)
+  tictoc::toc()
+  message(paste(pollster, "Offset updated."))
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_population <- function(population) {
+  
+  message(paste("Updating", population, "weight."))
+  tictoc::tic()
+  update_population_weight(population)
+  tictoc::toc()
+  message(paste(population, "weight updated."))
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_methodology <- function(methodology) {
+  
+  message(paste("Updating", methodology, "weight."))
+  tictoc::tic()
+  update_methodology_weight(methodology)
+  tictoc::toc()
+  message(paste(methodology, "weight updated."))
+  message()
+  
+}
+
+# util function for messaging user and calling update
+call_update_infer <- function(infer_to_from) {
+  
+  message(paste("Updating", infer_to_from, "weight."))
+  tictoc::tic()
+  update_infer_weight(infer_to_from)
+  tictoc::toc()
+  message(paste(infer_to_from, "weight updated."))
+  message()
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 
