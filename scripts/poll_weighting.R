@@ -849,7 +849,8 @@ create_try_list <- function(variable_name) {
   
   # create try list
   try_list <-
-    list(cycle = cycles,
+    list(race = races,
+         cycle = cycles,
          region = regions,
          begin_date = begin_dates,
          end_date = end_dates,
@@ -1157,8 +1158,31 @@ update_date_weight <- function(district, cycle) {
 }
 
 
-create_try_list("Senate-Governor")
+variable_weights <- initialize_weights()
 
+test_try <- create_try_list("Senate-Governor")
+
+test_map %>%
+  select(dem2pv) %>%
+  bind_cols(cycle = test_try$cycle,
+            race = test_try$race,
+            region = test_try$region,
+            weight = test_try$weight) %>%
+  left_join(historical_results, by = c("cycle", "region"))
+
+plan(multisession, workers = 8)
+tictoc::tic()
+test_map <-
+  test_try %>%
+  future_pmap_dfr(~pass_infer_weight("Senate-Governor",..1, ..2, ..3, ..4, ..5, ..6))
+tictoc::toc()
+
+test_map %>%
+  bind_results(test_try)
+
+
+
+(pass_infer_weight("Senate-Governor", "House", 2018, "Ohio District 4", ymd("2016-11-04"), ymd("2018-11-06"), 0.1))
 
 test_polls %>%
   poll_average(ymd("2016-11-04"),
