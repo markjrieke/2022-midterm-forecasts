@@ -45,8 +45,8 @@ polls <-
   mutate(sample_size = if_else(is.na(sample_size), median(.$sample_size, na.rm = TRUE), sample_size)) %>%
   
   # replace nas
-  mutate(methodology = replace_na(methodology, "Unknown"),
-         population = replace_na(population, "Unknown")) %>%
+  mutate(methodology = replace_na(methodology, "Unknown Method"),
+         population = replace_na(population, "Unknown Population")) %>%
   
   # remedy seats, remove puerto rico
   mutate(seat = if_else(race == "Governor", "Governor", seat),
@@ -120,7 +120,7 @@ national_polls <-
          seat = "United States",
          pct_DEM = pct_DEM/100,
          pct_REP = pct_REP/100,
-         methodology = replace_na(methodology, "Unknown"),
+         methodology = replace_na(methodology, "Unknown Method"),
          sample_size = if_else(is.na(sample_size), median(.$sample_size, na.rm = TRUE), sample_size)) %>%
   select(cycle,
          race,
@@ -347,6 +347,12 @@ historical_results <-
          dem2pv = dem_votes/(dem_votes + rep_votes)) %>%
   select(cycle, race, region, dem2pv)
 
+# inferred list
+infer_list <-
+  c("House-House", "House-Senate", "House-Governor",
+    "Senate-Senate", "Senate-House", "Senate-Governor",
+    "Governor-Governor", "Governor-House", "Governor-Senate")
+
 #################### HOUSE POLL AGGREGATOR FUNCTION ####################
 
 poll_average <- function(.data,
@@ -468,7 +474,7 @@ pull_sample_weight <- function() {
 pull_population_weights <- function(.data) {
   
   .data %>%
-    filter(variable %in% c("rv", "lv", "a", "v", "Unknown")) %>%
+    filter(variable %in% c("rv", "lv", "a", "v", "Unknown Population")) %>%
     select(variable, weight) %>%
     rename(population = variable,
            population_weight = weight)
@@ -745,7 +751,7 @@ initialize_weights <- function() {
            next_upper = 1),
     
     # population weights
-    tibble(variable = c("rv", "lv", "a", "v", "Unknown"),
+    tibble(variable = c("rv", "lv", "a", "v", "Unknown Population"),
            weight = 1,
            next_lower = 0,
            next_upper = 1),
@@ -1442,6 +1448,101 @@ call_update_infer <- function(infer_to_from) {
   tictoc::toc()
   message(paste(infer_to_from, "weight updated."))
   message()
+  
+}
+
+#################### UPDATE ALL FUNCTION ####################
+
+update_all <- function() {
+  
+  # determine if you want to start from scratch or read in progress
+  message("Do you want to initialize a new baseline or read-in current progress?")
+  message("[1] Initialize a new baseline")
+  message("[2] Read in current progress")
+  response <- readline()
+  message()
+  
+  # ask if sure! (don't want to reset progress accidentally!!!)
+  if (response == 1) {
+    
+    message("Are you sure you want to initialize a new baseline? This will lose any progress made.")
+    message("If you are sure, please type `Initialize new baseline`")
+    response <- readline()
+    message()
+    
+    # init new baseline if sure; return to console if not
+    if (response == "Initialize new baseline") {
+      
+      message("Initializing new baseline for `variable_weights` and `rmse_tracker`.")
+      message("This may take a few minutes.")
+      message()
+      
+      # initialize weights rmse tracker
+      initialize_tables()
+      
+    } else {
+      
+      message("Update aborted.")
+      return()
+      
+    }
+    
+  } else {
+    
+    message("Reading in weights and rmse tracker...")
+    message()
+    
+    # <<- interact with global environment
+    variable_weights <<- read_csv("data/models/midterm_model/variable_weights.csv")
+    rmse_tracker <<- read_csv("data/models/midterm_model/rmse_tracker.csv")
+    
+  }
+  
+  # determine the number of updates to be made
+  num_updates <-
+    variable_weights %>%
+    count(search_suggestion) %>%
+    filter(search_suggestion == "not final") %>%
+    pull(n)
+  
+  # determine the approximate runtime (~120s per variable, added buffer time)
+  runtime <- num_updates * 2
+  
+  # ask to proceed
+  message(paste("Updating all variable weights will take approximately", runtime, "minutes."))
+  message("Do you want to continue? (y/n)")
+  response <- readline()
+  
+  message()
+  
+  # abort if N/n
+  if (str_to_lower(response) == "n") {
+    
+    message("Update aborted.")
+    message()
+    
+  } else {
+    
+    # setup futures
+    message("Setting up multisession workers")
+    plan(multisession, workers = 8)
+    message()
+    
+    # update all variables
+    call_update_date()
+    infer_list %>% walk(call_update_infer)
+    call_update_similarity()
+    call_update_sample()
+    c(pollsters, "Other Pollster") %>% walk(call_update_pollster)
+    c(pollsters, "Other Pollster") %>% walk(call_update_offset)
+    c("rv", "lv", "a", "v", "Unknown Population") %>% walk(call_update_population)
+    c(methods, "Other Method") %>% walk(call_update_methodology)
+    
+    # write updates to data/models
+    variable_weights %>% write_csv("data/models/midterm_model/variable_weights.csv")
+    rmse_tracker %>% write_csv("data/models/midterm_model/rmse_tracker.csv")
+    
+  }
   
 }
 
