@@ -1137,6 +1137,31 @@ update_tables <- function(.data, variable_name, input_list) {
     
 }
 
+# util function for determining end_date based on cycle
+assign_end_date <- function(cycle) {
+  
+  if (cycle == 2018) {
+    
+    end_date <- ymd("2018-11-06")
+    
+  } else {
+    
+    end_date <- ymd("2018-11-03")
+    
+  }
+  
+  return(end_date)
+  
+}
+
+#################### UPDATE FUNCTIONS ####################
+
+update_date_weight <- function(region, cycle) {
+  
+  
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 
@@ -1250,29 +1275,7 @@ pass_date_weight("Senate", 2018, "Texas", ymd("2016-11-04"), ymd("2018-11-06"), 
 #################### notes ####################
 
 # to-do:
-#   add in senate/gubernatorial polls
-#     add in similarities based on race data
-# 
 #   remove dependencies on begin_date (taken care of by target_region)
-#
-#   add new feature infer_to_from
-#     i.e., if you're predicting a senate seat and adding a house poll, add senate_house
-#     infer_to_from options
-#       senate_house
-#       senate_governor
-#       senate_senate
-#       house_senate
-#       house_governor
-#       house_house
-#       governor_house
-#       governor_senate
-#       governor_governor
-#     update fns() w/this 
-#       poll aggregator fn
-#       pull fn?
-#       initialize weights
-#       add passer
-#       create_try_list()? (or imputed elsewhere?)
 #
 #   train mean
 #     add update_x_weight() functions
@@ -1301,7 +1304,7 @@ pass_date_weight("Senate", 2018, "Texas", ymd("2016-11-04"), ymd("2018-11-06"), 
 #   similarity scores based only on race
 #   only looking at top D/R (e.g., Feinstein & Collins aren't in the model)
 #   only looking at general election, not runoff
-#   doesn't include common features that definitely have signal (e.g., prez approval)
+#   doesn't include common features that definitely have signal (e.g., gender, wages, prez approval)
 #     due to lack of historical polling data (only 2 cycle's worth)
 #   only 2 cycles worth of data
 #     if there was over/under performance during these cycles, may throw model off
