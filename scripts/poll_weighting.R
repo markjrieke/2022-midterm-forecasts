@@ -1322,6 +1322,31 @@ update_methodology_weight <- function(methodology) {
   
 }
 
+# update the inferred weight from other polls
+update_infer_weight <- function(infer_to_from) {
+  
+  if (check_suggestion(infer_to_from) == "final") {
+    
+    message(paste(infer_to_from, "marked as final and will not be updated."))
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list(infer_to_from) 
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_infer_weight(infer_to_from, ..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables(infer_to_from, try_list)
+    
+  }
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 
