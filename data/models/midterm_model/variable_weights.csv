@@ -30,32 +30,32 @@ SurveyUSA,1,0.5,1.5,final
 USC Dornsife,0.25,0,0.25,not final
 Other Pollster,1,0.5,1.5,not final
 Ipsos Offset,0.1,0,0.19999999999999998,not final
-HarrisX Offset,0,-0.1,0,not final
+HarrisX Offset,-0.05,-0.1,0,not final
 Morning Consult Offset,0.05000000000000002,0,0.1,not final
-YouGov Offset,0,0,0.19999999999999998,not final
+YouGov Offset,0.1,0,0.19999999999999998,not final
 Siena College/The New York Times Upshot Offset,0,0,0.1,final
-Public Policy Polling Offset,0,-0.19999999999999998,0,not final
-Monmouth University Offset,0,-0.19999999999999998,0,not final
-Emerson College Offset,0,-0.19999999999999998,0,not final
+Public Policy Polling Offset,-0.1,-0.19999999999999998,0,not final
+Monmouth University Offset,-0.1,-0.19999999999999998,0,not final
+Emerson College Offset,-0.1,-0.19999999999999998,0,not final
 Marist College Offset,0,-0.19999999999999998,0,final
 Change Research Offset,-0.1,-0.19999999999999998,0,not final
 SurveyMonkey Offset,0,0,0.19999999999999998,final
-Gravis Marketing Offset,0,-0.05,0.05000000000000002,final
+Gravis Marketing Offset,0,0,0.19999999999999998,final
 Quinnipiac University Offset,0,0,0.19999999999999998,final
-CNN/SSRS Offset,0,-0.19999999999999998,0,not final
-Fox News Offset,0,-0.19999999999999998,0,not final
-SurveyUSA Offset,0,-0.19999999999999998,0,not final
-USC Dornsife Offset,0,-0.05,0.05000000000000002,not final
+CNN/SSRS Offset,-0.1,-0.19999999999999998,0,not final
+Fox News Offset,-0.1,-0.19999999999999998,0,not final
+SurveyUSA Offset,-0.1,-0.19999999999999998,0,not final
+USC Dornsife Offset,-0.05,-0.1,0,not final
 Other Pollster Offset,0,-0.05,0.05000000000000002,not final
-rv,0.25,0,0.25,not final
-lv,1,0.5,1.5,not final
-a,1,0.5,1.5,not final
-v,0.25,0,0.25,final
+rv,1,0.5,1.5,not final
+lv,0.75,0.5,1,not final
+a,0.75,0.5,1,not final
+v,1,0.5,1.5,final
 Unknown Population,0.25,0,0.25,final
 Online,0.75,0.5,1,not final
-Live Phone,0.75,0.5,1,not final
-Unknown Method,1,0.5,1.5,not final
-IVR/Online,0.25,0,0.25,not final
+Live Phone,1,0.5,1.5,not final
+Unknown Method,1,0.5,1.5,final
+IVR/Online,1,0.5,1.5,not final
 IVR,0.25,0,0.5,not final
 Live Phone/Online,0.25,0,0.25,not final
 IVR/Live Phone,0.25,0,0.25,final
