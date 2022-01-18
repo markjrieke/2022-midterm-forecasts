@@ -1604,21 +1604,39 @@ get_current_fit <- function() {
   
 }
 
+# visualize current fit and error
+visualize_current_fit <- function(.data) {
+  
+  .data %>%
+    ggplot(aes(x = act,
+               y = est,
+               color = abs(est - act))) +
+    geom_point(size = 2.5,
+               alpha = 0.25) +
+    geom_abline(linetype = "dashed",
+                color = "gray") +
+    scale_color_viridis_c() +
+    labs(color = "error") +
+    scale_x_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) + 
+    scale_y_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) +
+    coord_equal()
+  
+}
+
+# visualize current fit, faceted by race
+visualize_facet_fit <- function(.data) {
+  
+  .data %>%
+    visualize_current_fit() +
+    facet_wrap(~race)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 current_results %>%
-  ggplot(aes(x = act,
-             y = est,
-             color = abs(est - act))) +
-  geom_point(size = 2.5,
-             alpha = 0.25) +
-  geom_abline(linetype = "dashed",
-              color = "gray") +
-  scale_color_viridis_c() +
-  labs(color = "error") +
-  scale_x_continuous(limits = c(0, 1)) + 
-  scale_y_continuous(limits = c(0, 1)) +
-  coord_equal()
+  visualize_current_fit() +
+  facet_wrap(~race)
 
 
 polls %>%
