@@ -1632,6 +1632,17 @@ visualize_facet_fit <- function(.data) {
   
 }
 
+# visualize rmse
+visualize_rmse <- function(.data) {
+  
+  .data %>%
+    ggplot(aes(x = index, 
+               y = rmse)) +
+    geom_line(size = 1.1,
+              color = "midnightblue")
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 current_results %>%
