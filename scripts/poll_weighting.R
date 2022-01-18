@@ -847,7 +847,7 @@ create_try_list <- function(variable_name) {
   # create a vector of begin_dates
   begin_dates <-
     historical_results %>%
-    mutate(begin_date = if_else(cycle == 2018, ymd("2016-11-04"), ymd("2018-11-04"))) %>%
+    mutate(begin_date = if_else(cycle == 2018, ymd("2016-11-04"), ymd("2018-11-07"))) %>%
     pull(begin_date) %>%
     rep(5)
   
@@ -1037,7 +1037,7 @@ initialize_rmse <- function() {
   # append historical results with end_date
   results <-
     historical_results %>%
-    mutate(begin_date = if_else(cycle == 2018, ymd("2016-11-04"), ymd("2018-11-04")),
+    mutate(begin_date = if_else(cycle == 2018, ymd("2016-11-04"), ymd("2018-11-07")),
            end_date = if_else(cycle == 2018, ymd("2018-11-06"), ymd("2020-11-03")))
   
   # create try list to pass to passer function
@@ -1546,7 +1546,79 @@ update_all <- function() {
   
 }
 
+#################### VIZ FUNCTIONS ####################
+
+# passer function to get the current fit
+pass_current_fit <- function(race, cycle, region, begin_date, end_date) {
+  
+  target_region(race, pass_region(region), cycle) %>%
+    poll_average(begin_date,
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight())
+  
+  
+}
+
+# function to get the current fit
+get_current_fit <- function() {
+  
+  # modify historical_results with begin/end date
+  results <- 
+    historical_results %>%
+    mutate(begin_date = if_else(cycle == 2018, ymd("2016-11-04"), ymd("2018-11-07")),
+           end_date = if_else(cycle == 2018, ymd("2018-11-06"), ymd("2020-11-03")))
+  
+  # create try list to pass to passer fn
+  try_list <-
+    list(race = results %>% pull(race),
+         cycle = results %>% pull(cycle),
+         region = results %>% pull(region),
+         begin_date = results %>% pull(begin_date),
+         end_date = results %>% pull(end_date))
+  
+  # pass try_list to passer fn
+  weight_map <-
+    try_list %>%
+    future_pmap_dfr(~pass_current_fit(..1, ..2, ..3, ..4, ..5))
+  
+  # bind to results
+  current_results <-
+    weight_map %>%
+    select(dem2pv) %>%
+    bind_cols(cycle = try_list$cycle,
+              region = try_list$region) %>%
+    left_join(historical_results, by = c("cycle", "region")) %>%
+    select(cycle, 
+           race, 
+           region,
+           est = dem2pv.x,
+           act = dem2pv.y)
+    
+  return(current_results)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
+
+current_results %>%
+  ggplot(aes(x = act,
+             y = est,
+             color = abs(est - act))) +
+  geom_point(size = 2.5,
+             alpha = 0.25) +
+  geom_abline(linetype = "dashed",
+              color = "gray") +
+  scale_color_viridis_c() +
+  labs(color = "error") +
+  scale_x_continuous(limits = c(0, 1)) + 
+  scale_y_continuous(limits = c(0, 1)) +
+  coord_equal()
 
 
 polls %>%
