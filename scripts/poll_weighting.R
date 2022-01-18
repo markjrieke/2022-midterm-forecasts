@@ -977,9 +977,9 @@ summarise_weights <- function(.data, metric) {
   
   pct_diff <- abs(worst_rmse - best_rmse)/mean(c(best_rmse, worst_rmse))
   
-  # for pollster weights, update weight table to rowid == 2 if best rmse = 0
-  # this will ensure that the pollster's offset actually gets evaluated!
-  if (best_weight == 0 & metric %in% c(pollsters, "Other Pollster")) {
+  # rowid == 2 if best rmse = 0
+  # this will ensure that the poll doesn't get tossed out entirely
+  if (best_weight == 0 & str_detect(metric, "Offset") == FALSE) {
     
     best_weight <- 
       weight_metrics %>%
@@ -1670,9 +1670,55 @@ if (completed == FALSE) {
   current_results %>% visualize_facet_fit()
   rmse_tracker %>% visualize_rmse()
   
+  # round 2
+  update_all()
+  
+  # round 2 viz
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
+  
 }
 
 #################### TESTING ZONG MY GUY ####################
+
+rmse_tracker <- 
+  rmse_tracker %>%
+  mutate(search_suggestion = if_else(metric == "baseline" | pct_diff >= 0.001, search_suggestion, "not final"))
+
+finalized_metrics <- 
+  rmse_tracker %>%
+  filter(search_suggestion == "final") %>%
+  pull(metric)
+
+variable_weights <- 
+  variable_weights %>%
+  mutate(search_suggestion = if_else(variable %in% finalized_metrics, "final", "not final")) %>%
+  count(search_suggestion)
+
+variable_weights %>%
+  write_csv("data/models/midterm_model/variable_weights.csv")
+
+rmse_tracker %>%
+  write_csv("data/models/midterm_model/rmse_tracker.csv")
+
+rmse_tracker <-
+  read_csv("data/models/midterm_model/rmse_tracker.csv")
+
+rmse_tracker <- 
+  rmse_tracker %>%
+  mutate(search_suggestion = if_else(pct_diff < 0.001, "final", "not final")) 
+
+variable_weights <- initialize_weights()
+
+variable_weights <- 
+  variable_weights %>%
+  select(variable) %>%
+  left_join(rmse_tracker, by = c("variable" = "metric")) %>%
+  select(variable, weight, next_lower, next_upper, search_suggestion)
+
+
 
 
 #################### notes ####################
