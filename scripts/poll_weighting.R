@@ -901,6 +901,8 @@ bind_results <- function(.data, input_list) {
 # summarise weights and recommend new bounds
 summarise_weights <- function(.data, metric) {
   
+  threshold <- 0.001
+  
   # calculate each weights rmse
   weight_metrics <- 
     .data %>%
@@ -989,7 +991,7 @@ summarise_weights <- function(.data, metric) {
   }
   
   # note whether or not to continue to search for better weights, based off difference threshold
-  if (pct_diff < 0.001) {
+  if (pct_diff < threshold) {
     
     search_suggestion <- "final"
     
@@ -1001,7 +1003,7 @@ summarise_weights <- function(.data, metric) {
   
   # set offset to 0 if < 1% difference
   # this'll avoid having a pollster offset of -10% when it's not any different from an offset of 0%
-  if (pct_diff < 0.01 & str_detect(metric, "Offset") == TRUE) {
+  if (pct_diff < threshold & str_detect(metric, "Offset") == TRUE) {
     
     zero_len <-
       weight_metrics %>%
