@@ -989,7 +989,7 @@ summarise_weights <- function(.data, metric) {
   }
   
   # note whether or not to continue to search for better weights, based off difference threshold
-  if (pct_diff < 0.01) {
+  if (pct_diff < 0.001) {
     
     search_suggestion <- "final"
     
