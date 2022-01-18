@@ -1643,107 +1643,27 @@ visualize_rmse <- function(.data) {
   
 }
 
+#################### MODELTIME ####################
+
+# set to FALSE to rerun rounds
+completed <- TRUE
+
+if (completed == FALSE) {
+  
+  # round 0
+  initialize_tables()
+  variable_weights %>% write_csv("data/models/midterm_model/variable_weights.csv")
+  rmse_tracker %>% write_csv("data/models/midterm_model/rmse_tracker.csv")
+  
+  # round 0 viz
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
-
-current_results %>%
-  visualize_current_fit() +
-  facet_wrap(~race)
-
-
-polls %>%
-  filter(cycle == 2019)
-
-test_list <- create_try_list("date_weight")
-
-test_list %>%
-  target_region(..1, ..3, ..2)
-
-test_list$cycle %>%
-  as_tibble() %>%
-  count(value)
-
-
-
-initialize_tables()
-
-test_try <- create_try_list("Senate-Governor")
-
-plan(multisession, workers = 8)
-tictoc::tic()
-test_map <-
-  test_try %>%
-  future_pmap_dfr(~pass_infer_weight("Senate-Governor",..1, ..2, ..3, ..4, ..5, ..6))
-tictoc::toc()
-
-test_map %>%
-  update_tables("Senate-Governor", test_try) 
-
-rmse_tracker
-
-variable_weights %>%
-  filter(variable == "Senate-Governor")
-
-
-pass_infer_weight("Senate-Governor", "House", 2018, "Rhode Island District 1", ymd("2016-11-04"), ymd("2018-11-06"), 0.75)
-
-test_map %>%
-  bind_cols(cycle = test_try$cycle,
-            race = test_try$race, 
-            region = test_try$region,
-            weight = test_try$weight) %>%
-  filter(is.na(dem2pv)) #%>%
-  distinct(cycle, race, region) %>% 
-  view()
-
-test_map %>%
-  bind_results(test_try) %>%
-  group_by(weight) %>%
-  nest() %>%
-  mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
-  unnest(rmse) %>%
-  ungroup() %>%
-  rowid_to_column() %>%
-  select(rowid, weight, .estimate) %>%
-  rename(rmse = .estimate) %>% view()
-
-
-demographics %>% 
-  filter(str_detect(region, "Pennsylvania")) %>% view()
-
-  filter(cycle == 2018, 
-         race == "Senate",
-         region == "Arizona Class I")
-  
-
-
-
-test_map %>%
-  filter(is.na(dem2pv))
-   
-
-
-
-  
-  select(-date) %>%
-  pivot_wider(names_from = weight,
-              values_from = dem2pv,
-              values_fn = length) %>%
-  view()
-
-
-
-test_polls %>%
-  poll_average(ymd("2016-11-04"),
-               ymd("2018-11-06"),
-               pull_pollster_weights(variable_weights),
-               pull_sample_weight(),
-               pull_population_weights(variable_weights),
-               pull_methodology_weights(variable_weights),
-               pull_similarity_weight(),
-               pull_infer_weights(variable_weights),
-               pull_date_weight())
-
-pass_date_weight("Senate", 2018, "Texas", ymd("2016-11-04"), ymd("2018-11-06"), 0.6)
 
 
 #################### notes ####################
@@ -1752,9 +1672,6 @@ pass_date_weight("Senate", 2018, "Texas", ymd("2016-11-04"), ymd("2018-11-06"), 
 #   remove dependencies on begin_date (taken care of by target_region)
 #
 #   train mean
-#     add update_x_weight() functions
-#     add call_x() functions
-#     add update_all() function
 #
 #   train error
 #     add update_downweight() function
