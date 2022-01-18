@@ -211,9 +211,6 @@ if (completed == FALSE) {
       tidycensus::get_decennial("us", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
       tidycensus::get_decennial("state", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
       tidycensus::get_decennial("congressional district", demo_pl, year = 2020) %>% mutate(year = 2020) %>% rename(estimate = value),
-      tidycensus::get_acs("us", demo_acs, year = 2019) %>% mutate(year = 2019),
-      tidycensus::get_acs("state", demo_acs, year = 2019) %>% mutate(year = 2019),
-      tidycensus::get_acs("congressional district", demo_acs, year = 2019) %>% mutate(year = 2019),
       tidycensus::get_acs("us", demo_acs, year = 2018) %>% mutate(year = 2018),
       tidycensus::get_acs("state", demo_acs, year = 2018) %>% mutate(year = 2018),
       tidycensus::get_acs("congressional district", demo_acs, year = 2018) %>% mutate(year = 2018)
@@ -317,7 +314,6 @@ if (completed == FALSE) {
   region_similarities <- 
     bind_rows(
       similarities(2018),
-      similarities(2019),
       similarities(2020)
     )
   
@@ -1684,44 +1680,6 @@ if (completed == FALSE) {
 }
 
 #################### TESTING ZONG MY GUY ####################
-
-rmse_tracker <- 
-  rmse_tracker %>%
-  mutate(search_suggestion = if_else(metric == "baseline" | pct_diff >= 0.001, search_suggestion, "not final"))
-
-finalized_metrics <- 
-  rmse_tracker %>%
-  filter(search_suggestion == "final") %>%
-  pull(metric)
-
-variable_weights <- 
-  variable_weights %>%
-  mutate(search_suggestion = if_else(variable %in% finalized_metrics, "final", "not final")) %>%
-  count(search_suggestion)
-
-variable_weights %>%
-  write_csv("data/models/midterm_model/variable_weights.csv")
-
-rmse_tracker %>%
-  write_csv("data/models/midterm_model/rmse_tracker.csv")
-
-rmse_tracker <-
-  read_csv("data/models/midterm_model/rmse_tracker.csv")
-
-rmse_tracker <- 
-  rmse_tracker %>%
-  mutate(search_suggestion = if_else(pct_diff < 0.001, "final", "not final")) 
-
-variable_weights <- initialize_weights()
-
-variable_weights <- 
-  variable_weights %>%
-  select(variable) %>%
-  left_join(rmse_tracker, by = c("variable" = "metric")) %>%
-  select(variable, weight, next_lower, next_upper, search_suggestion)
-
-
-
 
 #################### notes ####################
 
