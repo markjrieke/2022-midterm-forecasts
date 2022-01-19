@@ -58,7 +58,7 @@ Other Pollster,0.203125,0.1875,0.21875,final
 Change Research Offset,-0.203125,-0.20625,-0.2,final
 Online,0.3046875,0.296875,0.3125,final
 similarity_weight,0.46875,0.453125,0.484375,final
-House-Governor,5,4.5,5.5,not final
-Ipsos Offset,0.20000000000000004,0.18750000000000006,0.21250000000000005,not final
-SurveyUSA Offset,0.7,0.5999999999999999,0.8,not final
-Online/Text,2.25,2.125,2.375,not final
+House-Governor,5.5,5,6,final
+Ipsos Offset,0.21250000000000005,0.20000000000000007,0.22500000000000006,final
+SurveyUSA Offset,0.75,0.7,0.8,final
+Online/Text,2.375,2.25,2.5,not final
