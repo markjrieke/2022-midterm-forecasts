@@ -1677,6 +1677,15 @@ if (completed == FALSE) {
   current_results %>% visualize_facet_fit()
   rmse_tracker %>% visualize_rmse()
   
+  # round 3
+  update_all()
+  
+  # round 3 viz
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit() 
+  rmse_tracker %>% visualize_rmse()
+  
 }
 
 #################### TESTING ZONG MY GUY ####################
