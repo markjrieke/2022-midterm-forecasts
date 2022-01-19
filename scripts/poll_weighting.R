@@ -1588,7 +1588,7 @@ get_current_fit <- function() {
   # bind to results
   current_results <-
     weight_map %>%
-    select(dem2pv) %>%
+    select(dem2pv, starts_with("ci")) %>%
     bind_cols(cycle = try_list$cycle,
               region = try_list$region) %>%
     left_join(historical_results, by = c("cycle", "region")) %>%
@@ -1596,6 +1596,7 @@ get_current_fit <- function() {
            race, 
            region,
            est = dem2pv.x,
+           starts_with("ci"),
            act = dem2pv.y)
     
   return(current_results)
@@ -1750,7 +1751,144 @@ if (completed == FALSE) {
   
 }
 
+#################### EXPLORE FIT ####################
+
+# set to FALSE to rerun
+completed <- TRUE
+
+if (completed == FALSE) {
+  
+  # get current results
+  current_results <- get_current_fit()
+  
+  # save viz's
+  current_results %>% visualize_current_fit()
+  
+  ggsave("plots/midterm_forecast/final_fit.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  current_results %>% visualize_facet_fit()
+  
+  ggsave("plots/midterm_forecast/final_fit_facet.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  rmse_tracker %>% visualize_rmse()
+  
+  ggsave("plots/midterm_forecast/rmse_tracker.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # compare against confidence interval
+  current_results %>%
+    mutate(correct = if_else(act <= ci_upper & act >= ci_lower, "y", "n")) %>%
+    ggplot(aes(x = act,
+               y = est,
+               ymin = ci_lower,
+               ymax = ci_upper,
+               color = abs(est - act))) +
+    geom_pointrange(size = 0.75,
+                    alpha = 0.25) +
+    geom_abline(linetype = "dashed",
+                color = "gray") +
+    scale_color_viridis_c() +
+    labs(color = "error") +
+    scale_x_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) + 
+    scale_y_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) +
+    coord_equal()
+  
+  ggsave("plots/midterm_forecast/initial_pointrange.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  current_results %>%
+    mutate(correct = if_else(act <= ci_upper & act >= ci_lower, "y", "n")) %>%
+    ggplot(aes(x = act,
+               y = est,
+               ymin = ci_lower,
+               ymax = ci_upper,
+               color = abs(est - act))) +
+    geom_pointrange(size = 0.75,
+                    alpha = 0.25) +
+    geom_abline(linetype = "dashed",
+                color = "gray") +
+    scale_color_viridis_c() +
+    labs(color = "error") +
+    scale_x_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) + 
+    scale_y_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) +
+    coord_equal() +
+    facet_wrap(~race)
+  
+  ggsave("plots/midterm_forecast/initial_pointrange_facet.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  current_results %>%
+    mutate(correct = if_else(act <= ci_upper & act >= ci_lower, "y", "n")) %>%
+    filter(correct == "y") %>% 
+    ggplot(aes(x = act,
+               y = est,
+               ymin = ci_lower,
+               ymax = ci_upper,
+               color = abs(est - act))) +
+    geom_pointrange(size = 0.75,
+                    alpha = 0.25) +
+    geom_abline(linetype = "dashed",
+                color = "gray") +
+    scale_color_viridis_c() +
+    labs(color = "error") +
+    scale_x_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) + 
+    scale_y_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) +
+    coord_equal()
+  
+  ggsave("plots/midterm_forecast/initial_pointrange_correct.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  current_results %>%
+    mutate(correct = if_else(act <= ci_upper & act >= ci_lower, "y", "n")) %>%
+    filter(correct == "y") %>% 
+    ggplot(aes(x = act,
+               y = est,
+               ymin = ci_lower,
+               ymax = ci_upper,
+               color = abs(est - act))) +
+    geom_pointrange(size = 0.75,
+                    alpha = 0.25) +
+    geom_abline(linetype = "dashed",
+                color = "gray") +
+    scale_color_viridis_c() +
+    labs(color = "error") +
+    scale_x_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) + 
+    scale_y_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) +
+    coord_equal() +
+    facet_wrap(~race)
+  
+  ggsave("plots/midterm_forecast/initial_pointrange_correct_facet.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
+
+
+
 
 #################### notes ####################
 
