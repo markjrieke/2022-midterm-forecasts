@@ -1885,8 +1885,26 @@ if (completed == FALSE) {
   
 }
 
-#################### TESTING ZONG MY GUY ####################
+#################### DOWNWEIGHT FUNCTIONS ####################
 
+# function for passing downweights for determining appropriate CI
+pass_downweight <- function(race, cycle, region, begin_date, end_date, downweight) {
+  
+  target_region(race, pass_region(region), cycle) %>%
+    poll_average(begin_date,
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight(),
+                 downweight)
+  
+}
+
+#################### TESTING ZONG MY GUY ####################
 
 
 
