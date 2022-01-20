@@ -1904,9 +1904,150 @@ pass_downweight <- function(race, cycle, region, begin_date, end_date, downweigh
   
 }
 
+# summarise the error from testing 5 downweights
+summarise_downweight <- function(.data, input_list) {
+  
+  # create summary tibble of errors
+  weight_summary <- 
+    
+    # bind cols from input list for joining historical results
+    .data %>%
+    bind_cols(
+      race = input_list$race,
+      cycle = input_list$cycle,
+      region = input_list$region,
+      weight = input_list$weight
+    ) %>%
+    select(race:weight, starts_with("ci")) %>%
+    
+    # join historical results, define whether result was in or out of confidence interval
+    left_join(historical_results, by = c("race", "cycle", "region")) %>%
+    mutate(in_range = if_else(dem2pv <= ci_upper & dem2pv >= ci_lower, "in_range", "out")) %>%
+    
+    # summarise error based on 95% of actual values falling in ci
+    group_by(weight) %>%
+    percent(in_range) %>%
+    ungroup() %>%
+    pivot_wider(names_from = in_range,
+                values_from = pct) %>%
+    mutate(error = abs(0.95 - in_range)) %>%
+    rowid_to_column()
+  
+  # determine the best weight
+  best_weight <- 
+    weight_summary %>%
+    filter(error == min(error)) %>%
+    filter(weight == min(weight)) %>%
+    pull(weight)
+  
+  # determine best index
+  best_index <-
+    weight_summary %>%
+    filter(weight == best_weight) %>%
+    pull(rowid)
+  
+  # get the step between each weight
+  delta <-
+    weight_summary %>%
+    mutate(delta = weight - lag(weight)) %>%
+    drop_na() %>%
+    filter(rowid == 5) %>%
+    pull(delta)
+  
+  # assign next_upper & next_lower
+  if (best_index == 5) {
+    
+    next_lower <- weight_summary %>% filter(rowid == 3) %>% pull(weight)
+    next_upper <- weight_summary %>% filter(rowid == 5) %>% pull(weight) + (2 * delta)
+    
+  } else if (best_index == 1) {
+    
+    if (best_weight == 0) {
+      
+      next_lower <- 0
+      next_upper <- weight_summary %>% filter(rowid == 2) %>% pull(weight)
+      
+    } else {
+      
+      next_lower <- weight_summary %>% filter(rowid == 1) %>% pull(weight) - (2 * delta)
+      next_upper <- weight_summary %>% filter(rowid == 3) %>% pull(weight)
+      
+    }
+    
+  } else {
+    
+    next_lower <- weight_summary %>% filter(rowid == best_index - 1) %>% pull(weight)
+    next_upper <- weight_summary %>% filter(rowid == best_index + 1) %>% pull(weight)
+    
+  }
+  
+  # determine pct diff between best/worst error
+  best_error <-
+    weight_summary %>%
+    filter(weight == best_weight) %>%
+    pull(error)
+  
+  worst_error <-
+    weight_summary %>%
+    filter(error == max(error)) %>%
+    filter(weight == max(weight)) %>%
+    pull(error)
+  
+  pct_diff <- abs(worst_error - best_error)/mean(c(best_error, worst_error))
+  
+  # note whether or not to contine based off difference threshold of 1%
+  if (pct_diff < 0.01) {
+    
+    search_suggestion <- "final"
+    
+  } else {
+    
+    search_suggestion <- "not final"
+    
+  }
+  
+  # summarise in 1-row tibble
+  weight_summary <-
+    tibble(metric = "downweight",
+           weight = best_weight,
+           error = best_error,
+           next_lower = next_lower,
+           next_upper = next_upper,
+           pct_diff = pct_diff,
+           search_suggestion = search_suggestion)
+  
+  return(weight_summary)
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
+variable_weights <- 
+  variable_weights %>%
+  bind_rows(tibble(variable = "downweight",
+                   weight = 1,
+                   next_lower = 0,
+                   next_upper = 1,
+                   search_suggestion = "not final"))
 
+test_try <- create_try_list("downweight")
+
+plan(multisession, workers = 8)
+tictoc::tic()
+test_map <-
+  test_try %>%
+  future_pmap_dfr(~pass_downweight(..1, ..2, ..3, ..4, ..5, ..6))
+tictoc::toc()
+
+
+
+downweight_tracker %>%
+  bind_rows(test_summary)
+  
+variable_weights <-
+  variable_weights %>%
+  filter(variable != "downweight") %>%
+  bind_rows(test_summary %>% select(-error, -pct_diff) %>% rename(variable = metric))
 
 #################### notes ####################
 
