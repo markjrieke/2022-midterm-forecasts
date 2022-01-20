@@ -2069,6 +2069,8 @@ completed <- TRUE
 if (completed == FALSE) {
   
   plan(multisession, workers = 8)
+  downweight_tracker <- read_csv("data/models/midterm_model/downweight_tracker.csv")
+  variable_weights <- read_csv("data/models/midterm_model/variable_weights.csv")
   
   # round 1
   update_downweight()
@@ -2083,6 +2085,9 @@ if (completed == FALSE) {
   update_downweight()
   
   # round 5
+  update_downweight()
+  
+  # round 6
   update_downweight()
   
 }
