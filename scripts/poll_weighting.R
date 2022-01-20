@@ -2055,7 +2055,7 @@ update_downweight <- function() {
     
     # save csvs to file
     downweight_tracker %>% write_csv("data/models/midterm_model/downweight_tracker.csv")
-    variable_weights %>% write_csv("data/models/midterm_model/downweight_tracker.csv")
+    variable_weights %>% write_csv("data/models/midterm_model/variable_weights.csv")
     
   }
   
@@ -2074,6 +2074,9 @@ if (completed == FALSE) {
   update_downweight()
   
   # round 2
+  update_downweight()
+  
+  # round 3
   update_downweight()
   
 }
