@@ -2039,7 +2039,7 @@ update_downweight <- function() {
       future_pmap_dfr(~pass_downweight(..1, ..2, ..3, ..4, ..5, ..6))
     
     # create summary table
-    weight_summary <-
+    weight_summary <<-
       weight_map %>%
       summarise_downweight(try_list)
     
@@ -2091,6 +2091,9 @@ if (completed == FALSE) {
   update_downweight()
   
   # round 7
+  update_downweight()
+  
+  # round 8
   update_downweight()
   
 }

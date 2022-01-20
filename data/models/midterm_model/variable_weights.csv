@@ -62,4 +62,4 @@ House-Governor,5.5,5,6,final
 Ipsos Offset,0.21250000000000005,0.20000000000000007,0.22500000000000006,final
 SurveyUSA Offset,0.75,0.7,0.8,final
 Online/Text,2.375,2.25,2.5,not final
-downweight,1.220703125e-4,0,2.44140625e-4,not final
+downweight,1.8310546875e-4,1.220703125e-4,2.44140625e-4,not final
