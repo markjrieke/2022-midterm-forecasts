@@ -2079,6 +2079,9 @@ if (completed == FALSE) {
   # round 3
   update_downweight()
   
+  # round 4
+  update_downweight()
+  
 }
 
 #################### TESTING ZONG MY GUY ####################
