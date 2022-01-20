@@ -2020,29 +2020,57 @@ summarise_downweight <- function(.data, input_list) {
   
 }
 
+# function for updating downweight
+update_downweight <- function() {
+  
+  # do not evaluate if final
+  if (check_suggestion("downweight") == "final") {
+    
+    message("downweight marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list("downweight")
+    
+    # map inputs to passer function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_downweight(..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # create summary table
+    weight_summary <-
+      weight_map %>%
+      summarise_downweight(try_list)
+    
+    # update tracking tibbles
+    downweight_tracker <<-
+      downweight_tracker %>%
+      bind_rows(weight_summary)
+    
+    variable_weights <<-
+      variable_weights %>%
+      filter(variable != "downweight") %>%
+      bind_rows(weight_summary %>% select(-error, -pct_diff) %>% rename(variable = metric))
+    
+    # save csvs to file
+    downweight_tracker %>% write_csv("data/models/midterm_model/downweight_tracker.csv")
+    variable_weights %>% write_csv("data/models/midterm_model/downweight_tracker.csv")
+    
+  }
+  
+}
+
+#################### UPDATE CONFIDENCE INTERVALS ####################
+
+# set to FALSE to rerun
+completed <- TRUE
+
 #################### TESTING ZONG MY GUY ####################
 
-variable_weights <- 
-  variable_weights %>%
-  bind_rows(tibble(variable = "downweight",
-                   weight = 1,
-                   next_lower = 0,
-                   next_upper = 1,
-                   search_suggestion = "not final"))
-
-test_try <- create_try_list("downweight")
-
-plan(multisession, workers = 8)
-tictoc::tic()
-test_map <-
-  test_try %>%
-  future_pmap_dfr(~pass_downweight(..1, ..2, ..3, ..4, ..5, ..6))
-tictoc::toc()
 
 
 
-downweight_tracker %>%
-  bind_rows(test_summary)
   
 variable_weights <-
   variable_weights %>%
