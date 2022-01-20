@@ -2066,6 +2066,18 @@ update_downweight <- function() {
 # set to FALSE to rerun
 completed <- TRUE
 
+if (completed == FALSE) {
+  
+  plan(multisession, workers = 8)
+  
+  # round 1
+  update_downweight()
+  
+  # round 2
+  update_downweight()
+  
+}
+
 #################### TESTING ZONG MY GUY ####################
 
 
