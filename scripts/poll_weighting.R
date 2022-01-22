@@ -813,6 +813,12 @@ initialize_weights <- function() {
                         "Governor-Senate"),
            weight = 1,
            next_lower = 0,
+           next_upper = 1),
+    
+    # add national_weight
+    tibble(variable = "national_weight",
+           weight = 1,
+           next_lower = 0,
            next_upper = 1)
     
   ) %>%
