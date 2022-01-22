@@ -1608,6 +1608,7 @@ update_all <- function() {
     
     # update all variables
     call_update_date()
+    call_update_national()
     infer_list %>% walk(call_update_infer)
     call_update_similarity()
     call_update_sample()
