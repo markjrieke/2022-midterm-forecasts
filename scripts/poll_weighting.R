@@ -1639,7 +1639,8 @@ pass_current_fit <- function(race, cycle, region, begin_date, end_date) {
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights),
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
   
   
 }
@@ -1745,86 +1746,6 @@ if (completed == FALSE) {
   update_all()
   
   # round 1 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 2
-  update_all()
-  
-  # round 2 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 3
-  update_all()
-  
-  # round 3 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit() 
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 4
-  update_all()
-  
-  # round 4 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit() 
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 5
-  update_all()
-  
-  # round 5 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 6
-  update_all()
-  
-  # round 6 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 7
-  update_all()
-  
-  # round 7 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 8
-  update_all()
-  
-  # round 8 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 9
-  update_all()
-  
-  # round 9 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 10 
-  update_all()
-  
   current_results <- get_current_fit()
   current_results %>% visualize_current_fit()
   current_results %>% visualize_facet_fit()
