@@ -748,6 +748,7 @@ pass_national_weight <- function(race, cycle, region, begin_date, end_date, nati
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights),
+                 pull_date_weight(),
                  national_weight)
   
 }
