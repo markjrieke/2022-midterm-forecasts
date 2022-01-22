@@ -1394,6 +1394,32 @@ update_infer_weight <- function(infer_to_from) {
   
 }
 
+# update the weight associated w/national polls
+update_national_weight <- function() {
+  
+  # do not evaluate if weight is final
+  if (check_suggestion("national_weight") == "final") {
+    
+    message("national_weight marked as final and will not be updated.")
+    
+  } else {
+    
+    # create a try list to pass to passer function
+    try_list <- create_try_list("national_weight")
+    
+    # map inputs to mapper function
+    weight_map <-
+      try_list %>%
+      future_pmap_dfr(~pass_national_weight(..1, ..2, ..3, ..4, ..5, ..6))
+    
+    # update tables
+    weight_map %>%
+      update_tables("national_weight", try_list)
+    
+  }
+  
+}
+
 #################### CALLER FUNCTIONS ####################
 
 # util function for messaging user and calling update
