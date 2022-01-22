@@ -361,6 +361,7 @@ poll_average <- function(.data,
                          similarity_weight,
                          infer_weight,
                          date_weight,
+                         national_poll_weight,
                          downweight = 1) {
   
   .data %>%
@@ -398,9 +399,12 @@ poll_average <- function(.data,
            date_weight = date_weight ^ weeks_diff) %>%
     select(-days_diff, -weeks_diff) %>%
     
+    # apply national poll weight
+    mutate(national_weight = if_else(state == "United States", national_poll_weight, 1)) %>%
+    
     # create individual poll weights
-    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * downweight,
-           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * downweight) %>%
+    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * downweight,
+           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * downweight) %>%
     
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
@@ -2039,7 +2043,7 @@ update_downweight <- function() {
       future_pmap_dfr(~pass_downweight(..1, ..2, ..3, ..4, ..5, ..6))
     
     # create summary table
-    weight_summary <<-
+    weight_summary <-
       weight_map %>%
       summarise_downweight(try_list)
     
@@ -2096,14 +2100,49 @@ if (completed == FALSE) {
   # round 8
   update_downweight()
   
+  # round 9
+  update_downweight()
+  
 }
 
 #################### TESTING ZONG MY GUY ####################
 
 
+weight_map %>%
+  bind_cols(race = try_list$race,
+            cycle = try_list$cycle,
+            region = try_list$region,
+            weight = try_list$weight) %>%
+  select(-dem2pv) %>%
+  left_join(historical_results, by = c("cycle", "region", "race")) %>%
+  mutate(within = if_else(dem2pv <= ci_upper & dem2pv >= ci_lower, "between", "outside")) %>%
+  group_by(weight) %>%
+  count(within) %>%
+  ungroup() %>%
+  pivot_wider(names_from = within,
+              values_from = n) %>%
+  mutate(percent = between/(between + outside))
 
+weight_map %>%
+  bind_cols(race = try_list$race,
+            cycle = try_list$cycle,
+            region = try_list$region,
+            weight = try_list$weight) %>%
+  filter(weight == max(weight)) %>%
+  left_join(historical_results, by = c("cycle", "region", "race")) %>%
+  rename(est = dem2pv.x,
+         act = dem2pv.y) %>%
+  ggplot(aes(x = act,
+             y = est,
+             ymin = ci_lower,
+             ymax = ci_upper,
+             color = abs(act - est))) +
+  geom_pointrange(size = 1,
+                  alpha = 0.15) +
+  scale_color_viridis_c() +
+  geom_abline() + 
+  coord_equal()
 
-  
 variable_weights <-
   variable_weights %>%
   filter(variable != "downweight") %>%
