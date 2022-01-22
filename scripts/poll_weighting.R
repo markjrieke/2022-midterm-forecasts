@@ -609,7 +609,8 @@ pass_date_weight <- function(race, cycle, region, begin_date, end_date, date_wei
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights),
-                 date_weight)
+                 date_weight,
+                 pull_national_weight())
   
 }
 
@@ -625,7 +626,8 @@ pass_sample_weight <- function(race, cycle, region, begin_date, end_date, sample
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights),
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
   
 }
 
@@ -641,7 +643,8 @@ pass_similarity_weight <- function(race, cycle, region, begin_date, end_date, si
                  pull_methodology_weights(variable_weights),
                  similarity_weight,
                  pull_infer_weights(variable_weights),
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
   
 }
 
@@ -657,7 +660,8 @@ pass_pollster_weight <- function(pollster, race, cycle, region, begin_date, end_
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights),
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
   
 }
 
@@ -676,7 +680,8 @@ pass_pollster_offset <- function(pollster, race, cycle, region, begin_date, end_
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights),
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
   
 }
 
@@ -692,7 +697,8 @@ pass_population_weight <- function(population, race, cycle, region, begin_date, 
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights),
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
   
 }
 
@@ -708,7 +714,8 @@ pass_methodology_weight <- function(methodology, race, cycle, region, begin_date
                  pull_try_weight(methodology, methodology_weight, "methodology"),
                  pull_similarity_weight(),
                  pull_infer_weights(variable_weights), 
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
   
 }
 
@@ -724,7 +731,24 @@ pass_infer_weight <- function(infer_to_from, race, cycle, region, begin_date, en
                  pull_methodology_weights(variable_weights),
                  pull_similarity_weight(),
                  pull_try_weight(infer_to_from, infer_to_from_weight, "infer_to_from"),
-                 pull_date_weight())
+                 pull_date_weight(),
+                 pull_national_weight())
+  
+}
+
+# pass try list for national_weight
+pass_national_weight <- function(race, cycle, region, begin_date, end_date, national_weight) {
+  
+  target_region(race, pass_region(region), cycle) %>%
+    poll_average(begin_date,
+                 end_date,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 national_weight)
   
 }
 
