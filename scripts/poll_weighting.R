@@ -1518,6 +1518,17 @@ call_update_infer <- function(infer_to_from) {
   
 }
 
+# util function for messaging user and calling update
+call_update_national <- function() {
+  
+  message("Updating `national_weight`.")
+  tictoc::tic()
+  update_national_weight()
+  message("`national_weight` updated.")
+  tictoc::toc()
+  
+}
+
 #################### UPDATE ALL FUNCTION ####################
 
 update_all <- function() {
