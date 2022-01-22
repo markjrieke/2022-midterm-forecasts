@@ -521,6 +521,15 @@ pull_infer_weights <- function(.data) {
   
 }
 
+# pull weight for national polls
+pull_national_weight <- function() {
+  
+  variable_weights %>%
+    filter(variable == "national_weight") %>%
+    pull(weight)
+  
+}
+
 # util function to create a temporary tibble replacing the current weight with a "try" weight
 pull_try_weight <- function(variable_name, new_weight, type) {
   
