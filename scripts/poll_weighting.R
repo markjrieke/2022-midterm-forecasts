@@ -1824,6 +1824,23 @@ if (completed == FALSE) {
   current_results %>% visualize_facet_fit()
   rmse_tracker %>% visualize_rmse()
   
+  # round 10
+  update_all()
+  
+  # round 10
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
+  
+  # round 11
+  update_all()
+  
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
+  
 }
 
 #################### EXPLORE FIT ####################
