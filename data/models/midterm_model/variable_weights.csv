@@ -58,8 +58,8 @@ Online,0.3125,0.296875,0.328125,final
 Online/Text,1.6875,1.625,1.75,final
 national_weight,0.375,0.34375,0.40625,final
 SurveyUSA Offset,0.3999999999999999,0.3499999999999999,0.44999999999999996,final
-House-Governor,4.5,4,5,not final
-similarity_weight,0.4375,0.40625,0.46875,not final
-Other Pollster,0.09375,0.0625,0.125,not final
-HarrisX Offset,0.29999999999999993,0.24999999999999994,0.35,not final
 YouGov Offset,0.32499999999999973,0.2999999999999998,0.34999999999999964,final
+House-Governor,5,4.5,5.5,not final
+similarity_weight,0.40625,0.375,0.4375,not final
+Other Pollster,0.0625,0.03125,0.09375,not final
+HarrisX Offset,0.32499999999999996,0.29999999999999993,0.35,not final
