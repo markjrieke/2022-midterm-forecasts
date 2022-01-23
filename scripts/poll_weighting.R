@@ -1752,6 +1752,15 @@ if (completed == FALSE) {
   current_results %>% visualize_facet_fit()
   rmse_tracker %>% visualize_rmse()
   
+  # round 2
+  update_all()
+  
+  # round 2 viz
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
+  
 }
 
 #################### EXPLORE FIT ####################
@@ -2106,7 +2115,7 @@ if (completed == FALSE) {
 
 #################### TESTING ZONG MY GUY ####################
 
-pass_pollster_offset("Other Pollster", "Senate", 2018, "Texas Class III", ymd("2016-11-04"), ymd("2018-11-06"), 3)
+pass_pollster_offset("Other Pollster", "Senate", 2018, "Texas Class III", ymd("2016-11-04"), ymd("2018-11-06"), -3)
 
 
 weight_map %>%
