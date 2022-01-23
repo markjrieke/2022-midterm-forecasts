@@ -941,7 +941,7 @@ bind_results <- function(.data, input_list) {
 # summarise weights and recommend new bounds
 summarise_weights <- function(.data, metric) {
   
-  threshold <- 0.001
+  threshold <- 0.0001
   
   # calculate each weights rmse
   weight_metrics <- 
@@ -1841,6 +1841,8 @@ if (completed == FALSE) {
   current_results %>% visualize_facet_fit()
   rmse_tracker %>% visualize_rmse()
   
+  # change threshold to 0.0001
+  
 }
 
 #################### EXPLORE FIT ####################
@@ -2235,6 +2237,24 @@ variable_weights <-
   variable_weights %>%
   filter(variable != "downweight") %>%
   bind_rows(test_summary %>% select(-error, -pct_diff) %>% rename(variable = metric))
+
+variable_weights <- 
+  variable_weights %>%
+  left_join(
+    rmse_tracker %>%
+      filter(search_suggestion == "final") %>%
+      mutate(search_suggestion = if_else(pct_diff <= 0.0001, search_suggestion, "not final")),
+    by = c("variable" = "metric")
+  ) %>%
+  select(variable, 
+         weight = weight.y,
+         next_lower = next_lower.y,
+         next_upper = next_upper.y,
+         search_suggestion = search_suggestion.y) 
+
+variable_weights %>%
+  write_csv("data/models/midterm_model/variable_weights.csv")
+
 
 #################### notes ####################
 
