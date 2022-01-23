@@ -20,46 +20,46 @@ lv,1.21875,1.1875,1.25,final
 v,0.5,0.25,0.75,final
 Live Phone,0.90625,0.890625,0.921875,final
 IVR/Text,1.25,1,1.5,final
-date_weight,0.46875,0.4609375,0.4765625,not final
 national_weight,0.390625,0.38671875,0.39453125,final
-House-House,1.1875,1.125,1.25,not final
-Senate-Senate,0.625,0.5,0.75,not final
 Senate-House,0.5625,0.5,0.625,final
-Governor-Governor,1.125,1,1.25,not final
-Governor-House,0.21875,0.1875,0.25,not final
-Governor-Senate,0.125,0.09375,0.15625,not final
-similarity_weight,0.34375,0.328125,0.359375,not final
 sample_size,3.5,3,4,final
-Ipsos,0.625,0.5625,0.6875,not final
-Morning Consult,0.03125,0,0.0625,not final
-YouGov,1.375,1.3125,1.4375,not final
-Public Policy Polling,0.0625,0,0.125,not final
-Emerson College,0.25,0.21875,0.28125,not final
 Marist College,0.015625,0.0078125,0.0234375,final
 Change Research,1.1640625,1.15625,1.171875,final
 Quinnipiac University,0.01171875,0.0078125,0.015625,final
-CNN/SSRS,0.00390625,0,0.00390625,not final
 Fox News,2.296875,2.28125,2.3125,final
-SurveyUSA,1.0625,1,1.125,not final
-Other Pollster,0.03125,0.0234375,0.0390625,not final
 HarrisX Offset,0.33124999999999993,0.32812499999999994,0.334375,final
 Morning Consult Offset,0.04999999999999999,0.03749999999999998,0.0625,final
 YouGov Offset,0.31562499999999977,0.3124999999999998,0.31874999999999976,final
-Public Policy Polling Offset,-0.09999999999999998,-0.19999999999999996,0,not final
-Emerson College Offset,0.20000000000000007,0.17500000000000004,0.2250000000000001,not final
-Marist College Offset,0.19999999999999998,0.09999999999999999,0.29999999999999993,not final
-Change Research Offset,-0.19374999999999998,-0.1953125,-0.19218749999999998,not final
-SurveyMonkey Offset,0.3999999999999999,0.29999999999999993,0.4999999999999999,not final
 Gravis Marketing Offset,0.24999999999999994,0.22499999999999995,0.2749999999999999,final
 Quinnipiac University Offset,0,-0.29999999999999993,-0.09999999999999999,final
-Fox News Offset,-0.17812499999999998,-0.18125,-0.175,not final
-SurveyUSA Offset,0.3374999999999999,0.3249999999999999,0.34999999999999987,not final
-Other Pollster Offset,0.11250000000000006,0.10000000000000006,0.12500000000000006,not final
-rv,1.0625,1,1.125,not final
-a,0.375,0.25,0.5,not final
-Online,0.2890625,0.28125,0.296875,not final
-Unknown Method,2.5,2,3,not final
-IVR/Online,0.71875,0.6875,0.75,not final
 IVR,0.015625,0,0.015625,final
 Online/Text,1.75,1.734375,1.765625,final
 Other Method,0.75,0.6875,0.8125,final
+date_weight,0.4765625,0.46875,0.484375,not final
+House-House,1.21875,1.1875,1.25,not final
+Senate-Senate,0.5625,0.5,0.625,not final
+Governor-Governor,1,0.875,1.125,not final
+Governor-House,0.21875,0.203125,0.234375,final
+Governor-Senate,0.15625,0.125,0.1875,not final
+similarity_weight,0.328125,0.3125,0.34375,not final
+Ipsos,0.6875,0.625,0.75,not final
+Morning Consult,0.015625,0,0.015625,not final
+YouGov,1.40625,1.375,1.4375,not final
+Public Policy Polling,0.03125,0,0.03125,not final
+Emerson College,0.234375,0.21875,0.25,not final
+CNN/SSRS,9.765625e-4,0,9.765625e-4,final
+SurveyUSA,1.125,1.0625,1.1875,not final
+Other Pollster,0.0234375,0.015625,0.03125,not final
+Public Policy Polling Offset,0,-0.09999999999999998,0.09999999999999998,final
+Emerson College Offset,0.2250000000000001,0.20000000000000007,0.2500000000000001,not final
+Marist College Offset,0.29999999999999993,0.19999999999999996,0.3999999999999999,not final
+Change Research Offset,-0.19374999999999998,-0.19453125,-0.19296875,final
+SurveyMonkey Offset,0.4999999999999999,0.3999999999999999,0.5999999999999999,not final
+Fox News Offset,-0.17812499999999998,-0.1796875,-0.17656249999999998,final
+SurveyUSA Offset,0.3249999999999999,0.31249999999999994,0.3374999999999999,not final
+Other Pollster Offset,0.12500000000000006,0.11250000000000006,0.13750000000000007,final
+rv,1.125,1.0625,1.1875,not final
+a,0.25,0.125,0.375,not final
+Online,0.28125,0.2734375,0.2890625,not final
+Unknown Method,3,2.5,3.5,not final
+IVR/Online,0.703125,0.6875,0.71875,final
