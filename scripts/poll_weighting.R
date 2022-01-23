@@ -372,7 +372,7 @@ poll_average <- function(.data,
     
     # apply pollster weights and offsets
     left_join(pollster_weight, by = "pollster") %>%
-    mutate(dem2pv = dem2pv + pollster_offset,
+    mutate(dem2pv = expit(logit(dem2pv) + pollster_offset),
            dem_votes = round(dem2pv * sample_size),
            rep_votes = round((1-dem2pv) * sample_size)) %>%
     select(-pollster_offset) %>%
@@ -769,8 +769,8 @@ initialize_weights <- function() {
     # pollster offsets
     tibble(variable = c(paste(pollsters, "Offset"), "Other Pollster Offset"),
            weight = 0,
-           next_lower = -0.1,
-           next_upper = 0.1),
+           next_lower = -1,
+           next_upper = 1),
     
     # date weights
     tibble(variable = "date_weight",
@@ -1743,206 +1743,6 @@ if (completed == FALSE) {
   current_results %>% visualize_facet_fit()
   rmse_tracker %>% visualize_rmse()
   
-  # round 1
-  update_all()
-  
-  # round 1 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 2
-  update_all()
-  
-  # round 2 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 3
-  update_all()
-  
-  # round 3 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 4
-  update_all()
-  
-  # round 4 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 5
-  update_all()
-  
-  # round 5 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 6
-  update_all()
-  
-  # round 6 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 7 
-  update_all()
-  
-  # round 7 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 8
-  update_all()
-  
-  # round 8 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 9
-  update_all()
-  
-  # round 9 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 10
-  update_all()
-  
-  # round 10 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 11
-  update_all()
-  
-  # round 11 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # change threshold to 0.0001
-  
-  # round 12
-  update_all()
-  
-  # round 12 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 13
-  update_all()
-  
-  # round 13 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 14
-  update_all()
-  
-  # round 14 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 15
-  update_all()
-  
-  # round 15 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 16
-  update_all()
-  
-  # round 16 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 17
-  update_all()
-  
-  # round 17 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 18
-  update_all()
-  
-  # round 18 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 19
-  update_all()
-  
-  # round 19 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 20
-  update_all()
-  
-  # round 20 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 21
-  update_all()
-  
-  # round 21 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
-  # round 22
-  update_all()
-  
-  # round 22 viz
-  current_results <- get_current_fit()
-  current_results %>% visualize_current_fit()
-  current_results %>% visualize_facet_fit()
-  rmse_tracker %>% visualize_rmse()
-  
 }
 
 #################### EXPLORE FIT ####################
@@ -2296,6 +2096,8 @@ if (completed == FALSE) {
 }
 
 #################### TESTING ZONG MY GUY ####################
+
+pass_pollster_offset("Other Pollster", "Senate", 2018, "Texas Class III", ymd("2016-11-04"), ymd("2018-11-06"), 3)
 
 
 weight_map %>%
