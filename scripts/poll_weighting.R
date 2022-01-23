@@ -1827,7 +1827,7 @@ if (completed == FALSE) {
   # round 10
   update_all()
   
-  # round 10
+  # round 10 viz
   current_results <- get_current_fit()
   current_results %>% visualize_current_fit()
   current_results %>% visualize_facet_fit()
@@ -1836,12 +1836,22 @@ if (completed == FALSE) {
   # round 11
   update_all()
   
+  # round 11 viz
   current_results <- get_current_fit()
   current_results %>% visualize_current_fit()
   current_results %>% visualize_facet_fit()
   rmse_tracker %>% visualize_rmse()
   
   # change threshold to 0.0001
+  
+  # round 12
+  update_all()
+  
+  # round 12 viz
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
   
 }
 
