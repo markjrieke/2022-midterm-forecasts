@@ -2,64 +2,64 @@ variable,weight,next_lower,next_upper,search_suggestion
 HarrisX,0.25,0,0.5,final
 SurveyMonkey,1,0.5,1.5,final
 Unknown Population,0.25,0,0.25,final
-date_weight,0.5,0.375,0.625,not final
-national_weight,1,0.75,1.25,not final
-House-House,1.5,1,2,not final
-House-Senate,0.0625,0,0.0625,not final
-House-Governor,1,0.75,1.25,not final
-Senate-Senate,0.5,0,1,not final
-Senate-House,0.5,0.25,0.75,not final
-Senate-Governor,0.25,0.125,0.375,not final
-Governor-Governor,1.5,1,2,not final
-Governor-House,0.0625,0,0.125,not final
-Governor-Senate,0.0625,0,0.0625,not final
-similarity_weight,0.75,0.5,1,not final
-sample_size,1.5,1,2,not final
-Ipsos,1,0.75,1.25,not final
-Morning Consult,0.25,0.125,0.375,not final
-YouGov,0.5,0,1,not final
-Siena College/The New York Times Upshot,0.125,0.0625,0.1875,not final
-Public Policy Polling,0.25,0.125,0.375,not final
-Monmouth University,0.25,0.125,0.375,not final
-Emerson College,0.25,0.125,0.375,not final
-Marist College,0.0625,0,0.0625,not final
-Change Research,1,0.75,1.25,not final
-Gravis Marketing,0.25,0.125,0.375,not final
-Quinnipiac University,0.25,0.125,0.375,not final
-CNN/SSRS,0.25,0.125,0.375,not final
-Fox News,1.5,1,2,not final
-SurveyUSA,1.5,1,2,not final
-USC Dornsife,0.0625,0,0.0625,not final
-Other Pollster,0.5,0,1,not final
-Ipsos Offset,0.5,0.25,0.75,not final
-HarrisX Offset,-0.25,-0.5,0,not final
-Morning Consult Offset,0.5,0.25,0.75,not final
-YouGov Offset,-0.25,-0.5,0,not final
-Siena College/The New York Times Upshot Offset,1,0.5,1.5,not final
-Public Policy Polling Offset,-2,-3,-1,not final
-Monmouth University Offset,-2,-3,-1,not final
-Emerson College Offset,0,-1,1,not final
-Marist College Offset,0,-1,1,not final
-Change Research Offset,-1,-1.5,-0.5,not final
 SurveyMonkey Offset,0,-1,1,final
-Gravis Marketing Offset,2,1,3,not final
-Quinnipiac University Offset,2,1,3,not final
-CNN/SSRS Offset,-2,-3,-1,not final
-Fox News Offset,-1,-1.5,-0.5,not final
-SurveyUSA Offset,1,0.5,1.5,not final
-USC Dornsife Offset,-0.25,-0.5,0,not final
-Other Pollster Offset,0,-0.25,0.25,not final
-rv,0.75,0.5,1,not final
-lv,1,0.75,1.25,not final
-a,0.75,0.5,1,not final
-v,1.5,1,2,not final
-Online,0.375,0.25,0.5,not final
-Live Phone,1,0.75,1.25,not final
-Unknown Method,0.5,0,1,not final
-IVR/Online,0.1875,0.125,0.25,not final
-IVR,0.125,0,0.25,not final
-Live Phone/Online,0.25,0.125,0.375,not final
-IVR/Live Phone,0.125,0,0.125,not final
-IVR/Text,1.5,1,2,not final
-Online/Text,1,0.75,1.25,not final
 Other Method,0.25,0.125,0.375,final
+date_weight,0.5,0.4375,0.5625,not final
+national_weight,0.875,0.75,1,not final
+House-House,1.5,1.25,1.75,not final
+House-Senate,0.015625,0,0.015625,not final
+House-Governor,1.25,1,1.5,not final
+Senate-Senate,0.25,0,0.5,not final
+Senate-House,0.75,0.5,1,not final
+Senate-Governor,0.1875,0.125,0.25,final
+Governor-Governor,1,0.5,1.5,final
+Governor-House,0.0625,0.03125,0.09375,not final
+Governor-Senate,0.0625,0.03125,0.09375,not final
+similarity_weight,0.625,0.5,0.75,not final
+sample_size,2,1.5,2.5,not final
+Ipsos,1,0.875,1.125,not final
+Morning Consult,0.25,0.1875,0.3125,not final
+YouGov,0.25,0,0.25,not final
+Siena College/The New York Times Upshot,0.1875,0.125,0.25,not final
+Public Policy Polling,0.375,0.25,0.5,not final
+Monmouth University,0.375,0.25,0.5,not final
+Emerson College,0.375,0.25,0.5,not final
+Marist College,0.015625,0,0.015625,final
+Change Research,1,0.875,1.125,not final
+Gravis Marketing,0.375,0.25,0.5,not final
+Quinnipiac University,0.375,0.25,0.5,not final
+CNN/SSRS,0.125,0,0.25,not final
+Fox News,2,1.5,2.5,not final
+SurveyUSA,2,1.5,2.5,not final
+USC Dornsife,0.015625,0,0.015625,not final
+Other Pollster,0.25,0,0.5,not final
+Ipsos Offset,0.5,0.375,0.625,not final
+HarrisX Offset,-0.125,-0.25,0,not final
+Morning Consult Offset,0.5,0.375,0.625,not final
+YouGov Offset,-0.125,-0.25,0,not final
+Siena College/The New York Times Upshot Offset,1.25,1,1.5,not final
+Public Policy Polling Offset,-2.5,-3,-2,not final
+Monmouth University Offset,-3,-4,-2,not final
+Emerson College Offset,0.5,0,1,not final
+Marist College Offset,1,0,2,not final
+Change Research Offset,-1,-1.25,-0.75,not final
+Gravis Marketing Offset,3,2,4,not final
+Quinnipiac University Offset,1.5,1,2,final
+CNN/SSRS Offset,-2,-2.5,-1.5,final
+Fox News Offset,-1,-1.25,-0.75,not final
+SurveyUSA Offset,1.25,1,1.5,not final
+USC Dornsife Offset,-0.5,-0.75,-0.25,not final
+Other Pollster Offset,0.125,0,0.25,not final
+rv,0.5,0.25,0.75,not final
+lv,1.25,1,1.5,not final
+a,0.5,0.25,0.75,not final
+v,2,1.5,2.5,not final
+Online,0.3125,0.25,0.375,not final
+Live Phone,1,0.875,1.125,not final
+Unknown Method,0.25,0,0.5,not final
+IVR/Online,0.125,0.0625,0.1875,not final
+IVR,0.0625,0,0.125,not final
+Live Phone/Online,0.375,0.25,0.5,not final
+IVR/Live Phone,0.03125,0,0.03125,final
+IVR/Text,1.5,1.25,1.75,not final
+Online/Text,0.875,0.75,1,not final
