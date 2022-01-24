@@ -55,11 +55,11 @@ Live Phone/Online,0.8125,0.78125,0.84375,final
 Change Research,0.7109375,0.703125,0.71875,final
 Other Pollster Offset,0.375,0.359375,0.390625,final
 Online,0.40625,0.3984375,0.4140625,final
-date_weight,0.640625,0.625,0.65625,not final
-national_weight,0.359375,0.34375,0.375,not final
 Governor-Senate,0.375,0.34375,0.40625,final
-sample_size,7,6.5,7.5,not final
-Fox News,3.3125,3.25,3.375,not final
-SurveyUSA,4.75,4.625,4.875,not final
-Morning Consult Offset,0.5625,0.546875,0.578125,not final
-lv,0.703125,0.6875,0.71875,not final
+date_weight,0.65625,0.640625,0.671875,not final
+national_weight,0.34375,0.328125,0.359375,not final
+sample_size,7.5,7,8,not final
+Fox News,3.34375,3.3125,3.375,final
+SurveyUSA,4.875,4.75,5,not final
+Morning Consult Offset,0.578125,0.5625,0.59375,not final
+lv,0.6875,0.671875,0.703125,not final
