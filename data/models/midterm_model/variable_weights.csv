@@ -59,7 +59,7 @@ Governor-Senate,0.375,0.34375,0.40625,final
 Fox News,3.34375,3.3125,3.375,final
 sample_size,8.5,8,9,final
 lv,0.671875,0.6640625,0.6796875,final
-date_weight,0.703125,0.6875,0.71875,not final
-national_weight,0.3046875,0.296875,0.3125,not final
 SurveyUSA,5.125,5.0625,5.1875,final
-Morning Consult Offset,0.625,0.609375,0.640625,not final
+date_weight,0.71875,0.703125,0.734375,not final
+national_weight,0.296875,0.2890625,0.3046875,not final
+Morning Consult Offset,0.640625,0.625,0.65625,not final
