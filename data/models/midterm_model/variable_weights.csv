@@ -57,9 +57,9 @@ Other Pollster Offset,0.375,0.359375,0.390625,final
 Online,0.40625,0.3984375,0.4140625,final
 Governor-Senate,0.375,0.34375,0.40625,final
 Fox News,3.34375,3.3125,3.375,final
-date_weight,0.671875,0.65625,0.6875,not final
-national_weight,0.328125,0.3125,0.34375,not final
-sample_size,8,7.5,8.5,not final
-SurveyUSA,5,4.875,5.125,not final
-Morning Consult Offset,0.59375,0.578125,0.609375,not final
-lv,0.6796875,0.671875,0.6875,not final
+date_weight,0.6875,0.671875,0.703125,not final
+national_weight,0.3125,0.296875,0.328125,not final
+sample_size,8.5,8,9,final
+SurveyUSA,5.0625,5,5.125,not final
+Morning Consult Offset,0.609375,0.59375,0.625,not final
+lv,0.671875,0.6640625,0.6796875,final
