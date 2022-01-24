@@ -13,53 +13,53 @@ IVR/Live Phone,0.03125,0,0.03125,final
 USC Dornsife,0.00390625,0,0.0078125,final
 YouGov Offset,0,-0.125,0.125,final
 USC Dornsife Offset,-0.25,-0.5,0,final
-date_weight,0.515625,0.5,0.53125,not final
-national_weight,0.625,0.5,0.75,not final
-House-House,1,0.75,1.25,not final
-House-Senate,9.765625e-4,0,9.765625e-4,not final
-House-Governor,1.75,1.5,2,not final
-Senate-Senate,0.125,0.0625,0.1875,not final
-Senate-House,1.25,1,1.5,not final
-Governor-House,0.125,0.09375,0.15625,not final
-Governor-Senate,0.125,0.09375,0.15625,not final
-similarity_weight,0.5625,0.53125,0.59375,not final
-sample_size,3,2.5,3.5,not final
-Ipsos,1,0.9375,1.0625,not final
-Morning Consult,0.203125,0.1875,0.21875,not final
-YouGov,0.015625,0,0.015625,not final
-Siena College/The New York Times Upshot,0.25,0.21875,0.28125,not final
-Public Policy Polling,0.34375,0.3125,0.375,not final
-Monmouth University,0.625,0.5,0.75,not final
-Emerson College,0.625,0.5,0.75,not final
-Change Research,0.875,0.8125,0.9375,not final
-Gravis Marketing,0.625,0.5,0.75,not final
-Quinnipiac University,0.125,0,0.25,not final
-CNN/SSRS,0.015625,0,0.015625,not final
-Fox News,2.375,2.25,2.5,not final
-SurveyUSA,3,2.5,3.5,not final
-Other Pollster,0.1875,0.125,0.25,not final
-Ipsos Offset,0.625,0.5625,0.6875,not final
-HarrisX Offset,0,-0.0625,0.0625,not final
-Morning Consult Offset,0.4375,0.40625,0.46875,not final
-Siena College/The New York Times Upshot Offset,1.375,1.25,1.5,not final
-Public Policy Polling Offset,-3.5,-4,-3,not final
-Monmouth University Offset,-5,-6,-4,not final
-Emerson College Offset,0.75,0.5,1,not final
-Marist College Offset,3,2,4,not final
-Change Research Offset,-1,-1.0625,-0.9375,not final
 Gravis Marketing Offset,5,4,6,final
-Fox News Offset,-1.25,-1.375,-1.125,not final
-SurveyUSA Offset,1.3125,1.25,1.375,not final
-Other Pollster Offset,0.21875,0.1875,0.25,not final
-rv,0.125,0,0.25,not final
-lv,1,0.875,1.125,not final
-a,0.125,0,0.25,not final
-v,2.75,2.5,3,not final
-Online,0.359375,0.34375,0.375,not final
-Live Phone,0.8125,0.75,0.875,not final
-Unknown Method,0.03125,0,0.03125,not final
-IVR/Online,0.078125,0.0625,0.09375,not final
-IVR,0.0078125,0,0.0078125,not final
-Live Phone/Online,0.625,0.5,0.75,not final
-IVR/Text,1.4375,1.375,1.5,not final
-Online/Text,0.75,0.6875,0.8125,not final
+date_weight,0.53125,0.515625,0.546875,not final
+national_weight,0.5625,0.5,0.625,not final
+House-House,0.875,0.75,1,not final
+House-Senate,2.44140625e-4,0,2.44140625e-4,not final
+House-Governor,1.75,1.625,1.875,not final
+Senate-Senate,0.125,0.09375,0.15625,not final
+Senate-House,1.25,1.125,1.375,final
+Governor-House,0.15625,0.125,0.1875,final
+Governor-Senate,0.15625,0.125,0.1875,not final
+similarity_weight,0.53125,0.5,0.5625,not final
+sample_size,3.5,3,4,not final
+Ipsos,0.96875,0.9375,1,final
+Morning Consult,0.1875,0.171875,0.203125,not final
+YouGov,0.00390625,0,0.00390625,final
+Siena College/The New York Times Upshot,0.28125,0.25,0.3125,not final
+Public Policy Polling,0.34375,0.328125,0.359375,not final
+Monmouth University,0.6875,0.625,0.75,not final
+Emerson College,0.75,0.625,0.875,not final
+Change Research,0.8125,0.75,0.875,not final
+Gravis Marketing,0.6875,0.625,0.75,not final
+Quinnipiac University,0.0625,0,0.0625,not final
+CNN/SSRS,0.00390625,0,0.00390625,final
+Fox News,2.5,2.375,2.625,not final
+SurveyUSA,3.25,3,3.5,not final
+Other Pollster,0.15625,0.125,0.1875,not final
+Ipsos Offset,0.65625,0.625,0.6875,not final
+HarrisX Offset,-0.03125,-0.0625,0,not final
+Morning Consult Offset,0.453125,0.4375,0.46875,not final
+Siena College/The New York Times Upshot Offset,1.375,1.3125,1.4375,not final
+Public Policy Polling Offset,-4,-4.5,-3.5,not final
+Monmouth University Offset,-6,-7,-5,final
+Emerson College Offset,1,0.75,1.25,not final
+Marist College Offset,4,3,5,final
+Change Research Offset,-1,-1.03125,-0.96875,not final
+Fox News Offset,-1.3125,-1.375,-1.25,not final
+SurveyUSA Offset,1.28125,1.25,1.3125,not final
+Other Pollster Offset,0.25,0.21875,0.28125,not final
+rv,0.0625,0,0.125,not final
+lv,0.9375,0.875,1,not final
+a,0.0625,0,0.125,not final
+v,2.875,2.75,3,not final
+Online,0.3671875,0.359375,0.375,not final
+Live Phone,0.78125,0.75,0.8125,not final
+Unknown Method,0.0078125,0,0.0078125,final
+IVR/Online,0.0703125,0.0625,0.078125,not final
+IVR,0.001953125,0,0.001953125,final
+Live Phone/Online,0.6875,0.625,0.75,not final
+IVR/Text,1.40625,1.375,1.4375,not final
+Online/Text,0.75,0.71875,0.78125,final
