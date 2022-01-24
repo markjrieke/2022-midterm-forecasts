@@ -43,23 +43,23 @@ rv,0.015625,0,0.03125,final
 Live Phone,0.75,0.734375,0.765625,final
 IVR/Online,0.0625,0.05859375,0.06640625,final
 IVR/Text,1.359375,1.34375,1.375,final
-date_weight,0.578125,0.5625,0.59375,not final
-national_weight,0.46875,0.4375,0.5,not final
-House-House,0.90625,0.875,0.9375,not final
-Governor-Senate,0.25,0.21875,0.28125,not final
 similarity_weight,0.50390625,0.5,0.5078125,final
-sample_size,5,4.5,5.5,not final
-Change Research,0.71875,0.6875,0.75,not final
 Quinnipiac University,9.765625e-4,0,9.765625e-4,final
-Fox News,2.875,2.75,3,not final
-SurveyUSA,4,3.75,4.25,not final
 Other Pollster,0.1484375,0.14453125,0.15234375,final
-Morning Consult Offset,0.5,0.484375,0.515625,not final
 Public Policy Polling Offset,-5.5,-6,-5,final
 Fox News Offset,-1.46875,-1.5,-1.4375,final
-Other Pollster Offset,0.34375,0.3125,0.375,not final
-lv,0.78125,0.75,0.8125,not final
 a,0.001953125,0,0.001953125,final
-v,3.1875,3.125,3.25,not final
-Online,0.390625,0.3828125,0.3984375,not final
-Live Phone/Online,0.78125,0.75,0.8125,not final
+date_weight,0.59375,0.578125,0.609375,not final
+national_weight,0.4375,0.40625,0.46875,not final
+House-House,0.921875,0.90625,0.9375,final
+Governor-Senate,0.28125,0.25,0.3125,not final
+sample_size,5.5,5,6,not final
+Change Research,0.703125,0.6875,0.71875,not final
+Fox News,3,2.875,3.125,not final
+SurveyUSA,4.25,4,4.5,not final
+Morning Consult Offset,0.515625,0.5,0.53125,not final
+Other Pollster Offset,0.359375,0.34375,0.375,not final
+lv,0.75,0.71875,0.78125,not final
+v,3.21875,3.1875,3.25,final
+Online,0.3984375,0.390625,0.40625,not final
+Live Phone/Online,0.8125,0.78125,0.84375,final
