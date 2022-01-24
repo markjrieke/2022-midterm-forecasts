@@ -52,14 +52,14 @@ a,0.001953125,0,0.001953125,final
 House-House,0.921875,0.90625,0.9375,final
 v,3.21875,3.1875,3.25,final
 Live Phone/Online,0.8125,0.78125,0.84375,final
-date_weight,0.609375,0.59375,0.625,not final
-national_weight,0.40625,0.375,0.4375,not final
-Governor-Senate,0.3125,0.28125,0.34375,not final
-sample_size,6,5.5,6.5,not final
 Change Research,0.7109375,0.703125,0.71875,final
-Fox News,3.125,3,3.25,not final
-SurveyUSA,4.5,4.25,4.75,not final
-Morning Consult Offset,0.53125,0.515625,0.546875,not final
 Other Pollster Offset,0.375,0.359375,0.390625,final
-lv,0.734375,0.71875,0.75,not final
 Online,0.40625,0.3984375,0.4140625,final
+date_weight,0.625,0.609375,0.640625,not final
+national_weight,0.375,0.34375,0.40625,not final
+Governor-Senate,0.34375,0.3125,0.375,not final
+sample_size,6.5,6,7,not final
+Fox News,3.25,3.125,3.375,not final
+SurveyUSA,4.625,4.5,4.75,not final
+Morning Consult Offset,0.546875,0.53125,0.5625,not final
+lv,0.71875,0.703125,0.734375,not final
