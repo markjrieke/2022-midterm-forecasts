@@ -1472,7 +1472,9 @@ if (completed == FALSE) {
   # visualize final fit
   approval_fit %>%
     visualize_fit("approval") +
-    labs(title = "Final fit - approval")
+    labs(title = "Final fit - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/approval_final_fit.png",
          width = 9,
@@ -1483,7 +1485,9 @@ if (completed == FALSE) {
   # visualize rmse drop
   approval_rmse_tracker %>%
     visualize_rmse() +
-    labs(title = "rmse - approval")
+    labs(title = "rmse - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/approval_rmse_tracker.png",
          width = 9,
@@ -1509,7 +1513,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Pollster weights - approval")
+    labs(title = "Pollster weights - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/approval_pollster_weights.png",
          width = 9,
@@ -1526,7 +1532,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Pollster offset - approval")
+    labs(title = "Pollster offset - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/approval_pollster_offsets.png",
          width = 9,
@@ -1549,7 +1557,9 @@ if (completed == FALSE) {
                color = "midnightblue",
                alpha = 0.65) +
     ggrepel::geom_label_repel() +
-    labs(title = "Pollster Summary - approval")
+    labs(title = "Pollster Summary - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/approval_pollster_weights_summary_size.png",
          width = 9,
@@ -1566,7 +1576,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Population - approval")
+    labs(title = "Population - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/approval_population_weights.png",
          width = 9,
@@ -1583,7 +1595,10 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Methodology - approval")
+    labs(title = "Methodology - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
+  
   
   ggsave("plots/approval/training/approval_methodology_weights.png",
          width = 9,
@@ -1600,7 +1615,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "All weights - approval")
+    labs(title = "All weights - approval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/approval_all_weights.png",
          width = 9,
@@ -1625,7 +1642,9 @@ if (completed == FALSE) {
   # visualize final fit
   disapproval_fit %>%
     visualize_fit("disapproval") +
-    labs(title = "Final fit - disapproval")
+    labs(title = "Final fit - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_final_fit.png",
          width = 9,
@@ -1648,7 +1667,9 @@ if (completed == FALSE) {
   disapproval_rmse_tracker %>%
     filter(index != 0) %>%
     visualize_rmse() +
-    labs(title = "rmse - disapproval")
+    labs(title = "rmse - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_rmse_tracker2.png",
          width = 9,
@@ -1674,7 +1695,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Pollster weights - disapproval")
+    labs(title = "Pollster weights - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_pollster_weights.png",
          width = 9,
@@ -1691,7 +1714,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Pollster offset - disapproval")
+    labs(title = "Pollster offset - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_pollster_offsets.png",
          width = 9,
@@ -1714,7 +1739,9 @@ if (completed == FALSE) {
                color = "midnightblue",
                alpha = 0.65) +
     ggrepel::geom_label_repel() +
-    labs(title = "Pollster Summary - disapproval")
+    labs(title = "Pollster Summary - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_pollster_weights_summary_size.png",
          width = 9,
@@ -1731,7 +1758,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Population - disapproval")
+    labs(title = "Population - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_population_weights.png",
          width = 9,
@@ -1748,7 +1777,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "Methodology - disapproval")
+    labs(title = "Methodology - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_methodology_weights.png",
          width = 9,
@@ -1765,7 +1796,9 @@ if (completed == FALSE) {
     geom_col(fill = "midnightblue",
              alpha = 0.65) +
     coord_flip() +
-    labs(title = "All weights - disapproval")
+    labs(title = "All weights - disapproval") +
+    theme(plot.background = element_rect(fill = "white",
+                                         color = "white"))
   
   ggsave("plots/approval/training/disapproval_all_weights.png",
          width = 9,
