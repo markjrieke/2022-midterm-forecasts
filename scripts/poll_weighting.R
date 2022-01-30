@@ -354,6 +354,9 @@ infer_list <-
 poll_average <- function(.data,
                          begin_date,
                          final_date,
+                         cycle_input,
+                         race_input, 
+                         seat_input,
                          pollster_weight,
                          sample_weight,
                          population_weight,
@@ -364,7 +367,17 @@ poll_average <- function(.data,
                          national_poll_weight,
                          downweight = 1) {
   
-  .data %>%
+  # get the number of polls for the specific race
+  n_polls <- 
+    .data %>%
+    filter(cycle == cycle_input,
+           race == race_input,
+           seat == seat_input) %>%
+    nrow()
+  
+  # get the polling average
+  average <- 
+    .data %>%
     
     # filter to just needed polls
     filter(end_date <= final_date,
@@ -403,8 +416,8 @@ poll_average <- function(.data,
     mutate(national_weight = if_else(state == "United States", national_poll_weight, 1)) %>%
     
     # create individual poll weights
-    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * downweight,
-           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * downweight) %>%
+    mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * downweight * (1 + n_polls),
+           beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * downweight * (1 + n_polls)) %>%
     
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
@@ -413,6 +426,8 @@ poll_average <- function(.data,
            date = final_date) %>%
     beta_interval(alpha, beta) %>%
     select(date, dem2pv, ci_lower, ci_upper)
+  
+  return(average)
     
 }
 
@@ -603,6 +618,9 @@ pass_date_weight <- function(race, cycle, region, begin_date, end_date, date_wei
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date,
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_pollster_weights(variable_weights),
                  pull_sample_weight(),
                  pull_population_weights(variable_weights),
@@ -620,6 +638,9 @@ pass_sample_weight <- function(race, cycle, region, begin_date, end_date, sample
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date,
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_pollster_weights(variable_weights),
                  sample_weight,
                  pull_population_weights(variable_weights),
@@ -637,6 +658,9 @@ pass_similarity_weight <- function(race, cycle, region, begin_date, end_date, si
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_pollster_weights(variable_weights),
                  pull_sample_weight(),
                  pull_population_weights(variable_weights),
@@ -654,6 +678,9 @@ pass_pollster_weight <- function(pollster, race, cycle, region, begin_date, end_
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_try_weight(pollster, pollster_weight, "pollster"),
                  pull_sample_weight(),
                  pull_population_weights(variable_weights),
@@ -674,6 +701,9 @@ pass_pollster_offset <- function(pollster, race, cycle, region, begin_date, end_
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_try_weight(offset, pollster_offset, "pollster"),
                  pull_sample_weight(),
                  pull_population_weights(variable_weights),
@@ -691,6 +721,9 @@ pass_population_weight <- function(population, race, cycle, region, begin_date, 
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_pollster_weights(variable_weights),
                  pull_sample_weight(),
                  pull_try_weight(population, population_weight, "population"),
@@ -708,6 +741,9 @@ pass_methodology_weight <- function(methodology, race, cycle, region, begin_date
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date, 
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_pollster_weights(variable_weights),
                  pull_sample_weight(),
                  pull_population_weights(variable_weights),
@@ -725,6 +761,9 @@ pass_infer_weight <- function(infer_to_from, race, cycle, region, begin_date, en
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date,
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_pollster_weights(variable_weights),
                  pull_sample_weight(),
                  pull_population_weights(variable_weights),
@@ -742,6 +781,9 @@ pass_national_weight <- function(race, cycle, region, begin_date, end_date, nati
   target_region(race, pass_region(region), cycle) %>%
     poll_average(begin_date,
                  end_date,
+                 cycle,
+                 race,
+                 region,
                  pull_pollster_weights(variable_weights),
                  pull_sample_weight(),
                  pull_population_weights(variable_weights),
@@ -2387,6 +2429,16 @@ variable_weights %>%
 
 # to-do:
 #   remove dependencies on begin_date (taken care of by target_region)
+#
+#   change model to weight rmse by n polls
+#     races with more polls will influence the model more
+#     summarise weights
+#     others?\
+#
+#   update poll average to include n_polls for downweighting
+#     poll_average
+#     pass functions
+#     others ?
 #
 #   train mean
 #
