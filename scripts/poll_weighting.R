@@ -973,10 +973,13 @@ bind_results <- function(.data, input_list) {
               weight = input_list$weight) %>%
     
     # append with historical results
-    left_join(historical_results, by = c("cycle", "region")) %>%
+    left_join(historical_results, by = c("race", "cycle", "region")) %>%
     select(weight,
            est = dem2pv.x,
-           act = dem2pv.y)
+           act = dem2pv.y,
+           cycle,
+           race,
+           region)
   
 }
 
@@ -985,17 +988,21 @@ summarise_weights <- function(.data, metric) {
   
   threshold <- 0.0001
   
-  # calculate each weights rmse
+  # determine weights' rmse
   weight_metrics <- 
     .data %>%
-    group_by(weight) %>%
-    nest() %>%
-    mutate(rmse = map(data, yardstick::rmse, truth = act, estimate = est)) %>%
-    unnest(rmse) %>%
+    
+    # join polls - rmse is weighted by the number of polls
+    left_join(polls %>% count(cycle, race, seat), 
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0),
+           n = n + 1) %>%
+    rowwise() %>%
+    mutate(rmse = yardstick::rmse_vec(act, est)) %>%
     ungroup() %>%
-    rowid_to_column() %>%
-    select(rowid, weight, .estimate) %>%
-    rename(rmse = .estimate)
+    group_by(weight) %>%
+    summarise(rmse = sum(n * rmse)/sum(n)) %>%
+    rowid_to_column()
   
   # find weight that gives the smallest rmse
   best_weight <- 
@@ -2364,66 +2371,16 @@ if (completed == FALSE) {
 
 #################### TESTING ZONG MY GUY ####################
 
-pass_pollster_offset("Other Pollster", "Senate", 2018, "Texas Class III", ymd("2016-11-04"), ymd("2018-11-06"), -3)
+test_try <- create_try_list("date_weight")
 
+plan(multisession, workers = 8)
+test_map <- 
+  test_try %>%
+  future_pmap_dfr(~pass_date_weight(..1, ..2, ..3, ..4, ..5, ..6))
 
-weight_map %>%
-  bind_cols(race = try_list$race,
-            cycle = try_list$cycle,
-            region = try_list$region,
-            weight = try_list$weight) %>%
-  select(-dem2pv) %>%
-  left_join(historical_results, by = c("cycle", "region", "race")) %>%
-  mutate(within = if_else(dem2pv <= ci_upper & dem2pv >= ci_lower, "between", "outside")) %>%
-  group_by(weight) %>%
-  count(within) %>%
-  ungroup() %>%
-  pivot_wider(names_from = within,
-              values_from = n) %>%
-  mutate(percent = between/(between + outside))
-
-weight_map %>%
-  bind_cols(race = try_list$race,
-            cycle = try_list$cycle,
-            region = try_list$region,
-            weight = try_list$weight) %>%
-  filter(weight == max(weight)) %>%
-  left_join(historical_results, by = c("cycle", "region", "race")) %>%
-  rename(est = dem2pv.x,
-         act = dem2pv.y) %>%
-  ggplot(aes(x = act,
-             y = est,
-             ymin = ci_lower,
-             ymax = ci_upper,
-             color = abs(act - est))) +
-  geom_pointrange(size = 1,
-                  alpha = 0.15) +
-  scale_color_viridis_c() +
-  geom_abline() + 
-  coord_equal()
-
-variable_weights <-
-  variable_weights %>%
-  filter(variable != "downweight") %>%
-  bind_rows(test_summary %>% select(-error, -pct_diff) %>% rename(variable = metric))
-
-variable_weights <- 
-  variable_weights %>%
-  left_join(
-    rmse_tracker %>%
-      filter(search_suggestion == "final") %>%
-      mutate(search_suggestion = if_else(pct_diff <= 0.0001, search_suggestion, "not final")),
-    by = c("variable" = "metric")
-  ) %>%
-  select(variable, 
-         weight = weight.y,
-         next_lower = next_lower.y,
-         next_upper = next_upper.y,
-         search_suggestion = search_suggestion.y) 
-
-variable_weights %>%
-  write_csv("data/models/midterm_model/variable_weights.csv")
-
+test_map %>%
+  bind_results(test_try) %>%
+  summarise_weights("date_weight")
 
 #################### notes ####################
 
