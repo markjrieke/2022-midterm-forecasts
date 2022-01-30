@@ -921,7 +921,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,Senate,Maine,Class II,Sara Gideon,Susan Collins,347223,417645,n,y,rep
 2020,Senate,Massachusetts,Class II,Ed Markey,Kevin O'Connor,2357809,1177765,y,n,dem
 2020,Senate,Michigan,Class II,Gary Peters,John James,2734568,2642233,y,n,dem
-2020,Senate,Massachusetts,Class II,Tina Smith,Jason Lewis,1566522,1398145,y,n,dem
+2020,Senate,Minnesota,Class II,Tina Smith,Jason Lewis,1566522,1398145,y,n,dem
 2020,Senate,Mississippi,Class II,Mike Espy,Cindy Hyde-Smith,578806,709539,n,y,rep
 2020,Senate,Montana,Class II,Steve Bullock,Steve Daines,272463,333174,n,y,rep
 2020,Senate,Nebraska,Class II,Chris Janicek,Ben Sasse,227191,583507,n,y,rep
@@ -981,7 +981,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,Governor,Montana,Governor,Mike Cooney,Greg Gianforte,250860,328548,n,n,dem
 2020,Governor,New Hampshire,Governor,Dan Feltes,Chris Sununu,264639,516609,n,y,rep
 2020,Governor,North Carolina,Governor,Roy Cooper,Dan Forest,2834790,2586605,y,n,dem
-2020,Governor,North Carolina,Governor,Shelley Lenz,Doug Burgum,90789,235479,n,y,rep
+2020,Governor,North Dakota,Governor,Shelley Lenz,Doug Burgum,90789,235479,n,y,rep
 2020,Governor,Utah,Governor,Christopher Peterson,Spencer Cox,442754,918754,n,n,rep
 2020,Governor,Vermont,Governor,David Zuckerman,Phil Scott,99214,248412,n,y,rep
 2020,Governor,Washington,Governor,Jay Inslee,Loren Culp,2294243,1749066,y,n,dem
