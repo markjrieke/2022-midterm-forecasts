@@ -1770,6 +1770,7 @@ visualize_facet_fit <- function(.data) {
 visualize_rmse <- function(.data) {
   
   .data %>%
+    filter(search_suggestion != "baseline") %>%
     ggplot(aes(x = index, 
                y = rmse)) +
     geom_line(size = 1.1,
@@ -1808,6 +1809,15 @@ if (completed == FALSE) {
   update_all()
   
   # round 2 viz
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
+  
+  # round 3
+  update_all()
+  
+  # round 3 viz
   current_results <- get_current_fit()
   current_results %>% visualize_current_fit()
   current_results %>% visualize_facet_fit()
