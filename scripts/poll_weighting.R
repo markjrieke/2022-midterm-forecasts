@@ -1742,17 +1742,22 @@ get_current_fit <- function() {
 visualize_current_fit <- function(.data) {
   
   .data %>%
+    left_join(polls %>% count(cycle, race, seat),
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0),
+           `n + 1` = n + 1) %>%
     ggplot(aes(x = act,
                y = est,
-               color = abs(est - act))) +
-    geom_point(size = 2.5,
-               alpha = 0.25) +
+               color = abs(est - act),
+               size = `n + 1`)) +
+    geom_point(alpha = 0.25) +
     geom_abline(linetype = "dashed",
                 color = "gray") +
     scale_color_viridis_c() +
     labs(color = "error") +
     scale_x_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) + 
     scale_y_continuous(limits = c(0, 1), labels = scales::percent_format(accuracy = 1)) +
+    scale_size_continuous(range = c(1, 10)) +
     coord_equal()
   
 }
@@ -1827,6 +1832,15 @@ if (completed == FALSE) {
   update_all()
   
   # round 4 viz
+  current_results <- get_current_fit()
+  current_results %>% visualize_current_fit()
+  current_results %>% visualize_facet_fit()
+  rmse_tracker %>% visualize_rmse()
+  
+  # round 5
+  update_all()
+  
+  # round 5 viz
   current_results <- get_current_fit()
   current_results %>% visualize_current_fit()
   current_results %>% visualize_facet_fit()
