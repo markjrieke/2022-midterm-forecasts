@@ -1,65 +1,65 @@
 variable,weight,next_lower,next_upper,search_suggestion
-Ipsos,1,0,1,not final
-HarrisX,1,0,1,not final
-Morning Consult,1,0,1,not final
-YouGov,1,0,1,not final
-Siena College/The New York Times Upshot,1,0,1,not final
-Public Policy Polling,1,0,1,not final
-Monmouth University,1,0,1,not final
-Emerson College,1,0,1,not final
-Marist College,1,0,1,not final
-Change Research,1,0,1,not final
-SurveyMonkey,1,0,1,not final
-Gravis Marketing,1,0,1,not final
-Quinnipiac University,1,0,1,not final
-CNN/SSRS,1,0,1,not final
-Fox News,1,0,1,not final
-SurveyUSA,1,0,1,not final
-USC Dornsife,1,0,1,not final
-Other Pollster,1,0,1,not final
-Ipsos Offset,0,-1,1,not final
-HarrisX Offset,0,-1,1,not final
-Morning Consult Offset,0,-1,1,not final
-YouGov Offset,0,-1,1,not final
-Siena College/The New York Times Upshot Offset,0,-1,1,not final
-Public Policy Polling Offset,0,-1,1,not final
-Monmouth University Offset,0,-1,1,not final
-Emerson College Offset,0,-1,1,not final
-Marist College Offset,0,-1,1,not final
-Change Research Offset,0,-1,1,not final
-SurveyMonkey Offset,0,-1,1,not final
-Gravis Marketing Offset,0,-1,1,not final
-Quinnipiac University Offset,0,-1,1,not final
-CNN/SSRS Offset,0,-1,1,not final
-Fox News Offset,0,-1,1,not final
-SurveyUSA Offset,0,-1,1,not final
-USC Dornsife Offset,0,-1,1,not final
-Other Pollster Offset,0,-1,1,not final
-date_weight,1,0,1,not final
-sample_size,1,0,1,not final
-rv,1,0,1,not final
-lv,1,0,1,not final
-a,1,0,1,not final
-v,1,0,1,not final
-Unknown Population,1,0,1,not final
-Online,1,0,1,not final
-Live Phone,1,0,1,not final
-Unknown Method,1,0,1,not final
-IVR/Online,1,0,1,not final
-IVR,1,0,1,not final
-Live Phone/Online,1,0,1,not final
-IVR/Live Phone,1,0,1,not final
-IVR/Text,1,0,1,not final
-Online/Text,1,0,1,not final
-Other Method,1,0,1,not final
-similarity_weight,1,0,1,not final
-House-House,1,0,1,not final
-House-Senate,1,0,1,not final
-House-Governor,1,0,1,not final
-Senate-Senate,1,0,1,not final
-Senate-House,1,0,1,not final
-Senate-Governor,1,0,1,not final
-Governor-Governor,1,0,1,not final
-Governor-House,1,0,1,not final
-Governor-Senate,1,0,1,not final
-national_weight,1,0,1,not final
+date_weight,0.75,0.5,1,not final
+national_weight,0.25,0,0.25,not final
+House-House,1,0.5,1.5,not final
+House-Senate,0.25,0,0.25,not final
+House-Governor,1,0.5,1.5,not final
+Senate-Senate,1,0.5,1.5,not final
+Senate-House,0.25,0,0.25,not final
+Senate-Governor,0.25,0,0.25,not final
+Governor-Governor,1,0.5,1.5,not final
+Governor-House,0.25,0,0.25,not final
+Governor-Senate,0.25,0,0.25,not final
+similarity_weight,1,0.5,1.5,not final
+sample_size,0.5,0.25,0.75,not final
+Ipsos,0.25,0,0.25,not final
+HarrisX,0.25,0,0.25,not final
+Morning Consult,0.25,0,0.25,not final
+YouGov,1,0.5,1.5,not final
+Siena College/The New York Times Upshot,1,0.5,1.5,not final
+Public Policy Polling,0.25,0,0.25,not final
+Monmouth University,0.25,0,0.25,not final
+Emerson College,0.25,0,0.25,not final
+Marist College,0.25,0,0.25,not final
+Change Research,1,0.5,1.5,not final
+SurveyMonkey,1,0.5,1.5,not final
+Gravis Marketing,0.25,0,0.25,not final
+Quinnipiac University,1,0.5,1.5,not final
+CNN/SSRS,0.25,0,0.25,not final
+Fox News,1,0.5,1.5,not final
+SurveyUSA,1,0.5,1.5,not final
+USC Dornsife,0.25,0,0.25,not final
+Other Pollster,1,0.5,1.5,not final
+Ipsos Offset,0,-0.5,0.5,not final
+HarrisX Offset,0,-0.5,0.5,not final
+Morning Consult Offset,-1,-2,0,not final
+YouGov Offset,0,-0.5,0.5,not final
+Siena College/The New York Times Upshot Offset,0,-0.5,0.5,not final
+Public Policy Polling Offset,-1,-2,0,not final
+Monmouth University Offset,-1,-2,0,not final
+Emerson College Offset,0,-0.5,0.5,not final
+Marist College Offset,0.5,0,1,not final
+Change Research Offset,-0.5,-1,0,not final
+SurveyMonkey Offset,1,0,2,not final
+Gravis Marketing Offset,1,0,2,not final
+Quinnipiac University Offset,0,-0.5,0.5,not final
+CNN/SSRS Offset,0.5,0,1,not final
+Fox News Offset,-0.5,-1,0,not final
+SurveyUSA Offset,1,0,2,not final
+USC Dornsife Offset,1,0,2,not final
+Other Pollster Offset,0,-0.5,0.5,not final
+rv,1,0.5,1.5,not final
+lv,0.75,0.5,1,not final
+a,1,0.5,1.5,not final
+v,1,0.5,1.5,not final
+Unknown Population,0.25,0,0.25,not final
+Online,1,0.5,1.5,not final
+Live Phone,0.25,0,0.5,not final
+Unknown Method,1,0.5,1.5,not final
+IVR/Online,0.75,0.5,1,not final
+IVR,0.75,0.5,1,not final
+Live Phone/Online,1,0.5,1.5,not final
+IVR/Live Phone,0.25,0,0.5,not final
+IVR/Text,1,0.5,1.5,not final
+Online/Text,1,0.5,1.5,not final
+Other Method,1,0.5,1.5,not final
