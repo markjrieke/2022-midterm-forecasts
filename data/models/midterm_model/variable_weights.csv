@@ -51,15 +51,15 @@ SurveyMonkey Offset,0.6171875,0.609375,0.625,final
 Quinnipiac University Offset,0.056640625,0.0546875,0.05859375,final
 Other Pollster Offset,-0.010986328125,-0.0111083984375,-0.0108642578125,final
 Unknown Method,1.09375,1.0859375,1.1015625,final
-House-Senate,0.25,0.2421875,0.2578125,not final
-Senate-Senate,1.0625,1,1.125,not final
-similarity_weight,6.5,6.25,6.75,not final
-sample_size,1.5,1.375,1.625,not final
-Public Policy Polling,0.0107421875,0.009765625,0.01171875,not final
-Fox News,0.68359375,0.6796875,0.6875,not final
-YouGov Offset,0.078125,0.0703125,0.0859375,not final
 Monmouth University Offset,-0.3125,-0.34375,-0.28125,final
-Change Research Offset,-0.3984375,-0.40625,-0.390625,not final
 Fox News Offset,-0.50048828125,-0.5009765625,-0.5,final
-SurveyUSA Offset,0.3125,0.25,0.375,not final
 Live Phone/Online,0.48046875,0.4794921875,0.4814453125,final
+House-Senate,0.2578125,0.25,0.265625,not final
+Senate-Senate,1.09375,1.0625,1.125,not final
+similarity_weight,6.75,6.5,7,not final
+sample_size,1.625,1.5,1.75,not final
+Public Policy Polling,0.009765625,0.0087890625,0.0107421875,not final
+Fox News,0.6875,0.68359375,0.69140625,not final
+YouGov Offset,0.08203125,0.078125,0.0859375,not final
+Change Research Offset,-0.390625,-0.3984375,-0.3828125,not final
+SurveyUSA Offset,0.28125,0.25,0.3125,not final
