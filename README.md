@@ -23,7 +23,8 @@ Average](plots/generic_ballot/generic_ballot_current.png)
 To generate the plots below, you can run the script
 [`approval_trends_weighting.R`](https://github.com/markjrieke/2022-midterm-forecasts/blob/main/scripts/approval_trends_weighting.R).
 You can read about how this model was built and explore some of the
-results from training \[HERE\] &lt;- (fill in when post is written).
+results from training
+[here](https://www.thedatadiary.net/blog/2022-01-26-how-popular-is-joe-biden/).
 
 ![Presidential Approval and
 Disapproval](plots/approval/approval_disapproval_current.png)
