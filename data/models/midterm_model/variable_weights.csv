@@ -33,33 +33,33 @@ Marist College Offset,-0.421875,-0.4375,-0.40625,final
 rv,1.4375,1.4296875,1.4453125,final
 Live Phone,0.375,0.3740234375,0.3759765625,final
 IVR/Online,0.05078125,0.048828125,0.052734375,final
-House-House,2.25,2.125,2.375,not final
-House-Senate,0.2265625,0.21875,0.234375,not final
-Senate-Senate,0.875,0.8125,0.9375,not final
-similarity_weight,5.75,5.5,6,not final
-sample_size,1.125,1,1.25,not final
 Ipsos,0.5,0.498046875,0.501953125,final
-Public Policy Polling,0.013671875,0.0126953125,0.0146484375,not final
-Emerson College,0.5546875,0.546875,0.5625,not final
-Gravis Marketing,0.3515625,0.349609375,0.353515625,not final
-Fox News,0.671875,0.66796875,0.67578125,not final
 SurveyUSA,0.1953125,0.1875,0.203125,final
-Other Pollster,1.2578125,1.25,1.265625,not final
 Ipsos Offset,0.40625,0.40234375,0.41015625,final
 HarrisX Offset,-0.4375,-0.453125,-0.421875,final
-YouGov Offset,0.0546875,0.046875,0.0625,not final
-Siena College/The New York Times Upshot Offset,0.19140625,0.19091796875,0.19189453125,not final
-Monmouth University Offset,-0.40625,-0.4375,-0.375,not final
-Emerson College Offset,-0.765625,-0.76953125,-0.76171875,not final
-Change Research Offset,-0.421875,-0.4296875,-0.4140625,not final
-SurveyMonkey Offset,0.640625,0.625,0.65625,not final
-Gravis Marketing Offset,1.796875,1.78125,1.8125,not final
-Quinnipiac University Offset,0.0546875,0.046875,0.0625,not final
-Fox News Offset,-0.5,-0.501953125,-0.498046875,not final
-SurveyUSA Offset,0.625,0.5,0.75,not final
-Other Pollster Offset,-0.0107421875,-0.01123046875,-0.01025390625,not final
 a,1.25,1.2421875,1.2578125,final
-Online,0.1865234375,0.185546875,0.1875,not final
-Unknown Method,1.109375,1.09375,1.125,not final
-Live Phone/Online,0.4765625,0.47265625,0.48046875,not final
 Other Method,2.40625,2.390625,2.421875,final
+House-House,2.1875,2.125,2.25,final
+House-Senate,0.234375,0.2265625,0.2421875,not final
+Senate-Senate,0.9375,0.875,1,not final
+similarity_weight,6,5.75,6.25,not final
+sample_size,1.25,1.125,1.375,not final
+Public Policy Polling,0.0126953125,0.01171875,0.013671875,not final
+Emerson College,0.5546875,0.55078125,0.55859375,not final
+Gravis Marketing,0.3515625,0.3505859375,0.3525390625,final
+Fox News,0.67578125,0.671875,0.6796875,not final
+Other Pollster,1.25390625,1.25,1.2578125,not final
+YouGov Offset,0.0625,0.0546875,0.0703125,not final
+Siena College/The New York Times Upshot Offset,0.191650390625,0.19140625,0.19189453125,final
+Monmouth University Offset,-0.375,-0.40625,-0.34375,not final
+Emerson College Offset,-0.765625,-0.767578125,-0.763671875,final
+Change Research Offset,-0.4140625,-0.421875,-0.40625,not final
+SurveyMonkey Offset,0.625,0.609375,0.640625,not final
+Gravis Marketing Offset,1.78125,1.765625,1.796875,final
+Quinnipiac University Offset,0.05859375,0.0546875,0.0625,not final
+Fox News Offset,-0.5,-0.5009765625,-0.4990234375,not final
+SurveyUSA Offset,0.5,0.375,0.625,not final
+Other Pollster Offset,-0.010986328125,-0.01123046875,-0.0107421875,not final
+Online,0.185546875,0.1845703125,0.1865234375,final
+Unknown Method,1.1015625,1.09375,1.109375,not final
+Live Phone/Online,0.48046875,0.4765625,0.484375,not final
