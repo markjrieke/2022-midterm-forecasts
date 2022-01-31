@@ -40,26 +40,26 @@ HarrisX Offset,-0.4375,-0.453125,-0.421875,final
 a,1.25,1.2421875,1.2578125,final
 Other Method,2.40625,2.390625,2.421875,final
 House-House,2.1875,2.125,2.25,final
-House-Senate,0.234375,0.2265625,0.2421875,not final
-Senate-Senate,0.9375,0.875,1,not final
-similarity_weight,6,5.75,6.25,not final
-sample_size,1.25,1.125,1.375,not final
-Public Policy Polling,0.0126953125,0.01171875,0.013671875,not final
-Emerson College,0.5546875,0.55078125,0.55859375,not final
 Gravis Marketing,0.3515625,0.3505859375,0.3525390625,final
-Fox News,0.67578125,0.671875,0.6796875,not final
-Other Pollster,1.25390625,1.25,1.2578125,not final
-YouGov Offset,0.0625,0.0546875,0.0703125,not final
 Siena College/The New York Times Upshot Offset,0.191650390625,0.19140625,0.19189453125,final
-Monmouth University Offset,-0.375,-0.40625,-0.34375,not final
 Emerson College Offset,-0.765625,-0.767578125,-0.763671875,final
-Change Research Offset,-0.4140625,-0.421875,-0.40625,not final
-SurveyMonkey Offset,0.625,0.609375,0.640625,not final
 Gravis Marketing Offset,1.78125,1.765625,1.796875,final
-Quinnipiac University Offset,0.05859375,0.0546875,0.0625,not final
-Fox News Offset,-0.5,-0.5009765625,-0.4990234375,not final
-SurveyUSA Offset,0.5,0.375,0.625,not final
-Other Pollster Offset,-0.010986328125,-0.01123046875,-0.0107421875,not final
 Online,0.185546875,0.1845703125,0.1865234375,final
-Unknown Method,1.1015625,1.09375,1.109375,not final
-Live Phone/Online,0.48046875,0.4765625,0.484375,not final
+House-Senate,0.2421875,0.234375,0.25,not final
+Senate-Senate,1,0.9375,1.0625,not final
+similarity_weight,6.25,6,6.5,not final
+sample_size,1.375,1.25,1.5,not final
+Public Policy Polling,0.01171875,0.0107421875,0.0126953125,not final
+Emerson College,0.556640625,0.5546875,0.55859375,final
+Fox News,0.6796875,0.67578125,0.68359375,not final
+Other Pollster,1.25390625,1.251953125,1.255859375,final
+YouGov Offset,0.0703125,0.0625,0.078125,not final
+Monmouth University Offset,-0.34375,-0.375,-0.3125,not final
+Change Research Offset,-0.40625,-0.4140625,-0.3984375,not final
+SurveyMonkey Offset,0.6171875,0.609375,0.625,final
+Quinnipiac University Offset,0.056640625,0.0546875,0.05859375,final
+Fox News Offset,-0.5,-0.50048828125,-0.49951171875,not final
+SurveyUSA Offset,0.375,0.25,0.5,not final
+Other Pollster Offset,-0.010986328125,-0.0111083984375,-0.0108642578125,final
+Unknown Method,1.09375,1.0859375,1.1015625,final
+Live Phone/Online,0.48046875,0.478515625,0.482421875,not final
