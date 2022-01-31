@@ -61,5 +61,5 @@ Senate-Senate,1.1875,1.171875,1.203125,final
 sample_size,2.125,2,2.25,final
 Fox News,0.693359375,0.6923828125,0.6943359375,final
 similarity_weight,7,6.96875,7.03125,final
-Public Policy Polling,0.0048828125,0.00439453125,0.00537109375,not final
-Change Research Offset,-0.37060546875,-0.37109375,-0.3701171875,not final
+Public Policy Polling,0.0048828125,0.004638671875,0.005126953125,not final
+Change Research Offset,-0.370849609375,-0.37109375,-0.37060546875,final
