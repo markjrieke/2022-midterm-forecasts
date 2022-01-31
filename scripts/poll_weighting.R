@@ -2142,6 +2142,36 @@ if (completed == FALSE) {
          units = "in",
          dpi = 500)
   
+  current_results %>%
+    left_join(polls %>% count(cycle, race, seat),
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0)) %>%
+    ggplot(aes(x = n,
+               y = est - act)) +
+    geom_point(alpha = 0.25,
+               size = 2.5)
+  
+  ggsave("plots/midterm_forecast/error_by_n.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  current_results %>%
+    left_join(polls %>% count(cycle, race, seat),
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0)) %>%
+    ggplot(aes(x = n,
+               y = ci_upper - ci_lower)) + 
+    geom_point(alpha = 0.25,
+               size = 2.5) +
+    scale_y_log10()
+  
+  ggsave("plots/midterm_forecast/ci_range_by_n.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
 }
 
 #################### DOWNWEIGHT FUNCTIONS ####################
