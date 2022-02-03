@@ -2484,234 +2484,332 @@ get_final_fit <- function() {
 
 #################### EXPLORE FINAL RESULTS ####################
 
-final_fit <- get_final_fit()
+# set to false to rerun
+completed <- TRUE
 
-# final fit including pointranges
-final_fit %>%
-  left_join(polls %>% count(cycle, race, seat),
-            by = c("cycle", "race", "region" = "seat")) %>%
-  mutate(n = replace_na(n, 0),
-         `n + 1` = n + 1) %>%
-  ggplot(aes(color = abs(act - est))) + 
-  geom_point(aes(x = act,
-                 y = est,
-                 size = `n + 1`),
-             alpha = 0.25) +
-  geom_segment(aes(x = act,
-                   y = ci_lower,
-                   xend = act,
-                   yend = ci_upper),
-               alpha = 0.15) +
-  scale_size_continuous(range = c(1, 10)) +
-  scale_x_continuous(labels = scales::percent_format(accuracy = 1),
-                     limits = c(0, 1)) +
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1),
-                     limits = c(0, 1)) +
-  scale_color_viridis_c() +
-  coord_equal() +
-  geom_abline(linetype = "dashed",
-              color = "gray")
+if (completed == FALSE) {
+  
+  final_fit <- get_final_fit()
+  
+  # final fit including pointranges
+  final_fit %>%
+    left_join(polls %>% count(cycle, race, seat),
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0),
+           `n + 1` = n + 1) %>%
+    ggplot(aes(color = abs(act - est))) + 
+    geom_point(aes(x = act,
+                   y = est,
+                   size = `n + 1`),
+               alpha = 0.25) +
+    geom_segment(aes(x = act,
+                     y = ci_lower,
+                     xend = act,
+                     yend = ci_upper),
+                 alpha = 0.15) +
+    scale_size_continuous(range = c(1, 10)) +
+    scale_x_continuous(labels = scales::percent_format(accuracy = 1),
+                       limits = c(0, 1)) +
+    scale_y_continuous(labels = scales::percent_format(accuracy = 1),
+                       limits = c(0, 1)) +
+    scale_color_viridis_c() +
+    coord_equal() +
+    geom_abline(linetype = "dashed",
+                color = "gray")
+  
+  ggsave("plots/midterm_forecast/final_pointrange.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # final fit including pointranges, faceted by race
+  final_fit %>%
+    left_join(polls %>% count(cycle, race, seat),
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0),
+           `n + 1` = n + 1) %>%
+    ggplot(aes(color = abs(act - est))) + 
+    geom_point(aes(x = act,
+                   y = est,
+                   size = `n + 1`),
+               alpha = 0.25) +
+    geom_segment(aes(x = act,
+                     y = ci_lower,
+                     xend = act,
+                     yend = ci_upper),
+                 alpha = 0.15) +
+    scale_size_continuous(range = c(1, 10)) +
+    scale_x_continuous(labels = scales::percent_format(accuracy = 1),
+                       limits = c(0, 1)) +
+    scale_y_continuous(labels = scales::percent_format(accuracy = 1),
+                       limits = c(0, 1)) +
+    scale_color_viridis_c() +
+    coord_equal() +
+    geom_abline(linetype = "dashed",
+                color = "gray") +
+    facet_wrap(~race)
+  
+  ggsave("plots/midterm_forecast/final_pointrange_facet.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # confidence range by nubmer of polls
+  final_fit %>%
+    left_join(polls %>% count(cycle, race, seat),
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0),
+           `n + 1` = n + 1) %>%
+    ggplot(aes(x = `n + 1`,
+               y = ci_upper - ci_lower)) + 
+    geom_point(alpha = 0.25)
+  
+  ggsave("plots/midterm_forecast/final_fit_range_by_n.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # confidence interval by error
+  final_fit %>%
+    left_join(polls %>% count(cycle, race, seat),
+              by = c("cycle", "race", "region" = "seat")) %>%
+    mutate(n = replace_na(n, 0),
+           `n + 1` = n + 1,
+           error = abs(act - est)) %>%
+    ggplot(aes(x = error,
+               y = ci_upper - ci_lower,
+               size = `n + 1`)) +
+    geom_point(alpha = 0.25) +
+    scale_size_continuous(range = c(1, 10))
+  
+  ggsave("plots/midterm_forecast/final_fit_range_by_error.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # all variable weights
+  variable_weights %>%
+    filter(!str_detect(variable, "Offset")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable,
+               y = weight)) +
+    geom_col(alpha = 0.75,
+             fill = "midnightblue") +
+    coord_flip() +
+    labs(x = NULL)
+  
+  ggsave("plots/midterm_forecast/all_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # pollster weights
+  variable_weights %>%
+    filter(variable %in% c(pollsters, "Other Pollster")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable, 
+               y = weight)) +
+    geom_col(alpha = 0.75,
+             fill = "midnightblue") +
+    coord_flip() +
+    labs(x = NULL)
+  
+  ggsave("plots/midterm_forecast/pollster_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # methodology weights
+  variable_weights %>%
+    filter(variable %in% c(methods, "Other Method")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable, 
+               y = weight)) +
+    geom_col(alpha = 0.75,
+             fill = "midnightblue") +
+    coord_flip() +
+    labs(x = NULL)
+  
+  ggsave("plots/midterm_forecast/methodology_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # pollster offsets
+  variable_weights %>%
+    filter(str_detect(variable, "Offset")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable, 
+               y = weight)) +
+    geom_col(alpha = 0.75,
+             fill = "midnightblue") +
+    coord_flip() +
+    labs(x = NULL)
+  
+  ggsave("plots/midterm_forecast/pollster_offsets.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # population weights
+  variable_weights %>%
+    filter(variable %in% c("rv", "lv", "v", "a", "Unknown Population")) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable, 
+               y = weight)) +
+    geom_col(alpha = 0.75,
+             fill = "midnightblue") +
+    coord_flip() +
+    labs(x = NULL)
+  
+  ggsave("plots/midterm_forecast/population_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # inference weights
+  variable_weights %>%
+    filter(variable %in% infer_list) %>%
+    mutate(variable = fct_reorder(variable, weight)) %>%
+    ggplot(aes(x = variable, 
+               y = weight)) +
+    geom_col(alpha = 0.75,
+             fill = "midnightblue") +
+    coord_flip() +
+    labs(x = NULL)
+  
+  ggsave("plots/midterm_forecast/infer_weights.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+  # pollster weights and offsets
+  variable_weights %>%
+    filter(str_detect(variable, "Offset")) %>%
+    select(variable, offset = weight) %>%
+    mutate(variable = str_remove(variable, " Offset")) %>%
+    left_join(variable_weights, by = "variable") %>%
+    select(variable:weight) %>%
+    left_join(polls %>% count(pollster),
+              by = c("variable" = "pollster")) %>%
+    mutate(pct = n/sum(n)) %>%
+    arrange(pct) %>%
+    mutate(label = if_else(pct >= 0.03, variable, NA_character_)) %>%
+    ggplot(aes(x = offset,
+               y = weight,
+               size = n,
+               label = label)) +
+    geom_point(alpha = 0.25) +
+    ggrepel::geom_text_repel()
+  
+  ggsave("plots/midterm_forecast/pollster_weight_offset.png",
+         width = 9,
+         height = 6,
+         units = "in",
+         dpi = 500)
+  
+}
 
-ggsave("plots/midterm_forecast/final_pointrange.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+#################### EXPORT NEEDED FUNCTIONS TO UTILS ####################
 
-# final fit including pointranges, faceted by race
-final_fit %>%
-  left_join(polls %>% count(cycle, race, seat),
-            by = c("cycle", "race", "region" = "seat")) %>%
-  mutate(n = replace_na(n, 0),
-         `n + 1` = n + 1) %>%
-  ggplot(aes(color = abs(act - est))) + 
-  geom_point(aes(x = act,
-                 y = est,
-                 size = `n + 1`),
-             alpha = 0.25) +
-  geom_segment(aes(x = act,
-                   y = ci_lower,
-                   xend = act,
-                   yend = ci_upper),
-               alpha = 0.15) +
-  scale_size_continuous(range = c(1, 10)) +
-  scale_x_continuous(labels = scales::percent_format(accuracy = 1),
-                     limits = c(0, 1)) +
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1),
-                     limits = c(0, 1)) +
-  scale_color_viridis_c() +
-  coord_equal() +
-  geom_abline(linetype = "dashed",
-              color = "gray") +
-  facet_wrap(~race)
+# rewrite target region to accept .data param (arbitrage poll input)
+target_region <- function(.data, target_race, target, target_cycle) {
+  
+  # get to just that cycle's polls
+  target_polls <-
+    .data %>%
+    filter(cycle == target_cycle)
+  
+  # get to just that target/cycle's comparison list
+  target_similarities <-
+    region_similarities %>%
+    filter(region == target,
+           year == target_cycle) 
+  
+  # return the polls for that cycle augmented w/the target region's similarity score,
+  # as well as the to_from col
+  target_polls <-
+    target_polls %>%
+    mutate(infer_to_from = paste(target_race, race, sep = "-"),
+           comparison = if_else(race == "House", seat, state)) %>%
+    left_join(target_similarities, by = "comparison") %>%
+    select(-year, -region)
+  
+  return(target_polls)
+  
+}
 
-ggsave("plots/midterm_forecast/final_pointrange_facet.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+# rewrite pass current fit to accept .data param (arbitrage poll input)
+pass_current_fit <- function(.data, race, cycle, region, begin_date, end_date) {
+  
+  .data %>%
+    target_region(race, pass_region(race), cycle) %>%
+    poll_average(begin_date,
+                 end_date,
+                 cyle,
+                 race,
+                 region,
+                 pull_pollster_weights(variable_weights),
+                 pull_sample_weight(),
+                 pull_population_weights(variable_weights),
+                 pull_methodology_weights(variable_weights),
+                 pull_similarity_weight(),
+                 pull_infer_weights(variable_weights),
+                 pull_date_weight(),
+                 pull_national_weight())
+  
+}
 
-# confidence range by nubmer of polls
-final_fit %>%
-  left_join(polls %>% count(cycle, race, seat),
-            by = c("cycle", "race", "region" = "seat")) %>%
-  mutate(n = replace_na(n, 0),
-         `n + 1` = n + 1) %>%
-  ggplot(aes(x = `n + 1`,
-             y = ci_upper - ci_lower)) + 
-  geom_point(alpha = 0.25)
+# export functions
+poll_average %>% 
+  write_rds("models/utils/poll_average.rds")
 
-ggsave("plots/midterm_forecast/final_fit_range_by_n.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+target_region %>% 
+  write_rds("models/utils/target_region.rds")
 
-# confidence interval by error
-final_fit %>%
-  left_join(polls %>% count(cycle, race, seat),
-            by = c("cycle", "race", "region" = "seat")) %>%
-  mutate(n = replace_na(n, 0),
-         `n + 1` = n + 1,
-         error = abs(act - est)) %>%
-  ggplot(aes(x = error,
-             y = ci_upper - ci_lower,
-             size = `n + 1`)) +
-  geom_point(alpha = 0.25) +
-  scale_size_continuous(range = c(1, 10))
+pull_pollster_weights %>%
+  write_rds("models/utils/pull_pollster_weights.rds")
 
-ggsave("plots/midterm_forecast/final_fit_range_by_error.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+pull_sample_weight %>% 
+  write_rds("models/utils/pull_sample_weight.rds")
 
-# all variable weights
-variable_weights %>%
-  filter(!str_detect(variable, "Offset")) %>%
-  mutate(variable = fct_reorder(variable, weight)) %>%
-  ggplot(aes(x = variable,
-             y = weight)) +
-  geom_col(alpha = 0.75,
-           fill = "midnightblue") +
-  coord_flip() +
-  labs(x = NULL)
+pull_population_weights %>% 
+  write_rds("models/utils/pull_population_weights.rds")
 
-ggsave("plots/midterm_forecast/all_weights.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+pull_methodology_weights %>%
+  write_rds("models/utils/pull_methodology_weights.rds")
 
-# pollster weights
-variable_weights %>%
-  filter(variable %in% c(pollsters, "Other Pollster")) %>%
-  mutate(variable = fct_reorder(variable, weight)) %>%
-  ggplot(aes(x = variable, 
-             y = weight)) +
-  geom_col(alpha = 0.75,
-           fill = "midnightblue") +
-  coord_flip() +
-  labs(x = NULL)
+pull_similarity_weight %>%
+  write_rds("models/utils/pull_similarity_weight.rds")
 
-ggsave("plots/midterm_forecast/pollster_weights.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+pull_infer_weights %>%
+  write_rds("models/utils/pull_infer_weights.rds")
 
-# methodology weights
-variable_weights %>%
-  filter(variable %in% c(methods, "Other Method")) %>%
-  mutate(variable = fct_reorder(variable, weight)) %>%
-  ggplot(aes(x = variable, 
-             y = weight)) +
-  geom_col(alpha = 0.75,
-           fill = "midnightblue") +
-  coord_flip() +
-  labs(x = NULL)
+pull_date_weight %>%
+  write_rds("models/utils/pull_date_weight.rds")
 
-ggsave("plots/midterm_forecast/methodology_weights.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+pull_national_weight %>%
+  write_rds("models/utils/pull_date_weight.rds")
 
-# pollster offsets
-variable_weights %>%
-  filter(str_detect(variable, "Offset")) %>%
-  mutate(variable = fct_reorder(variable, weight)) %>%
-  ggplot(aes(x = variable, 
-             y = weight)) +
-  geom_col(alpha = 0.75,
-           fill = "midnightblue") +
-  coord_flip() +
-  labs(x = NULL)
+pass_region %>%
+  write_rds("models/utils/pass_region.rds")
 
-ggsave("plots/midterm_forecast/pollster_offsets.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+pass_current_fit %>%
+  write_rds("models/utils/pass_current_fit.rds")
 
-# population weights
-variable_weights %>%
-  filter(variable %in% c("rv", "lv", "v", "a", "Unknown Population")) %>%
-  mutate(variable = fct_reorder(variable, weight)) %>%
-  ggplot(aes(x = variable, 
-             y = weight)) +
-  geom_col(alpha = 0.75,
-           fill = "midnightblue") +
-  coord_flip() +
-  labs(x = NULL)
-
-ggsave("plots/midterm_forecast/population_weights.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
-
-# inference weights
-variable_weights %>%
-  filter(variable %in% infer_list) %>%
-  mutate(variable = fct_reorder(variable, weight)) %>%
-  ggplot(aes(x = variable, 
-             y = weight)) +
-  geom_col(alpha = 0.75,
-           fill = "midnightblue") +
-  coord_flip() +
-  labs(x = NULL)
-
-ggsave("plots/midterm_forecast/infer_weights.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
-
-# pollster weights and offsets
-variable_weights %>%
-  filter(str_detect(variable, "Offset")) %>%
-  select(variable, offset = weight) %>%
-  mutate(variable = str_remove(variable, " Offset")) %>%
-  left_join(variable_weights, by = "variable") %>%
-  select(variable:weight) %>%
-  left_join(polls %>% count(pollster),
-            by = c("variable" = "pollster")) %>%
-  mutate(pct = n/sum(n)) %>%
-  arrange(pct) %>%
-  mutate(label = if_else(pct >= 0.03, variable, NA_character_)) %>%
-  ggplot(aes(x = offset,
-             y = weight,
-             size = n,
-             label = label)) +
-  geom_point(alpha = 0.25) +
-  ggrepel::geom_text_repel()
-
-ggsave("plots/midterm_forecast/pollster_weight_offset.png",
-       width = 9,
-       height = 6,
-       units = "in",
-       dpi = 500)
+# export polls for training
+polls %>%
+  write_csv("data/models/midterm_model/polls_train.csv")
 
 #################### TESTING ZONG MY GUY ####################
 
@@ -2719,98 +2817,6 @@ ggsave("plots/midterm_forecast/pollster_weight_offset.png",
 
 #################### notes ####################
 
-# to-do:
-#   remove dependencies on begin_date (taken care of by target_region)
-#
-#   change model to weight rmse by n polls
-#     races with more polls will influence the model more
-#     summarise weights
-#     others?\
-#
-#   update poll average to include n_polls for downweighting
-#     poll_average
-#     pass functions
-#     others ?
-#
-#   train mean
-#
-#   train error
-#     add update_downweight() function
-#   
-#   explore results
-#     verify that no seat type is significantly off 
-#
-#   consider adding in off-season elections?
-#     2019 NC
-#     2021 VA Gov?
 
-# ratings ranges:
-#   uncertain:    p < 0.65
-#   likely:       p < 0.85
-#   very likely:  p < 0.99
-#   safe:         p >= 0.99
-
-# some potential concerns to make public:
-#   racial makeup (ignore hisp. black, asian diversity, etc.)
-#   data leakage w/polls (poll training includes all historical results)
-#   similarity scores based only on race
-#   only looking at top D/R (e.g., Feinstein & Collins aren't in the model)
-#   only looking at general election, not runoff
-#   doesn't include common features that definitely have signal (e.g., gender, wages, prez approval)
-#     due to lack of historical polling data (only 2 cycle's worth)
-#   only 2 cycles worth of data
-#     if there was over/under performance during these cycles, may throw model off
-#     e.g., 2018 was a "blue wave" & represents a good chunk of the training data
-
-# potential features:
-#   data currently available in repo:
-#     polls
-#     polls CI spread
-#     polls CI lower
-#     polls CI upper
-#     number of polls for the race
-#     number of polls in the last x wks
-#     racial makeup
-#     incumbency
-#     prev-party
-#   data available online:
-#     years in seat
-#     years in gov't
-#     endorsements
-#     total fundraising
-#     spending ratio (dem/rep & rep/dem)
-#     partisan lean (maybe...)
-#     experts' ratings (maybe...)
-#     candidate demographics (age, race, gender, age... maybe...)
-#     candidate idealogy (dw nominate - not sure if this is available for non-incumbents)
-#   data maybe available in the future
-#     median or mean age
-#     population density
-#     religious affiliation
-#     educational attainment
-
-# possibly add in the senate?
-#   one model for house & senate
-#   senate polls informed by house polls & vice-versa
-#     pull in state demographic info for senate similarities...
-#   in xgboost model, stratify initial split by chamber to ensure equal coverage
-#   only 66 senate races to pull data from ...
-#
-#   build out house polls first, then check to see if adding senate polls is any value
-#   if senate polls are way off, don't use
-#
-#   should I also do the same with governors ? 
-#   would this be double-dipping on similarities (states for senate)
-#
-# another thought: there are features I'm not sure I can use for a blended model?
-#   basically any non-racial information is unavailable for the districts
-#   maybe check in on DRA? Not sure what information is contained there (it's just race)
-#   maybe I can create blended & non-blended forecasts & see which performs better
-#     Feature-limited for blended forecast, but data-rich
-#     Data-limited for non-blended forecast, but feature-rich
-#   in either regard, I think I ought to start with a blended poll aggregator
-#   my hunch is that the blended forecast will perform better (if nothing else than for the extra data points...)
-
-# maybe think about removing the 2019 cycle...
 
 
