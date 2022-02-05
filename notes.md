@@ -48,6 +48,8 @@ notes
     -   `{tidymodels}`
     -   `{tidyverse}`
     -   `{gt}` (?)
+    -   `{rvest}`
+    -   `{polite}`
 -   model ethics card
     -   racial makeup
         -   what: only includes white/black/hispanic/aapi/other
@@ -114,6 +116,13 @@ notes
         -   why: only had two cycles worth of polling data to reference.
         -   future: append current model with 2022 data, also dig for
             more polling data?
+    -   some FEC filing not available on ballotpedia
+        -   what: some campaign finance filings aren’t not available on
+            ballotpedia
+        -   problem: losing signal for those that are missing
+        -   why: ballotpedia only includes FEC filings for “official
+            candidates,” based on their selection criteria.
+        -   future: impute values? or do some extra digging…
 -   potential features
     -   data currently available in repo:
         -   polls
