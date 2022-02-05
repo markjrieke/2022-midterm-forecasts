@@ -1,988 +1,988 @@
-cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,dem_incumbent,rep_incumbent,prev_seat
-2018,House,Alabama,District 1,Robert Kennedy Jr.,Bradley Byrne,89226,153228,n,y,rep
-2018,House,Alabama,District 2,Tabitha Isner,Martha Roby,86931,138879,n,y,rep
-2018,House,Alabama,District 3,Mallory Hagan,Mike Rogers,83996,147770,n,y,rep
-2018,House,Alabama,District 4,Lee Auman,Robert Aderholt,46492,184255,n,y,rep
-2018,House,Alabama,District 5,Peter Joffrion,Mo Brooks,101388,159063,n,y,rep
-2018,House,Alabama,District 6,Danner Kline,Gary Palmer,85644,192542,n,y,rep
-2018,House,Alabama,District 7,Terri Sewell,-,185010,0,y,n,dem
-2018,House,Alaska,District 1,Alyse S. Galvin,Don Young,131199,149779,n,y,rep
-2018,House,Arizona,District 1,Tom O'Halleran,Wendy Rogers,143240,122784,y,n,dem
-2018,House,Arizona,District 2,Ann Kirkpatrick,Lea Marquez Peterson,161000,133083,n,n,rep
-2018,House,Arizona,District 3,Raul Grijalva,Nicolas Pierson,114650,64868,y,n,dem
-2018,House,Arizona,District 4,David Brill,Paul Gosar,84521,188842,n,y,rep
-2018,House,Arizona,District 5,Joan Greene,Andy Biggs,127027,186037,n,y,rep
-2018,House,Arizona,District 6,Anita Malik,David Schweikert,140559,173140,n,y,rep
-2018,House,Arizona,District 7,Ruben Gallego,-,113044,0,y,n,dem
-2018,House,Arizona,District 8,Hiral Tipirneni,Debbie Lesko,135569,168835,n,y,rep
-2018,House,Arizona,District 9,Greg Stanton,Steve Ferrara,159583,101662,n,n,dem
-2018,House,Arkansas,District 1,Chintan Desai,Rick Crawford,57907,138757,n,y,rep
-2018,House,Arkansas,District 2,Clarke Tucker,French Hill,116135,132125,n,y,rep
-2018,House,Arkansas,District 3,Joshua Mahony,Steve Womack,74952,148717,n,y,rep
-2018,House,Arkansas,District 4,Hayden Shamel,Bruce Westerman,63984,136740,n,y,rep
-2018,House,California,District 1,Audrey Denney,Doug LaMalfa,131548,160046,n,y,rep
-2018,House,California,District 2,Jared Huffman,Dale K. Mensing,243081,72576,y,n,dem
-2018,House,California,District 3,John Garamendi,Charlie Schaupp,134875,97376,y,n,dem
-2018,House,California,District 4,Jessica Morse,Tom McClintock,156253,184401,n,y,rep
-2018,House,California,District 5,Mike Thompson,-,205860,0,y,n,dem
-2018,House,California,District 6,Doris Matsui,-,162411,0,y,n,dem
-2018,House,California,District 7,Ami Bera,Andrew Gant,155016,126601,y,n,dem
-2018,House,California,District 8,-,Paul Cook,0,102415,n,y,rep
-2018,House,California,District 9,Jerry McNerney,Marla Livengood,113414,87349,y,n,dem
-2018,House,California,District 10,Josh Harder,Jeff Denham,115945,105955,n,y,rep
-2018,House,California,District 11,Mark DeSaulnier,John Fitzgerald,204369,71312,y,n,dem
-2018,House,California,District 12,Nancy Pelosi,Lisa Remmer,275292,41780,y,n,dem
-2018,House,California,District 13,Barbara Lee,-,260580,0,y,n,dem
-2018,House,California,District 14,Jackie Speier,Cristina Osmena,211384,55439,y,n,dem
-2018,House,California,District 15,Eric Swalwell,Rudy Peters,177989,65940,y,n,dem
-2018,House,California,District 16,Jim Costa,Elizabeth Heng,82266,60693,y,n,dem
-2018,House,California,District 17,Ro Khanna,Ron Cohen,159105,52057,y,n,dem
-2018,House,California,District 18,Anna Eshoo,Christine Russell,225142,77096,y,n,dem
-2018,House,California,District 19,Zoe Lofgren,Justin James Aguilera,162496,57823,y,n,dem
-2018,House,California,District 20,Jimmy Panetta,-,183677,0,y,n,dem
-2018,House,California,District 21,TJ Cox,David Valadao,57239,56377,n,y,rep
-2018,House,California,District 22,Andrew Janz,Devin Nunes,105136,117243,n,y,rep
-2018,House,California,District 23,Tatiana Matta,Kevin McCarthy,74661,131113,n,y,rep
-2018,House,California,District 24,Salud Carbajal,Justin Fareed,166550,117881,y,n,dem
-2018,House,California,District 25,Katie Hill,Steve Knight,133209,111813,n,y,rep
-2018,House,California,District 26,Julia Brownley,Antonio Sabato Jr.,158216,97210,y,n,dem
-2018,House,California,District 27,Judy Chu,-,160504,0,y,n,dem
-2018,House,California,District 28,Adam Schiff,Johnny Nalbandian,196662,54272,y,n,dem
-2018,House,California,District 29,Tony Cardenas,Benito Benny Bernal,124697,29995,y,n,dem
-2018,House,California,District 30,Brad Sherman,Mark Reed,191573,69420,y,n,dem
-2018,House,California,District 31,Pete Aguilar,Sean Flynn,110143,77352,y,n,dem
-2018,House,California,District 32,Grace Napolitano,Joshua M. Scott,121759,55272,y,n,dem
-2018,House,California,District 33,Ted Lieu,Kenneth Wright,219091,93769,y,n,dem
-2018,House,California,District 34,Jimmy Gomez,-,110195,0,y,n,dem
-2018,House,California,District 35,Norma Torres,Christian Valiente,103420,45604,y,n,dem
-2018,House,California,District 36,Raul Ruiz,Kimberlin Brown Pelzer,122169,84839,y,n,dem
-2018,House,California,District 37,Karen Bass,Ron J. Bassilian,210555,25823,y,n,dem
-2018,House,California,District 38,Linda Sanchez,Ryan Downing,139188,62968,y,n,dem
-2018,House,California,District 39,Gil Cisneros,Young Kim,126002,118391,n,n,rep
-2018,House,California,District 40,Lucille Roybal-Allard,-,93938,0,y,n,dem
-2018,House,California,District 41,Mark Takano,Aja Smith,108227,58021,y,n,dem
-2018,House,California,District 42,Julia C. Peacock,Ken Calvert,100892,131040,n,y,rep
-2018,House,California,District 43,Maxine Waters,Omar Navarro,152272,43780,y,n,dem
-2018,House,California,District 44,Nanette Barragan,-,97944,0,y,n,dem
-2018,House,California,District 45,Katie Porter,Mimi Walters,158906,146383,n,y,rep
-2018,House,California,District 46,Lou Correa,Russell Rene Lambert,102278,45638,y,n,dem
-2018,House,California,District 47,Alan Lowenthal,John Briscoe,143354,77682,y,n,dem
-2018,House,California,District 48,Harley Rouda,Dana Rohrabacher,157837,136899,n,y,rep
-2018,House,California,District 49,Mike Levin,Diane Harkey,166453,128577,n,n,rep
-2018,House,California,District 50,Ammar Campa-Najjar,Duncan D. Hunter,125448,134362,n,y,rep
-2018,House,California,District 51,Juan Vargas,Juan M. Hidalgo Jr.,109527,44301,y,n,dem
-2018,House,California,District 52,Scott Peters,Omar Qudrat,188992,107015,y,n,dem
-2018,House,California,District 53,Susan Davis,Morgan Murtaugh,185667,83127,y,n,dem
-2018,House,Colorado,District 1,Diana DeGette,Casper Stockham,272886,85207,y,n,dem
-2018,House,Colorado,District 2,Joe Neguse,Peter Yu,259608,144901,n,n,dem
-2018,House,Colorado,District 3,Diane Mitsch Bush,Scott Tipton,146426,173205,n,y,rep
-2018,House,Colorado,District 4,Karen McCormick,Ken Buck,145544,224038,n,y,rep
-2018,House,Colorado,District 5,Stephany Rose Spaulding,Doug Lamborn,126848,184002,n,y,rep
-2018,House,Colorado,District 6,Jason Crow,Mike Coffman,187639,148685,n,y,rep
-2018,House,Colorado,District 7,Ed Perlmutter,Mark Barrington,204260,119734,y,n,dem
-2018,House,Connecticut,District 1,John Larson,Jennifer Nye,175087,96024,y,n,dem
-2018,House,Connecticut,District 2,Joe Courtney,Dan Postemski,179731,102483,y,n,dem
-2018,House,Connecticut,District 3,Rosa DeLauro,Angel Cadena,174572,95667,y,n,dem
-2018,House,Connecticut,District 4,Jim Himes,Harry Arora,168726,106921,y,n,dem
-2018,House,Connecticut,District 5,Jahana Hayes,Manny Santos,151225,119426,n,n,dem
-2018,House,Delaware,District 1,Lisa Blunt Rochester,Scott Walker,227353,125384,y,n,dem
-2018,House,Florida,District 1,Jennifer M. Zimmerman,Matt Gaetz,106199,216189,n,y,rep
-2018,House,Florida,District 2,Bob Rackleff,Neal Dunn,96233,199335,n,y,rep
-2018,House,Florida,District 3,Yvonne Hayes Hinson,Ted Yoho,129880,176616,n,y,rep
-2018,House,Florida,District 4,Ges Selmont,John Rutherford,123351,248420,n,y,rep
-2018,House,Florida,District 5,Al Lawson,Virginia Fuller,180527,89799,y,n,dem
-2018,House,Florida,District 6,Nancy Soderberg,Michael Waltz,145758,187891,n,n,rep
-2018,House,Florida,District 7,Stephanie Murphy,Mike Miller,183113,134285,y,n,dem
-2018,House,Florida,District 8,Sanjay Patel,Bill Posey,142415,218112,n,y,rep
-2018,House,Florida,District 9,Darren Soto,Wayne Liebnitzky,172172,124565,y,n,dem
-2018,House,Florida,District 10,Val Demings,-,73601,0,y,n,dem
-2018,House,Florida,District 11,Dana Cottrell,Daniel Webster,128053,239395,n,y,rep
-2018,House,Florida,District 12,Chris Hunter,Gus Bilirakis,132844,194564,n,y,rep
-2018,House,Florida,District 13,Charlie Crist,George Buck,182717,134254,y,n,dem
-2018,House,Florida,District 14,Kathy Castor,-,1,0,y,n,dem
-2018,House,Florida,District 15,Kristen Carlson,Ross Spano,134132,151380,n,n,rep
-2018,House,Florida,District 16,David Shapiro,Vern Buchanan,164463,197483,n,y,rep
-2018,House,Florida,District 17,Allen Ellison,Greg Steube,117194,193326,n,n,rep
-2018,House,Florida,District 18,Lauren Baer,Brian Mast,156454,185905,n,y,rep
-2018,House,Florida,District 19,David Holden,Francis Rooney,128106,211465,n,y,rep
-2018,House,Florida,District 20,Alcee Hastings,-,202659,0,y,n,dem
-2018,House,Florida,District 21,Lois Frankel,-,1,0,y,n,dem
-2018,House,Florida,District 22,Ted Deutch,Nicolas Kimaz,184634,113049,y,n,dem
-2018,House,Florida,District 23,Debbie Wasserman Schultz,Joe Kaufman,161611,99446,y,n,dem
-2018,House,Florida,District 24,Frederica Wilson,-,65894,0,y,n,dem
-2018,House,Florida,District 25,Mary Barzee Flores,Mario Diaz-Balart,84173,128672,n,y,rep
-2018,House,Florida,District 26,Debbie Mucarsel-Powell,Carlos Curbelo,119797,115678,n,y,rep
-2018,House,Florida,District 27,Donna Shalala,Maria Elvira Salazar,130743,115588,n,n,rep
-2018,House,Georgia,District 1,Lisa Ring,Buddy Carter,105942,144741,n,y,rep
-2018,House,Georgia,District 2,Sanford Bishop,Herman West,136699,92472,y,n,dem
-2018,House,Georgia,District 3,Chuck Enderlin,Drew Ferguson,101010,191996,n,y,rep
-2018,House,Georgia,District 4,Hank Johnson,Joe Profit,227717,61092,y,n,dem
-2018,House,Georgia,District 5,John Lewis,-,275406,0,y,n,dem
-2018,House,Georgia,District 6,Lucy McBath,Karen Handel,160139,156875,n,y,rep
-2018,House,Georgia,District 7,Carolyn Bourdeaux,Rob Woodall,140010,140443,n,y,rep
-2018,House,Georgia,District 8,-,Austin Scott,0,198152,n,y,rep
-2018,House,Georgia,District 9,Josh McCall,Doug Collins,57912,224661,n,y,rep
-2018,House,Georgia,District 10,Tabitha Johnson-Green,Jody Hice,112339,190396,n,y,rep
-2018,House,Georgia,District 11,Flynn Broady,Barry Loudermilk,118653,191887,n,y,rep
-2018,House,Georgia,District 12,Francys Johnson,Rick W. Allen,101503,148986,n,y,rep
-2018,House,Georgia,District 13,David Scott,David Callahan,223157,69760,y,n,dem
-2018,House,Georgia,District 14,Steven Lamar Foster,Tom Graves,53981,175743,n,y,rep
-2018,House,Hawaii,District 1,Ed Case,Campbell Cavasso,134650,42498,n,n,dem
-2018,House,Hawaii,District 2,Tulsi Gabbard,Brian Evans,153271,44850,y,n,dem
-2018,House,Idaho,District 1,Cristina McNeil,Russ Fulcher,96932,197167,n,n,rep
-2018,House,Idaho,District 2,Aaron Swisher,Mike Simpson,110381,170274,n,y,rep
-2018,House,Illinois,District 1,Bobby Rush,"Jimmy Lee Tillman, II",189560,50960,y,n,dem
-2018,House,Illinois,District 2,Robin Kelly,David Merkle,190684,44567,y,n,dem
-2018,House,Illinois,District 3,Dan Lipinski,Arthur Jones,163053,57885,y,n,dem
-2018,House,Illinois,District 4,"Jesus ""Chuy"" Garcia",Mark Lorch,143895,22294,n,n,dem
-2018,House,Illinois,District 5,Mike Quigley,Tom Hanson,213992,65134,y,n,dem
-2018,House,Illinois,District 6,Sean Casten,Peter Roskam,169001,146445,n,y,rep
-2018,House,Illinois,District 7,Danny K. Davis,Craig Cameron,215746,30497,y,n,dem
-2018,House,Illinois,District 8,Raja Krishnamoorthi,"Jitendra ""JD"" Diganvker",130054,67073,y,n,dem
-2018,House,Illinois,District 9,Jan Schakowsky,John Elleson,213368,76983,y,n,dem
-2018,House,Illinois,District 10,Brad Schneider,Douglas Bennett,156540,82124,y,n,dem
-2018,House,Illinois,District 11,Bill Foster,Nick Stella,145407,82358,y,n,dem
-2018,House,Illinois,District 12,Brendan Kelly,Mike Bost,118724,134884,n,y,rep
-2018,House,Illinois,District 13,Betsy Dirksen Londrigan,Rodney Davis,134458,136516,n,y,rep
-2018,House,Illinois,District 14,Lauren Underwood,Randy Hultgren,156035,141164,n,y,rep
-2018,House,Illinois,District 15,Kevin Gaither,John Shimkus,74309,181294,n,y,rep
-2018,House,Illinois,District 16,Sara Dady,Adam Kinzinger,104569,151254,n,y,rep
-2018,House,Illinois,District 17,Cheri Bustos,Bill Fawell,142659,87090,y,n,dem
-2018,House,Illinois,District 18,Junius Rodriguez,Darin LaHood,95486,195927,n,y,rep
-2018,House,Indiana,District 1,Pete Visclosky,Mark Leyva,159611,85594,y,n,dem
-2018,House,Indiana,District 2,Mel Hall,Jacki Walorski,103363,125499,n,y,rep
-2018,House,Indiana,District 3,Courtney Tritch,Jim Banks,86610,158927,n,y,rep
-2018,House,Indiana,District 4,Tobi Beck,James Baird,87824,156539,n,n,rep
-2018,House,Indiana,District 5,Dee Thornton,Susan Brooks,137142,180035,n,y,rep
-2018,House,Indiana,District 6,Jeannine Lee Lake,Greg Pence,79430,154260,n,n,rep
-2018,House,Indiana,District 7,Andre Carson,Wayne Harmon,141139,76457,y,n,dem
-2018,House,Indiana,District 8,William Tanoos,Larry Bucshon,86895,157396,n,y,rep
-2018,House,Indiana,District 9,Liz Watson,Trey Hollingsworth,118090,153271,n,y,rep
-2018,House,Iowa,District 1,Abby Finkenauer,Rod Blum,170342,153442,n,y,rep
-2018,House,Iowa,District 2,Dave Loebsack,Christopher Peters,171446,133287,y,n,dem
-2018,House,Iowa,District 3,Cindy Axne,David Young,175642,167933,n,y,rep
-2018,House,Iowa,District 4,J.D. Scholten,Steve King,147246,157676,n,y,rep
-2018,House,Kansas,District 1,Alan LaPolice,Roger Marshall,71558,153082,n,y,rep
-2018,House,Kansas,District 2,Paul Davis,Steve Watkins,123859,126098,n,n,rep
-2018,House,Kansas,District 3,Sharice Davids,Kevin Yoder,170518,139762,n,y,rep
-2018,House,Kansas,District 4,James Thompson,Ron Estes,98445,144248,n,y,rep
-2018,House,Kentucky,District 1,Paul Walker,James Comer,78849,172167,n,y,rep
-2018,House,Kentucky,District 2,Hank Linderman,Brett Guthrie,79964,171700,n,y,rep
-2018,House,Kentucky,District 3,John Yarmuth,Vickie Yates Glisson,173002,101930,y,n,dem
-2018,House,Kentucky,District 4,Seth Hall,Thomas Massie,90536,162946,n,y,rep
-2018,House,Kentucky,District 5,Kenneth Stepp,Hal Rogers,45890,172093,n,y,rep
-2018,House,Kentucky,District 6,Amy McGrath,Andy Barr,144736,154468,n,y,rep
-2018,House,Louisiana,District 1,Tammy Savoie,Steve Scalise,44262,192526,n,y,rep
-2018,House,Louisiana,District 2,Cedric Richmond,-,190182,0,y,n,dem
-2018,House,Louisiana,District 3,Mimi Methvin,Clay Higgins,43729,136876,n,y,rep
-2018,House,Louisiana,District 4,Ryan Trundle,Mike Johnson,72934,139326,n,y,rep
-2018,House,Louisiana,District 5,Jessee Carlton Fleenor,Ralph Abraham,67118,149018,n,y,rep
-2018,House,Louisiana,District 6,Justin DeWitt,Garret Graves,55089,186553,n,y,rep
-2018,House,Maine,District 1,Chellie Pingree,Mark Holbrook,201195,111188,y,n,dem
-2018,House,Maine,District 2,Jared Golden,Bruce Poliquin,142440,138931,n,y,rep
-2018,House,Maryland,District 1,Jesse Colvin,Andy Harris,116631,183662,n,y,rep
-2018,House,Maryland,District 2,Dutch Ruppersberger,Liz Matory,167201,77782,y,n,dem
-2018,House,Maryland,District 3,John Sarbanes,Charles Anthony,202407,82774,y,n,dem
-2018,House,Maryland,District 4,Anthony G. Brown,George McDermott,209642,53327,y,n,dem
-2018,House,Maryland,District 5,Steny Hoyer,William Devine III,213796,82361,y,n,dem
-2018,House,Maryland,District 6,David Trone,Amie Hoeber,163346,105209,n,n,dem
-2018,House,Maryland,District 7,Elijah Cummings,Richmond Davis,202345,56266,y,n,dem
-2018,House,Maryland,District 8,Jamie Raskin,John Walsh,217679,96525,y,n,dem
-2018,House,Massachusetts,District 1,Richard neal,-,211790,0,y,n,dem
-2018,House,Massachusetts,District 2,Jim McGovern,Tracy Lovvorn,191332,93391,y,n,dem
-2018,House,Massachusetts,District 3,Lori Trahan,Rick Green,173175,93445,n,n,dem
-2018,House,Massachusetts,District 4,Joe Kennedy III,-,245289,0,y,n,dem
-2018,House,Massachusetts,District 5,Katherine Clark,John Hugo,236243,74856,y,n,dem
-2018,House,Massachusetts,District 6,Seth Moulton,Joseph Schneider,217703,104798,y,n,dem
-2018,House,Massachusetts,District 7,Ayanna Pressley,-,216557,0,n,n,dem
-2018,House,Massachusetts,District 8,Stephen Lynch,-,259159,0,y,n,dem
-2018,House,Massachusetts,District 9,Bill Keating,Peter Tedeschi,192347,131463,y,n,dem
-2018,House,Michigan,District 1,Matt Morgan,Jack Bergman,145246,187251,n,y,rep
-2018,House,Michigan,District 2,Rob Davidson,Bill Huizenga,131254,168970,n,y,rep
-2018,House,Michigan,District 3,Cathy Albro,Justin Amash,134185,169107,n,y,rep
-2018,House,Michigan,District 4,Jerry Hilliard,John Moolenaar,106540,178510,n,y,rep
-2018,House,Michigan,District 5,Dan Kildee,Travis Wines,164502,99265,y,n,dem
-2018,House,Michigan,District 6,Matt Longjohn,Fred Upton,134082,147436,n,y,rep
-2018,House,Michigan,District 7,Gretchen Driskell,Tim Walberg,136330,158730,n,y,rep
-2018,House,Michigan,District 8,Elissa Slotkin,Mike Bishop,172880,159782,n,y,rep
-2018,House,Michigan,District 9,Andy Levin,Candius Stearns,181734,112123,n,n,dem
-2018,House,Michigan,District 10,Kimberly Bizon,Paul Mitchell,106061,182808,n,y,rep
-2018,House,Michigan,District 11,Haley Stevens,Lena Epstein,181912,158463,n,n,rep
-2018,House,Michigan,District 12,Debbie Dingell,Jeff Jones,200588,85115,y,n,dem
-2018,House,Michigan,District 13,Rashida Tlaib,-,165355,0,n,n,dem
-2018,House,Michigan,District 14,Brenda Lqwrence,Marc Herschfus,214334,45899,y,n,dem
-2018,House,Minnesota,District 1,Dan Feehan,Jim Hagedorn,144884,146199,n,n,dem
-2018,House,Minnesota,District 2,Angie Craig,Jason Lewis,177954,159343,n,y,rep
-2018,House,Minnesota,District 3,Dean Phillips,Erik Paulsen,202402,160839,n,y,rep
-2018,House,Minnesota,District 4,Betty McCollum,Greg Ryan,216866,97746,y,n,dem
-2018,House,Minnesota,District 5,Ilhan Omar,Jennifer Zielinski,267703,74440,n,n,dem
-2018,House,Minnesota,District 6,Ian Todd,Tom Emmer,122330,192936,n,y,rep
-2018,House,Minnesota,District 7,Collin Peterson,Dave Hughes,146665,134668,y,n,dem
-2018,House,Minnesota,District 8,Joe Radinovich,Pete Stauber,141948,159364,n,n,dem
-2018,House,Mississippi,District 1,Randy Wadkins,Trent Kelly,76601,158245,n,y,rep
-2018,House,Mississippi,District 2,Bennie Thompson,-,158921,0,y,n,dem
-2018,House,Mississippi,District 3,Michael Evans,Michael Guest,94461,160284,n,n,rep
-2018,House,Mississippi,District 4,Jaramey Anderson,Steven Palazzo,68787,152633,n,y,rep
-2018,House,Missouri,District 1,Lacy Clay,Robert Vroman,219781,45867,y,n,dem
-2018,House,Missouri,District 2,Cort VanOstran,Ann Wagner,177611,192477,n,y,rep
-2018,House,Missouri,District 3,Katy Geppert,Blaine Luetkemeyer,106589,211243,n,y,rep
-2018,House,Missouri,District 4,Renee Hoagenson,Vicky Hartzler,95968,190138,n,y,rep
-2018,House,Missouri,District 5,Emanuel Cleaver,Jacob Turk,175019,101069,y,n,dem
-2018,House,Missouri,District 6,Henry Martin,Sam Graves,97660,199796,n,y,rep
-2018,House,Missouri,District 7,Jamie Schoolcraft,Billy Long,89190,196343,n,y,rep
-2018,House,Missouri,District 8,Kathy Ellis,Jason Smith,66151,194042,n,y,rep
-2018,House,Montana,District 1,Kathleen Williams,Greg Gianforte,233284,256661,n,y,rep
-2018,House,Nebraska,District 1,Jessica McClure,Jeff Fortenberry,93069,141712,n,y,rep
-2018,House,Nebraska,District 2,Kara Eastman,Don Bacon,121770,126715,n,y,rep
-2018,House,Nebraska,District 3,Paul Theobald,Adrian Smith,49654,163650,n,y,rep
-2018,House,Nevada,District 1,Dina Titus,Joyce Bentley,100707,46978,y,n,dem
-2018,House,Nevada,District 2,Clint Koble,Mark Amodei,120102,167435,n,y,rep
-2018,House,Nevada,District 3,Susie Lee,Danny Tarkanian,148501,122566,n,n,dem
-2018,House,Nevada,District 4,Steven Horsford,Cresent Hardy,121962,102748,n,n,dem
-2018,House,New Hampshire,District 1,Chris Pappas,Eddie Edwards,155884,130996,n,n,dem
-2018,House,New Hampshire,District 2,Ann McLane Kuster,Steve Negron,155358,117990,y,n,dem
-2018,House,New Jersey,District 1,Donald Norcross,Paul E. Dilks,169628,87617,y,n,dem
-2018,House,New Jersey,District 2,Jeff Van Drew,Seth Grossman,136685,116866,n,n,rep
-2018,House,New Jersey,District 3,Andy Kim,Tom MacArthur,153473,149500,n,y,rep
-2018,House,New Jersey,District 4,Joshua Welle,Chris Smith,126766,163065,n,y,rep
-2018,House,New Jersey,District 5,Josh Gottheimer,John J. McCann,169546,128255,y,n,dem
-2018,House,New Jersey,District 6,Frank Pallone Jr.,Richard J. Pezzullo,140752,80443,y,n,dem
-2018,House,New Jersey,District 7,Tom Malinowski,Leonard Lance,166985,150785,n,y,rep
-2018,House,New Jersey,District 8,Albio Sires,John R. Muniz,119881,28752,y,n,dem
-2018,House,New Jersey,District 9,Bill Pascrell Jr.,Eric P. Fisher,140832,57854,y,n,dem
-2018,House,New Jersey,District 10,Donald M. Payne Jr.,Alga Khan,175253,20191,y,n,dem
-2018,House,New Jersey,District 11,Mikie Sherrill,Jay Webber,183684,136322,n,n,rep
-2018,House,New Jersey,District 12,Bonnie Watson Coleman,Daryl Kipnis,173334,79041,y,n,dem
-2018,House,New Mexico,District 1,Deb Haaland,Janice Arnold-Jones,147336,90507,n,n,dem
-2018,House,New Mexico,District 2,Xochitl Torres Small,Yvette Herrell,101489,97767,n,n,rep
-2018,House,New Mexico,District 3,Ben Ray Lujan,Jerald Steve McFall,155201,76427,y,n,dem
-2018,House,New York,District 1,Perry Gershon,Lee Zeldin,127991,139027,n,y,rep
-2018,House,New York,District 2,Liuba Grechen Shirley,Peter T. King,113074,128078,n,y,rep
-2018,House,New York,District 3,Tom Suozzi,Dan DeBono,157456,109514,y,n,dem
-2018,House,New York,District 4,Kathleen Rice,Ameer Benno,159535,100571,y,n,dem
-2018,House,New York,District 5,Gregory Meeks,-,160500,0,y,n,dem
-2018,House,New York,District 6,Grace Meng,-,111646,0,y,n,dem
-2018,House,New York,District 7,Nydia Velazquez,-,146687,0,y,n,dem
-2018,House,New York,District 8,Hakeem Jeffries,-,180376,0,y,n,dem
-2018,House,New York,District 9,Yvette Clarke,Lutchi Gayot,181455,20901,y,n,dem
-2018,House,New York,District 10,Jerrold Nadler,Naomi Levin,173095,37619,y,n,dem
-2018,House,New York,District 11,Max Rose,Dan Donovan,101823,89441,n,y,rep
-2018,House,New York,District 12,Carolyn Maloney,Eliot Rabin,217430,30446,y,n,dem
-2018,House,New York,District 13,Adriano Espaillat,Jineea Butler,180035,10268,y,n,dem
-2018,House,New York,District 14,Alexandria Ocasio-Cortez,Anthony Pappas,110318,19202,n,n,dem
-2018,House,New York,District 15,Jose Serrano,Jason Gonzalez,124469,5205,y,n,dem
-2018,House,New York,District 16,Eliot Engel,-,182044,0,y,n,dem
-2018,House,New York,District 17,Nita Lowey,-,170168,0,y,n,dem
-2018,House,New York,District 18,Sean Patrick Maloney,James O'Donnell,139564,112035,y,n,dem
-2018,House,New York,District 19,Antonio Delgado,John Faso,147873,132873,n,y,rep
-2018,House,New York,District 20,Paul Tonko,Joe Vitollo,176811,89058,y,n,dem
-2018,House,New York,District 21,Tedra Cobb,Elise Stefanik,99791,131981,n,y,rep
-2018,House,New York,District 22,Anthony Brindisi,Claudia Tenney,127715,123242,n,y,rep
-2018,House,New York,District 23,Tracy Mitrano,Tom Reed,109932,130323,n,y,rep
-2018,House,New York,District 24,Dana Balter,John Katko,123226,136920,n,y,rep
-2018,House,New York,District 25,Joseph Morelle,Jim Maxwell,159244,110736,n,n,dem
-2018,House,New York,District 26,Brian Higgins,Renee Zeno,169166,61488,y,n,dem
-2018,House,New York,District 27,Nate McMurray,Chris Collins,139059,140146,n,y,rep
-2018,House,North Carolina,District 1,G. K. Butterfield,Roger Allison,190457,82218,y,n,dem
-2018,House,North Carolina,District 2,Linda Coleman,George Holding,151977,170072,n,y,rep
-2018,House,North Carolina,District 3,-,Walter B. Jones,0,187901,n,y,rep
-2018,House,North Carolina,District 4,David Price,Steve Loor,247067,82052,y,n,dem
-2018,House,North Carolina,District 5,Denise D. Adams,Virginia Foxx,120468,159917,n,y,rep
-2018,House,North Carolina,District 6,Ryan Watts,Mark Walker,123651,160709,n,y,rep
-2018,House,North Carolina,District 7,Kyle Horton,David Rouzer,120838,156809,n,y,rep
-2018,House,North Carolina,District 8,Frank McNeill,Richard Hudson,114119,141402,n,y,rep
-2018,House,North Carolina,District 9,Dan McCready,Mark Harris,138341,139246,n,n,rep
-2018,House,North Carolina,District 10,David Wilson Brown,Patrick McHenry,113259,164969,n,y,rep
-2018,House,North Carolina,District 11,Phillip Price,Mark Meadows,116508,178012,n,y,rep
-2018,House,North Carolina,District 12,Alma Adams,Paul Wright,203974,75164,y,n,dem
-2018,House,North Carolina,District 13,Kathy Manning,Ted Budd,130402,147570,n,y,rep
-2018,House,North Dakota,District 1,Mac Schneider,Kelly Armstrong,114377,193568,n,n,rep
-2018,House,Ohio,District 1,Aftab Pureval,Steve Chabot,141118,154409,n,y,rep
-2018,House,Ohio,District 2,Jill Schiller,Brad Wenstrup,119333,166714,n,y,rep
-2018,House,Ohio,District 3,Joyce Beatty,Jim Burgess,181575,65040,y,n,dem
-2018,House,Ohio,District 4,Janet Garrett,Jim Jordan,89412,167993,n,y,rep
-2018,House,Ohio,District 5,J. Michael Galbraith,Bob Latta,99655,176569,n,y,rep
-2018,House,Ohio,District 6,Shawna Roberts,Bill Johnson,76716,172774,n,y,rep
-2018,House,Ohio,District 7,Ken Harbaugh,Bob Gibbs,107536,153117,n,y,rep
-2018,House,Ohio,District 8,Vanessa Enoch,Warren Davidson,87281,173852,n,y,rep
-2018,House,Ohio,District 9,Marcy Kaptur,Steve Kraus,157219,74670,y,n,dem
-2018,House,Ohio,District 10,Theresa Gasper,Mike Turner,118785,157554,n,y,rep
-2018,House,Ohio,District 11,Marcia Fudge,Beverly A. Goldstein,206138,44486,y,n,dem
-2018,House,Ohio,District 12,Danny O'Connor,Troy Balderson,161251,175677,n,y,rep
-2018,House,Ohio,District 13,Tim Ryan,Chris DePizzo,153323,98047,y,n,dem
-2018,House,Ohio,District 14,Betsy Rader,David Joyce,137549,169809,n,y,rep
-2018,House,Ohio,District 15,Rick Neal,Steve Stivers,116112,170593,n,y,rep
-2018,House,Ohio,District 16,Susan Moran Palmer,Anthony Gonzalez,129681,170029,n,n,rep
-2018,House,Oklahoma,District 1,Tim Gilpin,Kevin Hern,103042,150129,n,n,rep
-2018,House,Oklahoma,District 2,Jason Nichols,Markwayne Mullin,65021,140451,n,y,rep
-2018,House,Oklahoma,District 3,Frankie Robbins,Frank Lucas,61152,172913,n,y,rep
-2018,House,Oklahoma,District 4,Mary Brannon,Tom Cole,78088,149227,n,y,rep
-2018,House,Oklahoma,District 5,Kendra Horn,Steve Russell,121149,117811,n,y,rep
-2018,House,Oregon,District 1,Suzanne Bonamici,John Verbeek,231198,116446,y,n,dem
-2018,House,Oregon,District 2,Jamie McLeod-Skinner,Greg Walden,145298,207597,n,y,rep
-2018,House,Oregon,District 3,Earl Blumenauer,Tom Harrison,279019,76187,y,n,dem
-2018,House,Oregon,District 4,Peter DeFazio,Art Robinson,208710,152414,y,n,dem
-2018,House,Oregon,District 5,Kurt Schrader,Mark Callahan,197187,149887,y,n,dem
-2018,House,Pennsylvania,District 1,Scott Wallace,Brian Fitzpatrick,160745,169053,n,y,rep
-2018,House,Pennsylvania,District 2,Brendan Boyle,David Torres,159600,42382,y,n,dem
-2018,House,Pennsylvania,District 3,Dwight Evans,Bryan E. Leib,287610,20387,y,n,dem
-2018,House,Pennsylvania,District 4,Mideleine Dean,Dan David,211524,121467,n,n,dem
-2018,House,Pennsylvania,District 5,Mary Gay Scanlon,Pearl Kim,198639,106075,n,n,rep
-2018,House,Pennsylvania,District 6,Chrissy Houlahan,Greg McCauley,177704,124124,n,n,rep
-2018,House,Pennsylvania,District 7,Susan Wild,Marty Northstein,140813,114437,n,n,rep
-2018,House,Pennsylvania,District 8,Matt Cartwright,John Chrin,135603,112563,y,n,dem
-2018,House,Pennsylvania,District 9,Denny Wolf,Dan Meuser,100204,148723,n,n,rep
-2018,House,Pennsylvania,District 10,George Scott,Scott Perry,141668,149365,n,y,rep
-2018,House,Pennsylvania,District 11,Jess King,Lloyd Smucker,113876,163708,n,y,rep
-2018,House,Pennsylvania,District 12,Marc Friedenburg,Tom Marino,82825,161047,n,y,rep
-2018,House,Pennsylvania,District 13,Brent Ottaway,John Joyce,74733,178533,n,n,rep
-2018,House,Pennsylvania,District 14,Bibiana Boerio,Guy Reschenthaler,110051,151386,n,n,rep
-2018,House,Pennsylvania,District 15,Susan Boser,G.T. Thompson,78327,165245,n,y,rep
-2018,House,Pennsylvania,District 16,Ronald DiNicola,Mike Kelly,124109,135348,n,y,rep
-2018,House,Pennsylvania,District 17,Conor Lamb,Keight Rothfus,183162,142417,y,y,rep
-2018,House,Pennsylvania,District 18,Mike Doyle,-,231472,0,y,n,dem
-2018,House,Rhode Island,District 1,David Cicilline,Patrick Donovan,116099,57567,y,n,dem
-2018,House,Rhode Island,District 2,James Langevin,Sal Caiozzo,126476,72271,y,n,dem
-2018,House,South Carolina,District 1,Joe Cunningham,Katie Arrington,145455,141473,n,n,rep
-2018,House,South Carolina,District 2,Sean Carrigan,Joe Wilson,109199,144642,n,y,rep
-2018,House,South Carolina,District 3,Mary Geren,Jeff Duncan,70046,153338,n,y,rep
-2018,House,South Carolina,District 4,Brandon Brown,William Timmons,89182,145321,n,n,rep
-2018,House,South Carolina,District 5,Archie Parnell,Ralph Norman,103129,141757,n,y,rep
-2018,House,South Carolina,District 6,Jim Clyburn,Gerhard Gressmann,144765,58282,y,n,dem
-2018,House,South Carolina,District 7,Robert Williams,Tom Rice,96564,142681,n,y,rep
-2018,House,South Dakota,District 1,Tim Bjorkman,Dusty Johnson,120816,202446,n,n,rep
-2018,House,Tennessee,District 1,Marty Olsen,Phil Roe,47138,172835,n,y,rep
-2018,House,Tennessee,District 2,Renee Hoyos,Tim Burchett,86668,172856,n,n,rep
-2018,House,Tennessee,District 3,Danielle Mitchell,Chuck Fleischmann,84731,156512,n,y,rep
-2018,House,Tennessee,District 4,Mariah Phillips,Scott DesJarlais,78065,147323,n,y,rep
-2018,House,Tennessee,District 5,Jim Cooper,Jody Ball,177923,84317,y,n,dem
-2018,House,Tennessee,District 6,Dawn Barlow,John Rose,70370,172810,n,n,rep
-2018,House,Tennessee,District 7,Justin Kanew,Mark Green,81661,170071,n,n,rep
-2018,House,Tennessee,District 8,Erika Pearson,David Kustoff,74755,168030,n,y,rep
-2018,House,Tennessee,District 9,Steve Cohen,Charlotte Bergmann,145139,34901,y,n,dem
-2018,House,Texas,District 1,Shirley McKellar,Louie Gohmert,61263,168165,n,y,rep
-2018,House,Texas,District 2,Todd Litton,Dan Crenshaw,119992,139188,n,n,rep
-2018,House,Texas,District 3,Lorie Burch,Van Taylor,138234,169520,n,n,rep
-2018,House,Texas,District 4,Catherine Krantz,John Ratcliffe,57400,188667,n,y,rep
-2018,House,Texas,District 5,Dan Wood,Lance Gooden,78666,130617,n,n,rep
-2018,House,Texas,District 6,Jana Lynne Sanchez,Ron Wright,116350,135961,n,n,rep
-2018,House,Texas,District 7,Lizzie Fletcher,John Culberson,127959,115642,n,y,rep
-2018,House,Texas,District 8,Steven David,Kevin Brady,67930,200619,n,y,rep
-2018,House,Texas,District 9,Al Green,-,136256,0,y,n,dem
-2018,House,Texas,District 10,Mike Siegel,Michael McCaul,144034,157166,n,y,rep
-2018,House,Texas,District 11,Jennie Lou Leeder,Mike Conaway,40631,176603,n,y,rep
-2018,House,Texas,District 12,Vanessa Adia,Kay Granger,90994,172557,n,y,rep
-2018,House,Texas,District 13,Greg Sagan,Mac Thornberry,35083,169027,n,y,rep
-2018,House,Texas,District 14,Adrienne Bell,Randy Weber,92212,138942,n,y,rep
-2018,House,Texas,District 15,Vicente Gonzalez,Tim Westley,98333,63862,y,n,dem
-2018,House,Texas,District 16,Veronica Escobar,Rick Seeberger,124437,49127,n,n,dem
-2018,House,Texas,District 17,Rick Kennedy,Bill Flores,98070,134841,n,y,rep
-2018,House,Texas,District 18,Sheila Jackson Lee,Ava Reynero Pate,138704,38368,y,n,dem
-2018,House,Texas,District 19,Miguel Levario,Jodey Arrington,50039,151946,n,y,rep
-2018,House,Texas,District 20,Joaquin Castro,-,139038,0,y,n,dem
-2018,House,Texas,District 21,Joseph Kopser,Chip Roy,168421,177654,n,n,rep
-2018,House,Texas,District 22,Sri Preston Kulkarni,Pete Olson,138153,152750,n,y,rep
-2018,House,Texas,District 23,Gina Ortiz Jones,Will Hurd,102359,103285,n,y,rep
-2018,House,Texas,District 24,Jan McDowell,Kenny Marchant,125231,133317,n,y,rep
-2018,House,Texas,District 25,Julie Oliver,Roger Williams,136385,163023,n,y,rep
-2018,House,Texas,District 26,Linsey Fagan,Michael C. Burgess,121938,185551,n,y,rep
-2018,House,Texas,District 27,Eric Holguin,Michael Cloud,75929,125118,n,y,rep
-2018,House,Texas,District 28,Henry Cuellar,-,117494,0,y,n,dem
-2018,House,Texas,District 29,Sylvia Garcia,Phillip Aronoff,88188,28098,n,n,dem
-2018,House,Texas,District 30,Eddie Bernice Johnson,-,166784,0,y,n,dem
-2018,House,Texas,District 31,MJ Hegar,John Carter,136362,144680,n,y,rep
-2018,House,Texas,District 32,Colin Allred,Pete Sessions,144067,126101,n,y,rep
-2018,House,Texas,District 33,Marc Veasey,Willie Billups,90805,26120,y,n,dem
-2018,House,Texas,District 34,Filemon Vela Jr.,Rey Gonzalez,85825,57243,y,n,dem
-2018,House,Texas,District 35,Lloyd Doggett,David Smalling,138278,50553,y,n,dem
-2018,House,Texas,District 36,Dayna Steele,Brian Babin,60908,161048,n,y,rep
-2018,House,Utah,District 1,Lee Castillo,Rob Bishop,63308,156692,n,y,rep
-2018,House,Utah,District 2,Shireen Ghorbani,Chris Stewart,105051,151489,n,y,rep
-2018,House,Utah,District 3,James Singer,John Curtis,70686,174856,n,y,rep
-2018,House,Utah,District 4,Ben McAdams,Mia Love,134964,134270,n,y,rep
-2018,House,Vermont,District 1,Peter Welch,Anya Tynio,188547,70705,y,n,dem
-2018,House,Virginia,District 1,Vangie Williams,Rob Wittman,148464,183250,n,y,rep
-2018,House,Virginia,District 2,Elaine Luria,Scott Taylor,139571,133458,n,y,rep
-2018,House,Virginia,District 3,Bobby Scott,-,198615,0,y,n,dem
-2018,House,Virginia,District 4,Donald McEachin,Ryan McAdams,187642,107706,y,n,dem
-2018,House,Virginia,District 5,Leslie Cockburn,Denver Riggleman,145040,165339,n,n,rep
-2018,House,Virginia,District 6,Jennifer Lewis,Ben Cline,113133,167957,n,n,rep
-2018,House,Virginia,District 7,Abigail Spanberger,Dave Brat,176079,169295,n,y,rep
-2018,House,Virginia,District 8,Don Beyer,Thomas Oh,247137,76899,y,n,dem
-2018,House,Virginia,District 9,Anthony Flaccavento,Morgan Griffith,85833,160933,n,y,rep
-2018,House,Virginia,District 10,Jennifer Wexton,Barbara Comstock,206356,160841,n,y,rep
-2018,House,Virginia,District 11,Gerry Connolly,Jeff Dove,219191,83023,y,n,dem
-2018,House,Washington,District 1,Suzan DelBene,Jeffrey Beeler,197209,135534,y,n,dem
-2018,House,Washington,District 2,Rick Larsen,-,210187,0,y,n,dem
-2018,House,Washington,District 3,Carolyn Long,Jaime Herrera Beutler,145407,161819,n,y,rep
-2018,House,Washington,District 4,Christine Brown,Dan Newhouse,83785,141551,n,y,rep
-2018,House,Washington,District 5,Lisa Brown,Cathy McMorris Rodgers,144925,175422,n,y,rep
-2018,House,Washington,District 6,Derek Kilmer,Douglas Dightman,206409,116677,y,n,dem
-2018,House,Washington,District 7,Pramila Jayapal,Craig Keller,329800,64881,y,n,dem
-2018,House,Washington,District 8,Kim Schrier,Dino Rossi,164089,148968,n,n,rep
-2018,House,Washington,District 9,Adam Smith,-,163345,0,y,n,dem
-2018,House,Washington,District 10,Denny Heck,Joseph Brumbles,166215,103860,y,n,dem
-2018,House,West Virginia,District 1,Kendra Fershee,David McKinley,70217,127997,n,y,rep
-2018,House,West Virginia,District 2,Talley Sergent,Alex Mooney,88011,110504,n,y,rep
-2018,House,West Virginia,District 3,Richard Ojeda,Carol Miller,76340,98645,n,n,rep
-2018,House,Wisconsin,District 1,Randy Bryce,Bryan Steil,137508,177492,n,n,rep
-2018,House,Wisconsin,District 2,Mark Pocan,Joey Wayne Reed,309116,29,y,n,dem
-2018,House,Wisconsin,District 3,Ron Kind,Steve Toft,187888,126980,y,n,dem
-2018,House,Wisconsin,District 4,Gwen Moore,Tim Rogers,206487,59091,y,n,dem
-2018,House,Wisconsin,District 5,Tom Palzewicz,Jim Sensenbrenner,138385,225619,n,y,rep
-2018,House,Wisconsin,District 6,Dan Kohl,Glenn Grothman,144536,180311,n,y,rep
-2018,House,Wisconsin,District 7,Margaret Engebretson,Sean Duffy,124307,194061,n,y,rep
-2018,House,Wisconsin,District 8,Beau Liegeois,Mike Gallagher,119265,209410,n,y,rep
-2018,House,Wyoming,District 1,Greg Hunter,Liz Cheney,59903,127963,n,y,rep
-2020,House,Alabama,District 1,James Averhart,Jerry Carl,116949,211825,n,n,rep
-2020,House,Alabama,District 2,Phyllis Harvey-Hall,Barry Moore,105286,197996,n,n,rep
-2020,House,Alabama,District 3,Adia Winfrey,Mike Rogers,104595,217384,n,y,rep
-2020,House,Alabama,District 4,Rick Neighbors,Robert Aderholt,56237,261553,n,y,rep
-2020,House,Alabama,District 5,-,Mo Brooks,0,253094,n,y,rep
-2020,House,Alabama,District 6,-,Gary Palmer,0,274160,n,y,rep
-2020,House,Alabama,District 7,Terri Sewell,-,225742,0,y,n,dem
-2020,House,Alaska,District 1,Alyse Galvin,Don Young,159856,192126,n,y,rep
-2020,House,Arizona,District 1,Tom O'Halleran,Tiffany Shedd,188469,176709,y,n,dem
-2020,House,Arizona,District 2,Ann Kirkpatrick,Brandon Martin,209945,170975,y,n,dem
-2020,House,Arizona,District 3,Raul Grijalva,Daniel Wood,174243,95594,y,n,dem
-2020,House,Arizona,District 4,Delina DiSanto,Paul Gosar,120484,278002,n,y,rep
-2020,House,Arizona,District 5,Joan Greene,Andy Biggs,183171,262414,n,y,rep
-2020,House,Arizona,District 6,Hiral Tipirneni,David Schweikert,199644,217783,n,y,rep
-2020,House,Arizona,District 7,Ruben Gallego,Josh Barnett,165452,50226,y,n,dem
-2020,House,Arizona,District 8,Michael Muscato,Debbie Lesko,170816,251633,n,y,rep
-2020,House,Arizona,District 9,Greg Stanton,Dave Giles,217094,135180,y,n,dem
-2020,House,Arkansas,District 1,-,Rick Crawford,0,237596,n,y,rep
-2020,House,Arkansas,District 2,Joyce Elliott,French Hill,148410,184093,n,y,rep
-2020,House,Arkansas,District 3,Celeste Williams,Steve Womack,106325,214960,n,y,rep
-2020,House,Arkansas,District 4,William Hanson,Bruce Westerman,75750,191617,n,y,rep
-2020,House,California,District 1,Audrey Denney,Doug LaMalfa,154073,204190,n,y,rep
-2020,House,California,District 2,Jared Huffman,Dale K. Mensing,294435,94320,y,n,dem
-2020,House,California,District 3,John Garamendi,Tamika Hamilton,176036,145941,y,n,dem
-2020,House,California,District 4,Brynne S. Kennedy,Tom McClintock,194731,247291,n,y,rep
-2020,House,California,District 5,Mike Thompson,Scott Giblin,271233,85227,y,n,dem
-2020,House,California,District 6,Doris Matsui,Chris Bish,229648,83466,y,n,dem
-2020,House,California,District 7,Ami Bera,Buzz Patterson,217416,166549,y,n,dem
-2020,House,California,District 8,Christine Bubser,Jay Obernolte,124400,158711,n,n,rep
-2020,House,California,District 9,Jerry McNerney,"Antonio C. ""Tony"" Amador",174252,128358,y,n,dem
-2020,House,California,District 10,Josh Harder,Ted Howze,166865,135629,y,n,dem
-2020,House,California,District 11,Mark DeSaulnier,Nisha Sharma,271063,100293,y,n,dem
-2020,House,California,District 12,Nancy Pelosi,-,281776,0,y,n,dem
-2020,House,California,District 13,Barbara Lee,Nikka Piterman,327863,34955,y,n,dem
-2020,House,California,District 14,Jackie Speier,Ran Petel,278227,72684,y,n,dem
-2020,House,California,District 15,Eric Swalwell,Alison Hayden,242991,99710,y,n,dem
-2020,House,California,District 16,Jim Costa,Kevin Cookingham,128690,88039,y,n,dem
-2020,House,California,District 17,Ro Khanna,Ritesh Tandon,212137,85199,y,n,dem
-2020,House,California,District 18,Anna Eshoo,-,217377,0,y,n,dem
-2020,House,California,District 19,Zoe Lofgren,Justin Aguilera,224385,88642,y,n,dem
-2020,House,California,District 20,Jimmy Panetta,Jeff Gorman,236896,71658,y,n,dem
-2020,House,California,District 21,TJ Cox,David Valadao,84406,85928,y,n,dem
-2020,House,California,District 22,Phil Arballo,Devin Nunes,144251,170888,n,y,rep
-2020,House,California,District 23,Kim Mangone,Kevin McCarthy,115896,190222,n,y,rep
-2020,House,California,District 24,Salud Carbajal,Andy Caldwell,212564,149781,y,n,dem
-2020,House,California,District 25,Christy Smith,Mike Garcia,169305,169638,n,y,rep
-2020,House,California,District 26,Julia Brownley,Ronda Baldwin-Kennedy,208856,135877,y,n,dem
-2020,House,California,District 27,Judy Chu,Johnny J. Nalbandian,221411,95907,y,n,dem
-2020,House,California,District 28,Adam Schiff,Eric Early,244471,91928,y,n,dem
-2020,House,California,District 29,Tony Cardenas,-,119420,0,y,n,dem
-2020,House,California,District 30,Brad Sherman,Mark S. Reed,240038,105426,y,n,dem
-2020,House,California,District 31,Pete Aguilar,Agnes Gibboney,175315,110735,y,n,dem
-2020,House,California,District 32,Grace Napolitano,Joshua M. Scott,172942,86818,y,n,dem
-2020,House,California,District 33,Ted Lieu,James P. Bradley,257094,123334,y,n,dem
-2020,House,California,District 34,Jimmy Gomez,-,108792,0,y,n,dem
-2020,House,California,District 35,Norma Torres,Mike Cargile,169405,74941,y,n,dem
-2020,House,California,District 36,Raul Ruiz,Erin Cruz,185051,121640,y,n,dem
-2020,House,California,District 37,Karen Bass,Errol Webber,254916,41705,y,n,dem
-2020,House,California,District 38,Linda Sanchez,-,190467,0,y,n,dem
-2020,House,California,District 39,Gil Cisneros,Young Kim,169837,173946,y,n,dem
-2020,House,California,District 40,Lucille Roybal-Allard,C. Antonio Delgado,135572,50809,y,n,dem
-2020,House,California,District 41,Mark Takano,Aja Smith,167938,94289,y,n,dem
-2020,House,California,District 42,"William ""Liam"" O'Mara",Ken Calvert,157773,210274,n,y,rep
-2020,House,California,District 43,Maxine Waters,Joe E. Collins III,199210,78688,y,n,dem
-2020,House,California,District 44,Nanette Barragan,-,139661,0,y,n,dem
-2020,House,California,District 45,Katie Porter,Greg Raths,221843,193096,y,n,dem
-2020,House,California,District 46,Lou Correa,James S. Waters,157803,71716,y,n,dem
-2020,House,California,District 47,Alan Lowenthal,John Briscoe,197028,114371,y,n,dem
-2020,House,California,District 48,Harley Rouda,Michelle Steel,193362,201738,y,n,dem
-2020,House,California,District 49,Mike Levin,Brian Maryott,205349,181157,y,n,dem
-2020,House,California,District 50,Ammar Campa-Najjar,Darrell Issa,166859,195510,n,n,rep
-2020,House,California,District 51,Juan C. Vargas,Juan M. Hidalgo Jr.,165596,76841,y,n,dem
-2020,House,California,District 52,Scott Peters,Jim DeBello,244145,152350,y,n,dem
-2020,House,California,District 53,Sara Jacobs,-,199244,0,n,n,dem
-2020,House,Colorado,District 1,Diana DeGette,Shane Bolling,331621,105955,y,n,dem
-2020,House,Colorado,District 2,Joe Neguse,Charles Winn,316925,182547,y,n,dem
-2020,House,Colorado,District 3,Diane Mitsch Bush,Lauren Boebert,194122,220634,n,n,rep
-2020,House,Colorado,District 4,Ike McCorkle,Ken Buck,173945,285606,n,y,rep
-2020,House,Colorado,District 5,Jillian Freeland,Doug Lamborn,161600,249013,n,y,rep
-2020,House,Colorado,District 6,Jason Crow,Steve House,250314,175192,y,n,dem
-2020,House,Colorado,District 7,Ed Perlmutter,Casper Stockham,250525,159301,y,n,dem
-2020,House,Connecticut,District 1,John B. Larson,Mary Fay,222668,122111,y,n,dem
-2020,House,Connecticut,District 2,Joe Courtney,Justin Anderson,218119,140356,y,n,dem
-2020,House,Connecticut,District 3,Rosa DeLauro,Margaret Streicker,203265,137596,y,n,dem
-2020,House,Connecticut,District 4,Jim Himes,Jonathan Riddle,223832,130627,y,n,dem
-2020,House,Connecticut,District 5,Jahana Hayes,David X. Sullivan,192484,151988,y,n,dem
-2020,House,Delaware,District 1,Lisa Blunt Rochester,Lee Murphy,281382,196392,y,n,dem
-2020,House,Florida,District 1,Phil Her,Matt Gaetz,149172,283352,n,y,rep
-2020,House,Florida,District 2,-,Neal Dunn,0,305337,n,y,rep
-2020,House,Florida,District 3,Adam Christensen,Kat Cammack,167326,223075,n,n,rep
-2020,House,Florida,District 4,Donna Deegan,John Rutherford,196423,308497,n,y,rep
-2020,House,Florida,District 5,Al Lawson,Gary Adler,219463,117510,y,n,dem
-2020,House,Florida,District 6,Clint Curtis,Michael Waltz,172305,265393,n,y,rep
-2020,House,Florida,District 7,Stephanie Murphy,Leo Valentin,224946,175750,y,n,dem
-2020,House,Florida,District 8,Jim Kennedy,Bill Posey,177695,282093,n,y,rep
-2020,House,Florida,District 9,Darren Soto,Bill Olsen,240724,188889,y,n,dem
-2020,House,Florida,District 10,Val Demings,Vennia Francois,239434,136889,y,n,dem
-2020,House,Florida,District 11,Dana Cottrell,Daniel Webster,158094,316979,n,y,rep
-2020,House,Florida,District 12,Kimberly Walker,Gus Bilirakis,168194,284941,n,y,rep
-2020,House,Florida,District 13,Charlie Crist,Anna Paulina Luna,215405,190713,y,n,dem
-2020,House,Florida,District 14,Kathy Castor,Christine Quinn,224240,147896,y,n,dem
-2020,House,Florida,District 15,Alan Cohn,Scott Franklin,174297,216374,n,n,rep
-2020,House,Florida,District 16,Margaret Good,Vern Buchanan,215683,269001,n,y,rep
-2020,House,Florida,District 17,Allen Ellison,Greg Steube,140487,266514,n,y,rep
-2020,House,Florida,District 18,Pam Keith,Brian Mast,186674,253286,n,y,rep
-2020,House,Florida,District 19,Cindy Banyai,Byron Donalds,172146,272440,n,n,rep
-2020,House,Florida,District 20,Alcee Hastings,Greg Musselwhite,253661,68748,y,n,dem
-2020,House,Florida,District 21,Lois Frankel,Laura Loomer,237925,157612,y,n,dem
-2020,House,Florida,District 22,Ted Deutch,James Pruden,235764,166553,y,n,dem
-2020,House,Florida,District 23,Debbie Wasserman Schultz,Carla Spalding,221239,158874,y,n,dem
-2020,House,Florida,District 24,Frederica Wilson,Lavern Spicer,218825,59084,y,n,dem
-2020,House,Florida,District 25,-,Mario Diaz-Balart,0,1,n,y,rep
-2020,House,Florida,District 26,Debbie Mucarsel-Powell,Carlos A. Gimenez,165407,177223,y,n,dem
-2020,House,Florida,District 27,Donna Shalala,Maria Elvira Salazar,166758,176141,y,n,dem
-2020,House,Georgia,District 1,Joyce Griggs,Buddy Carter,135238,189457,n,y,rep
-2020,House,Georgia,District 2,Sanford Bishop,Don Cole,161397,111620,y,n,dem
-2020,House,Georgia,District 3,Val Almonord,Drew Ferguson,129792,241526,n,y,rep
-2020,House,Georgia,District 4,Hank Johnson,Johsie Cruz Ezammudeen,278906,69393,y,n,dem
-2020,House,Georgia,District 5,Nikema Williams,Angela Stanton-King,301857,52646,n,n,dem
-2020,House,Georgia,District 6,Lucy McBath,Karen Handel,216775,180329,y,n,dem
-2020,House,Georgia,District 7,Carolyn Bourdeaux,Rich McCormick,190900,180564,n,n,rep
-2020,House,Georgia,District 8,"Lindsay ""Doc"" Holliday",Austin Scott,109264,198701,n,y,rep
-2020,House,Georgia,District 9,Devin Pandy,Andrew Clyde,79797,292750,n,n,rep
-2020,House,Georgia,District 10,Tabitha Johnson-Green,Jody Hice,142636,235810,n,y,rep
-2020,House,Georgia,District 11,Dana Barrett,Barry Loudermilk,160623,245256,n,y,rep
-2020,House,Georgia,District 12,Elizabeth Johnson,Rick W. Allen,129061,181038,n,y,rep
-2020,House,Georgia,District 13,David Scott,Becky E. Hites,279045,81476,y,n,dem
-2020,House,Georgia,District 14,Kevin Van Ausdal,Marjorie Taylor Greene,77798,229827,n,n,rep
-2020,House,Hawaii,District 1,Ed Case,Ron Curtis,183245,71188,y,n,dem
-2020,House,Hawaii,District 2,Kai Kahele,Joe Akana,171517,84027,n,n,dem
-2020,House,Idaho,District 1,Rudy Soto,Russ Fulcher,131380,310736,n,y,rep
-2020,House,Idaho,District 2,Aaron Swisher,Mike Simpson,124151,250678,n,y,rep
-2020,House,Illinois,District 1,Bobby Rush,Philanise White,239943,85027,y,n,dem
-2020,House,Illinois,District 2,Robin Kelly,Theresa Raborn,234896,63142,y,n,dem
-2020,House,Illinois,District 3,Marie Newman,Mike Fricilone,172997,133851,n,n,dem
-2020,House,Illinois,District 4,"Jesus ""Chuy"" Garcia",Jesus E. Solorio Jr.,187219,35518,y,n,dem
-2020,House,Illinois,District 5,Mike Quigley,Tom Hanson,255661,96200,y,n,dem
-2020,House,Illinois,District 6,Sean Casten,Jeanne Ives,213777,183891,y,n,dem
-2020,House,Illinois,District 7,Danny K. Davis,Craig Cameron,249383,41390,y,n,dem
-2020,House,Illinois,District 8,Raja Krishnamoorthi,-,186251,0,y,n,dem
-2020,House,Illinois,District 9,Jan Schakowsky,Sargis Sangari,262045,107125,y,n,dem
-2020,House,Illinois,District 10,Brad Schneider,Valerie Ramirez Mukherjee,202402,114442,y,n,dem
-2020,House,Illinois,District 11,Bill Foster,Rick Laib,194557,112807,y,n,dem
-2020,House,Illinois,District 12,Raymond Lenzi,Mike Bost,127577,194839,n,y,rep
-2020,House,Illinois,District 13,Betsy Dirksen Londrigan,Rodney Davis,151648,181373,n,y,rep
-2020,House,Illinois,District 14,Lauren Underwood,Jim Oberweis,203209,197835,y,n,dem
-2020,House,Illinois,District 15,Erika Weaver,Mary Miller,88559,244947,n,n,rep
-2020,House,Illinois,District 16,Dani Brzozowski,Adam Kinzinger,119313,218839,n,y,rep
-2020,House,Illinois,District 17,Cheri Bustos,Esther Joy King,156011,143863,y,n,dem
-2020,House,Illinois,District 18,George Petrilli,Darin LaHood,110039,261840,n,y,rep
-2020,House,Indiana,District 1,Frank J. Mrvan,Mark Leyva,185180,132247,n,n,dem
-2020,House,Indiana,District 2,Pat Hackett,Jackie Walorski,114967,183601,n,y,rep
-2020,House,Indiana,District 3,Chip Coldiron,Jim Banks,104762,220989,n,y,rep
-2020,House,Indiana,District 4,Joe Mackey,Jim Baird,112984,225531,n,y,rep
-2020,House,Indiana,District 5,Christina Hale,Victoria Spartz,191226,208212,n,n,rep
-2020,House,Indiana,District 6,Jeannine Lake,Greg Pence,91103,225318,n,y,rep
-2020,House,Indiana,District 7,Andre Carson,Susan Marie Smith,176422,106146,y,n,dem
-2020,House,Indiana,District 8,Thomasina Marsili,Larry Bucshon,95691,214643,n,y,rep
-2020,House,Indiana,District 9,Andy Ruff,Trey Hollingsworth,122566,222057,n,y,rep
-2020,House,Iowa,District 1,Abby Finkenaur,Ashley Hinson,201347,212088,y,n,dem
-2020,House,Iowa,District 2,Rita Hart,Marianette Miller-Meeks,196958,196964,n,n,dem
-2020,House,Iowa,District 3,Cindy Axne,David Young,219205,212997,y,n,dem
-2020,House,Iowa,District 4,J. D. Scholten,Randy Feenstra,144761,237369,n,n,rep
-2020,House,Kansas,District 1,Kali Barnett,Tracey Mann,84393,208229,n,n,rep
-2020,House,Kansas,District 2,Michelle De La Isla,Jake LaTurner,136650,185464,n,n,rep
-2020,House,Kansas,District 3,Sharice Davids,Amanda Adkins,220049,178773,y,n,dem
-2020,House,Kansas,District 4,Laura Lombard,Ron Estes,116166,203432,n,y,rep
-2020,House,Kentucky,District 1,James Rhodes,James Comer,82141,246329,n,y,rep
-2020,House,Kentucky,District 2,Hank Linderman,Brett Guthrie,94643,255735,n,y,rep
-2020,House,Kentucky,District 3,John Yarmuth,Rhonda Palazzo,230672,137425,y,n,dem
-2020,House,Kentucky,District 4,Alexandra Owensby,Thomas Massie,125896,256613,n,y,rep
-2020,House,Kentucky,District 5,Matthew Best,Hal Rogers,47056,250914,n,y,rep
-2020,House,Kentucky,District 6,Josh Hicks,Andy Barr,155011,216948,n,y,rep
-2020,House,Louisiana,District 1,Lee Ann Dugas,Steve Scalise,94730,270330,n,y,rep
-2020,House,Louisiana,District 2,Cedric Richmond,David M. Schilling,201636,47575,y,n,dem
-2020,House,Louisiana,District 3,Braylon Harris,Clay Higgins,60852,230480,n,y,rep
-2020,House,Louisiana,District 4,Kenny Houston,Mike Johnson,78157,185265,n,y,rep
-2020,House,Louisiana,District 5,Luke Letlow,Candy Shoemaker-Cristophe,50812,102533,n,n,rep
-2020,House,Louisiana,District 6,Dartanyon Williams,Garret Graves,95541,265706,n,y,rep
-2020,House,Maine,District 1,Chellie Pingree,Jay Allen,271004,165008,y,n,dem
-2020,House,Maine,District 2,Jared Golden,Dale Crafts,197974,175228,y,n,dem
-2020,House,Maryland,District 1,Mia Mason,Andy Harris,143877,250901,n,y,rep
-2020,House,Maryland,District 2,Dutch Ruppersberger,Johnny Ray Salling,224836,106355,y,n,dem
-2020,House,Maryland,District 3,John Sarbanes,Charles Anthony,260358,112117,y,n,dem
-2020,House,Maryland,District 4,Anthony Brown,George McDermott,282119,71671,y,n,dem
-2020,House,Maryland,District 5,Steny Hoyer,Chris Palombi,274210,123525,y,n,dem
-2020,House,Maryland,District 6,David Trone,Neil Parrott,215540,143599,y,n,dem
-2020,House,Maryland,District 7,Kweisi Mfume,Kimberly Klacik,237084,92825,y,n,dem
-2020,House,Maryland,District 8,Jamie Raskin,Gregory Thomas Coll,274716,127157,y,n,dem
-2020,House,Massachusetts,District 1,Richard neal,-,275376,0,y,n,dem
-2020,House,Massachusetts,District 2,Jim McGovern,Tracy Lovvorn,249854,132220,y,n,dem
-2020,House,Massachusetts,District 3,Lori Trahan,-,286896,0,y,n,dem
-2020,House,Massachusetts,District 4,Jake Auchincloss,Julie Hall,251102,160474,n,n,dem
-2020,House,Massachusetts,District 5,Katherine Clark,Caroline Colarusso,294427,101351,y,n,dem
-2020,House,Massachusetts,District 6,Seth Moulton,John Paul Moran,286377,150695,y,n,dem
-2020,House,Massachusetts,District 7,Ayanna Pressley,-,267362,38675,y,n,dem
-2020,House,Massachusetts,District 8,Stephen F. Lynch,-,310940,0,y,n,dem
-2020,House,Massachusetts,District 9,Bill Keating,Helen Brady,260262,154261,y,n,dem
-2020,House,Michigan,District 1,Dana Ferguson,Jack Bergman,153328,256581,n,y,rep
-2020,House,Michigan,District 2,Bryan Berghoef,Bill Huizenga,154122,238711,n,y,rep
-2020,House,Michigan,District 3,Hillary Scholten,Peter Meijer,189769,213649,n,n,rep
-2020,House,Michigan,District 4,Jerry Hilliard,John Moolenaar,120802,242621,n,y,rep
-2020,House,Michigan,District 5,Dan Kildee,Tim Kelly,196599,150772,y,n,dem
-2020,House,Michigan,District 6,Jon Hoadley,Fred Upton,152085,211496,n,y,rep
-2020,House,Michigan,District 7,Gretchen Driskell,Tim Walberg,159743,227524,n,y,rep
-2020,House,Michigan,District 8,Elissa Slotkin,Paul Junge,217922,202525,y,n,dem
-2020,House,Michigan,District 9,Andy Levin,Charles Langworthy,230318,153296,y,n,dem
-2020,House,Michigan,District 10,Kimberly Bizon,Lisa McClain,138179,271607,n,n,rep
-2020,House,Michigan,District 11,Haley Stevens,Eric Esshaki,226128,215405,y,n,dem
-2020,House,Michigan,District 12,Debbie Dingell,Jeff Jones,254957,117719,y,n,dem
-2020,House,Michigan,District 13,Rashida Tlaib,David Dudenhoefer,223205,53311,y,n,dem
-2020,House,Michigan,District 14,Brenda Lawrence,Robert Patrick,271370,62664,y,n,dem
-2020,House,Minnesota,District 1,Dan Feehan,Jim Hagedorn,167890,179234,n,y,rep
-2020,House,Minnesota,District 2,Angie Craig,Tyler Kistner,204534,194954,y,n,dem
-2020,House,Minnesota,District 3,Dean Phillips,Kendall Qualls,246666,196625,y,n,dem
-2020,House,Minnesota,District 4,Betty McCollum,Gene Rechtzigel,245813,112730,y,n,dem
-2020,House,Minnesota,District 5,Ilhan Omar,Lacy Johnson,255924,102878,y,n,dem
-2020,House,Minnesota,District 6,Tawnja Zahradka,Tom Emmer,140853,270901,n,y,rep
-2020,House,Minnesota,District 7,Collin Peterson,Michelle Fischbach,144840,194066,y,n,dem
-2020,House,Minnesota,District 8,Quinn Nystrom,Pete Stauber,147853,223432,n,y,rep
-2020,House,Mississippi,District 1,Antonia Eliason,Trent Kelly,104008,228787,n,y,rep
-2020,House,Mississippi,District 2,Bennie Thompson,Brian Flowers,196224,101010,y,n,dem
-2020,House,Mississippi,District 3,"Dorothy ""Dot"" Benford",Michael Guest,120782,221064,n,y,rep
-2020,House,Mississippi,District 4,-,Steven Palazzo,0,255971,n,y,rep
-2020,House,Missouri,District 1,Cori Bush,Anthony Rogers,249087,59940,n,n,dem
-2020,House,Missouri,District 2,Jill Schupp,Ann Wagner,204540,233157,n,y,rep
-2020,House,Missouri,District 3,Megan Rezabek,Blaine Luetkemeyer,116095,282866,n,y,rep
-2020,House,Missouri,District 4,Lindsey Simmons,Vicky Hartzler,107635,245247,n,y,rep
-2020,House,Missouri,District 5,Emanuel Cleaver,Ryan Derks,207180,135934,y,n,dem
-2020,House,Missouri,District 6,Gena Ross,Sam Graves,118926,258709,n,y,rep
-2020,House,Missouri,District 7,Teresa Montseny,Billy Long,98111,254318,n,y,rep
-2020,House,Missouri,District 8,Kathy Ellis,Jason Smith,70561,253811,n,y,rep
-2020,House,Montana,District 1,Kathleen Williams,Matt Rosendale,262340,339169,n,n,rep
-2020,House,Nebraska,District 1,Kate Bolz,Jeff Fortenberry,119622,189006,n,y,rep
-2020,House,Nebraska,District 2,Kara Eastman,Don Bacon,155706,171071,n,y,rep
-2020,House,Nebraska,District 3,Mark Elworth Jr.,Adrian Smith,50690,225157,n,y,rep
-2020,House,Nevada,District 1,Dina Titus,Joyce Bentley,137868,74490,y,n,dem
-2020,House,Nevada,District 2,Patricia Ackerman,Mark Amodei,155780,216078,n,y,rep
-2020,House,Nevada,District 3,Susie Lee,Dan Rodimer,203421,190975,y,n,dem
-2020,House,Nevada,District 4,Steven Horsford,Jim Marchant,168457,152284,y,n,dem
-2020,House,New Hampshire,District 1,Chris Pappas,Matt Mowers,205606,185159,y,n,dem
-2020,House,New Hampshire,District 2,Ann McLane Kuster,Steve Negron,208289,168886,y,n,dem
-2020,House,New Jersey,District 1,Donald Norcross,Claire Gustafson,240567,144463,y,n,dem
-2020,House,New Jersey,District 2,Amy Kennedy,Jeff Van Drew,173849,195526,n,y,rep
-2020,House,New Jersey,District 3,Andy Kim,David Richter,229840,196327,y,n,dem
-2020,House,New Jersey,District 4,Stephanie Schmid,Chris Smith,162420,254103,n,y,rep
-2020,House,New Jersey,District 5,Josh Gottheimer,Frank Pallotta,225175,193333,y,n,dem
-2020,House,New Jersey,District 6,Frank Pallone Jr.,Christian Onuoha,199648,126760,y,n,dem
-2020,House,New Jersey,District 7,Tom Malinowski,Thomas H. Kean Jr.,219629,214318,y,n,dem
-2020,House,New Jersey,District 8,Albio Sires,Jason Mushnick,176758,58686,y,n,dem
-2020,House,New Jersey,District 9,Bill Pascrell Jr.,Billy Prempeh,203674,98629,y,n,dem
-2020,House,New Jersey,District 10,Donald Payne Jr.,Jennifer Zinone,241522,40298,y,n,dem
-2020,House,New Jersey,District 11,Mikie Sherrill,Rosemary Becchi,235163,206013,y,n,dem
-2020,House,New Jersey,District 12,Bonnie Watson Coleman,Mark Razzoli,230883,114591,y,n,dem
-2020,House,New Mexico,District 1,Deb Haaland,Michelle Garcia Holmes,186953,134337,y,n,dem
-2020,House,New Mexico,District 2,Xochitl Torres Small,Yvette Herrell,122546,142283,y,n,dem
-2020,House,New Mexico,District 3,Teresa Leger Fernandez,Alexis Johnson,186282,131166,n,n,dem
-2020,House,New York,District 1,Nancy Goroff,Lee Zeldin,169294,205715,n,y,rep
-2020,House,New York,District 2,Jackie Gordon,Andrew Garbarino,154246,177379,n,n,rep
-2020,House,New York,District 3,Thomas Suozzi,George Santos,208555,161931,y,n,dem
-2020,House,New York,District 4,Kathleen Rice,Douglas Tuman,199762,153007,y,n,dem
-2020,House,New York,District 5,Gregory Meeks,-,229125,0,y,n,dem
-2020,House,New York,District 6,Grace Meng,Tom Zmich,158862,74829,y,n,dem
-2020,House,New York,District 7,Nydia Velazquez,Brian Kelly,191073,32520,y,n,dem
-2020,House,New York,District 8,Hakeem Jeffries,Garfield Wallace,234933,42007,y,n,dem
-2020,House,New York,District 9,Yvette Clarke,Constantin Jean-Pierre,230221,43950,y,n,dem
-2020,House,New York,District 10,Jerry Nadler,Cathy Bernstein,206310,66889,y,n,dem
-2020,House,New York,District 11,Max Rose,Nicole Malliotakis,137198,155608,y,n,dem
-2020,House,New York,District 12,Carolyn Maloney,Carlos Santiago-Cano,265172,53061,y,n,dem
-2020,House,New York,District 13,Adriano Espaillat,Lovelynn Gwinn,231841,19829,y,n,dem
-2020,House,New York,District 14,Alexandria Ocasio-Cortez,John Cummings,152661,58440,y,n,dem
-2020,House,New York,District 15,Ritchie Torres,Patrick Delices,169533,21221,n,n,dem
-2020,House,New York,District 16,Jamaal Bowman,Patrick McManus,218514,41094,n,n,dem
-2020,House,New York,District 17,Mondaire Jones,Maureen McArdle Schulman,197354,117309,n,n,dem
-2020,House,New York,District 18,Sean Patrick Maloney,Chele Farley,187444,145145,y,n,dem
-2020,House,New York,District 19,Antonio Delgado,Kyle Van De Water,192100,151475,y,n,dem
-2020,House,New York,District 20,Paul Tonko,Liz Joy,219705,139446,y,n,dem
-2020,House,New York,District 21,Tedra Cobb,Elise Stefanik,131995,188655,n,y,rep
-2020,House,New York,District 22,Anthony Brindisi,Claudia Tenney,155989,156098,y,n,dem
-2020,House,New York,District 23,Tracy Mitrano,Tom Reed,128976,181021,n,y,rep
-2020,House,New York,District 24,Dana Balter,John Katko,147877,182809,n,y,rep
-2020,House,New York,District 25,Joseph Morelle,George Mitris,206396,136198,y,n,dem
-2020,House,New York,District 26,Brian Higgins,Ricky Donovan,223366,91706,y,n,dem
-2020,House,New York,District 27,Nate McMurray,Chris Jacobs,149449,228885,n,y,rep
-2020,House,North Carolina,District 1,G. K. Butterfield,Sandy Smith,188870,159748,y,n,dem
-2020,House,North Carolina,District 2,Deborah K. Ross,Alan Swain,311887,172544,n,n,rep
-2020,House,North Carolina,District 3,Daryl Farrow,Greg Murphy,132752,229800,n,y,rep
-2020,House,North Carolina,District 4,David Price,Robert Thomas,332421,161298,y,n,dem
-2020,House,North Carolina,District 5,David Brown,Virginia Foxx,119846,257843,n,y,rep
-2020,House,North Carolina,District 6,Kathy Manning,Lee Haywood,253531,153598,n,n,rep
-2020,House,North Carolina,District 7,Chris Ward,David Rouzer,272443,179045,n,y,rep
-2020,House,North Carolina,District 8,Patricia Timmons-Goodson,Richard Hudson,177781,202774,n,y,rep
-2020,House,North Carolina,District 9,Cynthia Wallace,Dan Bishop,179463,224661,n,y,rep
-2020,House,North Carolina,District 10,David Parker,Patrick McHenry,128189,284095,n,y,rep
-2020,House,North Carolina,District 11,Moe Davis,Madison Cawthorn,190609,245351,n,n,rep
-2020,House,North Carolina,District 12,Alma Adams,-,341457,0,y,n,dem
-2020,House,North Carolina,District 13,Scott Hufman,Ted Budd,124684,267181,n,y,rep
-2020,House,North Dakota,District 1,Zach Raknerud,Kelly Armstrong,97970,245229,n,y,rep
-2020,House,Ohio,District 1,Kate Schroder,Steve Chabot,172022,199560,n,y,rep
-2020,House,Ohio,District 2,Jaime Castle,Brad Wenstrup,146781,230430,n,y,rep
-2020,House,Ohio,District 3,Joyce Beatty,Mark Richardson,227420,93569,y,n,dem
-2020,House,Ohio,District 4,Shannon Freshour,Jim Jordan,101897,235875,n,y,rep
-2020,House,Ohio,District 5,Nick Rubando,Bob Latta,120962,257019,n,y,rep
-2020,House,Ohio,District 6,Shawna Roberts,Bill Johnson,85661,249130,n,y,rep
-2020,House,Ohio,District 7,Quentin Potter,Bob Gibbs,102271,236607,n,y,rep
-2020,House,Ohio,District 8,Vanessa Enoch,Warren Davidson,110766,246277,n,y,rep
-2020,House,Ohio,District 9,Marcy Kaptur,Rob Weber,190328,111385,y,n,dem
-2020,House,Ohio,District 10,Desiree Tims,Mike Turner,151976,212972,n,y,rep
-2020,House,Ohio,District 11,Marcia Fudge,Laverne Gore,242098,60323,y,n,dem
-2020,House,Ohio,District 12,Alaina Shearer,Troy Balderson,182847,241790,n,y,rep
-2020,House,Ohio,District 13,Tim Ryan,Christina Hagan,173631,148648,y,n,dem
-2020,House,Ohio,District 14,"Hillary ""Toro"" O'Connor Mueri",David Joyce,158586,238864,n,y,rep
-2020,House,Ohio,District 15,Joel Newby,Steve Stivers,140183,243103,n,y,rep
-2020,House,Ohio,District 16,Aaron Paul Godfrey,Anthony Gonzalez,144071,247335,n,y,rep
-2020,House,Oklahoma,District 1,Kojo Asamoa-Caesar,Kevin Hern,109641,213700,n,y,rep
-2020,House,Oklahoma,District 2,Danyell Lanier,Markwayne Mullin,63472,216511,n,y,rep
-2020,House,Oklahoma,District 3,Zoe Midyett,Frank D. Lucas,66501,242677,n,y,rep
-2020,House,Oklahoma,District 4,Mary Brannon,Tom Cole,90459,213096,n,y,rep
-2020,House,Oklahoma,District 5,Kendra Horn,Stephanie Bice,145658,158191,y,n,dem
-2020,House,Oregon,District 1,Suzanne Bonamici,Christopher Christensen,297071,161928,y,n,dem
-2020,House,Oregon,District 2,Alex Spenser,Cliff Bentz,168881,273835,n,n,rep
-2020,House,Oregon,District 3,Earl Blumenauer,Joanna Harbour,343574,110570,y,n,dem
-2020,House,Oregon,District 4,Peter DeFazio,Alex Skarlatos,240950,216081,y,n,dem
-2020,House,Oregon,District 5,Kurt Schrader,Amy Ryan Courser,234863,204372,y,n,dem
-2020,House,Pennsylvania,District 1,Christina Finello,Brian Fitzpatrick,191875,249804,n,y,rep
-2020,House,Pennsylvania,District 2,Brendan Boyle,David Torres,198140,75022,y,n,dem
-2020,House,Pennsylvania,District 3,Dwight Evans,Michael Harvey,341708,33671,y,n,dem
-2020,House,Pennsylvania,District 4,Madeleine Dean,Kathy Barnette,264637,179926,y,n,dem
-2020,House,Pennsylvania,District 5,Mary Gay Scanlon,Dasha Pruett,255743,139552,y,n,dem
-2020,House,Pennsylvania,District 6,Chrissy Houlahan,John Emmons,226440,177526,y,n,dem
-2020,House,Pennsylvania,District 7,Susan Wild,Lisa Scheller,195457,181407,y,n,dem
-2020,House,Pennsylvania,District 8,Matt Cartwright,Jim Bognet,178004,165783,y,n,dem
-2020,House,Pennsylvania,District 9,Gary Wegman,Dan Meuser,118266,232988,n,y,rep
-2020,House,Pennsylvania,District 10,Eugene DePasquale,Scott Perry,182938,208896,n,y,rep
-2020,House,Pennsylvania,District 11,Sarah Hammond,Lloyd Smucker,141325,241915,n,y,rep
-2020,House,Pennsylvania,District 12,Lee Griffin,Fred Keller,99199,241035,n,y,rep
-2020,House,Pennsylvania,District 13,Todd Rowley,John Joyce,96612,267789,n,y,rep
-2020,House,Pennsylvania,District 14,Bill Marx,Guy Reschenthaler,131895,241688,n,y,rep
-2020,House,Pennsylvania,District 15,Robert Williams,Glenn Thompson,92156,255058,n,y,rep
-2020,House,Pennsylvania,District 16,Kristy Gnibus,Mike Kelly,143962,210088,n,y,rep
-2020,House,Pennsylvania,District 17,Conor Lamb,Sean Parnell,222253,212284,y,n,dem
-2020,House,Pennsylvania,District 18,Mike Doyle,Luke Negron,266084,118163,y,n,dem
-2020,House,Rhode Island,District 1,David Cicilline,-,158550,0,y,n,dem
-2020,House,Rhode Island,District 2,James Langevin,Robert Lancia,154086,109894,y,n,dem
-2020,House,South Carolina,District 1,Joe Cunningham,Nancy Mace,210627,216042,y,n,dem
-2020,House,South Carolina,District 2,Adair Boroughs,Joe Wilson,155118,202715,n,y,rep
-2020,House,South Carolina,District 3,Hosea Cleveland,Jeff Duncan,95712,237544,n,y,rep
-2020,House,South Carolina,District 4,Kim Nelson,William Timmons,133023,222126,n,y,rep
-2020,House,South Carolina,District 5,Moe Brown,Ralph Norman,145979,220006,n,y,rep
-2020,House,South Carolina,District 6,Jim Clyburn,John McCollum,197477,89258,y,n,dem
-2020,House,South Carolina,District 7,Melissa Ward Watson,Tom Rice,138863,224993,n,y,rep
-2020,House,South Dakota,District 1,-,Dusty Johnson,0,321984,n,y,rep
-2020,House,Tennessee,District 1,Blair Walsingham,Diana Harshbarger,68617,228181,n,n,rep
-2020,House,Tennessee,District 2,Renee Hoyos,Tim Burchett,109684,238907,n,y,rep
-2020,House,Tennessee,District 3,Meg Gorman,Chuck Fleischmann,97687,215571,n,y,rep
-2020,House,Tennessee,District 4,Christopher Hale,Scott DesJarlais,111908,223802,n,y,rep
-2020,House,Tennessee,District 5,Jim Cooper,-,252155,0,y,n,dem
-2020,House,Tennessee,District 6,Christopher Finley,John Rose,83852,257572,n,y,rep
-2020,House,Tennessee,District 7,Kiran Sreepada,Mark Green,95839,245188,n,y,rep
-2020,House,Tennessee,District 8,Erika Stotts Pearson,David Kustoff,97890,227216,n,y,rep
-2020,House,Tennessee,District 9,Steve Cohen,Charlotte Bergmann,187905,48818,y,n,dem
-2020,House,Texas,District 1,Hank Gilbert,Louie Gohmert,83016,219726,n,y,rep
-2020,House,Texas,District 2,Sima Ladjevardian,Dan Crenshaw,148374,192828,n,y,rep
-2020,House,Texas,District 3,Lulu Seikaly,Van Taylor,179458,230512,n,y,rep
-2020,House,Texas,District 4,Russell Foster,Pat Fallon,76326,253837,n,n,rep
-2020,House,Texas,District 5,Carolyn Salter,Lance Gooden,100743,173836,n,y,rep
-2020,House,Texas,District 6,Stephen Daniel,Ron Wright,149530,179507,n,y,rep
-2020,House,Texas,District 7,Lizzie Fletcher,Wesley Hunt,159529,149054,y,n,dem
-2020,House,Texas,District 8,Elizabeth Hernandez,Kevin Brady,97409,277327,n,y,rep
-2020,House,Texas,District 9,Al Green,Johnny Teague,172938,49575,y,n,dem
-2020,House,Texas,District 10,Mike Siegel,Michael McCaul,187686,217216,n,y,rep
-2020,House,Texas,District 11,Jon Mark Hogg,August Pfluger,53394,232568,n,n,rep
-2020,House,Texas,District 12,Lisa Welch,Kay Granger,121250,233853,n,y,rep
-2020,House,Texas,District 13,Gus Trujillo,Ronny Jackson,50477,217124,n,n,rep
-2020,House,Texas,District 14,Adrienne Bell,Randy Weber,118574,190541,n,y,rep
-2020,House,Texas,District 15,Vicente Gonzalez,Monica De la Cruz-Hernandez,115605,109017,y,n,dem
-2020,House,Texas,District 16,Veronica Escobar,Irene Armendariz-Jackson,154108,84006,y,n,dem
-2020,House,Texas,District 17,Rick Kennedy,Pete Sessions,125565,171390,n,n,rep
-2020,House,Texas,District 18,Sheila Jackson Lee,Wendell Champion,180952,58033,y,n,dem
-2020,House,Texas,District 19,Tom Watson,Jodey Arrington,60583,198198,n,y,rep
-2020,House,Texas,District 20,Joaquin Castro,Mauro Garza,175078,89628,y,n,dem
-2020,House,Texas,District 21,Wendy Davis,Chip Roy,205780,235740,n,y,rep
-2020,House,Texas,District 22,Sri Preston Kulkarni,Troy Nehls,181998,210259,n,n,rep
-2020,House,Texas,District 23,Gina Ortiz Jones,Tony Gonzales,137693,149395,n,n,rep
-2020,House,Texas,District 24,Candace Valenzuela,Beth Van Duyne,163326,167910,n,n,rep
-2020,House,Texas,District 25,Julie Oliver,Roger Williams,165697,220088,n,y,rep
-2020,House,Texas,District 26,Carol Iannuzzi,Michael C. Burgess,161009,261963,n,y,rep
-2020,House,Texas,District 27,"Ricardo ""Rick"" De La Fuente",Michael Cloud,95446,172305,n,y,rep
-2020,House,Texas,District 28,Henry Cuellar,Sandra Whitten,137494,91925,y,n,dem
-2020,House,Texas,District 29,Sylvia Garcia,Jaimy Z. Blanco,111305,42840,y,n,dem
-2020,House,Texas,District 30,Eddie Bernice Johnson,Tre Pennie,204928,48685,y,n,dem
-2020,House,Texas,District 31,Donna Imam,John Carter,176293,212695,n,y,rep
-2020,House,Texas,District 32,Colin Allred,Genevieve Collins,178542,157867,y,n,dem
-2020,House,Texas,District 33,Marc Veasey,Fabian Vasquez,105317,39638,y,n,dem
-2020,House,Texas,District 34,Filemon Vela,Rey Gonzalez,111439,84119,y,n,dem
-2020,House,Texas,District 35,Lloyd Doggett,Jennifer Garcia Sharon,176373,80795,y,n,dem
-2020,House,Texas,District 36,Rashad Lewis,Brian Babin,73148,222712,n,y,rep
-2020,House,Utah,District 1,Darren Parry,Blake Moore,104194,237988,n,n,rep
-2020,House,Utah,District 2,Kael Weston,Chris Stewart,129762,208997,n,y,rep
-2020,House,Utah,District 3,Devin Thorpe,John Curtis,96067,246674,n,y,rep
-2020,House,Utah,District 4,Ben McAdams,Burgess Owens,175923,179688,y,n,dem
-2020,House,Vermont,District 1,Peter Welch,Miriam Berry,238827,95830,y,n,dem
-2020,House,Virginia,District 1,Qasim Rashid,Rob Wittman,186923,260614,n,y,rep
-2020,House,Virginia,District 2,Elaine Luria,Scott Taylor,185733,165031,y,n,dem
-2020,House,Virginia,District 3,Bobby Scott,John Collick,233326,107299,y,n,dem
-2020,House,Virginia,District 4,Donald McEachin,Leon Benjamin,241142,149625,y,n,dem
-2020,House,Virginia,District 5,Cameron Webb,Bob Good,190315,210988,n,n,rep
-2020,House,Virginia,District 6,Nicholas Betts,Ben Cline,134729,246606,n,y,rep
-2020,House,Virginia,District 7,Abigail Spanberger,Nick reitas,230893,222623,y,n,dem
-2020,House,Virginia,District 8,Don Beyer,Jeff Jordan,301454,95365,y,n,dem
-2020,House,Virginia,District 9,-,Morgan Griffith,0,271851,n,y,rep
-2020,House,Virginia,District 10,Jennifer Wexton,Aliscia Andrews,268734,206254,y,n,dem
-2020,House,Virginia,District 11,Gerry Connolly,Manga Anantatmula,280725,111380,y,n,dem
-2020,House,Washington,District 1,Suzan DelBene,Jeffrey Beeler,249944,176407,y,n,dem
-2020,House,Washington,District 2,Rick Larsen,Timothy Hazelo,255252,148384,y,n,dem
-2020,House,Washington,District 3,Carolyn Long,Jaime Herrera Beutler,181347,235579,n,y,rep
-2020,House,Washington,District 4,Douglas McKinley,Dan Newhouse,102667,202108,n,y,rep
-2020,House,Washington,District 5,Dave Wilson,Cathy McMorris Rodgers,155737,247815,n,y,rep
-2020,House,Washington,District 6,Derek Kilmer,Elizabeth Kreiselmaier,247429,168783,y,n,dem
-2020,House,Washington,District 7,Pramila Jayapal,Craig Keller,387109,78240,y,n,dem
-2020,House,Washington,District 8,Kim Schrier,Jesse Jensen,213123,198423,y,n,dem
-2020,House,Washington,District 9,Adam Smith,Doug Basler,258771,89697,y,n,dem
-2020,House,Washington,District 10,Marilyn Strickland,-,167937,0,n,n,dem
-2020,House,West Virginia,District 1,Natalie Cline,David McKinley,81177,180488,n,y,rep
-2020,House,West Virginia,District 2,Cathy Kunkel,Alex Mooney,100799,172195,n,y,rep
-2020,House,West Virginia,District 3,Hilary Turner,Carol Miller,64927,161585,n,y,rep
-2020,House,Wisconsin,District 1,Roger Polack,Bryan Steil,163170,238271,n,y,rep
-2020,House,Wisconsin,District 2,Marc Pocan,Peter Theron,318523,138306,y,n,dem
-2020,House,Wisconsin,District 3,Ron Kind,Derrick Van Orden,199870,189524,y,n,dem
-2020,House,Wisconsin,District 4,Gwen Moore,Tim Rogers,232668,70769,y,n,dem
-2020,House,Wisconsin,District 5,Tom Palzewicz,Scott Fitzgerald,175902,265434,n,n,rep
-2020,House,Wisconsin,District 6,Jessica King,Glenn Grothman,164239,238874,n,y,rep
-2020,House,Wisconsin,District 7,Tricia Zunker,Tom Tiffany,162741,252048,n,y,rep
-2020,House,Wisconsin,District 8,Amanda Stuck,Mike Gallagher,149558,268173,n,y,rep
-2020,House,Wyoming,District 1,Lynnette Grey Bull,Liz Cheney,66576,185732,n,y,rep
-2018,Senate,Arizona,Class I,Kyrsten Sinema,Martha McSally,1191100,1135200,n,n,rep
-2018,Senate,California,Class I,Dianne Feinstein,-,6019422,0,y,n,dem
-2018,Senate,Connecticut,Class I,Chris Murphy,Matthew Corey,825579,545714,y,n,dem
-2018,Senate,Delaware,Class I,Tom Carper,Rob Arlett,217385,137127,y,n,dem
-2018,Senate,Florida,Class I,Bill Nelson,Rick Scott,4089472,4099505,y,n,dem
-2018,Senate,Hawaii,Class I,Mazie Hirono,Ron Curtis,276316,112035,y,n,dem
-2018,Senate,Indiana,Class I,Joe Donnelly,Mike Braun,1023553,1158000,y,n,dem
-2018,Senate,Maine,Class I,Angus S. King Jr.,Eric Brakey,344575,223502,y,n,dem
-2018,Senate,Maryland,Class I,Ben Cardin,Tony Campbell,1491614,697107,y,n,dem
-2018,Senate,Massachusetts,Class I,Elizabeth Warren,Geoff Diehl,1633371,979210,y,n,dem
-2018,Senate,Michigan,Class I,Debbie Stabenow,John James,2214478,1938818,y,n,dem
-2018,Senate,Minnesota,Class I,Amy Klobuchar,Jim Newberger,1566174,940437,y,n,dem
-2018,Senate,Minnesota,Class II,Tina Smith,Karin Housley,1370540,1095777,y,n,dem
-2018,Senate,Mississippi,Class I,David Baria,Roger Wicker,369567,547619,n,y,rep
-2018,Senate,Mississippi,Class II,Mike Espy,Cindy Hyde-Smith,386742,389995,n,y,rep
-2018,Senate,Missouri,Class I,Claire McCaskill,Josh Hawley,1112935,1254927,y,n,dem
-2018,Senate,Montana,Class I,Jon Tester,Matt Rosendale,253876,235963,y,n,dem
-2018,Senate,Nebraska,Class I,Jane Raybould,Deb Fischer,269917,403151,n,y,rep
-2018,Senate,Nevada,Class I,Jacky Rosen,Dean Heller,490071,441202,n,y,rep
-2018,Senate,New Jersey,Class I,Bob Menendez,Bob Hugin,1711654,1357355,y,n,dem
-2018,Senate,New Mexico,Class I,Martin Heinrich,Mick Rich,376998,212813,y,n,dem
-2018,Senate,New York,Class I,Kirsten Gillibrand,Chele Chiavacci Farley,4056931,1998220,y,n,dem
-2018,Senate,North Dakota,Class I,Heidi Heitkamp,Kevin Cramer,144376,179720,y,n,dem
-2018,Senate,Ohio,Class I,Sherrod Brown,Jim Renacci,2358508,2057559,y,n,dem
-2018,Senate,Pennsylvania,Class I,Bob Casey Jr.,Lou Barletta,2792327,2134848,y,n,dem
-2018,Senate,Rhode Island,Class I,Sheldon Whitehouse,Robert Flanders,231477,144421,y,n,dem
-2018,Senate,Tennessee,Class I,Phil Bredesen,Marsha Blackburn,985450,1227483,n,n,rep
-2018,Senate,Texas,Class I,Beto O'Rourke,Ted Cruz,4045632,4260553,n,y,rep
-2018,Senate,Utah,Class I,Jenny Wilson,Mitt Romney,328541,665215,n,n,rep
-2018,Senate,Vermont,Class I,Bernard Sanders,Lawrence Zupan,183649,74815,y,n,dem
-2018,Senate,Virginia,Class I,Tim Kaine,Corey Stewart,1910370,1374313,y,n,dem
-2018,Senate,Washington,Class I,Maria Cantwell,Susan Hutchinson,1803364,1282804,y,n,dem
-2018,Senate,West Virginia,Class I,Joe Manchin,Patrick Morrisey,290510,271113,y,n,dem
-2018,Senate,Wisconsin,Class I,Tammy Baldwin,Leah Vukmir,1472914,1184885,y,n,dem
-2018,Senate,Wyoming,Class I,Gary Trauner,John Barrasso,61227,136210,n,y,rep
-2020,Senate,Alabama,Class II,Doug Jones,Tommy Tuberville,920478,1392076,y,n,dem
-2020,Senate,Alaska,Class II,Al Gross,Dan Sullivan,146068,191112,n,y,rep
-2020,Senate,Arizona,Class III,Mark Kelly,Martha McSally,1716467,1637661,n,y,rep
-2020,Senate,Arkansas,Class II,Ricky Dale Harrington,Tom Cotton,399390,793871,n,y,rep
-2020,Senate,Colorado,Class II,John Hickenlooper,Cory Gardner,1731114,1429492,n,y,rep
-2020,Senate,Delaware,Class II,Chris Coons,Lauren Witzke,291804,186054,y,n,dem
-2020,Senate,Georgia,Class II,Jon Ossoff,David Perdue,2374519,2462617,n,y,rep
-2020,Senate,Georgia,Class III,Raphael Warnock,Kelly Loeffler,1617035,1273214,n,y,rep
-2020,Senate,Idaho,Class II,Paulette Jordan,Jim Risch,285864,537446,n,y,rep
-2020,Senate,Illinois,Class II,Dick Durbin,Mark Curran,3278930,2319870,y,n,dem
-2020,Senate,Iowa,Class II,Theresa Greenfield,Joni Ernst,754859,864997,n,y,rep
-2020,Senate,Kansas,Class II,Barbara Bollier,Roger Marshall,571530,727962,n,n,rep
-2020,Senate,Kentucky,Class II,Amy McGrath,Mitch McConnell,816257,1233315,n,y,rep
-2020,Senate,Louisiana,Class II,Adrian Perkins,Bill Cassidy,394049,1228908,n,y,rep
-2020,Senate,Maine,Class II,Sara Gideon,Susan Collins,347223,417645,n,y,rep
-2020,Senate,Massachusetts,Class II,Ed Markey,Kevin O'Connor,2357809,1177765,y,n,dem
-2020,Senate,Michigan,Class II,Gary Peters,John James,2734568,2642233,y,n,dem
-2020,Senate,Minnesota,Class II,Tina Smith,Jason Lewis,1566522,1398145,y,n,dem
-2020,Senate,Mississippi,Class II,Mike Espy,Cindy Hyde-Smith,578806,709539,n,y,rep
-2020,Senate,Montana,Class II,Steve Bullock,Steve Daines,272463,333174,n,y,rep
-2020,Senate,Nebraska,Class II,Chris Janicek,Ben Sasse,227191,583507,n,y,rep
-2020,Senate,New Hampshire,Class II,Jeanne Shaheen,Corky Messner,450778,326229,y,n,dem
-2020,Senate,New Jersey,Class II,Cory Booker,Rik Mehta,2541178,1817052,y,n,dem
-2020,Senate,New Mexico,Class II,Ben Ray Lujan,Mark Ronchetti,474483,418483,n,n,dem
-2020,Senate,North Carolina,Class II,Cal Cunningham,Thom Tillis,2569965,2665598,n,y,rep
-2020,Senate,Oklahoma,Class II,Abby Broyles,Jim Inhofe,509763,979140,n,y,rep
-2020,Senate,Oregon,Class II,Jeff Merkley,Jo Rae Perkins,1321047,912814,y,n,dem
-2020,Senate,Rhode Island,Class II,Jack Reed,Allen Waters,328574,164855,y,n,dem
-2020,Senate,South Carolina,Class II,Jaime Harrison,Lindsey Graham,1110828,1369137,n,y,rep
-2020,Senate,South Dakota,Class II,Dan Ahlers,Mike Rounds,143987,276232,n,y,rep
-2020,Senate,Tennessee,Class II,Marquita Bradshaw,Bill Hagerty,1040691,1840926,n,n,rep
-2020,Senate,Texas,Class II,MJ Hegar,John Cornyn,4888764,5962983,n,y,rep
-2020,Senate,Virginia,Class II,Mark Warner,Daniel Gade,2466500,1934199,y,n,dem
-2020,Senate,West Virginia,Class II,Paula Jean Swearengin,Shelley Moore Capito,210309,547454,n,y,rep
-2020,Senate,Wyoming,Class II,Merav Ben-David,Cynthia Lummis,72766,198100,n,n,rep
-2018,Governor,Alabama,Governor,Walt Maddox,Kay Ivey,694495,1022457,n,y,rep
-2018,Governor,Alaska,Governor,Mark Begich,Mike Dunleavy,125739,145631,n,n,rep
-2018,Governor,Arizona,Governor,David Garcia,Doug Ducey,994341,1330863,n,y,rep
-2018,Governor,Arkansas,Governor,Jared Henderson,Asa Hutchinson,283218,582406,n,y,rep
-2018,Governor,California,Governor,Gavin Newsom,John Cox,7721410,4742825,n,n,dem
-2018,Governor,Colorado,Governor,Jared Polis,Walker Stapleton,1348888,1080801,n,n,dem
-2018,Governor,Connecticut,Governor,Ned Lamont,Bob Stefanowski,694640,650225,n,n,dem
-2018,Governor,Florida,Governor,Andrew Gillum,Ron DeSantis,4043723,4076186,n,n,rep
-2018,Governor,Georgia,Governor,Stacey Abrams,Brian Kemp,1923685,1978408,n,n,rep
-2018,Governor,Hawaii,Governor,David Ige,Andria Tupola,244934,131719,y,n,dem
-2018,Governor,Idaho,Governor,Paulette Jordan,Brad Little,231065,361671,n,n,rep
-2018,Governor,Illinois,Governor,J.B. Pritzker,Bruce Rauner,2388460,1725297,n,y,rep
-2018,Governor,Iowa,Governor,Fred Hubbell,Kim Reynolds,630986,667275,n,y,rep
-2018,Governor,Kansas,Governor,Laura Kelly,Kris Kobach,505509,453030,n,n,rep
-2018,Governor,Maine,Governor,Janet Mills,Shawn Moody,320962,272311,n,n,rep
-2018,Governor,Maryland,Governor,Ben Jealous,Larry Hogan,1002729,1275734,n,y,rep
-2018,Governor,Massachusetts,Governor,Jay Gonzalez,Charlie Baker,885770,1781341,n,y,rep
-2018,Governor,Michigan,Governor,Gretchen Whitmer,Bill Schuette,2261450,1857530,n,n,rep
-2018,Governor,Minnesota,Governor,Tim Walz,Jeff Johnson,1393053,1097689,n,n,dem
-2018,Governor,Nebraska,Governor,Bob Krist,Pete Ricketts,280418,407483,n,y,rep
-2018,Governor,Nevada,Governor,Steve Sisolak,Adam Laxalt,480007,440320,n,n,rep
-2018,Governor,New Hampshire,Governor,Molly Kelly,Chris Sununu,262359,302764,n,y,rep
-2018,Governor,New Mexico,Governor,Michelle Lujan Grisham,Steve Pearce,396603,297185,n,n,rep
-2018,Governor,New York,Governor,Andrew Cuomo,Marc Molinaro,3353495,2089228,y,n,dem
-2018,Governor,Ohio,Governor,Richard Cordray,Mike DeWine,2070046,2235825,n,n,rep
-2018,Governor,Oklahoma,Governor,Drew Edmonson,Kevin Stitt,500973,644579,n,n,rep
-2018,Governor,Oregon,Governor,Kate Brown,Knute Buehler,925886,807762,y,n,dem
-2018,Governor,Pennsylvania,Governor,Tom Wolf,Scott Wagner,2895662,2039899,y,n,dem
-2018,Governor,Rhode Island,Governor,Gina Raimondo,Allan Fung,198122,139932,y,n,dem
-2018,Governor,South Carolina,Governor,James Smith,Henry McMaster,784182,921342,n,y,rep
-2018,Governor,South Dakota,Governor,Billie Sutton,Kristi Noem,161416,172894,n,n,rep
-2018,Governor,Tennessee,Governor,Karl Dean,Bill Lee,860442,1330197,n,n,rep
-2018,Governor,Texas,Governor,Lupe Valdez,Greg Abbott,3528705,4638582,n,y,rep
-2018,Governor,Vermont,Governor,Christine Hallquist,Phil Scott,110335,151261,n,y,rep
-2018,Governor,Wisconsin,Governor,Tony Evers,Scott Walker,1324648,1293799,n,y,rep
-2018,Governor,Wyoming,Governor,Mary Thorne,Mark Gordon,55961,136399,n,n,rep
-2020,Governor,Delaware,Governor,John Carney,Julianne Murray,292903,190312,y,n,dem
-2020,Governor,Indiana,Governor,Woody Myers,Eric Holcomb,968106,1706739,n,y,rep
-2020,Governor,Missouri,Governor,Nicole Galloway,Mike Parson,1216192,1713152,n,y,rep
-2020,Governor,Montana,Governor,Mike Cooney,Greg Gianforte,250860,328548,n,n,dem
-2020,Governor,New Hampshire,Governor,Dan Feltes,Chris Sununu,264639,516609,n,y,rep
-2020,Governor,North Carolina,Governor,Roy Cooper,Dan Forest,2834790,2586605,y,n,dem
-2020,Governor,North Dakota,Governor,Shelley Lenz,Doug Burgum,90789,235479,n,y,rep
-2020,Governor,Utah,Governor,Christopher Peterson,Spencer Cox,442754,918754,n,n,rep
-2020,Governor,Vermont,Governor,David Zuckerman,Phil Scott,99214,248412,n,y,rep
-2020,Governor,Washington,Governor,Jay Inslee,Loren Culp,2294243,1749066,y,n,dem
-2020,Governor,West Virginia,Governor,Ben Salango,Jim Justice,233704,492743,n,y,rep
+cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,dem_incumbent,rep_incumbent,prev_seat,link
+2018,House,Alabama,District 1,Robert Kennedy Jr.,Bradley Byrne,89226,153228,n,y,rep,"https://ballotpedia.org/Alabama%27s_1st_Congressional_District_election,_2018"
+2018,House,Alabama,District 2,Tabitha Isner,Martha Roby,86931,138879,n,y,rep,"https://ballotpedia.org/Alabama%27s_2nd_Congressional_District_election,_2018"
+2018,House,Alabama,District 3,Mallory Hagan,Mike Rogers,83996,147770,n,y,rep,"https://ballotpedia.org/Alabama%27s_3rd_Congressional_District_election,_2018"
+2018,House,Alabama,District 4,Lee Auman,Robert Aderholt,46492,184255,n,y,rep,"https://ballotpedia.org/Alabama%27s_4th_Congressional_District_election,_2018"
+2018,House,Alabama,District 5,Peter Joffrion,Mo Brooks,101388,159063,n,y,rep,"https://ballotpedia.org/Alabama%27s_5th_Congressional_District_election,_2018"
+2018,House,Alabama,District 6,Danner Kline,Gary Palmer,85644,192542,n,y,rep,"https://ballotpedia.org/Alabama%27s_6th_Congressional_District_election,_2018"
+2018,House,Alabama,District 7,Terri Sewell,-,185010,0,y,n,dem,"https://ballotpedia.org/Alabama%27s_7th_Congressional_District_election,_2018"
+2018,House,Alaska,District 1,Alyse S. Galvin,Don Young,131199,149779,n,y,rep,"https://ballotpedia.org/United_States_House_of_Representatives_election_in_Alaska,_2018"
+2018,House,Arizona,District 1,Tom O'Halleran,Wendy Rogers,143240,122784,y,n,dem,"https://ballotpedia.org/Arizona%27s_1st_Congressional_District_election,_2018"
+2018,House,Arizona,District 2,Ann Kirkpatrick,Lea Marquez Peterson,161000,133083,n,n,rep,"https://ballotpedia.org/Arizona%27s_2nd_Congressional_District_election,_2018"
+2018,House,Arizona,District 3,Raul Grijalva,Nicolas Pierson,114650,64868,y,n,dem,"https://ballotpedia.org/Arizona%27s_3rd_Congressional_District_election,_2018"
+2018,House,Arizona,District 4,David Brill,Paul Gosar,84521,188842,n,y,rep,"https://ballotpedia.org/Arizona%27s_4th_Congressional_District_election,_2018"
+2018,House,Arizona,District 5,Joan Greene,Andy Biggs,127027,186037,n,y,rep,"https://ballotpedia.org/Arizona%27s_5th_Congressional_District_election,_2018"
+2018,House,Arizona,District 6,Anita Malik,David Schweikert,140559,173140,n,y,rep,"https://ballotpedia.org/Arizona%27s_6th_Congressional_District_election,_2018"
+2018,House,Arizona,District 7,Ruben Gallego,-,113044,0,y,n,dem,"https://ballotpedia.org/Arizona%27s_7th_Congressional_District_election,_2018"
+2018,House,Arizona,District 8,Hiral Tipirneni,Debbie Lesko,135569,168835,n,y,rep,"https://ballotpedia.org/Arizona%27s_8th_Congressional_District_election,_2018"
+2018,House,Arizona,District 9,Greg Stanton,Steve Ferrara,159583,101662,n,n,dem,"https://ballotpedia.org/Arizona%27s_9th_Congressional_District_election,_2018"
+2018,House,Arkansas,District 1,Chintan Desai,Rick Crawford,57907,138757,n,y,rep,"https://ballotpedia.org/Arkansas%27_1st_Congressional_District_election,_2018"
+2018,House,Arkansas,District 2,Clarke Tucker,French Hill,116135,132125,n,y,rep,"https://ballotpedia.org/Arkansas%27_2nd_Congressional_District_election,_2018"
+2018,House,Arkansas,District 3,Joshua Mahony,Steve Womack,74952,148717,n,y,rep,"https://ballotpedia.org/Arkansas%27_3rd_Congressional_District_election,_2018"
+2018,House,Arkansas,District 4,Hayden Shamel,Bruce Westerman,63984,136740,n,y,rep,"https://ballotpedia.org/Arkansas%27_4th_Congressional_District_election,_2018"
+2018,House,California,District 1,Audrey Denney,Doug LaMalfa,131548,160046,n,y,rep,"https://ballotpedia.org/California%27s_1st_Congressional_District_election,_2018"
+2018,House,California,District 2,Jared Huffman,Dale K. Mensing,243081,72576,y,n,dem,"https://ballotpedia.org/California%27s_2nd_Congressional_District_election,_2018"
+2018,House,California,District 3,John Garamendi,Charlie Schaupp,134875,97376,y,n,dem,"https://ballotpedia.org/California%27s_3rd_Congressional_District_election,_2018"
+2018,House,California,District 4,Jessica Morse,Tom McClintock,156253,184401,n,y,rep,"https://ballotpedia.org/California%27s_4th_Congressional_District_election,_2018"
+2018,House,California,District 5,Mike Thompson,-,205860,0,y,n,dem,"https://ballotpedia.org/California%27s_5th_Congressional_District_election,_2018"
+2018,House,California,District 6,Doris Matsui,-,162411,0,y,n,dem,"https://ballotpedia.org/California%27s_6th_Congressional_District_election,_2018"
+2018,House,California,District 7,Ami Bera,Andrew Gant,155016,126601,y,n,dem,"https://ballotpedia.org/California%27s_7th_Congressional_District_election,_2018"
+2018,House,California,District 8,-,Paul Cook,0,102415,n,y,rep,"https://ballotpedia.org/California%27s_8th_Congressional_District_election,_2018"
+2018,House,California,District 9,Jerry McNerney,Marla Livengood,113414,87349,y,n,dem,"https://ballotpedia.org/California%27s_9th_Congressional_District_election,_2018"
+2018,House,California,District 10,Josh Harder,Jeff Denham,115945,105955,n,y,rep,"https://ballotpedia.org/California%27s_10th_Congressional_District_election,_2018"
+2018,House,California,District 11,Mark DeSaulnier,John Fitzgerald,204369,71312,y,n,dem,"https://ballotpedia.org/California%27s_11th_Congressional_District_election,_2018"
+2018,House,California,District 12,Nancy Pelosi,Lisa Remmer,275292,41780,y,n,dem,"https://ballotpedia.org/California%27s_12th_Congressional_District_election,_2018"
+2018,House,California,District 13,Barbara Lee,-,260580,0,y,n,dem,"https://ballotpedia.org/California%27s_13th_Congressional_District_election,_2018"
+2018,House,California,District 14,Jackie Speier,Cristina Osmena,211384,55439,y,n,dem,"https://ballotpedia.org/California%27s_14th_Congressional_District_election,_2018"
+2018,House,California,District 15,Eric Swalwell,Rudy Peters,177989,65940,y,n,dem,"https://ballotpedia.org/California%27s_15th_Congressional_District_election,_2018"
+2018,House,California,District 16,Jim Costa,Elizabeth Heng,82266,60693,y,n,dem,"https://ballotpedia.org/California%27s_16th_Congressional_District_election,_2018"
+2018,House,California,District 17,Ro Khanna,Ron Cohen,159105,52057,y,n,dem,"https://ballotpedia.org/California%27s_17th_Congressional_District_election,_2018"
+2018,House,California,District 18,Anna Eshoo,Christine Russell,225142,77096,y,n,dem,"https://ballotpedia.org/California%27s_18th_Congressional_District_election,_2018"
+2018,House,California,District 19,Zoe Lofgren,Justin James Aguilera,162496,57823,y,n,dem,"https://ballotpedia.org/California%27s_19th_Congressional_District_election,_2018"
+2018,House,California,District 20,Jimmy Panetta,-,183677,0,y,n,dem,"https://ballotpedia.org/California%27s_20th_Congressional_District_election,_2018"
+2018,House,California,District 21,TJ Cox,David Valadao,57239,56377,n,y,rep,"https://ballotpedia.org/California%27s_21st_Congressional_District_election,_2018"
+2018,House,California,District 22,Andrew Janz,Devin Nunes,105136,117243,n,y,rep,"https://ballotpedia.org/California%27s_22nd_Congressional_District_election,_2018"
+2018,House,California,District 23,Tatiana Matta,Kevin McCarthy,74661,131113,n,y,rep,"https://ballotpedia.org/California%27s_23rd_Congressional_District_election,_2018"
+2018,House,California,District 24,Salud Carbajal,Justin Fareed,166550,117881,y,n,dem,"https://ballotpedia.org/California%27s_24th_Congressional_District_election,_2018"
+2018,House,California,District 25,Katie Hill,Steve Knight,133209,111813,n,y,rep,"https://ballotpedia.org/California%27s_25th_Congressional_District_election,_2018"
+2018,House,California,District 26,Julia Brownley,Antonio Sabato Jr.,158216,97210,y,n,dem,"https://ballotpedia.org/California%27s_26th_Congressional_District_election,_2018"
+2018,House,California,District 27,Judy Chu,-,160504,0,y,n,dem,"https://ballotpedia.org/California%27s_27th_Congressional_District_election,_2018"
+2018,House,California,District 28,Adam Schiff,Johnny Nalbandian,196662,54272,y,n,dem,"https://ballotpedia.org/California%27s_28th_Congressional_District_election,_2018"
+2018,House,California,District 29,Tony Cardenas,Benito Benny Bernal,124697,29995,y,n,dem,"https://ballotpedia.org/California%27s_29th_Congressional_District_election,_2018"
+2018,House,California,District 30,Brad Sherman,Mark Reed,191573,69420,y,n,dem,"https://ballotpedia.org/California%27s_30th_Congressional_District_election,_2018"
+2018,House,California,District 31,Pete Aguilar,Sean Flynn,110143,77352,y,n,dem,"https://ballotpedia.org/California%27s_31st_Congressional_District_election,_2018"
+2018,House,California,District 32,Grace Napolitano,Joshua M. Scott,121759,55272,y,n,dem,"https://ballotpedia.org/California%27s_32nd_Congressional_District_election,_2018"
+2018,House,California,District 33,Ted Lieu,Kenneth Wright,219091,93769,y,n,dem,"https://ballotpedia.org/California%27s_33rd_Congressional_District_election,_2018"
+2018,House,California,District 34,Jimmy Gomez,-,110195,0,y,n,dem,"https://ballotpedia.org/California%27s_34th_Congressional_District_election,_2018"
+2018,House,California,District 35,Norma Torres,Christian Valiente,103420,45604,y,n,dem,"https://ballotpedia.org/California%27s_35th_Congressional_District_election,_2018"
+2018,House,California,District 36,Raul Ruiz,Kimberlin Brown Pelzer,122169,84839,y,n,dem,"https://ballotpedia.org/California%27s_36th_Congressional_District_election,_2018"
+2018,House,California,District 37,Karen Bass,Ron J. Bassilian,210555,25823,y,n,dem,"https://ballotpedia.org/California%27s_37th_Congressional_District_election,_2018"
+2018,House,California,District 38,Linda Sanchez,Ryan Downing,139188,62968,y,n,dem,"https://ballotpedia.org/California%27s_38th_Congressional_District_election,_2018"
+2018,House,California,District 39,Gil Cisneros,Young Kim,126002,118391,n,n,rep,"https://ballotpedia.org/California%27s_39th_Congressional_District_election,_2018"
+2018,House,California,District 40,Lucille Roybal-Allard,-,93938,0,y,n,dem,"https://ballotpedia.org/California%27s_40th_Congressional_District_election,_2018"
+2018,House,California,District 41,Mark Takano,Aja Smith,108227,58021,y,n,dem,"https://ballotpedia.org/California%27s_41st_Congressional_District_election,_2018"
+2018,House,California,District 42,Julia C. Peacock,Ken Calvert,100892,131040,n,y,rep,"https://ballotpedia.org/California%27s_42nd_Congressional_District_election,_2018"
+2018,House,California,District 43,Maxine Waters,Omar Navarro,152272,43780,y,n,dem,"https://ballotpedia.org/California%27s_43rd_Congressional_District_election,_2018"
+2018,House,California,District 44,Nanette Barragan,-,97944,0,y,n,dem,"https://ballotpedia.org/California%27s_44th_Congressional_District_election,_2018"
+2018,House,California,District 45,Katie Porter,Mimi Walters,158906,146383,n,y,rep,"https://ballotpedia.org/California%27s_45th_Congressional_District_election,_2018"
+2018,House,California,District 46,Lou Correa,Russell Rene Lambert,102278,45638,y,n,dem,"https://ballotpedia.org/California%27s_46th_Congressional_District_election,_2018"
+2018,House,California,District 47,Alan Lowenthal,John Briscoe,143354,77682,y,n,dem,"https://ballotpedia.org/California%27s_47th_Congressional_District_election,_2018"
+2018,House,California,District 48,Harley Rouda,Dana Rohrabacher,157837,136899,n,y,rep,"https://ballotpedia.org/California%27s_48th_Congressional_District_election,_2018"
+2018,House,California,District 49,Mike Levin,Diane Harkey,166453,128577,n,n,rep,"https://ballotpedia.org/California%27s_49th_Congressional_District_election,_2018"
+2018,House,California,District 50,Ammar Campa-Najjar,Duncan D. Hunter,125448,134362,n,y,rep,"https://ballotpedia.org/California%27s_50th_Congressional_District_election,_2018"
+2018,House,California,District 51,Juan Vargas,Juan M. Hidalgo Jr.,109527,44301,y,n,dem,"https://ballotpedia.org/California%27s_51st_Congressional_District_election,_2018"
+2018,House,California,District 52,Scott Peters,Omar Qudrat,188992,107015,y,n,dem,"https://ballotpedia.org/California%27s_52nd_Congressional_District_election,_2018"
+2018,House,California,District 53,Susan Davis,Morgan Murtaugh,185667,83127,y,n,dem,"https://ballotpedia.org/California%27s_53rd_Congressional_District_election,_2018"
+2018,House,Colorado,District 1,Diana DeGette,Casper Stockham,272886,85207,y,n,dem,TBA
+2018,House,Colorado,District 2,Joe Neguse,Peter Yu,259608,144901,n,n,dem,TBA
+2018,House,Colorado,District 3,Diane Mitsch Bush,Scott Tipton,146426,173205,n,y,rep,TBA
+2018,House,Colorado,District 4,Karen McCormick,Ken Buck,145544,224038,n,y,rep,TBA
+2018,House,Colorado,District 5,Stephany Rose Spaulding,Doug Lamborn,126848,184002,n,y,rep,TBA
+2018,House,Colorado,District 6,Jason Crow,Mike Coffman,187639,148685,n,y,rep,TBA
+2018,House,Colorado,District 7,Ed Perlmutter,Mark Barrington,204260,119734,y,n,dem,TBA
+2018,House,Connecticut,District 1,John Larson,Jennifer Nye,175087,96024,y,n,dem,TBA
+2018,House,Connecticut,District 2,Joe Courtney,Dan Postemski,179731,102483,y,n,dem,TBA
+2018,House,Connecticut,District 3,Rosa DeLauro,Angel Cadena,174572,95667,y,n,dem,TBA
+2018,House,Connecticut,District 4,Jim Himes,Harry Arora,168726,106921,y,n,dem,TBA
+2018,House,Connecticut,District 5,Jahana Hayes,Manny Santos,151225,119426,n,n,dem,TBA
+2018,House,Delaware,District 1,Lisa Blunt Rochester,Scott Walker,227353,125384,y,n,dem,TBA
+2018,House,Florida,District 1,Jennifer M. Zimmerman,Matt Gaetz,106199,216189,n,y,rep,TBA
+2018,House,Florida,District 2,Bob Rackleff,Neal Dunn,96233,199335,n,y,rep,TBA
+2018,House,Florida,District 3,Yvonne Hayes Hinson,Ted Yoho,129880,176616,n,y,rep,TBA
+2018,House,Florida,District 4,Ges Selmont,John Rutherford,123351,248420,n,y,rep,TBA
+2018,House,Florida,District 5,Al Lawson,Virginia Fuller,180527,89799,y,n,dem,TBA
+2018,House,Florida,District 6,Nancy Soderberg,Michael Waltz,145758,187891,n,n,rep,TBA
+2018,House,Florida,District 7,Stephanie Murphy,Mike Miller,183113,134285,y,n,dem,TBA
+2018,House,Florida,District 8,Sanjay Patel,Bill Posey,142415,218112,n,y,rep,TBA
+2018,House,Florida,District 9,Darren Soto,Wayne Liebnitzky,172172,124565,y,n,dem,TBA
+2018,House,Florida,District 10,Val Demings,-,73601,0,y,n,dem,TBA
+2018,House,Florida,District 11,Dana Cottrell,Daniel Webster,128053,239395,n,y,rep,TBA
+2018,House,Florida,District 12,Chris Hunter,Gus Bilirakis,132844,194564,n,y,rep,TBA
+2018,House,Florida,District 13,Charlie Crist,George Buck,182717,134254,y,n,dem,TBA
+2018,House,Florida,District 14,Kathy Castor,-,1,0,y,n,dem,TBA
+2018,House,Florida,District 15,Kristen Carlson,Ross Spano,134132,151380,n,n,rep,TBA
+2018,House,Florida,District 16,David Shapiro,Vern Buchanan,164463,197483,n,y,rep,TBA
+2018,House,Florida,District 17,Allen Ellison,Greg Steube,117194,193326,n,n,rep,TBA
+2018,House,Florida,District 18,Lauren Baer,Brian Mast,156454,185905,n,y,rep,TBA
+2018,House,Florida,District 19,David Holden,Francis Rooney,128106,211465,n,y,rep,TBA
+2018,House,Florida,District 20,Alcee Hastings,-,202659,0,y,n,dem,TBA
+2018,House,Florida,District 21,Lois Frankel,-,1,0,y,n,dem,TBA
+2018,House,Florida,District 22,Ted Deutch,Nicolas Kimaz,184634,113049,y,n,dem,TBA
+2018,House,Florida,District 23,Debbie Wasserman Schultz,Joe Kaufman,161611,99446,y,n,dem,TBA
+2018,House,Florida,District 24,Frederica Wilson,-,65894,0,y,n,dem,TBA
+2018,House,Florida,District 25,Mary Barzee Flores,Mario Diaz-Balart,84173,128672,n,y,rep,TBA
+2018,House,Florida,District 26,Debbie Mucarsel-Powell,Carlos Curbelo,119797,115678,n,y,rep,TBA
+2018,House,Florida,District 27,Donna Shalala,Maria Elvira Salazar,130743,115588,n,n,rep,TBA
+2018,House,Georgia,District 1,Lisa Ring,Buddy Carter,105942,144741,n,y,rep,TBA
+2018,House,Georgia,District 2,Sanford Bishop,Herman West,136699,92472,y,n,dem,TBA
+2018,House,Georgia,District 3,Chuck Enderlin,Drew Ferguson,101010,191996,n,y,rep,TBA
+2018,House,Georgia,District 4,Hank Johnson,Joe Profit,227717,61092,y,n,dem,TBA
+2018,House,Georgia,District 5,John Lewis,-,275406,0,y,n,dem,TBA
+2018,House,Georgia,District 6,Lucy McBath,Karen Handel,160139,156875,n,y,rep,TBA
+2018,House,Georgia,District 7,Carolyn Bourdeaux,Rob Woodall,140010,140443,n,y,rep,TBA
+2018,House,Georgia,District 8,-,Austin Scott,0,198152,n,y,rep,TBA
+2018,House,Georgia,District 9,Josh McCall,Doug Collins,57912,224661,n,y,rep,TBA
+2018,House,Georgia,District 10,Tabitha Johnson-Green,Jody Hice,112339,190396,n,y,rep,TBA
+2018,House,Georgia,District 11,Flynn Broady,Barry Loudermilk,118653,191887,n,y,rep,TBA
+2018,House,Georgia,District 12,Francys Johnson,Rick W. Allen,101503,148986,n,y,rep,TBA
+2018,House,Georgia,District 13,David Scott,David Callahan,223157,69760,y,n,dem,TBA
+2018,House,Georgia,District 14,Steven Lamar Foster,Tom Graves,53981,175743,n,y,rep,TBA
+2018,House,Hawaii,District 1,Ed Case,Campbell Cavasso,134650,42498,n,n,dem,TBA
+2018,House,Hawaii,District 2,Tulsi Gabbard,Brian Evans,153271,44850,y,n,dem,TBA
+2018,House,Idaho,District 1,Cristina McNeil,Russ Fulcher,96932,197167,n,n,rep,TBA
+2018,House,Idaho,District 2,Aaron Swisher,Mike Simpson,110381,170274,n,y,rep,TBA
+2018,House,Illinois,District 1,Bobby Rush,"Jimmy Lee Tillman, II",189560,50960,y,n,dem,TBA
+2018,House,Illinois,District 2,Robin Kelly,David Merkle,190684,44567,y,n,dem,TBA
+2018,House,Illinois,District 3,Dan Lipinski,Arthur Jones,163053,57885,y,n,dem,TBA
+2018,House,Illinois,District 4,"Jesus ""Chuy"" Garcia",Mark Lorch,143895,22294,n,n,dem,TBA
+2018,House,Illinois,District 5,Mike Quigley,Tom Hanson,213992,65134,y,n,dem,TBA
+2018,House,Illinois,District 6,Sean Casten,Peter Roskam,169001,146445,n,y,rep,TBA
+2018,House,Illinois,District 7,Danny K. Davis,Craig Cameron,215746,30497,y,n,dem,TBA
+2018,House,Illinois,District 8,Raja Krishnamoorthi,"Jitendra ""JD"" Diganvker",130054,67073,y,n,dem,TBA
+2018,House,Illinois,District 9,Jan Schakowsky,John Elleson,213368,76983,y,n,dem,TBA
+2018,House,Illinois,District 10,Brad Schneider,Douglas Bennett,156540,82124,y,n,dem,TBA
+2018,House,Illinois,District 11,Bill Foster,Nick Stella,145407,82358,y,n,dem,TBA
+2018,House,Illinois,District 12,Brendan Kelly,Mike Bost,118724,134884,n,y,rep,TBA
+2018,House,Illinois,District 13,Betsy Dirksen Londrigan,Rodney Davis,134458,136516,n,y,rep,TBA
+2018,House,Illinois,District 14,Lauren Underwood,Randy Hultgren,156035,141164,n,y,rep,TBA
+2018,House,Illinois,District 15,Kevin Gaither,John Shimkus,74309,181294,n,y,rep,TBA
+2018,House,Illinois,District 16,Sara Dady,Adam Kinzinger,104569,151254,n,y,rep,TBA
+2018,House,Illinois,District 17,Cheri Bustos,Bill Fawell,142659,87090,y,n,dem,TBA
+2018,House,Illinois,District 18,Junius Rodriguez,Darin LaHood,95486,195927,n,y,rep,TBA
+2018,House,Indiana,District 1,Pete Visclosky,Mark Leyva,159611,85594,y,n,dem,TBA
+2018,House,Indiana,District 2,Mel Hall,Jacki Walorski,103363,125499,n,y,rep,TBA
+2018,House,Indiana,District 3,Courtney Tritch,Jim Banks,86610,158927,n,y,rep,TBA
+2018,House,Indiana,District 4,Tobi Beck,James Baird,87824,156539,n,n,rep,TBA
+2018,House,Indiana,District 5,Dee Thornton,Susan Brooks,137142,180035,n,y,rep,TBA
+2018,House,Indiana,District 6,Jeannine Lee Lake,Greg Pence,79430,154260,n,n,rep,TBA
+2018,House,Indiana,District 7,Andre Carson,Wayne Harmon,141139,76457,y,n,dem,TBA
+2018,House,Indiana,District 8,William Tanoos,Larry Bucshon,86895,157396,n,y,rep,TBA
+2018,House,Indiana,District 9,Liz Watson,Trey Hollingsworth,118090,153271,n,y,rep,TBA
+2018,House,Iowa,District 1,Abby Finkenauer,Rod Blum,170342,153442,n,y,rep,TBA
+2018,House,Iowa,District 2,Dave Loebsack,Christopher Peters,171446,133287,y,n,dem,TBA
+2018,House,Iowa,District 3,Cindy Axne,David Young,175642,167933,n,y,rep,TBA
+2018,House,Iowa,District 4,J.D. Scholten,Steve King,147246,157676,n,y,rep,TBA
+2018,House,Kansas,District 1,Alan LaPolice,Roger Marshall,71558,153082,n,y,rep,TBA
+2018,House,Kansas,District 2,Paul Davis,Steve Watkins,123859,126098,n,n,rep,TBA
+2018,House,Kansas,District 3,Sharice Davids,Kevin Yoder,170518,139762,n,y,rep,TBA
+2018,House,Kansas,District 4,James Thompson,Ron Estes,98445,144248,n,y,rep,TBA
+2018,House,Kentucky,District 1,Paul Walker,James Comer,78849,172167,n,y,rep,TBA
+2018,House,Kentucky,District 2,Hank Linderman,Brett Guthrie,79964,171700,n,y,rep,TBA
+2018,House,Kentucky,District 3,John Yarmuth,Vickie Yates Glisson,173002,101930,y,n,dem,TBA
+2018,House,Kentucky,District 4,Seth Hall,Thomas Massie,90536,162946,n,y,rep,TBA
+2018,House,Kentucky,District 5,Kenneth Stepp,Hal Rogers,45890,172093,n,y,rep,TBA
+2018,House,Kentucky,District 6,Amy McGrath,Andy Barr,144736,154468,n,y,rep,TBA
+2018,House,Louisiana,District 1,Tammy Savoie,Steve Scalise,44262,192526,n,y,rep,TBA
+2018,House,Louisiana,District 2,Cedric Richmond,-,190182,0,y,n,dem,TBA
+2018,House,Louisiana,District 3,Mimi Methvin,Clay Higgins,43729,136876,n,y,rep,TBA
+2018,House,Louisiana,District 4,Ryan Trundle,Mike Johnson,72934,139326,n,y,rep,TBA
+2018,House,Louisiana,District 5,Jessee Carlton Fleenor,Ralph Abraham,67118,149018,n,y,rep,TBA
+2018,House,Louisiana,District 6,Justin DeWitt,Garret Graves,55089,186553,n,y,rep,TBA
+2018,House,Maine,District 1,Chellie Pingree,Mark Holbrook,201195,111188,y,n,dem,TBA
+2018,House,Maine,District 2,Jared Golden,Bruce Poliquin,142440,138931,n,y,rep,TBA
+2018,House,Maryland,District 1,Jesse Colvin,Andy Harris,116631,183662,n,y,rep,TBA
+2018,House,Maryland,District 2,Dutch Ruppersberger,Liz Matory,167201,77782,y,n,dem,TBA
+2018,House,Maryland,District 3,John Sarbanes,Charles Anthony,202407,82774,y,n,dem,TBA
+2018,House,Maryland,District 4,Anthony G. Brown,George McDermott,209642,53327,y,n,dem,TBA
+2018,House,Maryland,District 5,Steny Hoyer,William Devine III,213796,82361,y,n,dem,TBA
+2018,House,Maryland,District 6,David Trone,Amie Hoeber,163346,105209,n,n,dem,TBA
+2018,House,Maryland,District 7,Elijah Cummings,Richmond Davis,202345,56266,y,n,dem,TBA
+2018,House,Maryland,District 8,Jamie Raskin,John Walsh,217679,96525,y,n,dem,TBA
+2018,House,Massachusetts,District 1,Richard neal,-,211790,0,y,n,dem,TBA
+2018,House,Massachusetts,District 2,Jim McGovern,Tracy Lovvorn,191332,93391,y,n,dem,TBA
+2018,House,Massachusetts,District 3,Lori Trahan,Rick Green,173175,93445,n,n,dem,TBA
+2018,House,Massachusetts,District 4,Joe Kennedy III,-,245289,0,y,n,dem,TBA
+2018,House,Massachusetts,District 5,Katherine Clark,John Hugo,236243,74856,y,n,dem,TBA
+2018,House,Massachusetts,District 6,Seth Moulton,Joseph Schneider,217703,104798,y,n,dem,TBA
+2018,House,Massachusetts,District 7,Ayanna Pressley,-,216557,0,n,n,dem,TBA
+2018,House,Massachusetts,District 8,Stephen Lynch,-,259159,0,y,n,dem,TBA
+2018,House,Massachusetts,District 9,Bill Keating,Peter Tedeschi,192347,131463,y,n,dem,TBA
+2018,House,Michigan,District 1,Matt Morgan,Jack Bergman,145246,187251,n,y,rep,TBA
+2018,House,Michigan,District 2,Rob Davidson,Bill Huizenga,131254,168970,n,y,rep,TBA
+2018,House,Michigan,District 3,Cathy Albro,Justin Amash,134185,169107,n,y,rep,TBA
+2018,House,Michigan,District 4,Jerry Hilliard,John Moolenaar,106540,178510,n,y,rep,TBA
+2018,House,Michigan,District 5,Dan Kildee,Travis Wines,164502,99265,y,n,dem,TBA
+2018,House,Michigan,District 6,Matt Longjohn,Fred Upton,134082,147436,n,y,rep,TBA
+2018,House,Michigan,District 7,Gretchen Driskell,Tim Walberg,136330,158730,n,y,rep,TBA
+2018,House,Michigan,District 8,Elissa Slotkin,Mike Bishop,172880,159782,n,y,rep,TBA
+2018,House,Michigan,District 9,Andy Levin,Candius Stearns,181734,112123,n,n,dem,TBA
+2018,House,Michigan,District 10,Kimberly Bizon,Paul Mitchell,106061,182808,n,y,rep,TBA
+2018,House,Michigan,District 11,Haley Stevens,Lena Epstein,181912,158463,n,n,rep,TBA
+2018,House,Michigan,District 12,Debbie Dingell,Jeff Jones,200588,85115,y,n,dem,TBA
+2018,House,Michigan,District 13,Rashida Tlaib,-,165355,0,n,n,dem,TBA
+2018,House,Michigan,District 14,Brenda Lqwrence,Marc Herschfus,214334,45899,y,n,dem,TBA
+2018,House,Minnesota,District 1,Dan Feehan,Jim Hagedorn,144884,146199,n,n,dem,TBA
+2018,House,Minnesota,District 2,Angie Craig,Jason Lewis,177954,159343,n,y,rep,TBA
+2018,House,Minnesota,District 3,Dean Phillips,Erik Paulsen,202402,160839,n,y,rep,TBA
+2018,House,Minnesota,District 4,Betty McCollum,Greg Ryan,216866,97746,y,n,dem,TBA
+2018,House,Minnesota,District 5,Ilhan Omar,Jennifer Zielinski,267703,74440,n,n,dem,TBA
+2018,House,Minnesota,District 6,Ian Todd,Tom Emmer,122330,192936,n,y,rep,TBA
+2018,House,Minnesota,District 7,Collin Peterson,Dave Hughes,146665,134668,y,n,dem,TBA
+2018,House,Minnesota,District 8,Joe Radinovich,Pete Stauber,141948,159364,n,n,dem,TBA
+2018,House,Mississippi,District 1,Randy Wadkins,Trent Kelly,76601,158245,n,y,rep,TBA
+2018,House,Mississippi,District 2,Bennie Thompson,-,158921,0,y,n,dem,TBA
+2018,House,Mississippi,District 3,Michael Evans,Michael Guest,94461,160284,n,n,rep,TBA
+2018,House,Mississippi,District 4,Jaramey Anderson,Steven Palazzo,68787,152633,n,y,rep,TBA
+2018,House,Missouri,District 1,Lacy Clay,Robert Vroman,219781,45867,y,n,dem,TBA
+2018,House,Missouri,District 2,Cort VanOstran,Ann Wagner,177611,192477,n,y,rep,TBA
+2018,House,Missouri,District 3,Katy Geppert,Blaine Luetkemeyer,106589,211243,n,y,rep,TBA
+2018,House,Missouri,District 4,Renee Hoagenson,Vicky Hartzler,95968,190138,n,y,rep,TBA
+2018,House,Missouri,District 5,Emanuel Cleaver,Jacob Turk,175019,101069,y,n,dem,TBA
+2018,House,Missouri,District 6,Henry Martin,Sam Graves,97660,199796,n,y,rep,TBA
+2018,House,Missouri,District 7,Jamie Schoolcraft,Billy Long,89190,196343,n,y,rep,TBA
+2018,House,Missouri,District 8,Kathy Ellis,Jason Smith,66151,194042,n,y,rep,TBA
+2018,House,Montana,District 1,Kathleen Williams,Greg Gianforte,233284,256661,n,y,rep,TBA
+2018,House,Nebraska,District 1,Jessica McClure,Jeff Fortenberry,93069,141712,n,y,rep,TBA
+2018,House,Nebraska,District 2,Kara Eastman,Don Bacon,121770,126715,n,y,rep,TBA
+2018,House,Nebraska,District 3,Paul Theobald,Adrian Smith,49654,163650,n,y,rep,TBA
+2018,House,Nevada,District 1,Dina Titus,Joyce Bentley,100707,46978,y,n,dem,TBA
+2018,House,Nevada,District 2,Clint Koble,Mark Amodei,120102,167435,n,y,rep,TBA
+2018,House,Nevada,District 3,Susie Lee,Danny Tarkanian,148501,122566,n,n,dem,TBA
+2018,House,Nevada,District 4,Steven Horsford,Cresent Hardy,121962,102748,n,n,dem,TBA
+2018,House,New Hampshire,District 1,Chris Pappas,Eddie Edwards,155884,130996,n,n,dem,TBA
+2018,House,New Hampshire,District 2,Ann McLane Kuster,Steve Negron,155358,117990,y,n,dem,TBA
+2018,House,New Jersey,District 1,Donald Norcross,Paul E. Dilks,169628,87617,y,n,dem,TBA
+2018,House,New Jersey,District 2,Jeff Van Drew,Seth Grossman,136685,116866,n,n,rep,TBA
+2018,House,New Jersey,District 3,Andy Kim,Tom MacArthur,153473,149500,n,y,rep,TBA
+2018,House,New Jersey,District 4,Joshua Welle,Chris Smith,126766,163065,n,y,rep,TBA
+2018,House,New Jersey,District 5,Josh Gottheimer,John J. McCann,169546,128255,y,n,dem,TBA
+2018,House,New Jersey,District 6,Frank Pallone Jr.,Richard J. Pezzullo,140752,80443,y,n,dem,TBA
+2018,House,New Jersey,District 7,Tom Malinowski,Leonard Lance,166985,150785,n,y,rep,TBA
+2018,House,New Jersey,District 8,Albio Sires,John R. Muniz,119881,28752,y,n,dem,TBA
+2018,House,New Jersey,District 9,Bill Pascrell Jr.,Eric P. Fisher,140832,57854,y,n,dem,TBA
+2018,House,New Jersey,District 10,Donald M. Payne Jr.,Alga Khan,175253,20191,y,n,dem,TBA
+2018,House,New Jersey,District 11,Mikie Sherrill,Jay Webber,183684,136322,n,n,rep,TBA
+2018,House,New Jersey,District 12,Bonnie Watson Coleman,Daryl Kipnis,173334,79041,y,n,dem,TBA
+2018,House,New Mexico,District 1,Deb Haaland,Janice Arnold-Jones,147336,90507,n,n,dem,TBA
+2018,House,New Mexico,District 2,Xochitl Torres Small,Yvette Herrell,101489,97767,n,n,rep,TBA
+2018,House,New Mexico,District 3,Ben Ray Lujan,Jerald Steve McFall,155201,76427,y,n,dem,TBA
+2018,House,New York,District 1,Perry Gershon,Lee Zeldin,127991,139027,n,y,rep,TBA
+2018,House,New York,District 2,Liuba Grechen Shirley,Peter T. King,113074,128078,n,y,rep,TBA
+2018,House,New York,District 3,Tom Suozzi,Dan DeBono,157456,109514,y,n,dem,TBA
+2018,House,New York,District 4,Kathleen Rice,Ameer Benno,159535,100571,y,n,dem,TBA
+2018,House,New York,District 5,Gregory Meeks,-,160500,0,y,n,dem,TBA
+2018,House,New York,District 6,Grace Meng,-,111646,0,y,n,dem,TBA
+2018,House,New York,District 7,Nydia Velazquez,-,146687,0,y,n,dem,TBA
+2018,House,New York,District 8,Hakeem Jeffries,-,180376,0,y,n,dem,TBA
+2018,House,New York,District 9,Yvette Clarke,Lutchi Gayot,181455,20901,y,n,dem,TBA
+2018,House,New York,District 10,Jerrold Nadler,Naomi Levin,173095,37619,y,n,dem,TBA
+2018,House,New York,District 11,Max Rose,Dan Donovan,101823,89441,n,y,rep,TBA
+2018,House,New York,District 12,Carolyn Maloney,Eliot Rabin,217430,30446,y,n,dem,TBA
+2018,House,New York,District 13,Adriano Espaillat,Jineea Butler,180035,10268,y,n,dem,TBA
+2018,House,New York,District 14,Alexandria Ocasio-Cortez,Anthony Pappas,110318,19202,n,n,dem,TBA
+2018,House,New York,District 15,Jose Serrano,Jason Gonzalez,124469,5205,y,n,dem,TBA
+2018,House,New York,District 16,Eliot Engel,-,182044,0,y,n,dem,TBA
+2018,House,New York,District 17,Nita Lowey,-,170168,0,y,n,dem,TBA
+2018,House,New York,District 18,Sean Patrick Maloney,James O'Donnell,139564,112035,y,n,dem,TBA
+2018,House,New York,District 19,Antonio Delgado,John Faso,147873,132873,n,y,rep,TBA
+2018,House,New York,District 20,Paul Tonko,Joe Vitollo,176811,89058,y,n,dem,TBA
+2018,House,New York,District 21,Tedra Cobb,Elise Stefanik,99791,131981,n,y,rep,TBA
+2018,House,New York,District 22,Anthony Brindisi,Claudia Tenney,127715,123242,n,y,rep,TBA
+2018,House,New York,District 23,Tracy Mitrano,Tom Reed,109932,130323,n,y,rep,TBA
+2018,House,New York,District 24,Dana Balter,John Katko,123226,136920,n,y,rep,TBA
+2018,House,New York,District 25,Joseph Morelle,Jim Maxwell,159244,110736,n,n,dem,TBA
+2018,House,New York,District 26,Brian Higgins,Renee Zeno,169166,61488,y,n,dem,TBA
+2018,House,New York,District 27,Nate McMurray,Chris Collins,139059,140146,n,y,rep,TBA
+2018,House,North Carolina,District 1,G. K. Butterfield,Roger Allison,190457,82218,y,n,dem,TBA
+2018,House,North Carolina,District 2,Linda Coleman,George Holding,151977,170072,n,y,rep,TBA
+2018,House,North Carolina,District 3,-,Walter B. Jones,0,187901,n,y,rep,TBA
+2018,House,North Carolina,District 4,David Price,Steve Loor,247067,82052,y,n,dem,TBA
+2018,House,North Carolina,District 5,Denise D. Adams,Virginia Foxx,120468,159917,n,y,rep,TBA
+2018,House,North Carolina,District 6,Ryan Watts,Mark Walker,123651,160709,n,y,rep,TBA
+2018,House,North Carolina,District 7,Kyle Horton,David Rouzer,120838,156809,n,y,rep,TBA
+2018,House,North Carolina,District 8,Frank McNeill,Richard Hudson,114119,141402,n,y,rep,TBA
+2018,House,North Carolina,District 9,Dan McCready,Mark Harris,138341,139246,n,n,rep,TBA
+2018,House,North Carolina,District 10,David Wilson Brown,Patrick McHenry,113259,164969,n,y,rep,TBA
+2018,House,North Carolina,District 11,Phillip Price,Mark Meadows,116508,178012,n,y,rep,TBA
+2018,House,North Carolina,District 12,Alma Adams,Paul Wright,203974,75164,y,n,dem,TBA
+2018,House,North Carolina,District 13,Kathy Manning,Ted Budd,130402,147570,n,y,rep,TBA
+2018,House,North Dakota,District 1,Mac Schneider,Kelly Armstrong,114377,193568,n,n,rep,TBA
+2018,House,Ohio,District 1,Aftab Pureval,Steve Chabot,141118,154409,n,y,rep,TBA
+2018,House,Ohio,District 2,Jill Schiller,Brad Wenstrup,119333,166714,n,y,rep,TBA
+2018,House,Ohio,District 3,Joyce Beatty,Jim Burgess,181575,65040,y,n,dem,TBA
+2018,House,Ohio,District 4,Janet Garrett,Jim Jordan,89412,167993,n,y,rep,TBA
+2018,House,Ohio,District 5,J. Michael Galbraith,Bob Latta,99655,176569,n,y,rep,TBA
+2018,House,Ohio,District 6,Shawna Roberts,Bill Johnson,76716,172774,n,y,rep,TBA
+2018,House,Ohio,District 7,Ken Harbaugh,Bob Gibbs,107536,153117,n,y,rep,TBA
+2018,House,Ohio,District 8,Vanessa Enoch,Warren Davidson,87281,173852,n,y,rep,TBA
+2018,House,Ohio,District 9,Marcy Kaptur,Steve Kraus,157219,74670,y,n,dem,TBA
+2018,House,Ohio,District 10,Theresa Gasper,Mike Turner,118785,157554,n,y,rep,TBA
+2018,House,Ohio,District 11,Marcia Fudge,Beverly A. Goldstein,206138,44486,y,n,dem,TBA
+2018,House,Ohio,District 12,Danny O'Connor,Troy Balderson,161251,175677,n,y,rep,TBA
+2018,House,Ohio,District 13,Tim Ryan,Chris DePizzo,153323,98047,y,n,dem,TBA
+2018,House,Ohio,District 14,Betsy Rader,David Joyce,137549,169809,n,y,rep,TBA
+2018,House,Ohio,District 15,Rick Neal,Steve Stivers,116112,170593,n,y,rep,TBA
+2018,House,Ohio,District 16,Susan Moran Palmer,Anthony Gonzalez,129681,170029,n,n,rep,TBA
+2018,House,Oklahoma,District 1,Tim Gilpin,Kevin Hern,103042,150129,n,n,rep,TBA
+2018,House,Oklahoma,District 2,Jason Nichols,Markwayne Mullin,65021,140451,n,y,rep,TBA
+2018,House,Oklahoma,District 3,Frankie Robbins,Frank Lucas,61152,172913,n,y,rep,TBA
+2018,House,Oklahoma,District 4,Mary Brannon,Tom Cole,78088,149227,n,y,rep,TBA
+2018,House,Oklahoma,District 5,Kendra Horn,Steve Russell,121149,117811,n,y,rep,TBA
+2018,House,Oregon,District 1,Suzanne Bonamici,John Verbeek,231198,116446,y,n,dem,TBA
+2018,House,Oregon,District 2,Jamie McLeod-Skinner,Greg Walden,145298,207597,n,y,rep,TBA
+2018,House,Oregon,District 3,Earl Blumenauer,Tom Harrison,279019,76187,y,n,dem,TBA
+2018,House,Oregon,District 4,Peter DeFazio,Art Robinson,208710,152414,y,n,dem,TBA
+2018,House,Oregon,District 5,Kurt Schrader,Mark Callahan,197187,149887,y,n,dem,TBA
+2018,House,Pennsylvania,District 1,Scott Wallace,Brian Fitzpatrick,160745,169053,n,y,rep,TBA
+2018,House,Pennsylvania,District 2,Brendan Boyle,David Torres,159600,42382,y,n,dem,TBA
+2018,House,Pennsylvania,District 3,Dwight Evans,Bryan E. Leib,287610,20387,y,n,dem,TBA
+2018,House,Pennsylvania,District 4,Mideleine Dean,Dan David,211524,121467,n,n,dem,TBA
+2018,House,Pennsylvania,District 5,Mary Gay Scanlon,Pearl Kim,198639,106075,n,n,rep,TBA
+2018,House,Pennsylvania,District 6,Chrissy Houlahan,Greg McCauley,177704,124124,n,n,rep,TBA
+2018,House,Pennsylvania,District 7,Susan Wild,Marty Northstein,140813,114437,n,n,rep,TBA
+2018,House,Pennsylvania,District 8,Matt Cartwright,John Chrin,135603,112563,y,n,dem,TBA
+2018,House,Pennsylvania,District 9,Denny Wolf,Dan Meuser,100204,148723,n,n,rep,TBA
+2018,House,Pennsylvania,District 10,George Scott,Scott Perry,141668,149365,n,y,rep,TBA
+2018,House,Pennsylvania,District 11,Jess King,Lloyd Smucker,113876,163708,n,y,rep,TBA
+2018,House,Pennsylvania,District 12,Marc Friedenburg,Tom Marino,82825,161047,n,y,rep,TBA
+2018,House,Pennsylvania,District 13,Brent Ottaway,John Joyce,74733,178533,n,n,rep,TBA
+2018,House,Pennsylvania,District 14,Bibiana Boerio,Guy Reschenthaler,110051,151386,n,n,rep,TBA
+2018,House,Pennsylvania,District 15,Susan Boser,G.T. Thompson,78327,165245,n,y,rep,TBA
+2018,House,Pennsylvania,District 16,Ronald DiNicola,Mike Kelly,124109,135348,n,y,rep,TBA
+2018,House,Pennsylvania,District 17,Conor Lamb,Keight Rothfus,183162,142417,y,y,rep,TBA
+2018,House,Pennsylvania,District 18,Mike Doyle,-,231472,0,y,n,dem,TBA
+2018,House,Rhode Island,District 1,David Cicilline,Patrick Donovan,116099,57567,y,n,dem,TBA
+2018,House,Rhode Island,District 2,James Langevin,Sal Caiozzo,126476,72271,y,n,dem,TBA
+2018,House,South Carolina,District 1,Joe Cunningham,Katie Arrington,145455,141473,n,n,rep,TBA
+2018,House,South Carolina,District 2,Sean Carrigan,Joe Wilson,109199,144642,n,y,rep,TBA
+2018,House,South Carolina,District 3,Mary Geren,Jeff Duncan,70046,153338,n,y,rep,TBA
+2018,House,South Carolina,District 4,Brandon Brown,William Timmons,89182,145321,n,n,rep,TBA
+2018,House,South Carolina,District 5,Archie Parnell,Ralph Norman,103129,141757,n,y,rep,TBA
+2018,House,South Carolina,District 6,Jim Clyburn,Gerhard Gressmann,144765,58282,y,n,dem,TBA
+2018,House,South Carolina,District 7,Robert Williams,Tom Rice,96564,142681,n,y,rep,TBA
+2018,House,South Dakota,District 1,Tim Bjorkman,Dusty Johnson,120816,202446,n,n,rep,TBA
+2018,House,Tennessee,District 1,Marty Olsen,Phil Roe,47138,172835,n,y,rep,TBA
+2018,House,Tennessee,District 2,Renee Hoyos,Tim Burchett,86668,172856,n,n,rep,TBA
+2018,House,Tennessee,District 3,Danielle Mitchell,Chuck Fleischmann,84731,156512,n,y,rep,TBA
+2018,House,Tennessee,District 4,Mariah Phillips,Scott DesJarlais,78065,147323,n,y,rep,TBA
+2018,House,Tennessee,District 5,Jim Cooper,Jody Ball,177923,84317,y,n,dem,TBA
+2018,House,Tennessee,District 6,Dawn Barlow,John Rose,70370,172810,n,n,rep,TBA
+2018,House,Tennessee,District 7,Justin Kanew,Mark Green,81661,170071,n,n,rep,TBA
+2018,House,Tennessee,District 8,Erika Pearson,David Kustoff,74755,168030,n,y,rep,TBA
+2018,House,Tennessee,District 9,Steve Cohen,Charlotte Bergmann,145139,34901,y,n,dem,TBA
+2018,House,Texas,District 1,Shirley McKellar,Louie Gohmert,61263,168165,n,y,rep,TBA
+2018,House,Texas,District 2,Todd Litton,Dan Crenshaw,119992,139188,n,n,rep,TBA
+2018,House,Texas,District 3,Lorie Burch,Van Taylor,138234,169520,n,n,rep,TBA
+2018,House,Texas,District 4,Catherine Krantz,John Ratcliffe,57400,188667,n,y,rep,TBA
+2018,House,Texas,District 5,Dan Wood,Lance Gooden,78666,130617,n,n,rep,TBA
+2018,House,Texas,District 6,Jana Lynne Sanchez,Ron Wright,116350,135961,n,n,rep,TBA
+2018,House,Texas,District 7,Lizzie Fletcher,John Culberson,127959,115642,n,y,rep,TBA
+2018,House,Texas,District 8,Steven David,Kevin Brady,67930,200619,n,y,rep,TBA
+2018,House,Texas,District 9,Al Green,-,136256,0,y,n,dem,TBA
+2018,House,Texas,District 10,Mike Siegel,Michael McCaul,144034,157166,n,y,rep,TBA
+2018,House,Texas,District 11,Jennie Lou Leeder,Mike Conaway,40631,176603,n,y,rep,TBA
+2018,House,Texas,District 12,Vanessa Adia,Kay Granger,90994,172557,n,y,rep,TBA
+2018,House,Texas,District 13,Greg Sagan,Mac Thornberry,35083,169027,n,y,rep,TBA
+2018,House,Texas,District 14,Adrienne Bell,Randy Weber,92212,138942,n,y,rep,TBA
+2018,House,Texas,District 15,Vicente Gonzalez,Tim Westley,98333,63862,y,n,dem,TBA
+2018,House,Texas,District 16,Veronica Escobar,Rick Seeberger,124437,49127,n,n,dem,TBA
+2018,House,Texas,District 17,Rick Kennedy,Bill Flores,98070,134841,n,y,rep,TBA
+2018,House,Texas,District 18,Sheila Jackson Lee,Ava Reynero Pate,138704,38368,y,n,dem,TBA
+2018,House,Texas,District 19,Miguel Levario,Jodey Arrington,50039,151946,n,y,rep,TBA
+2018,House,Texas,District 20,Joaquin Castro,-,139038,0,y,n,dem,TBA
+2018,House,Texas,District 21,Joseph Kopser,Chip Roy,168421,177654,n,n,rep,TBA
+2018,House,Texas,District 22,Sri Preston Kulkarni,Pete Olson,138153,152750,n,y,rep,TBA
+2018,House,Texas,District 23,Gina Ortiz Jones,Will Hurd,102359,103285,n,y,rep,TBA
+2018,House,Texas,District 24,Jan McDowell,Kenny Marchant,125231,133317,n,y,rep,TBA
+2018,House,Texas,District 25,Julie Oliver,Roger Williams,136385,163023,n,y,rep,TBA
+2018,House,Texas,District 26,Linsey Fagan,Michael C. Burgess,121938,185551,n,y,rep,TBA
+2018,House,Texas,District 27,Eric Holguin,Michael Cloud,75929,125118,n,y,rep,TBA
+2018,House,Texas,District 28,Henry Cuellar,-,117494,0,y,n,dem,TBA
+2018,House,Texas,District 29,Sylvia Garcia,Phillip Aronoff,88188,28098,n,n,dem,TBA
+2018,House,Texas,District 30,Eddie Bernice Johnson,-,166784,0,y,n,dem,TBA
+2018,House,Texas,District 31,MJ Hegar,John Carter,136362,144680,n,y,rep,TBA
+2018,House,Texas,District 32,Colin Allred,Pete Sessions,144067,126101,n,y,rep,TBA
+2018,House,Texas,District 33,Marc Veasey,Willie Billups,90805,26120,y,n,dem,TBA
+2018,House,Texas,District 34,Filemon Vela Jr.,Rey Gonzalez,85825,57243,y,n,dem,TBA
+2018,House,Texas,District 35,Lloyd Doggett,David Smalling,138278,50553,y,n,dem,TBA
+2018,House,Texas,District 36,Dayna Steele,Brian Babin,60908,161048,n,y,rep,TBA
+2018,House,Utah,District 1,Lee Castillo,Rob Bishop,63308,156692,n,y,rep,TBA
+2018,House,Utah,District 2,Shireen Ghorbani,Chris Stewart,105051,151489,n,y,rep,TBA
+2018,House,Utah,District 3,James Singer,John Curtis,70686,174856,n,y,rep,TBA
+2018,House,Utah,District 4,Ben McAdams,Mia Love,134964,134270,n,y,rep,TBA
+2018,House,Vermont,District 1,Peter Welch,Anya Tynio,188547,70705,y,n,dem,TBA
+2018,House,Virginia,District 1,Vangie Williams,Rob Wittman,148464,183250,n,y,rep,TBA
+2018,House,Virginia,District 2,Elaine Luria,Scott Taylor,139571,133458,n,y,rep,TBA
+2018,House,Virginia,District 3,Bobby Scott,-,198615,0,y,n,dem,TBA
+2018,House,Virginia,District 4,Donald McEachin,Ryan McAdams,187642,107706,y,n,dem,TBA
+2018,House,Virginia,District 5,Leslie Cockburn,Denver Riggleman,145040,165339,n,n,rep,TBA
+2018,House,Virginia,District 6,Jennifer Lewis,Ben Cline,113133,167957,n,n,rep,TBA
+2018,House,Virginia,District 7,Abigail Spanberger,Dave Brat,176079,169295,n,y,rep,TBA
+2018,House,Virginia,District 8,Don Beyer,Thomas Oh,247137,76899,y,n,dem,TBA
+2018,House,Virginia,District 9,Anthony Flaccavento,Morgan Griffith,85833,160933,n,y,rep,TBA
+2018,House,Virginia,District 10,Jennifer Wexton,Barbara Comstock,206356,160841,n,y,rep,TBA
+2018,House,Virginia,District 11,Gerry Connolly,Jeff Dove,219191,83023,y,n,dem,TBA
+2018,House,Washington,District 1,Suzan DelBene,Jeffrey Beeler,197209,135534,y,n,dem,TBA
+2018,House,Washington,District 2,Rick Larsen,-,210187,0,y,n,dem,TBA
+2018,House,Washington,District 3,Carolyn Long,Jaime Herrera Beutler,145407,161819,n,y,rep,TBA
+2018,House,Washington,District 4,Christine Brown,Dan Newhouse,83785,141551,n,y,rep,TBA
+2018,House,Washington,District 5,Lisa Brown,Cathy McMorris Rodgers,144925,175422,n,y,rep,TBA
+2018,House,Washington,District 6,Derek Kilmer,Douglas Dightman,206409,116677,y,n,dem,TBA
+2018,House,Washington,District 7,Pramila Jayapal,Craig Keller,329800,64881,y,n,dem,TBA
+2018,House,Washington,District 8,Kim Schrier,Dino Rossi,164089,148968,n,n,rep,TBA
+2018,House,Washington,District 9,Adam Smith,-,163345,0,y,n,dem,TBA
+2018,House,Washington,District 10,Denny Heck,Joseph Brumbles,166215,103860,y,n,dem,TBA
+2018,House,West Virginia,District 1,Kendra Fershee,David McKinley,70217,127997,n,y,rep,TBA
+2018,House,West Virginia,District 2,Talley Sergent,Alex Mooney,88011,110504,n,y,rep,TBA
+2018,House,West Virginia,District 3,Richard Ojeda,Carol Miller,76340,98645,n,n,rep,TBA
+2018,House,Wisconsin,District 1,Randy Bryce,Bryan Steil,137508,177492,n,n,rep,TBA
+2018,House,Wisconsin,District 2,Mark Pocan,Joey Wayne Reed,309116,29,y,n,dem,TBA
+2018,House,Wisconsin,District 3,Ron Kind,Steve Toft,187888,126980,y,n,dem,TBA
+2018,House,Wisconsin,District 4,Gwen Moore,Tim Rogers,206487,59091,y,n,dem,TBA
+2018,House,Wisconsin,District 5,Tom Palzewicz,Jim Sensenbrenner,138385,225619,n,y,rep,TBA
+2018,House,Wisconsin,District 6,Dan Kohl,Glenn Grothman,144536,180311,n,y,rep,TBA
+2018,House,Wisconsin,District 7,Margaret Engebretson,Sean Duffy,124307,194061,n,y,rep,TBA
+2018,House,Wisconsin,District 8,Beau Liegeois,Mike Gallagher,119265,209410,n,y,rep,TBA
+2018,House,Wyoming,District 1,Greg Hunter,Liz Cheney,59903,127963,n,y,rep,TBA
+2020,House,Alabama,District 1,James Averhart,Jerry Carl,116949,211825,n,n,rep,TBA
+2020,House,Alabama,District 2,Phyllis Harvey-Hall,Barry Moore,105286,197996,n,n,rep,TBA
+2020,House,Alabama,District 3,Adia Winfrey,Mike Rogers,104595,217384,n,y,rep,TBA
+2020,House,Alabama,District 4,Rick Neighbors,Robert Aderholt,56237,261553,n,y,rep,TBA
+2020,House,Alabama,District 5,-,Mo Brooks,0,253094,n,y,rep,TBA
+2020,House,Alabama,District 6,-,Gary Palmer,0,274160,n,y,rep,TBA
+2020,House,Alabama,District 7,Terri Sewell,-,225742,0,y,n,dem,TBA
+2020,House,Alaska,District 1,Alyse Galvin,Don Young,159856,192126,n,y,rep,TBA
+2020,House,Arizona,District 1,Tom O'Halleran,Tiffany Shedd,188469,176709,y,n,dem,TBA
+2020,House,Arizona,District 2,Ann Kirkpatrick,Brandon Martin,209945,170975,y,n,dem,TBA
+2020,House,Arizona,District 3,Raul Grijalva,Daniel Wood,174243,95594,y,n,dem,TBA
+2020,House,Arizona,District 4,Delina DiSanto,Paul Gosar,120484,278002,n,y,rep,TBA
+2020,House,Arizona,District 5,Joan Greene,Andy Biggs,183171,262414,n,y,rep,TBA
+2020,House,Arizona,District 6,Hiral Tipirneni,David Schweikert,199644,217783,n,y,rep,TBA
+2020,House,Arizona,District 7,Ruben Gallego,Josh Barnett,165452,50226,y,n,dem,TBA
+2020,House,Arizona,District 8,Michael Muscato,Debbie Lesko,170816,251633,n,y,rep,TBA
+2020,House,Arizona,District 9,Greg Stanton,Dave Giles,217094,135180,y,n,dem,TBA
+2020,House,Arkansas,District 1,-,Rick Crawford,0,237596,n,y,rep,TBA
+2020,House,Arkansas,District 2,Joyce Elliott,French Hill,148410,184093,n,y,rep,TBA
+2020,House,Arkansas,District 3,Celeste Williams,Steve Womack,106325,214960,n,y,rep,TBA
+2020,House,Arkansas,District 4,William Hanson,Bruce Westerman,75750,191617,n,y,rep,TBA
+2020,House,California,District 1,Audrey Denney,Doug LaMalfa,154073,204190,n,y,rep,TBA
+2020,House,California,District 2,Jared Huffman,Dale K. Mensing,294435,94320,y,n,dem,TBA
+2020,House,California,District 3,John Garamendi,Tamika Hamilton,176036,145941,y,n,dem,TBA
+2020,House,California,District 4,Brynne S. Kennedy,Tom McClintock,194731,247291,n,y,rep,TBA
+2020,House,California,District 5,Mike Thompson,Scott Giblin,271233,85227,y,n,dem,TBA
+2020,House,California,District 6,Doris Matsui,Chris Bish,229648,83466,y,n,dem,TBA
+2020,House,California,District 7,Ami Bera,Buzz Patterson,217416,166549,y,n,dem,TBA
+2020,House,California,District 8,Christine Bubser,Jay Obernolte,124400,158711,n,n,rep,TBA
+2020,House,California,District 9,Jerry McNerney,"Antonio C. ""Tony"" Amador",174252,128358,y,n,dem,TBA
+2020,House,California,District 10,Josh Harder,Ted Howze,166865,135629,y,n,dem,TBA
+2020,House,California,District 11,Mark DeSaulnier,Nisha Sharma,271063,100293,y,n,dem,TBA
+2020,House,California,District 12,Nancy Pelosi,-,281776,0,y,n,dem,TBA
+2020,House,California,District 13,Barbara Lee,Nikka Piterman,327863,34955,y,n,dem,TBA
+2020,House,California,District 14,Jackie Speier,Ran Petel,278227,72684,y,n,dem,TBA
+2020,House,California,District 15,Eric Swalwell,Alison Hayden,242991,99710,y,n,dem,TBA
+2020,House,California,District 16,Jim Costa,Kevin Cookingham,128690,88039,y,n,dem,TBA
+2020,House,California,District 17,Ro Khanna,Ritesh Tandon,212137,85199,y,n,dem,TBA
+2020,House,California,District 18,Anna Eshoo,-,217377,0,y,n,dem,TBA
+2020,House,California,District 19,Zoe Lofgren,Justin Aguilera,224385,88642,y,n,dem,TBA
+2020,House,California,District 20,Jimmy Panetta,Jeff Gorman,236896,71658,y,n,dem,TBA
+2020,House,California,District 21,TJ Cox,David Valadao,84406,85928,y,n,dem,TBA
+2020,House,California,District 22,Phil Arballo,Devin Nunes,144251,170888,n,y,rep,TBA
+2020,House,California,District 23,Kim Mangone,Kevin McCarthy,115896,190222,n,y,rep,TBA
+2020,House,California,District 24,Salud Carbajal,Andy Caldwell,212564,149781,y,n,dem,TBA
+2020,House,California,District 25,Christy Smith,Mike Garcia,169305,169638,n,y,rep,TBA
+2020,House,California,District 26,Julia Brownley,Ronda Baldwin-Kennedy,208856,135877,y,n,dem,TBA
+2020,House,California,District 27,Judy Chu,Johnny J. Nalbandian,221411,95907,y,n,dem,TBA
+2020,House,California,District 28,Adam Schiff,Eric Early,244471,91928,y,n,dem,TBA
+2020,House,California,District 29,Tony Cardenas,-,119420,0,y,n,dem,TBA
+2020,House,California,District 30,Brad Sherman,Mark S. Reed,240038,105426,y,n,dem,TBA
+2020,House,California,District 31,Pete Aguilar,Agnes Gibboney,175315,110735,y,n,dem,TBA
+2020,House,California,District 32,Grace Napolitano,Joshua M. Scott,172942,86818,y,n,dem,TBA
+2020,House,California,District 33,Ted Lieu,James P. Bradley,257094,123334,y,n,dem,TBA
+2020,House,California,District 34,Jimmy Gomez,-,108792,0,y,n,dem,TBA
+2020,House,California,District 35,Norma Torres,Mike Cargile,169405,74941,y,n,dem,TBA
+2020,House,California,District 36,Raul Ruiz,Erin Cruz,185051,121640,y,n,dem,TBA
+2020,House,California,District 37,Karen Bass,Errol Webber,254916,41705,y,n,dem,TBA
+2020,House,California,District 38,Linda Sanchez,-,190467,0,y,n,dem,TBA
+2020,House,California,District 39,Gil Cisneros,Young Kim,169837,173946,y,n,dem,TBA
+2020,House,California,District 40,Lucille Roybal-Allard,C. Antonio Delgado,135572,50809,y,n,dem,TBA
+2020,House,California,District 41,Mark Takano,Aja Smith,167938,94289,y,n,dem,TBA
+2020,House,California,District 42,"William ""Liam"" O'Mara",Ken Calvert,157773,210274,n,y,rep,TBA
+2020,House,California,District 43,Maxine Waters,Joe E. Collins III,199210,78688,y,n,dem,TBA
+2020,House,California,District 44,Nanette Barragan,-,139661,0,y,n,dem,TBA
+2020,House,California,District 45,Katie Porter,Greg Raths,221843,193096,y,n,dem,TBA
+2020,House,California,District 46,Lou Correa,James S. Waters,157803,71716,y,n,dem,TBA
+2020,House,California,District 47,Alan Lowenthal,John Briscoe,197028,114371,y,n,dem,TBA
+2020,House,California,District 48,Harley Rouda,Michelle Steel,193362,201738,y,n,dem,TBA
+2020,House,California,District 49,Mike Levin,Brian Maryott,205349,181157,y,n,dem,TBA
+2020,House,California,District 50,Ammar Campa-Najjar,Darrell Issa,166859,195510,n,n,rep,TBA
+2020,House,California,District 51,Juan C. Vargas,Juan M. Hidalgo Jr.,165596,76841,y,n,dem,TBA
+2020,House,California,District 52,Scott Peters,Jim DeBello,244145,152350,y,n,dem,TBA
+2020,House,California,District 53,Sara Jacobs,-,199244,0,n,n,dem,TBA
+2020,House,Colorado,District 1,Diana DeGette,Shane Bolling,331621,105955,y,n,dem,TBA
+2020,House,Colorado,District 2,Joe Neguse,Charles Winn,316925,182547,y,n,dem,TBA
+2020,House,Colorado,District 3,Diane Mitsch Bush,Lauren Boebert,194122,220634,n,n,rep,TBA
+2020,House,Colorado,District 4,Ike McCorkle,Ken Buck,173945,285606,n,y,rep,TBA
+2020,House,Colorado,District 5,Jillian Freeland,Doug Lamborn,161600,249013,n,y,rep,TBA
+2020,House,Colorado,District 6,Jason Crow,Steve House,250314,175192,y,n,dem,TBA
+2020,House,Colorado,District 7,Ed Perlmutter,Casper Stockham,250525,159301,y,n,dem,TBA
+2020,House,Connecticut,District 1,John B. Larson,Mary Fay,222668,122111,y,n,dem,TBA
+2020,House,Connecticut,District 2,Joe Courtney,Justin Anderson,218119,140356,y,n,dem,TBA
+2020,House,Connecticut,District 3,Rosa DeLauro,Margaret Streicker,203265,137596,y,n,dem,TBA
+2020,House,Connecticut,District 4,Jim Himes,Jonathan Riddle,223832,130627,y,n,dem,TBA
+2020,House,Connecticut,District 5,Jahana Hayes,David X. Sullivan,192484,151988,y,n,dem,TBA
+2020,House,Delaware,District 1,Lisa Blunt Rochester,Lee Murphy,281382,196392,y,n,dem,TBA
+2020,House,Florida,District 1,Phil Her,Matt Gaetz,149172,283352,n,y,rep,TBA
+2020,House,Florida,District 2,-,Neal Dunn,0,305337,n,y,rep,TBA
+2020,House,Florida,District 3,Adam Christensen,Kat Cammack,167326,223075,n,n,rep,TBA
+2020,House,Florida,District 4,Donna Deegan,John Rutherford,196423,308497,n,y,rep,TBA
+2020,House,Florida,District 5,Al Lawson,Gary Adler,219463,117510,y,n,dem,TBA
+2020,House,Florida,District 6,Clint Curtis,Michael Waltz,172305,265393,n,y,rep,TBA
+2020,House,Florida,District 7,Stephanie Murphy,Leo Valentin,224946,175750,y,n,dem,TBA
+2020,House,Florida,District 8,Jim Kennedy,Bill Posey,177695,282093,n,y,rep,TBA
+2020,House,Florida,District 9,Darren Soto,Bill Olsen,240724,188889,y,n,dem,TBA
+2020,House,Florida,District 10,Val Demings,Vennia Francois,239434,136889,y,n,dem,TBA
+2020,House,Florida,District 11,Dana Cottrell,Daniel Webster,158094,316979,n,y,rep,TBA
+2020,House,Florida,District 12,Kimberly Walker,Gus Bilirakis,168194,284941,n,y,rep,TBA
+2020,House,Florida,District 13,Charlie Crist,Anna Paulina Luna,215405,190713,y,n,dem,TBA
+2020,House,Florida,District 14,Kathy Castor,Christine Quinn,224240,147896,y,n,dem,TBA
+2020,House,Florida,District 15,Alan Cohn,Scott Franklin,174297,216374,n,n,rep,TBA
+2020,House,Florida,District 16,Margaret Good,Vern Buchanan,215683,269001,n,y,rep,TBA
+2020,House,Florida,District 17,Allen Ellison,Greg Steube,140487,266514,n,y,rep,TBA
+2020,House,Florida,District 18,Pam Keith,Brian Mast,186674,253286,n,y,rep,TBA
+2020,House,Florida,District 19,Cindy Banyai,Byron Donalds,172146,272440,n,n,rep,TBA
+2020,House,Florida,District 20,Alcee Hastings,Greg Musselwhite,253661,68748,y,n,dem,TBA
+2020,House,Florida,District 21,Lois Frankel,Laura Loomer,237925,157612,y,n,dem,TBA
+2020,House,Florida,District 22,Ted Deutch,James Pruden,235764,166553,y,n,dem,TBA
+2020,House,Florida,District 23,Debbie Wasserman Schultz,Carla Spalding,221239,158874,y,n,dem,TBA
+2020,House,Florida,District 24,Frederica Wilson,Lavern Spicer,218825,59084,y,n,dem,TBA
+2020,House,Florida,District 25,-,Mario Diaz-Balart,0,1,n,y,rep,TBA
+2020,House,Florida,District 26,Debbie Mucarsel-Powell,Carlos A. Gimenez,165407,177223,y,n,dem,TBA
+2020,House,Florida,District 27,Donna Shalala,Maria Elvira Salazar,166758,176141,y,n,dem,TBA
+2020,House,Georgia,District 1,Joyce Griggs,Buddy Carter,135238,189457,n,y,rep,TBA
+2020,House,Georgia,District 2,Sanford Bishop,Don Cole,161397,111620,y,n,dem,TBA
+2020,House,Georgia,District 3,Val Almonord,Drew Ferguson,129792,241526,n,y,rep,TBA
+2020,House,Georgia,District 4,Hank Johnson,Johsie Cruz Ezammudeen,278906,69393,y,n,dem,TBA
+2020,House,Georgia,District 5,Nikema Williams,Angela Stanton-King,301857,52646,n,n,dem,TBA
+2020,House,Georgia,District 6,Lucy McBath,Karen Handel,216775,180329,y,n,dem,TBA
+2020,House,Georgia,District 7,Carolyn Bourdeaux,Rich McCormick,190900,180564,n,n,rep,TBA
+2020,House,Georgia,District 8,"Lindsay ""Doc"" Holliday",Austin Scott,109264,198701,n,y,rep,TBA
+2020,House,Georgia,District 9,Devin Pandy,Andrew Clyde,79797,292750,n,n,rep,TBA
+2020,House,Georgia,District 10,Tabitha Johnson-Green,Jody Hice,142636,235810,n,y,rep,TBA
+2020,House,Georgia,District 11,Dana Barrett,Barry Loudermilk,160623,245256,n,y,rep,TBA
+2020,House,Georgia,District 12,Elizabeth Johnson,Rick W. Allen,129061,181038,n,y,rep,TBA
+2020,House,Georgia,District 13,David Scott,Becky E. Hites,279045,81476,y,n,dem,TBA
+2020,House,Georgia,District 14,Kevin Van Ausdal,Marjorie Taylor Greene,77798,229827,n,n,rep,TBA
+2020,House,Hawaii,District 1,Ed Case,Ron Curtis,183245,71188,y,n,dem,TBA
+2020,House,Hawaii,District 2,Kai Kahele,Joe Akana,171517,84027,n,n,dem,TBA
+2020,House,Idaho,District 1,Rudy Soto,Russ Fulcher,131380,310736,n,y,rep,TBA
+2020,House,Idaho,District 2,Aaron Swisher,Mike Simpson,124151,250678,n,y,rep,TBA
+2020,House,Illinois,District 1,Bobby Rush,Philanise White,239943,85027,y,n,dem,TBA
+2020,House,Illinois,District 2,Robin Kelly,Theresa Raborn,234896,63142,y,n,dem,TBA
+2020,House,Illinois,District 3,Marie Newman,Mike Fricilone,172997,133851,n,n,dem,TBA
+2020,House,Illinois,District 4,"Jesus ""Chuy"" Garcia",Jesus E. Solorio Jr.,187219,35518,y,n,dem,TBA
+2020,House,Illinois,District 5,Mike Quigley,Tom Hanson,255661,96200,y,n,dem,TBA
+2020,House,Illinois,District 6,Sean Casten,Jeanne Ives,213777,183891,y,n,dem,TBA
+2020,House,Illinois,District 7,Danny K. Davis,Craig Cameron,249383,41390,y,n,dem,TBA
+2020,House,Illinois,District 8,Raja Krishnamoorthi,-,186251,0,y,n,dem,TBA
+2020,House,Illinois,District 9,Jan Schakowsky,Sargis Sangari,262045,107125,y,n,dem,TBA
+2020,House,Illinois,District 10,Brad Schneider,Valerie Ramirez Mukherjee,202402,114442,y,n,dem,TBA
+2020,House,Illinois,District 11,Bill Foster,Rick Laib,194557,112807,y,n,dem,TBA
+2020,House,Illinois,District 12,Raymond Lenzi,Mike Bost,127577,194839,n,y,rep,TBA
+2020,House,Illinois,District 13,Betsy Dirksen Londrigan,Rodney Davis,151648,181373,n,y,rep,TBA
+2020,House,Illinois,District 14,Lauren Underwood,Jim Oberweis,203209,197835,y,n,dem,TBA
+2020,House,Illinois,District 15,Erika Weaver,Mary Miller,88559,244947,n,n,rep,TBA
+2020,House,Illinois,District 16,Dani Brzozowski,Adam Kinzinger,119313,218839,n,y,rep,TBA
+2020,House,Illinois,District 17,Cheri Bustos,Esther Joy King,156011,143863,y,n,dem,TBA
+2020,House,Illinois,District 18,George Petrilli,Darin LaHood,110039,261840,n,y,rep,TBA
+2020,House,Indiana,District 1,Frank J. Mrvan,Mark Leyva,185180,132247,n,n,dem,TBA
+2020,House,Indiana,District 2,Pat Hackett,Jackie Walorski,114967,183601,n,y,rep,TBA
+2020,House,Indiana,District 3,Chip Coldiron,Jim Banks,104762,220989,n,y,rep,TBA
+2020,House,Indiana,District 4,Joe Mackey,Jim Baird,112984,225531,n,y,rep,TBA
+2020,House,Indiana,District 5,Christina Hale,Victoria Spartz,191226,208212,n,n,rep,TBA
+2020,House,Indiana,District 6,Jeannine Lake,Greg Pence,91103,225318,n,y,rep,TBA
+2020,House,Indiana,District 7,Andre Carson,Susan Marie Smith,176422,106146,y,n,dem,TBA
+2020,House,Indiana,District 8,Thomasina Marsili,Larry Bucshon,95691,214643,n,y,rep,TBA
+2020,House,Indiana,District 9,Andy Ruff,Trey Hollingsworth,122566,222057,n,y,rep,TBA
+2020,House,Iowa,District 1,Abby Finkenaur,Ashley Hinson,201347,212088,y,n,dem,TBA
+2020,House,Iowa,District 2,Rita Hart,Marianette Miller-Meeks,196958,196964,n,n,dem,TBA
+2020,House,Iowa,District 3,Cindy Axne,David Young,219205,212997,y,n,dem,TBA
+2020,House,Iowa,District 4,J. D. Scholten,Randy Feenstra,144761,237369,n,n,rep,TBA
+2020,House,Kansas,District 1,Kali Barnett,Tracey Mann,84393,208229,n,n,rep,TBA
+2020,House,Kansas,District 2,Michelle De La Isla,Jake LaTurner,136650,185464,n,n,rep,TBA
+2020,House,Kansas,District 3,Sharice Davids,Amanda Adkins,220049,178773,y,n,dem,TBA
+2020,House,Kansas,District 4,Laura Lombard,Ron Estes,116166,203432,n,y,rep,TBA
+2020,House,Kentucky,District 1,James Rhodes,James Comer,82141,246329,n,y,rep,TBA
+2020,House,Kentucky,District 2,Hank Linderman,Brett Guthrie,94643,255735,n,y,rep,TBA
+2020,House,Kentucky,District 3,John Yarmuth,Rhonda Palazzo,230672,137425,y,n,dem,TBA
+2020,House,Kentucky,District 4,Alexandra Owensby,Thomas Massie,125896,256613,n,y,rep,TBA
+2020,House,Kentucky,District 5,Matthew Best,Hal Rogers,47056,250914,n,y,rep,TBA
+2020,House,Kentucky,District 6,Josh Hicks,Andy Barr,155011,216948,n,y,rep,TBA
+2020,House,Louisiana,District 1,Lee Ann Dugas,Steve Scalise,94730,270330,n,y,rep,TBA
+2020,House,Louisiana,District 2,Cedric Richmond,David M. Schilling,201636,47575,y,n,dem,TBA
+2020,House,Louisiana,District 3,Braylon Harris,Clay Higgins,60852,230480,n,y,rep,TBA
+2020,House,Louisiana,District 4,Kenny Houston,Mike Johnson,78157,185265,n,y,rep,TBA
+2020,House,Louisiana,District 5,Luke Letlow,Candy Shoemaker-Cristophe,50812,102533,n,n,rep,TBA
+2020,House,Louisiana,District 6,Dartanyon Williams,Garret Graves,95541,265706,n,y,rep,TBA
+2020,House,Maine,District 1,Chellie Pingree,Jay Allen,271004,165008,y,n,dem,TBA
+2020,House,Maine,District 2,Jared Golden,Dale Crafts,197974,175228,y,n,dem,TBA
+2020,House,Maryland,District 1,Mia Mason,Andy Harris,143877,250901,n,y,rep,TBA
+2020,House,Maryland,District 2,Dutch Ruppersberger,Johnny Ray Salling,224836,106355,y,n,dem,TBA
+2020,House,Maryland,District 3,John Sarbanes,Charles Anthony,260358,112117,y,n,dem,TBA
+2020,House,Maryland,District 4,Anthony Brown,George McDermott,282119,71671,y,n,dem,TBA
+2020,House,Maryland,District 5,Steny Hoyer,Chris Palombi,274210,123525,y,n,dem,TBA
+2020,House,Maryland,District 6,David Trone,Neil Parrott,215540,143599,y,n,dem,TBA
+2020,House,Maryland,District 7,Kweisi Mfume,Kimberly Klacik,237084,92825,y,n,dem,TBA
+2020,House,Maryland,District 8,Jamie Raskin,Gregory Thomas Coll,274716,127157,y,n,dem,TBA
+2020,House,Massachusetts,District 1,Richard neal,-,275376,0,y,n,dem,TBA
+2020,House,Massachusetts,District 2,Jim McGovern,Tracy Lovvorn,249854,132220,y,n,dem,TBA
+2020,House,Massachusetts,District 3,Lori Trahan,-,286896,0,y,n,dem,TBA
+2020,House,Massachusetts,District 4,Jake Auchincloss,Julie Hall,251102,160474,n,n,dem,TBA
+2020,House,Massachusetts,District 5,Katherine Clark,Caroline Colarusso,294427,101351,y,n,dem,TBA
+2020,House,Massachusetts,District 6,Seth Moulton,John Paul Moran,286377,150695,y,n,dem,TBA
+2020,House,Massachusetts,District 7,Ayanna Pressley,-,267362,38675,y,n,dem,TBA
+2020,House,Massachusetts,District 8,Stephen F. Lynch,-,310940,0,y,n,dem,TBA
+2020,House,Massachusetts,District 9,Bill Keating,Helen Brady,260262,154261,y,n,dem,TBA
+2020,House,Michigan,District 1,Dana Ferguson,Jack Bergman,153328,256581,n,y,rep,TBA
+2020,House,Michigan,District 2,Bryan Berghoef,Bill Huizenga,154122,238711,n,y,rep,TBA
+2020,House,Michigan,District 3,Hillary Scholten,Peter Meijer,189769,213649,n,n,rep,TBA
+2020,House,Michigan,District 4,Jerry Hilliard,John Moolenaar,120802,242621,n,y,rep,TBA
+2020,House,Michigan,District 5,Dan Kildee,Tim Kelly,196599,150772,y,n,dem,TBA
+2020,House,Michigan,District 6,Jon Hoadley,Fred Upton,152085,211496,n,y,rep,TBA
+2020,House,Michigan,District 7,Gretchen Driskell,Tim Walberg,159743,227524,n,y,rep,TBA
+2020,House,Michigan,District 8,Elissa Slotkin,Paul Junge,217922,202525,y,n,dem,TBA
+2020,House,Michigan,District 9,Andy Levin,Charles Langworthy,230318,153296,y,n,dem,TBA
+2020,House,Michigan,District 10,Kimberly Bizon,Lisa McClain,138179,271607,n,n,rep,TBA
+2020,House,Michigan,District 11,Haley Stevens,Eric Esshaki,226128,215405,y,n,dem,TBA
+2020,House,Michigan,District 12,Debbie Dingell,Jeff Jones,254957,117719,y,n,dem,TBA
+2020,House,Michigan,District 13,Rashida Tlaib,David Dudenhoefer,223205,53311,y,n,dem,TBA
+2020,House,Michigan,District 14,Brenda Lawrence,Robert Patrick,271370,62664,y,n,dem,TBA
+2020,House,Minnesota,District 1,Dan Feehan,Jim Hagedorn,167890,179234,n,y,rep,TBA
+2020,House,Minnesota,District 2,Angie Craig,Tyler Kistner,204534,194954,y,n,dem,TBA
+2020,House,Minnesota,District 3,Dean Phillips,Kendall Qualls,246666,196625,y,n,dem,TBA
+2020,House,Minnesota,District 4,Betty McCollum,Gene Rechtzigel,245813,112730,y,n,dem,TBA
+2020,House,Minnesota,District 5,Ilhan Omar,Lacy Johnson,255924,102878,y,n,dem,TBA
+2020,House,Minnesota,District 6,Tawnja Zahradka,Tom Emmer,140853,270901,n,y,rep,TBA
+2020,House,Minnesota,District 7,Collin Peterson,Michelle Fischbach,144840,194066,y,n,dem,TBA
+2020,House,Minnesota,District 8,Quinn Nystrom,Pete Stauber,147853,223432,n,y,rep,TBA
+2020,House,Mississippi,District 1,Antonia Eliason,Trent Kelly,104008,228787,n,y,rep,TBA
+2020,House,Mississippi,District 2,Bennie Thompson,Brian Flowers,196224,101010,y,n,dem,TBA
+2020,House,Mississippi,District 3,"Dorothy ""Dot"" Benford",Michael Guest,120782,221064,n,y,rep,TBA
+2020,House,Mississippi,District 4,-,Steven Palazzo,0,255971,n,y,rep,TBA
+2020,House,Missouri,District 1,Cori Bush,Anthony Rogers,249087,59940,n,n,dem,TBA
+2020,House,Missouri,District 2,Jill Schupp,Ann Wagner,204540,233157,n,y,rep,TBA
+2020,House,Missouri,District 3,Megan Rezabek,Blaine Luetkemeyer,116095,282866,n,y,rep,TBA
+2020,House,Missouri,District 4,Lindsey Simmons,Vicky Hartzler,107635,245247,n,y,rep,TBA
+2020,House,Missouri,District 5,Emanuel Cleaver,Ryan Derks,207180,135934,y,n,dem,TBA
+2020,House,Missouri,District 6,Gena Ross,Sam Graves,118926,258709,n,y,rep,TBA
+2020,House,Missouri,District 7,Teresa Montseny,Billy Long,98111,254318,n,y,rep,TBA
+2020,House,Missouri,District 8,Kathy Ellis,Jason Smith,70561,253811,n,y,rep,TBA
+2020,House,Montana,District 1,Kathleen Williams,Matt Rosendale,262340,339169,n,n,rep,TBA
+2020,House,Nebraska,District 1,Kate Bolz,Jeff Fortenberry,119622,189006,n,y,rep,TBA
+2020,House,Nebraska,District 2,Kara Eastman,Don Bacon,155706,171071,n,y,rep,TBA
+2020,House,Nebraska,District 3,Mark Elworth Jr.,Adrian Smith,50690,225157,n,y,rep,TBA
+2020,House,Nevada,District 1,Dina Titus,Joyce Bentley,137868,74490,y,n,dem,TBA
+2020,House,Nevada,District 2,Patricia Ackerman,Mark Amodei,155780,216078,n,y,rep,TBA
+2020,House,Nevada,District 3,Susie Lee,Dan Rodimer,203421,190975,y,n,dem,TBA
+2020,House,Nevada,District 4,Steven Horsford,Jim Marchant,168457,152284,y,n,dem,TBA
+2020,House,New Hampshire,District 1,Chris Pappas,Matt Mowers,205606,185159,y,n,dem,TBA
+2020,House,New Hampshire,District 2,Ann McLane Kuster,Steve Negron,208289,168886,y,n,dem,TBA
+2020,House,New Jersey,District 1,Donald Norcross,Claire Gustafson,240567,144463,y,n,dem,TBA
+2020,House,New Jersey,District 2,Amy Kennedy,Jeff Van Drew,173849,195526,n,y,rep,TBA
+2020,House,New Jersey,District 3,Andy Kim,David Richter,229840,196327,y,n,dem,TBA
+2020,House,New Jersey,District 4,Stephanie Schmid,Chris Smith,162420,254103,n,y,rep,TBA
+2020,House,New Jersey,District 5,Josh Gottheimer,Frank Pallotta,225175,193333,y,n,dem,TBA
+2020,House,New Jersey,District 6,Frank Pallone Jr.,Christian Onuoha,199648,126760,y,n,dem,TBA
+2020,House,New Jersey,District 7,Tom Malinowski,Thomas H. Kean Jr.,219629,214318,y,n,dem,TBA
+2020,House,New Jersey,District 8,Albio Sires,Jason Mushnick,176758,58686,y,n,dem,TBA
+2020,House,New Jersey,District 9,Bill Pascrell Jr.,Billy Prempeh,203674,98629,y,n,dem,TBA
+2020,House,New Jersey,District 10,Donald Payne Jr.,Jennifer Zinone,241522,40298,y,n,dem,TBA
+2020,House,New Jersey,District 11,Mikie Sherrill,Rosemary Becchi,235163,206013,y,n,dem,TBA
+2020,House,New Jersey,District 12,Bonnie Watson Coleman,Mark Razzoli,230883,114591,y,n,dem,TBA
+2020,House,New Mexico,District 1,Deb Haaland,Michelle Garcia Holmes,186953,134337,y,n,dem,TBA
+2020,House,New Mexico,District 2,Xochitl Torres Small,Yvette Herrell,122546,142283,y,n,dem,TBA
+2020,House,New Mexico,District 3,Teresa Leger Fernandez,Alexis Johnson,186282,131166,n,n,dem,TBA
+2020,House,New York,District 1,Nancy Goroff,Lee Zeldin,169294,205715,n,y,rep,TBA
+2020,House,New York,District 2,Jackie Gordon,Andrew Garbarino,154246,177379,n,n,rep,TBA
+2020,House,New York,District 3,Thomas Suozzi,George Santos,208555,161931,y,n,dem,TBA
+2020,House,New York,District 4,Kathleen Rice,Douglas Tuman,199762,153007,y,n,dem,TBA
+2020,House,New York,District 5,Gregory Meeks,-,229125,0,y,n,dem,TBA
+2020,House,New York,District 6,Grace Meng,Tom Zmich,158862,74829,y,n,dem,TBA
+2020,House,New York,District 7,Nydia Velazquez,Brian Kelly,191073,32520,y,n,dem,TBA
+2020,House,New York,District 8,Hakeem Jeffries,Garfield Wallace,234933,42007,y,n,dem,TBA
+2020,House,New York,District 9,Yvette Clarke,Constantin Jean-Pierre,230221,43950,y,n,dem,TBA
+2020,House,New York,District 10,Jerry Nadler,Cathy Bernstein,206310,66889,y,n,dem,TBA
+2020,House,New York,District 11,Max Rose,Nicole Malliotakis,137198,155608,y,n,dem,TBA
+2020,House,New York,District 12,Carolyn Maloney,Carlos Santiago-Cano,265172,53061,y,n,dem,TBA
+2020,House,New York,District 13,Adriano Espaillat,Lovelynn Gwinn,231841,19829,y,n,dem,TBA
+2020,House,New York,District 14,Alexandria Ocasio-Cortez,John Cummings,152661,58440,y,n,dem,TBA
+2020,House,New York,District 15,Ritchie Torres,Patrick Delices,169533,21221,n,n,dem,TBA
+2020,House,New York,District 16,Jamaal Bowman,Patrick McManus,218514,41094,n,n,dem,TBA
+2020,House,New York,District 17,Mondaire Jones,Maureen McArdle Schulman,197354,117309,n,n,dem,TBA
+2020,House,New York,District 18,Sean Patrick Maloney,Chele Farley,187444,145145,y,n,dem,TBA
+2020,House,New York,District 19,Antonio Delgado,Kyle Van De Water,192100,151475,y,n,dem,TBA
+2020,House,New York,District 20,Paul Tonko,Liz Joy,219705,139446,y,n,dem,TBA
+2020,House,New York,District 21,Tedra Cobb,Elise Stefanik,131995,188655,n,y,rep,TBA
+2020,House,New York,District 22,Anthony Brindisi,Claudia Tenney,155989,156098,y,n,dem,TBA
+2020,House,New York,District 23,Tracy Mitrano,Tom Reed,128976,181021,n,y,rep,TBA
+2020,House,New York,District 24,Dana Balter,John Katko,147877,182809,n,y,rep,TBA
+2020,House,New York,District 25,Joseph Morelle,George Mitris,206396,136198,y,n,dem,TBA
+2020,House,New York,District 26,Brian Higgins,Ricky Donovan,223366,91706,y,n,dem,TBA
+2020,House,New York,District 27,Nate McMurray,Chris Jacobs,149449,228885,n,y,rep,TBA
+2020,House,North Carolina,District 1,G. K. Butterfield,Sandy Smith,188870,159748,y,n,dem,TBA
+2020,House,North Carolina,District 2,Deborah K. Ross,Alan Swain,311887,172544,n,n,rep,TBA
+2020,House,North Carolina,District 3,Daryl Farrow,Greg Murphy,132752,229800,n,y,rep,TBA
+2020,House,North Carolina,District 4,David Price,Robert Thomas,332421,161298,y,n,dem,TBA
+2020,House,North Carolina,District 5,David Brown,Virginia Foxx,119846,257843,n,y,rep,TBA
+2020,House,North Carolina,District 6,Kathy Manning,Lee Haywood,253531,153598,n,n,rep,TBA
+2020,House,North Carolina,District 7,Chris Ward,David Rouzer,272443,179045,n,y,rep,TBA
+2020,House,North Carolina,District 8,Patricia Timmons-Goodson,Richard Hudson,177781,202774,n,y,rep,TBA
+2020,House,North Carolina,District 9,Cynthia Wallace,Dan Bishop,179463,224661,n,y,rep,TBA
+2020,House,North Carolina,District 10,David Parker,Patrick McHenry,128189,284095,n,y,rep,TBA
+2020,House,North Carolina,District 11,Moe Davis,Madison Cawthorn,190609,245351,n,n,rep,TBA
+2020,House,North Carolina,District 12,Alma Adams,-,341457,0,y,n,dem,TBA
+2020,House,North Carolina,District 13,Scott Hufman,Ted Budd,124684,267181,n,y,rep,TBA
+2020,House,North Dakota,District 1,Zach Raknerud,Kelly Armstrong,97970,245229,n,y,rep,TBA
+2020,House,Ohio,District 1,Kate Schroder,Steve Chabot,172022,199560,n,y,rep,TBA
+2020,House,Ohio,District 2,Jaime Castle,Brad Wenstrup,146781,230430,n,y,rep,TBA
+2020,House,Ohio,District 3,Joyce Beatty,Mark Richardson,227420,93569,y,n,dem,TBA
+2020,House,Ohio,District 4,Shannon Freshour,Jim Jordan,101897,235875,n,y,rep,TBA
+2020,House,Ohio,District 5,Nick Rubando,Bob Latta,120962,257019,n,y,rep,TBA
+2020,House,Ohio,District 6,Shawna Roberts,Bill Johnson,85661,249130,n,y,rep,TBA
+2020,House,Ohio,District 7,Quentin Potter,Bob Gibbs,102271,236607,n,y,rep,TBA
+2020,House,Ohio,District 8,Vanessa Enoch,Warren Davidson,110766,246277,n,y,rep,TBA
+2020,House,Ohio,District 9,Marcy Kaptur,Rob Weber,190328,111385,y,n,dem,TBA
+2020,House,Ohio,District 10,Desiree Tims,Mike Turner,151976,212972,n,y,rep,TBA
+2020,House,Ohio,District 11,Marcia Fudge,Laverne Gore,242098,60323,y,n,dem,TBA
+2020,House,Ohio,District 12,Alaina Shearer,Troy Balderson,182847,241790,n,y,rep,TBA
+2020,House,Ohio,District 13,Tim Ryan,Christina Hagan,173631,148648,y,n,dem,TBA
+2020,House,Ohio,District 14,"Hillary ""Toro"" O'Connor Mueri",David Joyce,158586,238864,n,y,rep,TBA
+2020,House,Ohio,District 15,Joel Newby,Steve Stivers,140183,243103,n,y,rep,TBA
+2020,House,Ohio,District 16,Aaron Paul Godfrey,Anthony Gonzalez,144071,247335,n,y,rep,TBA
+2020,House,Oklahoma,District 1,Kojo Asamoa-Caesar,Kevin Hern,109641,213700,n,y,rep,TBA
+2020,House,Oklahoma,District 2,Danyell Lanier,Markwayne Mullin,63472,216511,n,y,rep,TBA
+2020,House,Oklahoma,District 3,Zoe Midyett,Frank D. Lucas,66501,242677,n,y,rep,TBA
+2020,House,Oklahoma,District 4,Mary Brannon,Tom Cole,90459,213096,n,y,rep,TBA
+2020,House,Oklahoma,District 5,Kendra Horn,Stephanie Bice,145658,158191,y,n,dem,TBA
+2020,House,Oregon,District 1,Suzanne Bonamici,Christopher Christensen,297071,161928,y,n,dem,TBA
+2020,House,Oregon,District 2,Alex Spenser,Cliff Bentz,168881,273835,n,n,rep,TBA
+2020,House,Oregon,District 3,Earl Blumenauer,Joanna Harbour,343574,110570,y,n,dem,TBA
+2020,House,Oregon,District 4,Peter DeFazio,Alex Skarlatos,240950,216081,y,n,dem,TBA
+2020,House,Oregon,District 5,Kurt Schrader,Amy Ryan Courser,234863,204372,y,n,dem,TBA
+2020,House,Pennsylvania,District 1,Christina Finello,Brian Fitzpatrick,191875,249804,n,y,rep,TBA
+2020,House,Pennsylvania,District 2,Brendan Boyle,David Torres,198140,75022,y,n,dem,TBA
+2020,House,Pennsylvania,District 3,Dwight Evans,Michael Harvey,341708,33671,y,n,dem,TBA
+2020,House,Pennsylvania,District 4,Madeleine Dean,Kathy Barnette,264637,179926,y,n,dem,TBA
+2020,House,Pennsylvania,District 5,Mary Gay Scanlon,Dasha Pruett,255743,139552,y,n,dem,TBA
+2020,House,Pennsylvania,District 6,Chrissy Houlahan,John Emmons,226440,177526,y,n,dem,TBA
+2020,House,Pennsylvania,District 7,Susan Wild,Lisa Scheller,195457,181407,y,n,dem,TBA
+2020,House,Pennsylvania,District 8,Matt Cartwright,Jim Bognet,178004,165783,y,n,dem,TBA
+2020,House,Pennsylvania,District 9,Gary Wegman,Dan Meuser,118266,232988,n,y,rep,TBA
+2020,House,Pennsylvania,District 10,Eugene DePasquale,Scott Perry,182938,208896,n,y,rep,TBA
+2020,House,Pennsylvania,District 11,Sarah Hammond,Lloyd Smucker,141325,241915,n,y,rep,TBA
+2020,House,Pennsylvania,District 12,Lee Griffin,Fred Keller,99199,241035,n,y,rep,TBA
+2020,House,Pennsylvania,District 13,Todd Rowley,John Joyce,96612,267789,n,y,rep,TBA
+2020,House,Pennsylvania,District 14,Bill Marx,Guy Reschenthaler,131895,241688,n,y,rep,TBA
+2020,House,Pennsylvania,District 15,Robert Williams,Glenn Thompson,92156,255058,n,y,rep,TBA
+2020,House,Pennsylvania,District 16,Kristy Gnibus,Mike Kelly,143962,210088,n,y,rep,TBA
+2020,House,Pennsylvania,District 17,Conor Lamb,Sean Parnell,222253,212284,y,n,dem,TBA
+2020,House,Pennsylvania,District 18,Mike Doyle,Luke Negron,266084,118163,y,n,dem,TBA
+2020,House,Rhode Island,District 1,David Cicilline,-,158550,0,y,n,dem,TBA
+2020,House,Rhode Island,District 2,James Langevin,Robert Lancia,154086,109894,y,n,dem,TBA
+2020,House,South Carolina,District 1,Joe Cunningham,Nancy Mace,210627,216042,y,n,dem,TBA
+2020,House,South Carolina,District 2,Adair Boroughs,Joe Wilson,155118,202715,n,y,rep,TBA
+2020,House,South Carolina,District 3,Hosea Cleveland,Jeff Duncan,95712,237544,n,y,rep,TBA
+2020,House,South Carolina,District 4,Kim Nelson,William Timmons,133023,222126,n,y,rep,TBA
+2020,House,South Carolina,District 5,Moe Brown,Ralph Norman,145979,220006,n,y,rep,TBA
+2020,House,South Carolina,District 6,Jim Clyburn,John McCollum,197477,89258,y,n,dem,TBA
+2020,House,South Carolina,District 7,Melissa Ward Watson,Tom Rice,138863,224993,n,y,rep,TBA
+2020,House,South Dakota,District 1,-,Dusty Johnson,0,321984,n,y,rep,TBA
+2020,House,Tennessee,District 1,Blair Walsingham,Diana Harshbarger,68617,228181,n,n,rep,TBA
+2020,House,Tennessee,District 2,Renee Hoyos,Tim Burchett,109684,238907,n,y,rep,TBA
+2020,House,Tennessee,District 3,Meg Gorman,Chuck Fleischmann,97687,215571,n,y,rep,TBA
+2020,House,Tennessee,District 4,Christopher Hale,Scott DesJarlais,111908,223802,n,y,rep,TBA
+2020,House,Tennessee,District 5,Jim Cooper,-,252155,0,y,n,dem,TBA
+2020,House,Tennessee,District 6,Christopher Finley,John Rose,83852,257572,n,y,rep,TBA
+2020,House,Tennessee,District 7,Kiran Sreepada,Mark Green,95839,245188,n,y,rep,TBA
+2020,House,Tennessee,District 8,Erika Stotts Pearson,David Kustoff,97890,227216,n,y,rep,TBA
+2020,House,Tennessee,District 9,Steve Cohen,Charlotte Bergmann,187905,48818,y,n,dem,TBA
+2020,House,Texas,District 1,Hank Gilbert,Louie Gohmert,83016,219726,n,y,rep,TBA
+2020,House,Texas,District 2,Sima Ladjevardian,Dan Crenshaw,148374,192828,n,y,rep,TBA
+2020,House,Texas,District 3,Lulu Seikaly,Van Taylor,179458,230512,n,y,rep,TBA
+2020,House,Texas,District 4,Russell Foster,Pat Fallon,76326,253837,n,n,rep,TBA
+2020,House,Texas,District 5,Carolyn Salter,Lance Gooden,100743,173836,n,y,rep,TBA
+2020,House,Texas,District 6,Stephen Daniel,Ron Wright,149530,179507,n,y,rep,TBA
+2020,House,Texas,District 7,Lizzie Fletcher,Wesley Hunt,159529,149054,y,n,dem,TBA
+2020,House,Texas,District 8,Elizabeth Hernandez,Kevin Brady,97409,277327,n,y,rep,TBA
+2020,House,Texas,District 9,Al Green,Johnny Teague,172938,49575,y,n,dem,TBA
+2020,House,Texas,District 10,Mike Siegel,Michael McCaul,187686,217216,n,y,rep,TBA
+2020,House,Texas,District 11,Jon Mark Hogg,August Pfluger,53394,232568,n,n,rep,TBA
+2020,House,Texas,District 12,Lisa Welch,Kay Granger,121250,233853,n,y,rep,TBA
+2020,House,Texas,District 13,Gus Trujillo,Ronny Jackson,50477,217124,n,n,rep,TBA
+2020,House,Texas,District 14,Adrienne Bell,Randy Weber,118574,190541,n,y,rep,TBA
+2020,House,Texas,District 15,Vicente Gonzalez,Monica De la Cruz-Hernandez,115605,109017,y,n,dem,TBA
+2020,House,Texas,District 16,Veronica Escobar,Irene Armendariz-Jackson,154108,84006,y,n,dem,TBA
+2020,House,Texas,District 17,Rick Kennedy,Pete Sessions,125565,171390,n,n,rep,TBA
+2020,House,Texas,District 18,Sheila Jackson Lee,Wendell Champion,180952,58033,y,n,dem,TBA
+2020,House,Texas,District 19,Tom Watson,Jodey Arrington,60583,198198,n,y,rep,TBA
+2020,House,Texas,District 20,Joaquin Castro,Mauro Garza,175078,89628,y,n,dem,TBA
+2020,House,Texas,District 21,Wendy Davis,Chip Roy,205780,235740,n,y,rep,TBA
+2020,House,Texas,District 22,Sri Preston Kulkarni,Troy Nehls,181998,210259,n,n,rep,TBA
+2020,House,Texas,District 23,Gina Ortiz Jones,Tony Gonzales,137693,149395,n,n,rep,TBA
+2020,House,Texas,District 24,Candace Valenzuela,Beth Van Duyne,163326,167910,n,n,rep,TBA
+2020,House,Texas,District 25,Julie Oliver,Roger Williams,165697,220088,n,y,rep,TBA
+2020,House,Texas,District 26,Carol Iannuzzi,Michael C. Burgess,161009,261963,n,y,rep,TBA
+2020,House,Texas,District 27,"Ricardo ""Rick"" De La Fuente",Michael Cloud,95446,172305,n,y,rep,TBA
+2020,House,Texas,District 28,Henry Cuellar,Sandra Whitten,137494,91925,y,n,dem,TBA
+2020,House,Texas,District 29,Sylvia Garcia,Jaimy Z. Blanco,111305,42840,y,n,dem,TBA
+2020,House,Texas,District 30,Eddie Bernice Johnson,Tre Pennie,204928,48685,y,n,dem,TBA
+2020,House,Texas,District 31,Donna Imam,John Carter,176293,212695,n,y,rep,TBA
+2020,House,Texas,District 32,Colin Allred,Genevieve Collins,178542,157867,y,n,dem,TBA
+2020,House,Texas,District 33,Marc Veasey,Fabian Vasquez,105317,39638,y,n,dem,TBA
+2020,House,Texas,District 34,Filemon Vela,Rey Gonzalez,111439,84119,y,n,dem,TBA
+2020,House,Texas,District 35,Lloyd Doggett,Jennifer Garcia Sharon,176373,80795,y,n,dem,TBA
+2020,House,Texas,District 36,Rashad Lewis,Brian Babin,73148,222712,n,y,rep,TBA
+2020,House,Utah,District 1,Darren Parry,Blake Moore,104194,237988,n,n,rep,TBA
+2020,House,Utah,District 2,Kael Weston,Chris Stewart,129762,208997,n,y,rep,TBA
+2020,House,Utah,District 3,Devin Thorpe,John Curtis,96067,246674,n,y,rep,TBA
+2020,House,Utah,District 4,Ben McAdams,Burgess Owens,175923,179688,y,n,dem,TBA
+2020,House,Vermont,District 1,Peter Welch,Miriam Berry,238827,95830,y,n,dem,TBA
+2020,House,Virginia,District 1,Qasim Rashid,Rob Wittman,186923,260614,n,y,rep,TBA
+2020,House,Virginia,District 2,Elaine Luria,Scott Taylor,185733,165031,y,n,dem,TBA
+2020,House,Virginia,District 3,Bobby Scott,John Collick,233326,107299,y,n,dem,TBA
+2020,House,Virginia,District 4,Donald McEachin,Leon Benjamin,241142,149625,y,n,dem,TBA
+2020,House,Virginia,District 5,Cameron Webb,Bob Good,190315,210988,n,n,rep,TBA
+2020,House,Virginia,District 6,Nicholas Betts,Ben Cline,134729,246606,n,y,rep,TBA
+2020,House,Virginia,District 7,Abigail Spanberger,Nick reitas,230893,222623,y,n,dem,TBA
+2020,House,Virginia,District 8,Don Beyer,Jeff Jordan,301454,95365,y,n,dem,TBA
+2020,House,Virginia,District 9,-,Morgan Griffith,0,271851,n,y,rep,TBA
+2020,House,Virginia,District 10,Jennifer Wexton,Aliscia Andrews,268734,206254,y,n,dem,TBA
+2020,House,Virginia,District 11,Gerry Connolly,Manga Anantatmula,280725,111380,y,n,dem,TBA
+2020,House,Washington,District 1,Suzan DelBene,Jeffrey Beeler,249944,176407,y,n,dem,TBA
+2020,House,Washington,District 2,Rick Larsen,Timothy Hazelo,255252,148384,y,n,dem,TBA
+2020,House,Washington,District 3,Carolyn Long,Jaime Herrera Beutler,181347,235579,n,y,rep,TBA
+2020,House,Washington,District 4,Douglas McKinley,Dan Newhouse,102667,202108,n,y,rep,TBA
+2020,House,Washington,District 5,Dave Wilson,Cathy McMorris Rodgers,155737,247815,n,y,rep,TBA
+2020,House,Washington,District 6,Derek Kilmer,Elizabeth Kreiselmaier,247429,168783,y,n,dem,TBA
+2020,House,Washington,District 7,Pramila Jayapal,Craig Keller,387109,78240,y,n,dem,TBA
+2020,House,Washington,District 8,Kim Schrier,Jesse Jensen,213123,198423,y,n,dem,TBA
+2020,House,Washington,District 9,Adam Smith,Doug Basler,258771,89697,y,n,dem,TBA
+2020,House,Washington,District 10,Marilyn Strickland,-,167937,0,n,n,dem,TBA
+2020,House,West Virginia,District 1,Natalie Cline,David McKinley,81177,180488,n,y,rep,TBA
+2020,House,West Virginia,District 2,Cathy Kunkel,Alex Mooney,100799,172195,n,y,rep,TBA
+2020,House,West Virginia,District 3,Hilary Turner,Carol Miller,64927,161585,n,y,rep,TBA
+2020,House,Wisconsin,District 1,Roger Polack,Bryan Steil,163170,238271,n,y,rep,TBA
+2020,House,Wisconsin,District 2,Marc Pocan,Peter Theron,318523,138306,y,n,dem,TBA
+2020,House,Wisconsin,District 3,Ron Kind,Derrick Van Orden,199870,189524,y,n,dem,TBA
+2020,House,Wisconsin,District 4,Gwen Moore,Tim Rogers,232668,70769,y,n,dem,TBA
+2020,House,Wisconsin,District 5,Tom Palzewicz,Scott Fitzgerald,175902,265434,n,n,rep,TBA
+2020,House,Wisconsin,District 6,Jessica King,Glenn Grothman,164239,238874,n,y,rep,TBA
+2020,House,Wisconsin,District 7,Tricia Zunker,Tom Tiffany,162741,252048,n,y,rep,TBA
+2020,House,Wisconsin,District 8,Amanda Stuck,Mike Gallagher,149558,268173,n,y,rep,TBA
+2020,House,Wyoming,District 1,Lynnette Grey Bull,Liz Cheney,66576,185732,n,y,rep,TBA
+2018,Senate,Arizona,Class I,Kyrsten Sinema,Martha McSally,1191100,1135200,n,n,rep,TBA
+2018,Senate,California,Class I,Dianne Feinstein,-,6019422,0,y,n,dem,TBA
+2018,Senate,Connecticut,Class I,Chris Murphy,Matthew Corey,825579,545714,y,n,dem,TBA
+2018,Senate,Delaware,Class I,Tom Carper,Rob Arlett,217385,137127,y,n,dem,TBA
+2018,Senate,Florida,Class I,Bill Nelson,Rick Scott,4089472,4099505,y,n,dem,TBA
+2018,Senate,Hawaii,Class I,Mazie Hirono,Ron Curtis,276316,112035,y,n,dem,TBA
+2018,Senate,Indiana,Class I,Joe Donnelly,Mike Braun,1023553,1158000,y,n,dem,TBA
+2018,Senate,Maine,Class I,Angus S. King Jr.,Eric Brakey,344575,223502,y,n,dem,TBA
+2018,Senate,Maryland,Class I,Ben Cardin,Tony Campbell,1491614,697107,y,n,dem,TBA
+2018,Senate,Massachusetts,Class I,Elizabeth Warren,Geoff Diehl,1633371,979210,y,n,dem,TBA
+2018,Senate,Michigan,Class I,Debbie Stabenow,John James,2214478,1938818,y,n,dem,TBA
+2018,Senate,Minnesota,Class I,Amy Klobuchar,Jim Newberger,1566174,940437,y,n,dem,TBA
+2018,Senate,Minnesota,Class II,Tina Smith,Karin Housley,1370540,1095777,y,n,dem,TBA
+2018,Senate,Mississippi,Class I,David Baria,Roger Wicker,369567,547619,n,y,rep,TBA
+2018,Senate,Mississippi,Class II,Mike Espy,Cindy Hyde-Smith,386742,389995,n,y,rep,TBA
+2018,Senate,Missouri,Class I,Claire McCaskill,Josh Hawley,1112935,1254927,y,n,dem,TBA
+2018,Senate,Montana,Class I,Jon Tester,Matt Rosendale,253876,235963,y,n,dem,TBA
+2018,Senate,Nebraska,Class I,Jane Raybould,Deb Fischer,269917,403151,n,y,rep,TBA
+2018,Senate,Nevada,Class I,Jacky Rosen,Dean Heller,490071,441202,n,y,rep,TBA
+2018,Senate,New Jersey,Class I,Bob Menendez,Bob Hugin,1711654,1357355,y,n,dem,TBA
+2018,Senate,New Mexico,Class I,Martin Heinrich,Mick Rich,376998,212813,y,n,dem,TBA
+2018,Senate,New York,Class I,Kirsten Gillibrand,Chele Chiavacci Farley,4056931,1998220,y,n,dem,TBA
+2018,Senate,North Dakota,Class I,Heidi Heitkamp,Kevin Cramer,144376,179720,y,n,dem,TBA
+2018,Senate,Ohio,Class I,Sherrod Brown,Jim Renacci,2358508,2057559,y,n,dem,TBA
+2018,Senate,Pennsylvania,Class I,Bob Casey Jr.,Lou Barletta,2792327,2134848,y,n,dem,TBA
+2018,Senate,Rhode Island,Class I,Sheldon Whitehouse,Robert Flanders,231477,144421,y,n,dem,TBA
+2018,Senate,Tennessee,Class I,Phil Bredesen,Marsha Blackburn,985450,1227483,n,n,rep,TBA
+2018,Senate,Texas,Class I,Beto O'Rourke,Ted Cruz,4045632,4260553,n,y,rep,TBA
+2018,Senate,Utah,Class I,Jenny Wilson,Mitt Romney,328541,665215,n,n,rep,TBA
+2018,Senate,Vermont,Class I,Bernard Sanders,Lawrence Zupan,183649,74815,y,n,dem,TBA
+2018,Senate,Virginia,Class I,Tim Kaine,Corey Stewart,1910370,1374313,y,n,dem,TBA
+2018,Senate,Washington,Class I,Maria Cantwell,Susan Hutchinson,1803364,1282804,y,n,dem,TBA
+2018,Senate,West Virginia,Class I,Joe Manchin,Patrick Morrisey,290510,271113,y,n,dem,TBA
+2018,Senate,Wisconsin,Class I,Tammy Baldwin,Leah Vukmir,1472914,1184885,y,n,dem,TBA
+2018,Senate,Wyoming,Class I,Gary Trauner,John Barrasso,61227,136210,n,y,rep,TBA
+2020,Senate,Alabama,Class II,Doug Jones,Tommy Tuberville,920478,1392076,y,n,dem,TBA
+2020,Senate,Alaska,Class II,Al Gross,Dan Sullivan,146068,191112,n,y,rep,TBA
+2020,Senate,Arizona,Class III,Mark Kelly,Martha McSally,1716467,1637661,n,y,rep,TBA
+2020,Senate,Arkansas,Class II,Ricky Dale Harrington,Tom Cotton,399390,793871,n,y,rep,TBA
+2020,Senate,Colorado,Class II,John Hickenlooper,Cory Gardner,1731114,1429492,n,y,rep,TBA
+2020,Senate,Delaware,Class II,Chris Coons,Lauren Witzke,291804,186054,y,n,dem,TBA
+2020,Senate,Georgia,Class II,Jon Ossoff,David Perdue,2374519,2462617,n,y,rep,TBA
+2020,Senate,Georgia,Class III,Raphael Warnock,Kelly Loeffler,1617035,1273214,n,y,rep,TBA
+2020,Senate,Idaho,Class II,Paulette Jordan,Jim Risch,285864,537446,n,y,rep,TBA
+2020,Senate,Illinois,Class II,Dick Durbin,Mark Curran,3278930,2319870,y,n,dem,TBA
+2020,Senate,Iowa,Class II,Theresa Greenfield,Joni Ernst,754859,864997,n,y,rep,TBA
+2020,Senate,Kansas,Class II,Barbara Bollier,Roger Marshall,571530,727962,n,n,rep,TBA
+2020,Senate,Kentucky,Class II,Amy McGrath,Mitch McConnell,816257,1233315,n,y,rep,TBA
+2020,Senate,Louisiana,Class II,Adrian Perkins,Bill Cassidy,394049,1228908,n,y,rep,TBA
+2020,Senate,Maine,Class II,Sara Gideon,Susan Collins,347223,417645,n,y,rep,TBA
+2020,Senate,Massachusetts,Class II,Ed Markey,Kevin O'Connor,2357809,1177765,y,n,dem,TBA
+2020,Senate,Michigan,Class II,Gary Peters,John James,2734568,2642233,y,n,dem,TBA
+2020,Senate,Minnesota,Class II,Tina Smith,Jason Lewis,1566522,1398145,y,n,dem,TBA
+2020,Senate,Mississippi,Class II,Mike Espy,Cindy Hyde-Smith,578806,709539,n,y,rep,TBA
+2020,Senate,Montana,Class II,Steve Bullock,Steve Daines,272463,333174,n,y,rep,TBA
+2020,Senate,Nebraska,Class II,Chris Janicek,Ben Sasse,227191,583507,n,y,rep,TBA
+2020,Senate,New Hampshire,Class II,Jeanne Shaheen,Corky Messner,450778,326229,y,n,dem,TBA
+2020,Senate,New Jersey,Class II,Cory Booker,Rik Mehta,2541178,1817052,y,n,dem,TBA
+2020,Senate,New Mexico,Class II,Ben Ray Lujan,Mark Ronchetti,474483,418483,n,n,dem,TBA
+2020,Senate,North Carolina,Class II,Cal Cunningham,Thom Tillis,2569965,2665598,n,y,rep,TBA
+2020,Senate,Oklahoma,Class II,Abby Broyles,Jim Inhofe,509763,979140,n,y,rep,TBA
+2020,Senate,Oregon,Class II,Jeff Merkley,Jo Rae Perkins,1321047,912814,y,n,dem,TBA
+2020,Senate,Rhode Island,Class II,Jack Reed,Allen Waters,328574,164855,y,n,dem,TBA
+2020,Senate,South Carolina,Class II,Jaime Harrison,Lindsey Graham,1110828,1369137,n,y,rep,TBA
+2020,Senate,South Dakota,Class II,Dan Ahlers,Mike Rounds,143987,276232,n,y,rep,TBA
+2020,Senate,Tennessee,Class II,Marquita Bradshaw,Bill Hagerty,1040691,1840926,n,n,rep,TBA
+2020,Senate,Texas,Class II,MJ Hegar,John Cornyn,4888764,5962983,n,y,rep,TBA
+2020,Senate,Virginia,Class II,Mark Warner,Daniel Gade,2466500,1934199,y,n,dem,TBA
+2020,Senate,West Virginia,Class II,Paula Jean Swearengin,Shelley Moore Capito,210309,547454,n,y,rep,TBA
+2020,Senate,Wyoming,Class II,Merav Ben-David,Cynthia Lummis,72766,198100,n,n,rep,TBA
+2018,Governor,Alabama,Governor,Walt Maddox,Kay Ivey,694495,1022457,n,y,rep,TBA
+2018,Governor,Alaska,Governor,Mark Begich,Mike Dunleavy,125739,145631,n,n,rep,TBA
+2018,Governor,Arizona,Governor,David Garcia,Doug Ducey,994341,1330863,n,y,rep,TBA
+2018,Governor,Arkansas,Governor,Jared Henderson,Asa Hutchinson,283218,582406,n,y,rep,TBA
+2018,Governor,California,Governor,Gavin Newsom,John Cox,7721410,4742825,n,n,dem,TBA
+2018,Governor,Colorado,Governor,Jared Polis,Walker Stapleton,1348888,1080801,n,n,dem,TBA
+2018,Governor,Connecticut,Governor,Ned Lamont,Bob Stefanowski,694640,650225,n,n,dem,TBA
+2018,Governor,Florida,Governor,Andrew Gillum,Ron DeSantis,4043723,4076186,n,n,rep,TBA
+2018,Governor,Georgia,Governor,Stacey Abrams,Brian Kemp,1923685,1978408,n,n,rep,TBA
+2018,Governor,Hawaii,Governor,David Ige,Andria Tupola,244934,131719,y,n,dem,TBA
+2018,Governor,Idaho,Governor,Paulette Jordan,Brad Little,231065,361671,n,n,rep,TBA
+2018,Governor,Illinois,Governor,J.B. Pritzker,Bruce Rauner,2388460,1725297,n,y,rep,TBA
+2018,Governor,Iowa,Governor,Fred Hubbell,Kim Reynolds,630986,667275,n,y,rep,TBA
+2018,Governor,Kansas,Governor,Laura Kelly,Kris Kobach,505509,453030,n,n,rep,TBA
+2018,Governor,Maine,Governor,Janet Mills,Shawn Moody,320962,272311,n,n,rep,TBA
+2018,Governor,Maryland,Governor,Ben Jealous,Larry Hogan,1002729,1275734,n,y,rep,TBA
+2018,Governor,Massachusetts,Governor,Jay Gonzalez,Charlie Baker,885770,1781341,n,y,rep,TBA
+2018,Governor,Michigan,Governor,Gretchen Whitmer,Bill Schuette,2261450,1857530,n,n,rep,TBA
+2018,Governor,Minnesota,Governor,Tim Walz,Jeff Johnson,1393053,1097689,n,n,dem,TBA
+2018,Governor,Nebraska,Governor,Bob Krist,Pete Ricketts,280418,407483,n,y,rep,TBA
+2018,Governor,Nevada,Governor,Steve Sisolak,Adam Laxalt,480007,440320,n,n,rep,TBA
+2018,Governor,New Hampshire,Governor,Molly Kelly,Chris Sununu,262359,302764,n,y,rep,TBA
+2018,Governor,New Mexico,Governor,Michelle Lujan Grisham,Steve Pearce,396603,297185,n,n,rep,TBA
+2018,Governor,New York,Governor,Andrew Cuomo,Marc Molinaro,3353495,2089228,y,n,dem,TBA
+2018,Governor,Ohio,Governor,Richard Cordray,Mike DeWine,2070046,2235825,n,n,rep,TBA
+2018,Governor,Oklahoma,Governor,Drew Edmonson,Kevin Stitt,500973,644579,n,n,rep,TBA
+2018,Governor,Oregon,Governor,Kate Brown,Knute Buehler,925886,807762,y,n,dem,TBA
+2018,Governor,Pennsylvania,Governor,Tom Wolf,Scott Wagner,2895662,2039899,y,n,dem,TBA
+2018,Governor,Rhode Island,Governor,Gina Raimondo,Allan Fung,198122,139932,y,n,dem,TBA
+2018,Governor,South Carolina,Governor,James Smith,Henry McMaster,784182,921342,n,y,rep,TBA
+2018,Governor,South Dakota,Governor,Billie Sutton,Kristi Noem,161416,172894,n,n,rep,TBA
+2018,Governor,Tennessee,Governor,Karl Dean,Bill Lee,860442,1330197,n,n,rep,TBA
+2018,Governor,Texas,Governor,Lupe Valdez,Greg Abbott,3528705,4638582,n,y,rep,TBA
+2018,Governor,Vermont,Governor,Christine Hallquist,Phil Scott,110335,151261,n,y,rep,TBA
+2018,Governor,Wisconsin,Governor,Tony Evers,Scott Walker,1324648,1293799,n,y,rep,TBA
+2018,Governor,Wyoming,Governor,Mary Thorne,Mark Gordon,55961,136399,n,n,rep,TBA
+2020,Governor,Delaware,Governor,John Carney,Julianne Murray,292903,190312,y,n,dem,TBA
+2020,Governor,Indiana,Governor,Woody Myers,Eric Holcomb,968106,1706739,n,y,rep,TBA
+2020,Governor,Missouri,Governor,Nicole Galloway,Mike Parson,1216192,1713152,n,y,rep,TBA
+2020,Governor,Montana,Governor,Mike Cooney,Greg Gianforte,250860,328548,n,n,dem,TBA
+2020,Governor,New Hampshire,Governor,Dan Feltes,Chris Sununu,264639,516609,n,y,rep,TBA
+2020,Governor,North Carolina,Governor,Roy Cooper,Dan Forest,2834790,2586605,y,n,dem,TBA
+2020,Governor,North Dakota,Governor,Shelley Lenz,Doug Burgum,90789,235479,n,y,rep,TBA
+2020,Governor,Utah,Governor,Christopher Peterson,Spencer Cox,442754,918754,n,n,rep,TBA
+2020,Governor,Vermont,Governor,David Zuckerman,Phil Scott,99214,248412,n,y,rep,TBA
+2020,Governor,Washington,Governor,Jay Inslee,Loren Culp,2294243,1749066,y,n,dem,TBA
+2020,Governor,West Virginia,Governor,Ben Salango,Jim Justice,233704,492743,n,y,rep,TBA
