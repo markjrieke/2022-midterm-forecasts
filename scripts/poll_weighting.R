@@ -422,10 +422,11 @@ poll_average <- function(.data,
     # summarise with a weak uniform prior
     summarise(alpha = sum(alpha) + 1,
               beta = sum(beta) + 1) %>%
-    mutate(dem2pv = alpha/(alpha + beta),
+    mutate(n = n_polls,
+           dem2pv = alpha/(alpha + beta),
            date = final_date) %>%
     beta_interval(alpha, beta) %>%
-    select(date, dem2pv, ci_lower, ci_upper)
+    select(date, n, dem2pv, ci_lower, ci_upper)
   
   return(average)
     
@@ -2752,23 +2753,25 @@ target_region <- function(.data, target_race, target, target_cycle) {
 # rewrite pass current fit to accept .data param (arbitrage poll input)
 pass_current_fit <- function(.data, race, cycle, region, begin_date, end_date) {
   
-  .data %>%
-    target_region(race, pass_region(race), cycle) %>%
-    poll_average(begin_date,
-                 end_date,
-                 cyle,
-                 race,
-                 region,
-                 pull_pollster_weights(variable_weights),
-                 pull_sample_weight(),
-                 pull_population_weights(variable_weights),
-                 pull_methodology_weights(variable_weights),
-                 pull_similarity_weight(),
-                 pull_infer_weights(variable_weights),
-                 pull_date_weight(),
-                 pull_national_weight())
+  .data %>% 
+    target_region(race, pass_region(region), cycle) %>% 
+    poll_average(begin_date, 
+                 end_date, 
+                 cycle, 
+                 race, 
+                 region, 
+                 pull_pollster_weights(variable_weights), 
+                 pull_sample_weight(), 
+                 pull_population_weights(variable_weights), 
+                 pull_methodology_weights(variable_weights), 
+                 pull_similarity_weight(), 
+                 pull_infer_weights(variable_weights), 
+                 pull_date_weight(), 
+                 pull_national_weight(), 
+                 pull_downweight())
   
 }
+
 
 # export functions
 poll_average %>% 
@@ -2799,7 +2802,10 @@ pull_date_weight %>%
   write_rds("models/utils/pull_date_weight.rds")
 
 pull_national_weight %>%
-  write_rds("models/utils/pull_date_weight.rds")
+  write_rds("models/utils/pull_national_weight.rds")
+
+pull_downweight %>%
+  write_rds("models/utils/pull_downweight.rds")
 
 pass_region %>%
   write_rds("models/utils/pass_region.rds")
@@ -2811,9 +2817,13 @@ pass_current_fit %>%
 polls %>%
   write_csv("data/models/midterm_model/polls_train.csv")
 
+# export methods for working w/full file
+methods %>%
+  write_rds("data/models/midterm_model/methods.rds")
+
 #################### TESTING ZONG MY GUY ####################
 
-
+pass_current_fit
 
 #################### notes ####################
 
