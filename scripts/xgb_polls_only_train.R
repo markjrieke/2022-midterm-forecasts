@@ -378,4 +378,6 @@ basic_wt_fit %>%
   scale_size_continuous(range = c(1, 10)) +
   facet_wrap(~race)
 
+save_eda("fit_02_test_facet")
+
 # debug ----
