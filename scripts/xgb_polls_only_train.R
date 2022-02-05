@@ -10,6 +10,7 @@ library(tidyverse)
 library(tidymodels)
 library(lubridate)
 library(riekelib)
+library(xgboost)
 
 # set theme
 extrafont::loadfonts(device = "win")
@@ -239,6 +240,19 @@ elections %>%
 
 save_eda("eda_16")
 
+elections %>%
+  ggplot(aes(x = n)) +
+  geom_histogram()
+
+save_eda("eda_17")
+
+elections %>%
+  ggplot(aes(x = n)) +
+  geom_density() +
+  facet_wrap(~race, scales = "free")
+
+save_eda("eda_18")
+
 # modeltime! ----
 
 # split
@@ -250,74 +264,118 @@ elections_test <- elections_split %>% testing()
 # create resamples
 elections_boot <- elections_train %>% bootstraps(strata = race)
 
-# define recipe
-recipe(result ~ ., data = elections_train) %>%
-  update_role(race, cycle, region, new_role = "id")
+# basic training
+basic_rec <- 
+  recipe(result ~ ., data = elections_train) %>%
+  update_role(race, cycle, region, new_role = "id") %>%
+  step_dummy(all_nominal_predictors(), one_hot = TRUE)
+  
+basic_spec <- 
+  boost_tree() %>%
+  set_mode("regression") %>%
+  set_engine("xgboost")
+
+basic_fit <- 
+  workflow() %>%
+  add_recipe(basic_rec) %>%
+  add_model(basic_spec) %>%
+  fit(data = elections_train)
+
+basic_fit %>%
+  predict(new_data = elections_train) %>%
+  bind_cols(elections_train) %>%
+  ggplot(aes(x = .pred,
+             y = result)) +
+  geom_point(alpha = 0.25)
+
+save_eda("fit_01")
+
+# note: good fit, now try adding weight by n to model
+
+basic_wt_spec <-
+  boost_tree() %>%
+  set_mode("regression") %>%
+  set_engine("xgboost",
+             weight = elections_train$n)
+
+basic_wt_fit <-
+  workflow() %>%
+  add_recipe(basic_rec) %>%
+  add_model(basic_wt_spec) %>%
+  fit(data = elections_train)
+
+basic_wt_fit %>%
+  predict(new_data = elections_train) %>%
+  bind_cols(elections_train) %>%
+  ggplot(aes(x = .pred,
+             y = result)) +
+  geom_point(alpha = 0.25)
+
+# note: tidymodels currently doesn't support weights!
+rm(basic_wt_fit, basic_wt_spec)
+
+# let's try w/xgb native
+basic_wt_fit <- 
+  xgboost(basic_rec %>%
+            prep() %>%
+            bake(new_data = NULL) %>%
+            select(-(race:region), -result) %>%
+            as.matrix(),
+          nrounds = 100,
+          label = elections_train$result,
+          weight = elections_train %>% mutate(n = n + 1) %>% pull(n))
+
+basic_wt_fit %>%
+  predict(basic_rec %>%
+            prep() %>%
+            bake(new_data = NULL) %>%
+            select(-(race:region), -result) %>%
+            as.matrix) %>%
+  as_tibble() %>%
+  rename(.pred = value) %>%
+  bind_cols(elections_train) %>%
+  ggplot(aes(x = .pred,
+             y = result,
+             size = n)) +
+  geom_point(alpha = 0.25) +
+  scale_size_continuous(range = c(1, 10))
+
+# WOW!!!!!!!
+
+save_eda("fit_02")
+
+basic_wt_fit %>%
+  predict(basic_rec %>%
+            prep() %>%
+            bake(new_data = NULL) %>%
+            select(-(race:region), -result) %>%
+            as.matrix) %>%
+  as_tibble() %>%
+  rename(.pred = value) %>%
+  bind_cols(elections_train) %>%
+  ggplot(aes(x = .pred,
+             y = result,
+             size = n)) +
+  geom_point(alpha = 0.25) +
+  scale_size_continuous(range = c(1, 10)) +
+  facet_wrap(~race)
+
+save_eda("fit_02_facet")
+
+basic_wt_fit %>%
+  predict(basic_rec %>%
+            prep() %>%
+            bake(new_data = elections_test) %>%
+            select(-(race:region), -result) %>%
+            as.matrix) %>%
+  as_tibble() %>%
+  rename(.pred = value) %>%
+  bind_cols(elections_test) %>%
+  ggplot(aes(x = .pred,
+             y = result,
+             size = n)) +
+  geom_point(alpha = 0.25) +
+  scale_size_continuous(range = c(1, 10)) +
+  facet_wrap(~race)
 
 # debug ----
-pass_current_fit(polls_train, "Senate", 2018, "Texas Class I", ymd("2016-11-04"), ymd("2018-11-06"))
-
-target_region(polls_train, "Senate", pass_region("Texas Class I"), 2018) %>% 
-  poll_average(ymd("2016-11-04"),
-               ymd("2018-11-06"),
-               2018,
-               "Senate",
-               "Texas Class I",
-               pull_pollster_weights(variable_weights),
-               pull_sample_weight(),
-               pull_population_weights(variable_weights),
-               pull_methodology_weights(variable_weights),
-               pull_similarity_weight(),
-               pull_infer_weights(variable_weights),
-               pull_date_weight(),
-               pull_national_weight(),
-               pull_downweight())
-  
-  
-n_polls <- 
-  target_region(polls_train, "Senate", pass_region("Texas Class I"), 2018) %>%
-  filter(cycle == 2018,
-         race == "Senate",
-         seat == "Texas Class I") %>%
-  nrow()
-  
-target_region(polls_train, "Senate", pass_region("Texas Class I"), 2018) %>%
-  filter(end_date <= ymd("2018-11-06"),
-         end_date >= ymd("2016-11-04")) %>%
-  left_join(pull_pollster_weights(variable_weights), by = "pollster") %>%
-  mutate(dem2pv = expit(logit(dem2pv) + pollster_offset),
-         dem_votes = round(dem2pv * sample_size),
-         rep_votes = round((1-dem2pv) * sample_size)) %>%
-  select(-pollster_offset) %>%
-  mutate(sample_weight = log10(sample_size) * pull_sample_weight()) %>%
-  left_join(pull_population_weights(variable_weights), by = "population") %>%
-  left_join(pull_methodology_weights(variable_weights), by = "methodology") %>% 
-  mutate(similarity = similarity ^ pull_similarity_weight()) %>% 
-  left_join(pull_infer_weights(variable_weights), by = "infer_to_from") %>% 
-  mutate(days_diff = as.numeric(ymd("2018-11-06") - end_date) + 1,
-         weeks_diff = days_diff/7,
-         date_weight = pull_date_weight() ^ weeks_diff) %>% 
-  select(-days_diff, -weeks_diff) %>%
-  mutate(national_weight = if_else(state == "United States", pull_national_weight(), 1)) %>%
-  mutate(alpha = dem_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * pull_downweight() * (1 + n_polls),
-         beta = rep_votes * pollster_weight * sample_weight * population_weight * method_weight * similarity * infer_to_from_weight * date_weight * national_weight * pull_downweight() * (1 + n_polls)) %>%
-  #filter(is.na(beta))
-  
-  summarise(alpha = sum(alpha) + 1,
-            beta = sum(beta + 1)) %>%
-  mutate(dem2pv = alpha/(alpha + beta),
-         date = ymd("2018-11-06")) %>%
-  beta_interval(alpha, beta)
-  
-  
-poll_average
-
-
-polls_train %>%
-  pass_current_fit("Senate", 2018, "Texas Class I", ymd("2016-11-04"), ymd("2018-11-03"))
-
-
-poll_average
-
-
-
