@@ -797,6 +797,7 @@ final_parameters <-
   select(-rmse)
 
 # final fit on train/test
+set.seed(2022)
 final_fit <- 
   final_parameters %>%
   as.list() %>%
@@ -830,5 +831,26 @@ final_fit %>%
   facet_wrap(~race)
 
 save_eda("tune_05")
+
+# what are the important features?
+set.seed(2022)
+train_xgb(xgb_rec,
+          elections_train,
+          final_parameters$mtry_prop,
+          final_parameters$sample_prop,
+          final_parameters$trees) %>%
+  vip::vi() %>%
+  mutate(Variable = fct_reorder(Variable, Importance)) %>%
+  ggplot(aes(x = Variable,
+             y = Importance)) + 
+  geom_point() +
+  coord_flip()
+
+save_eda("tune_06")
+
+# note that the variable importance varies quite a bit 
+# depending on the seed - for final proj use the variable importance
+# based on mean & spread across all models 
+
 
 # debug ----
