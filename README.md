@@ -30,11 +30,3 @@ results from training
 Disapproval](plots/approval/approval_disapproval_current.png)
 
 ![Presidential Net Approval](plots/approval/net_approval_current.png)
-
-### Senate Poll Weighting
-
-*Coming soon!*
-
-### House Poll Weighting
-
-*Coming soon!*

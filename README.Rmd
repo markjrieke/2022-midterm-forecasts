@@ -24,12 +24,4 @@ To generate the plots below, you can run the script [`approval_trends_weighting.
 
 ![Presidential Net Approval](plots/approval/net_approval_current.png)
 
-### Senate Poll Weighting
-
-*Coming soon!*
-
-### House Poll Weighting
-
-*Coming soon!*
-
 
