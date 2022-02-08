@@ -30,6 +30,7 @@ notes
 -   add model ethics to site (see below)
 -   add a *how-this-works* landing page (maybe just a link at the bottom
     of every page to a blog post)
+-   dig into huffpost polls & the pollstR package/api???
 
 ## notes:
 
