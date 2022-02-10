@@ -2375,6 +2375,21 @@ ggsave("plots/approval/net_approval_current.png",
        units = "in",
        dpi = 500)
 
+#################### SAVE ITEMS FOR LATER USE ####################
+
+# vectors
+pollsters %>% write_rds("data/models/approval/pollsters.rds")
+methods %>% write_rds("data/models/approval/methods.rds")
+
+# functions
+approval_average %>% write_rds("models/utils/approval/approval_average.rds")
+pull_pollster_weights %>% write_rds("models/utils/approval/pull_pollster_weights.rds")
+pull_sample_weight %>% write_rds("models/utils/approval/pull_sample_weight.rds")
+pull_population_weights %>% write_rds("models/utils/approval/pull_population_weights.rds")
+pull_methodology_weights %>% write_rds("models/utils/approval/pull_methodology_weights.rds")
+pull_date_weight %>% write_rds("models/utils/approval/pull_date_weight.rds")
+pull_downweight %>% write_rds("models/utils/approval/pull_downweight.rds")
+
 #################### TESTING ZONE DAWG ####################
 
 completed <- TRUE

@@ -1748,6 +1748,21 @@ ggsave("plots/generic_ballot/generic_ballot_current.png",
        units = "in",
        dpi = 500)
 
+##################### SAVE ITEMS FOR LATER USE #######################
+
+# vectors
+pollsters %>% write_rds("data/models/generic_ballot/pollsters.rds")
+methods %>% write_rds("data/models/generic_ballot/methods.rds")
+
+# functions
+generic_ballot_average %>% write_rds("models/utils/generic_ballot/generic_ballot_average.rds")
+pull_pollster_weights %>% write_rds("models/utils/generic_ballot/pull_pollster_weights.rds")
+pull_sample_weight %>% write_rds("models/utils/generic_ballot/pull_sample_weight.rds")
+pull_population_weights %>% write_rds("models/utils/generic_ballot/pull_population_weights.rds")
+pull_methodology_weights %>% write_rds("models/utils/generic_ballot/pull_methodology_weights.rds")
+pull_date_weight %>% write_rds("models/utils/generic_ballot/pull_date_weight.rds")
+pull_downweight %>% write_rds("models/utils/generic_ballot/pull_downweight.rds")
+
 ##################### TESTING AREA #######################
 
 
