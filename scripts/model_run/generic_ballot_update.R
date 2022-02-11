@@ -200,7 +200,7 @@ fit_2022 %>%
 
 # save over current photo
 ggsave("plots/generic_ballot/generic_ballot_current.png",
-       width = 10.5,
-       height = 7,
+       width = 9,
+       height = 6,
        units = "in",
-       dpi = 375)
+       dpi = 500)

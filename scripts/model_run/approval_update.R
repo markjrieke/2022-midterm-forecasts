@@ -146,7 +146,7 @@ approval_polls_current <-
 # set colors from metbrewer
 dis_org <- MetBrewer::MetPalettes$Hiroshige[[1]][2]
 app_blu <- MetBrewer::MetPalettes$Hiroshige[[1]][7]
-net_pur <- MetBrewer::MetPalettes$Morgenstern[[1]][1]
+net_pur <- MetBrewer::MetPalettes$Signac[[1]][10]
   
 # plot approval/disapproval ----
 fit_2022 %>%
@@ -225,10 +225,10 @@ fit_2022 %>%
                         "https://projects.fivethirtyeight.com/biden-approval-rating/"))
 
 ggsave("plots/approval/approval_disapproval_current.png",
-       width = 10.5,
-       height = 7,
+       width = 9,
+       height = 6,
        units = "in",
-       dpi = 375)  
+       dpi = 500)  
 
 # plot net approval ----
 fit_2022 %>%
@@ -279,7 +279,7 @@ fit_2022 %>%
   theme(panel.grid.minor.x = element_blank(),
         plot.title.position = "plot",
         plot.title = element_markdown(family = "Roboto Slab")) +
-  labs(title = "How <span style=color:'#7C668C'>**Popular**</span> is Joe Biden?",
+  labs(title = "How <span style=color:'#9F5691'>**Popular**</span> is Joe Biden?",
        subtitle = paste("Estimated presidential net approval as of", 
                         format(Sys.Date(), "%b %d")),
        x = NULL,
@@ -289,7 +289,7 @@ fit_2022 %>%
                         "https://projects.fivethirtyeight.com/biden-approval-rating/"))
 
 ggsave("plots/approval/net_approval_current.png",
-       width = 10.5,
-       height = 7,
+       width = 9,
+       height = 6,
        units = "in",
-       dpi = 375)  
+       dpi = 500)  
