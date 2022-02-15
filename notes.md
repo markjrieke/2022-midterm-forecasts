@@ -154,3 +154,9 @@ notes
         -   population density
         -   religious affiliation
         -   educational attainment
+-   Things I wish I’d done differently
+    -   File structure
+        -   file structure isn’t haphazard, but it wasn’t planned out.
+        -   sometimes difficult to keep all the connections
+            straightforward in my head
+        -   next time, I’d prefer to plan out layout in advance
