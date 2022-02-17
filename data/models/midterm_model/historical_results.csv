@@ -188,7 +188,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2018,House,Maryland,District 6,David Trone,Amie Hoeber,163346,105209,n,n,dem
 2018,House,Maryland,District 7,Elijah Cummings,Richmond Davis,202345,56266,y,n,dem
 2018,House,Maryland,District 8,Jamie Raskin,John Walsh,217679,96525,y,n,dem
-2018,House,Massachusetts,District 1,Richard neal,-,211790,0,y,n,dem
+2018,House,Massachusetts,District 1,Richard Neal,-,211790,0,y,n,dem
 2018,House,Massachusetts,District 2,Jim McGovern,Tracy Lovvorn,191332,93391,y,n,dem
 2018,House,Massachusetts,District 3,Lori Trahan,Rick Green,173175,93445,n,n,dem
 2018,House,Massachusetts,District 4,Joe Kennedy III,-,245289,0,y,n,dem
@@ -222,7 +222,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2018,House,Mississippi,District 1,Randy Wadkins,Trent Kelly,76601,158245,n,y,rep
 2018,House,Mississippi,District 2,Bennie Thompson,-,158921,0,y,n,dem
 2018,House,Mississippi,District 3,Michael Evans,Michael Guest,94461,160284,n,n,rep
-2018,House,Mississippi,District 4,Jaramey Anderson,Steven Palazzo,68787,152633,n,y,rep
+2018,House,Mississippi,District 4,Jeramey Anderson,Steven Palazzo,68787,152633,n,y,rep
 2018,House,Missouri,District 1,Lacy Clay,Robert Vroman,219781,45867,y,n,dem
 2018,House,Missouri,District 2,Cort VanOstran,Ann Wagner,177611,192477,n,y,rep
 2018,House,Missouri,District 3,Katy Geppert,Blaine Luetkemeyer,106589,211243,n,y,rep
@@ -326,20 +326,20 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2018,House,Pennsylvania,District 1,Scott Wallace,Brian Fitzpatrick,160745,169053,n,y,rep
 2018,House,Pennsylvania,District 2,Brendan Boyle,David Torres,159600,42382,y,n,dem
 2018,House,Pennsylvania,District 3,Dwight Evans,Bryan E. Leib,287610,20387,y,n,dem
-2018,House,Pennsylvania,District 4,Mideleine Dean,Dan David,211524,121467,n,n,dem
+2018,House,Pennsylvania,District 4,Madeleine Dean,Dan David,211524,121467,n,n,dem
 2018,House,Pennsylvania,District 5,Mary Gay Scanlon,Pearl Kim,198639,106075,n,n,rep
 2018,House,Pennsylvania,District 6,Chrissy Houlahan,Greg McCauley,177704,124124,n,n,rep
-2018,House,Pennsylvania,District 7,Susan Wild,Marty Northstein,140813,114437,n,n,rep
+2018,House,Pennsylvania,District 7,Susan Wild,Marty Nothstein,140813,114437,n,n,rep
 2018,House,Pennsylvania,District 8,Matt Cartwright,John Chrin,135603,112563,y,n,dem
-2018,House,Pennsylvania,District 9,Denny Wolf,Dan Meuser,100204,148723,n,n,rep
+2018,House,Pennsylvania,District 9,Denny Wolff,Dan Meuser,100204,148723,n,n,rep
 2018,House,Pennsylvania,District 10,George Scott,Scott Perry,141668,149365,n,y,rep
 2018,House,Pennsylvania,District 11,Jess King,Lloyd Smucker,113876,163708,n,y,rep
-2018,House,Pennsylvania,District 12,Marc Friedenburg,Tom Marino,82825,161047,n,y,rep
+2018,House,Pennsylvania,District 12,Marc Friedenberg,Tom Marino,82825,161047,n,y,rep
 2018,House,Pennsylvania,District 13,Brent Ottaway,John Joyce,74733,178533,n,n,rep
 2018,House,Pennsylvania,District 14,Bibiana Boerio,Guy Reschenthaler,110051,151386,n,n,rep
 2018,House,Pennsylvania,District 15,Susan Boser,G.T. Thompson,78327,165245,n,y,rep
 2018,House,Pennsylvania,District 16,Ronald DiNicola,Mike Kelly,124109,135348,n,y,rep
-2018,House,Pennsylvania,District 17,Conor Lamb,Keight Rothfus,183162,142417,y,y,rep
+2018,House,Pennsylvania,District 17,Conor Lamb,Keith Rothfus,183162,142417,y,y,rep
 2018,House,Pennsylvania,District 18,Mike Doyle,-,231472,0,y,n,dem
 2018,House,Rhode Island,District 1,David Cicilline,Patrick Donovan,116099,57567,y,n,dem
 2018,House,Rhode Island,District 2,James Langevin,Sal Caiozzo,126476,72271,y,n,dem
@@ -473,7 +473,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,California,District 16,Jim Costa,Kevin Cookingham,128690,88039,y,n,dem
 2020,House,California,District 17,Ro Khanna,Ritesh Tandon,212137,85199,y,n,dem
 2020,House,California,District 18,Anna Eshoo,-,217377,0,y,n,dem
-2020,House,California,District 19,Zoe Lofgren,Justin Aguilera,224385,88642,y,n,dem
+2020,House,California,District 19,Zoe Lofgren,Justin James Aguilera,224385,88642,y,n,dem
 2020,House,California,District 20,Jimmy Panetta,Jeff Gorman,236896,71658,y,n,dem
 2020,House,California,District 21,TJ Cox,David Valadao,84406,85928,y,n,dem
 2020,House,California,District 22,Phil Arballo,Devin Nunes,144251,170888,n,y,rep
@@ -481,7 +481,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,California,District 24,Salud Carbajal,Andy Caldwell,212564,149781,y,n,dem
 2020,House,California,District 25,Christy Smith,Mike Garcia,169305,169638,n,y,rep
 2020,House,California,District 26,Julia Brownley,Ronda Baldwin-Kennedy,208856,135877,y,n,dem
-2020,House,California,District 27,Judy Chu,Johnny J. Nalbandian,221411,95907,y,n,dem
+2020,House,California,District 27,Judy Chu,Johnny Nalbandian,221411,95907,y,n,dem
 2020,House,California,District 28,Adam Schiff,Eric Early,244471,91928,y,n,dem
 2020,House,California,District 29,Tony Cardenas,-,119420,0,y,n,dem
 2020,House,California,District 30,Brad Sherman,Mark S. Reed,240038,105426,y,n,dem
@@ -505,7 +505,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,California,District 48,Harley Rouda,Michelle Steel,193362,201738,y,n,dem
 2020,House,California,District 49,Mike Levin,Brian Maryott,205349,181157,y,n,dem
 2020,House,California,District 50,Ammar Campa-Najjar,Darrell Issa,166859,195510,n,n,rep
-2020,House,California,District 51,Juan C. Vargas,Juan M. Hidalgo Jr.,165596,76841,y,n,dem
+2020,House,California,District 51,Juan Vargas,Juan M. Hidalgo Jr.,165596,76841,y,n,dem
 2020,House,California,District 52,Scott Peters,Jim DeBello,244145,152350,y,n,dem
 2020,House,California,District 53,Sara Jacobs,-,199244,0,n,n,dem
 2020,House,Colorado,District 1,Diana DeGette,Shane Bolling,331621,105955,y,n,dem
@@ -521,7 +521,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Connecticut,District 4,Jim Himes,Jonathan Riddle,223832,130627,y,n,dem
 2020,House,Connecticut,District 5,Jahana Hayes,David X. Sullivan,192484,151988,y,n,dem
 2020,House,Delaware,District 1,Lisa Blunt Rochester,Lee Murphy,281382,196392,y,n,dem
-2020,House,Florida,District 1,Phil Her,Matt Gaetz,149172,283352,n,y,rep
+2020,House,Florida,District 1,Phil Ehr,Matt Gaetz,149172,283352,n,y,rep
 2020,House,Florida,District 2,-,Neal Dunn,0,305337,n,y,rep
 2020,House,Florida,District 3,Adam Christensen,Kat Cammack,167326,223075,n,n,rep
 2020,House,Florida,District 4,Donna Deegan,John Rutherford,196423,308497,n,y,rep
@@ -587,16 +587,16 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Indiana,District 1,Frank J. Mrvan,Mark Leyva,185180,132247,n,n,dem
 2020,House,Indiana,District 2,Pat Hackett,Jackie Walorski,114967,183601,n,y,rep
 2020,House,Indiana,District 3,Chip Coldiron,Jim Banks,104762,220989,n,y,rep
-2020,House,Indiana,District 4,Joe Mackey,Jim Baird,112984,225531,n,y,rep
+2020,House,Indiana,District 4,Joe Mackey,James Baird,112984,225531,n,y,rep
 2020,House,Indiana,District 5,Christina Hale,Victoria Spartz,191226,208212,n,n,rep
-2020,House,Indiana,District 6,Jeannine Lake,Greg Pence,91103,225318,n,y,rep
+2020,House,Indiana,District 6,Jeannine Lee Lake,Greg Pence,91103,225318,n,y,rep
 2020,House,Indiana,District 7,Andre Carson,Susan Marie Smith,176422,106146,y,n,dem
 2020,House,Indiana,District 8,Thomasina Marsili,Larry Bucshon,95691,214643,n,y,rep
 2020,House,Indiana,District 9,Andy Ruff,Trey Hollingsworth,122566,222057,n,y,rep
-2020,House,Iowa,District 1,Abby Finkenaur,Ashley Hinson,201347,212088,y,n,dem
-2020,House,Iowa,District 2,Rita Hart,Marianette Miller-Meeks,196958,196964,n,n,dem
+2020,House,Iowa,District 1,Abby Finkenauer,Ashley Hinson,201347,212088,y,n,dem
+2020,House,Iowa,District 2,Rita Hart,Mariannette Miller-Meeks,196958,196964,n,n,dem
 2020,House,Iowa,District 3,Cindy Axne,David Young,219205,212997,y,n,dem
-2020,House,Iowa,District 4,J. D. Scholten,Randy Feenstra,144761,237369,n,n,rep
+2020,House,Iowa,District 4,J.D. Scholten,Randy Feenstra,144761,237369,n,n,rep
 2020,House,Kansas,District 1,Kali Barnett,Tracey Mann,84393,208229,n,n,rep
 2020,House,Kansas,District 2,Michelle De La Isla,Jake LaTurner,136650,185464,n,n,rep
 2020,House,Kansas,District 3,Sharice Davids,Amanda Adkins,220049,178773,y,n,dem
@@ -611,26 +611,26 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Louisiana,District 2,Cedric Richmond,David M. Schilling,201636,47575,y,n,dem
 2020,House,Louisiana,District 3,Braylon Harris,Clay Higgins,60852,230480,n,y,rep
 2020,House,Louisiana,District 4,Kenny Houston,Mike Johnson,78157,185265,n,y,rep
-2020,House,Louisiana,District 5,Luke Letlow,Candy Shoemaker-Cristophe,50812,102533,n,n,rep
+2020,House,Louisiana,District 5,Candy Shoemaker-Cristophe,Luke Letlow,50812,102533,n,n,rep
 2020,House,Louisiana,District 6,Dartanyon Williams,Garret Graves,95541,265706,n,y,rep
 2020,House,Maine,District 1,Chellie Pingree,Jay Allen,271004,165008,y,n,dem
 2020,House,Maine,District 2,Jared Golden,Dale Crafts,197974,175228,y,n,dem
 2020,House,Maryland,District 1,Mia Mason,Andy Harris,143877,250901,n,y,rep
 2020,House,Maryland,District 2,Dutch Ruppersberger,Johnny Ray Salling,224836,106355,y,n,dem
 2020,House,Maryland,District 3,John Sarbanes,Charles Anthony,260358,112117,y,n,dem
-2020,House,Maryland,District 4,Anthony Brown,George McDermott,282119,71671,y,n,dem
+2020,House,Maryland,District 4,Anthony G. Brown,George McDermott,282119,71671,y,n,dem
 2020,House,Maryland,District 5,Steny Hoyer,Chris Palombi,274210,123525,y,n,dem
 2020,House,Maryland,District 6,David Trone,Neil Parrott,215540,143599,y,n,dem
 2020,House,Maryland,District 7,Kweisi Mfume,Kimberly Klacik,237084,92825,y,n,dem
 2020,House,Maryland,District 8,Jamie Raskin,Gregory Thomas Coll,274716,127157,y,n,dem
-2020,House,Massachusetts,District 1,Richard neal,-,275376,0,y,n,dem
+2020,House,Massachusetts,District 1,Richard Neal,-,275376,0,y,n,dem
 2020,House,Massachusetts,District 2,Jim McGovern,Tracy Lovvorn,249854,132220,y,n,dem
 2020,House,Massachusetts,District 3,Lori Trahan,-,286896,0,y,n,dem
 2020,House,Massachusetts,District 4,Jake Auchincloss,Julie Hall,251102,160474,n,n,dem
 2020,House,Massachusetts,District 5,Katherine Clark,Caroline Colarusso,294427,101351,y,n,dem
 2020,House,Massachusetts,District 6,Seth Moulton,John Paul Moran,286377,150695,y,n,dem
 2020,House,Massachusetts,District 7,Ayanna Pressley,-,267362,38675,y,n,dem
-2020,House,Massachusetts,District 8,Stephen F. Lynch,-,310940,0,y,n,dem
+2020,House,Massachusetts,District 8,Stephen Lynch,-,310940,0,y,n,dem
 2020,House,Massachusetts,District 9,Bill Keating,Helen Brady,260262,154261,y,n,dem
 2020,House,Michigan,District 1,Dana Ferguson,Jack Bergman,153328,256581,n,y,rep
 2020,House,Michigan,District 2,Bryan Berghoef,Bill Huizenga,154122,238711,n,y,rep
@@ -700,7 +700,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,New York,District 7,Nydia Velazquez,Brian Kelly,191073,32520,y,n,dem
 2020,House,New York,District 8,Hakeem Jeffries,Garfield Wallace,234933,42007,y,n,dem
 2020,House,New York,District 9,Yvette Clarke,Constantin Jean-Pierre,230221,43950,y,n,dem
-2020,House,New York,District 10,Jerry Nadler,Cathy Bernstein,206310,66889,y,n,dem
+2020,House,New York,District 10,Jerrold Nadler,Cathy Bernstein,206310,66889,y,n,dem
 2020,House,New York,District 11,Max Rose,Nicole Malliotakis,137198,155608,y,n,dem
 2020,House,New York,District 12,Carolyn Maloney,Carlos Santiago-Cano,265172,53061,y,n,dem
 2020,House,New York,District 13,Adriano Espaillat,Lovelynn Gwinn,231841,19829,y,n,dem
@@ -722,7 +722,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,North Carolina,District 2,Deborah K. Ross,Alan Swain,311887,172544,n,n,rep
 2020,House,North Carolina,District 3,Daryl Farrow,Greg Murphy,132752,229800,n,y,rep
 2020,House,North Carolina,District 4,David Price,Robert Thomas,332421,161298,y,n,dem
-2020,House,North Carolina,District 5,David Brown,Virginia Foxx,119846,257843,n,y,rep
+2020,House,North Carolina,District 5,David Wilson Brown,Virginia Foxx,119846,257843,n,y,rep
 2020,House,North Carolina,District 6,Kathy Manning,Lee Haywood,253531,153598,n,n,rep
 2020,House,North Carolina,District 7,Chris Ward,David Rouzer,272443,179045,n,y,rep
 2020,House,North Carolina,District 8,Patricia Timmons-Goodson,Richard Hudson,177781,202774,n,y,rep
@@ -730,7 +730,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,North Carolina,District 10,David Parker,Patrick McHenry,128189,284095,n,y,rep
 2020,House,North Carolina,District 11,Moe Davis,Madison Cawthorn,190609,245351,n,n,rep
 2020,House,North Carolina,District 12,Alma Adams,-,341457,0,y,n,dem
-2020,House,North Carolina,District 13,Scott Hufman,Ted Budd,124684,267181,n,y,rep
+2020,House,North Carolina,District 13,Scott Huffman,Ted Budd,124684,267181,n,y,rep
 2020,House,North Dakota,District 1,Zach Raknerud,Kelly Armstrong,97970,245229,n,y,rep
 2020,House,Ohio,District 1,Kate Schroder,Steve Chabot,172022,199560,n,y,rep
 2020,House,Ohio,District 2,Jaime Castle,Brad Wenstrup,146781,230430,n,y,rep
@@ -750,7 +750,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Ohio,District 16,Aaron Paul Godfrey,Anthony Gonzalez,144071,247335,n,y,rep
 2020,House,Oklahoma,District 1,Kojo Asamoa-Caesar,Kevin Hern,109641,213700,n,y,rep
 2020,House,Oklahoma,District 2,Danyell Lanier,Markwayne Mullin,63472,216511,n,y,rep
-2020,House,Oklahoma,District 3,Zoe Midyett,Frank D. Lucas,66501,242677,n,y,rep
+2020,House,Oklahoma,District 3,Zoe Midyett,Frank Lucas,66501,242677,n,y,rep
 2020,House,Oklahoma,District 4,Mary Brannon,Tom Cole,90459,213096,n,y,rep
 2020,House,Oklahoma,District 5,Kendra Horn,Stephanie Bice,145658,158191,y,n,dem
 2020,House,Oregon,District 1,Suzanne Bonamici,Christopher Christensen,297071,161928,y,n,dem
@@ -772,7 +772,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Pennsylvania,District 12,Lee Griffin,Fred Keller,99199,241035,n,y,rep
 2020,House,Pennsylvania,District 13,Todd Rowley,John Joyce,96612,267789,n,y,rep
 2020,House,Pennsylvania,District 14,Bill Marx,Guy Reschenthaler,131895,241688,n,y,rep
-2020,House,Pennsylvania,District 15,Robert Williams,Glenn Thompson,92156,255058,n,y,rep
+2020,House,Pennsylvania,District 15,Robert Williams,G.T. Thompson,92156,255058,n,y,rep
 2020,House,Pennsylvania,District 16,Kristy Gnibus,Mike Kelly,143962,210088,n,y,rep
 2020,House,Pennsylvania,District 17,Conor Lamb,Sean Parnell,222253,212284,y,n,dem
 2020,House,Pennsylvania,District 18,Mike Doyle,Luke Negron,266084,118163,y,n,dem
@@ -793,7 +793,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Tennessee,District 5,Jim Cooper,-,252155,0,y,n,dem
 2020,House,Tennessee,District 6,Christopher Finley,John Rose,83852,257572,n,y,rep
 2020,House,Tennessee,District 7,Kiran Sreepada,Mark Green,95839,245188,n,y,rep
-2020,House,Tennessee,District 8,Erika Stotts Pearson,David Kustoff,97890,227216,n,y,rep
+2020,House,Tennessee,District 8,Erika Pearson,David Kustoff,97890,227216,n,y,rep
 2020,House,Tennessee,District 9,Steve Cohen,Charlotte Bergmann,187905,48818,y,n,dem
 2020,House,Texas,District 1,Hank Gilbert,Louie Gohmert,83016,219726,n,y,rep
 2020,House,Texas,District 2,Sima Ladjevardian,Dan Crenshaw,148374,192828,n,y,rep
@@ -828,7 +828,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Texas,District 31,Donna Imam,John Carter,176293,212695,n,y,rep
 2020,House,Texas,District 32,Colin Allred,Genevieve Collins,178542,157867,y,n,dem
 2020,House,Texas,District 33,Marc Veasey,Fabian Vasquez,105317,39638,y,n,dem
-2020,House,Texas,District 34,Filemon Vela,Rey Gonzalez,111439,84119,y,n,dem
+2020,House,Texas,District 34,Filemon Vela Jr.,Rey Gonzalez,111439,84119,y,n,dem
 2020,House,Texas,District 35,Lloyd Doggett,Jennifer Garcia Sharon,176373,80795,y,n,dem
 2020,House,Texas,District 36,Rashad Lewis,Brian Babin,73148,222712,n,y,rep
 2020,House,Utah,District 1,Darren Parry,Blake Moore,104194,237988,n,n,rep
@@ -842,7 +842,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2020,House,Virginia,District 4,Donald McEachin,Leon Benjamin,241142,149625,y,n,dem
 2020,House,Virginia,District 5,Cameron Webb,Bob Good,190315,210988,n,n,rep
 2020,House,Virginia,District 6,Nicholas Betts,Ben Cline,134729,246606,n,y,rep
-2020,House,Virginia,District 7,Abigail Spanberger,Nick reitas,230893,222623,y,n,dem
+2020,House,Virginia,District 7,Abigail Spanberger,Nick Freitas,230893,222623,y,n,dem
 2020,House,Virginia,District 8,Don Beyer,Jeff Jordan,301454,95365,y,n,dem
 2020,House,Virginia,District 9,-,Morgan Griffith,0,271851,n,y,rep
 2020,House,Virginia,District 10,Jennifer Wexton,Aliscia Andrews,268734,206254,y,n,dem
@@ -890,7 +890,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2018,Senate,Nevada,Class I,Jacky Rosen,Dean Heller,490071,441202,n,y,rep
 2018,Senate,New Jersey,Class I,Bob Menendez,Bob Hugin,1711654,1357355,y,n,dem
 2018,Senate,New Mexico,Class I,Martin Heinrich,Mick Rich,376998,212813,y,n,dem
-2018,Senate,New York,Class I,Kirsten Gillibrand,Chele Chiavacci Farley,4056931,1998220,y,n,dem
+2018,Senate,New York,Class I,Kirsten Gillibrand,Chele Farley,4056931,1998220,y,n,dem
 2018,Senate,North Dakota,Class I,Heidi Heitkamp,Kevin Cramer,144376,179720,y,n,dem
 2018,Senate,Ohio,Class I,Sherrod Brown,Jim Renacci,2358508,2057559,y,n,dem
 2018,Senate,Pennsylvania,Class I,Bob Casey Jr.,Lou Barletta,2792327,2134848,y,n,dem
@@ -898,9 +898,9 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2018,Senate,Tennessee,Class I,Phil Bredesen,Marsha Blackburn,985450,1227483,n,n,rep
 2018,Senate,Texas,Class I,Beto O'Rourke,Ted Cruz,4045632,4260553,n,y,rep
 2018,Senate,Utah,Class I,Jenny Wilson,Mitt Romney,328541,665215,n,n,rep
-2018,Senate,Vermont,Class I,Bernard Sanders,Lawrence Zupan,183649,74815,y,n,dem
+2018,Senate,Vermont,Class I,Bernie Sanders,Lawrence Zupan,183649,74815,y,n,dem
 2018,Senate,Virginia,Class I,Tim Kaine,Corey Stewart,1910370,1374313,y,n,dem
-2018,Senate,Washington,Class I,Maria Cantwell,Susan Hutchinson,1803364,1282804,y,n,dem
+2018,Senate,Washington,Class I,Maria Cantwell,Susan Hutchison,1803364,1282804,y,n,dem
 2018,Senate,West Virginia,Class I,Joe Manchin,Patrick Morrisey,290510,271113,y,n,dem
 2018,Senate,Wisconsin,Class I,Tammy Baldwin,Leah Vukmir,1472914,1184885,y,n,dem
 2018,Senate,Wyoming,Class I,Gary Trauner,John Barrasso,61227,136210,n,y,rep
