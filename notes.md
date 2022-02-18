@@ -160,3 +160,10 @@ notes
         -   sometimes difficult to keep all the connections
             straightforward in my head
         -   next time, I’d prefer to plan out layout in advance
+    -   Better use of git/github
+        -   I’ve been making commits, but it may have been better to
+            make PRs
+    -   Use github actions
+        -   I got burned once when trying to setup github actions where
+            the .renv lockfile somehow caused R to move all the
+            libraries around on my desktop — link to issue in renv
