@@ -125,3 +125,12 @@ output: github_document
     + I've been making commits, but it may have been better to make PRs
   + Use github actions
     + I got burned once when trying to setup github actions where the .renv lockfile somehow caused R to move all the libraries around on my desktop --- link to issue in renv
+  + More generalizable poll model
+    + current uses binary beta dist - good for applying pollster weights but doesn't scale to multiple candidates
+    + maybe next time can use a gam or loess
+    + that way, could model 3rd party candidates
+    + might also be faster than the crazy long training process for the current model lol
+  + Using more polls/data
+    + FTE's polling database only goes back so far
+    + Huffpo goes back to 2012 & there is an api for it
+    + maybe next time
