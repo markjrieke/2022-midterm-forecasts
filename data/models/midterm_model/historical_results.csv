@@ -964,7 +964,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2018,Governor,New Mexico,Governor,Michelle Lujan Grisham,Steve Pearce,396603,297185,n,n,rep
 2018,Governor,New York,Governor,Andrew Cuomo,Marc Molinaro,3353495,2089228,y,n,dem
 2018,Governor,Ohio,Governor,Richard Cordray,Mike DeWine,2070046,2235825,n,n,rep
-2018,Governor,Oklahoma,Governor,Drew Edmonson,Kevin Stitt,500973,644579,n,n,rep
+2018,Governor,Oklahoma,Governor,Drew Edmondson,Kevin Stitt,500973,644579,n,n,rep
 2018,Governor,Oregon,Governor,Kate Brown,Knute Buehler,925886,807762,y,n,dem
 2018,Governor,Pennsylvania,Governor,Tom Wolf,Scott Wagner,2895662,2039899,y,n,dem
 2018,Governor,Rhode Island,Governor,Gina Raimondo,Allan Fung,198122,139932,y,n,dem
@@ -974,7 +974,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_votes,rep_votes,
 2018,Governor,Texas,Governor,Lupe Valdez,Greg Abbott,3528705,4638582,n,y,rep
 2018,Governor,Vermont,Governor,Christine Hallquist,Phil Scott,110335,151261,n,y,rep
 2018,Governor,Wisconsin,Governor,Tony Evers,Scott Walker,1324648,1293799,n,y,rep
-2018,Governor,Wyoming,Governor,Mary Thorne,Mark Gordon,55961,136399,n,n,rep
+2018,Governor,Wyoming,Governor,Mary Throne,Mark Gordon,55961,136399,n,n,rep
 2020,Governor,Delaware,Governor,John Carney,Julianne Murray,292903,190312,y,n,dem
 2020,Governor,Indiana,Governor,Woody Myers,Eric Holcomb,968106,1706739,n,y,rep
 2020,Governor,Missouri,Governor,Nicole Galloway,Mike Parson,1216192,1713152,n,y,rep
