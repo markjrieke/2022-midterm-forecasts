@@ -89,30 +89,23 @@ historical_results %>%
   rename(endorsements_REP = endorsements) %>% 
   mutate(across(starts_with("endorsements"), ~if_else(.x == "NULL", list(endorsements = c("none")), .x))) %>%
   
-  unnest(endorsements_DEM) %>% 
-  select(-endorsements_DEM) %>%
-  nest(endorsements_DEM = endorsements) %>% 
-  unnest(endorsements_REP) %>%
-  select(-endorsements_REP) %>%
-  nest(endorsements_REP = endorsements) %>%
+  #unnest(endorsements_DEM) %>% 
+  #select(-endorsements_DEM) %>%
+  #nest(endorsements_DEM = endorsements) %>% 
+  #unnest(endorsements_REP) %>%
+  #select(-endorsements_REP) %>%
+  #nest(endorsements_REP = endorsements) %>%
   
-  filter(cycle == 2018, race == "Governor", state == "Connecticut") %>%
-  select(starts_with("candidate"), starts_with("endorsements"))
-  
-  count(cycle, race, state, seat) %>%
-  count(n)
-  
-  filter(endorsements_DEM == "none") %>%
-  select(cycle, race, state, seat, candidate_name_DEM) %>% filter(str_detect(candidate_name_DEM, "Spenser"))
+  filter(endorsements_REP == "none") %>%
+  select(cycle, race, state, seat, candidate_name_REP) %>%
   write_csv("temp.csv")
 
 endorsements %>%
   filter(cycle == 2018,
          race == "Governor",
-         state == "Oklahoma") #%>%
-  filter(str_detect(candidates, "Brown"))
+         state == "California") #%>%
+  filter(str_detect(candidates, "Kevin"))
   
 endorsements %>%
-  filter(race == "Governor",
-         state == "Illinois")
+  filter(candidates == "Anthony G. Brown")
 
