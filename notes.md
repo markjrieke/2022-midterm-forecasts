@@ -174,7 +174,19 @@ notes
         -   that way, could model 3rd party candidates
         -   might also be faster than the crazy long training process
             for the current model lol
+        -   may also want to build model based on days before election?
     -   Using more polls/data
         -   FTE’s polling database only goes back so far
         -   Huffpo goes back to 2012 & there is an api for it
-        -   maybe next time
+        -   maybe next time use a model that incorporates the daily
+            delta/days till election day?
+    -   Working with nested/hierarchical data!
+        -   polls!!!
+        -   endorsements
+-   Things I’ve learned
+    -   purrr
+    -   furrr
+    -   deeper understanding of tidymodels
+    -   bootstrapping for CIs
+    -   interacting with model engines more directly
+    -   tidy evaluation
