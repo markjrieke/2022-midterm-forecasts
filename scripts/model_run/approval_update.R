@@ -225,6 +225,7 @@ fit_2022 %>%
                         "https://projects.fivethirtyeight.com/biden-approval-rating/"))
 
 ggsave("plots/approval/approval_disapproval_current.png",
+       device = png,
        width = 9,
        height = 6,
        units = "in",
@@ -289,6 +290,7 @@ fit_2022 %>%
                         "https://projects.fivethirtyeight.com/biden-approval-rating/"))
 
 ggsave("plots/approval/net_approval_current.png",
+       device = png,
        width = 9,
        height = 6,
        units = "in",

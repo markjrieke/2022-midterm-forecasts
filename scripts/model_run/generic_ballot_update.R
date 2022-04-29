@@ -200,6 +200,7 @@ fit_2022 %>%
 
 # save over current photo
 ggsave("plots/generic_ballot/generic_ballot_current.png",
+       device = png,
        width = 9,
        height = 6,
        units = "in",
