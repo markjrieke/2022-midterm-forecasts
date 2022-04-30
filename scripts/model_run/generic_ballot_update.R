@@ -59,7 +59,8 @@ generic_2022 <-
          sample_size = round((dem + rep)/100 * sample_size),
          dem2pv = dem/(dem + rep),
          dem_votes = round(dem2pv * sample_size),
-         rep_votes = round((1-dem2pv) * sample_size)) %>%
+         rep_votes = round((1-dem2pv) * sample_size),
+         population_full = str_replace(population_full, "lv-r", "lv")) %>%
   select(-dem, -rep, -ind, dem2pv) %>%
   drop_na() %>%
   rename(pollster = display_name) %>%
@@ -155,20 +156,25 @@ fit_2022 %>%
              na.rm = TRUE) +
   geom_line(aes(y = rep2pv),
             color = "white",
-            size = 3) +
+            size = 3,
+            na.rm = TRUE) +
   geom_line(aes(y = rep2pv),
             color = rep_red,
-            size = 1.25) +
+            size = 1.25,
+            na.rm = TRUE) +
   geom_line(aes(y = dem2pv),
             color = "white",
-            size = 3) +
+            size = 3,
+            na.rm = TRUE) +
   geom_line(aes(y = dem2pv),
             color = dem_blu,
-            size = 1.25) +
+            size = 1.25,
+            na.rm = TRUE) +
   geom_vline(xintercept = Sys.Date(),
              size = 1,
              linetype = "dotted",
-             color = "gray") +
+             color = "gray",
+             na.rm = TRUE) +
   geom_shadowtext(x = Sys.Date() + 40,
                   y = current_rep_pct,
                   label = paste0(round(current_rep_pct, 3) * 100, "%"),
