@@ -45,7 +45,7 @@ pass_current_fit <-         read_rds("models/utils/pass_current_fit.rds")
 # format elections to just elections of interest (w/competition) ----
 elections <- 
   elections %>%
-  filter(across(starts_with("candidate"), ~ .x != "-")) %>%
+  filter(if_all(starts_with("candidate"), ~ . != "-")) %>%
   select(cycle, race, state, seat, ends_with("votes"), ends_with("incumbent")) %>%
   mutate(dem2pv = dem_votes/(dem_votes + rep_votes),
          seat = paste(state, seat)) %>%
