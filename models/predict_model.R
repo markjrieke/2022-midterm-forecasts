@@ -6,6 +6,9 @@ library(tidymodels)
 library(lubridate)
 library(riekelib)
 
+# ~ the model ~
+elections_model <-      read_rds("models/midterm_model.rds")
+
 # data (training)
 variable_weights <-     read_csv("data/models/midterm_model/variable_weights.csv")
 methods <-              read_rds("data/models/midterm_model/methods.rds")
@@ -14,6 +17,7 @@ methods <-              read_rds("data/models/midterm_model/methods.rds")
 demographics <-         read_csv("models/data/demographics_2022.csv")
 region_similarities <-  read_csv("models/data/similarities_2022.csv")
 training <-             read_rds("models/data/training.rds")
+elections <-            read_csv("models/data/elections_2022.csv")
 
 # functions
 target_region <-            read_rds("models/utils/target_region.rds")
@@ -230,10 +234,49 @@ rm(polls_gcb,
 polls <- 
   polls %>%
   mutate(pollster = if_else(pollster %in% variable_weights$variable, pollster, "Other Pollster"),
-         methodology = if_else(pollster %in% variable_weights$variable, methodology, "Other Method"),
+         methodology = if_else(methodology %in% variable_weights$variable, methodology, "Other Method"),
          dem2pv = pct_DEM/(pct_DEM + pct_REP)) %>%
   select(-starts_with("pct"))
 
 # ------------------------------prep-2022-tibble--------------------------------
+
+# save uncontested elections for later
+uncontested <- 
+  elections %>%
+  filter(if_any(starts_with("candidate"), ~ . == "-"))
+
+# format elections just to ones of interest
+elections <- 
+  elections %>%
+  anti_join(uncontested, by = c("race", "state", "seat")) %>%
+  select(cycle, race, state, seat, ends_with("incumbent")) %>%
+  mutate(seat = paste(state, seat)) %>%
+  select(-state)
+
+# create list to map over passer function
+wassp_average <-
+  elections %>%
+  select(race,
+         cycle,
+         region = seat) %>%
+  mutate(begin_date = ymd("2022-06-01"),
+         end_date = ymd("2022-08-01")) %>%
+  as.list() %>%
+  pmap_dfr(~pass_current_fit(polls, ..1, ..2, ..3, ..4, ..5))
+
+# append with election/demographic data
+elections <- 
+  wassp_average %>%
+  bind_cols(elections) %>%
+  rename(region = seat,
+         estimate = dem2pv) %>%
+  relocate(race, cycle, region, .after = date) %>%
+  mutate(join_region = region,
+         join_region = str_remove_all(join_region, " Governor"),
+         join_region = str_remove_all(join_region, " Class III"),
+         join_region = str_remove_all(join_region, " Class II"),
+         join_region = str_remove_all(join_region, " Class I")) %>%
+  left_join(demographics, by = c("join_region" = "region")) %>%
+  select(-join_region)
 
 
