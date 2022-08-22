@@ -31,4 +31,6 @@ similarities <-
   map_dfr(~similarity(demographics, .x))
 
 similarities %>%
+  mutate(year = 2022) %>%
+  relocate(year) %>%
   write_csv("models/data/similarities_2022.csv")
