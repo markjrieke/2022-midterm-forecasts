@@ -14,10 +14,11 @@ variable_weights <-     read_csv("data/models/midterm_model/variable_weights.csv
 methods <-              read_rds("data/models/midterm_model/methods.rds")
 
 # data (2022)
-demographics <-         read_csv("models/data/demographics_2022.csv")
-region_similarities <-  read_csv("models/data/similarities_2022.csv")
-training <-             read_rds("models/data/training.rds")
-elections <-            read_csv("models/data/elections_2022.csv")
+demographics <-             read_csv("models/data/demographics_2022.csv")
+region_similarities <-      read_csv("models/data/similarities_2022.csv")
+training <-                 read_rds("models/data/training.rds")
+elections <-                read_csv("models/data/elections_2022.csv")
+elections_daily_average <-  read_csv("models/data/elections_daily_average.csv")
 
 # functions
 target_region <-            read_rds("models/utils/target_region.rds")
@@ -253,30 +254,55 @@ elections <-
   mutate(seat = paste(state, seat)) %>%
   select(-state)
 
-# create list to map over passer function
-wassp_average <-
-  elections %>%
-  select(race,
-         cycle,
-         region = seat) %>%
-  mutate(begin_date = ymd("2022-06-01"),
-         end_date = ymd("2022-08-01")) %>%
-  as.list() %>%
-  pmap_dfr(~pass_current_fit(polls, ..1, ..2, ..3, ..4, ..5))
+# create a sequence of dates from 7/1 to today to get polling avg
+days <- seq(ymd("2022-07-01"), as_date(Sys.Date()), by = "days")
 
-# append with election/demographic data
-elections <- 
-  wassp_average %>%
-  bind_cols(elections) %>%
-  rename(region = seat,
-         estimate = dem2pv) %>%
-  relocate(race, cycle, region, .after = date) %>%
-  mutate(join_region = region,
-         join_region = str_remove_all(join_region, " Governor"),
-         join_region = str_remove_all(join_region, " Class III"),
-         join_region = str_remove_all(join_region, " Class II"),
-         join_region = str_remove_all(join_region, " Class I")) %>%
-  left_join(demographics, by = c("join_region" = "region")) %>%
-  select(-join_region)
+# remove dates that already have polling averages
+days <- days[!days %in% elections_daily_average$date]
+
+# add new polling average to elections_daily_average
+for (dates in days) {
+  
+  message(glue::glue("Creating poll average for {as_date(dates)}"))
+
+  # create daily polling average
+  wassp_average <-
+    elections %>%
+    select(race,
+           cycle,
+           region = seat) %>%
+    mutate(begin_date = ymd("2022-06-01"),
+           end_date = as_date(dates)) %>%
+    as.list() %>%
+    pmap_dfr(~pass_current_fit(polls, ..1, ..2, ..3, ..4, ..5))
+  
+  # append with election/demographic data
+  elections_out <- 
+    wassp_average %>%
+    bind_cols(elections) %>%
+    rename(region = seat,
+           estimate = dem2pv) %>%
+    relocate(race, cycle, region, .after = date) %>%
+    mutate(join_region = region,
+           join_region = str_remove_all(join_region, " Governor"),
+           join_region = str_remove_all(join_region, " Class III"),
+           join_region = str_remove_all(join_region, " Class II"),
+           join_region = str_remove_all(join_region, " Class I")) %>%
+    left_join(demographics, by = c("join_region" = "region")) %>%
+    select(-join_region)
+  
+  # bind to daily average
+  elections_daily_average <-
+    elections_daily_average %>%
+    bind_rows(elections_out)
+  
+}
+
+# write daily averages out
+elections_daily_average %>%
+  write_csv("models/data/elections_daily_average.csv")
+
+# -----------------------------predictions--------------------------------------
+
 
 
