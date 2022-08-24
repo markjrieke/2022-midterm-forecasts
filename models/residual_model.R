@@ -17,61 +17,63 @@ training <-
 
 # split out data into analysis/assessment
 set.seed(314)
-training_split <- rsample::initial_split(training, prop = 0.8, strata = race)
-analysis <- training_split %>% rsample::training()
-assessment <- training_split %>% rsample::assessment()
+boot_split <- 
+  training %>% 
+  rsample::bootstraps(times = 1, strata = race)
 
-# predictions
+analysis <- boot_split$splits[[1]] %>% rsample::training()
+assessment <- boot_split$splits[[1]] %>% rsample::testing()
+
+# predictions - assessment
 set.seed(918)
-elections_preds <-
+assessment_preds <-
   elections_model %>%
   predict_boots(
     n = 2000,
     training_data = analysis,
-    new_data = training,
+    new_data = assessment,
+    verbose = TRUE
+  )
+
+# predictions - analysis
+set.seed(314) 
+analysis_preds <-
+  elections_model %>%
+  predict_boots(
+    n = 2000,
+    training_data = analysis,
+    new_data = analysis,
     verbose = TRUE
   )
 
 # -----------------------------model-variance-----------------------------------
 
-# append training frame w/predictions
-training <- 
-  elections_preds %>%
+# break out model training data
+mod_analysis <- 
+  analysis_preds %>%
   summarise_predictions() %>%
   select(.pred) %>%
-  bind_cols(training)
+  bind_cols(analysis) %>%
+  mutate(resid = .pred - result) %>%
+  select(n, resid)
 
-# split out into analysis/assessment
-assessment <- 
-  training %>%
-  anti_join(analysis, by = c("region", "cycle"))
-
-analysis <- 
-  training %>%
-  anti_join(assessment, by = c("region", "cycle"))
-
-# prep oob model
 mod_assessment <- 
-  assessment %>%
+  assessment_preds %>%
+  summarise_predictions() %>%
+  select(.pred) %>%
+  bind_cols(assessment) %>%
   mutate(resid = .pred - result) %>%
   select(n, resid) %>%
-  filter(abs(resid) < 2,
-         n < 75)
+  filter(abs(resid) < 2) 
 
-# model
+# model oob
 set.seed(651)
 residual_oob <- 
   gamlss::gamlss(resid ~ 1,
                  sigma.formula = ~ log10(n + 1),
                  data = mod_assessment) 
 
-# prep trn model
-mod_analysis <-
-  analysis %>%
-  mutate(resid = .pred - result) %>%
-  select(n, resid)
-
-# model
+# model trn
 set.seed(7227)
 residual_trn <-
   gamlss::gamlss(resid ~ 1,
@@ -80,7 +82,11 @@ residual_trn <-
 
 # -----------------------------save---------------------------------------------
 
+# models
 residual_oob %>% write_rds("models/residual_oob.rds")
 residual_trn %>% write_rds("models/residual_trn.rds")
 
+# data to go along with models
+mod_assessment %>% write_csv("models/data/mod_assessment.csv")
+mod_analysis %>% write_csv("models/data/mod_analysis.csv")
 
