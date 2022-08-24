@@ -2,9 +2,9 @@
 
 # libraries
 library(tidyverse)
-library(tidymodels)
 library(lubridate)
 library(riekelib)
+library(workboots)
 
 # ~ the model ~
 elections_model <-      read_rds("models/midterm_model.rds")
@@ -304,5 +304,45 @@ elections_daily_average %>%
 
 # -----------------------------predictions--------------------------------------
 
+# adjust training results to unbound scale
+training <- 
+  training %>%
+  mutate(result = logit(result))
 
+new_preds <-
+  elections_daily_average %>%
+  filter(date == ymd("2022-07-01"))
+
+# predict
+set.seed(2022)
+elections_preds <- 
+  elections_model %>%
+  predict_boots(
+    n = 2000,
+    training_data = training,
+    new_data = elections_daily_average,
+    verbose = TRUE
+  )
+
+tmp <-
+  elections_preds %>%
+  summarise_predictions(interval_width = 0.8) %>%
+  select(-.preds)
+
+lookup <- "Nevada Class III"
+
+tmp %>% 
+  bind_cols(elections_daily_average) %>% 
+  filter(region == lookup) %>% 
+  mutate(across(starts_with(".pred"), expit)) %>% 
+  ggplot() + 
+  geom_line(aes(x = date, 
+                y = .pred),
+            size = 1) + 
+  geom_ribbon(aes(x = date,
+                  ymin = .pred_lower,
+                  ymax = .pred_upper),
+              alpha = 0.25) +
+  geom_point(data = polls %>% filter(seat == lookup, end_date > ymd("2022-07-01")),
+             mapping = aes(x = end_date, y = dem2pv))
 
