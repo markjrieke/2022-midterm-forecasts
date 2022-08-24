@@ -81,12 +81,10 @@ elections <-
 
 # --------------------------------model-----------------------------------------  
 
-# add case weights & set result to logit scale
+# set result to logit scale
 elections <- 
   elections %>%
-  mutate(case_weights = n + 1, # some races aren't polled directly
-         case_weights = importance_weights(case_weights),
-         result = logit(result))
+  mutate(result = logit(result))
 
 # split into test/train
 set.seed(999)
@@ -102,16 +100,7 @@ elections_resamples <- vfold_cv(elections_train, strata = race)
 elections_rec <- 
   recipe(result ~ ., data = elections_train) %>%
   update_role(race, cycle, region, new_role = "id") %>%
-  step_dummy(ends_with("incumbent")) %>%
-  step_mutate(across(c(estimate, ci_lower, ci_upper), riekelib::logit),
-              ci_range = ci_upper - ci_lower,
-              across(c(white, black, hispanic, aapi, other), riekelib::logit)) %>%
-  step_ns(white, black, hispanic, aapi, other, deg_free = 4) %>%
-  step_interact(~estimate:starts_with("dem")) %>%
-  step_interact(~estimate:starts_with("rep")) %>%
-  step_interact(~starts_with("dem"):starts_with("ci")) %>%
-  step_interact(~starts_with("rep"):starts_with("ci")) %>%
-  step_mutate(n_inv = 1/(n + 1)) 
+  step_dummy(ends_with("incumbent")) 
 
 # setup model spec
 elections_spec <- 
@@ -126,8 +115,7 @@ elections_spec <-
 elections_wf <-
   workflow() %>%
   add_recipe(elections_rec) %>%
-  add_model(elections_spec) %>%
-  add_case_weights(case_weights)
+  add_model(elections_spec) 
 
 # setup tuning grid
 set.seed(777)
