@@ -1,0 +1,466 @@
+cycle,state,seat,pvi
+2022,Alabama,,-15
+2022,Alabama,District 1,-16
+2022,Alabama,District 2,-17
+2022,Alabama,District 3,-19
+2022,Alabama,District 4,-33
+2022,Alabama,District 5,-17
+2022,Alabama,District 6,-18
+2022,Alabama,District 7,14
+2022,Alaska,,-8
+2022,Arizona,,-2
+2022,Arizona,District 1,-2
+2022,Arizona,District 2,-6
+2022,Arizona,District 3,24
+2022,Arizona,District 4,2
+2022,Arizona,District 5,-11
+2022,Arizona,District 6,-3
+2022,Arizona,District 7,15
+2022,Arizona,District 8,-10
+2022,Arizona,District 9,-16
+2022,Arkansas,,-16
+2022,Arkansas,District 1,-22
+2022,Arkansas,District 2,-9
+2022,Arkansas,District 3,-15
+2022,Arkansas,District 4,-20
+2022,California,,13
+2022,California,District 1,-12
+2022,California,District 2,23
+2022,California,District 3,-4
+2022,California,District 4,17
+2022,California,District 5,-9
+2022,California,District 6,7
+2022,California,District 7,17
+2022,California,District 8,26
+2022,California,District 9,5
+2022,California,District 10,18
+2022,California,District 11,37
+2022,California,District 12,40
+2022,California,District 13,4
+2022,California,District 14,22
+2022,California,District 15,28
+2022,California,District 16,26
+2022,California,District 17,23
+2022,California,District 18,21
+2022,California,District 19,18
+2022,California,District 20,-16
+2022,California,District 21,9
+2022,California,District 22,5
+2022,California,District 23,-8
+2022,California,District 24,13
+2022,California,District 25,6
+2022,California,District 26,8
+2022,California,District 27,1
+2022,California,District 28,16
+2022,California,District 29,26
+2022,California,District 30,23
+2022,California,District 31,15
+2022,California,District 32,20
+2022,California,District 33,12
+2022,California,District 34,32
+2022,California,District 35,13
+2022,California,District 36,21
+2022,California,District 37,37
+2022,California,District 38,14
+2022,California,District 39,12
+2022,California,District 40,-2
+2022,California,District 41,-3
+2022,California,District 42,22
+2022,California,District 43,32
+2022,California,District 44,24
+2022,California,District 45,2
+2022,California,District 46,15
+2022,California,District 47,3
+2022,California,District 48,-9
+2022,California,District 49,3
+2022,California,District 50,14
+2022,California,District 51,12
+2022,California,District 52,18
+2022,Colorado,,4
+2022,Colorado,District 1,29
+2022,Colorado,District 2,17
+2022,Colorado,District 3,-7
+2022,Colorado,District 4,-13
+2022,Colorado,District 5,-9
+2022,Colorado,District 6,9
+2022,Colorado,District 7,4
+2022,Colorado,District 8,0
+2022,Connecticut,,7
+2022,Connecticut,District 1,12
+2022,Connecticut,District 2,3
+2022,Connecticut,District 3,7
+2022,Connecticut,District 4,13
+2022,Connecticut,District 5,3
+2022,Delaware,,7
+2022,Florida,,-3
+2022,Florida,District 1,-19
+2022,Florida,District 2,-8
+2022,Florida,District 3,-9
+2022,Florida,District 4,-6
+2022,Florida,District 5,-11
+2022,Florida,District 6,-14
+2022,Florida,District 7,-5
+2022,Florida,District 8,-11
+2022,Florida,District 9,8
+2022,Florida,District 10,14
+2022,Florida,District 11,-8
+2022,Florida,District 12,-17
+2022,Florida,District 13,-6
+2022,Florida,District 14,8
+2022,Florida,District 15,-4
+2022,Florida,District 16,-7
+2022,Florida,District 17,-10
+2022,Florida,District 18,-13
+2022,Florida,District 19,-13
+2022,Florida,District 20,25
+2022,Florida,District 21,-7
+2022,Florida,District 22,7
+2022,Florida,District 23,5
+2022,Florida,District 24,25
+2022,Florida,District 25,9
+2022,Florida,District 26,-8
+2022,Florida,District 27,0
+2022,Florida,District 28,-2
+2022,Georgia,,-3
+2022,Georgia,District 1,-9
+2022,Georgia,District 2,3
+2022,Georgia,District 3,-18
+2022,Georgia,District 4,27
+2022,Georgia,District 5,32
+2022,Georgia,District 6,-11
+2022,Georgia,District 7,10
+2022,Georgia,District 8,-16
+2022,Georgia,District 9,-22
+2022,Georgia,District 10,-15
+2022,Georgia,District 11,-11
+2022,Georgia,District 12,-8
+2022,Georgia,District 13,28
+2022,Georgia,District 14,-22
+2022,Hawaii,,14
+2022,Hawaii,District 1,14
+2022,Hawaii,District 2,14
+2022,Idaho,,-18
+2022,Idaho,District 1,-22
+2022,Idaho,District 2,-14
+2022,Illinois,,7
+2022,Illinois,District 1,20
+2022,Illinois,District 2,19
+2022,Illinois,District 3,20
+2022,Illinois,District 4,22
+2022,Illinois,District 5,18
+2022,Illinois,District 6,3
+2022,Illinois,District 7,36
+2022,Illinois,District 8,6
+2022,Illinois,District 9,19
+2022,Illinois,District 10,11
+2022,Illinois,District 11,5
+2022,Illinois,District 12,-24
+2022,Illinois,District 13,3
+2022,Illinois,District 14,4
+2022,Illinois,District 15,-22
+2022,Illinois,District 16,-13
+2022,Illinois,District 17,2
+2022,Indiana,,-11
+2022,Indiana,District 1,3
+2022,Indiana,District 2,-14
+2022,Indiana,District 3,-18
+2022,Indiana,District 4,-18
+2022,Indiana,District 5,-11
+2022,Indiana,District 6,-19
+2022,Indiana,District 7,19
+2022,Indiana,District 8,-19
+2022,Indiana,District 9,-16
+2022,Iowa,,-6
+2022,Iowa,District 1,-3
+2022,Iowa,District 2,-4
+2022,Iowa,District 3,-3
+2022,Iowa,District 4,-16
+2022,Kansas,,-10
+2022,Kansas,District 1,-18
+2022,Kansas,District 2,-11
+2022,Kansas,District 3,-1
+2022,Kansas,District 4,-14
+2022,Kentucky,,-16
+2022,Kentucky,District 1,-24
+2022,Kentucky,District 2,-21
+2022,Kentucky,District 3,9
+2022,Kentucky,District 4,-19
+2022,Kentucky,District 5,-32
+2022,Kentucky,District 6,-9
+2022,Louisiana,,-12
+2022,Louisiana,District 1,-23
+2022,Louisiana,District 2,25
+2022,Louisiana,District 3,-21
+2022,Louisiana,District 4,-14
+2022,Louisiana,District 5,-17
+2022,Louisiana,District 6,-19
+2022,Maine,District 1,9
+2022,Maine,District 2,-6
+2022,Maryland,,14
+2022,Maryland,District 1,-11
+2022,Maryland,District 2,7
+2022,Maryland,District 3,10
+2022,Maryland,District 4,40
+2022,Maryland,District 5,15
+2022,Maryland,District 6,2
+2022,Maryland,District 7,30
+2022,Maryland,District 8,29
+2022,Massachusetts,District 1,9
+2022,Massachusetts,District 2,13
+2022,Massachusetts,District 3,11
+2022,Massachusetts,District 4,12
+2022,Massachusetts,District 5,23
+2022,Massachusetts,District 6,11
+2022,Massachusetts,District 7,36
+2022,Massachusetts,District 8,15
+2022,Massachusetts,District 9,6
+2022,Michigan,District 1,-13
+2022,Michigan,District 2,-16
+2022,Michigan,District 3,1
+2022,Michigan,District 4,-5
+2022,Michigan,District 5,-15
+2022,Michigan,District 6,11
+2022,Michigan,District 7,-2
+2022,Michigan,District 8,-1
+2022,Michigan,District 9,-18
+2022,Michigan,District 10,-3
+2022,Michigan,District 11,7
+2022,Michigan,District 12,23
+2022,Michigan,District 13,23
+2022,Minnesota,District 1,-7
+2022,Minnesota,District 2,1
+2022,Minnesota,District 3,8
+2022,Minnesota,District 4,17
+2022,Minnesota,District 5,30
+2022,Minnesota,District 6,-12
+2022,Minnesota,District 7,-19
+2022,Minnesota,District 8,-8
+2022,Mississippi,District 1,-18
+2022,Mississippi,District 2,11
+2022,Mississippi,District 3,-15
+2022,Mississippi,District 4,-22
+2022,Missouri,,-10
+2022,Missouri,District 1,27
+2022,Missouri,District 2,-7
+2022,Missouri,District 3,-16
+2022,Missouri,District 4,-23
+2022,Missouri,District 5,11
+2022,Missouri,District 6,-21
+2022,Missouri,District 7,-24
+2022,Missouri,District 8,-28
+2022,Montana,District 1,-6
+2022,Montana,District 2,-16
+2022,Nebraska,District 1,-9
+2022,Nebraska,District 2,0
+2022,Nebraska,District 3,-29
+2022,Nevada,,-1
+2022,Nevada,District 1,3
+2022,Nevada,District 2,-8
+2022,Nevada,District 3,1
+2022,Nevada,District 4,3
+2022,New Hampshire,,1
+2022,New Hampshire,District 1,0
+2022,New Hampshire,District 2,2
+2022,New Jersey,District 1,10
+2022,New Jersey,District 2,-5
+2022,New Jersey,District 3,5
+2022,New Jersey,District 4,-14
+2022,New Jersey,District 5,4
+2022,New Jersey,District 6,8
+2022,New Jersey,District 7,-1
+2022,New Jersey,District 8,22
+2022,New Jersey,District 9,8
+2022,New Jersey,District 10,30
+2022,New Jersey,District 11,6
+2022,New Jersey,District 12,12
+2022,New Mexico,District 1,5
+2022,New Mexico,District 2,1
+2022,New Mexico,District 3,4
+2022,New York,,10
+2022,New York,District 1,-4
+2022,New York,District 2,-4
+2022,New York,District 3,2
+2022,New York,District 4,5
+2022,New York,District 5,32
+2022,New York,District 6,17
+2022,New York,District 7,32
+2022,New York,District 8,25
+2022,New York,District 9,27
+2022,New York,District 10,36
+2022,New York,District 11,-5
+2022,New York,District 12,35
+2022,New York,District 13,40
+2022,New York,District 14,30
+2022,New York,District 15,37
+2022,New York,District 16,21
+2022,New York,District 17,3
+2022,New York,District 18,1
+2022,New York,District 19,0
+2022,New York,District 20,7
+2022,New York,District 21,-9
+2022,New York,District 22,1
+2022,New York,District 23,-12
+2022,New York,District 24,-12
+2022,New York,District 25,7
+2022,New York,District 26,8
+2022,North Carolina,,-3
+2022,North Carolina,District 1,2
+2022,North Carolina,District 2,12
+2022,North Carolina,District 3,-15
+2022,North Carolina,District 4,16
+2022,North Carolina,District 5,-13
+2022,North Carolina,District 6,4
+2022,North Carolina,District 7,-8
+2022,North Carolina,District 8,-20
+2022,North Carolina,District 9,-6
+2022,North Carolina,District 10,-22
+2022,North Carolina,District 11,-8
+2022,North Carolina,District 12,13
+2022,North Carolina,District 13,-2
+2022,North Carolina,District 14,6
+2022,North Dakota,,-20
+2022,Ohio,,-6
+2022,Ohio,District 1,2
+2022,Ohio,District 2,-25
+2022,Ohio,District 3,20
+2022,Ohio,District 4,-20
+2022,Ohio,District 5,-15
+2022,Ohio,District 6,-16
+2022,Ohio,District 7,-7
+2022,Ohio,District 8,-14
+2022,Ohio,District 9,-3
+2022,Ohio,District 10,-4
+2022,Ohio,District 11,28
+2022,Ohio,District 12,-18
+2022,Ohio,District 13,1
+2022,Ohio,District 14,-9
+2022,Ohio,District 15,-6
+2022,Oklahoma,,-20
+2022,Oklahoma,District 1,-14
+2022,Oklahoma,District 2,-29
+2022,Oklahoma,District 3,-24
+2022,Oklahoma,District 4,-19
+2022,Oklahoma,District 5,-12
+2022,Oregon,,6
+2022,Oregon,District 1,18
+2022,Oregon,District 2,-15
+2022,Oregon,District 3,22
+2022,Oregon,District 4,4
+2022,Oregon,District 5,2
+2022,Oregon,District 6,4
+2022,Pennsylvania,,-2
+2022,Pennsylvania,District 1,0
+2022,Pennsylvania,District 2,20
+2022,Pennsylvania,District 3,39
+2022,Pennsylvania,District 4,7
+2022,Pennsylvania,District 5,14
+2022,Pennsylvania,District 6,5
+2022,Pennsylvania,District 7,-2
+2022,Pennsylvania,District 8,-4
+2022,Pennsylvania,District 9,-21
+2022,Pennsylvania,District 10,-5
+2022,Pennsylvania,District 11,-13
+2022,Pennsylvania,District 12,8
+2022,Pennsylvania,District 13,-25
+2022,Pennsylvania,District 14,-18
+2022,Pennsylvania,District 15,-21
+2022,Pennsylvania,District 16,-13
+2022,Pennsylvania,District 17,0
+2022,Rhode Island,District 1,12
+2022,Rhode Island,District 2,4
+2022,South Carolina,,-8
+2022,South Carolina,District 1,-7
+2022,South Carolina,District 2,-8
+2022,South Carolina,District 3,-21
+2022,South Carolina,District 4,-12
+2022,South Carolina,District 5,-12
+2022,South Carolina,District 6,14
+2022,South Carolina,District 7,-11
+2022,South Dakota,,-16
+2022,Tennessee,District 1,-30
+2022,Tennessee,District 2,-18
+2022,Tennessee,District 3,-19
+2022,Tennessee,District 4,-22
+2022,Tennessee,District 5,-9
+2022,Tennessee,District 6,-17
+2022,Tennessee,District 7,-10
+2022,Tennessee,District 8,-21
+2022,Tennessee,District 9,22
+2022,Texas,District 1,-26
+2022,Texas,District 2,-11
+2022,Texas,District 3,-8
+2022,Texas,District 4,-16
+2022,Texas,District 5,-14
+2022,Texas,District 6,-15
+2022,Texas,District 7,13
+2022,Texas,District 8,-16
+2022,Texas,District 9,26
+2022,Texas,District 10,-13
+2022,Texas,District 11,-23
+2022,Texas,District 12,-15
+2022,Texas,District 13,-26
+2022,Texas,District 14,-17
+2022,Texas,District 15,-1
+2022,Texas,District 16,17
+2022,Texas,District 17,-15
+2022,Texas,District 18,23
+2022,Texas,District 19,-26
+2022,Texas,District 20,15
+2022,Texas,District 21,-15
+2022,Texas,District 22,-17
+2022,Texas,District 23,-5
+2022,Texas,District 24,-10
+2022,Texas,District 25,-19
+2022,Texas,District 26,-13
+2022,Texas,District 27,-13
+2022,Texas,District 28,3
+2022,Texas,District 29,18
+2022,Texas,District 30,27
+2022,Texas,District 31,-14
+2022,Texas,District 32,14
+2022,Texas,District 33,24
+2022,Texas,District 34,9
+2022,Texas,District 35,21
+2022,Texas,District 36,-18
+2022,Texas,District 37,24
+2022,Texas,District 38,-12
+2022,Utah,,-13
+2022,Utah,District 1,-12
+2022,Utah,District 2,-11
+2022,Utah,District 3,-13
+2022,Utah,District 4,-16
+2022,Vermont,,16
+2022,Virginia,District 1,-6
+2022,Virginia,District 2,-3
+2022,Virginia,District 3,17
+2022,Virginia,District 4,16
+2022,Virginia,District 5,-7
+2022,Virginia,District 6,-14
+2022,Virginia,District 7,1
+2022,Virginia,District 8,26
+2022,Virginia,District 9,-23
+2022,Virginia,District 10,4
+2022,Virginia,District 11,18
+2022,Washington,,8
+2022,Washington,District 1,13
+2022,Washington,District 2,9
+2022,Washington,District 3,-5
+2022,Washington,District 4,-11
+2022,Washington,District 5,-8
+2022,Washington,District 6,6
+2022,Washington,District 7,36
+2022,Washington,District 8,1
+2022,Washington,District 9,21
+2022,Washington,District 10,7
+2022,West Virginia,District 1,-23
+2022,West Virginia,District 2,-22
+2022,Wisconsin,,-2
+2022,Wisconsin,District 1,-3
+2022,Wisconsin,District 2,19
+2022,Wisconsin,District 3,-4
+2022,Wisconsin,District 4,25
+2022,Wisconsin,District 5,-14
+2022,Wisconsin,District 6,-10
+2022,Wisconsin,District 7,-12
+2022,Wisconsin,District 8,-10
+2022,Wyoming,,-25

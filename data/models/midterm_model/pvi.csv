@@ -1,0 +1,928 @@
+cycle,state,seat,pvi
+2018,Alabama,District 1,-15
+2018,Alabama,District 2,-16
+2018,Alabama,District 3,-16
+2018,Alabama,District 4,-30
+2018,Alabama,District 5,-18
+2018,Alabama,District 6,-26
+2018,Alabama,District 7,20
+2018,Alaska,,-9
+2018,Arizona,,-5
+2018,Arizona,District 1,-2
+2018,Arizona,District 2,-1
+2018,Arizona,District 3,13
+2018,Arizona,District 4,-21
+2018,Arizona,District 5,-15
+2018,Arizona,District 6,-9
+2018,Arizona,District 7,23
+2018,Arizona,District 8,-13
+2018,Arizona,District 9,4
+2018,Arkansas,District 1,-17
+2018,Arkansas,District 2,-7
+2018,Arkansas,District 3,-19
+2018,Arkansas,District 4,-17
+2018,California,,12
+2018,California,District 1,-11
+2018,California,District 2,22
+2018,California,District 3,5
+2018,California,District 4,-10
+2018,California,District 5,21
+2018,California,District 6,21
+2018,California,District 7,3
+2018,California,District 8,-9
+2018,California,District 9,8
+2018,California,District 10,0
+2018,California,District 11,21
+2018,California,District 12,37
+2018,California,District 13,40
+2018,California,District 14,27
+2018,California,District 15,20
+2018,California,District 16,9
+2018,California,District 17,25
+2018,California,District 18,23
+2018,California,District 19,24
+2018,California,District 20,23
+2018,California,District 21,5
+2018,California,District 22,-8
+2018,California,District 23,-14
+2018,California,District 24,7
+2018,California,District 25,0
+2018,California,District 26,7
+2018,California,District 27,16
+2018,California,District 28,23
+2018,California,District 29,29
+2018,California,District 30,18
+2018,California,District 31,8
+2018,California,District 32,17
+2018,California,District 33,16
+2018,California,District 34,35
+2018,California,District 35,19
+2018,California,District 36,2
+2018,California,District 37,37
+2018,California,District 38,17
+2018,California,District 39,0
+2018,California,District 40,33
+2018,California,District 41,12
+2018,California,District 42,-9
+2018,California,District 43,29
+2018,California,District 44,35
+2018,California,District 45,-3
+2018,California,District 46,15
+2018,California,District 47,13
+2018,California,District 48,-4
+2018,California,District 49,-1
+2018,California,District 50,-11
+2018,California,District 51,22
+2018,California,District 52,6
+2018,California,District 53,14
+2018,Colorado,,6
+2018,Colorado,District 1,21
+2018,Colorado,District 2,9
+2018,Colorado,District 3,-6
+2018,Colorado,District 4,-13
+2018,Colorado,District 5,-14
+2018,Colorado,District 6,2
+2018,Colorado,District 7,6
+2018,Connecticut,District 1,12
+2018,Connecticut,District 2,3
+2018,Connecticut,District 3,9
+2018,Connecticut,District 4,7
+2018,Connecticut,District 5,2
+2018,Delaware,,6
+2018,Florida,,-2
+2018,Florida,District 1,-22
+2018,Florida,District 2,-18
+2018,Florida,District 3,-9
+2018,Florida,District 4,-17
+2018,Florida,District 5,12
+2018,Florida,District 6,-7
+2018,Florida,District 7,0
+2018,Florida,District 8,-11
+2018,Florida,District 9,5
+2018,Florida,District 10,11
+2018,Florida,District 11,-15
+2018,Florida,District 12,-8
+2018,Florida,District 13,2
+2018,Florida,District 14,7
+2018,Florida,District 15,-6
+2018,Florida,District 16,-7
+2018,Florida,District 17,-13
+2018,Florida,District 18,-5
+2018,Florida,District 19,-13
+2018,Florida,District 20,31
+2018,Florida,District 21,9
+2018,Florida,District 22,6
+2018,Florida,District 23,11
+2018,Florida,District 24,34
+2018,Florida,District 25,-4
+2018,Florida,District 26,6
+2018,Florida,District 27,5
+2018,Georgia,District 1,-9
+2018,Georgia,District 2,6
+2018,Georgia,District 3,-18
+2018,Georgia,District 4,24
+2018,Georgia,District 5,34
+2018,Georgia,District 6,-8
+2018,Georgia,District 7,-9
+2018,Georgia,District 8,-15
+2018,Georgia,District 9,-31
+2018,Georgia,District 10,-15
+2018,Georgia,District 11,-17
+2018,Georgia,District 12,-9
+2018,Georgia,District 13,20
+2018,Georgia,District 14,-27
+2018,Hawaii,,18
+2018,Hawaii,District 1,17
+2018,Hawaii,District 2,19
+2018,Idaho,District 1,-21
+2018,Idaho,District 2,-17
+2018,Illinois,District 1,27
+2018,Illinois,District 2,29
+2018,Illinois,District 3,6
+2018,Illinois,District 4,33
+2018,Illinois,District 5,20
+2018,Illinois,District 6,-2
+2018,Illinois,District 7,38
+2018,Illinois,District 8,8
+2018,Illinois,District 9,18
+2018,Illinois,District 10,10
+2018,Illinois,District 11,9
+2018,Illinois,District 12,-5
+2018,Illinois,District 13,-3
+2018,Illinois,District 14,-5
+2018,Illinois,District 15,-21
+2018,Illinois,District 16,-8
+2018,Illinois,District 17,3
+2018,Illinois,District 18,-15
+2018,Indiana,,-9
+2018,Indiana,District 1,8
+2018,Indiana,District 2,-11
+2018,Indiana,District 3,-18
+2018,Indiana,District 4,-17
+2018,Indiana,District 5,-9
+2018,Indiana,District 6,-18
+2018,Indiana,District 7,11
+2018,Indiana,District 8,-15
+2018,Indiana,District 9,-13
+2018,Iowa,District 1,1
+2018,Iowa,District 2,1
+2018,Iowa,District 3,-1
+2018,Iowa,District 4,-11
+2018,Kansas,District 1,-24
+2018,Kansas,District 2,-10
+2018,Kansas,District 3,-4
+2018,Kansas,District 4,-15
+2018,Kentucky,District 1,-23
+2018,Kentucky,District 2,-19
+2018,Kentucky,District 3,6
+2018,Kentucky,District 4,-18
+2018,Kentucky,District 5,-31
+2018,Kentucky,District 6,-9
+2018,Louisiana,District 1,-24
+2018,Louisiana,District 2,25
+2018,Louisiana,District 3,-20
+2018,Louisiana,District 4,-13
+2018,Louisiana,District 5,-15
+2018,Louisiana,District 6,-19
+2018,Maine,,3
+2018,Maine,District 1,8
+2018,Maine,District 2,-2
+2018,Maryland,,12
+2018,Maryland,District 1,-14
+2018,Maryland,District 2,11
+2018,Maryland,District 3,13
+2018,Maryland,District 4,28
+2018,Maryland,District 5,16
+2018,Maryland,District 6,6
+2018,Maryland,District 7,26
+2018,Maryland,District 8,14
+2018,Massachusetts,,12
+2018,Massachusetts,District 1,12
+2018,Massachusetts,District 2,9
+2018,Massachusetts,District 3,9
+2018,Massachusetts,District 4,9
+2018,Massachusetts,District 5,18
+2018,Massachusetts,District 6,6
+2018,Massachusetts,District 7,34
+2018,Massachusetts,District 8,10
+2018,Massachusetts,District 9,4
+2018,Michigan,,1
+2018,Michigan,District 1,-9
+2018,Michigan,District 2,-9
+2018,Michigan,District 3,-6
+2018,Michigan,District 4,-10
+2018,Michigan,District 5,5
+2018,Michigan,District 6,-4
+2018,Michigan,District 7,-7
+2018,Michigan,District 8,-4
+2018,Michigan,District 9,4
+2018,Michigan,District 10,-13
+2018,Michigan,District 11,-4
+2018,Michigan,District 12,14
+2018,Michigan,District 13,32
+2018,Michigan,District 14,30
+2018,Minnesota,,1
+2018,Minnesota,District 1,-5
+2018,Minnesota,District 2,-2
+2018,Minnesota,District 3,1
+2018,Minnesota,District 4,14
+2018,Minnesota,District 5,26
+2018,Minnesota,District 6,-12
+2018,Minnesota,District 7,-12
+2018,Minnesota,District 8,-4
+2018,Mississippi,,-9
+2018,Mississippi,District 1,-16
+2018,Mississippi,District 2,14
+2018,Mississippi,District 3,-13
+2018,Mississippi,District 4,-21
+2018,Missouri,,-9
+2018,Missouri,District 1,29
+2018,Missouri,District 2,-8
+2018,Missouri,District 3,-18
+2018,Missouri,District 4,-17
+2018,Missouri,District 5,7
+2018,Missouri,District 6,-16
+2018,Missouri,District 7,-23
+2018,Missouri,District 8,-24
+2018,Montana,,-11
+2018,Nebraska,,-14
+2018,Nebraska,District 1,-11
+2018,Nebraska,District 2,-4
+2018,Nebraska,District 3,-27
+2018,Nevada,,1
+2018,Nevada,District 1,15
+2018,Nevada,District 2,-7
+2018,Nevada,District 3,-2
+2018,Nevada,District 4,3
+2018,New Hampshire,District 1,-2
+2018,New Hampshire,District 2,2
+2018,New Jersey,,7
+2018,New Jersey,District 1,13
+2018,New Jersey,District 2,-1
+2018,New Jersey,District 3,-2
+2018,New Jersey,District 4,-8
+2018,New Jersey,District 5,-3
+2018,New Jersey,District 6,9
+2018,New Jersey,District 7,-3
+2018,New Jersey,District 8,27
+2018,New Jersey,District 9,16
+2018,New Jersey,District 10,36
+2018,New Jersey,District 11,-3
+2018,New Jersey,District 12,16
+2018,New Mexico,,3
+2018,New Mexico,District 1,7
+2018,New Mexico,District 2,-6
+2018,New Mexico,District 3,8
+2018,New York,,11
+2018,New York,District 1,-5
+2018,New York,District 2,-3
+2018,New York,District 3,1
+2018,New York,District 4,4
+2018,New York,District 5,37
+2018,New York,District 6,16
+2018,New York,District 7,38
+2018,New York,District 8,36
+2018,New York,District 9,34
+2018,New York,District 10,26
+2018,New York,District 11,-3
+2018,New York,District 12,31
+2018,New York,District 13,43
+2018,New York,District 14,29
+2018,New York,District 15,44
+2018,New York,District 16,24
+2018,New York,District 17,7
+2018,New York,District 18,-1
+2018,New York,District 19,-2
+2018,New York,District 20,7
+2018,New York,District 21,-4
+2018,New York,District 22,-6
+2018,New York,District 23,-6
+2018,New York,District 24,3
+2018,New York,District 25,8
+2018,New York,District 26,11
+2018,New York,District 27,-11
+2018,North Carolina,District 1,17
+2018,North Carolina,District 2,-7
+2018,North Carolina,District 3,-12
+2018,North Carolina,District 4,17
+2018,North Carolina,District 5,-10
+2018,North Carolina,District 6,-9
+2018,North Carolina,District 7,-9
+2018,North Carolina,District 8,-8
+2018,North Carolina,District 9,-8
+2018,North Carolina,District 10,-12
+2018,North Carolina,District 11,-14
+2018,North Carolina,District 12,18
+2018,North Carolina,District 13,-6
+2018,North Dakota,,-16
+2018,Ohio,,-3
+2018,Ohio,District 1,-5
+2018,Ohio,District 2,-9
+2018,Ohio,District 3,19
+2018,Ohio,District 4,-14
+2018,Ohio,District 5,-11
+2018,Ohio,District 6,-16
+2018,Ohio,District 7,-12
+2018,Ohio,District 8,-17
+2018,Ohio,District 9,14
+2018,Ohio,District 10,-4
+2018,Ohio,District 11,32
+2018,Ohio,District 12,-7
+2018,Ohio,District 13,7
+2018,Ohio,District 14,-5
+2018,Ohio,District 15,-7
+2018,Ohio,District 16,-8
+2018,Oklahoma,District 1,-17
+2018,Oklahoma,District 2,-24
+2018,Oklahoma,District 3,-27
+2018,Oklahoma,District 4,-20
+2018,Oklahoma,District 5,-10
+2018,Oregon,District 1,9
+2018,Oregon,District 2,-11
+2018,Oregon,District 3,24
+2018,Oregon,District 4,0
+2018,Oregon,District 5,0
+2018,Pennsylvania,,0
+2018,Pennsylvania,District 1,-1
+2018,Pennsylvania,District 2,25
+2018,Pennsylvania,District 3,41
+2018,Pennsylvania,District 4,7
+2018,Pennsylvania,District 5,13
+2018,Pennsylvania,District 6,2
+2018,Pennsylvania,District 7,1
+2018,Pennsylvania,District 8,-1
+2018,Pennsylvania,District 9,-14
+2018,Pennsylvania,District 10,-6
+2018,Pennsylvania,District 11,-14
+2018,Pennsylvania,District 12,-17
+2018,Pennsylvania,District 13,-22
+2018,Pennsylvania,District 14,-14
+2018,Pennsylvania,District 15,-20
+2018,Pennsylvania,District 16,-8
+2018,Pennsylvania,District 17,-3
+2018,Pennsylvania,District 18,13
+2018,Rhode Island,,10
+2018,Rhode Island,District 1,16
+2018,Rhode Island,District 2,6
+2018,South Carolina,District 1,-10
+2018,South Carolina,District 2,-12
+2018,South Carolina,District 3,-19
+2018,South Carolina,District 4,-15
+2018,South Carolina,District 5,-9
+2018,South Carolina,District 6,19
+2018,South Carolina,District 7,-9
+2018,South Dakota,,-14
+2018,Tennessee,,-14
+2018,Tennessee,District 1,-28
+2018,Tennessee,District 2,-20
+2018,Tennessee,District 3,-18
+2018,Tennessee,District 4,-20
+2018,Tennessee,District 5,7
+2018,Tennessee,District 6,-24
+2018,Tennessee,District 7,-20
+2018,Tennessee,District 8,-19
+2018,Tennessee,District 9,28
+2018,Texas,,-8
+2018,Texas,District 1,-25
+2018,Texas,District 2,-11
+2018,Texas,District 3,-13
+2018,Texas,District 4,-28
+2018,Texas,District 5,-16
+2018,Texas,District 6,-9
+2018,Texas,District 7,-7
+2018,Texas,District 8,-28
+2018,Texas,District 9,29
+2018,Texas,District 10,-9
+2018,Texas,District 11,-32
+2018,Texas,District 12,-18
+2018,Texas,District 13,-33
+2018,Texas,District 14,-12
+2018,Texas,District 15,7
+2018,Texas,District 16,17
+2018,Texas,District 17,-12
+2018,Texas,District 18,27
+2018,Texas,District 19,-27
+2018,Texas,District 20,10
+2018,Texas,District 21,-10
+2018,Texas,District 22,-10
+2018,Texas,District 23,-1
+2018,Texas,District 24,-9
+2018,Texas,District 25,-11
+2018,Texas,District 26,-18
+2018,Texas,District 27,-13
+2018,Texas,District 28,9
+2018,Texas,District 29,19
+2018,Texas,District 30,29
+2018,Texas,District 31,-10
+2018,Texas,District 32,-5
+2018,Texas,District 33,23
+2018,Texas,District 34,10
+2018,Texas,District 35,15
+2018,Texas,District 36,-26
+2018,Utah,,-20
+2018,Utah,District 1,-26
+2018,Utah,District 2,-16
+2018,Utah,District 3,-25
+2018,Utah,District 4,-13
+2018,Vermont,,15
+2018,Virginia,,1
+2018,Virginia,District 1,-8
+2018,Virginia,District 2,-3
+2018,Virginia,District 3,16
+2018,Virginia,District 4,10
+2018,Virginia,District 5,-6
+2018,Virginia,District 6,-13
+2018,Virginia,District 7,-6
+2018,Virginia,District 8,21
+2018,Virginia,District 9,-19
+2018,Virginia,District 10,1
+2018,Virginia,District 11,15
+2018,Washington,,7
+2018,Washington,District 1,6
+2018,Washington,District 2,10
+2018,Washington,District 3,-4
+2018,Washington,District 4,-13
+2018,Washington,District 5,-8
+2018,Washington,District 6,6
+2018,Washington,District 7,33
+2018,Washington,District 8,0
+2018,Washington,District 9,21
+2018,Washington,District 10,5
+2018,West Virginia,,-20
+2018,West Virginia,District 1,-19
+2018,West Virginia,District 2,-17
+2018,West Virginia,District 3,-23
+2018,Wisconsin,,0
+2018,Wisconsin,District 1,-5
+2018,Wisconsin,District 2,18
+2018,Wisconsin,District 3,0
+2018,Wisconsin,District 4,25
+2018,Wisconsin,District 5,-13
+2018,Wisconsin,District 6,-8
+2018,Wisconsin,District 7,-8
+2018,Wisconsin,District 8,-7
+2018,Wyoming,,-25
+2020,Alabama,,-14
+2020,Alabama,District 1,-15
+2020,Alabama,District 2,-16
+2020,Alabama,District 3,-16
+2020,Alabama,District 4,-30
+2020,Alabama,District 5,-18
+2020,Alabama,District 6,-26
+2020,Alabama,District 7,20
+2020,Alaska,,-9
+2020,Arizona,,-5
+2020,Arizona,District 1,-2
+2020,Arizona,District 2,-1
+2020,Arizona,District 3,13
+2020,Arizona,District 4,-21
+2020,Arizona,District 5,-15
+2020,Arizona,District 6,-9
+2020,Arizona,District 7,23
+2020,Arizona,District 8,-13
+2020,Arizona,District 9,4
+2020,Arkansas,,-15
+2020,Arkansas,District 1,-17
+2020,Arkansas,District 2,-7
+2020,Arkansas,District 3,-19
+2020,Arkansas,District 4,-17
+2020,California,District 1,-11
+2020,California,District 2,22
+2020,California,District 3,5
+2020,California,District 4,-10
+2020,California,District 5,21
+2020,California,District 6,21
+2020,California,District 7,3
+2020,California,District 8,-9
+2020,California,District 9,8
+2020,California,District 10,0
+2020,California,District 11,21
+2020,California,District 12,37
+2020,California,District 13,40
+2020,California,District 14,27
+2020,California,District 15,20
+2020,California,District 16,9
+2020,California,District 17,25
+2020,California,District 18,23
+2020,California,District 19,24
+2020,California,District 20,23
+2020,California,District 21,5
+2020,California,District 22,-8
+2020,California,District 23,-14
+2020,California,District 24,7
+2020,California,District 25,0
+2020,California,District 26,7
+2020,California,District 27,16
+2020,California,District 28,23
+2020,California,District 29,29
+2020,California,District 30,18
+2020,California,District 31,8
+2020,California,District 32,17
+2020,California,District 33,16
+2020,California,District 34,35
+2020,California,District 35,19
+2020,California,District 36,2
+2020,California,District 37,37
+2020,California,District 38,17
+2020,California,District 39,0
+2020,California,District 40,33
+2020,California,District 41,12
+2020,California,District 42,-9
+2020,California,District 43,29
+2020,California,District 44,35
+2020,California,District 45,-3
+2020,California,District 46,15
+2020,California,District 47,13
+2020,California,District 48,-4
+2020,California,District 49,-1
+2020,California,District 50,-11
+2020,California,District 51,22
+2020,California,District 52,6
+2020,California,District 53,14
+2020,Colorado,,1
+2020,Colorado,District 1,21
+2020,Colorado,District 2,9
+2020,Colorado,District 3,-6
+2020,Colorado,District 4,-13
+2020,Colorado,District 5,-14
+2020,Colorado,District 6,2
+2020,Colorado,District 7,6
+2020,Connecticut,District 1,12
+2020,Connecticut,District 2,3
+2020,Connecticut,District 3,9
+2020,Connecticut,District 4,7
+2020,Connecticut,District 5,2
+2020,Delaware,,6
+2020,Florida,District 1,-22
+2020,Florida,District 2,-18
+2020,Florida,District 3,-9
+2020,Florida,District 4,-17
+2020,Florida,District 5,12
+2020,Florida,District 6,-7
+2020,Florida,District 7,0
+2020,Florida,District 8,-11
+2020,Florida,District 9,5
+2020,Florida,District 10,11
+2020,Florida,District 11,-15
+2020,Florida,District 12,-8
+2020,Florida,District 13,2
+2020,Florida,District 14,7
+2020,Florida,District 15,-6
+2020,Florida,District 16,-7
+2020,Florida,District 17,-13
+2020,Florida,District 18,-5
+2020,Florida,District 19,-13
+2020,Florida,District 20,31
+2020,Florida,District 21,9
+2020,Florida,District 22,6
+2020,Florida,District 23,11
+2020,Florida,District 24,34
+2020,Florida,District 25,-4
+2020,Florida,District 26,6
+2020,Florida,District 27,5
+2020,Georgia,,-5
+2020,Georgia,District 1,-9
+2020,Georgia,District 2,6
+2020,Georgia,District 3,-18
+2020,Georgia,District 4,24
+2020,Georgia,District 5,34
+2020,Georgia,District 6,-8
+2020,Georgia,District 7,-9
+2020,Georgia,District 8,-15
+2020,Georgia,District 9,-31
+2020,Georgia,District 10,-15
+2020,Georgia,District 11,-17
+2020,Georgia,District 12,-9
+2020,Georgia,District 13,20
+2020,Georgia,District 14,-27
+2020,Hawaii,District 1,17
+2020,Hawaii,District 2,19
+2020,Idaho,,-19
+2020,Idaho,District 1,-21
+2020,Idaho,District 2,-17
+2020,Illinois,,7
+2020,Illinois,District 1,27
+2020,Illinois,District 2,29
+2020,Illinois,District 3,6
+2020,Illinois,District 4,33
+2020,Illinois,District 5,20
+2020,Illinois,District 6,-2
+2020,Illinois,District 7,38
+2020,Illinois,District 8,8
+2020,Illinois,District 9,18
+2020,Illinois,District 10,10
+2020,Illinois,District 11,9
+2020,Illinois,District 12,-5
+2020,Illinois,District 13,-3
+2020,Illinois,District 14,-5
+2020,Illinois,District 15,-21
+2020,Illinois,District 16,-8
+2020,Illinois,District 17,3
+2020,Illinois,District 18,-15
+2020,Indiana,District 1,8
+2020,Indiana,District 2,-11
+2020,Indiana,District 3,-18
+2020,Indiana,District 4,-17
+2020,Indiana,District 5,-9
+2020,Indiana,District 6,-18
+2020,Indiana,District 7,11
+2020,Indiana,District 8,-15
+2020,Indiana,District 9,-13
+2020,Iowa,,-3
+2020,Iowa,District 1,1
+2020,Iowa,District 2,1
+2020,Iowa,District 3,-1
+2020,Iowa,District 4,-1
+2020,Kansas,,-13
+2020,Kansas,District 1,-24
+2020,Kansas,District 2,-10
+2020,Kansas,District 3,-4
+2020,Kansas,District 4,-15
+2020,Kentucky,,-15
+2020,Kentucky,District 1,-23
+2020,Kentucky,District 2,-19
+2020,Kentucky,District 3,6
+2020,Kentucky,District 4,-18
+2020,Kentucky,District 5,-31
+2020,Kentucky,District 6,-9
+2020,Louisiana,,-11
+2020,Louisiana,District 1,-24
+2020,Louisiana,District 2,25
+2020,Louisiana,District 3,-20
+2020,Louisiana,District 4,-13
+2020,Louisiana,District 5,-15
+2020,Louisiana,District 6,-19
+2020,Maine,,3
+2020,Maine,District 1,8
+2020,Maine,District 2,-2
+2020,Maryland,District 1,-14
+2020,Maryland,District 2,11
+2020,Maryland,District 3,13
+2020,Maryland,District 4,28
+2020,Maryland,District 5,16
+2020,Maryland,District 6,6
+2020,Maryland,District 7,26
+2020,Maryland,District 8,14
+2020,Massachusetts,,12
+2020,Massachusetts,District 1,12
+2020,Massachusetts,District 2,9
+2020,Massachusetts,District 3,9
+2020,Massachusetts,District 4,9
+2020,Massachusetts,District 5,18
+2020,Massachusetts,District 6,6
+2020,Massachusetts,District 7,34
+2020,Massachusetts,District 8,10
+2020,Massachusetts,District 9,4
+2020,Michigan,,1
+2020,Michigan,District 1,-9
+2020,Michigan,District 2,-9
+2020,Michigan,District 3,-6
+2020,Michigan,District 4,-10
+2020,Michigan,District 5,5
+2020,Michigan,District 6,-4
+2020,Michigan,District 7,-7
+2020,Michigan,District 8,-4
+2020,Michigan,District 9,4
+2020,Michigan,District 10,-13
+2020,Michigan,District 11,-4
+2020,Michigan,District 12,14
+2020,Michigan,District 13,32
+2020,Michigan,District 14,30
+2020,Minnesota,,1
+2020,Minnesota,District 1,-5
+2020,Minnesota,District 2,-2
+2020,Minnesota,District 3,1
+2020,Minnesota,District 4,14
+2020,Minnesota,District 5,26
+2020,Minnesota,District 6,-12
+2020,Minnesota,District 7,-12
+2020,Minnesota,District 8,-4
+2020,Mississippi,,-9
+2020,Mississippi,District 1,-16
+2020,Mississippi,District 2,14
+2020,Mississippi,District 3,-13
+2020,Mississippi,District 4,-21
+2020,Missouri,District 1,29
+2020,Missouri,District 2,-8
+2020,Missouri,District 3,-18
+2020,Missouri,District 4,-17
+2020,Missouri,District 5,7
+2020,Missouri,District 6,-16
+2020,Missouri,District 7,-23
+2020,Missouri,District 8,-24
+2020,Montana,,-11
+2020,Nebraska,,-14
+2020,Nebraska,District 1,-11
+2020,Nebraska,District 2,-4
+2020,Nebraska,District 3,-27
+2020,Nevada,District 1,15
+2020,Nevada,District 2,-7
+2020,Nevada,District 3,-2
+2020,Nevada,District 4,3
+2020,New Hampshire,,1
+2020,New Hampshire,District 1,-2
+2020,New Hampshire,District 2,2
+2020,New Jersey,,7
+2020,New Jersey,District 1,13
+2020,New Jersey,District 2,-1
+2020,New Jersey,District 3,-2
+2020,New Jersey,District 4,-8
+2020,New Jersey,District 5,-3
+2020,New Jersey,District 6,9
+2020,New Jersey,District 7,-3
+2020,New Jersey,District 8,27
+2020,New Jersey,District 9,16
+2020,New Jersey,District 10,36
+2020,New Jersey,District 11,-3
+2020,New Jersey,District 12,16
+2020,New Mexico,,3
+2020,New Mexico,District 1,7
+2020,New Mexico,District 2,-6
+2020,New Mexico,District 3,8
+2020,New York,District 1,-5
+2020,New York,District 2,-3
+2020,New York,District 3,1
+2020,New York,District 4,4
+2020,New York,District 5,37
+2020,New York,District 6,16
+2020,New York,District 7,38
+2020,New York,District 8,36
+2020,New York,District 9,34
+2020,New York,District 10,26
+2020,New York,District 11,-3
+2020,New York,District 12,31
+2020,New York,District 13,43
+2020,New York,District 14,29
+2020,New York,District 15,44
+2020,New York,District 16,24
+2020,New York,District 17,7
+2020,New York,District 18,-1
+2020,New York,District 19,-2
+2020,New York,District 20,7
+2020,New York,District 21,-4
+2020,New York,District 22,-6
+2020,New York,District 23,-6
+2020,New York,District 24,3
+2020,New York,District 25,8
+2020,New York,District 26,11
+2020,New York,District 27,-11
+2020,North Carolina,,-3
+2020,North Carolina,District 1,5
+2020,North Carolina,District 2,9
+2020,North Carolina,District 3,-12
+2020,North Carolina,District 4,14
+2020,North Carolina,District 5,-18
+2020,North Carolina,District 6,9
+2020,North Carolina,District 7,-11
+2020,North Carolina,District 8,-5
+2020,North Carolina,District 9,-7
+2020,North Carolina,District 10,-20
+2020,North Carolina,District 11,-9
+2020,North Carolina,District 12,14
+2020,North Carolina,District 13,-19
+2020,North Dakota,,-16
+2020,Ohio,District 1,-5
+2020,Ohio,District 2,-9
+2020,Ohio,District 3,19
+2020,Ohio,District 4,-14
+2020,Ohio,District 5,-11
+2020,Ohio,District 6,-16
+2020,Ohio,District 7,-12
+2020,Ohio,District 8,-17
+2020,Ohio,District 9,14
+2020,Ohio,District 10,-4
+2020,Ohio,District 11,32
+2020,Ohio,District 12,-7
+2020,Ohio,District 13,7
+2020,Ohio,District 14,-5
+2020,Ohio,District 15,-7
+2020,Ohio,District 16,-8
+2020,Oklahoma,,-20
+2020,Oklahoma,District 1,-17
+2020,Oklahoma,District 2,-24
+2020,Oklahoma,District 3,-27
+2020,Oklahoma,District 4,-20
+2020,Oklahoma,District 5,-10
+2020,Oregon,,5
+2020,Oregon,District 1,9
+2020,Oregon,District 2,-11
+2020,Oregon,District 3,24
+2020,Oregon,District 4,0
+2020,Oregon,District 5,0
+2020,Pennsylvania,District 1,-1
+2020,Pennsylvania,District 2,25
+2020,Pennsylvania,District 3,41
+2020,Pennsylvania,District 4,7
+2020,Pennsylvania,District 5,13
+2020,Pennsylvania,District 6,2
+2020,Pennsylvania,District 7,1
+2020,Pennsylvania,District 8,-1
+2020,Pennsylvania,District 9,-14
+2020,Pennsylvania,District 10,-6
+2020,Pennsylvania,District 11,-14
+2020,Pennsylvania,District 12,-17
+2020,Pennsylvania,District 13,-22
+2020,Pennsylvania,District 14,-14
+2020,Pennsylvania,District 15,-20
+2020,Pennsylvania,District 16,-8
+2020,Pennsylvania,District 17,-3
+2020,Pennsylvania,District 18,13
+2020,Rhode Island,,10
+2020,Rhode Island,District 1,16
+2020,Rhode Island,District 2,6
+2020,South Carolina,,-8
+2020,South Carolina,District 1,-10
+2020,South Carolina,District 2,-12
+2020,South Carolina,District 3,-19
+2020,South Carolina,District 4,-15
+2020,South Carolina,District 5,-9
+2020,South Carolina,District 6,19
+2020,South Carolina,District 7,-9
+2020,South Dakota,,-14
+2020,Tennessee,,-14
+2020,Tennessee,District 1,-28
+2020,Tennessee,District 2,-20
+2020,Tennessee,District 3,-18
+2020,Tennessee,District 4,-20
+2020,Tennessee,District 5,7
+2020,Tennessee,District 6,-24
+2020,Tennessee,District 7,-20
+2020,Tennessee,District 8,-19
+2020,Tennessee,District 9,28
+2020,Texas,,-8
+2020,Texas,District 1,-25
+2020,Texas,District 2,-11
+2020,Texas,District 3,-13
+2020,Texas,District 4,-28
+2020,Texas,District 5,-16
+2020,Texas,District 6,-9
+2020,Texas,District 7,-7
+2020,Texas,District 8,-28
+2020,Texas,District 9,29
+2020,Texas,District 10,-9
+2020,Texas,District 11,-32
+2020,Texas,District 12,-18
+2020,Texas,District 13,-33
+2020,Texas,District 14,-12
+2020,Texas,District 15,7
+2020,Texas,District 16,17
+2020,Texas,District 17,-12
+2020,Texas,District 18,27
+2020,Texas,District 19,-27
+2020,Texas,District 20,10
+2020,Texas,District 21,-10
+2020,Texas,District 22,-10
+2020,Texas,District 23,-1
+2020,Texas,District 24,-9
+2020,Texas,District 25,-11
+2020,Texas,District 26,-18
+2020,Texas,District 27,-13
+2020,Texas,District 28,9
+2020,Texas,District 29,19
+2020,Texas,District 30,18
+2020,Texas,District 31,-10
+2020,Texas,District 32,-5
+2020,Texas,District 33,23
+2020,Texas,District 34,10
+2020,Texas,District 35,15
+2020,Texas,District 36,-26
+2020,Utah,District 1,-26
+2020,Utah,District 2,-16
+2020,Utah,District 3,-25
+2020,Utah,District 4,-13
+2020,Vermont,,15
+2020,Virginia,,1
+2020,Virginia,District 1,-8
+2020,Virginia,District 2,-3
+2020,Virginia,District 3,16
+2020,Virginia,District 4,10
+2020,Virginia,District 5,-6
+2020,Virginia,District 6,-13
+2020,Virginia,District 7,-6
+2020,Virginia,District 8,21
+2020,Virginia,District 9,-19
+2020,Virginia,District 10,1
+2020,Virginia,District 11,15
+2020,Washington,District 1,6
+2020,Washington,District 2,10
+2020,Washington,District 3,-4
+2020,Washington,District 4,-13
+2020,Washington,District 5,-8
+2020,Washington,District 6,6
+2020,Washington,District 7,33
+2020,Washington,District 8,0
+2020,Washington,District 9,21
+2020,Washington,District 10,5
+2020,West Virginia,,-19
+2020,West Virginia,District 1,-19
+2020,West Virginia,District 2,-17
+2020,West Virginia,District 3,-23
+2020,Wisconsin,District 1,-5
+2020,Wisconsin,District 2,18
+2020,Wisconsin,District 3,0
+2020,Wisconsin,District 4,25
+2020,Wisconsin,District 5,-13
+2020,Wisconsin,District 6,-8
+2020,Wisconsin,District 7,-8
+2020,Wisconsin,District 8,-7
+2020,Wyoming,,-25
