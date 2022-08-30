@@ -1,507 +1,507 @@
-cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_incumbent
-2022,House,Alabama,District 1,Remrey,Carl,n,y
-2022,House,Alabama,District 2,Harvey-Hall,Moore,n,y
-2022,House,Alabama,District 3,Veasey,Rogers,n,y
-2022,House,Alabama,District 4,Neighbors,Aderholt,n,y
-2022,House,Alabama,District 5,Warner-Stanton,Strong,n,n
-2022,House,Alabama,District 6,Chieffo,Palmer,n,y
-2022,House,Alabama,District 7,Sewell,Nichols,y,n
-2022,House,Alaska,District 1,Peltola,Begich,n,n
-2022,House,Arizona,District 1,Hodge,Schweikert,n,y
-2022,House,Arizona,District 2,O'Halleran,Crane,y,n
-2022,House,Arizona,District 3,Gallego,Zink,y,n
-2022,House,Arizona,District 4,Stanton,Cooper,y,n
-2022,House,Arizona,District 5,Ramos,Biggs,n,y
-2022,House,Arizona,District 6,Engel,Ciscomani,n,n
-2022,House,Arizona,District 7,Grijalva,Pozzolo,y,n
-2022,House,Arizona,District 8,-,Lesko,n,y
-2022,House,Arizona,District 9,-,Gosar,n,y
-2022,House,Arkansas,District 1,Hodges,Crawford,n,y
-2022,House,Arkansas,District 2,Hathaway,Hill,n,y
-2022,House,Arkansas,District 3,Mallett-Hays,Womack,n,y
-2022,House,Arkansas,District 4,White,Westerman,n,y
-2022,House,California,District 1,Steiner,LaMalfa,n,y
-2022,House,California,District 2,Huffman,Brower,y,n
-2022,House,California,District 3,Jones,Kiley,n,n
-2022,House,California,District 4,Thompson,Brock,y,n
-2022,House,California,District 5,Barkley,McClintock,n,y
-2022,House,California,District 6,Bera,Hamilton,y,n
-2022,House,California,District 7,Matsui,Semenenko,y,n
-2022,House,California,District 8,Garamendi,Recile,y,n
-2022,House,California,District 9,Harder,Patti,y,n
-2022,House,California,District 10,DeSaulnier,Kerr,y,n
-2022,House,California,District 11,Pelosi,Dennis,y,n
-2022,House,California,District 12,Lee,Slauson,y,n
-2022,House,California,District 13,Gray,Duarte,n,n
-2022,House,California,District 14,Swalwell,Hayden,y,n
-2022,House,California,District 15,Mullin,-,n,n
-2022,House,California,District 16,Eshoo,-,y,n
-2022,House,California,District 17,Khanna,Tandon,y,n
-2022,House,California,District 18,Lofgren,Hernandez,y,n
-2022,House,California,District 19,Panetta,Gorman,y,n
-2022,House,California,District 20,Wood,McCarthy,n,y
-2022,House,California,District 21,Costa,Maher,y,n
-2022,House,California,District 22,Salas,Valadao,n,y
-2022,House,California,District 23,Marshall,Obernolte,n,y
-2022,House,California,District 24,Carbajal,Allen,y,n
-2022,House,California,District 25,Ruiz,Hawkins,y,n
-2022,House,California,District 26,Brownley,Jacobs,y,n
-2022,House,California,District 27,Smith,Garcia,n,y
-2022,House,California,District 28,Chu,Hallman,y,n
-2022,House,California,District 29,Cárdenas,-,y,n
-2022,House,California,District 30,Schiff,-,y,n
-2022,House,California,District 31,Napolitano,Martinez,y,n
-2022,House,California,District 32,Sherman,Volotzky,y,n
-2022,House,California,District 33,Aguilar,Porter,y,n
-2022,House,California,District 34,Gomez,-,y,n
-2022,House,California,District 35,Torres,Cargile,y,n
-2022,House,California,District 36,Lieu,Collins,y,n
-2022,House,California,District 37,Kamlager,-,n,n
-2022,House,California,District 38,Sánchez,Ching,y,n
-2022,House,California,District 39,Takano,Smith,y,n
-2022,House,California,District 40,Mahmood,Kim,n,y
-2022,House,California,District 41,Rollins,Calvert,n,y
-2022,House,California,District 42,Garcia,Briscoe,n,n
-2022,House,California,District 43,Waters,Navarro,y,n
-2022,House,California,District 44,Barragán,Jones,y,n
-2022,House,California,District 45,Chen,Steel,n,y
-2022,House,California,District 46,Correa,Gonzales,y,n
-2022,House,California,District 47,Porter,Baugh,y,n
-2022,House,California,District 48,Houlahan,Issa,n,y
-2022,House,California,District 49,Levin,Maryott,y,n
-2022,House,California,District 50,Peters,Gustafson,y,n
-2022,House,California,District 51,Jacobs,Caplan,y,n
-2022,House,California,District 52,Vargas,Geffeney,y,n
-2022,House,Colorado,District 1,DeGette,Qualteri,y,n
-2022,House,Colorado,District 2,Neguse,Dawson,y,n
-2022,House,Colorado,District 3,Frisch,Boebert,n,y
-2022,House,Colorado,District 4,McCorkle,Buck,n,y
-2022,House,Colorado,District 5,Torres,Lamborn,n,y
-2022,House,Colorado,District 6,Crow,Monahan,y,n
-2022,House,Colorado,District 7,Pettersen,Aadland,y,n
-2022,House,Colorado,District 8,Caraveo,Kirkmeyer,n,n
-2022,House,Connecticut,District 1,Larson,Lazor,y,n
-2022,House,Connecticut,District 2,Courtney,France,y,n
-2022,House,Connecticut,District 3,DeLauro,DeNardis,y,n
-2022,House,Connecticut,District 4,Himes,Stevenson,y,n
-2022,House,Connecticut,District 5,Hayes,Logan,y,n
-2022,House,Delaware,District 1,Blunt Rochester,Murphy,y,n
-2022,House,Florida,District 1,Schiller,Gaetz,n,y
-2022,House,Florida,District 2,Lawson,Dunn,y,y
-2022,House,Florida,District 3,Wells,Cammack,n,y
-2022,House,Florida,District 4,Hill,Bean,n,n
-2022,House,Florida,District 5,-,Rutherford,n,y
-2022,House,Florida,District 6,Hannoush,Waltz,n,y
-2022,House,Florida,District 7,Green,Mills,n,n
-2022,House,Florida,District 8,Terry,Posey,n,y
-2022,House,Florida,District 9,Soto,Moore,y,n
-2022,House,Florida,District 10,Frost,Montague,n,n
-2022,House,Florida,District 11,Munns,Webster,n,y
-2022,House,Florida,District 12,Walker,Bilirakis,n,y
-2022,House,Florida,District 13,Lynn,Paulina Luna,n,n
-2022,House,Florida,District 14,Castor,Judge,y,n
-2022,House,Florida,District 15,Cohn,Toledo,n,n
-2022,House,Florida,District 16,Schneider,Buchanan,n,y
-2022,House,Florida,District 17,Kale,Steube,n,y
-2022,House,Florida,District 18,Hayden,Franklin,n,y
-2022,House,Florida,District 19,Banyai,Donalds,n,y
-2022,House,Florida,District 20,Cherfilus-McCormick,Clark,y,n
-2022,House,Florida,District 21,Robinson,Mast,n,y
-2022,House,Florida,District 22,Frankel,Dorilás,y,n
-2022,House,Florida,District 23,Moskowitz,Pruden,n,n
-2022,House,Florida,District 24,Wilson,Spicer,y,n
-2022,House,Florida,District 25,Wasserman Schultz,Spalding,y,n
-2022,House,Florida,District 26,Olivo,Diaz-Balart,n,y
-2022,House,Florida,District 27,Taddeo,Salazar,n,y
-2022,House,Florida,District 28,Paredes,Gimenez,n,y
-2022,House,Georgia,District 1,Herring,Carter,n,y
-2022,House,Georgia,District 2,Bishop,West,y,n
-2022,House,Georgia,District 3,Almonord,Ferguson,n,n
-2022,House,Georgia,District 4,Johnson,Chavez,y,n
-2022,House,Georgia,District 5,Williams,Zimm,y,n
-2022,House,Georgia,District 6,Christian,McCormick,n,n
-2022,House,Georgia,District 7,McBath,Gonsalves,y,n
-2022,House,Georgia,District 8,Butler,Scott,n,y
-2022,House,Georgia,District 9,Ford,Clyde,n,y
-2022,House,Georgia,District 10,Johnson-Green,Collins,n,n
-2022,House,Georgia,District 11,Daza,Loudermilk,n,y
-2022,House,Georgia,District 12,Johnson,Allen,n,y
-2022,House,Georgia,District 13,Scott,Gonzales,y,n
-2022,House,Georgia,District 14,Flowers,Taylor Greene,n,y
-2022,House,Hawaii,District 1,Case,Kress,y,n
-2022,House,Hawaii,District 2,Tokuda,Akana,n,n
-2022,House,Idaho,District 1,Peterson,Fulcher,n,y
-2022,House,Idaho,District 2,Norman,Simpson,n,y
-2022,House,Illinois,District 1,Jackson,Carlson,n,n
-2022,House,Illinois,District 2,Kelly,Lynch,y,n
-2022,House,Illinois,District 3,Ramirez,Burau,n,n
-2022,House,Illinois,District 4,Garcia,Falakos,y,n
-2022,House,Illinois,District 5,Quigley,Hanson,y,n
-2022,House,Illinois,District 6,Casten,Pekau,y,n
-2022,House,Illinois,District 7,Davis,-,y,n
-2022,House,Illinois,District 8,Krishnamoorthi,Dargis,y,n
-2022,House,Illinois,District 9,Schakowsky,Rice,y,n
-2022,House,Illinois,District 10,Schneider,Severino,y,n
-2022,House,Illinois,District 11,Foster,Lauf,y,n
-2022,House,Illinois,District 12,Markel,Bost,n,y
-2022,House,Illinois,District 13,Budzinski,Deering,n,n
-2022,House,Illinois,District 14,Underwood,Gryder,y,n
-2022,House,Illinois,District 15,Lange,Miller,n,y
-2022,House,Illinois,District 16,Haderlein,LaHood,n,y
-2022,House,Illinois,District 17,Sorensen,King,n,n
-2022,House,Indiana,District 1,Mrvan,Green,y,n
-2022,House,Indiana,District 2,Steury,Walorski,n,n
-2022,House,Indiana,District 3,Snyder,Banks,n,y
-2022,House,Indiana,District 4,Day,Baird,n,y
-2022,House,Indiana,District 5,Lee Lake,Spartz,n,y
-2022,House,Indiana,District 6,Wirth,Pence,n,y
-2022,House,Indiana,District 7,Carson,Grabovsky,y,n
-2022,House,Indiana,District 8,McCormick,Bucshon,n,y
-2022,House,Indiana,District 9,Fyfe,Houchin,n,n
-2022,House,Iowa,District 1,Bohannan,Miller-Meeks,n,y
-2022,House,Iowa,District 2,Mathis,Hinson,n,y
-2022,House,Iowa,District 3,Axne,Nunn,y,n
-2022,House,Iowa,District 4,Melton,Feenstra,n,y
-2022,House,Kansas,District 1,Beard,Mann,n,y
-2022,House,Kansas,District 2,Schmidt,LaTurner,n,y
-2022,House,Kansas,District 3,Davids,Adkins,y,n
-2022,House,Kansas,District 4,Hernandez,Estes,n,y
-2022,House,Kentucky,District 1,Ausbrooks,Comer,n,y
-2022,House,Kentucky,District 2,Linderman,Guthrie,n,y
-2022,House,Kentucky,District 3,McGarvey,Ray,n,n
-2022,House,Kentucky,District 4,Lehman,Massie,n,y
-2022,House,Kentucky,District 5,Halbleib,Rogers,n,y
-2022,House,Kentucky,District 6,Young,Barr,n,y
-2022,House,Louisiana,District 1,Darling,Scalise,n,y
-2022,House,Louisiana,District 2,Carter,Lux,y,n
-2022,House,Louisiana,District 3,Lebrun,Higgins,n,y
-2022,House,Louisiana,District 4,-,Johnson,n,y
-2022,House,Louisiana,District 5,Dantzler,Letlow,n,y
-2022,House,Louisiana,District 6,-,Graves,n,y
-2022,House,Maine,District 1,Pingree,Thelander,y,n
-2022,House,Maine,District 2,Golden,Poliquin,y,n
-2022,House,Maryland,District 1,Mizeur,Harris,n,y
-2022,House,Maryland,District 2,Ruppersberger,Ambrose,y,n
-2022,House,Maryland,District 3,Sarbanes,Morgan,y,n
-2022,House,Maryland,District 4,Ivey,Warner,n,n
-2022,House,Maryland,District 5,Hoyer,Palombi,y,n
-2022,House,Maryland,District 6,Trone,Parrott,y,n
-2022,House,Maryland,District 7,Mfume,Collier,y,n
-2022,House,Maryland,District 8,Raskin,Coll,y,n
-2022,House,Massachusetts,District 1,Neal,Martilli,y,n
-2022,House,Massachusetts,District 2,McGovern,Sossa-Paquette,y,n
-2022,House,Massachusetts,District 3,Trahan,Tran,y,n
-2022,House,Massachusetts,District 4,Auchincloss,-,y,n
-2022,House,Massachusetts,District 5,Clark,Colarusso,y,n
-2022,House,Massachusetts,District 6,Moulton,May,y,n
-2022,House,Massachusetts,District 7,Pressley,Palmer,y,n
-2022,House,Massachusetts,District 8,Lynch,Rodrigues,y,n
-2022,House,Massachusetts,District 9,Keating,Brown,y,n
-2022,House,Michigan,District 1,Lorinser,Bergman,n,y
-2022,House,Michigan,District 2,Hilliard,Moolenaar,n,y
-2022,House,Michigan,District 3,Scholten,Gibbs,n,n
-2022,House,Michigan,District 4,Wenke,Huizenga,n,y
-2022,House,Michigan,District 5,Goldberg,Walberg,n,y
-2022,House,Michigan,District 6,Dingell,Williams,y,n
-2022,House,Michigan,District 7,Slotkin,Barrett,y,n
-2022,House,Michigan,District 8,Kildee,Junge,y,n
-2022,House,Michigan,District 9,Jaye,McClain,n,y
-2022,House,Michigan,District 10,Marlinga,James,n,n
-2022,House,Michigan,District 11,Stevens,Ambrose,y,n
-2022,House,Michigan,District 12,Tlaib,Elliott,y,n
-2022,House,Michigan,District 13,Thanedar,Bivings,n,n
-2022,House,Minnesota,District 1,Ettinger,Finstad,n,y
-2022,House,Minnesota,District 2,Craig,Kistner,y,n
-2022,House,Minnesota,District 3,Phillips,Weiler,y,n
-2022,House,Minnesota,District 4,McCollum,Xiong,y,n
-2022,House,Minnesota,District 5,Omar,Davis,y,n
-2022,House,Minnesota,District 6,Hendricks,Emmer,n,y
-2022,House,Minnesota,District 7,Abahsain,Fischbach,n,y
-2022,House,Minnesota,District 8,Schultz,Stauber,n,y
-2022,House,Mississippi,District 1,Black,Kelly,n,y
-2022,House,Mississippi,District 2,Thompson,Flowers,y,n
-2022,House,Mississippi,District 3,Young,Guest,n,y
-2022,House,Mississippi,District 4,DuPree,Ezell,n,n
-2022,House,Missouri,District 1,Bush,Jones,y,n
-2022,House,Missouri,District 2,Gunby,Wagner,n,y
-2022,House,Missouri,District 3,Mann,Luetkemeyer,n,y
-2022,House,Missouri,District 4,Truman,Alford,n,n
-2022,House,Missouri,District 5,Cleaver,Turk,y,n
-2022,House,Missouri,District 6,Martin,Graves,n,y
-2022,House,Missouri,District 7,Radaker-Sheafer,Burlison,n,n
-2022,House,Missouri,District 8,McCallian,Smith,n,y
-2022,House,Montana,District 1,Tranel,Zinke,n,n
-2022,House,Montana,District 2,Ronning,Rosendale,n,y
-2022,House,Nebraska,District 1,Pansing Brooks,Flood,n,y
-2022,House,Nebraska,District 2,Vargas,Bacon,n,y
-2022,House,Nebraska,District 3,Else,Smith,n,y
-2022,House,Nevada,District 1,Titus,Robertson,y,n
-2022,House,Nevada,District 2,Krause,Amodei,n,y
-2022,House,Nevada,District 3,Lee,Becker,y,n
-2022,House,Nevada,District 4,Horsford,Peters,y,n
-2022,House,New Hampshire,District 1,Pappas,Mowers,y,n
-2022,House,New Hampshire,District 2,Kuster,Burns,y,n
-2022,House,New Jersey,District 1,Norcross,Gustafson,y,n
-2022,House,New Jersey,District 2,Alexander,Van Drew,n,y
-2022,House,New Jersey,District 3,Kim,Healey,y,n
-2022,House,New Jersey,District 4,Jenkins,Smith,n,y
-2022,House,New Jersey,District 5,Gottheimer,Pallotta,y,n
-2022,House,New Jersey,District 6,Pallone,Kiley,y,n
-2022,House,New Jersey,District 7,Malinowski,Kean,y,n
-2022,House,New Jersey,District 8,Menendez,Arroyo,n,n
-2022,House,New Jersey,District 9,Pascrell,Prempeh,y,n
-2022,House,New Jersey,District 10,Payne,Pinckney,y,n
-2022,House,New Jersey,District 11,Sherrill,DeGroot,y,n
-2022,House,New Jersey,District 12,Watson Coleman,Mayfield,y,n
-2022,House,New Mexico,District 1,Stansbury,Garcia Holmes,y,n
-2022,House,New Mexico,District 2,Vasquez,Herrell,n,y
-2022,House,New Mexico,District 3,Fernandez,Johnson,y,n
-2022,House,New York,District 1,Fleming,LaLota,n,n
-2022,House,New York,District 2,Gordon,Garbarino,n,y
-2022,House,New York,District 3,Lafazan,Devolder-Santos,n,n
-2022,House,New York,District 4,Grillen,D'Esposito,n,n
-2022,House,New York,District 5,Meeks,Akhlaghy,y,n
-2022,House,New York,District 6,Meng,Zmich,y,n
-2022,House,New York,District 7,Velázquez,Pagan,y,n
-2022,House,New York,District 8,Jeffries,Dashevsky,y,n
-2022,House,New York,District 9,Clarke,Raitport,y,n
-2022,House,New York,District 10,Goldman,Hamdan,n,n
-2022,House,New York,District 11,Rose,Malliotakis,n,y
-2022,House,New York,District 12,Maloney,Zumbluskas,y,n
-2022,House,New York,District 13,Espaillat,Richards,y,n
-2022,House,New York,District 14,Ocasio-Cortez,Forte,y,n
-2022,House,New York,District 15,Torres,Sapaskis,y,n
-2022,House,New York,District 16,Bowman,Ciampoli,y,n
-2022,House,New York,District 17,Maloney,Lawler,y,n
-2022,House,New York,District 18,Ryan,Schmitt,n,n
-2022,House,New York,District 19,Riley,Molinaro,n,n
-2022,House,New York,District 20,Tonko,Joy,y,n
-2022,House,New York,District 21,Castelli,Stefanik,n,y
-2022,House,New York,District 22,Conole,Wells,n,n
-2022,House,New York,District 23,Della Pia,Paladino,n,n
-2022,House,New York,District 24,Holden,Tenney,n,y
-2022,House,New York,District 25,Morelle,Singletary,y,n
-2022,House,New York,District 26,Higgins,Sams,y,n
-2022,House,North Carolina,District 1,Davis,Smith,n,n
-2022,House,North Carolina,District 2,Ross,Villaverde,y,n
-2022,House,North Carolina,District 3,Gaskins,Murphy,n,y
-2022,House,North Carolina,District 4,Foushee,Geels,n,n
-2022,House,North Carolina,District 5,Parrish,Foxx,n,y
-2022,House,North Carolina,District 6,Manning,Castelli,y,n
-2022,House,North Carolina,District 7,Graham,Rouzer,n,y
-2022,House,North Carolina,District 8,Huffman,Bishop,n,y
-2022,House,North Carolina,District 9,Clark,Hudson,n,y
-2022,House,North Carolina,District 10,Genant,McHenry,n,y
-2022,House,North Carolina,District 11,Beach-Ferrara,Edwards,n,y
-2022,House,North Carolina,District 12,Adams,Lee,y,n
-2022,House,North Carolina,District 13,Nickel,Hines,n,n
-2022,House,North Carolina,District 14,Jackson,Harrigan,n,n
-2022,House,North Dakota,District 1,Haugen,Armstrong,n,y
-2022,House,Ohio,District 1,Landsman,Chabot,n,y
-2022,House,Ohio,District 2,Meadows,Wenstrup,n,y
-2022,House,Ohio,District 3,Beatty,Stahley,y,n
-2022,House,Ohio,District 4,Wilson,Jordan,n,y
-2022,House,Ohio,District 5,Swartz,Latta,n,y
-2022,House,Ohio,District 6,Lyras,Johnson,n,y
-2022,House,Ohio,District 7,Diemer,Miller,n,n
-2022,House,Ohio,District 8,Enoch,Davidson,n,y
-2022,House,Ohio,District 9,Kaptur,Majewski,y,n
-2022,House,Ohio,District 10,Esrati,Turner,n,y
-2022,House,Ohio,District 11,Brown,Brewer,y,n
-2022,House,Ohio,District 12,Rippel-Elton,Balderson,n,y
-2022,House,Ohio,District 13,Sykes,Gilbert,n,n
-2022,House,Ohio,District 14,Kilboy,Joyce,n,y
-2022,House,Ohio,District 15,Josephson,Carey,n,y
-2022,House,Oklahoma,District 1,Martin,Hern,n,y
-2022,House,Oklahoma,District 2,Andrews,Frix,n,n
-2022,House,Oklahoma,District 3,Ross,Lucas,n,y
-2022,House,Oklahoma,District 4,Brannon,Cole,n,y
-2022,House,Oklahoma,District 5,Harris-Till,Bice,n,y
-2022,House,Oregon,District 1,Bonamici,Mann,y,n
-2022,House,Oregon,District 2,Yetter III,Bentz,n,y
-2022,House,Oregon,District 3,Blumenauer,Harbour,y,n
-2022,House,Oregon,District 4,Hoyle,Skarlatos,n,n
-2022,House,Oregon,District 5,McLeod-Skinner,Chavez-DeRemer,n,n
-2022,House,Oregon,District 6,Salinas,Erickson,n,n
-2022,House,Pennsylvania,District 1,Ehasz,Fitzpatrick,n,y
-2022,House,Pennsylvania,District 2,Boyle,Bashir,y,n
-2022,House,Pennsylvania,District 3,Evans,Hoeppner,y,n
-2022,House,Pennsylvania,District 4,Cunnane,Nascimento,n,n
-2022,House,Pennsylvania,District 5,Scanlon,Galluch,y,n
-2022,House,Pennsylvania,District 6,Houlahan,Ciarrocchi,y,n
-2022,House,Pennsylvania,District 7,Wild,Scheller,y,n
-2022,House,Pennsylvania,District 8,Cartwright,Bognet,y,n
-2022,House,Pennsylvania,District 9,Waldman,Meuser,n,y
-2022,House,Pennsylvania,District 10,Daniels,Perry,n,y
-2022,House,Pennsylvania,District 11,Hollister,Smucker,n,y
-2022,House,Pennsylvania,District 12,Lee,Doyle,n,n
-2022,House,Pennsylvania,District 13,-,Joyce,n,y
-2022,House,Pennsylvania,District 14,-,Reschenthaler,n,y
-2022,House,Pennsylvania,District 15,-,Thompson,n,y
-2022,House,Pennsylvania,District 16,Pastore,Kelly,n,y
-2022,House,Pennsylvania,District 17,Deluzio,Shaffer,n,n
-2022,House,Rhode Island,District 1,Cicilline,Waters,y,n
-2022,House,Rhode Island,District 2,Magaziner,Fung,n,n
-2022,House,South Carolina,District 1,Andrews,Mace,n,y
-2022,House,South Carolina,District 2,Larkins,Wilson,n,y
-2022,House,South Carolina,District 3,-,Duncan,n,y
-2022,House,South Carolina,District 4,Chandler,Timmons,n,y
-2022,House,South Carolina,District 5,Hundley,Norman,n,y
-2022,House,South Carolina,District 6,Clyburn,Buckner,y,n
-2022,House,South Carolina,District 7,Scott,Fry,n,n
-2022,House,South Dakota,District 1,Duprel,Johnson,n,y
-2022,House,Tennessee,District 1,Parsons,Harshbarger,n,y
-2022,House,Tennessee,District 2,Harmon,Burchett,n,y
-2022,House,Tennessee,District 3,Gorman,Fleischmann,n,y
-2022,House,Tennessee,District 4,Steele,DesJarlais,n,y
-2022,House,Tennessee,District 5,Campbell,Ogles,n,n
-2022,House,Tennessee,District 6,Cooper,Rose,n,y
-2022,House,Tennessee,District 7,Kelly,Green,n,y
-2022,House,Tennessee,District 8,Williams,Kustoff,n,y
-2022,House,Tennessee,District 9,Cohen,Bergmann,y,n
-2022,House,Texas,District 1,Jefferson,Moran,n,n
-2022,House,Texas,District 2,Fulford,Crenshaw,n,y
-2022,House,Texas,District 3,Srivastava,Self,n,n
-2022,House,Texas,District 4,Omere,Fallon,n,y
-2022,House,Texas,District 5,Hilliard,Gooden,n,y
-2022,House,Texas,District 6,Scauflaire,Ellzey,n,y
-2022,House,Texas,District 7,Fletcher,Teague,y,n
-2022,House,Texas,District 8,Jones,Luttrell,n,n
-2022,House,Texas,District 9,Green,Leon,y,n
-2022,House,Texas,District 10,Nuno,McCaul,n,y
-2022,House,Texas,District 11,-,Pfluger,n,y
-2022,House,Texas,District 12,Hunt,Granger,n,y
-2022,House,Texas,District 13,Brown,Jackson,n,y
-2022,House,Texas,District 14,Williams,Weber,n,y
-2022,House,Texas,District 15,Vallejo,De La Cruz-Hernandez,n,n
-2022,House,Texas,District 16,Escobar,Armendariz-Jackson,y,n
-2022,House,Texas,District 17,Woods,Sessions,n,y
-2022,House,Texas,District 18,Jackson Lee,Montiel,y,n
-2022,House,Texas,District 19,-,Arrington,n,y
-2022,House,Texas,District 20,Castro,Sinclair,y,n
-2022,House,Texas,District 21,Zapata,Roy,n,y
-2022,House,Texas,District 22,Jordan,Nehls,n,y
-2022,House,Texas,District 23,Lira,Gonzales,n,y
-2022,House,Texas,District 24,McDowell,Van Duyne,n,y
-2022,House,Texas,District 25,Collier,Williams,n,y
-2022,House,Texas,District 26,-,Burgess,n,y
-2022,House,Texas,District 27,Perez,Cloud,n,y
-2022,House,Texas,District 28,Cuellar,Garcia,y,n
-2022,House,Texas,District 29,Garcia,Schafranek,y,n
-2022,House,Texas,District 30,Crockett,Rodgers,n,n
-2022,House,Texas,District 31,-,Carter,n,y
-2022,House,Texas,District 32,Allred,Swad,y,n
-2022,House,Texas,District 33,Veasey,Gillespie,y,n
-2022,House,Texas,District 34,Gonzalez,Flores,n,y
-2022,House,Texas,District 35,Casar,McQueen,n,n
-2022,House,Texas,District 36,Haire,Babin,n,y
-2022,House,Texas,District 37,Doggett,Garcia Sharon,y,n
-2022,House,Texas,District 38,Klussmann,Hunt,n,n
-2022,House,Utah,District 1,Jones,Moore,n,y
-2022,House,Utah,District 2,Mitchell,Stewart,n,y
-2022,House,Utah,District 3,Wright,Curtis,n,y
-2022,House,Utah,District 4,McDonald,Owens,n,y
-2022,House,Vermont,District 1,Balint,Madden,n,n
-2022,House,Virginia,District 1,Jones,Wittman,n,y
-2022,House,Virginia,District 2,Luria,Kiggans,y,n
-2022,House,Virginia,District 3,Scott,Namkung,y,n
-2022,House,Virginia,District 4,McEachin,Benjamin,y,n
-2022,House,Virginia,District 5,Throneburg,Good,n,y
-2022,House,Virginia,District 6,Lewis,Cline,n,y
-2022,House,Virginia,District 7,Spanberger,Vega,y,n
-2022,House,Virginia,District 8,Beyer,Lipsman,y,n
-2022,House,Virginia,District 9,DeVaughan,Griffith,n,y
-2022,House,Virginia,District 10,Wexton,Cao,y,n
-2022,House,Virginia,District 11,Connolly,Myles,y,n
-2022,House,Washington,District 1,DelBene,Cavaleri,y,n
-2022,House,Washington,District 2,Larsen,Matthews,y,n
-2022,House,Washington,District 3,Perez,Kent,n,n
-2022,House,Washington,District 4,White,Newhouse,n,y
-2022,House,Washington,District 5,Hill,McMorris Rodgers,n,y
-2022,House,Washington,District 6,Kilmer,Kreiselmaier,y,n
-2022,House,Washington,District 7,Jayapal,Moon,y,n
-2022,House,Washington,District 8,Schrier,Larkin,y,n
-2022,House,Washington,District 9,Smith,Basler,y,n
-2022,House,Washington,District 10,Strickland,Swank,y,n
-2022,House,West Virginia,District 1,Watson,Miller,n,y
-2022,House,West Virginia,District 2,Wendell,Mooney,n,y
-2022,House,Wisconsin,District 1,Roe,Steil,n,y
-2022,House,Wisconsin,District 2,Pocan,Olsen,y,n
-2022,House,Wisconsin,District 3,Pfaff,Van Orden,n,n
-2022,House,Wisconsin,District 4,Moore,Rogers,y,n
-2022,House,Wisconsin,District 5,Van Someren,Fitzgerald,n,y
-2022,House,Wisconsin,District 6,-,Grothman,n,y
-2022,House,Wisconsin,District 7,Ausman,Tiffany,n,y
-2022,House,Wisconsin,District 8,-,Gallagher,n,y
-2022,House,Wyoming,District 1,Grey Bull,Hageman,n,n
-2022,Senate,Alaska,Class III,Chesbro,Murkowski,n,y
-2022,Senate,Alabama,Class III,Boyd,Britt,n,n
-2022,Senate,Arkansas,Class III,James,Boozman,n,y
-2022,Senate,Arizona,Class III,Kelly,Masters,y,n
-2022,Senate,California,Class III,Padilla,Meuser,y,n
-2022,Senate,Colorado,Class III,Bennet,O'Dea,y,n
-2022,Senate,Connecticut,Class III,Blumenthal,Levy,y,n
-2022,Senate,Florida,Class III,Demings,Rubio,n,y
-2022,Senate,Georgia,Class III,Warnock,Walker,y,n
-2022,Senate,Hawaii,Class III,Schatz,McDermott,y,n
-2022,Senate,Iowa,Class III,Franken,Grassley,n,y
-2022,Senate,Idaho,Class III,Roth,Crapo,n,y
-2022,Senate,Illinois,Class III,Duckworth,Salvi,y,n
-2022,Senate,Indiana,Class III,McDermott,Young,n,y
-2022,Senate,Kansas,Class III,Holland,Moran,n,y
-2022,Senate,Kentucky,Class III,Booker,Paul,n,y
-2022,Senate,Louisiana,Class III,Gary Chambers,Kennedy,n,y
-2022,Senate,Maryland,Class III,Van Hollen,Chaffee,y,n
-2022,Senate,Missouri,Class III,Busch Valentine,Schmitt,n,n
-2022,Senate,North Carolina,Class III,Beasley,Budd,n,n
-2022,Senate,North Dakota,Class III,Christiansen,Hoeven,n,y
-2022,Senate,New Hampshire,Class III,Hassan,Bolduc,y,n
-2022,Senate,Nevada,Class III,Cortez Masto,Laxalt,y,n
-2022,Senate,New York,Class III,Schumer,Pinion,y,n
-2022,Senate,Ohio,Class III,Ryan,Vance,n,n
-2022,Senate,Oklahoma,Class II,K. Horn,Mullin,n,n
-2022,Senate,Oklahoma,Class III,M. Horn,Lankford,n,y
-2022,Senate,Oregon,Class III,Wyden,Perkins,y,n
-2022,Senate,Pennsylvania,Class III,Fetterman,Oz,n,n
-2022,Senate,South Carolina,Class III,Matthews,Scott,n,y
-2022,Senate,South Dakota,Class III,Bengs,Thune,n,y
-2022,Senate,Utah,Class III,McMullin,Lee,n,y
-2022,Senate,Vermont,Class III,Welch,Malloy,n,n
-2022,Senate,Washington,Class III,Murray,Smiley,y,n
-2022,Senate,Wisconsin,Class III,Barnes,Johnson,n,y
-2022,Governor,Kansas,Governor,Kelly,Schmidt,y,n
-2022,Governor,Arizona,Governor,Hobbs,Lake,n,n
-2022,Governor,Nevada,Governor,Sisolak,Lombardo,y,n
-2022,Governor,Wisconsin,Governor,Evers,Michels,y,n
-2022,Governor,Oregon,Governor,Kotek,Drazan,n,n
-2022,Governor,New Mexico,Governor,Lujan Grisham,Ronchetti,y,n
-2022,Governor,Georgia,Governor,Abrams,Kemp,n,y
-2022,Governor,Maine,Governor,Mills,LePage,y,n
-2022,Governor,Pennsylvania,Governor,Shapiro,Mastriano,n,n
-2022,Governor,Minnesota,Governor,Walz,Jensen,y,n
-2022,Governor,Florida,Governor,Crist,DeSantis,n,y
-2022,Governor,Connecticut,Governor,Lamont,Stefanowski,y,n
-2022,Governor,Michigan,Governor,Whitmer,Dixon,y,n
-2022,Governor,Texas,Governor,O'Rourke,Abbott,n,y
-2022,Governor,Colorado,Governor,Polis,Ganahl,y,n
-2022,Governor,Illinois,Governor,Pritzker,Bailey,y,n
-2022,Governor,Maryland,Governor,Moore,Cox,n,n
-2022,Governor,Rhode Island,Governor,McKee,Kalus,y,n
-2022,Governor,Ohio,Governor,Whaley,DeWine,n,y
-2022,Governor,Alaska,Governor,Walker,Dunleavy,n,y
-2022,Governor,New York,Governor,Hochul,Zeldin,y,n
-2022,Governor,South Carolina,Governor,Cunningham,McMaster,n,y
-2022,Governor,Iowa,Governor,DeJear,Reynolds,n,y
-2022,Governor,Oklahoma,Governor,Hofmeister,Stitt,n,y
-2022,Governor,New Hampshire,Governor,Sherman,Sununu,n,y
-2022,Governor,Massachusetts,Governor,Healey,Diehl,n,n
-2022,Governor,Nebraska,Governor,Blood,Pillen,n,n
-2022,Governor,Vermont,Governor,Siegel,Scott,n,y
-2022,Governor,Hawaii,Governor,Green,Aiona,n,n
-2022,Governor,California,Governor,Newsom,Dahle,y,n
-2022,Governor,Arkansas,Governor,Jones,Sanders,n,n
-2022,Governor,Tennessee,Governor,Martin,Lee,n,y
-2022,Governor,Alabama,Governor,Flowers,Ivey,n,y
-2022,Governor,South Dakota,Governor,Smith,Noem,n,y
-2022,Governor,Idaho,Governor,Heidt,Little,n,y
-2022,Governor,Wyoming,Governor,Livingston,Gordon,n,y
+cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_incumbent,pending
+2022,House,Alabama,District 1,Remrey,Carl,n,y,
+2022,House,Alabama,District 2,Harvey-Hall,Moore,n,y,
+2022,House,Alabama,District 3,Veasey,Rogers,n,y,
+2022,House,Alabama,District 4,Neighbors,Aderholt,n,y,
+2022,House,Alabama,District 5,Warner-Stanton,Strong,n,n,
+2022,House,Alabama,District 6,Chieffo,Palmer,n,y,
+2022,House,Alabama,District 7,Sewell,Nichols,y,n,
+2022,House,Alaska,District 1,Peltola,Begich,n,n,x
+2022,House,Arizona,District 1,Hodge,Schweikert,n,y,
+2022,House,Arizona,District 2,O'Halleran,Crane,y,n,
+2022,House,Arizona,District 3,Gallego,Zink,y,n,
+2022,House,Arizona,District 4,Stanton,Cooper,y,n,
+2022,House,Arizona,District 5,Ramos,Biggs,n,y,
+2022,House,Arizona,District 6,Engel,Ciscomani,n,n,
+2022,House,Arizona,District 7,Grijalva,Pozzolo,y,n,
+2022,House,Arizona,District 8,-,Lesko,n,y,
+2022,House,Arizona,District 9,-,Gosar,n,y,
+2022,House,Arkansas,District 1,Hodges,Crawford,n,y,
+2022,House,Arkansas,District 2,Hathaway,Hill,n,y,
+2022,House,Arkansas,District 3,Mallett-Hays,Womack,n,y,
+2022,House,Arkansas,District 4,White,Westerman,n,y,
+2022,House,California,District 1,Steiner,LaMalfa,n,y,
+2022,House,California,District 2,Huffman,Brower,y,n,
+2022,House,California,District 3,Jones,Kiley,n,n,
+2022,House,California,District 4,Thompson,Brock,y,n,
+2022,House,California,District 5,Barkley,McClintock,n,y,
+2022,House,California,District 6,Bera,Hamilton,y,n,
+2022,House,California,District 7,Matsui,Semenenko,y,n,
+2022,House,California,District 8,Garamendi,Recile,y,n,
+2022,House,California,District 9,Harder,Patti,y,n,
+2022,House,California,District 10,DeSaulnier,Kerr,y,n,
+2022,House,California,District 11,Pelosi,Dennis,y,n,
+2022,House,California,District 12,Lee,Slauson,y,n,
+2022,House,California,District 13,Gray,Duarte,n,n,
+2022,House,California,District 14,Swalwell,Hayden,y,n,
+2022,House,California,District 15,Mullin,-,n,n,
+2022,House,California,District 16,Eshoo,-,y,n,
+2022,House,California,District 17,Khanna,Tandon,y,n,
+2022,House,California,District 18,Lofgren,Hernandez,y,n,
+2022,House,California,District 19,Panetta,Gorman,y,n,
+2022,House,California,District 20,Wood,McCarthy,n,y,
+2022,House,California,District 21,Costa,Maher,y,n,
+2022,House,California,District 22,Salas,Valadao,n,y,
+2022,House,California,District 23,Marshall,Obernolte,n,y,
+2022,House,California,District 24,Carbajal,Allen,y,n,
+2022,House,California,District 25,Ruiz,Hawkins,y,n,
+2022,House,California,District 26,Brownley,Jacobs,y,n,
+2022,House,California,District 27,Smith,Garcia,n,y,
+2022,House,California,District 28,Chu,Hallman,y,n,
+2022,House,California,District 29,Cárdenas,-,y,n,
+2022,House,California,District 30,Schiff,-,y,n,
+2022,House,California,District 31,Napolitano,Martinez,y,n,
+2022,House,California,District 32,Sherman,Volotzky,y,n,
+2022,House,California,District 33,Aguilar,Porter,y,n,
+2022,House,California,District 34,Gomez,-,y,n,
+2022,House,California,District 35,Torres,Cargile,y,n,
+2022,House,California,District 36,Lieu,Collins,y,n,
+2022,House,California,District 37,Kamlager,-,n,n,
+2022,House,California,District 38,Sánchez,Ching,y,n,
+2022,House,California,District 39,Takano,Smith,y,n,
+2022,House,California,District 40,Mahmood,Kim,n,y,
+2022,House,California,District 41,Rollins,Calvert,n,y,
+2022,House,California,District 42,Garcia,Briscoe,n,n,
+2022,House,California,District 43,Waters,Navarro,y,n,
+2022,House,California,District 44,Barragán,Jones,y,n,
+2022,House,California,District 45,Chen,Steel,n,y,
+2022,House,California,District 46,Correa,Gonzales,y,n,
+2022,House,California,District 47,Porter,Baugh,y,n,
+2022,House,California,District 48,Houlahan,Issa,n,y,
+2022,House,California,District 49,Levin,Maryott,y,n,
+2022,House,California,District 50,Peters,Gustafson,y,n,
+2022,House,California,District 51,Jacobs,Caplan,y,n,
+2022,House,California,District 52,Vargas,Geffeney,y,n,
+2022,House,Colorado,District 1,DeGette,Qualteri,y,n,
+2022,House,Colorado,District 2,Neguse,Dawson,y,n,
+2022,House,Colorado,District 3,Frisch,Boebert,n,y,
+2022,House,Colorado,District 4,McCorkle,Buck,n,y,
+2022,House,Colorado,District 5,Torres,Lamborn,n,y,
+2022,House,Colorado,District 6,Crow,Monahan,y,n,
+2022,House,Colorado,District 7,Pettersen,Aadland,y,n,
+2022,House,Colorado,District 8,Caraveo,Kirkmeyer,n,n,
+2022,House,Connecticut,District 1,Larson,Lazor,y,n,
+2022,House,Connecticut,District 2,Courtney,France,y,n,
+2022,House,Connecticut,District 3,DeLauro,DeNardis,y,n,
+2022,House,Connecticut,District 4,Himes,Stevenson,y,n,
+2022,House,Connecticut,District 5,Hayes,Logan,y,n,
+2022,House,Delaware,District 1,Blunt Rochester,Murphy,y,n,
+2022,House,Florida,District 1,Jones,Gaetz,n,y,
+2022,House,Florida,District 2,Lawson,Dunn,y,y,
+2022,House,Florida,District 3,Hawk,Cammack,n,y,
+2022,House,Florida,District 4,Holloway,Bean,n,n,x
+2022,House,Florida,District 5,-,Rutherford,n,y,
+2022,House,Florida,District 6,Hannoush,Waltz,n,y,
+2022,House,Florida,District 7,Green,Mills,n,n,
+2022,House,Florida,District 8,Terry,Posey,n,y,
+2022,House,Florida,District 9,Soto,Moore,y,n,
+2022,House,Florida,District 10,Frost,Wimbish,n,n,
+2022,House,Florida,District 11,Munns,Webster,n,y,
+2022,House,Florida,District 12,Walker,Bilirakis,n,y,
+2022,House,Florida,District 13,Lynn,Paulina Luna,n,n,
+2022,House,Florida,District 14,Castor,Judge,y,n,
+2022,House,Florida,District 15,Cohn,Lee,n,n,
+2022,House,Florida,District 16,Schneider,Buchanan,n,y,
+2022,House,Florida,District 17,Kale,Steube,n,y,
+2022,House,Florida,District 18,Hayden,Franklin,n,y,
+2022,House,Florida,District 19,Banyai,Donalds,n,y,
+2022,House,Florida,District 20,Cherfilus-McCormick,Clark,y,n,
+2022,House,Florida,District 21,Balderramos Robinson,Mast,n,y,
+2022,House,Florida,District 22,Frankel,Franzese,y,n,x
+2022,House,Florida,District 23,Moskowitz,Budd,n,n,
+2022,House,Florida,District 24,Wilson,Navarro,y,n,
+2022,House,Florida,District 25,Wasserman Schultz,Spalding,y,n,
+2022,House,Florida,District 26,Olivo,Diaz-Balart,n,y,
+2022,House,Florida,District 27,Taddeo,Salazar,n,y,
+2022,House,Florida,District 28,Asencio,Gimenez,n,y,
+2022,House,Georgia,District 1,Herring,Carter,n,y,
+2022,House,Georgia,District 2,Bishop,West,y,n,
+2022,House,Georgia,District 3,Almonord,Ferguson,n,n,
+2022,House,Georgia,District 4,Johnson,Chavez,y,n,
+2022,House,Georgia,District 5,Williams,Zimm,y,n,
+2022,House,Georgia,District 6,Christian,McCormick,n,n,
+2022,House,Georgia,District 7,McBath,Gonsalves,y,n,
+2022,House,Georgia,District 8,Butler,Scott,n,y,
+2022,House,Georgia,District 9,Ford,Clyde,n,y,
+2022,House,Georgia,District 10,Johnson-Green,Collins,n,n,
+2022,House,Georgia,District 11,Daza,Loudermilk,n,y,
+2022,House,Georgia,District 12,Johnson,Allen,n,y,
+2022,House,Georgia,District 13,Scott,Gonzales,y,n,
+2022,House,Georgia,District 14,Flowers,Taylor Greene,n,y,
+2022,House,Hawaii,District 1,Case,Kress,y,n,
+2022,House,Hawaii,District 2,Tokuda,Akana,n,n,
+2022,House,Idaho,District 1,Peterson,Fulcher,n,y,
+2022,House,Idaho,District 2,Norman,Simpson,n,y,
+2022,House,Illinois,District 1,Jackson,Carlson,n,n,
+2022,House,Illinois,District 2,Kelly,Lynch,y,n,
+2022,House,Illinois,District 3,Ramirez,Burau,n,n,
+2022,House,Illinois,District 4,Garcia,Falakos,y,n,
+2022,House,Illinois,District 5,Quigley,Hanson,y,n,
+2022,House,Illinois,District 6,Casten,Pekau,y,n,
+2022,House,Illinois,District 7,Davis,-,y,n,
+2022,House,Illinois,District 8,Krishnamoorthi,Dargis,y,n,
+2022,House,Illinois,District 9,Schakowsky,Rice,y,n,
+2022,House,Illinois,District 10,Schneider,Severino,y,n,
+2022,House,Illinois,District 11,Foster,Lauf,y,n,
+2022,House,Illinois,District 12,Markel,Bost,n,y,
+2022,House,Illinois,District 13,Budzinski,Deering,n,n,
+2022,House,Illinois,District 14,Underwood,Gryder,y,n,
+2022,House,Illinois,District 15,Lange,Miller,n,y,
+2022,House,Illinois,District 16,Haderlein,LaHood,n,y,
+2022,House,Illinois,District 17,Sorensen,King,n,n,
+2022,House,Indiana,District 1,Mrvan,Green,y,n,
+2022,House,Indiana,District 2,Steury,Walorski,n,n,
+2022,House,Indiana,District 3,Snyder,Banks,n,y,
+2022,House,Indiana,District 4,Day,Baird,n,y,
+2022,House,Indiana,District 5,Lee Lake,Spartz,n,y,
+2022,House,Indiana,District 6,Wirth,Pence,n,y,
+2022,House,Indiana,District 7,Carson,Grabovsky,y,n,
+2022,House,Indiana,District 8,McCormick,Bucshon,n,y,
+2022,House,Indiana,District 9,Fyfe,Houchin,n,n,
+2022,House,Iowa,District 1,Bohannan,Miller-Meeks,n,y,
+2022,House,Iowa,District 2,Mathis,Hinson,n,y,
+2022,House,Iowa,District 3,Axne,Nunn,y,n,
+2022,House,Iowa,District 4,Melton,Feenstra,n,y,
+2022,House,Kansas,District 1,Beard,Mann,n,y,
+2022,House,Kansas,District 2,Schmidt,LaTurner,n,y,
+2022,House,Kansas,District 3,Davids,Adkins,y,n,
+2022,House,Kansas,District 4,Hernandez,Estes,n,y,
+2022,House,Kentucky,District 1,Ausbrooks,Comer,n,y,
+2022,House,Kentucky,District 2,Linderman,Guthrie,n,y,
+2022,House,Kentucky,District 3,McGarvey,Ray,n,n,
+2022,House,Kentucky,District 4,Lehman,Massie,n,y,
+2022,House,Kentucky,District 5,Halbleib,Rogers,n,y,
+2022,House,Kentucky,District 6,Young,Barr,n,y,
+2022,House,Louisiana,District 1,Darling,Scalise,n,y,
+2022,House,Louisiana,District 2,Carter,Lux,y,n,
+2022,House,Louisiana,District 3,Lebrun,Higgins,n,y,
+2022,House,Louisiana,District 4,-,Johnson,n,y,
+2022,House,Louisiana,District 5,Dantzler,Letlow,n,y,
+2022,House,Louisiana,District 6,-,Graves,n,y,
+2022,House,Maine,District 1,Pingree,Thelander,y,n,
+2022,House,Maine,District 2,Golden,Poliquin,y,n,
+2022,House,Maryland,District 1,Mizeur,Harris,n,y,
+2022,House,Maryland,District 2,Ruppersberger,Ambrose,y,n,
+2022,House,Maryland,District 3,Sarbanes,Morgan,y,n,
+2022,House,Maryland,District 4,Ivey,Warner,n,n,
+2022,House,Maryland,District 5,Hoyer,Palombi,y,n,
+2022,House,Maryland,District 6,Trone,Parrott,y,n,
+2022,House,Maryland,District 7,Mfume,Collier,y,n,
+2022,House,Maryland,District 8,Raskin,Coll,y,n,
+2022,House,Massachusetts,District 1,Neal,Martilli,y,n,
+2022,House,Massachusetts,District 2,McGovern,Sossa-Paquette,y,n,
+2022,House,Massachusetts,District 3,Trahan,Tran,y,n,
+2022,House,Massachusetts,District 4,Auchincloss,-,y,n,
+2022,House,Massachusetts,District 5,Clark,Colarusso,y,n,
+2022,House,Massachusetts,District 6,Moulton,May,y,n,
+2022,House,Massachusetts,District 7,Pressley,Palmer,y,n,
+2022,House,Massachusetts,District 8,Lynch,Rodrigues,y,n,x
+2022,House,Massachusetts,District 9,Keating,Brown,y,n,x
+2022,House,Michigan,District 1,Lorinser,Bergman,n,y,
+2022,House,Michigan,District 2,Hilliard,Moolenaar,n,y,
+2022,House,Michigan,District 3,Scholten,Gibbs,n,n,
+2022,House,Michigan,District 4,Wenke,Huizenga,n,y,
+2022,House,Michigan,District 5,Goldberg,Walberg,n,y,
+2022,House,Michigan,District 6,Dingell,Williams,y,n,
+2022,House,Michigan,District 7,Slotkin,Barrett,y,n,
+2022,House,Michigan,District 8,Kildee,Junge,y,n,
+2022,House,Michigan,District 9,Jaye,McClain,n,y,
+2022,House,Michigan,District 10,Marlinga,James,n,n,
+2022,House,Michigan,District 11,Stevens,Ambrose,y,n,
+2022,House,Michigan,District 12,Tlaib,Elliott,y,n,
+2022,House,Michigan,District 13,Thanedar,Bivings,n,n,
+2022,House,Minnesota,District 1,Ettinger,Finstad,n,y,
+2022,House,Minnesota,District 2,Craig,Kistner,y,n,
+2022,House,Minnesota,District 3,Phillips,Weiler,y,n,
+2022,House,Minnesota,District 4,McCollum,Xiong,y,n,
+2022,House,Minnesota,District 5,Omar,Davis,y,n,
+2022,House,Minnesota,District 6,Hendricks,Emmer,n,y,
+2022,House,Minnesota,District 7,Abahsain,Fischbach,n,y,
+2022,House,Minnesota,District 8,Schultz,Stauber,n,y,
+2022,House,Mississippi,District 1,Black,Kelly,n,y,
+2022,House,Mississippi,District 2,Thompson,Flowers,y,n,
+2022,House,Mississippi,District 3,Young,Guest,n,y,
+2022,House,Mississippi,District 4,DuPree,Ezell,n,n,
+2022,House,Missouri,District 1,Bush,Jones,y,n,
+2022,House,Missouri,District 2,Gunby,Wagner,n,y,
+2022,House,Missouri,District 3,Mann,Luetkemeyer,n,y,
+2022,House,Missouri,District 4,Truman,Alford,n,n,
+2022,House,Missouri,District 5,Cleaver,Turk,y,n,
+2022,House,Missouri,District 6,Martin,Graves,n,y,
+2022,House,Missouri,District 7,Radaker-Sheafer,Burlison,n,n,
+2022,House,Missouri,District 8,McCallian,Smith,n,y,
+2022,House,Montana,District 1,Tranel,Zinke,n,n,
+2022,House,Montana,District 2,Ronning,Rosendale,n,y,
+2022,House,Nebraska,District 1,Pansing Brooks,Flood,n,y,
+2022,House,Nebraska,District 2,Vargas,Bacon,n,y,
+2022,House,Nebraska,District 3,Else,Smith,n,y,
+2022,House,Nevada,District 1,Titus,Robertson,y,n,
+2022,House,Nevada,District 2,Krause,Amodei,n,y,
+2022,House,Nevada,District 3,Lee,Becker,y,n,
+2022,House,Nevada,District 4,Horsford,Peters,y,n,
+2022,House,New Hampshire,District 1,Pappas,Mowers,y,n,x
+2022,House,New Hampshire,District 2,Kuster,Burns,y,n,x
+2022,House,New Jersey,District 1,Norcross,Gustafson,y,n,
+2022,House,New Jersey,District 2,Alexander,Van Drew,n,y,
+2022,House,New Jersey,District 3,Kim,Healey,y,n,
+2022,House,New Jersey,District 4,Jenkins,Smith,n,y,
+2022,House,New Jersey,District 5,Gottheimer,Pallotta,y,n,
+2022,House,New Jersey,District 6,Pallone,Kiley,y,n,
+2022,House,New Jersey,District 7,Malinowski,Kean,y,n,
+2022,House,New Jersey,District 8,Menendez,Arroyo,n,n,
+2022,House,New Jersey,District 9,Pascrell,Prempeh,y,n,
+2022,House,New Jersey,District 10,Payne,Pinckney,y,n,
+2022,House,New Jersey,District 11,Sherrill,DeGroot,y,n,
+2022,House,New Jersey,District 12,Watson Coleman,Mayfield,y,n,
+2022,House,New Mexico,District 1,Stansbury,Garcia Holmes,y,n,
+2022,House,New Mexico,District 2,Vasquez,Herrell,n,y,
+2022,House,New Mexico,District 3,Fernandez,Johnson,y,n,
+2022,House,New York,District 1,Fleming,LaLota,n,n,
+2022,House,New York,District 2,Gordon,Garbarino,n,y,
+2022,House,New York,District 3,Lafazan,Devolder-Santos,n,n,
+2022,House,New York,District 4,Grillen,D'Esposito,n,n,
+2022,House,New York,District 5,Meeks,King,y,n,
+2022,House,New York,District 6,Meng,Zmich,y,n,
+2022,House,New York,District 7,Velázquez,Pagan,y,n,
+2022,House,New York,District 8,Jeffries,Dashevsky,y,n,
+2022,House,New York,District 9,Clarke,Raitport,y,n,
+2022,House,New York,District 10,Goldman,Hamdan,n,n,
+2022,House,New York,District 11,Rose,Malliotakis,n,y,
+2022,House,New York,District 12,Nadler,Zumbluskas,y,n,
+2022,House,New York,District 13,Espaillat,Richards,y,n,
+2022,House,New York,District 14,Ocasio-Cortez,Forte,y,n,
+2022,House,New York,District 15,Torres,Sapaskis,y,n,
+2022,House,New York,District 16,Bowman,Ciampoli,y,n,
+2022,House,New York,District 17,Maloney,Lawler,y,n,
+2022,House,New York,District 18,Ryan,Schmitt,n,n,
+2022,House,New York,District 19,Riley,Molinaro,n,n,
+2022,House,New York,District 20,Tonko,Joy,y,n,
+2022,House,New York,District 21,Castelli,Stefanik,n,y,
+2022,House,New York,District 22,Conole,Williams,n,n,
+2022,House,New York,District 23,Della Pia,Paladino,n,n,
+2022,House,New York,District 24,Holden,Tenney,n,y,
+2022,House,New York,District 25,Morelle,Singletary,y,n,
+2022,House,New York,District 26,Higgins,Sams,y,n,
+2022,House,North Carolina,District 1,Davis,Smith,n,n,
+2022,House,North Carolina,District 2,Ross,Villaverde,y,n,
+2022,House,North Carolina,District 3,Gaskins,Murphy,n,y,
+2022,House,North Carolina,District 4,Foushee,Geels,n,n,
+2022,House,North Carolina,District 5,Parrish,Foxx,n,y,
+2022,House,North Carolina,District 6,Manning,Castelli,y,n,
+2022,House,North Carolina,District 7,Graham,Rouzer,n,y,
+2022,House,North Carolina,District 8,Huffman,Bishop,n,y,
+2022,House,North Carolina,District 9,Clark,Hudson,n,y,
+2022,House,North Carolina,District 10,Genant,McHenry,n,y,
+2022,House,North Carolina,District 11,Beach-Ferrara,Edwards,n,y,
+2022,House,North Carolina,District 12,Adams,Lee,y,n,
+2022,House,North Carolina,District 13,Nickel,Hines,n,n,
+2022,House,North Carolina,District 14,Jackson,Harrigan,n,n,
+2022,House,North Dakota,District 1,Haugen,Armstrong,n,y,
+2022,House,Ohio,District 1,Landsman,Chabot,n,y,
+2022,House,Ohio,District 2,Meadows,Wenstrup,n,y,
+2022,House,Ohio,District 3,Beatty,Stahley,y,n,
+2022,House,Ohio,District 4,Wilson,Jordan,n,y,
+2022,House,Ohio,District 5,Swartz,Latta,n,y,
+2022,House,Ohio,District 6,Lyras,Johnson,n,y,
+2022,House,Ohio,District 7,Diemer,Miller,n,n,
+2022,House,Ohio,District 8,Enoch,Davidson,n,y,
+2022,House,Ohio,District 9,Kaptur,Majewski,y,n,
+2022,House,Ohio,District 10,Esrati,Turner,n,y,
+2022,House,Ohio,District 11,Brown,Brewer,y,n,
+2022,House,Ohio,District 12,Rippel-Elton,Balderson,n,y,
+2022,House,Ohio,District 13,Sykes,Gilbert,n,n,
+2022,House,Ohio,District 14,Kilboy,Joyce,n,y,
+2022,House,Ohio,District 15,Josephson,Carey,n,y,
+2022,House,Oklahoma,District 1,Martin,Hern,n,y,
+2022,House,Oklahoma,District 2,Andrews,Brecheen,n,n,
+2022,House,Oklahoma,District 3,Ross,Lucas,n,y,
+2022,House,Oklahoma,District 4,Brannon,Cole,n,y,
+2022,House,Oklahoma,District 5,Harris-Till,Bice,n,y,
+2022,House,Oregon,District 1,Bonamici,Mann,y,n,
+2022,House,Oregon,District 2,Yetter III,Bentz,n,y,
+2022,House,Oregon,District 3,Blumenauer,Harbour,y,n,
+2022,House,Oregon,District 4,Hoyle,Skarlatos,n,n,
+2022,House,Oregon,District 5,McLeod-Skinner,Chavez-DeRemer,n,n,
+2022,House,Oregon,District 6,Salinas,Erickson,n,n,
+2022,House,Pennsylvania,District 1,Ehasz,Fitzpatrick,n,y,
+2022,House,Pennsylvania,District 2,Boyle,Bashir,y,n,
+2022,House,Pennsylvania,District 3,Evans,Hoeppner,y,n,
+2022,House,Pennsylvania,District 4,Cunnane,Nascimento,n,n,
+2022,House,Pennsylvania,District 5,Scanlon,Galluch,y,n,
+2022,House,Pennsylvania,District 6,Houlahan,Ciarrocchi,y,n,
+2022,House,Pennsylvania,District 7,Wild,Scheller,y,n,
+2022,House,Pennsylvania,District 8,Cartwright,Bognet,y,n,
+2022,House,Pennsylvania,District 9,Waldman,Meuser,n,y,
+2022,House,Pennsylvania,District 10,Daniels,Perry,n,y,
+2022,House,Pennsylvania,District 11,Hollister,Smucker,n,y,
+2022,House,Pennsylvania,District 12,Lee,Doyle,n,n,
+2022,House,Pennsylvania,District 13,-,Joyce,n,y,
+2022,House,Pennsylvania,District 14,-,Reschenthaler,n,y,
+2022,House,Pennsylvania,District 15,Molesevich,Thompson,n,y,
+2022,House,Pennsylvania,District 16,Pastore,Kelly,n,y,
+2022,House,Pennsylvania,District 17,Deluzio,Shaffer,n,n,
+2022,House,Rhode Island,District 1,Cicilline,Waters,y,n,
+2022,House,Rhode Island,District 2,Magaziner,Fung,n,n,x
+2022,House,South Carolina,District 1,Andrews,Mace,n,y,
+2022,House,South Carolina,District 2,Larkins,Wilson,n,y,
+2022,House,South Carolina,District 3,-,Duncan,n,y,
+2022,House,South Carolina,District 4,-,Timmons,n,y,
+2022,House,South Carolina,District 5,Hundley,Norman,n,y,
+2022,House,South Carolina,District 6,Clyburn,Buckner,y,n,
+2022,House,South Carolina,District 7,Scott,Fry,n,n,
+2022,House,South Dakota,District 1,Duprel,Johnson,n,y,
+2022,House,Tennessee,District 1,Parsons,Harshbarger,n,y,
+2022,House,Tennessee,District 2,Harmon,Burchett,n,y,
+2022,House,Tennessee,District 3,Gorman,Fleischmann,n,y,
+2022,House,Tennessee,District 4,Steele,DesJarlais,n,y,
+2022,House,Tennessee,District 5,Campbell,Ogles,n,n,
+2022,House,Tennessee,District 6,Cooper,Rose,n,y,
+2022,House,Tennessee,District 7,Kelly,Green,n,y,
+2022,House,Tennessee,District 8,Williams,Kustoff,n,y,
+2022,House,Tennessee,District 9,Cohen,Bergmann,y,n,
+2022,House,Texas,District 1,Jefferson,Moran,n,n,
+2022,House,Texas,District 2,Fulford,Crenshaw,n,y,
+2022,House,Texas,District 3,Srivastava,Self,n,n,
+2022,House,Texas,District 4,Omere,Fallon,n,y,
+2022,House,Texas,District 5,Hill,Gooden,n,y,
+2022,House,Texas,District 6,-,Ellzey,n,y,
+2022,House,Texas,District 7,Fletcher,Teague,y,n,
+2022,House,Texas,District 8,Jones,Luttrell,n,n,
+2022,House,Texas,District 9,Green,Leon,y,n,
+2022,House,Texas,District 10,Nuno,McCaul,n,y,
+2022,House,Texas,District 11,-,Pfluger,n,y,
+2022,House,Texas,District 12,Hunt,Granger,n,y,
+2022,House,Texas,District 13,Brown,Jackson,n,y,
+2022,House,Texas,District 14,Williams,Weber,n,y,
+2022,House,Texas,District 15,Vallejo,De La Cruz-Hernandez,n,n,
+2022,House,Texas,District 16,Escobar,Armendariz-Jackson,y,n,
+2022,House,Texas,District 17,Woods,Sessions,n,y,
+2022,House,Texas,District 18,Jackson Lee,Montiel,y,n,
+2022,House,Texas,District 19,Lewis,Arrington,n,y,
+2022,House,Texas,District 20,Castro,Sinclair,y,n,
+2022,House,Texas,District 21,Zapata,Roy,n,y,
+2022,House,Texas,District 22,Jordan,Nehls,n,y,
+2022,House,Texas,District 23,Lira,Gonzales,n,y,
+2022,House,Texas,District 24,McDowell,Van Duyne,n,y,
+2022,House,Texas,District 25,Collier,Williams,n,y,
+2022,House,Texas,District 26,Kolls,Burgess,n,y,
+2022,House,Texas,District 27,Perez,Cloud,n,y,
+2022,House,Texas,District 28,Cuellar,Garcia,y,n,
+2022,House,Texas,District 29,Garcia,Schafranek,y,n,
+2022,House,Texas,District 30,Crockett,Rodgers,n,n,
+2022,House,Texas,District 31,-,Carter,n,y,
+2022,House,Texas,District 32,Allred,Swad,y,n,
+2022,House,Texas,District 33,Veasey,Gillespie,y,n,
+2022,House,Texas,District 34,Gonzalez,Flores,n,y,
+2022,House,Texas,District 35,Casar,McQueen,n,n,
+2022,House,Texas,District 36,Haire,Babin,n,y,
+2022,House,Texas,District 37,Doggett,Garcia Sharon,y,n,
+2022,House,Texas,District 38,Klussmann,Hunt,n,n,
+2022,House,Utah,District 1,Jones,Moore,n,y,
+2022,House,Utah,District 2,Mitchell,Stewart,n,y,
+2022,House,Utah,District 3,Wright,Curtis,n,y,
+2022,House,Utah,District 4,McDonald,Owens,n,y,
+2022,House,Vermont,District 1,Balint,Madden,n,n,
+2022,House,Virginia,District 1,Jones,Wittman,n,y,
+2022,House,Virginia,District 2,Luria,Kiggans,y,n,
+2022,House,Virginia,District 3,Scott,Namkung,y,n,
+2022,House,Virginia,District 4,McEachin,Benjamin,y,n,
+2022,House,Virginia,District 5,Throneburg,Good,n,y,
+2022,House,Virginia,District 6,Lewis,Cline,n,y,
+2022,House,Virginia,District 7,Spanberger,Vega,y,n,
+2022,House,Virginia,District 8,Beyer,Lipsman,y,n,
+2022,House,Virginia,District 9,DeVaughan,Griffith,n,y,
+2022,House,Virginia,District 10,Wexton,Cao,y,n,
+2022,House,Virginia,District 11,Connolly,Myles,y,n,
+2022,House,Washington,District 1,DelBene,Cavaleri,y,n,
+2022,House,Washington,District 2,Larsen,Matthews,y,n,
+2022,House,Washington,District 3,Perez,Kent,n,n,
+2022,House,Washington,District 4,White,Newhouse,n,y,
+2022,House,Washington,District 5,Hill,McMorris Rodgers,n,y,
+2022,House,Washington,District 6,Kilmer,Kreiselmaier,y,n,
+2022,House,Washington,District 7,Jayapal,Moon,y,n,
+2022,House,Washington,District 8,Schrier,Larkin,y,n,
+2022,House,Washington,District 9,Smith,Basler,y,n,
+2022,House,Washington,District 10,Strickland,Swank,y,n,
+2022,House,West Virginia,District 1,Watson,Miller,n,y,
+2022,House,West Virginia,District 2,Wendell,Mooney,n,y,
+2022,House,Wisconsin,District 1,Roe,Steil,n,y,
+2022,House,Wisconsin,District 2,Pocan,Olsen,y,n,
+2022,House,Wisconsin,District 3,Pfaff,Van Orden,n,n,
+2022,House,Wisconsin,District 4,Moore,Rogers,y,n,
+2022,House,Wisconsin,District 5,Van Someren,Fitzgerald,n,y,
+2022,House,Wisconsin,District 6,-,Grothman,n,y,
+2022,House,Wisconsin,District 7,Ausman,Tiffany,n,y,
+2022,House,Wisconsin,District 8,-,Gallagher,n,y,
+2022,House,Wyoming,District 1,Grey Bull,Hageman,n,n,
+2022,Senate,Alaska,Class III,Chesbro,Tshibaka,n,y,x
+2022,Senate,Alabama,Class III,Boyd,Britt,n,n,
+2022,Senate,Arkansas,Class III,James,Boozman,n,y,
+2022,Senate,Arizona,Class III,Kelly,Masters,y,n,
+2022,Senate,California,Class III,Padilla,Meuser,y,n,
+2022,Senate,Colorado,Class III,Bennet,O'Dea,y,n,
+2022,Senate,Connecticut,Class III,Blumenthal,Levy,y,n,
+2022,Senate,Florida,Class III,Demings,Rubio,n,y,
+2022,Senate,Georgia,Class III,Warnock,Walker,y,n,
+2022,Senate,Hawaii,Class III,Schatz,McDermott,y,n,
+2022,Senate,Iowa,Class III,Franken,Grassley,n,y,
+2022,Senate,Idaho,Class III,Roth,Crapo,n,y,
+2022,Senate,Illinois,Class III,Duckworth,Salvi,y,n,
+2022,Senate,Indiana,Class III,McDermott,Young,n,y,
+2022,Senate,Kansas,Class III,Holland,Moran,n,y,
+2022,Senate,Kentucky,Class III,Booker,Paul,n,y,
+2022,Senate,Louisiana,Class III,Chambers,Kennedy,n,y,
+2022,Senate,Maryland,Class III,Van Hollen,Chaffee,y,n,
+2022,Senate,Missouri,Class III,Busch Valentine,Schmitt,n,n,
+2022,Senate,North Carolina,Class III,Beasley,Budd,n,n,
+2022,Senate,North Dakota,Class III,Christiansen,Hoeven,n,y,
+2022,Senate,New Hampshire,Class III,Hassan,Bolduc,y,n,x
+2022,Senate,Nevada,Class III,Cortez Masto,Laxalt,y,n,
+2022,Senate,New York,Class III,Schumer,Pinion,y,n,
+2022,Senate,Ohio,Class III,Ryan,Vance,n,n,
+2022,Senate,Oklahoma,Class II,K. Horn,Mullin,n,n,
+2022,Senate,Oklahoma,Class III,M. Horn,Lankford,n,y,
+2022,Senate,Oregon,Class III,Wyden,Perkins,y,n,
+2022,Senate,Pennsylvania,Class III,Fetterman,Oz,n,n,
+2022,Senate,South Carolina,Class III,Matthews,Scott,n,y,
+2022,Senate,South Dakota,Class III,Bengs,Thune,n,y,
+2022,Senate,Utah,Class III,McMullin,Lee,n,y,
+2022,Senate,Vermont,Class III,Welch,Malloy,n,n,
+2022,Senate,Washington,Class III,Murray,Smiley,y,n,
+2022,Senate,Wisconsin,Class III,Barnes,Johnson,n,y,
+2022,Governor,Kansas,Governor,Kelly,Schmidt,y,n,
+2022,Governor,Arizona,Governor,Hobbs,Lake,n,n,
+2022,Governor,Nevada,Governor,Sisolak,Lombardo,y,n,
+2022,Governor,Wisconsin,Governor,Evers,Michels,y,n,
+2022,Governor,Oregon,Governor,Kotek,Drazan,n,n,
+2022,Governor,New Mexico,Governor,Lujan Grisham,Ronchetti,y,n,
+2022,Governor,Georgia,Governor,Abrams,Kemp,n,y,
+2022,Governor,Maine,Governor,Mills,LePage,y,n,
+2022,Governor,Pennsylvania,Governor,Shapiro,Mastriano,n,n,
+2022,Governor,Minnesota,Governor,Walz,Jensen,y,n,
+2022,Governor,Florida,Governor,Crist,DeSantis,n,y,
+2022,Governor,Connecticut,Governor,Lamont,Stefanowski,y,n,
+2022,Governor,Michigan,Governor,Whitmer,Dixon,y,n,
+2022,Governor,Texas,Governor,O'Rourke,Abbott,n,y,
+2022,Governor,Colorado,Governor,Polis,Ganahl,y,n,
+2022,Governor,Illinois,Governor,Pritzker,Bailey,y,n,
+2022,Governor,Maryland,Governor,Moore,Cox,n,n,
+2022,Governor,Rhode Island,Governor,McKee,Kalus,y,n,x
+2022,Governor,Ohio,Governor,Whaley,DeWine,n,y,
+2022,Governor,Alaska,Governor,Walker,Dunleavy,n,y,
+2022,Governor,New York,Governor,Hochul,Zeldin,y,n,
+2022,Governor,South Carolina,Governor,Cunningham,McMaster,n,y,
+2022,Governor,Iowa,Governor,DeJear,Reynolds,n,y,
+2022,Governor,Oklahoma,Governor,Hofmeister,Stitt,n,y,
+2022,Governor,New Hampshire,Governor,Sherman,Sununu,n,y,x
+2022,Governor,Massachusetts,Governor,Healey,Diehl,n,n,x
+2022,Governor,Nebraska,Governor,Blood,Pillen,n,n,
+2022,Governor,Vermont,Governor,Siegel,Scott,n,y,
+2022,Governor,Hawaii,Governor,Green,Aiona,n,n,
+2022,Governor,California,Governor,Newsom,Dahle,y,n,
+2022,Governor,Arkansas,Governor,Jones,Sanders,n,n,
+2022,Governor,Tennessee,Governor,Martin,Lee,n,y,
+2022,Governor,Alabama,Governor,Flowers,Ivey,n,y,
+2022,Governor,South Dakota,Governor,Smith,Noem,n,y,
+2022,Governor,Idaho,Governor,Heidt,Little,n,y,
+2022,Governor,Wyoming,Governor,Livingston,Gordon,n,y,
