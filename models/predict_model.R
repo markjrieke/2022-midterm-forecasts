@@ -9,6 +9,12 @@ library(workboots)
 # ~ the model ~
 elections_model <-      read_rds("models/midterm_model.rds")
 
+# residual models
+residual_trn <-     read_rds("models/residual_trn.rds")
+residual_oob <-     read_rds("models/residual_oob.rds")
+mod_analysis <-     read_csv("models/data/mod_analysis.csv")
+mod_assessment <-   read_csv("models/data/mod_assessment.csv")
+
 # data (training)
 variable_weights <-     read_csv("data/models/midterm_model/variable_weights.csv")
 methods <-              read_rds("data/models/midterm_model/methods.rds")
@@ -309,27 +315,59 @@ training <-
   training %>%
   mutate(result = logit(result))
 
-new_preds <-
-  elections_daily_average %>%
-  filter(date == ymd("2022-07-01"))
-
 # predict
 set.seed(2022)
 elections_preds <- 
   elections_model %>%
   predict_boots(
-    n = 2000,
+    n = 100,
     training_data = training,
     new_data = elections_daily_average,
     verbose = TRUE
   )
 
-tmp <-
-  elections_preds %>%
-  summarise_predictions(interval_width = 0.8) %>%
-  select(-.preds)
+# -----------------------------testing-grounds----------------------------------
 
-lookup <- "Nevada Class III"
+tmp <- 
+  elections_preds %>%
+  summarise_predictions() %>%
+  select(.pred) %>%
+  bind_cols(elections_daily_average)
+
+
+tmp_n <- 
+  tmp %>%
+  select(n)
+
+conf <- 0.95
+lookup <- "Georgia Governor"
+
+bind_cols(mu_trn = predict(residual_trn, newdata = tmp_n, what = "mu", type = "response"),
+          sd_trn = predict(residual_trn, newdata = tmp_n, what = "sigma", type = "response"),
+          mu_oob = predict(residual_oob, newdata = tmp_n, what = "mu", type = "response"),
+          sd_oob = predict(residual_oob, newdata = tmp_n, what = "sigma", type = "response")) %>%
+  mutate(resid_mu = 0.638 * mu_oob + (1-0.638) * mu_trn,
+         resid_sd = 0.638 * sd_oob + (1-0.638) * sd_trn) %>%
+  select(starts_with("resid")) %>%
+  riekelib::normal_interval(resid_mu, resid_sd, conf = conf) %>%
+  select(starts_with("ci")) %>%
+  rename_with(~str_replace(.x, "ci", "resid")) %>%
+  bind_cols(tmp) %>%
+  mutate(.pred_lower = .pred + resid_lower,
+         .pred_upper = .pred + resid_upper,
+         across(starts_with(".pred"), riekelib::expit)) %>%
+  filter(region == lookup) %>%
+  ggplot(aes(x = date,
+             y = .pred,
+             ymin = .pred_lower,
+             ymax = .pred_upper)) +
+  geom_line(size = 1) +
+  geom_ribbon(alpha = 0.15) +
+  geom_point(data = polls %>% filter(seat == lookup, end_date > ymd("2022-07-01")),
+             mapping = aes(x = end_date, y = dem2pv, ymin = NULL, ymax = NULL)) +
+  expand_limits(y = c(0, 1))
+
+
 
 tmp %>% 
   bind_cols(elections_daily_average) %>% 
@@ -342,7 +380,106 @@ tmp %>%
   geom_ribbon(aes(x = date,
                   ymin = .pred_lower,
                   ymax = .pred_upper),
-              alpha = 0.25) +
-  geom_point(data = polls %>% filter(seat == lookup, end_date > ymd("2022-07-01")),
-             mapping = aes(x = end_date, y = dem2pv))
+              alpha = 0.25) 
 
+training_beta <- training %>% mutate(result = expit(result))
+beta_weights <- training$n + 2
+
+training_beta <- 
+  training_beta %>%
+  mutate(incumbent = case_when(dem_incumbent == "y" & rep_incumbent == "n" ~ "dem",
+                               dem_incumbent == "n" & rep_incumbent == "y" ~ "rep",
+                               dem_incumbent == "y" & rep_incumbent == "y" ~ "both",
+                               dem_incumbent == "n" & rep_incumbent == "n" ~ "none"))
+
+training_rec <- 
+  recipe(result ~ ., data = training) %>% 
+  step_mutate(across(c(white:other), logit),
+              incumbent = case_when(dem_incumbent == "y" & rep_incumbent == "n" ~ "dem",
+                                    dem_incumbent == "n" & rep_incumbent == "y" ~ "rep",
+                                    dem_incumbent == "y" & rep_incumbent == "y" ~ "both",
+                                    dem_incumbent == "n" & rep_incumbent == "n" ~ "none"),
+              poll_bucket = case_when(n < 1 ~ "none",
+                                      n < 10 ~ "some",
+                                      TRUE ~ "many")) 
+
+prepper <- function(.data) {
+  
+  .data %>%
+    mutate(across(c(white:other), logit),
+           incumbent = case_when(dem_incumbent == "y" & rep_incumbent == "n" ~ "dem",
+                                 dem_incumbent == "n" & rep_incumbent == "y" ~ "rep",
+                                 TRUE ~ "mix or neither"),
+           poll_bucket = case_when(n < 1 ~ "none",
+                                   n < 10 ~ "some",
+                                   TRUE ~ "many"))
+  
+}
+  
+training_beta <-
+  training %>%
+  prepper() %>%
+  mutate(result = expit(result)) %>%
+  select(result, estimate, white, black, aapi, hispanic, poll_bucket, incumbent, n)
+
+new_dawg <-
+  elections_daily_average %>%
+  prepper() %>%
+  select(estimate, white, black, aapi, hispanic, poll_bucket, incumbent, n)
+
+beta_model <- 
+  gamlss::gamlss(result ~ estimate + white + black + aapi + hispanic + poll_bucket:incumbent,
+                 sigma.formula = ~ log10(n + 2),
+                 family = gamlss.dist::BE(),
+                 weights = log10(beta_weights),
+                 data = training_beta) 
+
+summary(beta_model)
+
+conf <- 0.95
+
+lookup = "Ohio Governor"
+
+tibble(.pred = beta_model %>% predict(newdata = as.data.frame(new_dawg), what = "mu", type = "response"),
+       sigma = beta_model %>% predict(newdata = new_dawg, what = "sigma", type = "response")) %>%
+  mutate(.pred_lower = gamlss.dist::qBE((1-conf)/2, .pred, sigma),
+         .pred_upper = gamlss.dist::qBE((1-conf)/2 + conf, .pred, sigma)) %>%
+  bind_cols(elections_daily_average) %>%
+  filter(region == lookup) %>%
+  ggplot(aes(x = date, 
+             y = .pred,
+             ymin = .pred_lower, 
+             ymax = .pred_upper)) +
+  geom_line(size = 1) +
+  geom_ribbon(alpha = 0.25) +
+  expand_limits(y = c(0, 1)) +
+  geom_point(data = polls %>% filter(seat == lookup, end_date > ymd("2022-07-01")),
+             mapping = aes(x = end_date, y = dem2pv, ymin = NULL, ymax = NULL),
+             size = 3.5,
+             alpha = 0.25) +
+  expand_limits(y = c(0, 1))
+  
+  
+  ggplot(aes(x = result,
+             y = .pred,
+             ymin = .pred_lower,
+             ymax = .pred_upper)) +
+  geom_point(aes(size = n),
+             alpha = 0.25) +
+  geom_errorbar(alpha = 0.15) +
+  geom_abline() +
+  scale_size_continuous(range = c(1, 10)) 
+
+training_beta %>%
+  pivot_longer(c(white:other),
+               names_to = "race_group",
+               values_to = "race_pct") %>%
+  ggplot(aes(x = race_pct,
+             y = result,
+             color = race_group,
+             size = n)) +
+  geom_point(alpha = 0.25) +
+  facet_wrap(~race_group, scales = "free_x") +
+  geom_smooth(method = "gam",
+              formula = y ~ ns(x, df = 0))
+  
