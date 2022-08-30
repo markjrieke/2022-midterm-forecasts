@@ -6,6 +6,7 @@ cycle,state,seat,pvi
 2018,Alabama,District 5,-18
 2018,Alabama,District 6,-26
 2018,Alabama,District 7,20
+2018,Alabama,,-14
 2018,Alaska,,-9
 2018,Arizona,,-5
 2018,Arizona,District 1,-2
@@ -21,6 +22,7 @@ cycle,state,seat,pvi
 2018,Arkansas,District 2,-7
 2018,Arkansas,District 3,-19
 2018,Arkansas,District 4,-17
+2018,Arkansas,,-15
 2018,California,,12
 2018,California,District 1,-11
 2018,California,District 2,22
@@ -88,6 +90,7 @@ cycle,state,seat,pvi
 2018,Connecticut,District 3,9
 2018,Connecticut,District 4,7
 2018,Connecticut,District 5,2
+2018,Connecticut,,1
 2018,Delaware,,6
 2018,Florida,,-2
 2018,Florida,District 1,-22
@@ -117,6 +120,7 @@ cycle,state,seat,pvi
 2018,Florida,District 25,-4
 2018,Florida,District 26,6
 2018,Florida,District 27,5
+2018,Georgia,,-5
 2018,Georgia,District 1,-9
 2018,Georgia,District 2,6
 2018,Georgia,District 3,-18
@@ -134,8 +138,10 @@ cycle,state,seat,pvi
 2018,Hawaii,,18
 2018,Hawaii,District 1,17
 2018,Hawaii,District 2,19
+2018,Idaho,,-19
 2018,Idaho,District 1,-21
 2018,Idaho,District 2,-17
+2018,Illinois,,7
 2018,Illinois,District 1,27
 2018,Illinois,District 2,29
 2018,Illinois,District 3,6
@@ -164,10 +170,12 @@ cycle,state,seat,pvi
 2018,Indiana,District 7,11
 2018,Indiana,District 8,-15
 2018,Indiana,District 9,-13
+2018,Iowa,,-3
 2018,Iowa,District 1,1
 2018,Iowa,District 2,1
 2018,Iowa,District 3,-1
 2018,Iowa,District 4,-11
+2018,Kansas,,-13
 2018,Kansas,District 1,-24
 2018,Kansas,District 2,-10
 2018,Kansas,District 3,-4
@@ -254,6 +262,7 @@ cycle,state,seat,pvi
 2018,Nevada,District 2,-7
 2018,Nevada,District 3,-2
 2018,Nevada,District 4,3
+2018,New Hampshire,,0
 2018,New Hampshire,District 1,-2
 2018,New Hampshire,District 2,2
 2018,New Jersey,,7
@@ -332,11 +341,13 @@ cycle,state,seat,pvi
 2018,Ohio,District 14,-5
 2018,Ohio,District 15,-7
 2018,Ohio,District 16,-8
+2018,Oklahoma,,-20
 2018,Oklahoma,District 1,-17
 2018,Oklahoma,District 2,-24
 2018,Oklahoma,District 3,-27
 2018,Oklahoma,District 4,-20
 2018,Oklahoma,District 5,-10
+2018,Oregon,,5
 2018,Oregon,District 1,9
 2018,Oregon,District 2,-11
 2018,Oregon,District 3,24
@@ -364,6 +375,7 @@ cycle,state,seat,pvi
 2018,Rhode Island,,10
 2018,Rhode Island,District 1,16
 2018,Rhode Island,District 2,6
+2018,South Carolina,,-8
 2018,South Carolina,District 1,-10
 2018,South Carolina,District 2,-12
 2018,South Carolina,District 3,-19
@@ -619,6 +631,7 @@ cycle,state,seat,pvi
 2020,Illinois,District 16,-8
 2020,Illinois,District 17,3
 2020,Illinois,District 18,-15
+2020,Indiana,,-9
 2020,Indiana,District 1,8
 2020,Indiana,District 2,-11
 2020,Indiana,District 3,-18
@@ -702,6 +715,7 @@ cycle,state,seat,pvi
 2020,Mississippi,District 2,14
 2020,Mississippi,District 3,-13
 2020,Mississippi,District 4,-21
+2020,Missouri,,-9
 2020,Missouri,District 1,29
 2020,Missouri,District 2,-8
 2020,Missouri,District 3,-18
@@ -886,6 +900,7 @@ cycle,state,seat,pvi
 2020,Texas,District 34,10
 2020,Texas,District 35,15
 2020,Texas,District 36,-26
+2020,Utah,,-20
 2020,Utah,District 1,-26
 2020,Utah,District 2,-16
 2020,Utah,District 3,-25
@@ -903,6 +918,7 @@ cycle,state,seat,pvi
 2020,Virginia,District 9,-19
 2020,Virginia,District 10,1
 2020,Virginia,District 11,15
+2020,Washington,,7
 2020,Washington,District 1,6
 2020,Washington,District 2,10
 2020,Washington,District 3,-4
