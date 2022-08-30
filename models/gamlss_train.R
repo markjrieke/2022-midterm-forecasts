@@ -324,7 +324,7 @@ elections_model %>%
 
 predictions <- 
   tibble(mu = predict(elections_model, newdata = elections_train, what = "mu", type = "response"),
-       sigma = predict(elections_model, newdata = elections_train, what = "sigma", type = "response")) %>%
+         sigma = predict(elections_model, newdata = elections_train, what = "sigma", type = "response")) %>%
   mutate(.pred = mu,
          .pred_lower = qBE(0.025, mu, sigma),
          .pred_upper = qBE(0.975, mu, sigma)) %>%
