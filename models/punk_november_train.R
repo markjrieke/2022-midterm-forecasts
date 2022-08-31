@@ -369,5 +369,6 @@ predictions %>%
 
 # punk november
 elections_model %>% write_rds("models/punk_november.rds")
-polling_error %>% write_rds("models/polling_error.rds")
-  
+polling_error %>% write_rds("models/data/polling_error.rds")
+poll_model %>% write_rds("models/data/poll_model.rds")  
+gcb_model %>% write_rds("models/data/gcb_model.rds")
