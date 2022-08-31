@@ -320,24 +320,6 @@ polling_error <-
             err_sd = sd(err)) %>%
   as.list()
 
-# generate polling noise to add to each race
-set.seed(615)
-noise <- rnorm(100, polling_error$err_mean, polling_error$err_sd)
-
-# copy training data for diagnostics
-elections_eval <- elections_train
-
-# add noise to the training data
-elections_train <- 
-  crossing(index = seq(1, 920),
-           noise = noise) %>%
-  nest(data = noise) %>%
-  select(-index) %>%
-  bind_cols(elections_train) %>%
-  unnest(data) %>%
-  mutate(estimate = estimate + noise) %>%
-  select(-noise)
-
 # model !
 set.seed(2022)
 elections_model <- 
@@ -352,12 +334,12 @@ elections_model %>%
   summary()
 
 predictions <- 
-  tibble(mu = predict(elections_model, newdata = elections_eval, what = "mu", type = "response"),
-         sigma = predict(elections_model, newdata = elections_eval, what = "sigma", type = "response")) %>%
+  tibble(mu = predict(elections_model, newdata = elections_train, what = "mu", type = "response"),
+         sigma = predict(elections_model, newdata = elections_train, what = "sigma", type = "response")) %>%
   mutate(.pred = mu,
          .pred_lower = qBE(0.025, mu, sigma),
          .pred_upper = qBE(0.975, mu, sigma)) %>%
-  bind_cols(elections_eval) %>%
+  bind_cols(elections_train) %>%
   mutate(within = if_else(result >= .pred_lower & result <= .pred_upper, "in", "out")) %>%
   select(starts_with(".pred"), result, num_polls, within) %>%
   bind_cols(elections_mod)
