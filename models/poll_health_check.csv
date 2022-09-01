@@ -17,8 +17,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,5,2022-07-08,0.40299999999999997,Whitmer,Dixon,y,n,NA
 2022,Governor,Minnesota,Governor,2022-11-08,Tim Walz,dem,1,2022-06-08,0.42,Walz,Jensen,y,n,NA
 2022,Governor,Minnesota,Governor,2022-11-08,Scott Jensen,rep,1,2022-06-08,0.4,Walz,Jensen,y,n,NA
-2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,2,2022-06-27,0.4649999999999999,Sisolak,Lombardo,y,n,NA
-2022,Governor,Nevada,Governor,2022-11-08,Joe Lombardo,rep,2,2022-06-27,0.4549999999999999,Sisolak,Lombardo,y,n,NA
+2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,4,2022-07-10,0.45650000000000013,Sisolak,Lombardo,y,n,NA
+2022,Governor,Nevada,Governor,2022-11-08,Joe Lombardo,rep,4,2022-07-10,0.4385,Sisolak,Lombardo,y,n,NA
 2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,1,2022-07-06,0.33,Sherman,Sununu,n,y,x
 2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,1,2022-07-06,0.43,Sherman,Sununu,n,y,x
 2022,Governor,New Mexico,Governor,2022-11-08,Michelle Lujan Grisham,dem,2,2022-06-14,0.45,Lujan Grisham,Ronchetti,y,n,NA
@@ -51,8 +51,14 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Michigan,District 7,2022-11-08,Tom Barrett,rep,1,2022-06-16,0.461,Slotkin,Barrett,y,n,NA
 2022,House,Nebraska,District 2,2022-11-08,Tony Vargas,dem,1,2022-06-30,0.48,Vargas,Bacon,n,y,NA
 2022,House,Nebraska,District 2,2022-11-08,Don Bacon,rep,1,2022-06-30,0.47,Vargas,Bacon,n,y,NA
-2022,House,Nevada,District 3,2022-11-08,Susie Lee,dem,1,2022-06-23,0.44,Lee,Becker,y,n,NA
-2022,House,Nevada,District 3,2022-11-08,April Becker,rep,1,2022-06-23,0.46,Lee,Becker,y,n,NA
+2022,House,Nevada,District 1,2022-11-08,Dina Titus,dem,1,2022-07-10,0.41100000000000003,Titus,Robertson,y,n,NA
+2022,House,Nevada,District 1,2022-11-08,Mark Robertson,rep,1,2022-07-10,0.36700000000000005,Titus,Robertson,y,n,NA
+2022,House,Nevada,District 2,2022-11-08,Elizabeth Mercedes Krause,dem,1,2022-07-10,0.359,Krause,Amodei,n,y,NA
+2022,House,Nevada,District 2,2022-11-08,Mark E. Amodei,rep,1,2022-07-10,0.46399999999999997,Krause,Amodei,n,y,NA
+2022,House,Nevada,District 3,2022-11-08,Susie Lee,dem,2,2022-07-10,0.4289999999999999,Lee,Becker,y,n,NA
+2022,House,Nevada,District 3,2022-11-08,April Becker,rep,2,2022-07-10,0.4284999999999999,Lee,Becker,y,n,NA
+2022,House,Nevada,District 4,2022-11-08,Steven A. Horsford,dem,1,2022-07-10,0.41700000000000004,Horsford,Peters,y,n,NA
+2022,House,Nevada,District 4,2022-11-08,Sam Peters,rep,1,2022-07-10,0.387,Horsford,Peters,y,n,NA
 2022,House,New York,District 11,2022-11-08,Max N. Rose,dem,1,2022-06-26,0.36,Rose,Malliotakis,n,y,NA
 2022,House,New York,District 11,2022-11-08,Nicole Malliotakis,rep,1,2022-06-26,0.51,Rose,Malliotakis,n,y,NA
 2022,House,North Carolina,District 1,2022-11-08,Don Davis,dem,1,2022-06-06,0.45,Davis,Smith,n,n,NA
@@ -88,8 +94,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,5,2022-07-06,0.46120000000000005,Warnock,Walker,y,n,NA
 2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,1,2022-07-04,0.44,Franken,Grassley,n,y,NA
 2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,1,2022-07-04,0.49,Franken,Grassley,n,y,NA
-2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,1,2022-06-27,0.46,Cortez Masto,Laxalt,y,n,NA
-2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,1,2022-06-27,0.43,Cortez Masto,Laxalt,y,n,NA
+2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,2,2022-07-10,0.4504999999999999,Cortez Masto,Laxalt,y,n,NA
+2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,2,2022-07-10,0.4189999999999999,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,4,2022-07-08,0.4900000000000001,Hassan,Bolduc,y,n,x
 2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,4,2022-07-08,0.42499999999999993,Hassan,Bolduc,y,n,x
 2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,3,2022-07-01,0.4313333333333333,Beasley,Budd,n,n,NA
@@ -100,7 +106,7 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,3,2022-06-19,0.41733333333333333,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,7,2022-06-16,0.32857142857142857,McMullin,Lee,n,y,NA
 2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,7,2022-06-16,0.4466666666666666,McMullin,Lee,n,y,NA
-2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,2,2022-06-19,0.4949999999999999,Murray,Smiley,y,n,NA
-2022,Senate,Washington,Class III,2022-11-08,Tiffany Smiley,rep,2,2022-06-19,0.41499999999999987,Murray,Smiley,y,n,NA
+2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,3,2022-07-10,0.5,Murray,Smiley,y,n,NA
+2022,Senate,Washington,Class III,2022-11-08,Tiffany Smiley,rep,3,2022-07-10,0.3866666666666667,Murray,Smiley,y,n,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Mandela Barnes,dem,4,2022-06-20,0.46,Barnes,Johnson,n,y,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Ron Johnson,rep,4,2022-06-20,0.4375000000000001,Barnes,Johnson,n,y,NA
