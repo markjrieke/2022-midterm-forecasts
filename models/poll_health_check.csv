@@ -11,8 +11,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Florida,Governor,2022-11-08,Ron DeSantis,rep,8,2022-08-18,0.49674999999999997,Crist,DeSantis,n,y,NA
 2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,16,2022-08-27,0.4410394975822452,Abrams,Kemp,n,y,NA
 2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,16,2022-08-27,0.5081278936616823,Abrams,Kemp,n,y,NA
-2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,2,2022-07-19,0.49449999999999983,Pritzker,Bailey,y,n,NA
-2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,2,2022-07-19,0.41000000000000003,Pritzker,Bailey,y,n,NA
+2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,3,2022-08-28,0.5163333333333333,Pritzker,Bailey,y,n,NA
+2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,3,2022-08-28,0.39999999999999997,Pritzker,Bailey,y,n,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,2,2022-07-14,0.3604999999999999,DeJear,Reynolds,n,y,NA
 2022,Governor,Iowa,Governor,2022-11-08,Kim Reynolds,rep,2,2022-07-14,0.5175,DeJear,Reynolds,n,y,NA
 2022,Governor,Kansas,Governor,2022-11-08,Laura Kelly,dem,1,2022-08-10,0.45399999999999996,Kelly,Schmidt,y,n,NA
@@ -39,8 +39,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Oregon,Governor,2022-11-08,Christine Drazan,rep,2,2022-06-30,0.277,Kotek,Drazan,n,n,NA
 2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,12,2022-08-23,0.4567606660399457,Shapiro,Mastriano,n,n,NA
 2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,12,2022-08-23,0.41375412765078384,Shapiro,Mastriano,n,n,NA
-2022,Governor,South Carolina,Governor,2022-11-08,Joe Cunningham,dem,1,2022-08-25,0.39399999999999996,Cunningham,McMaster,n,y,NA
-2022,Governor,South Carolina,Governor,2022-11-08,Henry McMaster,rep,1,2022-08-25,0.503,Cunningham,McMaster,n,y,NA
+2022,Governor,South Carolina,Governor,2022-11-08,Joe Cunningham,dem,2,2022-08-28,0.41050000000000003,Cunningham,McMaster,n,y,NA
+2022,Governor,South Carolina,Governor,2022-11-08,Henry McMaster,rep,2,2022-08-28,0.504,Cunningham,McMaster,n,y,NA
 2022,Governor,Texas,Governor,2022-11-08,Beto O'Rourke,dem,7,2022-08-07,0.4074285714285714,O'Rourke,Abbott,n,y,NA
 2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,7,2022-08-07,0.48500000000000004,O'Rourke,Abbott,n,y,NA
 2022,Governor,Vermont,Governor,2022-11-08,Brenda Siegel,dem,1,2022-07-25,0.16,Siegel,Scott,n,y,NA
@@ -177,8 +177,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,9,2022-08-18,0.4755555555555555,Demings,Rubio,n,y,NA
 2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,16,2022-08-27,0.46551014656635226,Warnock,Walker,y,n,NA
 2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,16,2022-08-27,0.4744228101410366,Warnock,Walker,y,n,NA
-2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
-2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,1,2022-07-19,0.33899999999999997,Duckworth,Salvi,y,n,NA
+2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,2,2022-08-28,0.5065,Duckworth,Salvi,y,n,NA
+2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,2,2022-08-28,0.3445,Duckworth,Salvi,y,n,NA
 2022,Senate,Indiana,Class III,2022-11-08,Thomas McDermott,dem,1,2022-08-24,0.42,McDermott,Young,n,y,NA
 2022,Senate,Indiana,Class III,2022-11-08,Todd Young,rep,1,2022-08-24,0.45,McDermott,Young,n,y,NA
 2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,3,2022-07-14,0.4213333333333334,Franken,Grassley,n,y,NA
