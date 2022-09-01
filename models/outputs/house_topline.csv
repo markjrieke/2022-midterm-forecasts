@@ -32,3 +32,4 @@ model_date,race,p_dem_win,seats,seats_lower,seats_upper
 2022-07-31,House,0.0453,181,150,200
 2022-08-01,House,0.0565,184,154,203
 2022-08-02,House,0.0573,185,154,203
+2022-08-03,House,0.0573,185,154,203
