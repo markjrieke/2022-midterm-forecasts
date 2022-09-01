@@ -47,8 +47,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Vermont,Governor,2022-11-08,Phil Scott,rep,1,2022-07-25,0.6,Siegel,Scott,n,y,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,7,2022-08-25,0.4799999999999999,Evers,Michels,y,n,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tim Michels,rep,7,2022-08-25,0.44375000000000003,Evers,Michels,y,n,NA
-2022,House,Alaska,District 1,2022-11-08,Mary S. Peltola,dem,7,2022-07-25,0.431,Peltola,Begich,n,n,x
-2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,7,2022-07-25,0.3720000000000001,Peltola,Begich,n,n,x
+2022,House,Alaska,District 1,2022-11-08,Mary S. Peltola,dem,7,2022-07-25,0.431,Peltola,Begich,y,n,x
+2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,7,2022-07-25,0.3720000000000001,Peltola,Begich,y,n,x
 2022,House,Arizona,District 1,2022-11-08,Jevin Hodge,dem,1,2022-08-18,0.47,Hodge,Schweikert,n,y,NA
 2022,House,Arizona,District 1,2022-11-08,David Schweikert,rep,1,2022-08-18,0.47,Hodge,Schweikert,n,y,NA
 2022,House,Arizona,District 4,2022-11-08,Greg Stanton,dem,1,2022-08-15,0.46,Stanton,Cooper,y,n,NA

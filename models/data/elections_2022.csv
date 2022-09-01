@@ -6,7 +6,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,Alabama,District 5,Warner-Stanton,Strong,n,n,
 2022,House,Alabama,District 6,Chieffo,Palmer,n,y,
 2022,House,Alabama,District 7,Sewell,Nichols,y,n,
-2022,House,Alaska,District 1,Peltola,Begich,n,n,x
+2022,House,Alaska,District 1,Peltola,Begich,y,n,x
 2022,House,Arizona,District 1,Hodge,Schweikert,n,y,
 2022,House,Arizona,District 2,O'Halleran,Crane,y,n,
 2022,House,Arizona,District 3,Gallego,Zink,y,n,
@@ -89,7 +89,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,Florida,District 1,Jones,Gaetz,n,y,
 2022,House,Florida,District 2,Lawson,Dunn,y,y,
 2022,House,Florida,District 3,Hawk,Cammack,n,y,
-2022,House,Florida,District 4,Holloway,Bean,n,n,x
+2022,House,Florida,District 4,Holloway,Bean,n,n,
 2022,House,Florida,District 5,-,Rutherford,n,y,
 2022,House,Florida,District 6,Hannoush,Waltz,n,y,
 2022,House,Florida,District 7,Green,Mills,n,n,
