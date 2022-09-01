@@ -194,6 +194,7 @@ cycle,state,seat,pvi
 2022,Louisiana,District 4,-14
 2022,Louisiana,District 5,-17
 2022,Louisiana,District 6,-19
+2022,Maine,,2
 2022,Maine,District 1,9
 2022,Maine,District 2,-6
 2022,Maryland,,14
@@ -205,6 +206,7 @@ cycle,state,seat,pvi
 2022,Maryland,District 6,2
 2022,Maryland,District 7,30
 2022,Maryland,District 8,29
+2022,Massachusetts,,15
 2022,Massachusetts,District 1,9
 2022,Massachusetts,District 2,13
 2022,Massachusetts,District 3,11
@@ -214,6 +216,7 @@ cycle,state,seat,pvi
 2022,Massachusetts,District 7,36
 2022,Massachusetts,District 8,15
 2022,Massachusetts,District 9,6
+2022,Michigan,,-1
 2022,Michigan,District 1,-13
 2022,Michigan,District 2,-16
 2022,Michigan,District 3,1
@@ -227,6 +230,7 @@ cycle,state,seat,pvi
 2022,Michigan,District 11,7
 2022,Michigan,District 12,23
 2022,Michigan,District 13,23
+2022,Minnesota,,1
 2022,Minnesota,District 1,-7
 2022,Minnesota,District 2,1
 2022,Minnesota,District 3,8
@@ -250,6 +254,7 @@ cycle,state,seat,pvi
 2022,Missouri,District 8,-28
 2022,Montana,District 1,-6
 2022,Montana,District 2,-16
+2022,Nebraska,,-13
 2022,Nebraska,District 1,-9
 2022,Nebraska,District 2,0
 2022,Nebraska,District 3,-29
@@ -273,6 +278,7 @@ cycle,state,seat,pvi
 2022,New Jersey,District 10,30
 2022,New Jersey,District 11,6
 2022,New Jersey,District 12,12
+2022,New Mexico,,3
 2022,New Mexico,District 1,5
 2022,New Mexico,District 2,1
 2022,New Mexico,District 3,4
@@ -366,6 +372,7 @@ cycle,state,seat,pvi
 2022,Pennsylvania,District 15,-21
 2022,Pennsylvania,District 16,-13
 2022,Pennsylvania,District 17,0
+2022,Rhode Island,,8
 2022,Rhode Island,District 1,12
 2022,Rhode Island,District 2,4
 2022,South Carolina,,-8
@@ -377,6 +384,7 @@ cycle,state,seat,pvi
 2022,South Carolina,District 6,14
 2022,South Carolina,District 7,-11
 2022,South Dakota,,-16
+2022,Tennessee,,-14
 2022,Tennessee,District 1,-30
 2022,Tennessee,District 2,-18
 2022,Tennessee,District 3,-19
@@ -386,6 +394,7 @@ cycle,state,seat,pvi
 2022,Tennessee,District 7,-10
 2022,Tennessee,District 8,-21
 2022,Tennessee,District 9,22
+2022,Texas,,-5
 2022,Texas,District 1,-26
 2022,Texas,District 2,-11
 2022,Texas,District 3,-8

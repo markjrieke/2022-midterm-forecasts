@@ -258,7 +258,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,New Mexico,District 3,Fernandez,Johnson,y,n,
 2022,House,New York,District 1,Fleming,LaLota,n,n,
 2022,House,New York,District 2,Gordon,Garbarino,n,y,
-2022,House,New York,District 3,Lafazan,Devolder-Santos,n,n,
+2022,House,New York,District 3,Lafazan,Santos,n,n,
 2022,House,New York,District 4,Grillen,D'Esposito,n,n,
 2022,House,New York,District 5,Meeks,King,y,n,
 2022,House,New York,District 6,Meng,Zmich,y,n,
@@ -373,7 +373,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,Texas,District 12,Hunt,Granger,n,y,
 2022,House,Texas,District 13,Brown,Jackson,n,y,
 2022,House,Texas,District 14,Williams,Weber,n,y,
-2022,House,Texas,District 15,Vallejo,De La Cruz-Hernandez,n,n,
+2022,House,Texas,District 15,Vallejo,De La Cruz,n,n,
 2022,House,Texas,District 16,Escobar,Armendariz-Jackson,y,n,
 2022,House,Texas,District 17,Woods,Sessions,n,y,
 2022,House,Texas,District 18,Jackson Lee,Montiel,y,n,
@@ -434,7 +434,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,Wisconsin,District 7,Ausman,Tiffany,n,y,
 2022,House,Wisconsin,District 8,-,Gallagher,n,y,
 2022,House,Wyoming,District 1,Grey Bull,Hageman,n,n,
-2022,Senate,Alaska,Class III,Chesbro,Tshibaka,n,y,x
+2022,Senate,Alaska,Class III,Chesbro,Tshibaka,n,n,x
 2022,Senate,Alabama,Class III,Boyd,Britt,n,n,
 2022,Senate,Arkansas,Class III,James,Boozman,n,y,
 2022,Senate,Arizona,Class III,Kelly,Masters,y,n,
