@@ -7,8 +7,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,4,2022-06-08,0.345,Polis,Ganahl,y,n,NA
 2022,Governor,Florida,Governor,2022-11-08,Charlie Crist,dem,1,2022-06-04,0.506,Crist,DeSantis,n,y,NA
 2022,Governor,Florida,Governor,2022-11-08,Ron DeSantis,rep,1,2022-06-04,0.494,Crist,DeSantis,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,12,2022-07-26,0.438408804186828,Abrams,Kemp,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,12,2022-07-26,0.45961662069100456,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,13,2022-07-27,0.4413635794499601,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,13,2022-07-27,0.4773485501293615,Abrams,Kemp,n,y,NA
 2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,2,2022-07-19,0.49449999999999983,Pritzker,Bailey,y,n,NA
 2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,2,2022-07-19,0.41000000000000003,Pritzker,Bailey,y,n,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,2,2022-07-14,0.3604999999999999,DeJear,Reynolds,n,y,NA
@@ -59,6 +59,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Florida,District 13,2022-11-08,Anna Paulina Luna,rep,4,2022-06-28,0.44,Lynn,Paulina Luna,n,n,NA
 2022,House,Florida,District 2,2022-11-08,Al Lawson,dem,1,2022-06-23,0.4,Lawson,Dunn,y,y,NA
 2022,House,Florida,District 2,2022-11-08,Neal Dunn,rep,1,2022-06-23,0.43,Lawson,Dunn,y,y,NA
+2022,House,Florida,District 27,2022-11-08,Annette Taddeo,dem,1,2022-07-27,0.34,Taddeo,Salazar,n,y,NA
+2022,House,Florida,District 27,2022-11-08,María Elvira Salazar,rep,1,2022-07-27,0.39,Taddeo,Salazar,n,y,NA
 2022,House,Iowa,District 1,2022-11-08,Christina Bohannan,dem,1,2022-07-04,0.38,Bohannan,Miller-Meeks,n,y,NA
 2022,House,Iowa,District 1,2022-11-08,Mariannette Miller-Meeks,rep,1,2022-07-04,0.39,Bohannan,Miller-Meeks,n,y,NA
 2022,House,Iowa,District 2,2022-11-08,Liz Mathis,dem,1,2022-07-20,0.44,Mathis,Hinson,n,y,NA
@@ -116,14 +118,18 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,9,2022-07-20,0.39,Kelly,Masters,y,n,NA
 2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,3,2022-07-26,0.4900000000000001,Bennet,O'Dea,y,n,NA
 2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,3,2022-07-26,0.3814999999999998,Bennet,O'Dea,y,n,NA
+2022,Senate,Connecticut,Class III,2022-11-08,Richard Blumenthal,dem,2,2022-07-27,0.45200000000000007,Blumenthal,Levy,y,n,NA
+2022,Senate,Connecticut,Class III,2022-11-08,Leora R. Levy,rep,2,2022-07-27,0.33,Blumenthal,Levy,y,n,NA
 2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,3,2022-07-09,0.3966666666666667,Demings,Rubio,n,y,NA
 2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,3,2022-07-09,0.4866666666666668,Demings,Rubio,n,y,NA
-2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,12,2022-07-26,0.4452455082691959,Warnock,Walker,y,n,NA
-2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,12,2022-07-26,0.4286077850719789,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,13,2022-07-27,0.4641220539253664,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,13,2022-07-27,0.4464645891273289,Warnock,Walker,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,1,2022-07-19,0.33899999999999997,Duckworth,Salvi,y,n,NA
 2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,3,2022-07-14,0.4213333333333334,Franken,Grassley,n,y,NA
 2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,3,2022-07-14,0.4920000000000001,Franken,Grassley,n,y,NA
+2022,Senate,Missouri,Class III,2022-11-08,Trudy Busch Valentine,dem,3,2022-07-27,0.3066666666666667,Busch Valentine,Schmitt,n,n,NA
+2022,Senate,Missouri,Class III,2022-11-08,Eric Schmitt,rep,3,2022-07-27,0.3649999999999999,Busch Valentine,Schmitt,n,n,NA
 2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,4,2022-07-20,0.47524999999999995,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,4,2022-07-20,0.41950000000000004,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,4,2022-07-08,0.4900000000000001,Hassan,Bolduc,y,n,x
