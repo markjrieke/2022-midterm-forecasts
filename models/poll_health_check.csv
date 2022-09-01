@@ -11,6 +11,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,7,2022-07-11,0.5054285714285714,Abrams,Kemp,n,y,NA
 2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,1,2022-06-21,0.5,Pritzker,Bailey,y,n,NA
 2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,1,2022-06-21,0.43,Pritzker,Bailey,y,n,NA
+2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,1,2022-07-13,0.31,DeJear,Reynolds,n,y,NA
+2022,Governor,Iowa,Governor,2022-11-08,Kim Reynolds,rep,1,2022-07-13,0.48,DeJear,Reynolds,n,y,NA
 2022,Governor,Massachusetts,Governor,2022-11-08,Maura Healey,dem,2,2022-06-15,0.595,Healey,Diehl,n,n,x
 2022,Governor,Massachusetts,Governor,2022-11-08,Geoff Diehl,rep,2,2022-06-15,0.29499999999999993,Healey,Diehl,n,n,x
 2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,5,2022-07-08,0.5127999999999999,Whitmer,Dixon,y,n,NA
@@ -96,8 +98,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,3,2022-07-09,0.4866666666666668,Demings,Rubio,n,y,NA
 2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,6,2022-07-11,0.48900000000000016,Warnock,Walker,y,n,NA
 2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,6,2022-07-11,0.4626666666666667,Warnock,Walker,y,n,NA
-2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,1,2022-07-04,0.44,Franken,Grassley,n,y,NA
-2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,1,2022-07-04,0.49,Franken,Grassley,n,y,NA
+2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,2,2022-07-13,0.41499999999999987,Franken,Grassley,n,y,NA
+2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,2,2022-07-13,0.48,Franken,Grassley,n,y,NA
 2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,2,2022-07-10,0.4504999999999999,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,2,2022-07-10,0.4189999999999999,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,4,2022-07-08,0.4900000000000001,Hassan,Bolduc,y,n,x
