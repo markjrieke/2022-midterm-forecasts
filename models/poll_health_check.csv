@@ -37,6 +37,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Florida,District 13,2022-11-08,Anna Paulina Luna,rep,4,2022-06-28,0.44,Lynn,Paulina Luna,n,n,NA
 2022,House,Florida,District 2,2022-11-08,Al Lawson,dem,1,2022-06-23,0.4,Lawson,Dunn,y,y,NA
 2022,House,Florida,District 2,2022-11-08,Neal Dunn,rep,1,2022-06-23,0.43,Lawson,Dunn,y,y,NA
+2022,House,Iowa,District 1,2022-11-08,Christina Bohannan,dem,1,2022-07-04,0.38,Bohannan,Miller-Meeks,n,y,NA
+2022,House,Iowa,District 1,2022-11-08,Mariannette Miller-Meeks,rep,1,2022-07-04,0.39,Bohannan,Miller-Meeks,n,y,NA
 2022,House,Michigan,District 7,2022-11-08,Elissa Slotkin,dem,1,2022-06-16,0.436,Slotkin,Barrett,y,n,NA
 2022,House,Michigan,District 7,2022-11-08,Tom Barrett,rep,1,2022-06-16,0.461,Slotkin,Barrett,y,n,NA
 2022,House,Nebraska,District 2,2022-11-08,Tony Vargas,dem,1,2022-06-30,0.48,Vargas,Bacon,n,y,NA
@@ -72,6 +74,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,2,2022-06-08,0.36,Bennet,O'Dea,y,n,NA
 2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,4,2022-06-27,0.4910000000000001,Warnock,Walker,y,n,NA
 2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,4,2022-06-27,0.45400000000000007,Warnock,Walker,y,n,NA
+2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,1,2022-07-04,0.44,Franken,Grassley,n,y,NA
+2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,1,2022-07-04,0.49,Franken,Grassley,n,y,NA
 2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,1,2022-06-27,0.46,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,1,2022-06-27,0.43,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,1,2022-06-27,0.49,Hassan,Bolduc,y,n,x
