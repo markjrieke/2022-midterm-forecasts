@@ -6,7 +6,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("7/28/22")
+run_date <- lubridate::mdy("7/29/22")
 # run_date <- Sys.Date()
 
 # polling data 
@@ -475,7 +475,7 @@ read_csv("models/outputs/senate_topline.csv") %>%
 # ---------------------------------junk-drawer----------------------------------
 
 run_date
-
+gcb
 
 
 
