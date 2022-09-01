@@ -31,8 +31,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Oklahoma,Governor,2022-11-08,Kevin Stitt,rep,1,2022-06-09,0.47,Hofmeister,Stitt,n,y,NA
 2022,Governor,Oregon,Governor,2022-11-08,Tina Kotek,dem,2,2022-06-30,0.32199999999999995,Kotek,Drazan,n,n,NA
 2022,Governor,Oregon,Governor,2022-11-08,Christine Drazan,rep,2,2022-06-30,0.277,Kotek,Drazan,n,n,NA
-2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,6,2022-07-20,0.48700000000000004,Shapiro,Mastriano,n,n,NA
-2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,6,2022-07-20,0.4125000000000002,Shapiro,Mastriano,n,n,NA
+2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,7,2022-07-21,0.4898571428571427,Shapiro,Mastriano,n,n,NA
+2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,7,2022-07-21,0.4098571428571429,Shapiro,Mastriano,n,n,NA
 2022,Governor,Texas,Governor,2022-11-08,Beto O'Rourke,dem,6,2022-07-07,0.41033333333333344,O'Rourke,Abbott,n,y,NA
 2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,6,2022-07-07,0.48916666666666675,O'Rourke,Abbott,n,y,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,4,2022-06-20,0.485,Evers,Michels,y,n,NA
@@ -43,6 +43,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,California,District 22,2022-11-08,David G. Valadao,rep,1,2022-07-15,0.35,Salas,Valadao,n,y,NA
 2022,House,California,District 40,2022-11-08,Asif Mahmood,dem,1,2022-07-20,0.35,Mahmood,Kim,n,y,NA
 2022,House,California,District 40,2022-11-08,Young Kim,rep,1,2022-07-20,0.51,Mahmood,Kim,n,y,NA
+2022,House,Colorado,District 7,2022-11-08,Brittany Pettersen,dem,1,2022-07-21,0.44,Pettersen,Aadland,y,n,NA
+2022,House,Colorado,District 7,2022-11-08,Erik Aadland,rep,1,2022-07-21,0.42,Pettersen,Aadland,y,n,NA
 2022,House,Colorado,District 8,2022-11-08,Yadira Caraveo,dem,1,2022-06-13,0.36,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Colorado,District 8,2022-11-08,Barbara Kirkmeyer,rep,1,2022-06-13,0.44,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Connecticut,District 5,2022-11-08,Jahana Hayes,dem,1,2022-06-30,0.46,Hayes,Logan,y,n,NA
@@ -73,6 +75,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,New Jersey,District 1,2022-11-08,Claire Gustafson,rep,1,2022-07-19,0.44,Norcross,Gustafson,y,n,NA
 2022,House,New York,District 11,2022-11-08,Max N. Rose,dem,1,2022-06-26,0.36,Rose,Malliotakis,n,y,NA
 2022,House,New York,District 11,2022-11-08,Nicole Malliotakis,rep,1,2022-06-26,0.51,Rose,Malliotakis,n,y,NA
+2022,House,New York,District 17,2022-11-08,Sean Patrick Maloney,dem,2,2022-07-21,0.44,Maloney,Lawler,y,n,NA
+2022,House,New York,District 17,2022-11-08,Michael V. Lawler,rep,2,2022-07-21,0.4649999999999999,Maloney,Lawler,y,n,NA
 2022,House,New York,District 3,2022-11-08,Joshua Alexander Lafazan,dem,1,2022-07-12,0.33,Lafazan,Santos,n,n,NA
 2022,House,New York,District 3,2022-11-08,George A.D. Santos,rep,1,2022-07-12,0.44,Lafazan,Santos,n,n,NA
 2022,House,North Carolina,District 1,2022-11-08,Don Davis,dem,1,2022-06-06,0.45,Davis,Smith,n,n,NA
@@ -89,8 +93,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Oregon,District 6,2022-11-08,Mike Erickson,rep,1,2022-06-09,0.43,Salinas,Erickson,n,n,NA
 2022,House,Pennsylvania,District 1,2022-11-08,Ashley Ehasz,dem,1,2022-06-25,0.38,Ehasz,Fitzpatrick,n,y,NA
 2022,House,Pennsylvania,District 1,2022-11-08,Brian Fitzpatrick,rep,1,2022-06-25,0.45,Ehasz,Fitzpatrick,n,y,NA
-2022,House,Pennsylvania,District 17,2022-11-08,Chris Deluzio,dem,1,2022-06-06,0.44,Deluzio,Shaffer,n,n,NA
-2022,House,Pennsylvania,District 17,2022-11-08,Jeremy Shaffer,rep,1,2022-06-06,0.44,Deluzio,Shaffer,n,n,NA
+2022,House,Pennsylvania,District 17,2022-11-08,Chris Deluzio,dem,2,2022-07-21,0.43499999999999994,Deluzio,Shaffer,n,n,NA
+2022,House,Pennsylvania,District 17,2022-11-08,Jeremy Shaffer,rep,2,2022-07-21,0.42999999999999994,Deluzio,Shaffer,n,n,NA
 2022,House,Pennsylvania,District 8,2022-11-08,Matt Cartwright,dem,1,2022-06-25,0.45,Cartwright,Bognet,y,n,NA
 2022,House,Pennsylvania,District 8,2022-11-08,Jim Bognet,rep,1,2022-06-25,0.46,Cartwright,Bognet,y,n,NA
 2022,House,Rhode Island,District 2,2022-11-08,Seth M. Magaziner,dem,6,2022-06-22,0.38530000000000003,Magaziner,Fung,n,n,x
@@ -118,8 +122,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,3,2022-07-01,0.4420000000000001,Beasley,Budd,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,4,2022-07-03,0.4475,Ryan,Vance,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,4,2022-07-03,0.4050000000000001,Ryan,Vance,n,n,NA
-2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,6,2022-07-20,0.4870000000000001,Fetterman,Oz,n,n,NA
-2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,6,2022-07-20,0.3970000000000001,Fetterman,Oz,n,n,NA
+2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,7,2022-07-21,0.4872857142857143,Fetterman,Oz,n,n,NA
+2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,7,2022-07-21,0.3968571428571428,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,12,2022-07-18,0.36084459360717097,McMullin,Lee,n,y,NA
 2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,12,2022-07-18,0.45125,McMullin,Lee,n,y,NA
 2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,4,2022-07-11,0.5075,Murray,Smiley,y,n,NA
