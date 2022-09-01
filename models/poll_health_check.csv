@@ -35,14 +35,18 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,7,2022-07-21,0.4098571428571429,Shapiro,Mastriano,n,n,NA
 2022,Governor,Texas,Governor,2022-11-08,Beto O'Rourke,dem,6,2022-07-07,0.41033333333333344,O'Rourke,Abbott,n,y,NA
 2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,6,2022-07-07,0.48916666666666675,O'Rourke,Abbott,n,y,NA
+2022,Governor,Vermont,Governor,2022-11-08,Brenda Siegel,dem,1,2022-07-25,0.16,Siegel,Scott,n,y,NA
+2022,Governor,Vermont,Governor,2022-11-08,Phil Scott,rep,1,2022-07-25,0.6,Siegel,Scott,n,y,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,4,2022-06-20,0.485,Evers,Michels,y,n,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tim Michels,rep,4,2022-06-20,0.41,Evers,Michels,y,n,NA
-2022,House,Alaska,District 1,2022-11-08,Mary S. Peltola,dem,3,2022-07-05,0.407,Peltola,Begich,n,n,x
-2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,3,2022-07-05,0.3793333333333334,Peltola,Begich,n,n,x
+2022,House,Alaska,District 1,2022-11-08,Mary S. Peltola,dem,7,2022-07-25,0.431,Peltola,Begich,n,n,x
+2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,7,2022-07-25,0.3720000000000001,Peltola,Begich,n,n,x
 2022,House,California,District 22,2022-11-08,Rudy Salas,dem,1,2022-07-15,0.43,Salas,Valadao,n,y,NA
 2022,House,California,District 22,2022-11-08,David G. Valadao,rep,1,2022-07-15,0.35,Salas,Valadao,n,y,NA
 2022,House,California,District 40,2022-11-08,Asif Mahmood,dem,1,2022-07-20,0.35,Mahmood,Kim,n,y,NA
 2022,House,California,District 40,2022-11-08,Young Kim,rep,1,2022-07-20,0.51,Mahmood,Kim,n,y,NA
+2022,House,Colorado,District 3,2022-11-08,Adam Frisch,dem,1,2022-07-25,0.42,Frisch,Boebert,n,y,NA
+2022,House,Colorado,District 3,2022-11-08,Lauren Boebert,rep,1,2022-07-25,0.49,Frisch,Boebert,n,y,NA
 2022,House,Colorado,District 7,2022-11-08,Brittany Pettersen,dem,1,2022-07-21,0.44,Pettersen,Aadland,y,n,NA
 2022,House,Colorado,District 7,2022-11-08,Erik Aadland,rep,1,2022-07-21,0.42,Pettersen,Aadland,y,n,NA
 2022,House,Colorado,District 8,2022-11-08,Yadira Caraveo,dem,1,2022-06-13,0.36,Caraveo,Kirkmeyer,n,n,NA
@@ -73,6 +77,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Nevada,District 4,2022-11-08,Sam Peters,rep,1,2022-07-10,0.387,Horsford,Peters,y,n,NA
 2022,House,New Jersey,District 1,2022-11-08,Donald W. Norcross,dem,1,2022-07-19,0.49,Norcross,Gustafson,y,n,NA
 2022,House,New Jersey,District 1,2022-11-08,Claire Gustafson,rep,1,2022-07-19,0.44,Norcross,Gustafson,y,n,NA
+2022,House,New Mexico,District 2,2022-11-08,Gabriel Vasquez,dem,1,2022-07-25,0.45,Vasquez,Herrell,n,y,NA
+2022,House,New Mexico,District 2,2022-11-08,Yvette Herrell,rep,1,2022-07-25,0.44,Vasquez,Herrell,n,y,NA
 2022,House,New York,District 11,2022-11-08,Max N. Rose,dem,1,2022-06-26,0.36,Rose,Malliotakis,n,y,NA
 2022,House,New York,District 11,2022-11-08,Nicole Malliotakis,rep,1,2022-06-26,0.51,Rose,Malliotakis,n,y,NA
 2022,House,New York,District 17,2022-11-08,Sean Patrick Maloney,dem,2,2022-07-21,0.44,Maloney,Lawler,y,n,NA
