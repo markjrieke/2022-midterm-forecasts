@@ -1,5 +1,4 @@
 # -----------------------------notes/to-do--------------------------------------
-# adjust overwrite/append section on output (but overwrite all the stuff from today)
 
 # -----------------------------setup--------------------------------------------
 
@@ -7,7 +6,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("7/30/22")
+run_date <- lubridate::mdy("7/31/22")
 # run_date <- Sys.Date()
 
 # polling data 
