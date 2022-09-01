@@ -7,8 +7,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,4,2022-06-08,0.345,Polis,Ganahl,y,n,NA
 2022,Governor,Florida,Governor,2022-11-08,Charlie Crist,dem,1,2022-06-04,0.506,Crist,DeSantis,n,y,NA
 2022,Governor,Florida,Governor,2022-11-08,Ron DeSantis,rep,1,2022-06-04,0.494,Crist,DeSantis,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,9,2022-07-20,0.4503333333333335,Abrams,Kemp,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,9,2022-07-20,0.4997777777777779,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,10,2022-07-22,0.42942391178029177,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,10,2022-07-22,0.47539231028217477,Abrams,Kemp,n,y,NA
 2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,2,2022-07-19,0.49449999999999983,Pritzker,Bailey,y,n,NA
 2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,2,2022-07-19,0.41000000000000003,Pritzker,Bailey,y,n,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,2,2022-07-14,0.3604999999999999,DeJear,Reynolds,n,y,NA
@@ -108,8 +108,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,2,2022-06-08,0.36,Bennet,O'Dea,y,n,NA
 2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,3,2022-07-09,0.3966666666666667,Demings,Rubio,n,y,NA
 2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,3,2022-07-09,0.4866666666666668,Demings,Rubio,n,y,NA
-2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,8,2022-07-20,0.4867499999999999,Warnock,Walker,y,n,NA
-2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,8,2022-07-20,0.4457499999999999,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,9,2022-07-22,0.4838888888888888,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,9,2022-07-22,0.44344444444444453,Warnock,Walker,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,1,2022-07-19,0.33899999999999997,Duckworth,Salvi,y,n,NA
 2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,3,2022-07-14,0.4213333333333334,Franken,Grassley,n,y,NA
