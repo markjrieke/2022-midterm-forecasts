@@ -61,8 +61,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Florida,District 13,2022-11-08,Anna Paulina Luna,rep,4,2022-06-28,0.44,Lynn,Paulina Luna,n,n,NA
 2022,House,Florida,District 2,2022-11-08,Al Lawson,dem,1,2022-06-23,0.4,Lawson,Dunn,y,y,NA
 2022,House,Florida,District 2,2022-11-08,Neal Dunn,rep,1,2022-06-23,0.43,Lawson,Dunn,y,y,NA
-2022,House,Florida,District 27,2022-11-08,Annette Taddeo,dem,1,2022-07-27,0.34,Taddeo,Salazar,n,y,NA
-2022,House,Florida,District 27,2022-11-08,María Elvira Salazar,rep,1,2022-07-27,0.39,Taddeo,Salazar,n,y,NA
+2022,House,Florida,District 27,2022-11-08,Annette Taddeo,dem,2,2022-08-06,0.34,Taddeo,Salazar,n,y,NA
+2022,House,Florida,District 27,2022-11-08,María Elvira Salazar,rep,2,2022-08-06,0.41500000000000004,Taddeo,Salazar,n,y,NA
 2022,House,Illinois,District 13,2022-11-08,Nikki Budzinski,dem,1,2022-07-28,0.39,Budzinski,Deering,n,n,NA
 2022,House,Illinois,District 13,2022-11-08,Regan Deering,rep,1,2022-07-28,0.36,Budzinski,Deering,n,n,NA
 2022,House,Illinois,District 8,2022-11-08,Raja Krishnamoorthi,dem,1,2022-07-31,0.45,Krishnamoorthi,Dargis,y,n,NA
@@ -111,6 +111,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,New York,District 3,2022-11-08,George A.D. Santos,rep,1,2022-07-12,0.44,Lafazan,Santos,n,n,NA
 2022,House,North Carolina,District 1,2022-11-08,Don Davis,dem,1,2022-06-06,0.45,Davis,Smith,n,n,NA
 2022,House,North Carolina,District 1,2022-11-08,Sandy Smith,rep,1,2022-06-06,0.39,Davis,Smith,n,n,NA
+2022,House,North Carolina,District 13,2022-11-08,Wiley Nickel,dem,1,2022-08-06,0.39,Nickel,Hines,n,n,NA
+2022,House,North Carolina,District 13,2022-11-08,Bo Hines,rep,1,2022-08-06,0.44,Nickel,Hines,n,n,NA
 2022,House,North Carolina,District 6,2022-11-08,Kathy Manning,dem,1,2022-06-06,0.48,Manning,Castelli,y,n,NA
 2022,House,North Carolina,District 6,2022-11-08,Christian Castelli,rep,1,2022-06-06,0.39,Manning,Castelli,y,n,NA
 2022,House,Ohio,District 9,2022-11-08,Marcy Kaptur,dem,1,2022-06-30,0.47,Kaptur,Majewski,y,n,NA
@@ -137,6 +139,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Texas,District 23,2022-11-08,Tony Gonzales,rep,1,2022-07-29,0.42,Lira,Gonzales,n,y,NA
 2022,House,Texas,District 34,2022-11-08,Vicente Gonzalez,dem,1,2022-08-01,0.47,Gonzalez,Flores,n,y,NA
 2022,House,Texas,District 34,2022-11-08,Mayra Flores,rep,1,2022-08-01,0.43,Gonzalez,Flores,n,y,NA
+2022,House,Virginia,District 7,2022-11-08,Abigail A. Spanberger,dem,1,2022-08-06,0.46,Spanberger,Vega,y,n,NA
+2022,House,Virginia,District 7,2022-11-08,Yesli I. Vega,rep,1,2022-08-06,0.41,Spanberger,Vega,y,n,NA
 2022,House,Wisconsin,District 3,2022-11-08,Derrick Van Orden,rep,1,2022-06-02,0.47,Pfaff,Van Orden,n,n,NA
 2022,Senate,Alaska,Class III,2022-11-08,Patricia R. Chesbro,dem,3,2022-07-05,0.185,Chesbro,Tshibaka,n,n,x
 2022,Senate,Alaska,Class III,2022-11-08,Kelly C. Tshibaka,rep,3,2022-07-05,0.45033333333333336,Chesbro,Tshibaka,n,n,x
@@ -162,8 +166,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,4,2022-07-08,0.42499999999999993,Hassan,Bolduc,y,n,x
 2022,Senate,New York,Class III,2022-11-08,Charles E. Schumer,dem,2,2022-07-28,0.546,Schumer,Pinion,y,n,NA
 2022,Senate,New York,Class III,2022-11-08,Joe Pinion,rep,2,2022-07-28,0.32999999999999996,Schumer,Pinion,y,n,NA
-2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,4,2022-07-24,0.43025,Beasley,Budd,n,n,NA
-2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,4,2022-07-24,0.4322499999999999,Beasley,Budd,n,n,NA
+2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,5,2022-08-06,0.4361999999999999,Beasley,Budd,n,n,NA
+2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,5,2022-08-06,0.4298,Beasley,Budd,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,9,2022-08-03,0.4511111111111111,Ryan,Vance,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,9,2022-08-03,0.38633333333333325,Ryan,Vance,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,12,2022-08-01,0.4902830142543203,Fetterman,Oz,n,n,NA
