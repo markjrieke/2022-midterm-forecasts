@@ -193,8 +193,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,4,2022-07-08,0.42499999999999993,Hassan,Bolduc,y,n,x
 2022,Senate,New York,Class III,2022-11-08,Charles E. Schumer,dem,3,2022-08-09,0.5340000000000001,Schumer,Pinion,y,n,NA
 2022,Senate,New York,Class III,2022-11-08,Joe Pinion,rep,3,2022-08-09,0.33999999999999997,Schumer,Pinion,y,n,NA
-2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,6,2022-08-15,0.43400000000000005,Beasley,Budd,n,n,NA
-2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,6,2022-08-15,0.4286666666666667,Beasley,Budd,n,n,NA
+2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,7,2022-08-30,0.43200000000000005,Beasley,Budd,n,n,NA
+2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,7,2022-08-30,0.42600000000000005,Beasley,Budd,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,12,2022-08-23,0.4791678611867646,Ryan,Vance,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,12,2022-08-23,0.5050850045410232,Ryan,Vance,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,17,2022-08-29,0.4778881807558467,Fetterman,Oz,n,n,NA
