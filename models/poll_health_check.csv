@@ -17,8 +17,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Kansas,Governor,2022-11-08,Derek Schmidt,rep,1,2022-08-10,0.479,Kelly,Schmidt,y,n,NA
 2022,Governor,Massachusetts,Governor,2022-11-08,Maura Healey,dem,4,2022-07-23,0.5677999999999999,Healey,Diehl,n,n,x
 2022,Governor,Massachusetts,Governor,2022-11-08,Geoff Diehl,rep,4,2022-07-23,0.2744333333333333,Healey,Diehl,n,n,x
-2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,5,2022-07-08,0.5127999999999999,Whitmer,Dixon,y,n,NA
-2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,5,2022-07-08,0.40299999999999997,Whitmer,Dixon,y,n,NA
+2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,6,2022-08-14,0.5123333333333334,Whitmer,Dixon,y,n,NA
+2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,6,2022-08-14,0.4315,Whitmer,Dixon,y,n,NA
 2022,Governor,Minnesota,Governor,2022-11-08,Tim Walz,dem,2,2022-07-19,0.45899999999999985,Walz,Jensen,y,n,NA
 2022,Governor,Minnesota,Governor,2022-11-08,Scott Jensen,rep,2,2022-07-19,0.42800000000000005,Walz,Jensen,y,n,NA
 2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,6,2022-07-20,0.4660000000000001,Sisolak,Lombardo,y,n,NA
@@ -156,8 +156,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,3,2022-07-26,0.3814999999999998,Bennet,O'Dea,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Richard Blumenthal,dem,2,2022-07-27,0.45200000000000007,Blumenthal,Levy,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Leora R. Levy,rep,2,2022-07-27,0.33,Blumenthal,Levy,y,n,NA
-2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,6,2022-08-12,0.43,Demings,Rubio,n,y,NA
-2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,6,2022-08-12,0.46833333333333343,Demings,Rubio,n,y,NA
+2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,8,2022-08-14,0.4224999999999998,Demings,Rubio,n,y,NA
+2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,8,2022-08-14,0.47374999999999995,Demings,Rubio,n,y,NA
 2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,15,2022-08-07,0.44873357417236953,Warnock,Walker,y,n,NA
 2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,15,2022-08-07,0.4599260633318207,Warnock,Walker,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
