@@ -1,16 +1,5 @@
 # -----------------------------notes/to-do--------------------------------------
-# add in seeds for sim section
-
 # adjust overwrite/append section on output (but overwrite all the stuff from today)
-
-# add something in that adjusts the senate when # of dem seats won = 0
-
-# double check punk_november train that the 'last poll' is always the same date
-# i.e., need to make sure that after any transformations, min(dem) & min(rep) > 0 
-
-# filter so that min(rep)/min(dem) (e.g., estimates) is > 0 after noiese is added
-
-# review candidates w/o polls for misspellings
 
 # -----------------------------setup--------------------------------------------
 
@@ -68,7 +57,7 @@ poll_leaders <-
   mutate(across(ends_with("date"), lubridate::mdy),
          pct = pct/100) %>%
   
-  # filter out polls before july/after run date
+  # filter out polls before june/after run date
   filter(!end_date < lubridate::mdy("6/1/22"),
          end_date <= run_date) %>%
   
@@ -273,7 +262,10 @@ sim_data <-
   sim_data %>%
   bind_cols(elections_predict) %>%
   unnest(data) %>%
-  mutate(estimate = estimate + err) 
+  mutate(estimate = estimate + err,
+         estimate = case_when(estimate < 0 ~ 0,
+                              estimate > 1 ~ 1,
+                              TRUE ~ estimate)) 
 
 # remove cols for predicting
 sim_mod <-
@@ -405,6 +397,64 @@ senate_distribution %>%
          seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.8))) %>%
   select(-data) %>%
   write_csv("models/outputs/senate_topline.csv")
+
+# ---------------------------------diagnostics----------------------------------
+
+# current house distribution
+house_distribution %>%
+  mutate(control = if_else(n > 218.5, "blue", "red")) %>%
+  ggplot(aes(x = n,
+             fill = control)) +
+  geom_histogram(binwidth = 1,
+                 alpha = 0.5) +
+  scale_fill_identity() +
+  theme_minimal()
+
+# current senate distribution
+senate_distribution %>%
+  mutate(control = case_when(n > 50 ~ "blue",
+                             n < 50 ~ "red",
+                             TRUE ~ "purple")) %>%
+  ggplot(aes(x = n,
+             fill = control)) +
+  geom_histogram(binwidth = 1,
+                 alpha = 0.5) +
+  scale_fill_identity() +
+  theme_minimal()
+
+# rolling house distribution
+read_csv("models/outputs/house_topline.csv") %>%
+  ggplot(aes(x = model_date,
+             y = seats,
+             ymin = seats_lower,
+             ymax = seats_upper)) +
+  geom_ribbon(alpha = 0.25) +
+  geom_line(size = 1) +
+  theme_minimal()
+
+# rolling house probability
+read_csv("models/outputs/house_topline.csv") %>%
+  ggplot(aes(x = model_date,
+             y = p_dem_win)) +
+  geom_line(size = 1) +
+  theme_minimal()
+
+# rolling senate distribution
+read_csv("models/outputs/senate_topline.csv") %>%
+  ggplot(aes(x = model_date,
+             y = seats,
+             ymin = seats_lower,
+             ymax = seats_upper)) +
+  geom_ribbon(alpha = 0.25) +
+  geom_line(size = 1) +
+  theme_minimal()
+
+# rolling senate probability 
+read_csv("models/outputs/senate_topline.csv") %>%
+  ggplot(aes(x = model_date,
+             y = p_dem_win)) +
+  geom_line(size = 1) +
+  theme_minimal()
 
 # ---------------------------------junk-drawer----------------------------------
 
