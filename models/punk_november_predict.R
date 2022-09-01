@@ -8,7 +8,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("8/1/22")
+run_date <- lubridate::mdy("7/1/22")
 # run_date <- Sys.Date()
 
 # polling data 
@@ -255,7 +255,7 @@ set.seed(555)
 sim_data <-
   tibble(sim = rep(seq(1, 10000), n_races),
          idx = seq(1, n_races) %>% rep(10000) %>% riekelib::arrange_vector(),
-         err = rep(rnorm(10000, polling_error$err_mean, polling_error$err_sd), n_races)) %>%
+         err = rep(rnorm(10000, 0, 0.5 * polling_error$err_sd), n_races)) %>%
   nest(data = c(sim, err))
 
 # apply random polling error to poll avg
