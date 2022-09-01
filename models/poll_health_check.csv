@@ -23,8 +23,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Minnesota,Governor,2022-11-08,Scott Jensen,rep,2,2022-07-19,0.42800000000000005,Walz,Jensen,y,n,NA
 2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,6,2022-07-20,0.4660000000000001,Sisolak,Lombardo,y,n,NA
 2022,Governor,Nevada,Governor,2022-11-08,Joe Lombardo,rep,6,2022-07-20,0.4340000000000001,Sisolak,Lombardo,y,n,NA
-2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,1,2022-07-06,0.33,Sherman,Sununu,n,y,x
-2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,1,2022-07-06,0.43,Sherman,Sununu,n,y,x
+2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,2,2022-08-11,0.30999999999999994,Sherman,Sununu,n,y,x
+2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,2,2022-08-11,0.4549999999999999,Sherman,Sununu,n,y,x
 2022,Governor,New Mexico,Governor,2022-11-08,Michelle Lujan Grisham,dem,3,2022-07-17,0.4599999999999999,Lujan Grisham,Ronchetti,y,n,NA
 2022,Governor,New Mexico,Governor,2022-11-08,Mark V. Ronchetti,rep,3,2022-07-17,0.4400000000000001,Lujan Grisham,Ronchetti,y,n,NA
 2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,7,2022-08-09,0.5265714285714286,Hochul,Zeldin,y,n,NA

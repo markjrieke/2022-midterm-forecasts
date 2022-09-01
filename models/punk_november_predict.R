@@ -1,12 +1,15 @@
 # -----------------------------notes/to-do--------------------------------------
 
+# investigate places with few polls (potential for primary polls to be slipping in)
+# example: OH 9
+
 # -----------------------------setup--------------------------------------------
 
 library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("8/10/22")
+run_date <- lubridate::mdy("8/11/22")
 # run_date <- Sys.Date()
 
 # polling data 
