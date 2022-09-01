@@ -29,16 +29,16 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,2,2022-08-11,0.4549999999999999,Sherman,Sununu,n,y,x
 2022,Governor,New Mexico,Governor,2022-11-08,Michelle Lujan Grisham,dem,3,2022-07-17,0.4599999999999999,Lujan Grisham,Ronchetti,y,n,NA
 2022,Governor,New Mexico,Governor,2022-11-08,Mark V. Ronchetti,rep,3,2022-07-17,0.4400000000000001,Lujan Grisham,Ronchetti,y,n,NA
-2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,7,2022-08-09,0.5265714285714286,Hochul,Zeldin,y,n,NA
-2022,Governor,New York,Governor,2022-11-08,Lee M. Zeldin,rep,7,2022-08-09,0.35400000000000004,Hochul,Zeldin,y,n,NA
+2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,8,2022-08-21,0.5295,Hochul,Zeldin,y,n,NA
+2022,Governor,New York,Governor,2022-11-08,Lee M. Zeldin,rep,8,2022-08-21,0.3452,Hochul,Zeldin,y,n,NA
 2022,Governor,Ohio,Governor,2022-11-08,Nan Whaley,dem,3,2022-08-18,0.3793333333333333,Whaley,DeWine,n,y,NA
 2022,Governor,Ohio,Governor,2022-11-08,Mike DeWine,rep,3,2022-08-18,0.4883333333333334,Whaley,DeWine,n,y,NA
 2022,Governor,Oklahoma,Governor,2022-11-08,Joy Hofmeister,dem,2,2022-07-26,0.31499999999999995,Hofmeister,Stitt,n,y,NA
 2022,Governor,Oklahoma,Governor,2022-11-08,Kevin Stitt,rep,2,2022-07-26,0.445,Hofmeister,Stitt,n,y,NA
 2022,Governor,Oregon,Governor,2022-11-08,Tina Kotek,dem,2,2022-06-30,0.32199999999999995,Kotek,Drazan,n,n,NA
 2022,Governor,Oregon,Governor,2022-11-08,Christine Drazan,rep,2,2022-06-30,0.277,Kotek,Drazan,n,n,NA
-2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,10,2022-08-18,0.48605824614832727,Shapiro,Mastriano,n,n,NA
-2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,10,2022-08-18,0.4465946902889266,Shapiro,Mastriano,n,n,NA
+2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,11,2022-08-21,0.4498118223981195,Shapiro,Mastriano,n,n,NA
+2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,11,2022-08-21,0.37434724335560104,Shapiro,Mastriano,n,n,NA
 2022,Governor,Texas,Governor,2022-11-08,Beto O'Rourke,dem,7,2022-08-07,0.4074285714285714,O'Rourke,Abbott,n,y,NA
 2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,7,2022-08-07,0.48500000000000004,O'Rourke,Abbott,n,y,NA
 2022,Governor,Vermont,Governor,2022-11-08,Brenda Siegel,dem,1,2022-07-25,0.16,Siegel,Scott,n,y,NA
@@ -51,6 +51,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Arizona,District 1,2022-11-08,David Schweikert,rep,1,2022-08-18,0.47,Hodge,Schweikert,n,y,NA
 2022,House,Arizona,District 4,2022-11-08,Greg Stanton,dem,1,2022-08-15,0.46,Stanton,Cooper,y,n,NA
 2022,House,Arizona,District 4,2022-11-08,Kelly Cooper,rep,1,2022-08-15,0.39,Stanton,Cooper,y,n,NA
+2022,House,Arizona,District 6,2022-11-08,Kirsten Engel,dem,1,2022-08-21,0.49,Engel,Ciscomani,n,n,NA
+2022,House,Arizona,District 6,2022-11-08,Juan Ciscomani,rep,1,2022-08-21,0.47,Engel,Ciscomani,n,n,NA
 2022,House,California,District 13,2022-11-08,Adam Gray,dem,2,2022-08-07,0.4199999999999999,Gray,Duarte,n,n,NA
 2022,House,California,District 13,2022-11-08,John Duarte,rep,2,2022-08-07,0.39999999999999997,Gray,Duarte,n,n,NA
 2022,House,California,District 22,2022-11-08,Rudy Salas,dem,2,2022-08-05,0.41000000000000003,Salas,Valadao,n,y,NA
@@ -87,8 +89,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Kansas,District 3,2022-11-08,Amanda L. Adkins,rep,1,2022-07-28,0.46,Davids,Adkins,y,n,NA
 2022,House,Maryland,District 6,2022-11-08,David J. Trone,dem,1,2022-08-09,0.43,Trone,Parrott,y,n,NA
 2022,House,Maryland,District 6,2022-11-08,Neil C. Parrott,rep,1,2022-08-09,0.45,Trone,Parrott,y,n,NA
-2022,House,Michigan,District 10,2022-11-08,Carl J. Marlinga,dem,1,2022-08-19,0.47,Marlinga,James,n,n,NA
-2022,House,Michigan,District 10,2022-11-08,John James,rep,1,2022-08-19,0.45,Marlinga,James,n,n,NA
+2022,House,Michigan,District 10,2022-11-08,Carl J. Marlinga,dem,2,2022-08-21,0.4249999999999998,Marlinga,James,n,n,NA
+2022,House,Michigan,District 10,2022-11-08,John James,rep,2,2022-08-21,0.4599999999999999,Marlinga,James,n,n,NA
 2022,House,Michigan,District 7,2022-11-08,Elissa Slotkin,dem,1,2022-06-16,0.436,Slotkin,Barrett,y,n,NA
 2022,House,Michigan,District 7,2022-11-08,Tom Barrett,rep,1,2022-06-16,0.461,Slotkin,Barrett,y,n,NA
 2022,House,Michigan,District 8,2022-11-08,Daniel T. Kildee,dem,1,2022-08-04,0.43,Kildee,Junge,y,n,NA
@@ -193,8 +195,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,6,2022-08-15,0.4286666666666667,Beasley,Budd,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,11,2022-08-18,0.43234980783040106,Ryan,Vance,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,11,2022-08-18,0.48705805718023143,Ryan,Vance,n,n,NA
-2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,14,2022-08-18,0.48485697453844506,Fetterman,Oz,n,n,NA
-2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,14,2022-08-18,0.4323354182493591,Fetterman,Oz,n,n,NA
+2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,15,2022-08-21,0.4401352675342629,Fetterman,Oz,n,n,NA
+2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,15,2022-08-21,0.3514820574741083,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,12,2022-07-18,0.36084459360717097,McMullin,Lee,n,y,NA
 2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,12,2022-07-18,0.45125,McMullin,Lee,n,y,NA
 2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,5,2022-08-17,0.5041999999999999,Murray,Smiley,y,n,NA
