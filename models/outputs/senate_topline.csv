@@ -53,3 +53,4 @@ model_date,race,p_dem_win,seats,seats_lower,seats_upper
 2022-08-21,Senate,0.6834,51,47.90000000000009,53
 2022-08-22,Senate,0.6646,50,47,53
 2022-08-23,Senate,0.6494,50,47,53
+2022-08-24,Senate,0.6761,51,47,54
