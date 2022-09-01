@@ -49,8 +49,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,California,District 9,2022-11-08,Tom Patti,rep,1,2022-07-26,0.38,Harder,Patti,y,n,NA
 2022,House,Colorado,District 3,2022-11-08,Adam Frisch,dem,1,2022-07-25,0.42,Frisch,Boebert,n,y,NA
 2022,House,Colorado,District 3,2022-11-08,Lauren Boebert,rep,1,2022-07-25,0.49,Frisch,Boebert,n,y,NA
-2022,House,Colorado,District 7,2022-11-08,Brittany Pettersen,dem,1,2022-07-21,0.44,Pettersen,Aadland,y,n,NA
-2022,House,Colorado,District 7,2022-11-08,Erik Aadland,rep,1,2022-07-21,0.42,Pettersen,Aadland,y,n,NA
+2022,House,Colorado,District 7,2022-11-08,Brittany Pettersen,dem,2,2022-07-30,0.44,Pettersen,Aadland,y,n,NA
+2022,House,Colorado,District 7,2022-11-08,Erik Aadland,rep,2,2022-07-30,0.41500000000000004,Pettersen,Aadland,y,n,NA
 2022,House,Colorado,District 8,2022-11-08,Yadira Caraveo,dem,1,2022-06-13,0.36,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Colorado,District 8,2022-11-08,Barbara Kirkmeyer,rep,1,2022-06-13,0.44,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Connecticut,District 5,2022-11-08,Jahana Hayes,dem,3,2022-07-26,0.4533333333333334,Hayes,Logan,y,n,NA
