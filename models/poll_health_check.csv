@@ -177,6 +177,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,15,2022-08-07,0.4599260633318207,Warnock,Walker,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,1,2022-07-19,0.33899999999999997,Duckworth,Salvi,y,n,NA
+2022,Senate,Indiana,Class III,2022-11-08,Thomas McDermott,dem,1,2022-08-24,0.42,McDermott,Young,n,y,NA
+2022,Senate,Indiana,Class III,2022-11-08,Todd Young,rep,1,2022-08-24,0.45,McDermott,Young,n,y,NA
 2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,3,2022-07-14,0.4213333333333334,Franken,Grassley,n,y,NA
 2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,3,2022-07-14,0.4920000000000001,Franken,Grassley,n,y,NA
 2022,Senate,Kansas,Class III,2022-11-08,Mark R. Holland,dem,1,2022-08-10,0.368,Holland,Moran,n,y,NA
