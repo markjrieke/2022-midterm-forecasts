@@ -169,8 +169,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Alaska,Class III,2022-11-08,Kelly C. Tshibaka,rep,3,2022-07-05,0.45033333333333336,Chesbro,Tshibaka,n,n,x
 2022,Senate,Arizona,Class III,2022-11-08,Mark Kelly,dem,16,2022-08-27,0.47769455634052177,Kelly,Masters,y,n,NA
 2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,16,2022-08-27,0.45426397523860895,Kelly,Masters,y,n,NA
-2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,5,2022-08-25,0.4848,Bennet,O'Dea,y,n,NA
-2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,5,2022-08-25,0.41225,Bennet,O'Dea,y,n,NA
+2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,6,2022-08-31,0.4806666666666668,Bennet,O'Dea,y,n,NA
+2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,6,2022-08-31,0.39979999999999993,Bennet,O'Dea,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Richard Blumenthal,dem,2,2022-07-27,0.45200000000000007,Blumenthal,Levy,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Leora R. Levy,rep,2,2022-07-27,0.33,Blumenthal,Levy,y,n,NA
 2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,9,2022-08-18,0.4266666666666665,Demings,Rubio,n,y,NA
