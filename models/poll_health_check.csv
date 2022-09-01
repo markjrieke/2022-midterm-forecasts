@@ -7,8 +7,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,4,2022-06-08,0.345,Polis,Ganahl,y,n,NA
 2022,Governor,Florida,Governor,2022-11-08,Charlie Crist,dem,1,2022-06-04,0.506,Crist,DeSantis,n,y,NA
 2022,Governor,Florida,Governor,2022-11-08,Ron DeSantis,rep,1,2022-06-04,0.494,Crist,DeSantis,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,11,2022-07-24,0.43488460956361513,Abrams,Kemp,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,11,2022-07-24,0.4545070103400878,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,12,2022-07-26,0.438408804186828,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,12,2022-07-26,0.45961662069100456,Abrams,Kemp,n,y,NA
 2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,2,2022-07-19,0.49449999999999983,Pritzker,Bailey,y,n,NA
 2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,2,2022-07-19,0.41000000000000003,Pritzker,Bailey,y,n,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,2,2022-07-14,0.3604999999999999,DeJear,Reynolds,n,y,NA
@@ -27,12 +27,12 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,New Mexico,Governor,2022-11-08,Mark V. Ronchetti,rep,3,2022-07-17,0.4400000000000001,Lujan Grisham,Ronchetti,y,n,NA
 2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,4,2022-06-20,0.5425,Hochul,Zeldin,y,n,NA
 2022,Governor,New York,Governor,2022-11-08,Lee M. Zeldin,rep,4,2022-06-20,0.28,Hochul,Zeldin,y,n,NA
-2022,Governor,Oklahoma,Governor,2022-11-08,Joy Hofmeister,dem,1,2022-06-09,0.29,Hofmeister,Stitt,n,y,NA
-2022,Governor,Oklahoma,Governor,2022-11-08,Kevin Stitt,rep,1,2022-06-09,0.47,Hofmeister,Stitt,n,y,NA
+2022,Governor,Oklahoma,Governor,2022-11-08,Joy Hofmeister,dem,2,2022-07-26,0.31499999999999995,Hofmeister,Stitt,n,y,NA
+2022,Governor,Oklahoma,Governor,2022-11-08,Kevin Stitt,rep,2,2022-07-26,0.445,Hofmeister,Stitt,n,y,NA
 2022,Governor,Oregon,Governor,2022-11-08,Tina Kotek,dem,2,2022-06-30,0.32199999999999995,Kotek,Drazan,n,n,NA
 2022,Governor,Oregon,Governor,2022-11-08,Christine Drazan,rep,2,2022-06-30,0.277,Kotek,Drazan,n,n,NA
-2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,7,2022-07-21,0.4898571428571427,Shapiro,Mastriano,n,n,NA
-2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,7,2022-07-21,0.4098571428571429,Shapiro,Mastriano,n,n,NA
+2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,8,2022-07-26,0.491125,Shapiro,Mastriano,n,n,NA
+2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,8,2022-07-26,0.408625,Shapiro,Mastriano,n,n,NA
 2022,Governor,Texas,Governor,2022-11-08,Beto O'Rourke,dem,6,2022-07-07,0.41033333333333344,O'Rourke,Abbott,n,y,NA
 2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,6,2022-07-07,0.48916666666666675,O'Rourke,Abbott,n,y,NA
 2022,Governor,Vermont,Governor,2022-11-08,Brenda Siegel,dem,1,2022-07-25,0.16,Siegel,Scott,n,y,NA
@@ -45,14 +45,16 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,California,District 22,2022-11-08,David G. Valadao,rep,1,2022-07-15,0.35,Salas,Valadao,n,y,NA
 2022,House,California,District 40,2022-11-08,Asif Mahmood,dem,1,2022-07-20,0.35,Mahmood,Kim,n,y,NA
 2022,House,California,District 40,2022-11-08,Young Kim,rep,1,2022-07-20,0.51,Mahmood,Kim,n,y,NA
+2022,House,California,District 9,2022-11-08,Josh Harder,dem,1,2022-07-26,0.38,Harder,Patti,y,n,NA
+2022,House,California,District 9,2022-11-08,Tom Patti,rep,1,2022-07-26,0.38,Harder,Patti,y,n,NA
 2022,House,Colorado,District 3,2022-11-08,Adam Frisch,dem,1,2022-07-25,0.42,Frisch,Boebert,n,y,NA
 2022,House,Colorado,District 3,2022-11-08,Lauren Boebert,rep,1,2022-07-25,0.49,Frisch,Boebert,n,y,NA
 2022,House,Colorado,District 7,2022-11-08,Brittany Pettersen,dem,1,2022-07-21,0.44,Pettersen,Aadland,y,n,NA
 2022,House,Colorado,District 7,2022-11-08,Erik Aadland,rep,1,2022-07-21,0.42,Pettersen,Aadland,y,n,NA
 2022,House,Colorado,District 8,2022-11-08,Yadira Caraveo,dem,1,2022-06-13,0.36,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Colorado,District 8,2022-11-08,Barbara Kirkmeyer,rep,1,2022-06-13,0.44,Caraveo,Kirkmeyer,n,n,NA
-2022,House,Connecticut,District 5,2022-11-08,Jahana Hayes,dem,2,2022-07-24,0.45500000000000007,Hayes,Logan,y,n,NA
-2022,House,Connecticut,District 5,2022-11-08,George Logan,rep,2,2022-07-24,0.42999999999999994,Hayes,Logan,y,n,NA
+2022,House,Connecticut,District 5,2022-11-08,Jahana Hayes,dem,3,2022-07-26,0.4533333333333334,Hayes,Logan,y,n,NA
+2022,House,Connecticut,District 5,2022-11-08,George Logan,rep,3,2022-07-26,0.41000000000000003,Hayes,Logan,y,n,NA
 2022,House,Florida,District 13,2022-11-08,Eric Lynn,dem,4,2022-06-28,0.395,Lynn,Paulina Luna,n,n,NA
 2022,House,Florida,District 13,2022-11-08,Anna Paulina Luna,rep,4,2022-06-28,0.44,Lynn,Paulina Luna,n,n,NA
 2022,House,Florida,District 2,2022-11-08,Al Lawson,dem,1,2022-06-23,0.4,Lawson,Dunn,y,y,NA
@@ -65,6 +67,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Iowa,District 3,2022-11-08,Zach Nunn,rep,1,2022-07-11,0.43,Axne,Nunn,y,n,NA
 2022,House,Michigan,District 7,2022-11-08,Elissa Slotkin,dem,1,2022-06-16,0.436,Slotkin,Barrett,y,n,NA
 2022,House,Michigan,District 7,2022-11-08,Tom Barrett,rep,1,2022-06-16,0.461,Slotkin,Barrett,y,n,NA
+2022,House,Minnesota,District 2,2022-11-08,Angie Craig,dem,1,2022-07-26,0.47,Craig,Kistner,y,n,NA
+2022,House,Minnesota,District 2,2022-11-08,Tyler Kistner,rep,1,2022-07-26,0.46,Craig,Kistner,y,n,NA
 2022,House,Nebraska,District 2,2022-11-08,Tony Vargas,dem,1,2022-06-30,0.48,Vargas,Bacon,n,y,NA
 2022,House,Nebraska,District 2,2022-11-08,Don Bacon,rep,1,2022-06-30,0.47,Vargas,Bacon,n,y,NA
 2022,House,Nevada,District 1,2022-11-08,Dina Titus,dem,1,2022-07-10,0.41100000000000003,Titus,Robertson,y,n,NA
@@ -110,12 +114,12 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Alaska,Class III,2022-11-08,Kelly C. Tshibaka,rep,3,2022-07-05,0.45033333333333336,Chesbro,Tshibaka,n,n,x
 2022,Senate,Arizona,Class III,2022-11-08,Mark Kelly,dem,9,2022-07-20,0.49111111111111105,Kelly,Masters,y,n,NA
 2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,9,2022-07-20,0.39,Kelly,Masters,y,n,NA
-2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,2,2022-06-08,0.4949999999999999,Bennet,O'Dea,y,n,NA
-2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,2,2022-06-08,0.36,Bennet,O'Dea,y,n,NA
+2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,3,2022-07-26,0.4900000000000001,Bennet,O'Dea,y,n,NA
+2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,3,2022-07-26,0.3814999999999998,Bennet,O'Dea,y,n,NA
 2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,3,2022-07-09,0.3966666666666667,Demings,Rubio,n,y,NA
 2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,3,2022-07-09,0.4866666666666668,Demings,Rubio,n,y,NA
-2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,11,2022-07-24,0.44692252098692137,Warnock,Walker,y,n,NA
-2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,11,2022-07-24,0.423867151585064,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,12,2022-07-26,0.4452455082691959,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,12,2022-07-26,0.4286077850719789,Warnock,Walker,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,1,2022-07-19,0.33899999999999997,Duckworth,Salvi,y,n,NA
 2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,3,2022-07-14,0.4213333333333334,Franken,Grassley,n,y,NA
@@ -128,8 +132,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,4,2022-07-24,0.4322499999999999,Beasley,Budd,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,5,2022-07-24,0.446,Ryan,Vance,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,5,2022-07-24,0.39940000000000003,Ryan,Vance,n,n,NA
-2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,8,2022-07-24,0.4809999999999999,Fetterman,Oz,n,n,NA
-2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,8,2022-07-24,0.394375,Fetterman,Oz,n,n,NA
+2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,9,2022-07-26,0.47977777777777786,Fetterman,Oz,n,n,NA
+2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,9,2022-07-26,0.3905555555555556,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,12,2022-07-18,0.36084459360717097,McMullin,Lee,n,y,NA
 2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,12,2022-07-18,0.45125,McMullin,Lee,n,y,NA
 2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,4,2022-07-11,0.5075,Murray,Smiley,y,n,NA
