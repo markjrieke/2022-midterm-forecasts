@@ -116,10 +116,10 @@ rm(polls_governor, polls_house, polls_senate)
 # ------------------------------wrangle-gcb-------------------------------------
 
 # function for getting the e-day gcb
-gcb_model <- function(.data, begin_date, election_date) {
+gcb_model <- function(.data, begin_date, eval_date) {
   
   .data %>%
-    mutate(election_date = lubridate::mdy(election_date)) %>%
+    mutate(election_date = lubridate::mdy(eval_date)) %>%
     select(cycle, 
            end_date,
            election_date,
@@ -369,6 +369,7 @@ predictions %>%
 
 # punk november
 elections_model %>% write_rds("models/punk_november.rds")
+elections_train %>% write_csv("models/data/elections_train.csv")
 polling_error %>% write_rds("models/data/polling_error.rds")
 poll_model %>% write_rds("models/data/poll_model.rds")  
 gcb_model %>% write_rds("models/data/gcb_model.rds")
