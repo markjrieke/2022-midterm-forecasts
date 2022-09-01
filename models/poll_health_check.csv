@@ -1,16 +1,16 @@
 cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,last_poll,poll_avg,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_incumbent,pending
 2022,Governor,Alaska,Governor,2022-11-08,Bill Walker,ind,3,2022-07-24,0.30933333333333335,Walker,Dunleavy,n,y,NA
 2022,Governor,Alaska,Governor,2022-11-08,Mike Dunleavy,rep,3,2022-07-24,0.48200000000000004,Walker,Dunleavy,n,y,NA
-2022,Governor,Arizona,Governor,2022-11-08,Katie Hobbs,dem,8,2022-08-22,0.4549999999999999,Hobbs,Lake,n,n,NA
-2022,Governor,Arizona,Governor,2022-11-08,Kari Lake,rep,8,2022-08-22,0.4119999999999999,Hobbs,Lake,n,n,NA
+2022,Governor,Arizona,Governor,2022-11-08,Katie Hobbs,dem,9,2022-08-27,0.4553333333333333,Hobbs,Lake,n,n,NA
+2022,Governor,Arizona,Governor,2022-11-08,Kari Lake,rep,9,2022-08-27,0.42083333333333334,Hobbs,Lake,n,n,NA
 2022,Governor,California,Governor,2022-11-08,Gavin Newsom,dem,2,2022-08-15,0.5349999999999999,Newsom,Dahle,y,n,NA
 2022,Governor,California,Governor,2022-11-08,Brian Dahle,rep,2,2022-08-15,0.2799999999999999,Newsom,Dahle,y,n,NA
 2022,Governor,Colorado,Governor,2022-11-08,Jared Polis,dem,6,2022-08-22,0.5080000000000001,Polis,Ganahl,y,n,NA
 2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,6,2022-08-22,0.38275000000000003,Polis,Ganahl,y,n,NA
 2022,Governor,Florida,Governor,2022-11-08,Charlie Crist,dem,8,2022-08-18,0.4512000000000001,Crist,DeSantis,n,y,NA
 2022,Governor,Florida,Governor,2022-11-08,Ron DeSantis,rep,8,2022-08-18,0.49674999999999997,Crist,DeSantis,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,15,2022-08-07,0.44405895525056516,Abrams,Kemp,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,15,2022-08-07,0.511087020578246,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,16,2022-08-27,0.4410394975822452,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,16,2022-08-27,0.5081278936616823,Abrams,Kemp,n,y,NA
 2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,2,2022-07-19,0.49449999999999983,Pritzker,Bailey,y,n,NA
 2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,2,2022-07-19,0.41000000000000003,Pritzker,Bailey,y,n,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,2,2022-07-14,0.3604999999999999,DeJear,Reynolds,n,y,NA
@@ -169,16 +169,16 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Wisconsin,District 3,2022-11-08,Derrick Van Orden,rep,3,2022-08-19,0.4743333333333334,Pfaff,Van Orden,n,n,NA
 2022,Senate,Alaska,Class III,2022-11-08,Patricia R. Chesbro,dem,3,2022-07-05,0.185,Chesbro,Tshibaka,n,n,x
 2022,Senate,Alaska,Class III,2022-11-08,Kelly C. Tshibaka,rep,3,2022-07-05,0.45033333333333336,Chesbro,Tshibaka,n,n,x
-2022,Senate,Arizona,Class III,2022-11-08,Mark Kelly,dem,15,2022-08-22,0.4978174695456374,Kelly,Masters,y,n,NA
-2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,15,2022-08-22,0.44310014494714234,Kelly,Masters,y,n,NA
+2022,Senate,Arizona,Class III,2022-11-08,Mark Kelly,dem,16,2022-08-27,0.47769455634052177,Kelly,Masters,y,n,NA
+2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,16,2022-08-27,0.45426397523860895,Kelly,Masters,y,n,NA
 2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,5,2022-08-25,0.4848,Bennet,O'Dea,y,n,NA
 2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,5,2022-08-25,0.41225,Bennet,O'Dea,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Richard Blumenthal,dem,2,2022-07-27,0.45200000000000007,Blumenthal,Levy,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Leora R. Levy,rep,2,2022-07-27,0.33,Blumenthal,Levy,y,n,NA
 2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,9,2022-08-18,0.4266666666666665,Demings,Rubio,n,y,NA
 2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,9,2022-08-18,0.4755555555555555,Demings,Rubio,n,y,NA
-2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,15,2022-08-07,0.44873357417236953,Warnock,Walker,y,n,NA
-2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,15,2022-08-07,0.4599260633318207,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,16,2022-08-27,0.46551014656635226,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,16,2022-08-27,0.4744228101410366,Warnock,Walker,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,1,2022-07-19,0.33899999999999997,Duckworth,Salvi,y,n,NA
 2022,Senate,Indiana,Class III,2022-11-08,Thomas McDermott,dem,1,2022-08-24,0.42,McDermott,Young,n,y,NA
