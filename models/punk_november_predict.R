@@ -115,6 +115,7 @@ rm(polls_governor, polls_house, polls_senate)
 
 # ------------------------------wrangle-gcb-------------------------------------
 
+set.seed(888)
 gcb <-
   polls_gcb %>%
   gcb_model("1/1/21", paste(lubridate::month(run_date), lubridate::day(run_date), 22, sep = "/"))
@@ -247,7 +248,7 @@ elections_predict <-
   
 # -----------------------------------model!-------------------------------------
 
-# elections model is a lil punk
+set.seed(666) # punk
 elections_model <- 
   gamlss(result ~ estimate*poll_bucket + incumbent + white + black + hispanic + aapi,
          sigma.formula = ~ log10(num_polls + 2),
@@ -260,7 +261,7 @@ elections_model <-
 n_races <- nrow(elections_predict)
 
 # generate random polling errors
-set.seed(2022)
+set.seed(555)
 sim_data <-
   tibble(sim = rep(seq(1, 10000), n_races),
          idx = seq(1, n_races) %>% rep(10000) %>% riekelib::arrange_vector(),
@@ -285,6 +286,7 @@ sim_preds <-
          sigma = predict(elections_model, newdata = sim_mod, what = "sigma", type = "response"))
 
 # generate random draws 
+set.seed(444)
 sim_preds <- 
   sim_preds %>%
   bind_cols(sim_data) %>%
