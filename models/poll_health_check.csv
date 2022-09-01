@@ -7,8 +7,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,4,2022-06-08,0.345,Polis,Ganahl,y,n,NA
 2022,Governor,Florida,Governor,2022-11-08,Charlie Crist,dem,1,2022-06-04,0.506,Crist,DeSantis,n,y,NA
 2022,Governor,Florida,Governor,2022-11-08,Ron DeSantis,rep,1,2022-06-04,0.494,Crist,DeSantis,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,4,2022-06-27,0.46075,Abrams,Kemp,n,y,NA
-2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,4,2022-06-27,0.497,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,5,2022-07-06,0.4566,Abrams,Kemp,n,y,NA
+2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,5,2022-07-06,0.5035999999999999,Abrams,Kemp,n,y,NA
 2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,1,2022-06-21,0.5,Pritzker,Bailey,y,n,NA
 2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,1,2022-06-21,0.43,Pritzker,Bailey,y,n,NA
 2022,Governor,Massachusetts,Governor,2022-11-08,Maura Healey,dem,2,2022-06-15,0.595,Healey,Diehl,n,n,x
@@ -17,6 +17,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Minnesota,Governor,2022-11-08,Scott Jensen,rep,1,2022-06-08,0.4,Walz,Jensen,y,n,NA
 2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,2,2022-06-27,0.4649999999999999,Sisolak,Lombardo,y,n,NA
 2022,Governor,Nevada,Governor,2022-11-08,Joe Lombardo,rep,2,2022-06-27,0.4549999999999999,Sisolak,Lombardo,y,n,NA
+2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,1,2022-07-06,0.33,Sherman,Sununu,n,y,x
+2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,1,2022-07-06,0.43,Sherman,Sununu,n,y,x
 2022,Governor,New Mexico,Governor,2022-11-08,Michelle Lujan Grisham,dem,2,2022-06-14,0.45,Lujan Grisham,Ronchetti,y,n,NA
 2022,Governor,New Mexico,Governor,2022-11-08,Mark V. Ronchetti,rep,2,2022-06-14,0.44,Lujan Grisham,Ronchetti,y,n,NA
 2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,4,2022-06-20,0.5425,Hochul,Zeldin,y,n,NA
@@ -78,8 +80,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,2,2022-06-27,0.39,Kelly,Masters,y,n,NA
 2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,2,2022-06-08,0.4949999999999999,Bennet,O'Dea,y,n,NA
 2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,2,2022-06-08,0.36,Bennet,O'Dea,y,n,NA
-2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,4,2022-06-27,0.4910000000000001,Warnock,Walker,y,n,NA
-2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,4,2022-06-27,0.45400000000000007,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,5,2022-07-06,0.48679999999999995,Warnock,Walker,y,n,NA
+2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,5,2022-07-06,0.46120000000000005,Warnock,Walker,y,n,NA
 2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,1,2022-07-04,0.44,Franken,Grassley,n,y,NA
 2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,1,2022-07-04,0.49,Franken,Grassley,n,y,NA
 2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,1,2022-06-27,0.46,Cortez Masto,Laxalt,y,n,NA
