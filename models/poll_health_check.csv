@@ -23,8 +23,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,7,2022-08-16,0.41666666666666674,Whitmer,Dixon,y,n,NA
 2022,Governor,Minnesota,Governor,2022-11-08,Tim Walz,dem,2,2022-07-19,0.45899999999999985,Walz,Jensen,y,n,NA
 2022,Governor,Minnesota,Governor,2022-11-08,Scott Jensen,rep,2,2022-07-19,0.42800000000000005,Walz,Jensen,y,n,NA
-2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,6,2022-07-20,0.4660000000000001,Sisolak,Lombardo,y,n,NA
-2022,Governor,Nevada,Governor,2022-11-08,Joe Lombardo,rep,6,2022-07-20,0.4340000000000001,Sisolak,Lombardo,y,n,NA
+2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,7,2022-08-17,0.4611428571428572,Sisolak,Lombardo,y,n,NA
+2022,Governor,Nevada,Governor,2022-11-08,Joe Lombardo,rep,7,2022-08-17,0.4294285714285713,Sisolak,Lombardo,y,n,NA
 2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,2,2022-08-11,0.30999999999999994,Sherman,Sununu,n,y,x
 2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,2,2022-08-11,0.4549999999999999,Sherman,Sununu,n,y,x
 2022,Governor,New Mexico,Governor,2022-11-08,Michelle Lujan Grisham,dem,3,2022-07-17,0.4599999999999999,Lujan Grisham,Ronchetti,y,n,NA
@@ -145,6 +145,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Pennsylvania,District 8,2022-11-08,Jim Bognet,rep,2,2022-08-09,0.4600000000000001,Cartwright,Bognet,y,n,NA
 2022,House,Rhode Island,District 2,2022-11-08,Seth M. Magaziner,dem,6,2022-06-22,0.38530000000000003,Magaziner,Fung,n,n,x
 2022,House,Rhode Island,District 2,2022-11-08,Allan W. Fung,rep,6,2022-06-22,0.44601666666666673,Magaziner,Fung,n,n,x
+2022,House,Tennessee,District 5,2022-11-08,Heidi Campbell,dem,1,2022-08-17,0.51,Campbell,Ogles,n,n,NA
+2022,House,Tennessee,District 5,2022-11-08,Andy Ogles,rep,1,2022-08-17,0.48,Campbell,Ogles,n,n,NA
 2022,House,Texas,District 15,2022-11-08,Michelle Vallejo,dem,1,2022-07-29,0.4,Vallejo,De La Cruz,n,n,NA
 2022,House,Texas,District 15,2022-11-08,Monica De La Cruz,rep,1,2022-07-29,0.44,Vallejo,De La Cruz,n,n,NA
 2022,House,Texas,District 34,2022-11-08,Vicente Gonzalez,dem,1,2022-08-01,0.47,Gonzalez,Flores,n,y,NA
@@ -174,8 +176,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Kansas,Class III,2022-11-08,Jerry Moran,rep,1,2022-08-10,0.575,Holland,Moran,n,y,NA
 2022,Senate,Missouri,Class III,2022-11-08,Trudy Busch Valentine,dem,5,2022-08-16,0.32199999999999995,Busch Valentine,Schmitt,n,n,NA
 2022,Senate,Missouri,Class III,2022-11-08,Eric Schmitt,rep,5,2022-08-16,0.4149999999999999,Busch Valentine,Schmitt,n,n,NA
-2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,4,2022-07-20,0.47524999999999995,Cortez Masto,Laxalt,y,n,NA
-2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,4,2022-07-20,0.41950000000000004,Cortez Masto,Laxalt,y,n,NA
+2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,5,2022-08-17,0.46940000000000004,Cortez Masto,Laxalt,y,n,NA
+2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,5,2022-08-17,0.412,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,4,2022-07-08,0.4900000000000001,Hassan,Bolduc,y,n,x
 2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,4,2022-07-08,0.42499999999999993,Hassan,Bolduc,y,n,x
 2022,Senate,New York,Class III,2022-11-08,Charles E. Schumer,dem,3,2022-08-09,0.5340000000000001,Schumer,Pinion,y,n,NA
@@ -188,7 +190,7 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,13,2022-08-10,0.3300198786630962,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,12,2022-07-18,0.36084459360717097,McMullin,Lee,n,y,NA
 2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,12,2022-07-18,0.45125,McMullin,Lee,n,y,NA
-2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,4,2022-07-11,0.5075,Murray,Smiley,y,n,NA
-2022,Senate,Washington,Class III,2022-11-08,Tiffany Smiley,rep,4,2022-07-11,0.37249999999999994,Murray,Smiley,y,n,NA
+2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,5,2022-08-17,0.5041999999999999,Murray,Smiley,y,n,NA
+2022,Senate,Washington,Class III,2022-11-08,Tiffany Smiley,rep,5,2022-08-17,0.38399999999999995,Murray,Smiley,y,n,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Mandela Barnes,dem,6,2022-08-16,0.4900000000000001,Barnes,Johnson,n,y,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Ron Johnson,rep,6,2022-08-16,0.44166666666666676,Barnes,Johnson,n,y,NA
