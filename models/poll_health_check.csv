@@ -81,12 +81,14 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Nevada,District 1,2022-11-08,Mark Robertson,rep,1,2022-07-10,0.36700000000000005,Titus,Robertson,y,n,NA
 2022,House,Nevada,District 2,2022-11-08,Elizabeth Mercedes Krause,dem,1,2022-07-10,0.359,Krause,Amodei,n,y,NA
 2022,House,Nevada,District 2,2022-11-08,Mark E. Amodei,rep,1,2022-07-10,0.46399999999999997,Krause,Amodei,n,y,NA
-2022,House,Nevada,District 3,2022-11-08,Susie Lee,dem,2,2022-07-10,0.4289999999999999,Lee,Becker,y,n,NA
-2022,House,Nevada,District 3,2022-11-08,April Becker,rep,2,2022-07-10,0.4284999999999999,Lee,Becker,y,n,NA
+2022,House,Nevada,District 3,2022-11-08,Susie Lee,dem,3,2022-07-29,0.42266666666666675,Lee,Becker,y,n,NA
+2022,House,Nevada,District 3,2022-11-08,April Becker,rep,3,2022-07-29,0.43233333333333346,Lee,Becker,y,n,NA
 2022,House,Nevada,District 4,2022-11-08,Steven A. Horsford,dem,1,2022-07-10,0.41700000000000004,Horsford,Peters,y,n,NA
 2022,House,Nevada,District 4,2022-11-08,Sam Peters,rep,1,2022-07-10,0.387,Horsford,Peters,y,n,NA
 2022,House,New Jersey,District 1,2022-11-08,Donald W. Norcross,dem,1,2022-07-19,0.49,Norcross,Gustafson,y,n,NA
 2022,House,New Jersey,District 1,2022-11-08,Claire Gustafson,rep,1,2022-07-19,0.44,Norcross,Gustafson,y,n,NA
+2022,House,New Jersey,District 3,2022-11-08,Andy Kim,dem,1,2022-07-29,0.44,Kim,Healey,y,n,NA
+2022,House,New Jersey,District 3,2022-11-08,Bob Healey,rep,1,2022-07-29,0.38,Kim,Healey,y,n,NA
 2022,House,New Jersey,District 7,2022-11-08,Tom Malinowski,dem,1,2022-07-28,0.38,Malinowski,Kean,y,n,NA
 2022,House,New Jersey,District 7,2022-11-08,Thomas H. Kean Jr.,rep,1,2022-07-28,0.46,Malinowski,Kean,y,n,NA
 2022,House,New Mexico,District 2,2022-11-08,Gabriel Vasquez,dem,1,2022-07-25,0.45,Vasquez,Herrell,n,y,NA
@@ -109,14 +111,18 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Oregon,District 5,2022-11-08,Lori Chavez-DeRemer,rep,1,2022-06-02,0.42,McLeod-Skinner,Chavez-DeRemer,n,n,NA
 2022,House,Oregon,District 6,2022-11-08,Andrea Salinas,dem,2,2022-07-28,0.4299999999999999,Salinas,Erickson,n,n,NA
 2022,House,Oregon,District 6,2022-11-08,Mike Erickson,rep,2,2022-07-28,0.44999999999999984,Salinas,Erickson,n,n,NA
-2022,House,Pennsylvania,District 1,2022-11-08,Ashley Ehasz,dem,1,2022-06-25,0.38,Ehasz,Fitzpatrick,n,y,NA
-2022,House,Pennsylvania,District 1,2022-11-08,Brian Fitzpatrick,rep,1,2022-06-25,0.45,Ehasz,Fitzpatrick,n,y,NA
+2022,House,Pennsylvania,District 1,2022-11-08,Ashley Ehasz,dem,2,2022-07-29,0.3649999999999999,Ehasz,Fitzpatrick,n,y,NA
+2022,House,Pennsylvania,District 1,2022-11-08,Brian Fitzpatrick,rep,2,2022-07-29,0.43499999999999994,Ehasz,Fitzpatrick,n,y,NA
 2022,House,Pennsylvania,District 17,2022-11-08,Chris Deluzio,dem,2,2022-07-21,0.43499999999999994,Deluzio,Shaffer,n,n,NA
 2022,House,Pennsylvania,District 17,2022-11-08,Jeremy Shaffer,rep,2,2022-07-21,0.42999999999999994,Deluzio,Shaffer,n,n,NA
 2022,House,Pennsylvania,District 8,2022-11-08,Matt Cartwright,dem,1,2022-06-25,0.45,Cartwright,Bognet,y,n,NA
 2022,House,Pennsylvania,District 8,2022-11-08,Jim Bognet,rep,1,2022-06-25,0.46,Cartwright,Bognet,y,n,NA
 2022,House,Rhode Island,District 2,2022-11-08,Seth M. Magaziner,dem,6,2022-06-22,0.38530000000000003,Magaziner,Fung,n,n,x
 2022,House,Rhode Island,District 2,2022-11-08,Allan W. Fung,rep,6,2022-06-22,0.44601666666666673,Magaziner,Fung,n,n,x
+2022,House,Texas,District 15,2022-11-08,Michelle Vallejo,dem,1,2022-07-29,0.4,Vallejo,De La Cruz,n,n,NA
+2022,House,Texas,District 15,2022-11-08,Monica De La Cruz,rep,1,2022-07-29,0.44,Vallejo,De La Cruz,n,n,NA
+2022,House,Texas,District 23,2022-11-08,John Lira,dem,1,2022-07-29,0.26,Lira,Gonzales,n,y,NA
+2022,House,Texas,District 23,2022-11-08,Tony Gonzales,rep,1,2022-07-29,0.42,Lira,Gonzales,n,y,NA
 2022,House,Wisconsin,District 3,2022-11-08,Derrick Van Orden,rep,1,2022-06-02,0.47,Pfaff,Van Orden,n,n,NA
 2022,Senate,Alaska,Class III,2022-11-08,Patricia R. Chesbro,dem,3,2022-07-05,0.185,Chesbro,Tshibaka,n,n,x
 2022,Senate,Alaska,Class III,2022-11-08,Kelly C. Tshibaka,rep,3,2022-07-05,0.45033333333333336,Chesbro,Tshibaka,n,n,x
