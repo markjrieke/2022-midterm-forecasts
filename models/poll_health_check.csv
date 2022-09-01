@@ -78,8 +78,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,1,2022-06-27,0.4,Hassan,Bolduc,y,n,x
 2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,3,2022-07-01,0.4313333333333333,Beasley,Budd,n,n,NA
 2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,3,2022-07-01,0.4420000000000001,Beasley,Budd,n,n,NA
-2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,1,2022-06-30,0.48,Ryan,Vance,n,n,NA
-2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,1,2022-06-30,0.46,Ryan,Vance,n,n,NA
+2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,4,2022-07-03,0.4475,Ryan,Vance,n,n,NA
+2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,4,2022-07-03,0.4050000000000001,Ryan,Vance,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,3,2022-06-19,0.4806666666666668,Fetterman,Oz,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,3,2022-06-19,0.41733333333333333,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,7,2022-06-16,0.32857142857142857,McMullin,Lee,n,y,NA
