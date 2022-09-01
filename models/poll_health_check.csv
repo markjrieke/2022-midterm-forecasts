@@ -160,8 +160,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,New York,Class III,2022-11-08,Joe Pinion,rep,2,2022-07-28,0.32999999999999996,Schumer,Pinion,y,n,NA
 2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,4,2022-07-24,0.43025,Beasley,Budd,n,n,NA
 2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,4,2022-07-24,0.4322499999999999,Beasley,Budd,n,n,NA
-2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,6,2022-07-28,0.4516666666666667,Ryan,Vance,n,n,NA
-2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,6,2022-07-28,0.4078333333333335,Ryan,Vance,n,n,NA
+2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,9,2022-08-03,0.4511111111111111,Ryan,Vance,n,n,NA
+2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,9,2022-08-03,0.38633333333333325,Ryan,Vance,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,12,2022-08-01,0.4902830142543203,Fetterman,Oz,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,12,2022-08-01,0.33326222184269316,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,12,2022-07-18,0.36084459360717097,McMullin,Lee,n,y,NA
