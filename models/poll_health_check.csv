@@ -43,8 +43,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,7,2022-07-25,0.3720000000000001,Peltola,Begich,n,n,x
 2022,House,California,District 13,2022-11-08,Adam Gray,dem,1,2022-08-02,0.37,Gray,Duarte,n,n,NA
 2022,House,California,District 13,2022-11-08,John Duarte,rep,1,2022-08-02,0.37,Gray,Duarte,n,n,NA
-2022,House,California,District 22,2022-11-08,Rudy Salas,dem,1,2022-07-15,0.43,Salas,Valadao,n,y,NA
-2022,House,California,District 22,2022-11-08,David G. Valadao,rep,1,2022-07-15,0.35,Salas,Valadao,n,y,NA
+2022,House,California,District 22,2022-11-08,Rudy Salas,dem,2,2022-08-05,0.41000000000000003,Salas,Valadao,n,y,NA
+2022,House,California,District 22,2022-11-08,David G. Valadao,rep,2,2022-08-05,0.3449999999999999,Salas,Valadao,n,y,NA
 2022,House,California,District 40,2022-11-08,Asif Mahmood,dem,1,2022-07-20,0.35,Mahmood,Kim,n,y,NA
 2022,House,California,District 40,2022-11-08,Young Kim,rep,1,2022-07-20,0.51,Mahmood,Kim,n,y,NA
 2022,House,California,District 9,2022-11-08,Josh Harder,dem,1,2022-07-26,0.38,Harder,Patti,y,n,NA
@@ -71,8 +71,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Iowa,District 1,2022-11-08,Mariannette Miller-Meeks,rep,1,2022-07-04,0.39,Bohannan,Miller-Meeks,n,y,NA
 2022,House,Iowa,District 2,2022-11-08,Liz Mathis,dem,1,2022-07-20,0.44,Mathis,Hinson,n,y,NA
 2022,House,Iowa,District 2,2022-11-08,Ashley Hinson,rep,1,2022-07-20,0.44,Mathis,Hinson,n,y,NA
-2022,House,Iowa,District 3,2022-11-08,Cindy Axne,dem,1,2022-07-11,0.43,Axne,Nunn,y,n,NA
-2022,House,Iowa,District 3,2022-11-08,Zach Nunn,rep,1,2022-07-11,0.43,Axne,Nunn,y,n,NA
+2022,House,Iowa,District 3,2022-11-08,Cindy Axne,dem,2,2022-08-05,0.42000000000000004,Axne,Nunn,y,n,NA
+2022,House,Iowa,District 3,2022-11-08,Zach Nunn,rep,2,2022-08-05,0.4599999999999999,Axne,Nunn,y,n,NA
 2022,House,Kansas,District 3,2022-11-08,Sharice Davids,dem,1,2022-07-28,0.45,Davids,Adkins,y,n,NA
 2022,House,Kansas,District 3,2022-11-08,Amanda L. Adkins,rep,1,2022-07-28,0.46,Davids,Adkins,y,n,NA
 2022,House,Michigan,District 7,2022-11-08,Elissa Slotkin,dem,1,2022-06-16,0.436,Slotkin,Barrett,y,n,NA
@@ -125,6 +125,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Pennsylvania,District 1,2022-11-08,Brian Fitzpatrick,rep,2,2022-07-29,0.43499999999999994,Ehasz,Fitzpatrick,n,y,NA
 2022,House,Pennsylvania,District 17,2022-11-08,Chris Deluzio,dem,2,2022-07-21,0.43499999999999994,Deluzio,Shaffer,n,n,NA
 2022,House,Pennsylvania,District 17,2022-11-08,Jeremy Shaffer,rep,2,2022-07-21,0.42999999999999994,Deluzio,Shaffer,n,n,NA
+2022,House,Pennsylvania,District 7,2022-11-08,Susan Wild,dem,1,2022-08-05,0.43,Wild,Scheller,y,n,NA
+2022,House,Pennsylvania,District 7,2022-11-08,Lisa Scheller,rep,1,2022-08-05,0.47,Wild,Scheller,y,n,NA
 2022,House,Pennsylvania,District 8,2022-11-08,Matt Cartwright,dem,1,2022-06-25,0.45,Cartwright,Bognet,y,n,NA
 2022,House,Pennsylvania,District 8,2022-11-08,Jim Bognet,rep,1,2022-06-25,0.46,Cartwright,Bognet,y,n,NA
 2022,House,Rhode Island,District 2,2022-11-08,Seth M. Magaziner,dem,6,2022-06-22,0.38530000000000003,Magaziner,Fung,n,n,x
@@ -142,8 +144,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,3,2022-07-26,0.3814999999999998,Bennet,O'Dea,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Richard Blumenthal,dem,2,2022-07-27,0.45200000000000007,Blumenthal,Levy,y,n,NA
 2022,Senate,Connecticut,Class III,2022-11-08,Leora R. Levy,rep,2,2022-07-27,0.33,Blumenthal,Levy,y,n,NA
-2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,4,2022-07-31,0.41000000000000003,Demings,Rubio,n,y,NA
-2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,4,2022-07-31,0.4774999999999999,Demings,Rubio,n,y,NA
+2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,5,2022-08-05,0.42000000000000004,Demings,Rubio,n,y,NA
+2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,5,2022-08-05,0.4739999999999999,Demings,Rubio,n,y,NA
 2022,Senate,Georgia,Class III,2022-11-08,Raphael Warnock,dem,14,2022-08-01,0.48935186327694,Warnock,Walker,y,n,NA
 2022,Senate,Georgia,Class III,2022-11-08,Herschel Junior Walker,rep,14,2022-08-01,0.4673436973808408,Warnock,Walker,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,1,2022-07-19,0.433,Duckworth,Salvi,y,n,NA
