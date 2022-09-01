@@ -63,6 +63,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Nevada,District 4,2022-11-08,Sam Peters,rep,1,2022-07-10,0.387,Horsford,Peters,y,n,NA
 2022,House,New York,District 11,2022-11-08,Max N. Rose,dem,1,2022-06-26,0.36,Rose,Malliotakis,n,y,NA
 2022,House,New York,District 11,2022-11-08,Nicole Malliotakis,rep,1,2022-06-26,0.51,Rose,Malliotakis,n,y,NA
+2022,House,New York,District 3,2022-11-08,Joshua Alexander Lafazan,dem,1,2022-07-12,0.33,Lafazan,Santos,n,n,NA
+2022,House,New York,District 3,2022-11-08,George A.D. Santos,rep,1,2022-07-12,0.44,Lafazan,Santos,n,n,NA
 2022,House,North Carolina,District 1,2022-11-08,Don Davis,dem,1,2022-06-06,0.45,Davis,Smith,n,n,NA
 2022,House,North Carolina,District 1,2022-11-08,Sandy Smith,rep,1,2022-06-06,0.39,Davis,Smith,n,n,NA
 2022,House,North Carolina,District 6,2022-11-08,Kathy Manning,dem,1,2022-06-06,0.48,Manning,Castelli,y,n,NA
@@ -106,8 +108,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,4,2022-07-03,0.4050000000000001,Ryan,Vance,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,3,2022-06-19,0.4806666666666668,Fetterman,Oz,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,3,2022-06-19,0.41733333333333333,Fetterman,Oz,n,n,NA
-2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,7,2022-06-16,0.32857142857142857,McMullin,Lee,n,y,NA
-2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,7,2022-06-16,0.4466666666666666,McMullin,Lee,n,y,NA
+2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,10,2022-07-12,0.3399999999999999,McMullin,Lee,n,y,NA
+2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,10,2022-07-12,0.4516666666666668,McMullin,Lee,n,y,NA
 2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,4,2022-07-11,0.5075,Murray,Smiley,y,n,NA
 2022,Senate,Washington,Class III,2022-11-08,Tiffany Smiley,rep,4,2022-07-11,0.37249999999999994,Murray,Smiley,y,n,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Mandela Barnes,dem,4,2022-06-20,0.46,Barnes,Johnson,n,y,NA
