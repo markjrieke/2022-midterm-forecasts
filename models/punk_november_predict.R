@@ -425,7 +425,11 @@ house_distribution %>%
   geom_histogram(binwidth = 1,
                  alpha = 0.5) +
   scale_fill_identity() +
-  theme_minimal()
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
+  labs(title = paste("House distribution as of", run_date))
+
+riekelib::ggquicksave("models/diagnostics/current_house_topline.png")
 
 # current senate distribution
 senate_distribution %>%
@@ -437,79 +441,134 @@ senate_distribution %>%
   geom_histogram(binwidth = 1,
                  alpha = 0.5) +
   scale_fill_identity() +
-  theme_minimal()
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", color = "white")) + 
+  labs(title = paste("Senate distribution as of", run_date))
+
+riekelib::ggquicksave("models/diagnostics/current_senate_topline.png")
 
 # rolling house distribution
 read_csv("models/outputs/house_topline.csv") %>%
-  ggplot(aes(x = model_date,
-             y = seats,
-             ymin = seats_lower,
-             ymax = seats_upper)) +
-  geom_ribbon(alpha = 0.25) +
-  geom_line(size = 1) +
-  theme_minimal()
+  rename_with(.cols = starts_with("seats"),
+              .fn = ~paste0(.x, "_dem")) %>%
+  mutate(seats_rep = 435 - seats_dem,
+         seats_lower_rep = 435 - seats_upper_dem,
+         seats_upper_rep = 435 - seats_lower_dem) %>%
+  ggplot(aes(x = model_date)) +
+  geom_ribbon(aes(ymin = seats_lower_rep,
+                  ymax = seats_upper_rep),
+              fill = "red",
+              alpha = 0.25) +
+  geom_ribbon(aes(ymin = seats_lower_dem,
+                  ymax = seats_upper_dem),
+              fill = "blue",
+              alpha = 0.25) +
+  geom_line(aes(y = seats_rep),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = seats_rep),
+            size = 1.25,
+            color = "red") +
+  geom_line(aes(y = seats_dem),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = seats_dem),
+            size = 1.25,
+            color = "blue") +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
+  labs(title = paste("House seats through", run_date),
+       x = NULL,
+       y = NULL)
+
+riekelib::ggquicksave("models/diagnostics/rolling_house_distribution.png")
 
 # rolling house probability
 read_csv("models/outputs/house_topline.csv") %>%
-  ggplot(aes(x = model_date,
-             y = p_dem_win)) +
-  geom_line(size = 1) +
+  mutate(p_rep_win = 1 - p_dem_win) %>%
+  ggplot(aes(x = model_date)) +
+  geom_line(aes(y = p_rep_win),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = p_rep_win),
+            size = 1.25,
+            color = "red") +
+  geom_line(aes(y = p_dem_win),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = p_dem_win),
+            size = 1.25,
+            color = "blue") +
   theme_minimal() +
-  expand_limits(y = c(0, 1))
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
+  labs(title = paste("House win probability through", run_date),
+       x = NULL,
+       y = NULL)
+
+riekelib::ggquicksave("models/diagnostics/rolling_house_probability.png")  
 
 # rolling senate distribution
 read_csv("models/outputs/senate_topline.csv") %>%
-  ggplot(aes(x = model_date,
-             y = seats,
-             ymin = seats_lower,
-             ymax = seats_upper)) +
-  geom_ribbon(alpha = 0.25) +
-  geom_line(size = 1) +
-  theme_minimal()
+  rename_with(.cols = starts_with("seats"),
+              .fn = ~paste0(.x, "_dem")) %>%
+  mutate(seats_rep = 100 - seats_dem,
+         seats_lower_rep = 100 - seats_upper_dem,
+         seats_upper_rep = 100 - seats_lower_dem) %>%
+  ggplot(aes(x = model_date)) +
+  geom_ribbon(aes(ymin = seats_lower_rep,
+                  ymax = seats_upper_rep),
+              fill = "red",
+              alpha = 0.25) +
+  geom_ribbon(aes(ymin = seats_lower_dem,
+                  ymax = seats_upper_dem),
+              fill = "blue",
+              alpha = 0.25) +
+  geom_line(aes(y = seats_rep),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = seats_rep),
+            size = 1.25,
+            color = "red") +
+  geom_line(aes(y = seats_dem),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = seats_dem),
+            size = 1.25,
+            color = "blue") +
+  theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
+  labs(title = paste("Senate seats through", run_date),
+       x = NULL,
+       y = NULL)
+
+riekelib::ggquicksave("models/diagnostics/rolling_senate_distribution.png")
 
 # rolling senate probability 
 read_csv("models/outputs/senate_topline.csv") %>%
-  ggplot(aes(x = model_date,
-             y = p_dem_win)) +
-  geom_line(size = 1) +
+  mutate(p_rep_win = 1 - p_dem_win) %>%
+  ggplot(aes(x = model_date)) +
+  geom_line(aes(y = p_rep_win),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = p_rep_win),
+            size = 1.25,
+            color = "red") +
+  geom_line(aes(y = p_dem_win),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = p_dem_win),
+            size = 1.25,
+            color = "blue") +
   theme_minimal() +
-  expand_limits(y = c(0, 1))
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
+  labs(title = paste("Senate win probability through", run_date),
+       x = NULL,
+       y = NULL)
 
-# random race
-set.seed(as.numeric(run_date))
-rand_race <- 
-  read_csv("models/outputs/candidate_predictions.csv") %>%
-  nest(data = -c(cycle, race, state, seat)) %>%
-  slice_sample(n = 1) %>%
-  unnest(data)
-
-race_name <- rand_race$race[1]
-state_name <- rand_race$state[1]
-seat_name <- rand_race$seat[1]
-
-rand_race %>%
-  ggplot(aes(x = model_date,
-             y = .pred,
-             ymin = .pred_lower,
-             ymax = .pred_upper)) +
-  geom_line(size = 1) +
-  geom_ribbon(alpha = 0.25) +
-  labs(title = paste(state_name, race_name, seat_name)) +
-  theme_minimal() +
-  expand_limits(y = c(0, 1))
-
-rand_race %>%
-  ggplot(aes(x = model_date,
-             y = p_dem_win)) +
-  geom_line(size = 1) +
-  labs(title = paste(state_name, race_name, seat_name)) +
-  theme_minimal() +
-  expand_limits(y = c(0, 1))
+riekelib::ggquicksave("models/diagnostics/rolling_senate_probability.png")
 
 # ---------------------------------junk-drawer----------------------------------
 
-run_date
-gcb
 
 
 
