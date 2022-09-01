@@ -7,7 +7,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("7/1/22")
+run_date <- lubridate::mdy("7/2/22")
 # run_date <- Sys.Date()
 
 # polling data 
@@ -309,8 +309,9 @@ sim_preds <-
 
 # ------------------------------write-out-results-------------------------------
 
-# overwrite current candidate distributions
-sim_preds %>%
+# get current run's candidate distribution
+new_candidate_predictions <- 
+  sim_preds %>%
   mutate(p_dem_win = map_dbl(data, ~sum(.x$.pred >= 0.5)),
          p_dem_win = p_dem_win/10000,
          .pred = map_dbl(data, ~quantile(.x$.pred, probs = 0.5)),
@@ -319,7 +320,11 @@ sim_preds %>%
   select(-data) %>%
   left_join(elections_mod, by = c("cycle", "race", "state", "seat")) %>%
   select(-ends_with("incumbent"), -pending) %>%
-  relocate(starts_with("candidate_name"), .after = model_date) %>%
+  relocate(starts_with("candidate_name"), .after = model_date) 
+
+# append candidate file
+read_csv("models/outputs/candidate_predictions.csv") %>%
+  bind_rows(new_candidate_predictions) %>%
   write_csv("models/outputs/candidate_predictions.csv")
 
 # get the number of races where dems are uncontested
@@ -342,8 +347,9 @@ house_distribution <-
 house_distribution %>%
   write_csv("models/outputs/current_house_distribution.csv")
 
-# summarise daily house topline
-house_distribution %>%
+# current run's house topline
+new_house_topline <- 
+  house_distribution %>%
   select(-sim, -winner) %>%
   nest(data = n) %>%
   mutate(p_dem_win = map_dbl(data, ~sum(.x$n > 218.5)),
@@ -351,7 +357,11 @@ house_distribution %>%
          seats = map_dbl(data, ~quantile(.x$n, probs = 0.5)),
          seats_lower = map_dbl(data, ~quantile(.x$n, probs = 0.1)),
          seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.8))) %>%
-  select(-data) %>%
+  select(-data)
+
+# append house topline file
+read_csv("models/outputs/house_topline.csv") %>%
+  bind_rows(new_house_topline) %>%
   write_csv("models/outputs/house_topline.csv")
 
 # get number of senate races where dems are uncontested
@@ -386,8 +396,9 @@ senate_distribution <-
 senate_distribution %>%
   write_csv("models/outputs/current_senate_distribution.csv")
 
-# summarise daily senate topline
-senate_distribution %>%
+# get current run's senate topline
+new_senate_topline <- 
+  senate_distribution %>%
   select(-sim, -winner) %>%
   nest(data = n) %>%
   mutate(p_dem_win = map_dbl(data, ~sum(.x$n >= 50)),
@@ -395,7 +406,11 @@ senate_distribution %>%
          seats = map_dbl(data, ~quantile(.x$n, probs = 0.5)),
          seats_lower = map_dbl(data, ~quantile(.x$n, probs = 0.1)),
          seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.8))) %>%
-  select(-data) %>%
+  select(-data)
+
+# append senate topline file
+read_csv("models/outputs/senate_topline.csv") %>%
+  bind_rows(new_senate_topline) %>%
   write_csv("models/outputs/senate_topline.csv")
 
 # ---------------------------------diagnostics----------------------------------
