@@ -1,4 +1,6 @@
 cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,last_poll,poll_avg,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_incumbent,pending
+2022,Governor,Alaska,Governor,2022-11-08,Bill Walker,ind,2,2022-07-05,0.215,Walker,Dunleavy,n,y,NA
+2022,Governor,Alaska,Governor,2022-11-08,Mike Dunleavy,rep,2,2022-07-05,0.47199999999999986,Walker,Dunleavy,n,y,NA
 2022,Governor,Arizona,Governor,2022-11-08,Katie Hobbs,dem,2,2022-06-30,0.4549999999999999,Hobbs,Lake,n,n,NA
 2022,Governor,Arizona,Governor,2022-11-08,Kari Lake,rep,2,2022-06-30,0.38,Hobbs,Lake,n,n,NA
 2022,Governor,Colorado,Governor,2022-11-08,Jared Polis,dem,4,2022-06-08,0.5225000000000002,Polis,Ganahl,y,n,NA
@@ -29,6 +31,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,4,2022-06-27,0.49375,O'Rourke,Abbott,n,y,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,4,2022-06-20,0.485,Evers,Michels,y,n,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tim Michels,rep,4,2022-06-20,0.41,Evers,Michels,y,n,NA
+2022,House,Alaska,District 1,2022-11-08,Mary S. Peltola,dem,3,2022-07-05,0.407,Peltola,Begich,n,n,x
+2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,3,2022-07-05,0.3793333333333334,Peltola,Begich,n,n,x
 2022,House,Colorado,District 8,2022-11-08,Yadira Caraveo,dem,1,2022-06-13,0.36,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Colorado,District 8,2022-11-08,Barbara Kirkmeyer,rep,1,2022-06-13,0.44,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Connecticut,District 5,2022-11-08,Jahana Hayes,dem,1,2022-06-30,0.46,Hayes,Logan,y,n,NA
@@ -68,6 +72,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Rhode Island,District 2,2022-11-08,Seth M. Magaziner,dem,6,2022-06-22,0.38530000000000003,Magaziner,Fung,n,n,x
 2022,House,Rhode Island,District 2,2022-11-08,Allan W. Fung,rep,6,2022-06-22,0.44601666666666673,Magaziner,Fung,n,n,x
 2022,House,Wisconsin,District 3,2022-11-08,Derrick Van Orden,rep,1,2022-06-02,0.47,Pfaff,Van Orden,n,n,NA
+2022,Senate,Alaska,Class III,2022-11-08,Patricia R. Chesbro,dem,3,2022-07-05,0.185,Chesbro,Tshibaka,n,n,x
+2022,Senate,Alaska,Class III,2022-11-08,Kelly C. Tshibaka,rep,3,2022-07-05,0.45033333333333336,Chesbro,Tshibaka,n,n,x
 2022,Senate,Arizona,Class III,2022-11-08,Mark Kelly,dem,2,2022-06-27,0.4749999999999998,Kelly,Masters,y,n,NA
 2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,2,2022-06-27,0.39,Kelly,Masters,y,n,NA
 2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,2,2022-06-08,0.4949999999999999,Bennet,O'Dea,y,n,NA
