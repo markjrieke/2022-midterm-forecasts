@@ -7,7 +7,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("7/2/22")
+run_date <- lubridate::mdy("7/3/22")
 # run_date <- Sys.Date()
 
 # polling data 
@@ -452,7 +452,8 @@ read_csv("models/outputs/house_topline.csv") %>%
   ggplot(aes(x = model_date,
              y = p_dem_win)) +
   geom_line(size = 1) +
-  theme_minimal()
+  theme_minimal() +
+  expand_limits(y = c(0, 1))
 
 # rolling senate distribution
 read_csv("models/outputs/senate_topline.csv") %>%
@@ -469,7 +470,8 @@ read_csv("models/outputs/senate_topline.csv") %>%
   ggplot(aes(x = model_date,
              y = p_dem_win)) +
   geom_line(size = 1) +
-  theme_minimal()
+  theme_minimal() +
+  expand_limits(y = c(0, 1))
 
 # ---------------------------------junk-drawer----------------------------------
 
