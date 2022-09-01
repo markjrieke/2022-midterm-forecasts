@@ -9,7 +9,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("8/11/22")
+run_date <- lubridate::mdy("8/12/22")
 # run_date <- Sys.Date()
 
 # polling data 
@@ -439,7 +439,8 @@ senate_distribution %>%
   ggplot(aes(x = n,
              fill = control)) +
   geom_histogram(binwidth = 1,
-                 alpha = 0.5) +
+                 alpha = 0.5,
+                 color = "white") +
   scale_fill_identity() +
   theme_minimal() +
   theme(plot.background = element_rect(fill = "white", color = "white")) + 
