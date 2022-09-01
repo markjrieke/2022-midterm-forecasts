@@ -39,6 +39,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Wisconsin,Governor,2022-11-08,Tim Michels,rep,4,2022-06-20,0.41,Evers,Michels,y,n,NA
 2022,House,Alaska,District 1,2022-11-08,Mary S. Peltola,dem,3,2022-07-05,0.407,Peltola,Begich,n,n,x
 2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,3,2022-07-05,0.3793333333333334,Peltola,Begich,n,n,x
+2022,House,California,District 22,2022-11-08,Rudy Salas,dem,1,2022-07-15,0.43,Salas,Valadao,n,y,NA
+2022,House,California,District 22,2022-11-08,David G. Valadao,rep,1,2022-07-15,0.35,Salas,Valadao,n,y,NA
 2022,House,Colorado,District 8,2022-11-08,Yadira Caraveo,dem,1,2022-06-13,0.36,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Colorado,District 8,2022-11-08,Barbara Kirkmeyer,rep,1,2022-06-13,0.44,Caraveo,Kirkmeyer,n,n,NA
 2022,House,Connecticut,District 5,2022-11-08,Jahana Hayes,dem,1,2022-06-30,0.46,Hayes,Logan,y,n,NA
