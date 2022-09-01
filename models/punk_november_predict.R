@@ -9,7 +9,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("8/15/22")
+run_date <- lubridate::mdy("8/16/22")
 # run_date <- Sys.Date()
 
 # polling data 
