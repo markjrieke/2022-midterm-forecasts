@@ -13,8 +13,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Illinois,Governor,2022-11-08,Darren Bailey,rep,2,2022-07-19,0.41000000000000003,Pritzker,Bailey,y,n,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,2,2022-07-14,0.3604999999999999,DeJear,Reynolds,n,y,NA
 2022,Governor,Iowa,Governor,2022-11-08,Kim Reynolds,rep,2,2022-07-14,0.5175,DeJear,Reynolds,n,y,NA
-2022,Governor,Massachusetts,Governor,2022-11-08,Maura Healey,dem,2,2022-06-15,0.595,Healey,Diehl,n,n,x
-2022,Governor,Massachusetts,Governor,2022-11-08,Geoff Diehl,rep,2,2022-06-15,0.29499999999999993,Healey,Diehl,n,n,x
+2022,Governor,Massachusetts,Governor,2022-11-08,Maura Healey,dem,4,2022-07-23,0.5677999999999999,Healey,Diehl,n,n,x
+2022,Governor,Massachusetts,Governor,2022-11-08,Geoff Diehl,rep,4,2022-07-23,0.2744333333333333,Healey,Diehl,n,n,x
 2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,5,2022-07-08,0.5127999999999999,Whitmer,Dixon,y,n,NA
 2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,5,2022-07-08,0.40299999999999997,Whitmer,Dixon,y,n,NA
 2022,Governor,Minnesota,Governor,2022-11-08,Tim Walz,dem,2,2022-07-19,0.45899999999999985,Walz,Jensen,y,n,NA
