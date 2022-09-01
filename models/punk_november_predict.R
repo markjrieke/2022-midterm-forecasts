@@ -358,7 +358,7 @@ new_house_topline <-
          p_dem_win = p_dem_win/10000,
          seats = map_dbl(data, ~quantile(.x$n, probs = 0.5)),
          seats_lower = map_dbl(data, ~quantile(.x$n, probs = 0.1)),
-         seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.8))) %>%
+         seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.9))) %>%
   select(-data)
 
 # append house topline file
@@ -407,7 +407,7 @@ new_senate_topline <-
          p_dem_win = p_dem_win/10000,
          seats = map_dbl(data, ~quantile(.x$n, probs = 0.5)),
          seats_lower = map_dbl(data, ~quantile(.x$n, probs = 0.1)),
-         seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.8))) %>%
+         seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.9))) %>%
   select(-data)
 
 # append senate topline file
