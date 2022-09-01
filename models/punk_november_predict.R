@@ -473,6 +473,7 @@ read_csv("models/outputs/senate_topline.csv") %>%
   expand_limits(y = c(0, 1))
 
 # random race
+set.seed(as.numeric(run_date))
 rand_race <- 
   read_csv("models/outputs/candidate_predictions.csv") %>%
   nest(data = -c(cycle, race, state, seat)) %>%
