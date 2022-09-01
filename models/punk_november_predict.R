@@ -6,7 +6,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("7/31/22")
+run_date <- lubridate::mdy("8/1/22")
 # run_date <- Sys.Date()
 
 # polling data 
@@ -469,6 +469,36 @@ read_csv("models/outputs/senate_topline.csv") %>%
   ggplot(aes(x = model_date,
              y = p_dem_win)) +
   geom_line(size = 1) +
+  theme_minimal() +
+  expand_limits(y = c(0, 1))
+
+# random race
+rand_race <- 
+  read_csv("models/outputs/candidate_predictions.csv") %>%
+  nest(data = -c(cycle, race, state, seat)) %>%
+  slice_sample(n = 1) %>%
+  unnest(data)
+
+race_name <- rand_race$race[1]
+state_name <- rand_race$state[1]
+seat_name <- rand_race$seat[1]
+
+rand_race %>%
+  ggplot(aes(x = model_date,
+             y = .pred,
+             ymin = .pred_lower,
+             ymax = .pred_upper)) +
+  geom_line(size = 1) +
+  geom_ribbon(alpha = 0.25) +
+  labs(title = paste(state_name, race_name, seat_name)) +
+  theme_minimal() +
+  expand_limits(y = c(0, 1))
+
+rand_race %>%
+  ggplot(aes(x = model_date,
+             y = p_dem_win)) +
+  geom_line(size = 1) +
+  labs(title = paste(state_name, race_name, seat_name)) +
   theme_minimal() +
   expand_limits(y = c(0, 1))
 
