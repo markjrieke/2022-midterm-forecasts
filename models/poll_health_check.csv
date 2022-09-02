@@ -41,8 +41,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,12,2022-08-23,0.41375412765078384,Shapiro,Mastriano,n,n,NA
 2022,Governor,South Carolina,Governor,2022-11-08,Joe Cunningham,dem,2,2022-08-28,0.41050000000000003,Cunningham,McMaster,n,y,NA
 2022,Governor,South Carolina,Governor,2022-11-08,Henry McMaster,rep,2,2022-08-28,0.504,Cunningham,McMaster,n,y,NA
-2022,Governor,Texas,Governor,2022-11-08,Beto O'Rourke,dem,7,2022-08-07,0.4074285714285714,O'Rourke,Abbott,n,y,NA
-2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,7,2022-08-07,0.48500000000000004,O'Rourke,Abbott,n,y,NA
+2022,Governor,Texas,Governor,2022-11-08,Beto O'Rourke,dem,8,2022-08-07,0.41024999999999995,O'Rourke,Abbott,n,y,NA
+2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,8,2022-08-07,0.4831249999999999,O'Rourke,Abbott,n,y,NA
 2022,Governor,Vermont,Governor,2022-11-08,Brenda Siegel,dem,1,2022-07-25,0.16,Siegel,Scott,n,y,NA
 2022,Governor,Vermont,Governor,2022-11-08,Phil Scott,rep,1,2022-07-25,0.6,Siegel,Scott,n,y,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,7,2022-08-25,0.4799999999999999,Evers,Michels,y,n,NA
