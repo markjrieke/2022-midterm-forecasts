@@ -640,7 +640,7 @@ riekelib::ggquicksave("models/diagnostics/random_race.png")
 
 # ---------------------------------junk-drawer----------------------------------
 
-
+run_date %>% write_rds("models/outputs/run_date.rds")
 
 
 
