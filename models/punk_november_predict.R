@@ -9,8 +9,8 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("9/2/22")
-# run_date <- Sys.Date()
+# run_date <- lubridate::mdy("9/2/22")
+run_date <- Sys.Date()
 
 # polling data 
 polls_house     <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv")
@@ -633,6 +633,7 @@ rand_race %>%
   labs(title = rand_race_title,
        subtitle = run_date) +
   theme_minimal() +
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
   expand_limits(x = c(lubridate::mdy("7/1/22"), lubridate::mdy("11/8/22")))
 
 riekelib::ggquicksave("models/diagnostics/random_race.png")
