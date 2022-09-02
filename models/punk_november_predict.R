@@ -9,8 +9,8 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-# run_date <- lubridate::mdy("8/31/22")
-run_date <- Sys.Date()
+run_date <- lubridate::mdy("9/2/22")
+# run_date <- Sys.Date()
 
 # polling data 
 polls_house     <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv")
@@ -232,7 +232,7 @@ elections_predict <-
                                  TRUE ~ "polled")) %>%
   
   # adjust racial groups to be on unbounded scales
-  mutate(across(c(white:other), riekelib::logit)) %>%
+  mutate(across(c(white:other), riekelib::logit)) %>% 
   
   #remove unneeded cols
   select(-c(cycle:candidate_name_REP))
@@ -326,6 +326,7 @@ new_candidate_predictions <-
 
 # append candidate file
 read_csv("models/outputs/candidate_predictions.csv") %>%
+  filter(model_date != run_date) %>%
   bind_rows(new_candidate_predictions) %>%
   write_csv("models/outputs/candidate_predictions.csv")
 
@@ -363,7 +364,8 @@ new_house_topline <-
 
 # append house topline file
 read_csv("models/outputs/house_topline.csv") %>%
-  bind_rows(new_house_topline) %>%
+  filter(model_date != run_date) %>%
+  bind_rows(new_house_topline) %>% 
   write_csv("models/outputs/house_topline.csv")
 
 # get number of senate races where dems are uncontested
@@ -412,6 +414,7 @@ new_senate_topline <-
 
 # append senate topline file
 read_csv("models/outputs/senate_topline.csv") %>%
+  filter(model_date != run_date) %>%
   bind_rows(new_senate_topline) %>%
   write_csv("models/outputs/senate_topline.csv")
 
@@ -476,11 +479,15 @@ read_csv("models/outputs/house_topline.csv") %>%
   geom_line(aes(y = seats_dem),
             size = 1.25,
             color = "blue") +
+  geom_vline(xintercept = run_date,
+             linetype = "dashed",
+             color = "gray") +
   theme_minimal() +
   theme(plot.background = element_rect(fill = "white", color = "white")) +
   labs(title = paste("House seats through", run_date),
        x = NULL,
-       y = NULL)
+       y = NULL) +
+  expand_limits(x = c(lubridate::mdy("7/1/22"), lubridate::mdy("11/8/22")))
 
 riekelib::ggquicksave("models/diagnostics/rolling_house_distribution.png")
 
@@ -501,10 +508,14 @@ read_csv("models/outputs/house_topline.csv") %>%
             size = 1.25,
             color = "blue") +
   theme_minimal() +
+  geom_vline(aes(xintercept = run_date),
+             linetype = "dashed",
+             color = "gray") +
   theme(plot.background = element_rect(fill = "white", color = "white")) +
   labs(title = paste("House win probability through", run_date),
        x = NULL,
-       y = NULL)
+       y = NULL) +
+  expand_limits(x = c(lubridate::mdy("7/1/22"), lubridate::mdy("11/8/22")))
 
 riekelib::ggquicksave("models/diagnostics/rolling_house_probability.png")  
 
@@ -537,10 +548,15 @@ read_csv("models/outputs/senate_topline.csv") %>%
             size = 1.25,
             color = "blue") +
   theme_minimal() +
+  geom_vline(aes(xintercept = run_date),
+             linetype = "dashed",
+             color = "gray") +
   theme(plot.background = element_rect(fill = "white", color = "white")) +
   labs(title = paste("Senate seats through", run_date),
        x = NULL,
-       y = NULL)
+       y = NULL) +
+  expand_limits(x = c(lubridate::mdy("7/1/22"), lubridate::mdy("11/8/22")),
+                y = c(40, 60))
 
 riekelib::ggquicksave("models/diagnostics/rolling_senate_distribution.png")
 
@@ -561,12 +577,65 @@ read_csv("models/outputs/senate_topline.csv") %>%
             size = 1.25,
             color = "blue") +
   theme_minimal() +
+  geom_vline(aes(xintercept = run_date),
+             linetype = "dashed",
+             color = "gray") +
   theme(plot.background = element_rect(fill = "white", color = "white")) +
   labs(title = paste("Senate win probability through", run_date),
        x = NULL,
-       y = NULL)
+       y = NULL) +
+  expand_limits(x = c(lubridate::mdy("7/1/22"), lubridate::mdy("11/8/22")),
+                y = c(0, 1))
 
 riekelib::ggquicksave("models/diagnostics/rolling_senate_probability.png")
+
+# random race
+set.seed(run_date)
+rand_race <- 
+  read_csv("models/outputs/candidate_predictions.csv") %>%
+  nest(data = -c(cycle, race, state, seat, starts_with("candidate"))) %>%
+  slice_sample(n = 1) %>%
+  unnest(data) %>%
+  rename_with(.cols = starts_with(".pred"),
+              .fn = ~paste0(.x, "_dem")) %>%
+  mutate(.pred_rep = 1 - .pred_dem,
+         .pred_lower_rep = 1 - .pred_upper_dem,
+         .pred_upper_rep = 1 - .pred_lower_dem)
+
+rand_race_title <- 
+  paste(rand_race$state[1], rand_race$race[1], rand_race$seat[1]) 
+  
+rand_race %>%
+  ggplot(aes(x = model_date)) +
+  geom_ribbon(aes(ymin = .pred_lower_rep,
+                  ymax = .pred_upper_rep),
+              fill = "red",
+              alpha = 0.25) +
+  geom_ribbon(aes(ymin = .pred_lower_dem,
+                  ymax = .pred_upper_dem),
+              fill = "blue",
+              alpha = 0.25) +
+  geom_line(aes(y = .pred_rep),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = .pred_rep),
+            size = 1.25,
+            color = "red") +
+  geom_line(aes(y = .pred_dem),
+            size = 3.25,
+            color = "white") +
+  geom_line(aes(y = .pred_dem),
+            size = 1.25,
+            color = "blue") +
+  geom_vline(aes(xintercept = run_date),
+             linetype = "dashed",
+             color = "gray") +
+  labs(title = rand_race_title,
+       subtitle = run_date) +
+  theme_minimal() +
+  expand_limits(x = c(lubridate::mdy("7/1/22"), lubridate::mdy("11/8/22")))
+
+riekelib::ggquicksave("models/diagnostics/random_race.png")
 
 # ---------------------------------junk-drawer----------------------------------
 
