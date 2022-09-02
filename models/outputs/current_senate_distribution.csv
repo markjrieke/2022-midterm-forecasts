@@ -142,7 +142,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,141,50,dem
 2022-09-02,Senate,142,47,dem
 2022-09-02,Senate,143,50,dem
-2022-09-02,Senate,144,50,dem
+2022-09-02,Senate,144,49,dem
 2022-09-02,Senate,145,50,dem
 2022-09-02,Senate,146,47,dem
 2022-09-02,Senate,147,56,dem
@@ -204,7 +204,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,203,48,dem
 2022-09-02,Senate,204,50,dem
 2022-09-02,Senate,205,48,dem
-2022-09-02,Senate,206,45,dem
+2022-09-02,Senate,206,43,dem
 2022-09-02,Senate,207,57,dem
 2022-09-02,Senate,208,47,dem
 2022-09-02,Senate,209,53,dem
@@ -216,7 +216,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,215,51,dem
 2022-09-02,Senate,216,49,dem
 2022-09-02,Senate,217,53,dem
-2022-09-02,Senate,218,45,dem
+2022-09-02,Senate,218,44,dem
 2022-09-02,Senate,219,53,dem
 2022-09-02,Senate,220,54,dem
 2022-09-02,Senate,221,54,dem
@@ -269,7 +269,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,268,54,dem
 2022-09-02,Senate,269,46,dem
 2022-09-02,Senate,270,50,dem
-2022-09-02,Senate,271,52,dem
+2022-09-02,Senate,271,51,dem
 2022-09-02,Senate,272,49,dem
 2022-09-02,Senate,273,55,dem
 2022-09-02,Senate,274,46,dem
@@ -373,7 +373,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,372,55,dem
 2022-09-02,Senate,373,44,dem
 2022-09-02,Senate,374,52,dem
-2022-09-02,Senate,375,49,dem
+2022-09-02,Senate,375,48,dem
 2022-09-02,Senate,376,42,dem
 2022-09-02,Senate,377,57,dem
 2022-09-02,Senate,378,52,dem
@@ -510,7 +510,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,509,51,dem
 2022-09-02,Senate,510,51,dem
 2022-09-02,Senate,511,49,dem
-2022-09-02,Senate,512,47,dem
+2022-09-02,Senate,512,46,dem
 2022-09-02,Senate,513,54,dem
 2022-09-02,Senate,514,47,dem
 2022-09-02,Senate,515,52,dem
@@ -541,7 +541,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,540,52,dem
 2022-09-02,Senate,541,50,dem
 2022-09-02,Senate,542,56,dem
-2022-09-02,Senate,543,45,dem
+2022-09-02,Senate,543,44,dem
 2022-09-02,Senate,544,55,dem
 2022-09-02,Senate,545,50,dem
 2022-09-02,Senate,546,52,dem
@@ -561,7 +561,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,560,50,dem
 2022-09-02,Senate,561,52,dem
 2022-09-02,Senate,562,55,dem
-2022-09-02,Senate,563,46,dem
+2022-09-02,Senate,563,45,dem
 2022-09-02,Senate,564,46,dem
 2022-09-02,Senate,565,51,dem
 2022-09-02,Senate,566,48,dem
@@ -578,7 +578,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,577,52,dem
 2022-09-02,Senate,578,48,dem
 2022-09-02,Senate,579,54,dem
-2022-09-02,Senate,580,51,dem
+2022-09-02,Senate,580,50,dem
 2022-09-02,Senate,581,52,dem
 2022-09-02,Senate,582,50,dem
 2022-09-02,Senate,583,49,dem
@@ -706,7 +706,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,705,54,dem
 2022-09-02,Senate,706,48,dem
 2022-09-02,Senate,707,52,dem
-2022-09-02,Senate,708,47,dem
+2022-09-02,Senate,708,46,dem
 2022-09-02,Senate,709,49,dem
 2022-09-02,Senate,710,54,dem
 2022-09-02,Senate,711,50,dem
@@ -767,8 +767,8 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,766,51,dem
 2022-09-02,Senate,767,51,dem
 2022-09-02,Senate,768,48,dem
-2022-09-02,Senate,769,48,dem
-2022-09-02,Senate,770,53,dem
+2022-09-02,Senate,769,47,dem
+2022-09-02,Senate,770,52,dem
 2022-09-02,Senate,771,51,dem
 2022-09-02,Senate,772,53,dem
 2022-09-02,Senate,773,50,dem
@@ -854,7 +854,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,853,48,dem
 2022-09-02,Senate,854,52,dem
 2022-09-02,Senate,855,50,dem
-2022-09-02,Senate,856,51,dem
+2022-09-02,Senate,856,50,dem
 2022-09-02,Senate,857,54,dem
 2022-09-02,Senate,858,49,dem
 2022-09-02,Senate,859,55,dem
@@ -985,7 +985,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,984,51,dem
 2022-09-02,Senate,985,50,dem
 2022-09-02,Senate,986,52,dem
-2022-09-02,Senate,987,51,dem
+2022-09-02,Senate,987,50,dem
 2022-09-02,Senate,988,47,dem
 2022-09-02,Senate,989,49,dem
 2022-09-02,Senate,990,50,dem
@@ -994,7 +994,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,993,53,dem
 2022-09-02,Senate,994,52,dem
 2022-09-02,Senate,995,49,dem
-2022-09-02,Senate,996,51,dem
+2022-09-02,Senate,996,50,dem
 2022-09-02,Senate,997,44,dem
 2022-09-02,Senate,998,48,dem
 2022-09-02,Senate,999,52,dem
@@ -1008,7 +1008,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1007,52,dem
 2022-09-02,Senate,1008,48,dem
 2022-09-02,Senate,1009,50,dem
-2022-09-02,Senate,1010,42,dem
+2022-09-02,Senate,1010,41,dem
 2022-09-02,Senate,1011,52,dem
 2022-09-02,Senate,1012,49,dem
 2022-09-02,Senate,1013,46,dem
@@ -1022,7 +1022,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1021,55,dem
 2022-09-02,Senate,1022,53,dem
 2022-09-02,Senate,1023,47,dem
-2022-09-02,Senate,1024,49,dem
+2022-09-02,Senate,1024,48,dem
 2022-09-02,Senate,1025,52,dem
 2022-09-02,Senate,1026,49,dem
 2022-09-02,Senate,1027,51,dem
@@ -1095,7 +1095,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1094,47,dem
 2022-09-02,Senate,1095,52,dem
 2022-09-02,Senate,1096,51,dem
-2022-09-02,Senate,1097,50,dem
+2022-09-02,Senate,1097,49,dem
 2022-09-02,Senate,1098,51,dem
 2022-09-02,Senate,1099,53,dem
 2022-09-02,Senate,1100,54,dem
@@ -1115,7 +1115,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1114,50,dem
 2022-09-02,Senate,1115,49,dem
 2022-09-02,Senate,1116,53,dem
-2022-09-02,Senate,1117,47,dem
+2022-09-02,Senate,1117,46,dem
 2022-09-02,Senate,1118,46,dem
 2022-09-02,Senate,1119,51,dem
 2022-09-02,Senate,1120,49,dem
@@ -1125,7 +1125,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1124,53,dem
 2022-09-02,Senate,1125,50,dem
 2022-09-02,Senate,1126,51,dem
-2022-09-02,Senate,1127,47,dem
+2022-09-02,Senate,1127,46,dem
 2022-09-02,Senate,1128,47,dem
 2022-09-02,Senate,1129,49,dem
 2022-09-02,Senate,1130,49,dem
@@ -1143,7 +1143,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1142,49,dem
 2022-09-02,Senate,1143,54,dem
 2022-09-02,Senate,1144,54,dem
-2022-09-02,Senate,1145,48,dem
+2022-09-02,Senate,1145,47,dem
 2022-09-02,Senate,1146,55,dem
 2022-09-02,Senate,1147,55,dem
 2022-09-02,Senate,1148,52,dem
@@ -1202,7 +1202,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1201,51,dem
 2022-09-02,Senate,1202,54,dem
 2022-09-02,Senate,1203,52,dem
-2022-09-02,Senate,1204,53,dem
+2022-09-02,Senate,1204,52,dem
 2022-09-02,Senate,1205,54,dem
 2022-09-02,Senate,1206,51,dem
 2022-09-02,Senate,1207,45,dem
@@ -1235,7 +1235,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1234,51,dem
 2022-09-02,Senate,1235,51,dem
 2022-09-02,Senate,1236,51,dem
-2022-09-02,Senate,1237,50,dem
+2022-09-02,Senate,1237,49,dem
 2022-09-02,Senate,1238,53,dem
 2022-09-02,Senate,1239,52,dem
 2022-09-02,Senate,1240,53,dem
@@ -1264,7 +1264,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1263,51,dem
 2022-09-02,Senate,1264,49,dem
 2022-09-02,Senate,1265,55,dem
-2022-09-02,Senate,1266,54,dem
+2022-09-02,Senate,1266,53,dem
 2022-09-02,Senate,1267,53,dem
 2022-09-02,Senate,1268,51,dem
 2022-09-02,Senate,1269,51,dem
@@ -1366,7 +1366,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1365,51,dem
 2022-09-02,Senate,1366,50,dem
 2022-09-02,Senate,1367,44,dem
-2022-09-02,Senate,1368,47,dem
+2022-09-02,Senate,1368,46,dem
 2022-09-02,Senate,1369,51,dem
 2022-09-02,Senate,1370,55,dem
 2022-09-02,Senate,1371,53,dem
@@ -1398,7 +1398,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1397,48,dem
 2022-09-02,Senate,1398,50,dem
 2022-09-02,Senate,1399,53,dem
-2022-09-02,Senate,1400,49,dem
+2022-09-02,Senate,1400,48,dem
 2022-09-02,Senate,1401,49,dem
 2022-09-02,Senate,1402,46,dem
 2022-09-02,Senate,1403,46,dem
@@ -1479,7 +1479,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1478,49,dem
 2022-09-02,Senate,1479,51,dem
 2022-09-02,Senate,1480,44,dem
-2022-09-02,Senate,1481,45,dem
+2022-09-02,Senate,1481,44,dem
 2022-09-02,Senate,1482,56,dem
 2022-09-02,Senate,1483,55,dem
 2022-09-02,Senate,1484,51,dem
@@ -1541,7 +1541,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1540,52,dem
 2022-09-02,Senate,1541,49,dem
 2022-09-02,Senate,1542,55,dem
-2022-09-02,Senate,1543,48,dem
+2022-09-02,Senate,1543,47,dem
 2022-09-02,Senate,1544,50,dem
 2022-09-02,Senate,1545,50,dem
 2022-09-02,Senate,1546,46,dem
@@ -1641,12 +1641,12 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1640,48,dem
 2022-09-02,Senate,1641,56,dem
 2022-09-02,Senate,1642,49,dem
-2022-09-02,Senate,1643,48,dem
+2022-09-02,Senate,1643,47,dem
 2022-09-02,Senate,1644,54,dem
 2022-09-02,Senate,1645,48,dem
 2022-09-02,Senate,1646,53,dem
 2022-09-02,Senate,1647,52,dem
-2022-09-02,Senate,1648,49,dem
+2022-09-02,Senate,1648,48,dem
 2022-09-02,Senate,1649,49,dem
 2022-09-02,Senate,1650,49,dem
 2022-09-02,Senate,1651,54,dem
@@ -1658,7 +1658,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1657,48,dem
 2022-09-02,Senate,1658,52,dem
 2022-09-02,Senate,1659,49,dem
-2022-09-02,Senate,1660,58,dem
+2022-09-02,Senate,1660,57,dem
 2022-09-02,Senate,1661,52,dem
 2022-09-02,Senate,1662,46,dem
 2022-09-02,Senate,1663,47,dem
@@ -1685,7 +1685,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1684,49,dem
 2022-09-02,Senate,1685,52,dem
 2022-09-02,Senate,1686,46,dem
-2022-09-02,Senate,1687,53,dem
+2022-09-02,Senate,1687,52,dem
 2022-09-02,Senate,1688,49,dem
 2022-09-02,Senate,1689,48,dem
 2022-09-02,Senate,1690,49,dem
@@ -1713,7 +1713,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1712,50,dem
 2022-09-02,Senate,1713,51,dem
 2022-09-02,Senate,1714,46,dem
-2022-09-02,Senate,1715,52,dem
+2022-09-02,Senate,1715,51,dem
 2022-09-02,Senate,1716,53,dem
 2022-09-02,Senate,1717,49,dem
 2022-09-02,Senate,1718,45,dem
@@ -1826,7 +1826,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,1825,52,dem
 2022-09-02,Senate,1826,52,dem
 2022-09-02,Senate,1827,51,dem
-2022-09-02,Senate,1828,48,dem
+2022-09-02,Senate,1828,47,dem
 2022-09-02,Senate,1829,52,dem
 2022-09-02,Senate,1830,45,dem
 2022-09-02,Senate,1831,50,dem
@@ -2042,7 +2042,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2041,49,dem
 2022-09-02,Senate,2042,51,dem
 2022-09-02,Senate,2043,55,dem
-2022-09-02,Senate,2044,51,dem
+2022-09-02,Senate,2044,50,dem
 2022-09-02,Senate,2045,51,dem
 2022-09-02,Senate,2046,48,dem
 2022-09-02,Senate,2047,50,dem
@@ -2176,7 +2176,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2175,47,dem
 2022-09-02,Senate,2176,48,dem
 2022-09-02,Senate,2177,56,dem
-2022-09-02,Senate,2178,50,dem
+2022-09-02,Senate,2178,49,dem
 2022-09-02,Senate,2179,53,dem
 2022-09-02,Senate,2180,55,dem
 2022-09-02,Senate,2181,50,dem
@@ -2218,7 +2218,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2217,48,dem
 2022-09-02,Senate,2218,48,dem
 2022-09-02,Senate,2219,50,dem
-2022-09-02,Senate,2220,51,dem
+2022-09-02,Senate,2220,50,dem
 2022-09-02,Senate,2221,53,dem
 2022-09-02,Senate,2222,54,dem
 2022-09-02,Senate,2223,49,dem
@@ -2276,7 +2276,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2275,48,dem
 2022-09-02,Senate,2276,51,dem
 2022-09-02,Senate,2277,50,dem
-2022-09-02,Senate,2278,50,dem
+2022-09-02,Senate,2278,49,dem
 2022-09-02,Senate,2279,45,dem
 2022-09-02,Senate,2280,48,dem
 2022-09-02,Senate,2281,45,dem
@@ -2289,8 +2289,8 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2288,52,dem
 2022-09-02,Senate,2289,52,dem
 2022-09-02,Senate,2290,55,dem
-2022-09-02,Senate,2291,49,dem
-2022-09-02,Senate,2292,52,dem
+2022-09-02,Senate,2291,48,dem
+2022-09-02,Senate,2292,51,dem
 2022-09-02,Senate,2293,48,dem
 2022-09-02,Senate,2294,52,dem
 2022-09-02,Senate,2295,49,dem
@@ -2305,7 +2305,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2304,51,dem
 2022-09-02,Senate,2305,49,dem
 2022-09-02,Senate,2306,52,dem
-2022-09-02,Senate,2307,46,dem
+2022-09-02,Senate,2307,45,dem
 2022-09-02,Senate,2308,51,dem
 2022-09-02,Senate,2309,52,dem
 2022-09-02,Senate,2310,49,dem
@@ -2314,7 +2314,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2313,51,dem
 2022-09-02,Senate,2314,48,dem
 2022-09-02,Senate,2315,47,dem
-2022-09-02,Senate,2316,45,dem
+2022-09-02,Senate,2316,44,dem
 2022-09-02,Senate,2317,52,dem
 2022-09-02,Senate,2318,53,dem
 2022-09-02,Senate,2319,50,dem
@@ -2350,7 +2350,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2349,44,dem
 2022-09-02,Senate,2350,47,dem
 2022-09-02,Senate,2351,49,dem
-2022-09-02,Senate,2352,53,dem
+2022-09-02,Senate,2352,52,dem
 2022-09-02,Senate,2353,52,dem
 2022-09-02,Senate,2354,49,dem
 2022-09-02,Senate,2355,47,dem
@@ -2406,7 +2406,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2405,50,dem
 2022-09-02,Senate,2406,46,dem
 2022-09-02,Senate,2407,48,dem
-2022-09-02,Senate,2408,50,dem
+2022-09-02,Senate,2408,49,dem
 2022-09-02,Senate,2409,51,dem
 2022-09-02,Senate,2410,50,dem
 2022-09-02,Senate,2411,52,dem
@@ -2425,7 +2425,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2424,46,dem
 2022-09-02,Senate,2425,52,dem
 2022-09-02,Senate,2426,51,dem
-2022-09-02,Senate,2427,46,dem
+2022-09-02,Senate,2427,45,dem
 2022-09-02,Senate,2428,48,dem
 2022-09-02,Senate,2429,47,dem
 2022-09-02,Senate,2430,50,dem
@@ -2485,7 +2485,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2484,53,dem
 2022-09-02,Senate,2485,51,dem
 2022-09-02,Senate,2486,51,dem
-2022-09-02,Senate,2487,47,dem
+2022-09-02,Senate,2487,46,dem
 2022-09-02,Senate,2488,52,dem
 2022-09-02,Senate,2489,46,dem
 2022-09-02,Senate,2490,52,dem
@@ -2498,7 +2498,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2497,52,dem
 2022-09-02,Senate,2498,50,dem
 2022-09-02,Senate,2499,50,dem
-2022-09-02,Senate,2500,49,dem
+2022-09-02,Senate,2500,48,dem
 2022-09-02,Senate,2501,52,dem
 2022-09-02,Senate,2502,46,dem
 2022-09-02,Senate,2503,47,dem
@@ -2564,7 +2564,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2563,48,dem
 2022-09-02,Senate,2564,47,dem
 2022-09-02,Senate,2565,51,dem
-2022-09-02,Senate,2566,53,dem
+2022-09-02,Senate,2566,52,dem
 2022-09-02,Senate,2567,51,dem
 2022-09-02,Senate,2568,47,dem
 2022-09-02,Senate,2569,51,dem
@@ -2600,7 +2600,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2599,51,dem
 2022-09-02,Senate,2600,56,dem
 2022-09-02,Senate,2601,55,dem
-2022-09-02,Senate,2602,53,dem
+2022-09-02,Senate,2602,52,dem
 2022-09-02,Senate,2603,43,dem
 2022-09-02,Senate,2604,53,dem
 2022-09-02,Senate,2605,47,dem
@@ -2809,7 +2809,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2808,56,dem
 2022-09-02,Senate,2809,45,dem
 2022-09-02,Senate,2810,49,dem
-2022-09-02,Senate,2811,50,dem
+2022-09-02,Senate,2811,49,dem
 2022-09-02,Senate,2812,54,dem
 2022-09-02,Senate,2813,48,dem
 2022-09-02,Senate,2814,51,dem
@@ -2858,8 +2858,8 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2857,53,dem
 2022-09-02,Senate,2858,50,dem
 2022-09-02,Senate,2859,48,dem
-2022-09-02,Senate,2860,46,dem
-2022-09-02,Senate,2861,48,dem
+2022-09-02,Senate,2860,45,dem
+2022-09-02,Senate,2861,47,dem
 2022-09-02,Senate,2862,52,dem
 2022-09-02,Senate,2863,51,dem
 2022-09-02,Senate,2864,52,dem
@@ -2874,7 +2874,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2873,46,dem
 2022-09-02,Senate,2874,53,dem
 2022-09-02,Senate,2875,55,dem
-2022-09-02,Senate,2876,53,dem
+2022-09-02,Senate,2876,52,dem
 2022-09-02,Senate,2877,57,dem
 2022-09-02,Senate,2878,48,dem
 2022-09-02,Senate,2879,47,dem
@@ -2906,7 +2906,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2905,44,dem
 2022-09-02,Senate,2906,53,dem
 2022-09-02,Senate,2907,49,dem
-2022-09-02,Senate,2908,49,dem
+2022-09-02,Senate,2908,48,dem
 2022-09-02,Senate,2909,52,dem
 2022-09-02,Senate,2910,52,dem
 2022-09-02,Senate,2911,48,dem
@@ -2925,7 +2925,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2924,50,dem
 2022-09-02,Senate,2925,55,dem
 2022-09-02,Senate,2926,51,dem
-2022-09-02,Senate,2927,54,dem
+2022-09-02,Senate,2927,53,dem
 2022-09-02,Senate,2928,54,dem
 2022-09-02,Senate,2929,51,dem
 2022-09-02,Senate,2930,54,dem
@@ -2944,7 +2944,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2943,52,dem
 2022-09-02,Senate,2944,49,dem
 2022-09-02,Senate,2945,47,dem
-2022-09-02,Senate,2946,47,dem
+2022-09-02,Senate,2946,46,dem
 2022-09-02,Senate,2947,49,dem
 2022-09-02,Senate,2948,50,dem
 2022-09-02,Senate,2949,47,dem
@@ -2968,7 +2968,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2967,53,dem
 2022-09-02,Senate,2968,53,dem
 2022-09-02,Senate,2969,46,dem
-2022-09-02,Senate,2970,46,dem
+2022-09-02,Senate,2970,45,dem
 2022-09-02,Senate,2971,54,dem
 2022-09-02,Senate,2972,55,dem
 2022-09-02,Senate,2973,48,dem
@@ -2999,7 +2999,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,2998,51,dem
 2022-09-02,Senate,2999,53,dem
 2022-09-02,Senate,3000,49,dem
-2022-09-02,Senate,3001,47,dem
+2022-09-02,Senate,3001,46,dem
 2022-09-02,Senate,3002,50,dem
 2022-09-02,Senate,3003,49,dem
 2022-09-02,Senate,3004,55,dem
@@ -3019,7 +3019,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3018,50,dem
 2022-09-02,Senate,3019,50,dem
 2022-09-02,Senate,3020,57,dem
-2022-09-02,Senate,3021,48,dem
+2022-09-02,Senate,3021,47,dem
 2022-09-02,Senate,3022,49,dem
 2022-09-02,Senate,3023,53,dem
 2022-09-02,Senate,3024,48,dem
@@ -3041,7 +3041,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3040,51,dem
 2022-09-02,Senate,3041,46,dem
 2022-09-02,Senate,3042,53,dem
-2022-09-02,Senate,3043,55,dem
+2022-09-02,Senate,3043,54,dem
 2022-09-02,Senate,3044,47,dem
 2022-09-02,Senate,3045,52,dem
 2022-09-02,Senate,3046,51,dem
@@ -3182,7 +3182,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3181,51,dem
 2022-09-02,Senate,3182,45,dem
 2022-09-02,Senate,3183,51,dem
-2022-09-02,Senate,3184,50,dem
+2022-09-02,Senate,3184,49,dem
 2022-09-02,Senate,3185,55,dem
 2022-09-02,Senate,3186,47,dem
 2022-09-02,Senate,3187,53,dem
@@ -3287,7 +3287,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3286,47,dem
 2022-09-02,Senate,3287,48,dem
 2022-09-02,Senate,3288,52,dem
-2022-09-02,Senate,3289,48,dem
+2022-09-02,Senate,3289,47,dem
 2022-09-02,Senate,3290,51,dem
 2022-09-02,Senate,3291,48,dem
 2022-09-02,Senate,3292,48,dem
@@ -3375,7 +3375,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3374,52,dem
 2022-09-02,Senate,3375,52,dem
 2022-09-02,Senate,3376,52,dem
-2022-09-02,Senate,3377,57,dem
+2022-09-02,Senate,3377,56,dem
 2022-09-02,Senate,3378,48,dem
 2022-09-02,Senate,3379,50,dem
 2022-09-02,Senate,3380,52,dem
@@ -3397,7 +3397,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3396,51,dem
 2022-09-02,Senate,3397,53,dem
 2022-09-02,Senate,3398,46,dem
-2022-09-02,Senate,3399,53,dem
+2022-09-02,Senate,3399,52,dem
 2022-09-02,Senate,3400,51,dem
 2022-09-02,Senate,3401,50,dem
 2022-09-02,Senate,3402,55,dem
@@ -3430,7 +3430,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3429,48,dem
 2022-09-02,Senate,3430,54,dem
 2022-09-02,Senate,3431,50,dem
-2022-09-02,Senate,3432,43,dem
+2022-09-02,Senate,3432,42,dem
 2022-09-02,Senate,3433,52,dem
 2022-09-02,Senate,3434,50,dem
 2022-09-02,Senate,3435,52,dem
@@ -3441,7 +3441,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3440,54,dem
 2022-09-02,Senate,3441,48,dem
 2022-09-02,Senate,3442,48,dem
-2022-09-02,Senate,3443,47,dem
+2022-09-02,Senate,3443,46,dem
 2022-09-02,Senate,3444,49,dem
 2022-09-02,Senate,3445,50,dem
 2022-09-02,Senate,3446,54,dem
@@ -3495,7 +3495,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3494,52,dem
 2022-09-02,Senate,3495,48,dem
 2022-09-02,Senate,3496,50,dem
-2022-09-02,Senate,3497,56,dem
+2022-09-02,Senate,3497,55,dem
 2022-09-02,Senate,3498,49,dem
 2022-09-02,Senate,3499,52,dem
 2022-09-02,Senate,3500,46,dem
@@ -3523,7 +3523,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3522,52,dem
 2022-09-02,Senate,3523,56,dem
 2022-09-02,Senate,3524,52,dem
-2022-09-02,Senate,3525,44,dem
+2022-09-02,Senate,3525,43,dem
 2022-09-02,Senate,3526,53,dem
 2022-09-02,Senate,3527,50,dem
 2022-09-02,Senate,3528,50,dem
@@ -3587,8 +3587,8 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3586,52,dem
 2022-09-02,Senate,3587,56,dem
 2022-09-02,Senate,3588,51,dem
-2022-09-02,Senate,3589,47,dem
-2022-09-02,Senate,3590,48,dem
+2022-09-02,Senate,3589,46,dem
+2022-09-02,Senate,3590,47,dem
 2022-09-02,Senate,3591,50,dem
 2022-09-02,Senate,3592,53,dem
 2022-09-02,Senate,3593,50,dem
@@ -3705,7 +3705,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3704,52,dem
 2022-09-02,Senate,3705,46,dem
 2022-09-02,Senate,3706,48,dem
-2022-09-02,Senate,3707,50,dem
+2022-09-02,Senate,3707,49,dem
 2022-09-02,Senate,3708,50,dem
 2022-09-02,Senate,3709,54,dem
 2022-09-02,Senate,3710,53,dem
@@ -3738,7 +3738,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3737,54,dem
 2022-09-02,Senate,3738,50,dem
 2022-09-02,Senate,3739,50,dem
-2022-09-02,Senate,3740,48,dem
+2022-09-02,Senate,3740,47,dem
 2022-09-02,Senate,3741,49,dem
 2022-09-02,Senate,3742,52,dem
 2022-09-02,Senate,3743,48,dem
@@ -3795,7 +3795,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3794,46,dem
 2022-09-02,Senate,3795,53,dem
 2022-09-02,Senate,3796,46,dem
-2022-09-02,Senate,3797,49,dem
+2022-09-02,Senate,3797,48,dem
 2022-09-02,Senate,3798,54,dem
 2022-09-02,Senate,3799,51,dem
 2022-09-02,Senate,3800,51,dem
@@ -3863,7 +3863,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3862,49,dem
 2022-09-02,Senate,3863,48,dem
 2022-09-02,Senate,3864,49,dem
-2022-09-02,Senate,3865,49,dem
+2022-09-02,Senate,3865,48,dem
 2022-09-02,Senate,3866,53,dem
 2022-09-02,Senate,3867,50,dem
 2022-09-02,Senate,3868,52,dem
@@ -3885,7 +3885,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3884,47,dem
 2022-09-02,Senate,3885,48,dem
 2022-09-02,Senate,3886,53,dem
-2022-09-02,Senate,3887,46,dem
+2022-09-02,Senate,3887,45,dem
 2022-09-02,Senate,3888,52,dem
 2022-09-02,Senate,3889,52,dem
 2022-09-02,Senate,3890,49,dem
@@ -3972,7 +3972,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,3971,54,dem
 2022-09-02,Senate,3972,54,dem
 2022-09-02,Senate,3973,55,dem
-2022-09-02,Senate,3974,48,dem
+2022-09-02,Senate,3974,47,dem
 2022-09-02,Senate,3975,51,dem
 2022-09-02,Senate,3976,52,dem
 2022-09-02,Senate,3977,53,dem
@@ -4004,7 +4004,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4003,52,dem
 2022-09-02,Senate,4004,48,dem
 2022-09-02,Senate,4005,50,dem
-2022-09-02,Senate,4006,49,dem
+2022-09-02,Senate,4006,48,dem
 2022-09-02,Senate,4007,52,dem
 2022-09-02,Senate,4008,43,dem
 2022-09-02,Senate,4009,52,dem
@@ -4014,7 +4014,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4013,54,dem
 2022-09-02,Senate,4014,47,dem
 2022-09-02,Senate,4015,52,dem
-2022-09-02,Senate,4016,47,dem
+2022-09-02,Senate,4016,46,dem
 2022-09-02,Senate,4017,53,dem
 2022-09-02,Senate,4018,57,dem
 2022-09-02,Senate,4019,51,dem
@@ -4033,7 +4033,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4032,53,dem
 2022-09-02,Senate,4033,48,dem
 2022-09-02,Senate,4034,53,dem
-2022-09-02,Senate,4035,47,dem
+2022-09-02,Senate,4035,46,dem
 2022-09-02,Senate,4036,49,dem
 2022-09-02,Senate,4037,50,dem
 2022-09-02,Senate,4038,51,dem
@@ -4154,7 +4154,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4153,51,dem
 2022-09-02,Senate,4154,50,dem
 2022-09-02,Senate,4155,50,dem
-2022-09-02,Senate,4156,48,dem
+2022-09-02,Senate,4156,47,dem
 2022-09-02,Senate,4157,50,dem
 2022-09-02,Senate,4158,53,dem
 2022-09-02,Senate,4159,48,dem
@@ -4169,7 +4169,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4168,55,dem
 2022-09-02,Senate,4169,47,dem
 2022-09-02,Senate,4170,53,dem
-2022-09-02,Senate,4171,52,dem
+2022-09-02,Senate,4171,51,dem
 2022-09-02,Senate,4172,53,dem
 2022-09-02,Senate,4173,56,dem
 2022-09-02,Senate,4174,52,dem
@@ -4237,7 +4237,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4236,54,dem
 2022-09-02,Senate,4237,51,dem
 2022-09-02,Senate,4238,50,dem
-2022-09-02,Senate,4239,45,dem
+2022-09-02,Senate,4239,44,dem
 2022-09-02,Senate,4240,44,dem
 2022-09-02,Senate,4241,50,dem
 2022-09-02,Senate,4242,55,dem
@@ -4325,7 +4325,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4324,46,dem
 2022-09-02,Senate,4325,49,dem
 2022-09-02,Senate,4326,54,dem
-2022-09-02,Senate,4327,54,dem
+2022-09-02,Senate,4327,53,dem
 2022-09-02,Senate,4328,49,dem
 2022-09-02,Senate,4329,51,dem
 2022-09-02,Senate,4330,51,dem
@@ -4382,7 +4382,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4381,48,dem
 2022-09-02,Senate,4382,49,dem
 2022-09-02,Senate,4383,53,dem
-2022-09-02,Senate,4384,46,dem
+2022-09-02,Senate,4384,45,dem
 2022-09-02,Senate,4385,49,dem
 2022-09-02,Senate,4386,54,dem
 2022-09-02,Senate,4387,50,dem
@@ -4415,7 +4415,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4414,53,dem
 2022-09-02,Senate,4415,53,dem
 2022-09-02,Senate,4416,52,dem
-2022-09-02,Senate,4417,51,dem
+2022-09-02,Senate,4417,50,dem
 2022-09-02,Senate,4418,52,dem
 2022-09-02,Senate,4419,52,dem
 2022-09-02,Senate,4420,54,dem
@@ -4496,7 +4496,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4495,54,dem
 2022-09-02,Senate,4496,48,dem
 2022-09-02,Senate,4497,50,dem
-2022-09-02,Senate,4498,48,dem
+2022-09-02,Senate,4498,47,dem
 2022-09-02,Senate,4499,52,dem
 2022-09-02,Senate,4500,54,dem
 2022-09-02,Senate,4501,50,dem
@@ -4534,7 +4534,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4533,52,dem
 2022-09-02,Senate,4534,54,dem
 2022-09-02,Senate,4535,48,dem
-2022-09-02,Senate,4536,49,dem
+2022-09-02,Senate,4536,48,dem
 2022-09-02,Senate,4537,49,dem
 2022-09-02,Senate,4538,50,dem
 2022-09-02,Senate,4539,52,dem
@@ -4571,7 +4571,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4570,49,dem
 2022-09-02,Senate,4571,48,dem
 2022-09-02,Senate,4572,50,dem
-2022-09-02,Senate,4573,48,dem
+2022-09-02,Senate,4573,47,dem
 2022-09-02,Senate,4574,46,dem
 2022-09-02,Senate,4575,47,dem
 2022-09-02,Senate,4576,52,dem
@@ -4686,8 +4686,8 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4685,54,dem
 2022-09-02,Senate,4686,50,dem
 2022-09-02,Senate,4687,46,dem
-2022-09-02,Senate,4688,46,dem
-2022-09-02,Senate,4689,50,dem
+2022-09-02,Senate,4688,45,dem
+2022-09-02,Senate,4689,49,dem
 2022-09-02,Senate,4690,51,dem
 2022-09-02,Senate,4691,45,dem
 2022-09-02,Senate,4692,53,dem
@@ -4734,7 +4734,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4733,47,dem
 2022-09-02,Senate,4734,48,dem
 2022-09-02,Senate,4735,53,dem
-2022-09-02,Senate,4736,52,dem
+2022-09-02,Senate,4736,51,dem
 2022-09-02,Senate,4737,51,dem
 2022-09-02,Senate,4738,51,dem
 2022-09-02,Senate,4739,48,dem
@@ -4779,7 +4779,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4778,51,dem
 2022-09-02,Senate,4779,52,dem
 2022-09-02,Senate,4780,49,dem
-2022-09-02,Senate,4781,48,dem
+2022-09-02,Senate,4781,47,dem
 2022-09-02,Senate,4782,51,dem
 2022-09-02,Senate,4783,50,dem
 2022-09-02,Senate,4784,48,dem
@@ -4842,7 +4842,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4841,48,dem
 2022-09-02,Senate,4842,51,dem
 2022-09-02,Senate,4843,50,dem
-2022-09-02,Senate,4844,50,dem
+2022-09-02,Senate,4844,49,dem
 2022-09-02,Senate,4845,53,dem
 2022-09-02,Senate,4846,48,dem
 2022-09-02,Senate,4847,55,dem
@@ -4910,7 +4910,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,4909,48,dem
 2022-09-02,Senate,4910,53,dem
 2022-09-02,Senate,4911,50,dem
-2022-09-02,Senate,4912,50,dem
+2022-09-02,Senate,4912,49,dem
 2022-09-02,Senate,4913,56,dem
 2022-09-02,Senate,4914,48,dem
 2022-09-02,Senate,4915,57,dem
@@ -5091,7 +5091,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5090,56,dem
 2022-09-02,Senate,5091,48,dem
 2022-09-02,Senate,5092,45,dem
-2022-09-02,Senate,5093,47,dem
+2022-09-02,Senate,5093,46,dem
 2022-09-02,Senate,5094,53,dem
 2022-09-02,Senate,5095,53,dem
 2022-09-02,Senate,5096,53,dem
@@ -5111,7 +5111,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5110,50,dem
 2022-09-02,Senate,5111,51,dem
 2022-09-02,Senate,5112,49,dem
-2022-09-02,Senate,5113,49,dem
+2022-09-02,Senate,5113,48,dem
 2022-09-02,Senate,5114,53,dem
 2022-09-02,Senate,5115,50,dem
 2022-09-02,Senate,5116,46,dem
@@ -5132,7 +5132,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5131,44,dem
 2022-09-02,Senate,5132,51,dem
 2022-09-02,Senate,5133,51,dem
-2022-09-02,Senate,5134,52,dem
+2022-09-02,Senate,5134,51,dem
 2022-09-02,Senate,5135,50,dem
 2022-09-02,Senate,5136,53,dem
 2022-09-02,Senate,5137,53,dem
@@ -5160,7 +5160,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5159,47,dem
 2022-09-02,Senate,5160,46,dem
 2022-09-02,Senate,5161,53,dem
-2022-09-02,Senate,5162,55,dem
+2022-09-02,Senate,5162,54,dem
 2022-09-02,Senate,5163,51,dem
 2022-09-02,Senate,5164,54,dem
 2022-09-02,Senate,5165,53,dem
@@ -5181,7 +5181,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5180,46,dem
 2022-09-02,Senate,5181,49,dem
 2022-09-02,Senate,5182,47,dem
-2022-09-02,Senate,5183,44,dem
+2022-09-02,Senate,5183,43,dem
 2022-09-02,Senate,5184,48,dem
 2022-09-02,Senate,5185,52,dem
 2022-09-02,Senate,5186,51,dem
@@ -5324,7 +5324,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5323,49,dem
 2022-09-02,Senate,5324,52,dem
 2022-09-02,Senate,5325,53,dem
-2022-09-02,Senate,5326,46,dem
+2022-09-02,Senate,5326,45,dem
 2022-09-02,Senate,5327,48,dem
 2022-09-02,Senate,5328,52,dem
 2022-09-02,Senate,5329,46,dem
@@ -5382,7 +5382,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5381,53,dem
 2022-09-02,Senate,5382,53,dem
 2022-09-02,Senate,5383,51,dem
-2022-09-02,Senate,5384,51,dem
+2022-09-02,Senate,5384,50,dem
 2022-09-02,Senate,5385,48,dem
 2022-09-02,Senate,5386,48,dem
 2022-09-02,Senate,5387,50,dem
@@ -5435,7 +5435,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5434,52,dem
 2022-09-02,Senate,5435,45,dem
 2022-09-02,Senate,5436,52,dem
-2022-09-02,Senate,5437,48,dem
+2022-09-02,Senate,5437,47,dem
 2022-09-02,Senate,5438,51,dem
 2022-09-02,Senate,5439,45,dem
 2022-09-02,Senate,5440,53,dem
@@ -5575,11 +5575,11 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5574,53,dem
 2022-09-02,Senate,5575,51,dem
 2022-09-02,Senate,5576,54,dem
-2022-09-02,Senate,5577,51,dem
+2022-09-02,Senate,5577,50,dem
 2022-09-02,Senate,5578,50,dem
 2022-09-02,Senate,5579,54,dem
 2022-09-02,Senate,5580,49,dem
-2022-09-02,Senate,5581,53,dem
+2022-09-02,Senate,5581,52,dem
 2022-09-02,Senate,5582,54,dem
 2022-09-02,Senate,5583,52,dem
 2022-09-02,Senate,5584,46,dem
@@ -5606,7 +5606,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5605,50,dem
 2022-09-02,Senate,5606,45,dem
 2022-09-02,Senate,5607,47,dem
-2022-09-02,Senate,5608,51,dem
+2022-09-02,Senate,5608,50,dem
 2022-09-02,Senate,5609,52,dem
 2022-09-02,Senate,5610,52,dem
 2022-09-02,Senate,5611,50,dem
@@ -5631,7 +5631,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5630,54,dem
 2022-09-02,Senate,5631,51,dem
 2022-09-02,Senate,5632,49,dem
-2022-09-02,Senate,5633,41,dem
+2022-09-02,Senate,5633,40,dem
 2022-09-02,Senate,5634,49,dem
 2022-09-02,Senate,5635,51,dem
 2022-09-02,Senate,5636,47,dem
@@ -5687,7 +5687,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5686,48,dem
 2022-09-02,Senate,5687,54,dem
 2022-09-02,Senate,5688,52,dem
-2022-09-02,Senate,5689,47,dem
+2022-09-02,Senate,5689,46,dem
 2022-09-02,Senate,5690,53,dem
 2022-09-02,Senate,5691,52,dem
 2022-09-02,Senate,5692,52,dem
@@ -5710,7 +5710,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5709,54,dem
 2022-09-02,Senate,5710,52,dem
 2022-09-02,Senate,5711,51,dem
-2022-09-02,Senate,5712,50,dem
+2022-09-02,Senate,5712,49,dem
 2022-09-02,Senate,5713,55,dem
 2022-09-02,Senate,5714,49,dem
 2022-09-02,Senate,5715,51,dem
@@ -5791,7 +5791,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5790,53,dem
 2022-09-02,Senate,5791,48,dem
 2022-09-02,Senate,5792,47,dem
-2022-09-02,Senate,5793,46,dem
+2022-09-02,Senate,5793,45,dem
 2022-09-02,Senate,5794,54,dem
 2022-09-02,Senate,5795,49,dem
 2022-09-02,Senate,5796,50,dem
@@ -5852,7 +5852,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5851,45,dem
 2022-09-02,Senate,5852,52,dem
 2022-09-02,Senate,5853,49,dem
-2022-09-02,Senate,5854,53,dem
+2022-09-02,Senate,5854,52,dem
 2022-09-02,Senate,5855,50,dem
 2022-09-02,Senate,5856,57,dem
 2022-09-02,Senate,5857,47,dem
@@ -5875,7 +5875,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5874,47,dem
 2022-09-02,Senate,5875,52,dem
 2022-09-02,Senate,5876,47,dem
-2022-09-02,Senate,5877,50,dem
+2022-09-02,Senate,5877,49,dem
 2022-09-02,Senate,5878,40,dem
 2022-09-02,Senate,5879,50,dem
 2022-09-02,Senate,5880,49,dem
@@ -5895,7 +5895,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5894,55,dem
 2022-09-02,Senate,5895,50,dem
 2022-09-02,Senate,5896,54,dem
-2022-09-02,Senate,5897,49,dem
+2022-09-02,Senate,5897,48,dem
 2022-09-02,Senate,5898,50,dem
 2022-09-02,Senate,5899,51,dem
 2022-09-02,Senate,5900,51,dem
@@ -5930,7 +5930,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5929,51,dem
 2022-09-02,Senate,5930,51,dem
 2022-09-02,Senate,5931,53,dem
-2022-09-02,Senate,5932,49,dem
+2022-09-02,Senate,5932,48,dem
 2022-09-02,Senate,5933,48,dem
 2022-09-02,Senate,5934,50,dem
 2022-09-02,Senate,5935,49,dem
@@ -5995,10 +5995,10 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,5994,50,dem
 2022-09-02,Senate,5995,53,dem
 2022-09-02,Senate,5996,50,dem
-2022-09-02,Senate,5997,51,dem
+2022-09-02,Senate,5997,50,dem
 2022-09-02,Senate,5998,54,dem
 2022-09-02,Senate,5999,52,dem
-2022-09-02,Senate,6000,46,dem
+2022-09-02,Senate,6000,45,dem
 2022-09-02,Senate,6001,47,dem
 2022-09-02,Senate,6002,48,dem
 2022-09-02,Senate,6003,56,dem
@@ -6034,7 +6034,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6033,54,dem
 2022-09-02,Senate,6034,45,dem
 2022-09-02,Senate,6035,54,dem
-2022-09-02,Senate,6036,45,dem
+2022-09-02,Senate,6036,44,dem
 2022-09-02,Senate,6037,46,dem
 2022-09-02,Senate,6038,51,dem
 2022-09-02,Senate,6039,51,dem
@@ -6150,7 +6150,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6149,52,dem
 2022-09-02,Senate,6150,52,dem
 2022-09-02,Senate,6151,48,dem
-2022-09-02,Senate,6152,50,dem
+2022-09-02,Senate,6152,49,dem
 2022-09-02,Senate,6153,52,dem
 2022-09-02,Senate,6154,48,dem
 2022-09-02,Senate,6155,55,dem
@@ -6200,14 +6200,14 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6199,50,dem
 2022-09-02,Senate,6200,48,dem
 2022-09-02,Senate,6201,48,dem
-2022-09-02,Senate,6202,47,dem
+2022-09-02,Senate,6202,46,dem
 2022-09-02,Senate,6203,51,dem
 2022-09-02,Senate,6204,54,dem
 2022-09-02,Senate,6205,51,dem
 2022-09-02,Senate,6206,53,dem
 2022-09-02,Senate,6207,51,dem
 2022-09-02,Senate,6208,53,dem
-2022-09-02,Senate,6209,49,dem
+2022-09-02,Senate,6209,48,dem
 2022-09-02,Senate,6210,52,dem
 2022-09-02,Senate,6211,52,dem
 2022-09-02,Senate,6212,44,dem
@@ -6238,7 +6238,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6237,46,dem
 2022-09-02,Senate,6238,53,dem
 2022-09-02,Senate,6239,54,dem
-2022-09-02,Senate,6240,52,dem
+2022-09-02,Senate,6240,51,dem
 2022-09-02,Senate,6241,54,dem
 2022-09-02,Senate,6242,50,dem
 2022-09-02,Senate,6243,47,dem
@@ -6357,7 +6357,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6356,50,dem
 2022-09-02,Senate,6357,49,dem
 2022-09-02,Senate,6358,47,dem
-2022-09-02,Senate,6359,47,dem
+2022-09-02,Senate,6359,46,dem
 2022-09-02,Senate,6360,48,dem
 2022-09-02,Senate,6361,47,dem
 2022-09-02,Senate,6362,53,dem
@@ -6383,7 +6383,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6382,55,dem
 2022-09-02,Senate,6383,55,dem
 2022-09-02,Senate,6384,55,dem
-2022-09-02,Senate,6385,47,dem
+2022-09-02,Senate,6385,46,dem
 2022-09-02,Senate,6386,54,dem
 2022-09-02,Senate,6387,54,dem
 2022-09-02,Senate,6388,49,dem
@@ -6399,7 +6399,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6398,48,dem
 2022-09-02,Senate,6399,53,dem
 2022-09-02,Senate,6400,45,dem
-2022-09-02,Senate,6401,43,dem
+2022-09-02,Senate,6401,42,dem
 2022-09-02,Senate,6402,48,dem
 2022-09-02,Senate,6403,50,dem
 2022-09-02,Senate,6404,49,dem
@@ -6434,7 +6434,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6433,51,dem
 2022-09-02,Senate,6434,49,dem
 2022-09-02,Senate,6435,52,dem
-2022-09-02,Senate,6436,46,dem
+2022-09-02,Senate,6436,45,dem
 2022-09-02,Senate,6437,51,dem
 2022-09-02,Senate,6438,49,dem
 2022-09-02,Senate,6439,53,dem
@@ -6462,14 +6462,14 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6461,52,dem
 2022-09-02,Senate,6462,51,dem
 2022-09-02,Senate,6463,54,dem
-2022-09-02,Senate,6464,48,dem
+2022-09-02,Senate,6464,47,dem
 2022-09-02,Senate,6465,47,dem
 2022-09-02,Senate,6466,54,dem
 2022-09-02,Senate,6467,50,dem
 2022-09-02,Senate,6468,48,dem
 2022-09-02,Senate,6469,53,dem
 2022-09-02,Senate,6470,53,dem
-2022-09-02,Senate,6471,56,dem
+2022-09-02,Senate,6471,55,dem
 2022-09-02,Senate,6472,48,dem
 2022-09-02,Senate,6473,48,dem
 2022-09-02,Senate,6474,56,dem
@@ -6477,7 +6477,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6476,51,dem
 2022-09-02,Senate,6477,50,dem
 2022-09-02,Senate,6478,53,dem
-2022-09-02,Senate,6479,56,dem
+2022-09-02,Senate,6479,55,dem
 2022-09-02,Senate,6480,50,dem
 2022-09-02,Senate,6481,52,dem
 2022-09-02,Senate,6482,48,dem
@@ -6507,7 +6507,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6506,52,dem
 2022-09-02,Senate,6507,47,dem
 2022-09-02,Senate,6508,48,dem
-2022-09-02,Senate,6509,50,dem
+2022-09-02,Senate,6509,49,dem
 2022-09-02,Senate,6510,49,dem
 2022-09-02,Senate,6511,46,dem
 2022-09-02,Senate,6512,52,dem
@@ -6613,7 +6613,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6612,52,dem
 2022-09-02,Senate,6613,47,dem
 2022-09-02,Senate,6614,52,dem
-2022-09-02,Senate,6615,45,dem
+2022-09-02,Senate,6615,44,dem
 2022-09-02,Senate,6616,48,dem
 2022-09-02,Senate,6617,52,dem
 2022-09-02,Senate,6618,54,dem
@@ -6636,7 +6636,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6635,54,dem
 2022-09-02,Senate,6636,50,dem
 2022-09-02,Senate,6637,50,dem
-2022-09-02,Senate,6638,47,dem
+2022-09-02,Senate,6638,46,dem
 2022-09-02,Senate,6639,49,dem
 2022-09-02,Senate,6640,54,dem
 2022-09-02,Senate,6641,49,dem
@@ -6647,9 +6647,9 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6646,52,dem
 2022-09-02,Senate,6647,50,dem
 2022-09-02,Senate,6648,51,dem
-2022-09-02,Senate,6649,46,dem
+2022-09-02,Senate,6649,45,dem
 2022-09-02,Senate,6650,48,dem
-2022-09-02,Senate,6651,51,dem
+2022-09-02,Senate,6651,50,dem
 2022-09-02,Senate,6652,52,dem
 2022-09-02,Senate,6653,54,dem
 2022-09-02,Senate,6654,54,dem
@@ -6707,7 +6707,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6706,54,dem
 2022-09-02,Senate,6707,50,dem
 2022-09-02,Senate,6708,53,dem
-2022-09-02,Senate,6709,47,dem
+2022-09-02,Senate,6709,46,dem
 2022-09-02,Senate,6710,46,dem
 2022-09-02,Senate,6711,53,dem
 2022-09-02,Senate,6712,52,dem
@@ -6717,7 +6717,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6716,55,dem
 2022-09-02,Senate,6717,50,dem
 2022-09-02,Senate,6718,47,dem
-2022-09-02,Senate,6719,49,dem
+2022-09-02,Senate,6719,48,dem
 2022-09-02,Senate,6720,47,dem
 2022-09-02,Senate,6721,51,dem
 2022-09-02,Senate,6722,53,dem
@@ -6768,7 +6768,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6767,49,dem
 2022-09-02,Senate,6768,48,dem
 2022-09-02,Senate,6769,48,dem
-2022-09-02,Senate,6770,51,dem
+2022-09-02,Senate,6770,50,dem
 2022-09-02,Senate,6771,51,dem
 2022-09-02,Senate,6772,51,dem
 2022-09-02,Senate,6773,54,dem
@@ -6848,7 +6848,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6847,55,dem
 2022-09-02,Senate,6848,51,dem
 2022-09-02,Senate,6849,52,dem
-2022-09-02,Senate,6850,50,dem
+2022-09-02,Senate,6850,49,dem
 2022-09-02,Senate,6851,53,dem
 2022-09-02,Senate,6852,51,dem
 2022-09-02,Senate,6853,49,dem
@@ -6923,7 +6923,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6922,51,dem
 2022-09-02,Senate,6923,49,dem
 2022-09-02,Senate,6924,52,dem
-2022-09-02,Senate,6925,48,dem
+2022-09-02,Senate,6925,47,dem
 2022-09-02,Senate,6926,50,dem
 2022-09-02,Senate,6927,54,dem
 2022-09-02,Senate,6928,49,dem
@@ -6967,7 +6967,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6966,52,dem
 2022-09-02,Senate,6967,52,dem
 2022-09-02,Senate,6968,54,dem
-2022-09-02,Senate,6969,57,dem
+2022-09-02,Senate,6969,56,dem
 2022-09-02,Senate,6970,46,dem
 2022-09-02,Senate,6971,47,dem
 2022-09-02,Senate,6972,49,dem
@@ -6999,7 +6999,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,6998,51,dem
 2022-09-02,Senate,6999,54,dem
 2022-09-02,Senate,7000,51,dem
-2022-09-02,Senate,7001,51,dem
+2022-09-02,Senate,7001,50,dem
 2022-09-02,Senate,7002,50,dem
 2022-09-02,Senate,7003,49,dem
 2022-09-02,Senate,7004,51,dem
@@ -7037,7 +7037,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7036,49,dem
 2022-09-02,Senate,7037,50,dem
 2022-09-02,Senate,7038,48,dem
-2022-09-02,Senate,7039,49,dem
+2022-09-02,Senate,7039,48,dem
 2022-09-02,Senate,7040,50,dem
 2022-09-02,Senate,7041,56,dem
 2022-09-02,Senate,7042,48,dem
@@ -7052,7 +7052,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7051,46,dem
 2022-09-02,Senate,7052,52,dem
 2022-09-02,Senate,7053,51,dem
-2022-09-02,Senate,7054,49,dem
+2022-09-02,Senate,7054,48,dem
 2022-09-02,Senate,7055,52,dem
 2022-09-02,Senate,7056,49,dem
 2022-09-02,Senate,7057,57,dem
@@ -7075,7 +7075,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7074,50,dem
 2022-09-02,Senate,7075,52,dem
 2022-09-02,Senate,7076,50,dem
-2022-09-02,Senate,7077,50,dem
+2022-09-02,Senate,7077,49,dem
 2022-09-02,Senate,7078,55,dem
 2022-09-02,Senate,7079,47,dem
 2022-09-02,Senate,7080,55,dem
@@ -7119,7 +7119,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7118,52,dem
 2022-09-02,Senate,7119,53,dem
 2022-09-02,Senate,7120,52,dem
-2022-09-02,Senate,7121,53,dem
+2022-09-02,Senate,7121,52,dem
 2022-09-02,Senate,7122,51,dem
 2022-09-02,Senate,7123,52,dem
 2022-09-02,Senate,7124,50,dem
@@ -7146,7 +7146,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7145,48,dem
 2022-09-02,Senate,7146,49,dem
 2022-09-02,Senate,7147,52,dem
-2022-09-02,Senate,7148,57,dem
+2022-09-02,Senate,7148,56,dem
 2022-09-02,Senate,7149,52,dem
 2022-09-02,Senate,7150,51,dem
 2022-09-02,Senate,7151,47,dem
@@ -7333,7 +7333,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7332,50,dem
 2022-09-02,Senate,7333,51,dem
 2022-09-02,Senate,7334,50,dem
-2022-09-02,Senate,7335,51,dem
+2022-09-02,Senate,7335,50,dem
 2022-09-02,Senate,7336,46,dem
 2022-09-02,Senate,7337,44,dem
 2022-09-02,Senate,7338,56,dem
@@ -7366,7 +7366,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7365,50,dem
 2022-09-02,Senate,7366,50,dem
 2022-09-02,Senate,7367,52,dem
-2022-09-02,Senate,7368,53,dem
+2022-09-02,Senate,7368,52,dem
 2022-09-02,Senate,7369,54,dem
 2022-09-02,Senate,7370,50,dem
 2022-09-02,Senate,7371,49,dem
@@ -7433,7 +7433,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7432,50,dem
 2022-09-02,Senate,7433,48,dem
 2022-09-02,Senate,7434,50,dem
-2022-09-02,Senate,7435,49,dem
+2022-09-02,Senate,7435,48,dem
 2022-09-02,Senate,7436,47,dem
 2022-09-02,Senate,7437,51,dem
 2022-09-02,Senate,7438,48,dem
@@ -7551,7 +7551,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7550,48,dem
 2022-09-02,Senate,7551,54,dem
 2022-09-02,Senate,7552,52,dem
-2022-09-02,Senate,7553,48,dem
+2022-09-02,Senate,7553,47,dem
 2022-09-02,Senate,7554,49,dem
 2022-09-02,Senate,7555,49,dem
 2022-09-02,Senate,7556,49,dem
@@ -7587,7 +7587,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7586,50,dem
 2022-09-02,Senate,7587,51,dem
 2022-09-02,Senate,7588,50,dem
-2022-09-02,Senate,7589,50,dem
+2022-09-02,Senate,7589,49,dem
 2022-09-02,Senate,7590,52,dem
 2022-09-02,Senate,7591,49,dem
 2022-09-02,Senate,7592,48,dem
@@ -7596,7 +7596,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7595,52,dem
 2022-09-02,Senate,7596,52,dem
 2022-09-02,Senate,7597,52,dem
-2022-09-02,Senate,7598,45,dem
+2022-09-02,Senate,7598,44,dem
 2022-09-02,Senate,7599,49,dem
 2022-09-02,Senate,7600,51,dem
 2022-09-02,Senate,7601,49,dem
@@ -7611,7 +7611,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7610,54,dem
 2022-09-02,Senate,7611,47,dem
 2022-09-02,Senate,7612,51,dem
-2022-09-02,Senate,7613,48,dem
+2022-09-02,Senate,7613,47,dem
 2022-09-02,Senate,7614,48,dem
 2022-09-02,Senate,7615,57,dem
 2022-09-02,Senate,7616,47,dem
@@ -7693,7 +7693,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7692,51,dem
 2022-09-02,Senate,7693,48,dem
 2022-09-02,Senate,7694,52,dem
-2022-09-02,Senate,7695,49,dem
+2022-09-02,Senate,7695,48,dem
 2022-09-02,Senate,7696,46,dem
 2022-09-02,Senate,7697,50,dem
 2022-09-02,Senate,7698,53,dem
@@ -7746,7 +7746,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7745,56,dem
 2022-09-02,Senate,7746,48,dem
 2022-09-02,Senate,7747,52,dem
-2022-09-02,Senate,7748,52,dem
+2022-09-02,Senate,7748,51,dem
 2022-09-02,Senate,7749,55,dem
 2022-09-02,Senate,7750,51,dem
 2022-09-02,Senate,7751,51,dem
@@ -7825,12 +7825,12 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7824,54,dem
 2022-09-02,Senate,7825,53,dem
 2022-09-02,Senate,7826,51,dem
-2022-09-02,Senate,7827,48,dem
-2022-09-02,Senate,7828,57,dem
+2022-09-02,Senate,7827,47,dem
+2022-09-02,Senate,7828,56,dem
 2022-09-02,Senate,7829,53,dem
 2022-09-02,Senate,7830,49,dem
 2022-09-02,Senate,7831,49,dem
-2022-09-02,Senate,7832,54,dem
+2022-09-02,Senate,7832,53,dem
 2022-09-02,Senate,7833,44,dem
 2022-09-02,Senate,7834,49,dem
 2022-09-02,Senate,7835,52,dem
@@ -7859,7 +7859,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7858,51,dem
 2022-09-02,Senate,7859,49,dem
 2022-09-02,Senate,7860,51,dem
-2022-09-02,Senate,7861,54,dem
+2022-09-02,Senate,7861,53,dem
 2022-09-02,Senate,7862,51,dem
 2022-09-02,Senate,7863,43,dem
 2022-09-02,Senate,7864,51,dem
@@ -7867,7 +7867,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7866,52,dem
 2022-09-02,Senate,7867,51,dem
 2022-09-02,Senate,7868,53,dem
-2022-09-02,Senate,7869,46,dem
+2022-09-02,Senate,7869,45,dem
 2022-09-02,Senate,7870,48,dem
 2022-09-02,Senate,7871,52,dem
 2022-09-02,Senate,7872,50,dem
@@ -7902,14 +7902,14 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,7901,49,dem
 2022-09-02,Senate,7902,49,dem
 2022-09-02,Senate,7903,52,dem
-2022-09-02,Senate,7904,53,dem
+2022-09-02,Senate,7904,52,dem
 2022-09-02,Senate,7905,52,dem
 2022-09-02,Senate,7906,53,dem
 2022-09-02,Senate,7907,53,dem
 2022-09-02,Senate,7908,48,dem
 2022-09-02,Senate,7909,54,dem
 2022-09-02,Senate,7910,51,dem
-2022-09-02,Senate,7911,45,dem
+2022-09-02,Senate,7911,44,dem
 2022-09-02,Senate,7912,49,dem
 2022-09-02,Senate,7913,53,dem
 2022-09-02,Senate,7914,54,dem
@@ -8010,7 +8010,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8009,46,dem
 2022-09-02,Senate,8010,53,dem
 2022-09-02,Senate,8011,53,dem
-2022-09-02,Senate,8012,48,dem
+2022-09-02,Senate,8012,47,dem
 2022-09-02,Senate,8013,50,dem
 2022-09-02,Senate,8014,50,dem
 2022-09-02,Senate,8015,47,dem
@@ -8100,7 +8100,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8099,47,dem
 2022-09-02,Senate,8100,53,dem
 2022-09-02,Senate,8101,50,dem
-2022-09-02,Senate,8102,47,dem
+2022-09-02,Senate,8102,46,dem
 2022-09-02,Senate,8103,56,dem
 2022-09-02,Senate,8104,57,dem
 2022-09-02,Senate,8105,49,dem
@@ -8144,14 +8144,14 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8143,50,dem
 2022-09-02,Senate,8144,52,dem
 2022-09-02,Senate,8145,49,dem
-2022-09-02,Senate,8146,52,dem
+2022-09-02,Senate,8146,51,dem
 2022-09-02,Senate,8147,52,dem
 2022-09-02,Senate,8148,50,dem
 2022-09-02,Senate,8149,51,dem
 2022-09-02,Senate,8150,52,dem
 2022-09-02,Senate,8151,49,dem
 2022-09-02,Senate,8152,52,dem
-2022-09-02,Senate,8153,51,dem
+2022-09-02,Senate,8153,50,dem
 2022-09-02,Senate,8154,49,dem
 2022-09-02,Senate,8155,53,dem
 2022-09-02,Senate,8156,51,dem
@@ -8171,7 +8171,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8170,50,dem
 2022-09-02,Senate,8171,54,dem
 2022-09-02,Senate,8172,54,dem
-2022-09-02,Senate,8173,45,dem
+2022-09-02,Senate,8173,44,dem
 2022-09-02,Senate,8174,52,dem
 2022-09-02,Senate,8175,56,dem
 2022-09-02,Senate,8176,53,dem
@@ -8219,7 +8219,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8218,47,dem
 2022-09-02,Senate,8219,46,dem
 2022-09-02,Senate,8220,54,dem
-2022-09-02,Senate,8221,51,dem
+2022-09-02,Senate,8221,50,dem
 2022-09-02,Senate,8222,50,dem
 2022-09-02,Senate,8223,51,dem
 2022-09-02,Senate,8224,54,dem
@@ -8237,7 +8237,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8236,50,dem
 2022-09-02,Senate,8237,54,dem
 2022-09-02,Senate,8238,47,dem
-2022-09-02,Senate,8239,50,dem
+2022-09-02,Senate,8239,49,dem
 2022-09-02,Senate,8240,44,dem
 2022-09-02,Senate,8241,48,dem
 2022-09-02,Senate,8242,51,dem
@@ -8287,7 +8287,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8286,48,dem
 2022-09-02,Senate,8287,51,dem
 2022-09-02,Senate,8288,51,dem
-2022-09-02,Senate,8289,50,dem
+2022-09-02,Senate,8289,49,dem
 2022-09-02,Senate,8290,50,dem
 2022-09-02,Senate,8291,50,dem
 2022-09-02,Senate,8292,51,dem
@@ -8325,7 +8325,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8324,50,dem
 2022-09-02,Senate,8325,53,dem
 2022-09-02,Senate,8326,48,dem
-2022-09-02,Senate,8327,49,dem
+2022-09-02,Senate,8327,48,dem
 2022-09-02,Senate,8328,53,dem
 2022-09-02,Senate,8329,44,dem
 2022-09-02,Senate,8330,53,dem
@@ -8401,7 +8401,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8400,51,dem
 2022-09-02,Senate,8401,52,dem
 2022-09-02,Senate,8402,50,dem
-2022-09-02,Senate,8403,55,dem
+2022-09-02,Senate,8403,54,dem
 2022-09-02,Senate,8404,51,dem
 2022-09-02,Senate,8405,48,dem
 2022-09-02,Senate,8406,51,dem
@@ -8424,11 +8424,11 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8423,54,dem
 2022-09-02,Senate,8424,50,dem
 2022-09-02,Senate,8425,52,dem
-2022-09-02,Senate,8426,47,dem
+2022-09-02,Senate,8426,45,dem
 2022-09-02,Senate,8427,53,dem
 2022-09-02,Senate,8428,51,dem
 2022-09-02,Senate,8429,51,dem
-2022-09-02,Senate,8430,53,dem
+2022-09-02,Senate,8430,52,dem
 2022-09-02,Senate,8431,53,dem
 2022-09-02,Senate,8432,51,dem
 2022-09-02,Senate,8433,51,dem
@@ -8453,7 +8453,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8452,52,dem
 2022-09-02,Senate,8453,54,dem
 2022-09-02,Senate,8454,50,dem
-2022-09-02,Senate,8455,50,dem
+2022-09-02,Senate,8455,49,dem
 2022-09-02,Senate,8456,50,dem
 2022-09-02,Senate,8457,55,dem
 2022-09-02,Senate,8458,46,dem
@@ -8481,7 +8481,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8480,51,dem
 2022-09-02,Senate,8481,52,dem
 2022-09-02,Senate,8482,51,dem
-2022-09-02,Senate,8483,49,dem
+2022-09-02,Senate,8483,48,dem
 2022-09-02,Senate,8484,51,dem
 2022-09-02,Senate,8485,54,dem
 2022-09-02,Senate,8486,53,dem
@@ -8543,7 +8543,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8542,54,dem
 2022-09-02,Senate,8543,54,dem
 2022-09-02,Senate,8544,54,dem
-2022-09-02,Senate,8545,51,dem
+2022-09-02,Senate,8545,50,dem
 2022-09-02,Senate,8546,52,dem
 2022-09-02,Senate,8547,54,dem
 2022-09-02,Senate,8548,43,dem
@@ -8610,11 +8610,11 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8609,48,dem
 2022-09-02,Senate,8610,48,dem
 2022-09-02,Senate,8611,48,dem
-2022-09-02,Senate,8612,46,dem
-2022-09-02,Senate,8613,49,dem
+2022-09-02,Senate,8612,45,dem
+2022-09-02,Senate,8613,48,dem
 2022-09-02,Senate,8614,50,dem
 2022-09-02,Senate,8615,53,dem
-2022-09-02,Senate,8616,54,dem
+2022-09-02,Senate,8616,53,dem
 2022-09-02,Senate,8617,49,dem
 2022-09-02,Senate,8618,54,dem
 2022-09-02,Senate,8619,49,dem
@@ -8627,7 +8627,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8626,50,dem
 2022-09-02,Senate,8627,51,dem
 2022-09-02,Senate,8628,50,dem
-2022-09-02,Senate,8629,50,dem
+2022-09-02,Senate,8629,49,dem
 2022-09-02,Senate,8630,52,dem
 2022-09-02,Senate,8631,48,dem
 2022-09-02,Senate,8632,49,dem
@@ -8819,7 +8819,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8818,49,dem
 2022-09-02,Senate,8819,49,dem
 2022-09-02,Senate,8820,52,dem
-2022-09-02,Senate,8821,48,dem
+2022-09-02,Senate,8821,47,dem
 2022-09-02,Senate,8822,54,dem
 2022-09-02,Senate,8823,51,dem
 2022-09-02,Senate,8824,51,dem
@@ -8857,7 +8857,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8856,50,dem
 2022-09-02,Senate,8857,56,dem
 2022-09-02,Senate,8858,51,dem
-2022-09-02,Senate,8859,48,dem
+2022-09-02,Senate,8859,47,dem
 2022-09-02,Senate,8860,52,dem
 2022-09-02,Senate,8861,52,dem
 2022-09-02,Senate,8862,46,dem
@@ -8879,7 +8879,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8878,53,dem
 2022-09-02,Senate,8879,52,dem
 2022-09-02,Senate,8880,52,dem
-2022-09-02,Senate,8881,54,dem
+2022-09-02,Senate,8881,53,dem
 2022-09-02,Senate,8882,49,dem
 2022-09-02,Senate,8883,56,dem
 2022-09-02,Senate,8884,54,dem
@@ -8937,7 +8937,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8936,47,dem
 2022-09-02,Senate,8937,51,dem
 2022-09-02,Senate,8938,50,dem
-2022-09-02,Senate,8939,53,dem
+2022-09-02,Senate,8939,52,dem
 2022-09-02,Senate,8940,51,dem
 2022-09-02,Senate,8941,50,dem
 2022-09-02,Senate,8942,53,dem
@@ -8957,10 +8957,10 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8956,52,dem
 2022-09-02,Senate,8957,56,dem
 2022-09-02,Senate,8958,50,dem
-2022-09-02,Senate,8959,47,dem
+2022-09-02,Senate,8959,46,dem
 2022-09-02,Senate,8960,52,dem
 2022-09-02,Senate,8961,50,dem
-2022-09-02,Senate,8962,48,dem
+2022-09-02,Senate,8962,47,dem
 2022-09-02,Senate,8963,55,dem
 2022-09-02,Senate,8964,55,dem
 2022-09-02,Senate,8965,48,dem
@@ -8973,14 +8973,14 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,8972,52,dem
 2022-09-02,Senate,8973,53,dem
 2022-09-02,Senate,8974,53,dem
-2022-09-02,Senate,8975,48,dem
+2022-09-02,Senate,8975,47,dem
 2022-09-02,Senate,8976,46,dem
 2022-09-02,Senate,8977,46,dem
 2022-09-02,Senate,8978,50,dem
 2022-09-02,Senate,8979,49,dem
 2022-09-02,Senate,8980,44,dem
 2022-09-02,Senate,8981,46,dem
-2022-09-02,Senate,8982,52,dem
+2022-09-02,Senate,8982,51,dem
 2022-09-02,Senate,8983,51,dem
 2022-09-02,Senate,8984,50,dem
 2022-09-02,Senate,8985,52,dem
@@ -9008,7 +9008,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9007,49,dem
 2022-09-02,Senate,9008,52,dem
 2022-09-02,Senate,9009,52,dem
-2022-09-02,Senate,9010,47,dem
+2022-09-02,Senate,9010,46,dem
 2022-09-02,Senate,9011,49,dem
 2022-09-02,Senate,9012,49,dem
 2022-09-02,Senate,9013,50,dem
@@ -9050,14 +9050,14 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9049,49,dem
 2022-09-02,Senate,9050,44,dem
 2022-09-02,Senate,9051,55,dem
-2022-09-02,Senate,9052,49,dem
+2022-09-02,Senate,9052,48,dem
 2022-09-02,Senate,9053,50,dem
 2022-09-02,Senate,9054,51,dem
 2022-09-02,Senate,9055,49,dem
 2022-09-02,Senate,9056,43,dem
 2022-09-02,Senate,9057,48,dem
 2022-09-02,Senate,9058,52,dem
-2022-09-02,Senate,9059,48,dem
+2022-09-02,Senate,9059,47,dem
 2022-09-02,Senate,9060,53,dem
 2022-09-02,Senate,9061,50,dem
 2022-09-02,Senate,9062,49,dem
@@ -9071,7 +9071,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9070,53,dem
 2022-09-02,Senate,9071,47,dem
 2022-09-02,Senate,9072,55,dem
-2022-09-02,Senate,9073,47,dem
+2022-09-02,Senate,9073,46,dem
 2022-09-02,Senate,9074,50,dem
 2022-09-02,Senate,9075,45,dem
 2022-09-02,Senate,9076,53,dem
@@ -9087,7 +9087,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9086,50,dem
 2022-09-02,Senate,9087,48,dem
 2022-09-02,Senate,9088,51,dem
-2022-09-02,Senate,9089,48,dem
+2022-09-02,Senate,9089,47,dem
 2022-09-02,Senate,9090,54,dem
 2022-09-02,Senate,9091,49,dem
 2022-09-02,Senate,9092,48,dem
@@ -9160,7 +9160,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9159,52,dem
 2022-09-02,Senate,9160,54,dem
 2022-09-02,Senate,9161,52,dem
-2022-09-02,Senate,9162,49,dem
+2022-09-02,Senate,9162,48,dem
 2022-09-02,Senate,9163,48,dem
 2022-09-02,Senate,9164,45,dem
 2022-09-02,Senate,9165,51,dem
@@ -9173,7 +9173,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9172,48,dem
 2022-09-02,Senate,9173,50,dem
 2022-09-02,Senate,9174,50,dem
-2022-09-02,Senate,9175,48,dem
+2022-09-02,Senate,9175,47,dem
 2022-09-02,Senate,9176,48,dem
 2022-09-02,Senate,9177,52,dem
 2022-09-02,Senate,9178,50,dem
@@ -9214,16 +9214,16 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9213,48,dem
 2022-09-02,Senate,9214,54,dem
 2022-09-02,Senate,9215,52,dem
-2022-09-02,Senate,9216,46,dem
+2022-09-02,Senate,9216,45,dem
 2022-09-02,Senate,9217,44,dem
 2022-09-02,Senate,9218,51,dem
 2022-09-02,Senate,9219,52,dem
 2022-09-02,Senate,9220,48,dem
 2022-09-02,Senate,9221,53,dem
-2022-09-02,Senate,9222,51,dem
+2022-09-02,Senate,9222,50,dem
 2022-09-02,Senate,9223,54,dem
 2022-09-02,Senate,9224,53,dem
-2022-09-02,Senate,9225,49,dem
+2022-09-02,Senate,9225,48,dem
 2022-09-02,Senate,9226,51,dem
 2022-09-02,Senate,9227,52,dem
 2022-09-02,Senate,9228,52,dem
@@ -9312,7 +9312,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9311,48,dem
 2022-09-02,Senate,9312,50,dem
 2022-09-02,Senate,9313,50,dem
-2022-09-02,Senate,9314,49,dem
+2022-09-02,Senate,9314,48,dem
 2022-09-02,Senate,9315,54,dem
 2022-09-02,Senate,9316,50,dem
 2022-09-02,Senate,9317,51,dem
@@ -9361,7 +9361,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9360,51,dem
 2022-09-02,Senate,9361,53,dem
 2022-09-02,Senate,9362,51,dem
-2022-09-02,Senate,9363,44,dem
+2022-09-02,Senate,9363,43,dem
 2022-09-02,Senate,9364,52,dem
 2022-09-02,Senate,9365,51,dem
 2022-09-02,Senate,9366,51,dem
@@ -9420,7 +9420,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9419,55,dem
 2022-09-02,Senate,9420,51,dem
 2022-09-02,Senate,9421,57,dem
-2022-09-02,Senate,9422,48,dem
+2022-09-02,Senate,9422,47,dem
 2022-09-02,Senate,9423,51,dem
 2022-09-02,Senate,9424,57,dem
 2022-09-02,Senate,9425,54,dem
@@ -9479,7 +9479,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9478,50,dem
 2022-09-02,Senate,9479,47,dem
 2022-09-02,Senate,9480,51,dem
-2022-09-02,Senate,9481,45,dem
+2022-09-02,Senate,9481,44,dem
 2022-09-02,Senate,9482,43,dem
 2022-09-02,Senate,9483,53,dem
 2022-09-02,Senate,9484,49,dem
@@ -9561,7 +9561,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9560,52,dem
 2022-09-02,Senate,9561,53,dem
 2022-09-02,Senate,9562,51,dem
-2022-09-02,Senate,9563,50,dem
+2022-09-02,Senate,9563,49,dem
 2022-09-02,Senate,9564,51,dem
 2022-09-02,Senate,9565,49,dem
 2022-09-02,Senate,9566,51,dem
@@ -9581,7 +9581,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9580,52,dem
 2022-09-02,Senate,9581,54,dem
 2022-09-02,Senate,9582,53,dem
-2022-09-02,Senate,9583,46,dem
+2022-09-02,Senate,9583,45,dem
 2022-09-02,Senate,9584,48,dem
 2022-09-02,Senate,9585,51,dem
 2022-09-02,Senate,9586,47,dem
@@ -9682,7 +9682,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9681,54,dem
 2022-09-02,Senate,9682,49,dem
 2022-09-02,Senate,9683,50,dem
-2022-09-02,Senate,9684,50,dem
+2022-09-02,Senate,9684,49,dem
 2022-09-02,Senate,9685,51,dem
 2022-09-02,Senate,9686,50,dem
 2022-09-02,Senate,9687,47,dem
@@ -9857,7 +9857,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9856,53,dem
 2022-09-02,Senate,9857,54,dem
 2022-09-02,Senate,9858,53,dem
-2022-09-02,Senate,9859,50,dem
+2022-09-02,Senate,9859,49,dem
 2022-09-02,Senate,9860,50,dem
 2022-09-02,Senate,9861,49,dem
 2022-09-02,Senate,9862,50,dem
@@ -9933,7 +9933,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9932,51,dem
 2022-09-02,Senate,9933,51,dem
 2022-09-02,Senate,9934,54,dem
-2022-09-02,Senate,9935,51,dem
+2022-09-02,Senate,9935,50,dem
 2022-09-02,Senate,9936,51,dem
 2022-09-02,Senate,9937,47,dem
 2022-09-02,Senate,9938,52,dem
@@ -9947,7 +9947,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9946,48,dem
 2022-09-02,Senate,9947,53,dem
 2022-09-02,Senate,9948,50,dem
-2022-09-02,Senate,9949,46,dem
+2022-09-02,Senate,9949,45,dem
 2022-09-02,Senate,9950,49,dem
 2022-09-02,Senate,9951,53,dem
 2022-09-02,Senate,9952,55,dem
@@ -9986,7 +9986,7 @@ model_date,race,sim,n,winner
 2022-09-02,Senate,9985,49,dem
 2022-09-02,Senate,9986,49,dem
 2022-09-02,Senate,9987,50,dem
-2022-09-02,Senate,9988,46,dem
+2022-09-02,Senate,9988,45,dem
 2022-09-02,Senate,9989,50,dem
 2022-09-02,Senate,9990,49,dem
 2022-09-02,Senate,9991,49,dem

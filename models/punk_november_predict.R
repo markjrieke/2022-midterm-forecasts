@@ -355,7 +355,7 @@ new_house_topline <-
   house_distribution %>%
   select(-sim, -winner) %>%
   nest(data = n) %>%
-  mutate(p_dem_win = map_dbl(data, ~sum(.x$n > 218.5)),
+  mutate(p_dem_win = map_dbl(data, ~sum(.x$n > 435/2)),
          p_dem_win = p_dem_win/10000,
          seats = map_dbl(data, ~quantile(.x$n, probs = 0.5)),
          seats_lower = map_dbl(data, ~quantile(.x$n, probs = 0.1)),

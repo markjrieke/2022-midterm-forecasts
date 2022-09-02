@@ -45,8 +45,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Texas,Governor,2022-11-08,Greg Abbott,rep,8,2022-08-07,0.4831249999999999,O'Rourke,Abbott,n,y,NA
 2022,Governor,Vermont,Governor,2022-11-08,Brenda Siegel,dem,1,2022-07-25,0.16,Siegel,Scott,n,y,NA
 2022,Governor,Vermont,Governor,2022-11-08,Phil Scott,rep,1,2022-07-25,0.6,Siegel,Scott,n,y,NA
-2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,7,2022-08-25,0.4799999999999999,Evers,Michels,y,n,NA
-2022,Governor,Wisconsin,Governor,2022-11-08,Tim Michels,rep,7,2022-08-25,0.44375000000000003,Evers,Michels,y,n,NA
+2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,8,2022-08-25,0.4799999999999999,Evers,Michels,y,n,NA
+2022,Governor,Wisconsin,Governor,2022-11-08,Tim Michels,rep,8,2022-08-25,0.45099999999999985,Evers,Michels,y,n,NA
 2022,House,Alaska,District 1,2022-11-08,Mary S. Peltola,dem,7,2022-07-25,0.431,Peltola,Begich,y,n,x
 2022,House,Alaska,District 1,2022-11-08,Nick Begich,rep,7,2022-07-25,0.3720000000000001,Peltola,Begich,y,n,x
 2022,House,Arizona,District 1,2022-11-08,Jevin Hodge,dem,1,2022-08-18,0.47,Hodge,Schweikert,n,y,NA
@@ -163,6 +163,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Texas,District 34,2022-11-08,Mayra Flores,rep,1,2022-08-01,0.43,Gonzalez,Flores,n,y,NA
 2022,House,Virginia,District 7,2022-11-08,Abigail A. Spanberger,dem,1,2022-08-06,0.46,Spanberger,Vega,y,n,NA
 2022,House,Virginia,District 7,2022-11-08,Yesli I. Vega,rep,1,2022-08-06,0.41,Spanberger,Vega,y,n,NA
+2022,House,Washington,District 3,2022-11-08,Marie Gluesenkamp Perez,dem,1,2022-08-30,0.47,Perez,Kent,n,n,NA
+2022,House,Washington,District 3,2022-11-08,Joe Kent,rep,1,2022-08-30,0.45,Perez,Kent,n,n,NA
 2022,House,Washington,District 8,2022-11-08,Kim Schrier,dem,1,2022-08-15,0.47,Schrier,Larkin,y,n,NA
 2022,House,Washington,District 8,2022-11-08,Matt Larkin,rep,1,2022-08-15,0.43,Schrier,Larkin,y,n,NA
 2022,House,Wisconsin,District 3,2022-11-08,Brad Pfaff,dem,3,2022-08-19,0.3874999999999999,Pfaff,Van Orden,n,n,NA
