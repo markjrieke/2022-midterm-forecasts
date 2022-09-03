@@ -73,6 +73,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Connecticut,District 5,2022-11-08,George Logan,rep,3,2022-07-26,0.41000000000000003,Hayes,Logan,y,n,NA
 2022,House,Florida,District 13,2022-11-08,Eric Lynn,dem,4,2022-06-28,0.395,Lynn,Paulina Luna,n,n,NA
 2022,House,Florida,District 13,2022-11-08,Anna Paulina Luna,rep,4,2022-06-28,0.44,Lynn,Paulina Luna,n,n,NA
+2022,House,Florida,District 15,2022-11-08,Alan M. Cohn,dem,1,2022-08-29,0.44,Cohn,Lee,n,n,NA
+2022,House,Florida,District 15,2022-11-08,Laurel Lee,rep,1,2022-08-29,0.47,Cohn,Lee,n,n,NA
 2022,House,Florida,District 2,2022-11-08,Al Lawson,dem,1,2022-06-23,0.4,Lawson,Dunn,y,y,NA
 2022,House,Florida,District 2,2022-11-08,Neal Dunn,rep,1,2022-06-23,0.43,Lawson,Dunn,y,y,NA
 2022,House,Florida,District 27,2022-11-08,Annette Taddeo,dem,2,2022-08-06,0.34,Taddeo,Salazar,n,y,NA
@@ -205,7 +207,7 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,17,2022-08-29,0.43959124866765176,Fetterman,Oz,n,n,NA
 2022,Senate,Utah,Class III,2022-11-08,Evan McMullin,ind,12,2022-07-18,0.36084459360717097,McMullin,Lee,n,y,NA
 2022,Senate,Utah,Class III,2022-11-08,Mike Lee,rep,12,2022-07-18,0.45125,McMullin,Lee,n,y,NA
-2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,5,2022-08-17,0.5041999999999999,Murray,Smiley,y,n,NA
-2022,Senate,Washington,Class III,2022-11-08,Tiffany Smiley,rep,5,2022-08-17,0.38399999999999995,Murray,Smiley,y,n,NA
+2022,Senate,Washington,Class III,2022-11-08,Patty Murray,dem,6,2022-09-01,0.5021666666666669,Murray,Smiley,y,n,NA
+2022,Senate,Washington,Class III,2022-11-08,Tiffany Smiley,rep,6,2022-09-01,0.3971666666666667,Murray,Smiley,y,n,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Mandela Barnes,dem,7,2022-08-25,0.491,Barnes,Johnson,n,y,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Ron Johnson,rep,7,2022-08-25,0.4458571428571429,Barnes,Johnson,n,y,NA
