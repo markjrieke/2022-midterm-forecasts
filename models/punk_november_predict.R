@@ -9,7 +9,7 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-# run_date <- lubridate::mdy("9/2/22")
+# run_date <- lubridate::mdy("9/3/22")
 run_date <- Sys.Date()
 
 # polling data 
@@ -396,10 +396,11 @@ new_senate_topline <-
   nest(data = n) %>%
   mutate(p_dem_win = map_dbl(data, ~sum(.x$n >= 50)),
          p_dem_win = p_dem_win/10000,
-         seats = map_dbl(data, ~quantile(.x$n, probs = 0.5)),
-         seats_lower = map_dbl(data, ~quantile(.x$n, probs = 0.1)),
-         seats_upper = map_dbl(data, ~quantile(.x$n, probs = 0.9))) %>%
-  select(-data)
+         seats = map_dbl(data, ~mean(.x$n)),
+         seats_sd = map_dbl(data, ~sd(.x$n)),
+         seats_lower = qnorm(0.1, seats, seats_sd),
+         seats_upper = qnorm(0.9, seats, seats_sd)) %>%
+  select(-data, -seats_sd)
 
 # append senate topline file
 read_csv("models/outputs/senate_topline.csv") %>%
