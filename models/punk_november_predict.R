@@ -19,7 +19,7 @@ polls_governor  <- read_csv("https://projects.fivethirtyeight.com/polls-page/dat
 polls_gcb       <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/generic_ballot_polls.csv")
 
 # model data
-elections       <- read_csv("models/data/elections_2022.csv")
+elections       <- read_csv("models/data/elections_2022.csv", locale = locale(encoding = "latin1"))
 demographics    <- read_csv("models/data/demographics_2022.csv")
 pvi             <- read_csv("models/data/pvi_2022.csv")
 elections_train <- read_csv("models/data/elections_train.csv")
@@ -39,7 +39,8 @@ poll_leaders <-
   bind_rows(polls_house %>% mutate(race = "House"),
             polls_governor %>% mutate(race = "Governor"),
             polls_senate %>% mutate(race = "Senate")) %>%
-  select(cycle,
+  select(question_id,
+         cycle,
          race,
          state,
          seat_name,
@@ -57,11 +58,33 @@ poll_leaders <-
   
   # reformat col types
   mutate(across(ends_with("date"), lubridate::mdy),
-         pct = pct/100) %>%
-  
-  # filter out polls before june/after run date
-  filter(!end_date < lubridate::mdy("6/1/22"),
-         end_date <= run_date) %>%
+         pct = pct/100,
+         seat_name = replace_na(seat_name, "Governor")) %>%
+    
+  # filter to only races polled during the race year
+  filter(cycle == lubridate::year(end_date)) %>%
+    
+  # join candidate names for filtering
+  left_join(elections, by = c("cycle", "race", "state", "seat_name" = "seat")) %>%
+  select(question_id:candidate_name_REP) %>%
+    
+  # only keep candidates that are getting modeled
+  mutate(across(starts_with("candidate_name_"), ~sub(".* ", "", .x)),
+         match_name = case_when(str_detect(candidate_name, candidate_name_DEM) ~ 1,
+                                str_detect(candidate_name, candidate_name_REP) ~ 1,
+                                TRUE ~ 0)) %>%
+  filter(match_name == 1) %>%
+    
+  # only keep polls that include both candidates
+  group_by(question_id) %>%
+  mutate(match_name = sum(match_name)) %>%
+  filter(match_name == 2) %>%
+  select(-match_name, -starts_with("candidate_name_")) %>%
+    
+  # change to 2pv
+  mutate(pct = pct/sum(pct)) %>%
+  ungroup() %>%
+  select(-question_id) %>%
   
   # get metadata abt polls to be used in model later
   nest(data = c(end_date, pct)) %>%
@@ -77,29 +100,6 @@ poll_leaders <-
   nplyr::nest_distinct(data, end_date, .keep_all = TRUE) %>%
   mutate(poll_avg = pmap_dbl(list(model, data), ~predict(..1, ..2))) %>%
   select(-data, -model)
-  
-# get to the top two in each race
-poll_leaders <- 
-  poll_leaders %>%
-  
-  # reformat cols
-  rename(seat = seat_name) %>%
-  mutate(seat = replace_na(seat, "Governor")) %>%
-  
-  # filter out candidates who aren't modeled
-  left_join(elections, by = c("cycle", "race", "state", "seat")) %>%
-  select(-c(dem_incumbent:pending)) %>%
-  mutate(match = case_when(str_detect(candidate_name, candidate_name_DEM) ~ "keep",
-                           str_detect(candidate_name, candidate_name_REP) ~ "keep",
-                           TRUE ~ "be gone thot")) %>%
-  filter(match == "keep") %>%
-  select(-c(candidate_name_DEM:match)) %>%
-
-  # select the top two candidates by poll avg in each race
-  group_by(cycle, race, state, seat) %>%
-  arrange(desc(poll_avg)) %>%
-  slice_head(n = 2) %>%
-  ungroup()
 
 # clean up environment
 rm(polls_governor, polls_house, polls_senate)
@@ -123,20 +123,9 @@ poll_averages <-
   poll_leaders %>%
   
   # reformat cols
+  rename(seat = seat_name) %>%
   mutate(candidate_party = str_to_lower(candidate_party),
-         candidate_party = if_else(candidate_party %in% c("dem", "rep"), candidate_party, "ind")) %>%
-  
-  # get to only the top within each party
-  group_by(cycle, race, state, seat, candidate_party) %>%
-  arrange(desc(poll_avg)) %>%
-  slice_head(n = 1) %>%
-  ungroup() %>%
-  
-  # sometimes dem/rep candidates are unevenly polled - summarise with the max
-  group_by(cycle, race, state, seat) %>%
-  mutate(num_polls = max(num_polls),
-         last_poll = max(last_poll)) %>%
-  ungroup()
+         candidate_party = if_else(candidate_party %in% c("dem", "rep"), candidate_party, "ind"))
   
 # write out for manual candidate checking
 poll_averages %>%

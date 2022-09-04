@@ -10,7 +10,7 @@ polls_governor  <- read_csv("data/polls/src/fte/governor_polls_historical.csv")
 polls_gcb       <- read_csv("data/polls/src/fte/generic_ballot_polls_historical.csv")
 
 # training data
-elections           <- read_csv("data/models/midterm_model/historical_results.csv")
+elections           <- read_csv("data/models/midterm_model/historical_results.csv", locale = locale(encoding = "latin1"))
 demographics        <- read_csv("data/models/midterm_model/demographics.csv")
 pvi                 <- read_csv("data/models/midterm_model/pvi.csv")
 
