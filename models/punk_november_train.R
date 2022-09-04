@@ -38,7 +38,8 @@ poll_leaders <-
   bind_rows(polls_house %>% mutate(race = "House"),
             polls_governor %>% mutate(race = "Governor"),
             polls_senate %>% mutate(race = "Senate")) %>% 
-  select(cycle,
+  select(question_id,
+         cycle,
          race,
          state, 
          seat_name, 
@@ -47,9 +48,7 @@ poll_leaders <-
          candidate_name,
          candidate_party,
          pct) %>%
-    
-  arrange(cycle, race, state, seat_name) %>%
-  
+
   # fix missing dates in cycles
   mutate(election_date = case_when(is.na(election_date) & cycle == 2018 ~ "11/6/18",
                                    is.na(election_date) & cycle == 2020 ~ "11/3/20",
@@ -58,36 +57,35 @@ poll_leaders <-
   # remove special elections
   filter(election_date %in% c("11/6/18", "11/3/20")) %>%
   
-  # fix specific races
-  mutate(remove = case_when(cycle == 2018 & state == "New York" &
-                              seat_name == "District 27" &
-                              !candidate_name %in% c("Chris Collins",
-                                                     "Nate McMurray") ~ "Remove",
-                            cycle == 2018 & state == "Delaware" & 
-                              seat_name == "District 1" &
-                              !candidate_name %in% c("Lisa Blunt Rochester",
-                                                     "Scott Walker") ~ "Remove", 
-                            cycle == 2018 & state == "Louisiana" &
-                              seat_name == "District 3" ~ "Remove", 
-                            cycle == 2020 & state == "Alabama" & 
-                              seat_name == "Class II" &
-                              !candidate_name %in% c("Gordon Douglas Jones",
-                                                     "Tommy Tuberville") ~ "Remove",
-                            cycle == 2020 & state == "Michigan" & 
-                              seat_name == "District 6" & 
-                              !candidate_name %in% c("Fred Upton", 
-                                                     "Jon Hoadley") ~ "Remove",
-                            TRUE ~ "keep")) %>%
-  filter(remove != "Remove") %>%
-  select(-remove) %>%
-
   # reformat col types
   mutate(across(ends_with("date"), lubridate::mdy),
-         pct = pct/100) %>%
+         pct = pct/100,
+         seat_name = replace_na(seat_name, "Governor")) %>%
+  
+  # filter to only races polled during the race year
+  filter(cycle == lubridate::year(end_date)) %>%
+  
+  # join candidate names for filtering
+  left_join(elections, by = c("cycle", "race", "state", "seat_name" = "seat")) %>%
+  select(question_id:candidate_name_REP) %>%
+  
+  # only keep candidates that are getting modeled
+  mutate(across(starts_with("candidate_name_"), ~sub(".* ", "", .x)),
+         match_name = case_when(str_detect(candidate_name, candidate_name_DEM) ~ 1,
+                                str_detect(candidate_name, candidate_name_REP) ~ 1,
+                                TRUE ~ 0)) %>%
+  filter(match_name == 1) %>%
     
-  # filter out polls before july
-  filter(!(cycle == 2018 & end_date < lubridate::mdy("6/1/18")),
-         !(cycle == 2020 & end_date < lubridate::mdy("6/1/20"))) %>%
+  # only keep polls that include both candidates
+  group_by(question_id) %>%
+  mutate(match_name = sum(match_name)) %>%
+  filter(match_name == 2) %>%
+  select(-match_name, -starts_with("candidate_name_")) %>%
+    
+  # change to 2pv
+  mutate(pct = pct/sum(pct)) %>%
+  ungroup() %>%
+  select(-question_id) %>%
   
   # get some metadata abt polls to be used in model later
   nest(data = c(end_date, pct)) %>%
@@ -102,13 +100,7 @@ poll_leaders <-
   nplyr::nest_filter(data, end_date == max(end_date)) %>%
   nplyr::nest_distinct(data, end_date, .keep_all = TRUE) %>%
   mutate(poll_avg = pmap_dbl(list(model, data), ~predict(..1, ..2))) %>%
-  select(-data, -model) %>%
-  
-  # select the top two candidates by poll avg in each race
-  group_by(cycle, race, state, seat_name) %>%
-  arrange(desc(poll_avg)) %>%
-  slice_head(n = 2) %>%
-  ungroup()
+  select(-data, -model) 
 
 # clean up environment
 rm(polls_governor, polls_house, polls_senate)
@@ -166,20 +158,8 @@ poll_averages <-
   
   # reformat cols
   rename(seat = seat_name) %>%
-  mutate(seat = replace_na(seat, "Governor"),
-         candidate_party = str_to_lower(candidate_party),
+  mutate(candidate_party = str_to_lower(candidate_party),
          candidate_party = if_else(candidate_party %in% c("dem", "rep"), candidate_party, "ind")) %>%
-  
-  # get to only the top within each party
-  group_by(cycle, race, state, seat, candidate_party) %>%
-  arrange(desc(poll_avg)) %>%
-  slice_head(n = 1) %>%
-  ungroup() %>%
-  
-  # sometimes dem/rep candidates are unevenly polled - summarise with the max
-  group_by(cycle, race, state, seat) %>%
-  mutate(num_polls = max(num_polls)) %>%
-  ungroup() %>%
   
   # summarise at the race level
   select(-candidate_name) %>%
