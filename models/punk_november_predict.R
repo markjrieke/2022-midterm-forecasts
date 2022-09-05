@@ -9,8 +9,8 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-# run_date <- lubridate::mdy("9/3/22")
-run_date <- Sys.Date()
+run_date <- lubridate::mdy("9/4/22")
+# run_date <- Sys.Date()
 
 # polling data 
 polls_house     <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv")
