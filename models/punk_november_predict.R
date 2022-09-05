@@ -61,8 +61,9 @@ poll_leaders <-
          pct = pct/100,
          seat_name = replace_na(seat_name, "Governor")) %>%
     
-  # filter to only races polled during the race year
-  filter(cycle == lubridate::year(end_date)) %>%
+  # filter to only races polled during the race year/polls before run date
+  filter(cycle == lubridate::year(end_date),
+         end_date <= run_date) %>%
     
   # join candidate names for filtering
   left_join(elections, by = c("cycle", "race", "state", "seat_name" = "seat")) %>%
