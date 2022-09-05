@@ -18,9 +18,13 @@ pvi                 <- read_csv("data/models/midterm_model/pvi.csv")
 
 poll_model <- function(data) {
   
-  if(nrow(data) < 10) {
+  if(nrow(data) < 4) {
     
     lm(pct ~ 1, data = data)
+    
+  } else if (nrow(data) < 6) {
+    
+    lm(pct ~ as.numeric(end_date), data = data)
     
   } else {
     
