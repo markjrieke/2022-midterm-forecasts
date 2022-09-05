@@ -223,7 +223,7 @@ elections_train <-
          across(ends_with("gcb"), ~ .x/100),
          dem = if_else(is.na(dem), dem_gcb, dem),
          rep = if_else(is.na(rep), rep_gcb, rep)) %>%
-  select(-ends_with("gcb"), -pvi) %>%
+  select(-ends_with("gcb")) %>%
   
   # append with demographic data
   mutate(join_region = if_else(state %in% one_cd | !str_detect(seat, "District"), 
@@ -293,6 +293,13 @@ elections_train %>%
               se = FALSE) +
   facet_wrap(~race_group, scales = "free_x")
 
+elections_train %>%
+  ggplot(aes(x = pvi,
+             y = result,
+             size = num_polls)) + 
+  geom_point(alpha = 0.25) +
+  geom_smooth(method = "lm")
+
 # -----------------------------------model!-------------------------------------
 
 # estimate polling error
@@ -307,7 +314,7 @@ polling_error <-
 # model !
 set.seed(2022)
 elections_model <- 
-  gamlss(result ~ estimate*poll_bucket + incumbent + white + black + hispanic + aapi,
+  gamlss(result ~ estimate*poll_bucket + pvi + incumbent + white + black + hispanic + aapi,
          sigma.formula = ~ log10(num_polls + 2),
          family = BE(),
          data = elections_train)
