@@ -23,7 +23,7 @@ format_title <- function(p, race, dem = "Democrats", rep = "Republicans") {
   plural <- if(dem == "Democrats") "are" else "is"
   
   title <- 
-    case_when(p > 0.35 & p < 0.65 ~ paste("**It's a toss-up** in ", race),
+    case_when(p > 0.35 & p < 0.65 ~ paste("**It's a toss-up** in", race),
               p > 0.50 & p < 0.85 ~ paste0("**", color_text(dem, dem_blu), "** ", plural, " **likely** to win ", race),
               p > 0.50            ~ paste0("**", color_text(dem, dem_blu), "** ", plural, " **very likely** to win ", race),
               p < 0.50 & p > 0.15 ~ paste0("**", color_text(rep, rep_red), "** ", plural, " **likely** to win ", race),
