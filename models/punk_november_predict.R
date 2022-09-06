@@ -1,16 +1,13 @@
 # -----------------------------notes/to-do--------------------------------------
 
-# investigate places with few polls (potential for primary polls to be slipping in)
-# example: OH 9
-
 # -----------------------------setup--------------------------------------------
 
 library(gamlss)
 library(tidyverse)
 
 # set run date
-run_date <- lubridate::mdy("9/4/22")
-# run_date <- Sys.Date()
+# run_date <- lubridate::mdy("9/4/22")
+run_date <- Sys.Date()
 
 # polling data 
 polls_house     <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv")
@@ -196,7 +193,7 @@ elections_predict <-
          across(ends_with("gcb"), ~ .x/100),
          dem = if_else(is.na(dem), dem_gcb, dem),
          rep = if_else(is.na(rep), rep_gcb, rep)) %>%
-  select(-ends_with("gcb"), -pvi) %>%
+  select(-ends_with("gcb")) %>%
   
   # append with demographic data
   mutate(join_region = if_else(state %in% one_cd | !str_detect(seat, "District"),
@@ -231,7 +228,7 @@ elections_predict <-
 
 set.seed(666) # punk
 elections_model <- 
-  gamlss(result ~ estimate*poll_bucket + incumbent + white + black + hispanic + aapi,
+  gamlss(result ~ estimate*poll_bucket + pvi + incumbent + white + black + hispanic + aapi,
          sigma.formula = ~ log10(num_polls + 2),
          family = BE(),
          data = elections_train)
@@ -581,7 +578,7 @@ read_csv("models/outputs/senate_topline.csv") %>%
 riekelib::ggquicksave("models/diagnostics/rolling_senate_probability.png")
 
 # random race
-set.seed(run_date)
+set.seed(as.numeric(run_date) + 999)
 rand_race <- 
   read_csv("models/outputs/candidate_predictions.csv") %>%
   nest(data = -c(cycle, race, state, seat, starts_with("candidate"))) %>%
