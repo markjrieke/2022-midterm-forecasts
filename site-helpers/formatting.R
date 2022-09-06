@@ -36,7 +36,7 @@ format_title <- function(p, race, dem = "Democrats", rep = "Republicans") {
 # format subtitle
 format_subtitle <- function(p, race, dem = "Democrats", rep = "Republicans") {
   
-  plural <- if(dem == "Democrats") "win" else "win"
+  plural <- if(dem == "Democrats") "win" else "wins"
   winner <- if(p >= 0.5) dem else rep
   winner_color <- if(winner == dem) dem_blu else rep_red
   
