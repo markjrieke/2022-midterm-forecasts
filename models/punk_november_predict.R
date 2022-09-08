@@ -7,7 +7,7 @@ library(tidyverse)
 
 # set run date
 # run_date <- lubridate::mdy("7/9/22")
-# run_date <- Sys.Date()
+run_date <- Sys.Date()
 
 # polling data 
 polls_house     <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv")
