@@ -14,8 +14,11 @@ For the full forecast, please see the following links:
 ###### 9-7-22
 
 -   Updated poll model to scale loess span relative to days out from
-    election
--   Updated all historical data as well
+    election:
+    -   `last_poll` \> 100 days -\> `span = 1`
+    -   `last_poll` \<= 100 days -\>
+        `span = 0.25 * (last_poll/100) + 0.75`
+-   Updated all historical data as well.
 
 ## punk november 1.0
 
@@ -41,3 +44,26 @@ Distribution](diagnostics/rolling_senate_distribution.png)
 
 ![Rolling Senate
 Probability](diagnostics/rolling_senate_probability.png)
+
+# Training Diagnostics
+
+## Pre-fit EDA
+
+![Demographics vs result](diagnostics/training/demographics.png)
+
+![Poll model output vs result](diagnostics/training/poll_model.png)
+
+![Poll model output with
+interaction](diagnostics/training/poll_model_interactions.png)
+
+![PVI vs result](diagnostics/training/pvi.png)
+
+## Post-fit EDA
+
+![Predictions by race](diagnostics/training/predictions_race.png)
+
+![Model residuals](diagnostics/training/predictions_residuals.png)
+
+![Most polled races](diagnostics/training/most_polled_races.png)
+
+![Biggest model misses](diagnostics/training/model_misses.png)

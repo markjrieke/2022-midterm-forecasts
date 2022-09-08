@@ -288,6 +288,8 @@ elections_train %>%
   scale_size_continuous(range = c(1, 10)) +
   scale_color_manual(values = c("blue", "purple", "red"))
 
+riekelib::ggquicksave("models/diagnostics/training/poll_model.png")
+
 elections_train %>%
   ggplot(aes(x = estimate,
              y = result,
@@ -299,6 +301,8 @@ elections_train %>%
               se = FALSE) + 
   scale_size_continuous(range = c(1, 10))  +
   geom_abline()
+
+riekelib::ggquicksave("models/diagnostics/training/poll_model_interactions.png")
 
 elections_train %>%
   pivot_longer(c(white:other),
@@ -313,12 +317,16 @@ elections_train %>%
               se = FALSE) +
   facet_wrap(~race_group, scales = "free_x")
 
+riekelib::ggquicksave("models/diagnostics/training/demographics.png")
+
 elections_train %>%
   ggplot(aes(x = pvi,
              y = result,
              size = num_polls)) + 
   geom_point(alpha = 0.25) +
   geom_smooth(method = "lm")
+
+riekelib::ggquicksave("models/diagnostics/training/pvi.png")
 
 # -----------------------------------model!-------------------------------------
 
@@ -364,17 +372,70 @@ predictions %>%
              color = within)) +
   geom_point(alpha = 0.25) +
   geom_errorbar(aes(size = NULL),
-                alpha = 0.75) +
+                alpha = 0.15) +
   geom_abline(linetype = "dashed") +
   scale_size_continuous(range = c(1, 6)) +
   scale_color_manual(values = c("blue", "red")) +
   facet_wrap(~race)
+
+riekelib::ggquicksave("models/diagnostics/training/predictions_race.png")
 
 predictions %>%
   mutate(residual = .pred - result) %>%
   ggplot(aes(x = log10(num_polls + 1),
              y = abs(residual))) +
   geom_point()
+
+riekelib::ggquicksave("models/diagnostics/training/predictions_residuals.png")
+
+predictions %>%
+  arrange(desc(num_polls)) %>%
+  slice_head(n = 10) %>%
+  select(.pred:seat) %>%
+  mutate(race = paste(cycle, state, race, seat),
+         race = glue::glue("{race} ({num_polls} polls)"),
+         race = fct_reorder(race, .pred)) %>%
+  ggplot(aes(x = race)) +
+  geom_point(aes(y = .pred),
+             size = 3.5,
+             alpha = 0.5) +
+  geom_errorbar(aes(ymin = .pred_lower,
+                    ymax = .pred_upper),
+                alpha = 0.5) +
+  geom_point(aes(y = result),
+             size = 3.5,
+             alpha = 0.5,
+             color = "orange") +
+  coord_flip() + 
+  labs(title = "Model estimate (black) vs result (orange) for most-polled races",
+       x = NULL)
+
+riekelib::ggquicksave("models/diagnostics/training/most_polled_races.png")
+
+predictions %>%
+  select(.pred:seat) %>%
+  mutate(miss = .pred - result) %>%
+  arrange(desc(abs(miss))) %>%
+  slice_head(n = 10) %>%
+  mutate(race = paste(cycle, state, race, seat),
+         race = glue::glue("{race} ({num_polls} polls)"),
+         race = fct_reorder(race, .pred)) %>%
+  ggplot(aes(x = race)) +
+  geom_point(aes(y = .pred),
+             size = 3.5,
+             alpha = 0.5) +
+  geom_errorbar(aes(ymin = .pred_lower,
+                    ymax = .pred_upper),
+                alpha = 0.5) +
+  geom_point(aes(y = result),
+             size = 3.5,
+             alpha = 0.5,
+             color = "orange") +
+  coord_flip() +
+  labs(title = "biggest polling misses - prediction (black) vs result (orange)",
+       x = NULL)
+
+riekelib::ggquicksave("models/diagnostics/training/model_misses.png")
 
 # --------------------------------write-out-model-------------------------------
 
