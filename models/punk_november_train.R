@@ -16,7 +16,7 @@ pvi                 <- read_csv("data/models/midterm_model/pvi.csv")
 
 # ------------------------wrangle-polled-races----------------------------------
 
-poll_model <- function(data) {
+poll_model <- function(data, last_poll = NULL, election_date = NULL) {
   
   if(nrow(data) < 4) {
     
@@ -28,7 +28,27 @@ poll_model <- function(data) {
     
   } else {
     
-    loess(pct ~ as.numeric(end_date), data = data)
+    if(is.null(last_poll)) {
+      
+      span <- 0.75
+      
+    } else {
+      
+      diff <- as.numeric(election_date - last_poll)
+      
+      if (diff >= 100) {
+        
+        span <- 1
+        
+      } else {
+        
+        span <- 0.25 * diff/100 + 0.75
+        
+      }
+      
+    }
+    
+    loess(pct ~ as.numeric(end_date), span = span, data = data)
     
   }
   
@@ -98,7 +118,7 @@ poll_leaders <-
          last_poll = lubridate::as_date(last_poll)) %>%
   
   # model!
-  mutate(model = map(data, poll_model)) %>%
+  mutate(model = pmap(list(data, last_poll, election_date), ~poll_model(..1, ..2, ..3))) %>%
   
   # predict current poll average
   nplyr::nest_filter(data, end_date == max(end_date)) %>%
