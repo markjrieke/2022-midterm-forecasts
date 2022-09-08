@@ -6,8 +6,8 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-# run_date <- lubridate::mdy("9/4/22")
-run_date <- Sys.Date()
+# run_date <- lubridate::mdy("7/9/22")
+# run_date <- Sys.Date()
 
 # polling data 
 polls_house     <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv")
@@ -91,7 +91,7 @@ poll_leaders <-
          last_poll = lubridate::as_date(last_poll)) %>%
   
   # model!
-  mutate(model = map(data, poll_model)) %>%
+  mutate(model = pmap(list(data, last_poll, election_date), ~poll_model(..1, ..2, ..3))) %>%
   
   # predict current poll average
   nplyr::nest_filter(data, end_date == max(end_date)) %>%
@@ -434,7 +434,7 @@ senate_distribution %>%
                  color = "white") +
   scale_fill_identity() +
   theme_minimal() +
-  theme(plot.background = element_rect(fill = "white", color = "white")) + 
+  theme(plot.background = element_rect(fill = "white", color = "white")) +
   labs(title = paste("Senate distribution as of", run_date))
 
 riekelib::ggquicksave("models/diagnostics/current_senate_topline.png")
@@ -505,7 +505,7 @@ read_csv("models/outputs/house_topline.csv") %>%
        y = NULL) +
   expand_limits(x = c(lubridate::mdy("7/1/22"), lubridate::mdy("11/8/22")))
 
-riekelib::ggquicksave("models/diagnostics/rolling_house_probability.png")  
+riekelib::ggquicksave("models/diagnostics/rolling_house_probability.png")
 
 # rolling senate distribution
 read_csv("models/outputs/senate_topline.csv") %>%
@@ -548,7 +548,7 @@ read_csv("models/outputs/senate_topline.csv") %>%
 
 riekelib::ggquicksave("models/diagnostics/rolling_senate_distribution.png")
 
-# rolling senate probability 
+# rolling senate probability
 read_csv("models/outputs/senate_topline.csv") %>%
   mutate(p_rep_win = 1 - p_dem_win) %>%
   ggplot(aes(x = model_date)) +
@@ -578,8 +578,8 @@ read_csv("models/outputs/senate_topline.csv") %>%
 riekelib::ggquicksave("models/diagnostics/rolling_senate_probability.png")
 
 # random race
-set.seed(as.numeric(run_date) + 999)
-rand_race <- 
+set.seed(as.numeric(run_date) + 1234)
+rand_race <-
   read_csv("models/outputs/candidate_predictions.csv") %>%
   nest(data = -c(cycle, race, state, seat, starts_with("candidate"))) %>%
   slice_sample(n = 1) %>%
@@ -590,9 +590,9 @@ rand_race <-
          .pred_lower_rep = 1 - .pred_upper_dem,
          .pred_upper_rep = 1 - .pred_lower_dem)
 
-rand_race_title <- 
-  paste(rand_race$state[1], rand_race$race[1], rand_race$seat[1]) 
-  
+rand_race_title <-
+  paste(rand_race$state[1], rand_race$race[1], rand_race$seat[1])
+
 rand_race %>%
   ggplot(aes(x = model_date)) +
   geom_ribbon(aes(ymin = .pred_lower_rep,
