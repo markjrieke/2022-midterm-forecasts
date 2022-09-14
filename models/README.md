@@ -9,6 +9,12 @@ For the full forecast, please see the following links:
 
 # Model Updates
 
+## punk november 2.1
+
+###### 9-14-22
+
+-   Updated candidate roster post-primary
+
 ## punk november 2.0
 
 ###### 9-7-22
@@ -44,6 +50,10 @@ Distribution](diagnostics/rolling_senate_distribution.png)
 
 ![Rolling Senate
 Probability](diagnostics/rolling_senate_probability.png)
+
+# Random Race
+
+![Random Race - Voteshare](diagnostics/random_race.png)
 
 # Training Diagnostics
 

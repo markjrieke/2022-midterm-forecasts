@@ -195,8 +195,8 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,Massachusetts,District 5,Clark,Colarusso,y,n,
 2022,House,Massachusetts,District 6,Moulton,May,y,n,
 2022,House,Massachusetts,District 7,Pressley,Palmer,y,n,
-2022,House,Massachusetts,District 8,Lynch,Rodrigues,y,n,x
-2022,House,Massachusetts,District 9,Keating,Brown,y,n,x
+2022,House,Massachusetts,District 8,Lynch,Burke,y,n,
+2022,House,Massachusetts,District 9,Keating,Brown,y,n,
 2022,House,Michigan,District 1,Lorinser,Bergman,n,y,
 2022,House,Michigan,District 2,Hilliard,Moolenaar,n,y,
 2022,House,Michigan,District 3,Scholten,Gibbs,n,n,
@@ -239,7 +239,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,Nevada,District 2,Krause,Amodei,n,y,
 2022,House,Nevada,District 3,Lee,Becker,y,n,
 2022,House,Nevada,District 4,Horsford,Peters,y,n,
-2022,House,New Hampshire,District 1,Pappas,Mowers,y,n,x
+2022,House,New Hampshire,District 1,Pappas,Leavitt,y,n,
 2022,House,New Hampshire,District 2,Kuster,Burns,y,n,x
 2022,House,New Jersey,District 1,Norcross,Gustafson,y,n,
 2022,House,New Jersey,District 2,Alexander,Van Drew,n,y,
@@ -341,7 +341,7 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,House,Pennsylvania,District 16,Pastore,Kelly,n,y,
 2022,House,Pennsylvania,District 17,Deluzio,Shaffer,n,n,
 2022,House,Rhode Island,District 1,Cicilline,Waters,y,n,
-2022,House,Rhode Island,District 2,Magaziner,Fung,n,n,x
+2022,House,Rhode Island,District 2,Magaziner,Fung,n,n,
 2022,House,South Carolina,District 1,Andrews,Mace,n,y,
 2022,House,South Carolina,District 2,Larkins,Wilson,n,y,
 2022,House,South Carolina,District 3,-,Duncan,n,y,
@@ -486,15 +486,15 @@ cycle,race,state,seat,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_in
 2022,Governor,Colorado,Governor,Polis,Ganahl,y,n,
 2022,Governor,Illinois,Governor,Pritzker,Bailey,y,n,
 2022,Governor,Maryland,Governor,Moore,Cox,n,n,
-2022,Governor,Rhode Island,Governor,McKee,Kalus,y,n,x
+2022,Governor,Rhode Island,Governor,McKee,Kalus,y,n,
 2022,Governor,Ohio,Governor,Whaley,DeWine,n,y,
 2022,Governor,Alaska,Governor,Walker,Dunleavy,n,y,
 2022,Governor,New York,Governor,Hochul,Zeldin,y,n,
 2022,Governor,South Carolina,Governor,Cunningham,McMaster,n,y,
 2022,Governor,Iowa,Governor,DeJear,Reynolds,n,y,
 2022,Governor,Oklahoma,Governor,Hofmeister,Stitt,n,y,
-2022,Governor,New Hampshire,Governor,Sherman,Sununu,n,y,x
-2022,Governor,Massachusetts,Governor,Healey,Diehl,n,n,x
+2022,Governor,New Hampshire,Governor,Sherman,Sununu,n,y,
+2022,Governor,Massachusetts,Governor,Healey,Diehl,n,n,
 2022,Governor,Nebraska,Governor,Blood,Pillen,n,n,
 2022,Governor,Vermont,Governor,Siegel,Scott,n,y,
 2022,Governor,Hawaii,Governor,Green,Aiona,n,n,
