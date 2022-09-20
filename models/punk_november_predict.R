@@ -410,7 +410,7 @@ read_csv("models/outputs/senate_topline.csv") %>%
 
 # current house distribution
 house_distribution %>%
-  mutate(control = if_else(n > 218.5, "blue", "red")) %>%
+  mutate(control = if_else(n > 217.5, "blue", "red")) %>%
   ggplot(aes(x = n,
              fill = control)) +
   geom_histogram(binwidth = 1,
