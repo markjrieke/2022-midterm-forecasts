@@ -237,6 +237,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Alaska,Class III,2022-11-08,Kelly C. Tshibaka,rep,6,2022-09-27,0.7039788251366123,Chesbro,Tshibaka,n,n,x
 2022,Senate,Missouri,Class III,2022-11-08,Trudy Busch Valentine,dem,8,2022-09-27,0.4325250381907056,Busch Valentine,Schmitt,n,n,NA
 2022,Senate,Missouri,Class III,2022-11-08,Eric Schmitt,rep,8,2022-09-27,0.567474961809294,Busch Valentine,Schmitt,n,n,NA
+2022,Senate,Indiana,Class III,2022-11-08,Thomas McDermott,dem,2,2022-09-26,0.4848003629764064,McDermott,Young,n,y,NA
+2022,Senate,Indiana,Class III,2022-11-08,Todd Young,rep,2,2022-09-26,0.5151996370235935,McDermott,Young,n,y,NA
 2022,Senate,North Carolina,Class III,2022-11-08,Cheri Beasley,dem,22,2022-09-26,0.4938303769137865,Beasley,Budd,n,n,NA
 2022,Senate,North Carolina,Class III,2022-11-08,Ted Budd,rep,22,2022-09-26,0.5061696230862134,Beasley,Budd,n,n,NA
 2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,11,2022-09-26,0.5559436388902617,Hassan,Bolduc,y,n,x
@@ -283,7 +285,5 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Louisiana,Class III,2022-11-08,John Kennedy,rep,2,2022-09-07,0.7761194029850744,Chambers,Kennedy,n,y,NA
 2022,Senate,South Carolina,Class III,2022-11-08,Krystle Matthews,dem,2,2022-09-07,0.3557357276869473,Matthews,Scott,n,y,NA
 2022,Senate,South Carolina,Class III,2022-11-08,Tim Scott,rep,2,2022-09-07,0.6442642723130527,Matthews,Scott,n,y,NA
-2022,Senate,Indiana,Class III,2022-11-08,Thomas McDermott,dem,1,2022-08-24,0.48275862068965514,McDermott,Young,n,y,NA
-2022,Senate,Indiana,Class III,2022-11-08,Todd Young,rep,1,2022-08-24,0.5172413793103449,McDermott,Young,n,y,NA
 2022,Senate,Kentucky,Class III,2022-11-08,Charles Booker,dem,1,2022-01-22,0.4148936170212766,Booker,Paul,n,y,NA
 2022,Senate,Kentucky,Class III,2022-11-08,Rand Paul,rep,1,2022-01-22,0.5851063829787234,Booker,Paul,n,y,NA
