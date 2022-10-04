@@ -202,7 +202,8 @@ fit_2022 %>%
        y = NULL,
        caption = paste0("Model by @markjrieke\n",
                         "Data courtesy of @FiveThirtyEight\n",
-                        "https://projects.fivethirtyeight.com/congress-generic-ballot-polls/"))
+                        "https://projects.fivethirtyeight.com/congress-generic-ballot-polls/")) +
+  expand_limits(x = c(final_2022, ymd("2022-12-31")))
 
 # save over current photo
 ggsave("plots/generic_ballot/generic_ballot_current.png",

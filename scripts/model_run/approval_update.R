@@ -226,7 +226,8 @@ fit_2022 %>%
        y = NULL,
        caption = paste0("Model by @markjrieke\n",
                         "Data courtesy of @FiveThirtyEight\n",
-                        "https://projects.fivethirtyeight.com/biden-approval-rating/"))
+                        "https://projects.fivethirtyeight.com/biden-approval-rating/")) +
+  expand_limits(x = c(final_2022, ymd("2022-12-31")))
 
 ggsave("plots/approval/approval_disapproval_current.png",
        device = png,
@@ -293,7 +294,8 @@ fit_2022 %>%
        y = NULL, 
        caption = paste0("Model by @markjrieke\n",
                         "Data courtesy of @FiveThirtyEight\n",
-                        "https://projects.fivethirtyeight.com/biden-approval-rating/"))
+                        "https://projects.fivethirtyeight.com/biden-approval-rating/")) +
+  expand_limits(x = c(final_2022, ymd("2022-12-31")))
 
 ggsave("plots/approval/net_approval_current.png",
        device = png,
