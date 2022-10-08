@@ -77,6 +77,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,North Carolina,District 13,2022-11-08,Bo Hines,rep,4,2022-09-01,0.4999117520993123,Nickel,Hines,n,n,NA
 2022,House,California,District 27,2022-11-08,Christy Smith,dem,2,2022-08-30,0.5003791708796764,Smith,Garcia,n,y,NA
 2022,House,California,District 27,2022-11-08,Mike Garcia,rep,2,2022-08-30,0.4996208291203235,Smith,Garcia,n,y,NA
+2022,House,North Dakota,District 1,2022-11-08,Mark Haugen,dem,1,2022-08-28,0.21029905645290262,Haugen,Armstrong,n,y,NA
+2022,House,North Dakota,District 1,2022-11-08,Kelly Armstrong,rep,1,2022-08-28,0.7897009435470974,Haugen,Armstrong,n,y,NA
 2022,House,Arizona,District 6,2022-11-08,Kirsten Engel,dem,1,2022-08-21,0.5104166666666666,Engel,Ciscomani,n,n,NA
 2022,House,Arizona,District 6,2022-11-08,Juan Ciscomani,rep,1,2022-08-21,0.4895833333333333,Engel,Ciscomani,n,n,NA
 2022,House,Michigan,District 10,2022-11-08,Carl J. Marlinga,dem,5,2022-08-21,0.4805438336605006,Marlinga,James,n,n,NA
@@ -177,6 +179,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Virginia,District 2,2022-11-08,Jen A. Kiggans,rep,1,2022-04-15,0.4657534246575343,Luria,Kiggans,y,n,NA
 2022,Governor,Colorado,Governor,2022-11-08,Jared Polis,dem,9,2022-10-06,0.5868531298499011,Polis,Ganahl,y,n,NA
 2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,9,2022-10-06,0.41314687015010004,Polis,Ganahl,y,n,NA
+2022,Governor,Oklahoma,Governor,2022-11-08,Joy Hofmeister,dem,9,2022-10-06,0.48959957219959294,Hofmeister,Stitt,n,y,NA
+2022,Governor,Oklahoma,Governor,2022-11-08,Kevin Stitt,rep,9,2022-10-06,0.5104004278004067,Hofmeister,Stitt,n,y,NA
 2022,Governor,Georgia,Governor,2022-11-08,Stacey Abrams,dem,37,2022-10-04,0.4732400637899416,Abrams,Kemp,n,y,NA
 2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,37,2022-10-04,0.5267599362100589,Abrams,Kemp,n,y,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,6,2022-10-04,0.3978173141032397,DeJear,Reynolds,n,y,NA
@@ -205,8 +209,6 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,12,2022-09-29,0.4282205541460946,Whitmer,Dixon,y,n,NA
 2022,Governor,Florida,Governor,2022-11-08,Charlie Crist,dem,26,2022-09-28,0.47341288315755586,Crist,DeSantis,n,y,NA
 2022,Governor,Florida,Governor,2022-11-08,Ron DeSantis,rep,26,2022-09-28,0.5265871168424439,Crist,DeSantis,n,y,NA
-2022,Governor,Oklahoma,Governor,2022-11-08,Joy Hofmeister,dem,8,2022-09-28,0.43226734780279313,Hofmeister,Stitt,n,y,NA
-2022,Governor,Oklahoma,Governor,2022-11-08,Kevin Stitt,rep,8,2022-09-28,0.567732652197207,Hofmeister,Stitt,n,y,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tony Evers,dem,16,2022-09-27,0.49597066010166924,Evers,Michels,y,n,NA
 2022,Governor,Wisconsin,Governor,2022-11-08,Tim Michels,rep,16,2022-09-27,0.5040293398983315,Evers,Michels,y,n,NA
 2022,Governor,Illinois,Governor,2022-11-08,J.B. Pritzker,dem,11,2022-09-27,0.5493506459850781,Pritzker,Bailey,y,n,NA
