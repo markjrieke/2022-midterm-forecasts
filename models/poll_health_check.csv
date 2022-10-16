@@ -245,6 +245,8 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Connecticut,Class III,2022-11-08,Leora R. Levy,rep,7,2022-10-13,0.4731602224788292,Blumenthal,Levy,y,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,Tim Ryan,dem,32,2022-10-12,0.5092887170825766,Ryan,Vance,n,n,NA
 2022,Senate,Ohio,Class III,2022-11-08,J.D. Vance,rep,32,2022-10-12,0.49071128291742255,Ryan,Vance,n,n,NA
+2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,9,2022-10-12,0.47026309391767207,Franken,Grassley,n,y,NA
+2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,9,2022-10-12,0.5297369060823277,Franken,Grassley,n,y,NA
 2022,Senate,Arizona,Class III,2022-11-08,Mark Kelly,dem,34,2022-10-11,0.5592407462091149,Kelly,Masters,y,n,NA
 2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,34,2022-10-11,0.4407592537908848,Kelly,Masters,y,n,NA
 2022,Senate,Louisiana,Class III,2022-11-08,John Kennedy,rep,3,2022-10-11,0.8070304216621811,Chambers,Kennedy,n,y,NA
@@ -277,8 +279,6 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,New York,Class III,2022-11-08,Joe Pinion,rep,6,2022-10-06,0.38636363636363663,Schumer,Pinion,y,n,NA
 2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,15,2022-10-06,0.5305069306064069,Hassan,Bolduc,y,n,x
 2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,15,2022-10-06,0.4694930693935933,Hassan,Bolduc,y,n,x
-2022,Senate,Iowa,Class III,2022-11-08,Michael Franken,dem,8,2022-10-04,0.4313805598412233,Franken,Grassley,n,y,NA
-2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,8,2022-10-04,0.5686194401587764,Franken,Grassley,n,y,NA
 2022,Senate,Vermont,Class III,2022-11-08,Peter Welch,dem,2,2022-10-03,0.6119363712474584,Welch,Malloy,n,n,NA
 2022,Senate,Vermont,Class III,2022-11-08,Gerald Malloy,rep,2,2022-10-03,0.38806362875254163,Welch,Malloy,n,n,NA
 2022,Senate,Oregon,Class III,2022-11-08,Ron Wyden,dem,1,2022-10-01,0.6178960096735188,Wyden,Perkins,y,n,NA
