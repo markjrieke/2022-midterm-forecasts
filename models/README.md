@@ -9,6 +9,12 @@ For the full forecast, please see the following links:
 
 # Model Updates
 
+## punk november 2.2
+
+###### 10-26-22
+
+-   Updated candidate roster
+
 ## punk november 2.1
 
 ###### 9-14-22

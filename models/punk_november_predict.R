@@ -369,7 +369,7 @@ senate_distribution <-
   unnest(data) %>%
   count(model_date, race, sim, winner) %>%
   filter(winner == "dem") %>%
-  mutate(n = n + dem_uncontested + 36)
+  mutate(n = n + dem_uncontested + 36) # 36 dem seats not up for electio this cycle
 
 # some sims will contain 0 dem wins - add 0 win rows here
 no_wins <- 10000 - nrow(senate_distribution)
