@@ -1,4 +1,8 @@
 cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,last_poll,poll_avg,candidate_name_DEM,candidate_name_REP,dem_incumbent,rep_incumbent,pending
+2022,House,New Hampshire,District 1,2022-11-08,Chris Pappas,dem,6,2022-10-29,0.4687500000000004,Pappas,Leavitt,y,n,NA
+2022,House,New Hampshire,District 1,2022-11-08,Karoline Leavitt,rep,6,2022-10-29,0.5312500000000002,Pappas,Leavitt,y,n,NA
+2022,House,New Hampshire,District 2,2022-11-08,Ann McLane Kuster,dem,6,2022-10-29,0.5434782608695657,Kuster,Burns,y,n,NA
+2022,House,New Hampshire,District 2,2022-11-08,Robert Burns,rep,6,2022-10-29,0.456521739130435,Kuster,Burns,y,n,NA
 2022,House,New Mexico,District 2,2022-11-08,Gabriel Vasquez,dem,5,2022-10-28,0.4898321124448799,Vasquez,Herrell,n,y,NA
 2022,House,New Mexico,District 2,2022-11-08,Yvette Herrell,rep,5,2022-10-28,0.5101678875551192,Vasquez,Herrell,n,y,NA
 2022,House,New Mexico,District 1,2022-11-08,Melanie Ann Stansbury,dem,2,2022-10-28,0.546195446247115,Stansbury,Garcia Holmes,y,n,NA
@@ -17,10 +21,6 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Connecticut,District 5,2022-11-08,George Logan,rep,6,2022-10-27,0.5000000000000001,Hayes,Logan,y,n,NA
 2022,House,Florida,District 4,2022-11-08,"LaShonda ""L.J."" Holloway",dem,1,2022-10-27,0.4318181818181818,Holloway,Bean,n,n,NA
 2022,House,Florida,District 4,2022-11-08,Aaron Bean,rep,1,2022-10-27,0.5681818181818182,Holloway,Bean,n,n,NA
-2022,House,New Hampshire,District 1,2022-11-08,Chris Pappas,dem,5,2022-10-26,0.517352337251344,Pappas,Leavitt,y,n,NA
-2022,House,New Hampshire,District 1,2022-11-08,Karoline Leavitt,rep,5,2022-10-26,0.482647662748656,Pappas,Leavitt,y,n,NA
-2022,House,New Hampshire,District 2,2022-11-08,Ann McLane Kuster,dem,5,2022-10-26,0.5047061636322852,Kuster,Burns,y,n,NA
-2022,House,New Hampshire,District 2,2022-11-08,Robert Burns,rep,5,2022-10-26,0.49529383636771485,Kuster,Burns,y,n,NA
 2022,House,Rhode Island,District 2,2022-11-08,Seth M. Magaziner,dem,5,2022-10-24,0.4774103190796035,Magaziner,Fung,n,n,NA
 2022,House,Rhode Island,District 2,2022-11-08,Allan W. Fung,rep,5,2022-10-24,0.5225896809203969,Magaziner,Fung,n,n,NA
 2022,House,North Carolina,District 13,2022-11-08,Wiley Nickel,dem,5,2022-10-24,0.5025904688299839,Nickel,Hines,n,n,NA
@@ -207,10 +207,18 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Indiana,District 1,2022-11-08,Jennifer-Ruth Green,rep,1,2022-05-20,0.4597701149425288,Mrvan,Green,y,n,NA
 2022,House,North Carolina,District 11,2022-11-08,Jasmine Beach-Ferrara,dem,1,2022-05-20,0.46511627906976744,Beach-Ferrara,Edwards,n,y,NA
 2022,House,North Carolina,District 11,2022-11-08,Chuck Edwards,rep,1,2022-05-20,0.5348837209302325,Beach-Ferrara,Edwards,n,y,NA
+2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,19,2022-10-29,0.40133574176926484,Sherman,Sununu,n,y,NA
+2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,19,2022-10-29,0.5986642582307347,Sherman,Sununu,n,y,NA
+2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,36,2022-10-29,0.5291317184237941,Hochul,Zeldin,y,n,NA
+2022,Governor,New York,Governor,2022-11-08,Lee M. Zeldin,rep,36,2022-10-29,0.4708682815762067,Hochul,Zeldin,y,n,NA
+2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,30,2022-10-29,0.5371205928669646,Whitmer,Dixon,y,n,NA
+2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,30,2022-10-29,0.4628794071330358,Whitmer,Dixon,y,n,NA
+2022,Governor,Alabama,Governor,2022-11-08,Yolanda Rochelle Flowers,dem,1,2022-10-29,0.2983490566037736,Flowers,Ivey,n,y,NA
+2022,Governor,Alabama,Governor,2022-11-08,Kay Ivey,rep,1,2022-10-29,0.7016509433962264,Flowers,Ivey,n,y,NA
+2022,Governor,Colorado,Governor,2022-11-08,Jared Polis,dem,17,2022-10-29,0.5544477118566512,Polis,Ganahl,y,n,NA
+2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,17,2022-10-29,0.44555228814334924,Polis,Ganahl,y,n,NA
 2022,Governor,Pennsylvania,Governor,2022-11-08,Josh Shapiro,dem,47,2022-10-28,0.5810574968345468,Shapiro,Mastriano,n,n,NA
 2022,Governor,Pennsylvania,Governor,2022-11-08,Douglas V. Mastriano,rep,47,2022-10-28,0.41894250316545356,Shapiro,Mastriano,n,n,NA
-2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,28,2022-10-28,0.53493776602321,Whitmer,Dixon,y,n,NA
-2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,28,2022-10-28,0.46506223397679014,Whitmer,Dixon,y,n,NA
 2022,Governor,Oklahoma,Governor,2022-11-08,Joy Hofmeister,dem,14,2022-10-28,0.48535396908287204,Hofmeister,Stitt,n,y,NA
 2022,Governor,Oklahoma,Governor,2022-11-08,Kevin Stitt,rep,14,2022-10-28,0.5146460309171276,Hofmeister,Stitt,n,y,NA
 2022,Governor,New Mexico,Governor,2022-11-08,Michelle Lujan Grisham,dem,14,2022-10-28,0.5222185495427029,Lujan Grisham,Ronchetti,y,n,NA
@@ -221,16 +229,10 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Georgia,Governor,2022-11-08,Brian Kemp,rep,52,2022-10-27,0.5420371363512918,Abrams,Kemp,n,y,NA
 2022,Governor,Iowa,Governor,2022-11-08,Deidre DeJear,dem,10,2022-10-27,0.416419274432894,DeJear,Reynolds,n,y,NA
 2022,Governor,Iowa,Governor,2022-11-08,Kim Reynolds,rep,10,2022-10-27,0.5835807255671062,DeJear,Reynolds,n,y,NA
-2022,Governor,Colorado,Governor,2022-11-08,Jared Polis,dem,16,2022-10-27,0.5449418340203034,Polis,Ganahl,y,n,NA
-2022,Governor,Colorado,Governor,2022-11-08,Heidi Ganahl,rep,16,2022-10-27,0.45505816597969617,Polis,Ganahl,y,n,NA
 2022,Governor,Nevada,Governor,2022-11-08,Steve Sisolak,dem,34,2022-10-27,0.496053406348426,Sisolak,Lombardo,y,n,NA
 2022,Governor,Nevada,Governor,2022-11-08,Joe Lombardo,rep,34,2022-10-27,0.5039465936515733,Sisolak,Lombardo,y,n,NA
 2022,Governor,California,Governor,2022-11-08,Gavin Newsom,dem,7,2022-10-27,0.6068564391519019,Newsom,Dahle,y,n,NA
 2022,Governor,California,Governor,2022-11-08,Brian Dahle,rep,7,2022-10-27,0.39314356084809876,Newsom,Dahle,y,n,NA
-2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,18,2022-10-26,0.41207914297851056,Sherman,Sununu,n,y,NA
-2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,18,2022-10-26,0.5879208570214904,Sherman,Sununu,n,y,NA
-2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,35,2022-10-26,0.5350789455767104,Hochul,Zeldin,y,n,NA
-2022,Governor,New York,Governor,2022-11-08,Lee M. Zeldin,rep,35,2022-10-26,0.46492105442329007,Hochul,Zeldin,y,n,NA
 2022,Governor,Arizona,Governor,2022-11-08,Katie Hobbs,dem,37,2022-10-26,0.4800723891263933,Hobbs,Lake,n,n,NA
 2022,Governor,Arizona,Governor,2022-11-08,Kari Lake,rep,37,2022-10-26,0.519927610873607,Hobbs,Lake,n,n,NA
 2022,Governor,Massachusetts,Governor,2022-11-08,Maura Healey,dem,10,2022-10-26,0.6630817035172938,Healey,Diehl,n,n,NA
@@ -271,6 +273,14 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Governor,Kansas,Governor,2022-11-08,Derek Schmidt,rep,4,2022-09-18,0.4728466062797567,Kelly,Schmidt,y,n,NA
 2022,Governor,South Carolina,Governor,2022-11-08,Joe Cunningham,dem,4,2022-09-07,0.4714116686770282,Cunningham,McMaster,n,y,NA
 2022,Governor,South Carolina,Governor,2022-11-08,Henry McMaster,rep,4,2022-09-07,0.5285883313229789,Cunningham,McMaster,n,y,NA
+2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,21,2022-10-29,0.4976090462455131,Hassan,Bolduc,y,n,NA
+2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,21,2022-10-29,0.502390953754487,Hassan,Bolduc,y,n,NA
+2022,Senate,New York,Class III,2022-11-08,Charles E. Schumer,dem,12,2022-10-29,0.5656393233142859,Schumer,Pinion,y,n,NA
+2022,Senate,New York,Class III,2022-11-08,Joe Pinion,rep,12,2022-10-29,0.4343606766857138,Schumer,Pinion,y,n,NA
+2022,Senate,Alabama,Class III,2022-11-08,Will Boyd,dem,1,2022-10-29,0.3250591016548463,Boyd,Britt,n,n,NA
+2022,Senate,Alabama,Class III,2022-11-08,Katie Britt,rep,1,2022-10-29,0.6749408983451537,Boyd,Britt,n,n,NA
+2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,18,2022-10-29,0.5587969529652546,Bennet,O'Dea,y,n,NA
+2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,18,2022-10-29,0.4412030470347448,Bennet,O'Dea,y,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,John Fetterman,dem,50,2022-10-28,0.5031811669518568,Fetterman,Oz,n,n,NA
 2022,Senate,Pennsylvania,Class III,2022-11-08,Mehmet Oz,rep,50,2022-10-28,0.4968188330481441,Fetterman,Oz,n,n,NA
 2022,Senate,Missouri,Class III,2022-11-08,Trudy Busch Valentine,dem,10,2022-10-28,0.4387906225518454,Busch Valentine,Schmitt,n,n,NA
@@ -291,16 +301,10 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,Senate,Iowa,Class III,2022-11-08,Chuck Grassley,rep,13,2022-10-27,0.5430583991585457,Franken,Grassley,n,y,NA
 2022,Senate,Nevada,Class III,2022-11-08,Catherine Cortez Masto,dem,38,2022-10-27,0.5029810053261239,Cortez Masto,Laxalt,y,n,NA
 2022,Senate,Nevada,Class III,2022-11-08,Adam Paul Laxalt,rep,38,2022-10-27,0.4970189946738758,Cortez Masto,Laxalt,y,n,NA
-2022,Senate,New Hampshire,Class III,2022-11-08,Maggie Hassan,dem,20,2022-10-26,0.503882668438063,Hassan,Bolduc,y,n,NA
-2022,Senate,New Hampshire,Class III,2022-11-08,Donald C. Bolduc,rep,20,2022-10-26,0.49611733156193655,Hassan,Bolduc,y,n,NA
 2022,Senate,Arizona,Class III,2022-11-08,Mark Kelly,dem,48,2022-10-26,0.5096824695829132,Kelly,Masters,y,n,NA
 2022,Senate,Arizona,Class III,2022-11-08,Blake Masters,rep,48,2022-10-26,0.49031753041708676,Kelly,Masters,y,n,NA
-2022,Senate,Colorado,Class III,2022-11-08,Michael Bennet,dem,17,2022-10-25,0.5944101541623429,Bennet,O'Dea,y,n,NA
-2022,Senate,Colorado,Class III,2022-11-08,Joe O'Dea,rep,17,2022-10-25,0.405589845837657,Bennet,O'Dea,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Tammy Duckworth,dem,7,2022-10-25,0.5833333333333331,Duckworth,Salvi,y,n,NA
 2022,Senate,Illinois,Class III,2022-11-08,Kathy Salvi,rep,7,2022-10-25,0.4166666666666665,Duckworth,Salvi,y,n,NA
-2022,Senate,New York,Class III,2022-11-08,Charles E. Schumer,dem,11,2022-10-25,0.5697361768066965,Schumer,Pinion,y,n,NA
-2022,Senate,New York,Class III,2022-11-08,Joe Pinion,rep,11,2022-10-25,0.43026382319330314,Schumer,Pinion,y,n,NA
 2022,Senate,Florida,Class III,2022-11-08,Val Demings,dem,39,2022-10-24,0.45687623325783155,Demings,Rubio,n,y,NA
 2022,Senate,Florida,Class III,2022-11-08,Marco Rubio,rep,39,2022-10-24,0.5431237667421682,Demings,Rubio,n,y,NA
 2022,Senate,Wisconsin,Class III,2022-11-08,Mandela Barnes,dem,25,2022-10-23,0.4724133469233964,Barnes,Johnson,n,y,NA
