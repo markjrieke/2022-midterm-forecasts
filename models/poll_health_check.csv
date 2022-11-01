@@ -207,16 +207,16 @@ cycle,race,state,seat,election_date,candidate_name,candidate_party,num_polls,las
 2022,House,Indiana,District 1,2022-11-08,Jennifer-Ruth Green,rep,1,2022-05-20,0.4597701149425288,Mrvan,Green,y,n,NA
 2022,House,North Carolina,District 11,2022-11-08,Jasmine Beach-Ferrara,dem,1,2022-05-20,0.46511627906976744,Beach-Ferrara,Edwards,n,y,NA
 2022,House,North Carolina,District 11,2022-11-08,Chuck Edwards,rep,1,2022-05-20,0.5348837209302325,Beach-Ferrara,Edwards,n,y,NA
-2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,31,2022-10-30,0.5318118218242794,Whitmer,Dixon,y,n,NA
-2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,31,2022-10-30,0.46818817817572095,Whitmer,Dixon,y,n,NA
+2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,37,2022-10-31,0.5229501441096834,Hochul,Zeldin,y,n,NA
+2022,Governor,New York,Governor,2022-11-08,Lee M. Zeldin,rep,37,2022-10-31,0.47704985589031673,Hochul,Zeldin,y,n,NA
+2022,Governor,Michigan,Governor,2022-11-08,Gretchen Whitmer,dem,32,2022-10-31,0.5331220632125891,Whitmer,Dixon,y,n,NA
+2022,Governor,Michigan,Governor,2022-11-08,Tudor M. Dixon,rep,32,2022-10-31,0.4668779367874116,Whitmer,Dixon,y,n,NA
 2022,Governor,Arizona,Governor,2022-11-08,Katie Hobbs,dem,39,2022-10-30,0.46975221008802526,Hobbs,Lake,n,n,NA
 2022,Governor,Arizona,Governor,2022-11-08,Kari Lake,rep,39,2022-10-30,0.5302477899119749,Hobbs,Lake,n,n,NA
 2022,Governor,Ohio,Governor,2022-11-08,Nan Whaley,dem,39,2022-10-30,0.401207704800781,Whaley,DeWine,n,y,NA
 2022,Governor,Ohio,Governor,2022-11-08,Mike DeWine,rep,39,2022-10-30,0.5987922951992188,Whaley,DeWine,n,y,NA
 2022,Governor,New Hampshire,Governor,2022-11-08,Tom Sherman,dem,19,2022-10-29,0.40133574176926484,Sherman,Sununu,n,y,NA
 2022,Governor,New Hampshire,Governor,2022-11-08,Chris Sununu,rep,19,2022-10-29,0.5986642582307347,Sherman,Sununu,n,y,NA
-2022,Governor,New York,Governor,2022-11-08,Kathy C. Hochul,dem,36,2022-10-29,0.5291317184237941,Hochul,Zeldin,y,n,NA
-2022,Governor,New York,Governor,2022-11-08,Lee M. Zeldin,rep,36,2022-10-29,0.4708682815762067,Hochul,Zeldin,y,n,NA
 2022,Governor,Alabama,Governor,2022-11-08,Yolanda Rochelle Flowers,dem,1,2022-10-29,0.2983490566037736,Flowers,Ivey,n,y,NA
 2022,Governor,Alabama,Governor,2022-11-08,Kay Ivey,rep,1,2022-10-29,0.7016509433962264,Flowers,Ivey,n,y,NA
 2022,Governor,Colorado,Governor,2022-11-08,Jared Polis,dem,17,2022-10-29,0.5544477118566512,Polis,Ganahl,y,n,NA
