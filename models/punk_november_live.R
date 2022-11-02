@@ -16,6 +16,20 @@
 
 # setup ------------------------------------------------------------------------
 
+library(riekelib)
+library(patchwork)
+
+# setup themes
+extrafont::loadfonts(device = "win")
+ggplot2::theme_set(
+  ggplot2::theme_minimal(base_family = "Roboto Slab", 
+                         base_size = 14) +
+    ggplot2::theme(plot.title.position = "plot",
+                   plot.background = ggplot2::element_rect(fill = "white", color = "white"),
+                   plot.title = ggtext::element_markdown(),
+                   plot.subtitle = ggtext::element_markdown())
+)
+
 # need sim_preds in env to run
 dem_uncontested <-
   elections %>%
@@ -30,6 +44,7 @@ live_forecast <- sim_preds %>% filter(race != "Governor")
 # set plot colors
 dem_blu <- MetBrewer::MetPalettes$Benedictus[[1]][12]
 rep_red <- MetBrewer::MetPalettes$Benedictus[[1]][2]
+split_purp <- MetBrewer::MetPalettes$Klimt[[1]][6]
 
 # functions --------------------------------------------------------------------
   
@@ -110,11 +125,113 @@ plot_current_results <- function() {
   p_house <- last_topline %>% filter(race == "House") %>% pull(p_dem_win)
   p_senate <- last_topline %>% filter(race == "Senate") %>% pull(p_dem_win)
   
+  # get current leaders
+  leader_house <- if (p_house >= 0.5) "Democrats" else "Republicans"
+  leader_senate <- if (p_senate >= 0.5) "Democrats" else "Republicans"
+  
+  # get current leader p
+  leader_house_p <- if (p_house >= 0.5) p_house else 1 - p_house
+  leader_senate_p <- if (p_senate >= 0.5) p_senate else 1 - p_senate
+  
+  leader_house_p <- scales::label_percent()(leader_house_p)
+  leader_senate_p <- scales::label_percent()(leader_senate_p)
+  
+  # set leader colors
+  color_house <- if (leader_house == "Democrats") dem_blu else rep_red
+  color_senate <- if (leader_senate == "Democrats") dem_blu else rep_red
+  
   # get number of called races
   called_races <- nrow(current_live_forecast)/2 - 1
   
   # construct title
+  if (leader_house == leader_senate & leader_house == "Democrats") {
+    
+    plot_title <-
+      glue::glue("**{color_text(leader_house, color_house)}** are favored to keep the house and senate")
+    
+  } else if (leader_house == leader_senate) {
+    
+    plot_title <-
+      glue::glue("**{color_text(leader_house, color_house)}** are favored to take back the house and senate")
+    
+  } else {
+    
+    plot_title <-
+      glue::glue("Control of congress is expected to be **{color_text('split across chambers', split_purp)}**")
+    
+  }
   
+  # construct subtitle/caption
+  plot_subtitle <-
+    glue::glue("Probability of controlling either chamber")
+  
+  # probability plot!
+  prob_plot <- 
+    current_live_forecast %>% 
+    ggplot(aes(x = timestamp)) + 
+    geom_hline(yintercept = 0.5, 
+               linetype = "dashed") +
+    geom_step(aes(y = 1 - p_dem_win), 
+              color = rep_red,
+              size = 1) + 
+    geom_step(aes(y = p_dem_win), 
+              color = dem_blu,
+              size = 1) + 
+    scale_y_continuous(labels = scales::label_percent()) +
+    facet_wrap(~race) + 
+    expand_limits(y = c(0, 1)) + 
+    labs(title = plot_title,
+         subtitle = "Probability of controlling either chamber",
+         x = NULL,
+         y = NULL)
+  
+  # seat plot!
+  seat_plot <- 
+    current_live_forecast %>%
+    rename_with(~paste0("dem_", .x), ends_with("er")) %>%
+    rename(dem_seats = seats) %>%
+    mutate(rep_seats = if_else(race == "House", 435 - dem_seats, 100 - dem_seats),
+           rep_seats_lower = qnorm(0.1, rep_seats, seats_sd),
+           rep_seats_upper = qnorm(0.9, rep_seats, seats_sd)) %>%
+    ggplot(aes(x = timestamp)) +
+    
+    # add ribbons
+    geom_ribbon(aes(ymin = rep_seats_lower,
+                    ymax = rep_seats_upper),
+                fill = rep_red,
+                alpha = 0.15) +
+    geom_ribbon(aes(ymin = dem_seats_lower,
+                    ymax = dem_seats_upper),
+                fill = dem_blu,
+                alpha = 0.15) +
+    
+    # add rep line
+    geom_line(aes(y = rep_seats),
+              color = "white",
+              size = 3) +
+    geom_line(aes(y = rep_seats),
+              color = rep_red,
+              size = 1) +
+    
+    # add dem line
+    geom_line(aes(y = dem_seats),
+              color = "white",
+              size = 3) +
+    geom_line(aes(y = dem_seats),
+              color = dem_blu,
+              size = 1) + 
+    
+    # tune up
+    facet_wrap(~race, 
+               scales = "free_y",
+               ncol = 1) +
+    labs(title = plot_title,
+         subtitle = "Expected number of seats",
+         x = NULL,
+         y = NULL)
+  
+  prob_plot
+  seat_plot
   
 }
 
@@ -125,6 +242,11 @@ add_called_race("dem", "Senate", "Pennsylvania")
 add_called_race("dem", "Senate", "Georgia")
 add_called_race("dem", "Senate", "Oregon")
 add_called_race("rep", "Senate", "Oklahoma", "Class III")
+add_called_race("rep", "Senate", "Wisconsin")
+add_called_race("rep", "Senate", "New Hampshire")
+add_called_race("rep", "Senate", "North Carolina")
+add_called_race("dem", "Senate", "Nevada")
 
+current_live_forecast
 
 
