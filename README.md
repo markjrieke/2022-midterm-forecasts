@@ -10,7 +10,7 @@ will update all the plots below to the current day.
 
 To generate the current generic congressional ballot average, you can
 run the script
-[`generic_ballot_weighting.R`](https://github.com/markjrieke/2022-midterm-forecasts/blob/main/scripts/generic_ballot_weighting.R).
+[`generic_ballot_weighting.R`](https://github.com/markjrieke/2022-midterm-forecasts/blob/main/scripts/model_train/generic_ballot_weighting.R).
 You can read about how this model was built and explore some of the
 results from training
 [here](https://www.thedatadiary.net/blog/2021-12-14-do-voters-want-democrats-or-republicans-in-congress/).
@@ -21,7 +21,7 @@ Average](plots/generic_ballot/generic_ballot_current.png)
 ### Presidential Approval Average
 
 To generate the plots below, you can run the script
-[`approval_trends_weighting.R`](https://github.com/markjrieke/2022-midterm-forecasts/blob/main/scripts/approval_trends_weighting.R).
+[`approval_trends_weighting.R`](https://github.com/markjrieke/2022-midterm-forecasts/blob/main/scripts/model_train/approval_trends_weighting.R).
 You can read about how this model was built and explore some of the
 results from training
 [here](https://www.thedatadiary.net/blog/2022-01-26-how-popular-is-joe-biden/).
