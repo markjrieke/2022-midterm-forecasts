@@ -140,8 +140,12 @@ plot_current_results <- function() {
   color_house <- if (leader_house == "Democrats") dem_blu else rep_red
   color_senate <- if (leader_senate == "Democrats") dem_blu else rep_red
   
-  # get number of called races
+  # get number of called races/remaining sims
   called_races <- nrow(current_live_forecast)/2 - 1
+  remaining_sims <- scales::label_comma()(last_topline$sims[1])
+  
+  # get current time
+  current_time <- scales::label_time(format = "%H:%M", tz = "America/Chicago")(last_topline$timestamp[1])
   
   # construct title
   if (leader_house == leader_senate & leader_house == "Democrats") {
@@ -161,9 +165,9 @@ plot_current_results <- function() {
     
   }
   
-  # construct subtitle/caption
-  plot_subtitle <-
-    glue::glue("Probability of controlling either chamber")
+  # construct caption
+  plot_caption <-
+    glue::glue("{remaining_sims} / 10,000 sims remaining after {called_races} called races.")
   
   # probability plot!
   prob_plot <- 
@@ -178,12 +182,14 @@ plot_current_results <- function() {
               color = dem_blu,
               size = 1) + 
     scale_y_continuous(labels = scales::label_percent()) +
+    scale_x_time(labels = scales::label_time(format = "%H:%M", tz = "America/Chicago"))
     facet_wrap(~race) + 
     expand_limits(y = c(0, 1)) + 
     labs(title = plot_title,
-         subtitle = "Probability of controlling either chamber",
+         subtitle = glue::glue("Probability of controlling either chamber as of {current_time}"),
          x = NULL,
-         y = NULL)
+         y = NULL,
+         caption = plot_caption)
   
   # seat plot!
   seat_plot <- 
@@ -225,27 +231,30 @@ plot_current_results <- function() {
     facet_wrap(~race, 
                scales = "free_y",
                ncol = 1) +
+    scale_x_time(labels = scales::label_time(format = "%H:%M", tz = "America/Chicago"))
     labs(title = plot_title,
-         subtitle = "Expected number of seats",
+         subtitle = glue::glue("Expected number of seats controlled as of {current_time}"),
          x = NULL,
-         y = NULL)
+         y = NULL,
+         caption = plot_caption)
   
   prob_plot
-  seat_plot
+  #seat_plot
   
 }
 
 # live results -----------------------------------------------------------------
 
 add_called_race(new = TRUE)
-add_called_race("dem", "Senate", "Pennsylvania")
+add_called_race("rep", "Senate", "Pennsylvania")
 add_called_race("dem", "Senate", "Georgia")
 add_called_race("dem", "Senate", "Oregon")
 add_called_race("rep", "Senate", "Oklahoma", "Class III")
 add_called_race("rep", "Senate", "Wisconsin")
-add_called_race("rep", "Senate", "New Hampshire")
+add_called_race("dem", "Senate", "New Hampshire")
 add_called_race("rep", "Senate", "North Carolina")
 add_called_race("dem", "Senate", "Nevada")
+
 
 current_live_forecast
 
