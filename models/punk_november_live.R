@@ -182,7 +182,7 @@ plot_current_results <- function() {
               color = dem_blu,
               size = 1) + 
     scale_y_continuous(labels = scales::label_percent()) +
-    scale_x_time(labels = scales::label_time(format = "%H:%M", tz = "America/Chicago"))
+    scale_x_time(labels = scales::label_time(format = "%H:%M", tz = "America/Chicago")) +
     facet_wrap(~race) + 
     expand_limits(y = c(0, 1)) + 
     labs(title = plot_title,
@@ -229,33 +229,43 @@ plot_current_results <- function() {
     
     # tune up
     facet_wrap(~race, 
-               scales = "free_y",
-               ncol = 1) +
-    scale_x_time(labels = scales::label_time(format = "%H:%M", tz = "America/Chicago"))
+               scales = "free_y") +
+    scale_x_time(labels = scales::label_time(format = "%H:%M", tz = "America/Chicago")) +
     labs(title = plot_title,
          subtitle = glue::glue("Expected number of seats controlled as of {current_time}"),
          x = NULL,
          y = NULL,
          caption = plot_caption)
   
-  prob_plot
-  #seat_plot
+  current_prob_plot <<- prob_plot
+  current_seat_plot <<- seat_plot
+  
+  # print out expected prob error
+  err <- 
+    tibble(sims = last_topline$sims[1]) %>%
+    mutate(alpha = sims/2,
+           beta = sims/2) %>%
+    beta_interval(alpha, beta) %>%
+    mutate(err = scales::label_percent(accuracy = 0.1)(ci_upper - 0.5)) %>%
+    pull(err)
+  
+  message(glue::glue("A naive estimate of error on {remaining_sims} sims is +/-{err}"))
   
 }
 
 # live results -----------------------------------------------------------------
 
 add_called_race(new = TRUE)
-add_called_race("rep", "Senate", "Pennsylvania")
-add_called_race("dem", "Senate", "Georgia")
+add_called_race("rep", "Senate", "Missouri")
+add_called_race("dem", "Senate", "Washington")
+add_called_race("rep", "Senate", "Florida")
 add_called_race("dem", "Senate", "Oregon")
-add_called_race("rep", "Senate", "Oklahoma", "Class III")
-add_called_race("rep", "Senate", "Wisconsin")
-add_called_race("dem", "Senate", "New Hampshire")
-add_called_race("rep", "Senate", "North Carolina")
-add_called_race("dem", "Senate", "Nevada")
 
-
+plot_current_results()
 current_live_forecast
+current_prob_plot
+current_seat_plot
 
-
+ggquicksave("temp.png",
+            height = 4.78,
+            width = 9.33)
