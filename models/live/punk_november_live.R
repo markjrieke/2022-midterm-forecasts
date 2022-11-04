@@ -17,7 +17,6 @@
 # setup ------------------------------------------------------------------------
 
 library(riekelib)
-library(patchwork)
 
 # setup themes
 extrafont::loadfonts(device = "win")
@@ -256,16 +255,9 @@ plot_current_results <- function() {
 # live results -----------------------------------------------------------------
 
 add_called_race(new = TRUE)
-add_called_race("rep", "Senate", "Missouri")
-add_called_race("dem", "Senate", "Washington")
-add_called_race("rep", "Senate", "Florida")
-add_called_race("dem", "Senate", "Oregon")
 
 plot_current_results()
 current_live_forecast
-current_prob_plot
-current_seat_plot
+current_prob_plot; ggquicksave("models/live/current_prob_plot.png", height = 4.78, width = 9.33)
+current_seat_plot; ggquicksave("models/live/current_seat_plot.png", height = 4.78, width = 9.33)
 
-ggquicksave("temp.png",
-            height = 4.78,
-            width = 9.33)
