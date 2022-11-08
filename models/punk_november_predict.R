@@ -6,8 +6,8 @@ library(gamlss)
 library(tidyverse)
 
 # set run date
-# run_date <- lubridate::mdy("10/31/22")
-run_date <- Sys.Date()
+run_date <- lubridate::mdy("11/7/22")
+# run_date <- Sys.Date()
 
 # polling data 
 polls_house     <- read_csv("https://projects.fivethirtyeight.com/polls-page/data/house_polls.csv")
@@ -25,6 +25,24 @@ elections_train <- read_csv("models/data/elections_train.csv")
 poll_model    <- read_rds("models/data/poll_model.rds")
 gcb_model     <- read_rds("models/data/gcb_model.rds")
 polling_error <- read_rds("models/data/polling_error.rds")
+
+# election day mod -------------------------------------------------------------
+
+# add a filter for only polls *added* ahead of election day
+poll_filter <- function(.data) {
+  
+  .data %>%
+    mutate(created_at = word(created_at, 1),
+           created_at = lubridate::mdy(created_at)) %>%
+    filter(created_at <= lubridate::mdy("11/7/22"))
+  
+}
+
+# filter to just the polls added before election day
+polls_gcb <- polls_gcb %>% poll_filter()
+polls_house <- polls_house %>% poll_filter()
+polls_senate <- polls_senate %>% poll_filter()
+polls_governor <- polls_governor %>% poll_filter()
 
 # ------------------------wrangle-polled-races----------------------------------
 
