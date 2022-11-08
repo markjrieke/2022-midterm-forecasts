@@ -253,15 +253,18 @@ elections_model <-
 
 # --------------------------------simulations-----------------------------------
 
+# e-day mod: number of sims to run (arbitrage a larger n for the live model)
+n_sims <- 10000
+
 # number of races being modeled (may change if updated by fte)
 n_races <- nrow(elections_predict)
 
 # generate random polling errors
 set.seed(555)
 sim_data <-
-  tibble(sim = rep(seq(1, 10000), n_races),
-         idx = seq(1, n_races) %>% rep(10000) %>% riekelib::arrange_vector(),
-         err = rep(rnorm(10000, 0, 0.5 * polling_error$err_sd), n_races)) %>%
+  tibble(sim = rep(seq(1, n_sims), n_races),
+         idx = seq(1, n_races) %>% rep(n_sims) %>% riekelib::arrange_vector(),
+         err = rep(rnorm(n_sims, 0, 0.5 * polling_error$err_sd), n_races)) %>%
   nest(data = c(sim, err))
 
 # apply random polling error to poll avg
@@ -290,7 +293,7 @@ sim_preds <-
   sim_preds %>%
   bind_cols(sim_data) %>%
   select(mu:sim) %>%
-  bind_cols(p = runif(n_races * 10000)) %>%
+  bind_cols(p = runif(n_races * n_sims)) %>%
   mutate(.pred = qBE(p, mu, sigma))
 
 # bind to elections data

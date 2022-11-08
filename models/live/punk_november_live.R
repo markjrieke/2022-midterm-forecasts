@@ -13,6 +13,7 @@
 # some reqs:
 # - run through punk_november_predict
 # - need sim_preds in env to run
+# - need n_sims in env to run
 
 # setup ------------------------------------------------------------------------
 
@@ -37,7 +38,7 @@ dem_uncontested <-
   nrow()
 
 # set parameters for live forecast
-plausible_sims <- seq(1, 10000, 1)
+plausible_sims <- seq(1, n_sims, 1)
 live_forecast <- sim_preds %>% filter(race != "Governor")
 
 # set plot colors
@@ -86,7 +87,7 @@ add_called_race <- function(called_winner,
   
   if (new) {
     
-    plausible_sims <<- seq(1, 10000, 1)
+    plausible_sims <<- seq(1, n_sims, 1)
     current_live_forecast <<- update_live_forecast()
     
   } else {
@@ -110,6 +111,10 @@ add_called_race <- function(called_winner,
                 update_live_forecast())
     
   }
+  
+  # write out updates in the event of a crash
+  current_live_forecast %>%
+    write_csv("models/live/current_live_forecast.csv")
   
 }
 
@@ -142,6 +147,7 @@ plot_current_results <- function() {
   # get number of called races/remaining sims
   called_races <- nrow(current_live_forecast)/2 - 1
   remaining_sims <- scales::label_comma()(last_topline$sims[1])
+  total_sims <- scales::label_comma()(n_sims)
   
   # get current time
   current_time <- scales::label_time(format = "%H:%M", tz = "America/Chicago")(last_topline$timestamp[1])
@@ -166,7 +172,7 @@ plot_current_results <- function() {
   
   # construct caption
   plot_caption <-
-    glue::glue("{remaining_sims} / 10,000 sims remaining after {called_races} called races.")
+    glue::glue("{remaining_sims} / {total_sims} sims remaining after {called_races} called races.")
   
   # probability plot!
   prob_plot <- 
