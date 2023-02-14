@@ -46,11 +46,31 @@ dem_blu <- MetBrewer::MetPalettes$Benedictus[[1]][12]
 rep_red <- MetBrewer::MetPalettes$Benedictus[[1]][2]
 split_purp <- MetBrewer::MetPalettes$Klimt[[1]][6]
 
+# remove large/unneeded objects
+rm(demographics,
+   elections,
+   elections_mod,
+   elections_model,
+   elections_predict,
+   elections_train,
+   gcb,
+   poll_averages,
+   poll_leaders,
+   polling_error,
+   polls_gcb,
+   pvi,
+   sim_data,
+   sim_mod,
+   sim_preds)
+
 # functions --------------------------------------------------------------------
   
 # function for updating the live forecast
 # doesn't make any sim updates, just returns the current live forecast
-update_live_forecast <- function() {
+update_live_forecast <- function(called_winner,
+                                 race_new,
+                                 state_new,
+                                 seat_new) {
   
   live_forecast %>%
     unnest(data) %>%
@@ -72,7 +92,11 @@ update_live_forecast <- function() {
            seats = map_dbl(data, ~mean(.x$n)),
            seats_sd = map_dbl(data, ~sd(.x$n)),
            seats_lower = qnorm(0.1, seats, seats_sd),
-           seats_upper = qnorm(0.9, seats, seats_sd)) %>%
+           seats_upper = qnorm(0.9, seats, seats_sd),
+           called_race = race_new,
+           called_state = state_new,
+           called_seat = seat_new,
+           called_winner = called_winner) %>%
     select(-data)
   
 }
@@ -88,13 +112,13 @@ add_called_race <- function(called_winner,
   if (new) {
     
     plausible_sims <<- seq(1, n_sims, 1)
-    current_live_forecast <<- update_live_forecast()
+    current_live_forecast <<- update_live_forecast("new", "new", "new", "new")
     
   } else {
   
     # pull sims that agree with this called race
     winner_sims <-
-      sim_preds %>%
+      live_forecast %>%
       filter(race == race_new,
              state == state_new,
              seat == seat_new) %>%
@@ -108,7 +132,7 @@ add_called_race <- function(called_winner,
     # append with new set of plausible sims
     current_live_forecast <<- 
       bind_rows(current_live_forecast,
-                update_live_forecast())
+                update_live_forecast(called_winner, race_new, state_new, seat_new))
     
   }
   
@@ -172,7 +196,7 @@ plot_current_results <- function() {
   
   # construct caption
   plot_caption <-
-    glue::glue("{remaining_sims} / {total_sims} sims remaining after {called_races} called races.")
+    glue::glue("{called_races} called races\n{remaining_sims} used for this estimate.")
   
   # probability plot!
   prob_plot <- 
@@ -258,12 +282,89 @@ plot_current_results <- function() {
   
 }
 
+new_sims <- function(mean, sd, new_sims = n_sims) {
+  
+  tibble(sim = seq(1, n_sims, 1),
+         .pred = rnorm(n_sims, mean, sd)) %>%
+    mutate(winner = if_else(.pred >= 0.5, "dem", "rep"))
+  
+}
+
+# arbitrage the number of sims back up to 40,000
+resimulate <- function() {
+  
+  # update the live forecast based on called races
+  #live_forecast <<- 
+  live_tmp <-
+    live_forecast %>%
+    nplyr::nest_filter(data, sim %in% plausible_sims) %>%
+    mutate(.pred_mean = map_dbl(data, ~mean(.x$.pred)),
+           .pred_sd = map_dbl(data, ~sd(.x$.pred))) %>%
+    select(-data) %>%
+    mutate(data = pmap(list(.pred_mean, .pred_sd), ~new_sims(..1, ..2)))
+  
+  # rehash the plausible sims back up to 40,000
+  plausible_sims <<- seq(1, n_sims, 1)
+  
+}
+
 # live results -----------------------------------------------------------------
 
 add_called_race(new = TRUE)
 
+message("line break!")
+
 plot_current_results()
-current_live_forecast
 current_prob_plot; ggquicksave("models/live/current_prob_plot.png", height = 4.78, width = 9.33)
 current_seat_plot; ggquicksave("models/live/current_seat_plot.png", height = 4.78, width = 9.33)
+current_live_forecast
 
+# closer calls / senate calls---------------------------------------------------
+
+add_called_race("rep", "Senate", "Indiana")
+add_called_race("rep", "Senate", "South Carolina")
+add_called_race("rep", "Senate", "Kentucky")
+add_called_race("rep", "Senate", "Oklahoma")
+add_called_race("rep", "Senate", "Oklahoma", "Class II")
+add_called_race("rep", "Senate", "Alabama")
+add_called_race("rep", "Senate", "Florida")
+add_called_race("dem", "Senate", "Vermont")
+add_called_race("rep", "Senate", "Arkansas")
+add_called_race("rep", "Senate", "South Dakota")
+add_called_race("dem", "Senate", "New York")
+add_called_race("rep", "Senate", "Kansas")
+
+# solids -----------------------------------------------------------------------
+
+add_called_race("dem", "House", "Delaware", "District 1")
+
+add_called_race("rep", "House", "Florida", "District 1")
+add_called_race("rep", "House", "Florida", "District 2")
+add_called_race("rep", "House", "Florida", "District 3")
+add_called_race("rep", "House", "Florida", "District 4")
+add_called_race("rep", "House", "Florida", "District 6")
+add_called_race("rep", "House", "Florida", "District 7")
+add_called_race("rep", "House", "Florida", "District 8")
+add_called_race("dem", "House", "Florida", "District 10")
+add_called_race("rep", "House", "Florida", "District 11")
+add_called_race("rep", "House", "Florida", "District 12")
+add_called_race("rep", "House", "Florida", "District 15")
+add_called_race("rep", "House", "Florida", "District 16")
+add_called_race("rep", "House", "Florida", "District 17")
+add_called_race("rep", "House", "Florida", "District 18")
+add_called_race("rep", "House", "Florida", "District 19")
+add_called_race("dem", "House", "Florida", "District 20")
+add_called_race("rep", "House", "Florida", "District 21")
+add_called_race("dem", "House", "Florida", "District 22")
+add_called_race("dem", "House", "Florida", "District 24")
+add_called_race("dem", "House", "Florida", "District 25")
+add_called_race("rep", "House", "Florida", "District 26")
+add_called_race("rep", "House", "Florida", "District 28")
+
+
+
+add_called_race("rep", "House", "Georgia", "District 10")
+add_called_race("rep", "House", "Georgia", "District 14")
+add_called_race("rep", "House", "Georgia", "District 3")
+
+add_called_race("dem", "House", "Illinois", "District 1")

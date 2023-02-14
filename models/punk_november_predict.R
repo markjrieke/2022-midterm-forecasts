@@ -254,7 +254,7 @@ elections_model <-
 # --------------------------------simulations-----------------------------------
 
 # e-day mod: number of sims to run (arbitrage a larger n for the live model)
-n_sims <- 10000
+n_sims <- 40000
 
 # number of races being modeled (may change if updated by fte)
 n_races <- nrow(elections_predict)
